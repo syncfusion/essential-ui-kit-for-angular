@@ -1,0 +1,65 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-white dark:bg-gray-900">
+    <div class="flex items-center justify-center min-h-screen">
+        <div class="lg:max-w-xl w-full m-auto p-4 md:p-6 lg:p-8">
+            <ejs-listview class="!border-0" cssClass="e-list-template" [dataSource]="data" aria-label="list of to-do tasks" role="list">
+                <ng-template #template let-data>
+                    <div class="e-list-wrapper border-b border-gray-200 dark:border-gray-600 !px-1 sm:!px-3 !py-4 flex items-start">
+                        <ejs-checkbox cssClass="pt-1" [checked]="data.checked" (change)="data.checked = !data.checked" aria-label="select tasks in the to-do list" role="checkbox"></ejs-checkbox>
+                        <div class="ml-3">
+                            <span [ngClass]="{'line-through': data.checked, 'text-gray-700 dark:text-gray-200': data.checked, 'text-gray-900 dark:text-white': !data.checked}" class="e-list-item-header font-medium text-gray-900 dark:text-white text-sm">{{data.header}}</span>
+                            <span class="e-badge e-badge-pill e-badge-success ml-2 !px-2" *ngIf="data.id == 3">New</span>
+                            <p class="text-xs text-gray-700 dark:text-gray-200 pt-1 !text-wrap !line-clamp-1 w-full truncate">{{data.content}}</p>
+                            <span class="flex items-center space-x-4 mt-2">
+                                <span class="flex items-center space-x-2">
+                                    <span class="e-icons e-day text-xs"></span>
+                                    <span class="text-xs font-medium text-gray-500 dark:text-gray-400">{{data.date | date:'MMM d, y'}}</span>
+                                </span>
+                                <span class="flex items-center space-x-2">
+                                    <span class="e-icons e-user text-xs"></span>
+                                    <span class="text-xs font-medium text-gray-500 dark:text-gray-400">{{data.name}}</span>
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                </ng-template>
+            </ejs-listview>
+        </div>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body">
+    <div class="d-flex align-items-center justify-content-center min-vh-100">
+        <div class="container-lg w-100 m-auto p-3 p-md-6" [style]="width">
+            <ejs-listview class="border-0" cssClass="e-list-template" [dataSource]="data" aria-label="list of to-do tasks" role="list">
+                <ng-template #template let-data>
+                    <div class="e-list-wrapper px-1 px-sm-2 py-3 d-flex align-items-start">
+                        <ejs-checkbox cssClass="e-bigger pt-1" [checked]="data.checked" (change)="data.checked = !data.checked" aria-label="select tasks in the to-do list" role="checkbox"></ejs-checkbox>
+                        <div class="ms-2 ps-1 d-flex flex-column w-100">
+                            <span>
+                                <span [ngClass]="{'text-decoration-line-through': data.checked}" class="e-list-item-header fw-medium">{{data.header}}</span>
+                                <span class="e-badge e-badge-pill e-badge-success ms-2 px-2" *ngIf="data.id == 3">New</span>
+                            </span>
+                            <span class="mb-0 small pt-1 text-wrap overflow-hidden" style="display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical;">{{data.content}}</span>
+                            <span class="d-flex align-items-center mt-2">
+                                <span class="d-flex align-items-center me-3 gap-2">
+                                    <span class="e-icons e-day"></span>
+                                    <span class="fw-medium small e-inherit">{{data.date | date:'MMM d, y'}}</span>
+                                </span>
+                                <span class="d-flex align-items-center gap-2">
+                                    <span class="e-icons e-user"></span>
+                                    <span class="fw-medium small e-inherit">{{data.name}}</span>
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                </ng-template>
+            </ejs-listview>
+        </div>
+    </div>
+</section>
+
+}

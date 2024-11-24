@@ -1,0 +1,73 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-gray-50 dark:bg-gray-950">
+    <div id="target" class="w-full" [ngStyle]="{ height: isMobileView ? '591px' : '720px' }">
+        <ejs-dialog #dialog id="floating-article" class="sm:!rounded-t !rounded-none overflow-hidden !border-0" width="400px" minHeight="591px" (open)="setDialogPosition($event)" (created)="dialog.show()" aria-label="get help from helpdesk" role="dialog">
+            <ng-template #header>
+                <div class="flex flex-col justify-between items-center bg-indigo-600 dark:bg-cyan-400 p-3">
+                    <div class="w-full text-center">
+                        <p class="text-lg font-semibold text-white dark:text-gray-900">Help</p>
+                    </div>
+                    <div class="e-input-group e-bigger mt-3">
+                        <input class="e-input" type="text" placeholder="Search for help" aria-label="search for help" role="textbox" />
+                        <span class="e-input-group-icon e-icons e-search !text-lg !leading-4"></span>
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template #content>
+                <ejs-listview class="border-0 bg-white dark:bg-gray-900" [dataSource]="data" width="100%" height="486px" aria-label="help articles" role="list">
+                    <ng-template #template let-data>
+                        <div class="e-list-wrapper px-3 pt-4 border-b border-solid border-gray-200 dark:border-gray-600">
+                            <div class="flex items-center pb-4 justify-between">
+                                <div>
+                                    <p class="text-sm font-medium text-gray-900 dark:text-gray-50 truncate">{{data.question}}</p>
+                                    <p class="text-sm text-gray-500 dark:text-gray-300 sm:w-80 line-clamp-2 mt-1">{{data.answer}}</p>
+                                </div>
+                                <button ejs-button class="e-flat e-round shrink-0" iconCss="e-icons e-chevron-right !text-lg" type="button" aria-label="view invoice details"></button>
+                            </div>
+                        </div>
+                    </ng-template>
+                </ejs-listview>
+            </ng-template>
+        </ejs-dialog>
+        <button #fab ejs-fab class="e-primary e-round e-bigger !hidden sm:!block" [iconCss]="toggleState?'sf-icon-help-circle !text-2xl':'e-icons e-close !text-2xl'" position="BottomRight" type="button" target="#target" (click)="toggleDialog()" aria-label="show/hide helpdesk" role="button"></button>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body">
+    <div id="target" class="w-100" [ngStyle]="{ height: isMobileView ? '591px' : '720px' }">
+        <ejs-dialog #dialog id="floating-article" class="rounded-1 overflow-hidden border-0" width="400px" minHeight="591px" (open)="setDialogPosition($event)" (created)="dialog.show()" aria-label="get help from helpdesk" role="dialog">
+            <ng-template #header>
+                <div class="d-flex flex-column justify-content-between align-items-center bg-primary text-white p-3">
+                    <div class="w-100 text-center">
+                        <p class="fs-6 fw-semibold m-0 lh-sm text-white">Help</p>
+                    </div>
+                    <div class="e-input-group e-bigger mt-3">
+                        <input class="e-input form-control" type="text" placeholder="Search for help" aria-label="search for help" role="textbox" />
+                        <span class="e-input-group-icon e-icons e-search border-start-0 text-secondary"></span>
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template #content>
+                <ejs-listview class="border-0 rounded-0" [dataSource]="data" width="100%" height="486px" aria-label="help articles" role="list">
+                    <ng-template #template let-data>
+                        <div class="e-list-wrapper px-3 pt-3">
+                            <div class="e-list-content d-flex justify-content-between align-items-center pb-3" style="line-height: 20px;">
+                                <div>
+                                    <p class="fw-medium m-0 mb-1 text-body text-truncate">{{data.question}}</p>
+                                    <p class="text-body-secondary m-0" style="max-width: 320px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">{{data.answer}}</p>
+                                </div>
+                                <button ejs-button class="e-flat e-round flex-shrink-0" iconCss="e-icons e-chevron-right" type="button" aria-label="view invoice details"></button>
+                            </div>
+                        </div>
+                    </ng-template>
+                </ejs-listview>
+            </ng-template>
+        </ejs-dialog>
+        <button #fab ejs-fab class="e-primary e-round e-bigger d-none d-sm-block" [iconCss]="toggleState?'sf-icon-help-circle fs-4':'e-icons e-close fs-5'" position="BottomRight" type="button" target="#target" (click)="toggleDialog()" aria-label="show/hide helpdesk" role="button"></button>
+    </div>
+</section>
+
+}

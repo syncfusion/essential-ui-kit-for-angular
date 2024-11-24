@@ -1,0 +1,252 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-white dark:bg-gray-900">
+    <div [ngStyle]="{'height': '912px', 'width': width, float:'Right'}">
+        <ejs-sidebar class="w-full bg-white dark:bg-gray-900" #sidebar position="Right" type="push" [width]="width" [isOpen]="true" showBackdrop="true" role="sidebar" style="display: block;">
+            <div>
+                <div class="flex justify-between items-center px-4 py-3">
+                    <div class="w-32">
+                        <label class="text-sm text-gray-900 dark:text-white">CALENDAR</label>
+                        <ejs-datepicker [start]="start" [depth]="depth" format="yyyy"></ejs-datepicker>
+                    </div>
+                    <button ejs-button class="e-btn e-flat text-lg" (click)="sidebar.hide()" type="button" iconCss="e-icons e-close" aria-label="close sidebar" role="button"></button>
+                </div>
+            </div>
+            <div class="flex px-4 py-2 border-y border-gray-200 dark:border-gray-600 justify-between">
+                <button ejs-button class="e-primary e-outline" content="Request time off" iconCss="e-icons e-plus" type="button" aria-label="request time off" role="button"></button>
+                <div class="my-auto">
+                    <button ejs-dropdownbutton #leaveSelection [items]="[ { text: 'Holiday', iconCss: 'e-icons e-check' }, { text: 'My PTO' } ]" class="e-flat background-none !border-none" iconCss="e-icons e-more-vertical-2" content=" " (select)="leaveOptions(leaveSelection,$event)" cssClass="e-caret-hide" type="button" aria-label="select the leave options" role="button"></button>
+                </div>
+            </div>
+            <div class="p-4">
+                @if (selectedItem === 'Holiday') {
+                <div style="height: 756px;">
+                    <ejs-timeline>
+                        <e-items>
+                            <e-item [content]="contentTemplate"></e-item>
+                            <e-item [content]="contentTemplate"></e-item>
+                            <e-item [content]="contentTemplate"></e-item>
+                            <e-item [content]="contentTemplate"></e-item>
+                            <e-item [content]="contentTemplate"></e-item>
+                            <e-item [content]="contentTemplate"></e-item>
+                            <e-item [content]="contentTemplate"></e-item>
+                            <e-item [content]="contentTemplate"></e-item>
+                        </e-items>
+                        <ng-template #contentTemplate let-data>
+                            <div class="content-container">
+                                <div class="flex justify-between pb-1">
+                                    <div class="text-body small font-weight-medium">
+                                        {{templateContents[data.itemIndex].title}}
+                                    </div>
+                                    @if(uniqueMonthsDescription.includes(templateContents[data.itemIndex].description)){
+                                    <ejs-chiplist
+                                        cssClass="!text-xs"
+                                        id="monthChip"
+                                        class="!m-0 !bg-cyan-100 !text-cyan-600 dark:!bg-cyan-900 dark:!text-cyan-300"
+                                        [text]="getMonthAbbreviation(templateContents[data.itemIndex].description).toUpperCase()"
+                                    ></ejs-chiplist>
+                                    }
+                                </div>
+                                <span class="e-badge e-badge-pill border border-gray-200 dark:border-gray-600 e-bigger e-badge-secondary">
+                                    {{templateContents[data.itemIndex].description}}
+                                </span>
+                            </div>
+                        </ng-template>
+                    </ejs-timeline>
+                </div>
+                } @else if (selectedItem === 'My PTO'){
+                <div class="grid gap-3">
+                    <div class="grid gap-2">
+                        <p class="m-0 text-gray-700 dark:text-gray-300">September 2024</p>
+                        <div class="e-card shadow-none pt-3 border-gray-200 dark:border-gray-600 flex-row justify-between">
+                            <div class="e-card-stacked">
+                                <div class="e-card-content">
+                                    <div class="font-normal text-xs text-gray-500 mb-0.5">3 day request</div>
+                                    <div class="text-xs font-semibold mb-2">24 Sep - 26 Sep</div>
+                                    <span class="e-badge e-badge-pill e-bigger e-badge-secondary border border-gray-200 dark:border-gray-600">Casual</span>
+                                </div>
+                            </div>
+                            <span class="e-badge e-badge-pill mr-3 e-bigger e-badge-danger">Declined</span>
+                        </div>
+                        <div class="e-card shadow-none pt-3 border-gray-200 dark:border-gray-600 flex-row justify-between">
+                            <div class="e-card-stacked">
+                                <div class="e-card-content">
+                                    <div class="font-normal text-xs text-gray-500 mb-0.5">Half day request</div>
+                                    <div class="text-xs font-semibold mb-2">04 Sep</div>
+                                    <span class="e-badge e-badge-pill e-bigger e-badge-info">Sick</span>
+                                </div>
+                            </div>
+                            <span class="e-badge e-badge-pill mr-3 e-bigger e-badge-warning">Awaiting</span>
+                        </div>
+                    </div>
+                    <div class="grid gap-2">
+                        <p class="m-0 text-gray-700 dark:text-gray-300">July 2024</p>
+                        <div class="e-card shadow-none pt-3 border-gray-200 dark:border-gray-600 flex-row justify-between">
+                            <div class="e-card-stacked">
+                                <div class="e-card-content">
+                                    <div class="font-normal text-xs text-gray-500 mb-0.5">2 day request</div>
+                                    <div class="text-xs font-semibold mb-2">23 Jul - 24 Jul</div>
+                                    <span class="e-badge e-badge-pill e-bigger e-badge-secondary border border-gray-200 dark:border-gray-600">Casual</span>
+                                </div>
+                            </div>
+                            <span class="e-badge e-badge-pill mr-3 e-bigger e-badge-success">Approved</span>
+                        </div>
+                        <div class="e-card shadow-none pt-3 border-gray-200 dark:border-gray-600 flex-row justify-between">
+                            <div class="e-card-stacked">
+                                <div class="e-card-content">
+                                    <div class="font-normal text-xs text-gray-500 mb-0.5">Full day request</div>
+                                    <div class="text-xs font-semibold mb-2">03 Jul</div>
+                                    <span class="e-badge e-badge-pill e-bigger e-badge-info">Sick</span>
+                                </div>
+                            </div>
+                            <span class="e-badge e-badge-pill mr-3 e-bigger e-badge-success">Approved</span>
+                        </div>
+                    </div>
+                    <div class="grid gap-2">
+                        <p class="m-0 text-gray-700 dark:text-gray-300">June 2024</p>
+                        <div class="e-card shadow-none pt-3 border-gray-200 dark:border-gray-600 flex-row justify-between">
+                            <div class="e-card-stacked">
+                                <div class="e-card-content">
+                                    <div class="font-normal text-xs text-gray-500 mb-0.5">5 days request</div>
+                                    <div class="text-xs font-semibold mb-2">11 Jun - 15 Jun</div>
+                                    <span class="e-badge e-badge-pill e-bigger e-badge-secondary border border-gray-200 dark:border-gray-600">Casual</span>
+                                </div>
+                            </div>
+                            <span class="e-badge e-badge-pill e-bigger mr-3 e-badge-success">Approved</span>
+                        </div>
+                    </div>
+                </div>
+                }
+            </div>
+        </ejs-sidebar>
+    </div>
+</section>
+<!-- SB Code - Start -->
+<div class="p-3 absolute top-0 right-0">
+    <button ejs-button cssClass="e-large e-icons e-chevron-left e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+</div>
+<!-- SB Code - End -->
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-light">
+    <div [ngStyle]="{'height': '940px', 'width': width, float:'Right'}">
+        <ejs-sidebar class="bg-body" #sidebar position="Right" type="push" [width]="width" [isOpen]="true" showBackdrop="true" role="sidebar" style="display: block;">
+            <div>
+                <div class="d-flex justify-content-between align-items-center p-3">
+                    <div class="w-50">
+                        <label class="fs-6 text-body-secondary">CALENDAR</label>
+                        <ejs-datepicker [start]="start" [depth]="depth" format="yyyy"></ejs-datepicker>
+                    </div>
+                    <button ejs-button class="e-btn e-flat fs-6" (click)="sidebar.hide()" iconCss="e-icons e-close" type="button" aria-label="close sidebar" role="button"></button>
+                </div>
+            </div>
+            <div class="d-flex p-3 border-bottom border-top border-light-subtley justify-content-between">
+                <button ejs-button class="e-btn e-primary e-outline" content="Request time off" iconCss="e-icons e-plus" type="button" aria-label="request time off" role="button"></button>
+                <div class="my-auto">
+                    <button ejs-dropdownbutton #leaveselection [items]="[ { text: 'Holiday', iconCss: 'e-icons e-check' }, { text: 'My PTO' } ]" class="e-btn e-flat border-0" iconCss="e-icons e-more-vertical-2" content=" " (select)="leaveOptions(leaveselection,$event)" cssClass="e-caret-hide" type="button" aria-label="select the leave options" role="button"></button>
+                </div>
+            </div>
+            @if (selectedItem === 'Holiday') {
+            <div class="p-4 bg-body" style="height: 730px;">
+                <ejs-timeline>
+                    <e-items>
+                        <e-item [content]="contentTemplate"></e-item>
+                        <e-item [content]="contentTemplate"></e-item>
+                        <e-item [content]="contentTemplate"></e-item>
+                        <e-item [content]="contentTemplate"></e-item>
+                        <e-item [content]="contentTemplate"></e-item>
+                        <e-item [content]="contentTemplate"></e-item>
+                        <e-item [content]="contentTemplate"></e-item>
+                        <e-item [content]="contentTemplate"></e-item>
+                    </e-items>
+                    <ng-template #contentTemplate let-data>
+                        <div class="content-container">
+                            <div class="d-flex justify-content-between pb-1">
+                                <div class="text-body text-sm font-weight-medium">
+                                    {{templateContents[data.itemIndex].title}}
+                                </div>
+                                @if(uniqueMonthsDescription.includes(templateContents[data.itemIndex].description)){
+                                <ejs-chiplist cssClass="e-info small" id="monthChip" class="m-0" [text]="getMonthAbbreviation(templateContents[data.itemIndex].description).toUpperCase()"> </ejs-chiplist>
+                                }
+                            </div>
+                            <span class="e-badge e-badge-pill border border-light-subtle e-badge-secondary px-2 lh-sm fw-normal">
+                                {{templateContents[data.itemIndex].description}}
+                            </span>
+                        </div>
+                    </ng-template>
+                </ejs-timeline>
+            </div>
+            } @else if (selectedItem === 'My PTO'){
+            <div class="p-4">
+                <div>
+                    <p class="m-0 text-body-secondary">September 2024</p>
+                    <div class="e-card border border-light-subtle shadow-none my-2">
+                        <div class="e-card-content d-flex justify-content-between">
+                            <div>
+                                <div class="text-body-secondary fs-sm m-0">3 day request</div>
+                                <div class="text-small fw-bold mt-1 m-0 mb-2">24 Sep - 26 Sep</div>
+                                <span class="e-badge e-badge-pill e-badge-secondary border border-light-subtle lh-sm fw-normal">Casual</span>
+                            </div>
+                            <span class="e-badge e-badge-pill e-badge-danger">Declined</span>
+                        </div>
+                    </div>
+                    <div class="e-card border border-light-subtle shadow-none">
+                        <div class="e-card-content d-flex justify-content-between">
+                            <div>
+                                <div class="text-body-secondary fs-sm m-0">Half day request</div>
+                                <div class="text-small fw-bold mt-1 m-0 mb-2">04 Aug</div>
+                                <span class="e-badge e-badge-pill e-badge-info">Sick</span>
+                            </div>
+                            <span class="e-badge e-badge-pill e-badge-warning">Awaiting</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="my-3">
+                    <p class="m-0 text-body-secondary">July 2024</p>
+                    <div class="e-card border border-light-subtle shadow-none my-2">
+                        <div class="e-card-content d-flex justify-content-between">
+                            <div>
+                                <div class="text-body-secondary fs-sm m-0">2 day request</div>
+                                <div class="text-small fw-bold mt-1 m-0 mb-2">23 Jul - 24 Jul</div>
+                                <span class="e-badge e-badge-pill border e-badge-secondary border-light-subtle lh-sm fw-normal">Casual</span>
+                            </div>
+                            <span class="e-badge e-badge-pill e-badge-success">Approved</span>
+                        </div>
+                    </div>
+                    <div class="e-card border border-light-subtle shadow-none my-2">
+                        <div class="e-card-content d-flex justify-content-between">
+                            <div>
+                                <div class="text-body-secondary fs-sm m-0">Full day request</div>
+                                <div class="text-small fw-bold mt-1 m-0 mb-2">03 Jul</div>
+                                <span class="e-badge e-badge-pill e-badge-info">Sick</span>
+                            </div>
+                            <span class="e-badge e-badge-pill e-bigger e-badge-success">Approved</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <p class="m-0 text-body-secondary">November 2024</p>
+                    <div class="e-card border border-light-subtle shadow-none mt-2">
+                        <div class="e-card-content d-flex justify-content-between">
+                            <div>
+                                <div class="text-body-secondary fs-sm m-0">5 days request</div>
+                                <div class="text-small fw-bold mt-1 m-0 mb-2">11 Jun - 15 Jun</div>
+                                <span class="e-badge e-badge-pill e-badge-secondary border border-light-subtle lh-sm fw-normal">Casual</span>
+                            </div>
+                            <span class="e-badge e-badge-pill e-badge-success">Approved</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            }
+        </ejs-sidebar>
+    </div>
+</section>
+<!-- SB Code - Start -->
+<div class="p-3 position-absolute top-0 end-0">
+    <button ejs-button cssClass="e-large e-icons e-chevron-left e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+</div>
+<!-- SB Code - End -->
+
+}

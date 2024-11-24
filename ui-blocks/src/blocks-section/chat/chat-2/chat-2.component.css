@@ -1,0 +1,10 @@
+#chat-sidepanel .e-list-item {
+    border: none;
+    height: auto;
+    padding: 8px;
+}
+
+#chat-sidepanel .e-listview .e-list-item.e-active,
+#chat-sidepanel .e-list-item:hover {
+    background-color: transparent;
+}

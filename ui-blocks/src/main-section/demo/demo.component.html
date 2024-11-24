@@ -1,0 +1,76 @@
+<div class="main-container">
+    <div class="header-container">
+        <ul class="main-tab" role="tablist">
+            <li tab-text="Preview" class="tab-item" [class.active]="isPreviewMode" (click)="togglePreviewCode($event)" role="tab" [attr.aria-selected]="isPreviewMode" tabindex="0" (keydown.enter)="togglePreviewCode($event)" (keydown.space)="togglePreviewCode($event)">
+                <img tab-text="Preview" src="assets/images/sample-browser/preview.svg" alt="Preview Tab" />
+                <div class="tab-text" tab-text="Preview">Preview</div>
+            </li>
+            <li class="tab-item" [class.active]="!isPreviewMode" (click)="togglePreviewCode($event)" role="tab" [attr.aria-selected]="!isPreviewMode" tabindex="0" (keydown.enter)="togglePreviewCode($event)" (keydown.space)="togglePreviewCode($event)">
+                <img src="assets/images/sample-browser/code.svg" alt="Code Tab" />
+                <div class="tab-text">Code</div>
+            </li>
+        </ul>
+        <div class="device-buttons" *ngIf="isPreviewMode">
+            <div class="device desktop" (click)="switchMode('desktop')" [class.active]="currentView === 'desktop'" title="Desktop" role="button" tabindex="0" (keydown.enter)="switchMode('desktop')" (keydown.space)="switchMode('desktop')">
+                <img src="assets/images/sample-browser/monitor.svg" alt="Desktop View" />
+            </div>
+            <div class="device tablet" (click)="switchMode('tablet')" [class.active]="currentView === 'tablet'" title="Tablet" role="button" tabindex="0" (keydown.enter)="switchMode('tablet')" (keydown.space)="switchMode('tablet')">
+                <img src="assets/images/sample-browser/tablet.svg" alt="Tablet View" />
+            </div>
+            <div class="device mobile" (click)="switchMode('mobile')" [class.active]="currentView === 'mobile'" title="Mobile" role="button" tabindex="0" (keydown.enter)="switchMode('mobile')" (keydown.space)="switchMode('mobile')">
+                <img src="assets/images/sample-browser/smartphone.svg" alt="Mobile View" />
+            </div>
+        </div>
+        <div class="custom-dropdown" *ngIf="isPreviewMode">
+            <button class="dropdown-button" aria-haspopup="true" aria-expanded="isDropdownOpen" (click)="toggleDropdown()" tabindex="0">
+                <div class="theme-icon"><img src="assets/images/sample-browser/theme.svg" alt="Choose Theme" /></div>
+                <div class="dropdown-text">Choose theme</div>
+                <div class="down-icon"><img src="assets/images/sample-browser/chevron-down.svg" alt="Show/Hide Dropdown" /></div>
+            </button>
+            <div #themeDropdownContent class="dropdown-content" *ngIf="isPreviewMode" role="menu">
+                <div class="dropdown-item" data-value="tailwind" (click)="onThemeChange($event)" role="menuitem" tabindex="0" (keydown.enter)="onThemeChange($event)" (keydown.space)="onThemeChange($event)">
+                    <span class="select-icon"><img *ngIf="themeIndex === 0" src="assets/images/sample-browser/tick.svg" alt="Selected Theme" /></span> Tailwind
+                </div>
+                <div class="dropdown-item" data-value="bootstrap5.3" (click)="onThemeChange($event)" role="menuitem" tabindex="0" (keydown.enter)="onThemeChange($event)" (keydown.space)="onThemeChange($event)">
+                    <span class="select-icon"><img *ngIf="themeIndex === 1" src="assets/images/sample-browser/tick.svg" alt="Selected Theme" /></span> Bootstrap 5.3
+                </div>
+            </div>
+        </div>
+        <div class="lightDarkButton" *ngIf="isPreviewMode" (click)="toggleLightDarkModes()" [title]="isDarkMode ? 'Light' : 'Dark'" role="button" tabindex="0" (keydown.enter)="toggleLightDarkModes()" (keydown.space)="toggleLightDarkModes()">
+            <img [src]="isDarkMode ? 'assets/images/sample-browser/sun.svg' : 'assets/images/sample-browser/moon.svg'" alt="Toggle between Light and Dark Mode" />
+        </div>
+    </div>
+    <div class="iframe-container">
+        <iframe #previewBlock [src]="iframeURL" class="preview-container" [ngStyle]="previewStyle" title="Preview Content"> </iframe>
+        <div class="iframe-overlay" *ngIf="showLoadingIndicator">
+            <img src="https://placehold.co/100x50?text=Loading..." alt="Loading Indicator" class="overlay-image" />
+        </div>
+    </div>
+    <div #previewSourceCode class="preview-code-container" style="display: none;">
+        <div class="tab-container">
+            <div class="tabs" role="tablist">
+                <div class="tab-buttons">
+                    <div class="tab active html-tab" (click)="showTab('html')" role="tab" aria-controls="html" aria-selected="true" tabindex="0" (keydown.enter)="showTab('html')" (keydown.space)="showTab('html')">HTML</div>
+                    <div #cssTab class="tab css-tab" (click)="showTab('css')" role="tab" aria-controls="css" aria-selected="false" tabindex="0" (keydown.enter)="showTab('css')" (keydown.space)="showTab('css')">CSS</div>
+                    <div class="tab typescript-tab" (click)="showTab('typescript')" role="tab" aria-controls="typescript" aria-selected="false" tabindex="0" (keydown.enter)="showTab('typescript')" (keydown.space)="showTab('typescript')">TypeScript</div>
+                </div>
+                <div #copyButton class="copy-button" (click)="copyCode()" title="Copy to clipboard" role="button" tabindex="0" (keydown.enter)="copyCode()" (keydown.space)="copyCode()">
+                    <img src="assets/images/sample-browser/copy.svg" alt="Copy Code to Clipboard" />
+                </div>
+            </div>
+            <div id="html" class="tab-content active" role="tabpanel">
+                <pre><code [id]="blockName + '_html-code'" class="language-html"></code></pre>
+            </div>
+            <div id="css" class="tab-content" role="tabpanel">
+                <pre><code [id]="blockName + '_css-code'" class="language-css"></code></pre>
+            </div>
+            <div id="typescript" class="tab-content" role="tabpanel">
+                <pre><code [id]="blockName + '_ts-code'" class="language-typescript"></code></pre>
+            </div>
+        </div>
+    </div>
+</div>
+<div #copyClipboardTooltip class="tooltip" role="tooltip">
+    <div class="tooltip-arrow"></div>
+    Code copied!
+</div>

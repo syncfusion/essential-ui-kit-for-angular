@@ -1,0 +1,117 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-gray-50 dark:bg-gray-950">
+    <div class="max-w-7xl mx-auto w-full py-12 xl:px-0 sm:px-6 px-4">
+        <ejs-grid #grid [dataSource]="data" width="100%" height="668" [allowSorting]="true" [allowFiltering]="true" [filterSettings]="{type:'Bar'}" role="grid">
+            <e-columns>
+                <e-column type="checkbox" isPrimaryKey="true" textAlign="Center" width="40"></e-column>
+                <e-column field="transactionId" headerText="Transaction ID" width="143"></e-column>
+                <e-column field="customerDetails" headerText="Customer Name" textAlign="Left" width="270">
+                    <ng-template #template let-data>
+                        <div class="flex gap-3 items-center py-1.5">
+                            <div class="w-8 h-8">
+                                <span class="e-avatar e-avatar-circle e-avatar-small" [ngStyle]="{ 'background-image': 'url(assets/images/common/avatar/' + data.customerDetails.avatar + ')' }"></span>
+                            </div>
+                            <div class="flex flex-col text-sm">
+                                <p class="text-gray-900 dark:text-gray-50">{{data.customerDetails.name}}</p>
+                                <p class="text-gray-500 dark:text-gray-400">{{data.customerDetails.email}}</p>
+                            </div>
+                        </div>
+                    </ng-template>
+                </e-column>
+                <e-column field="invoiceNumber" headerText="Invoice Number" width="150">
+                    <ng-template #template let-data>
+                        <a class="text-primary-700 dark:text-primary-500 font-medium" href="javascript:void(0);" aria-label="invoice number" role="link">{{data.invoiceNumber}}</a>
+                    </ng-template>
+                </e-column>
+                <e-column field="description" headerText="Description" width="214"></e-column>
+                <e-column field="amount" headerText="Total Amount" width="140" format="c2" textAlign="Right"></e-column>
+                <e-column field="date" headerText="Transaction Date" width="160" [format]="{type: 'date', format: 'MM/dd/yyyy'}" textAlign="Right"></e-column>
+                <e-column field="paymentMethod" headerText="Payment Method" width="155"></e-column>
+                <e-column field="status" headerText="Status" width="122">
+                    <ng-template #template let-data>
+                        <div class="e-bigger" [ngSwitch]="data.status">
+                            <span class="e-badge flex gap-1 items-center w-max" *ngSwitchCase="'Completed'">
+                                <div class="w-2 h-2 rounded-full bg-green-700"></div>
+                                Completed
+                            </span>
+                            <span class="e-badge flex gap-1 items-center w-max" *ngSwitchCase="'Pending'">
+                                <div class="w-2 h-2 rounded-full bg-orange-700"></div>
+                                Pending
+                            </span>
+                            <span class="e-badge flex gap-1 items-center w-max" *ngSwitchCase="'Cleared'">
+                                <div class="w-2 h-2 rounded-full bg-cyan-700"></div>
+                                Cleared
+                            </span>
+                            <span class="e-badge flex gap-1 items-center w-max" *ngSwitchCase="'Failed'">
+                                <div class="w-2 h-2 rounded-full bg-red-700"></div>
+                                Failed
+                            </span>
+                            <span *ngSwitchDefault>No records found.</span>
+                        </div>
+                    </ng-template>
+                </e-column>
+            </e-columns>
+        </ejs-grid>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body">
+    <div class="container-xxl py-5 px-4 px-sm-6 mx-auto">
+        <ejs-grid #grid [dataSource]="data" width="100%" height="668" [allowSorting]="true" [allowFiltering]="true" [filterSettings]="{type:'Bar'}" role="grid">
+            <e-columns>
+                <e-column type="checkbox" isPrimaryKey="true" textAlign="Center" width="40"></e-column>
+                <e-column field="transactionId" headerText="Transaction ID" width="152"></e-column>
+                <e-column field="customerDetails" headerText="Customer Name" textAlign="Left" width="252">
+                    <ng-template #template let-data>
+                        <div class="d-flex gap-3 align-items-center py-1">
+                            <div style="width: 32px; height: 32px;">
+                                <span class="e-avatar e-avatar-circle e-avatar-small" [ngStyle]="{ 'background-image': 'url(assets/images/common/avatar/' + data.customerDetails.avatar + ')' }"> </span>
+                            </div>
+                            <div class="d-flex flex-column">
+                                <p class="text-body mb-0">{{data.customerDetails.name}}</p>
+                                <p class="text-body-secondary mb-0">{{data.customerDetails.email}}</p>
+                            </div>
+                        </div>
+                    </ng-template>
+                </e-column>
+                <e-column field="invoiceNumber" headerText="Invoice Number" width="165">
+                    <ng-template #template let-data>
+                        <a class="text-primary fw-medium text-decoration-none" href="javascript:void(0);" aria-label="invoice number" role="link">{{data.invoiceNumber}}</a>
+                    </ng-template>
+                </e-column>
+                <e-column field="description" headerText="Description" width="184"></e-column>
+                <e-column field="amount" headerText="Total Amount" width="148" format="c2"></e-column>
+                <e-column field="date" headerText="Transaction Date" width="183" [format]="{type: 'date', format: 'MM/dd/yyyy'}" textAlign="Right"> </e-column>
+                <e-column field="paymentMethod" headerText="Payment Method" width="170"></e-column>
+                <e-column field="status" headerText="Status" width="115">
+                    <ng-template #template let-data>
+                        <div class="fs-6" [ngSwitch]="data.status">
+                            <span class="e-badge d-flex gap-1 align-items-center" style="width: fit-content;" *ngSwitchCase="'Completed'">
+                                <div class="rounded-circle bg-success" style="width: 8px; height: 8px;"></div>
+                                Completed
+                            </span>
+                            <span class="e-badge d-flex gap-1 align-items-center" style="width: fit-content;" *ngSwitchCase="'Pending'">
+                                <div class="rounded-circle bg-warning" style="width: 8px; height: 8px;"></div>
+                                Pending
+                            </span>
+                            <span class="e-badge d-flex gap-1 align-items-center" style="width: fit-content;" *ngSwitchCase="'Cleared'">
+                                <div class="rounded-circle bg-info" style="width: 8px; height: 8px;"></div>
+                                Cleared
+                            </span>
+                            <span class="e-badge d-flex gap-1 align-items-center" style="width: fit-content;" *ngSwitchCase="'Failed'">
+                                <div class="rounded-circle bg-danger" style="width: 8px; height: 8px;"></div>
+                                Failed
+                            </span>
+                            <span *ngSwitchDefault>No records found.</span>
+                        </div>
+                    </ng-template>
+                </e-column>
+            </e-columns>
+        </ejs-grid>
+    </div>
+</section>
+
+}

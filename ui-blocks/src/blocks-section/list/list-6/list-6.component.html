@@ -1,0 +1,35 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-white dark:bg-gray-900">
+    <div id="custom-field-list" class="lg:max-w-md w-full mx-auto px-4 pt-8 pb-4 min-h-screen">
+        <p class="text-sm text-gray-700 dark:text-gray-200 mb-4">Increase the amount of data that you collect re-order the fields.</p>
+        <ng-template #itemTemplate let-data>
+            <div class="list-wrapper flex items-center space-x-3 p-2">
+                <span class="sf-icon-drag-dot-vertical text-base text-gray-500 dark:text-gray-300"></span>
+                <span class="text-base text-gray-500 dark:text-gray-300 {{data.fontIcon}}"></span>
+                <span class="e-list-item-header text-sm font-medium text-gray-900 dark:text-white">{{data.field}}</span>
+            </div>
+        </ng-template>
+        <ejs-listbox class="e-bigger" [dataSource]="data" [allowDragAndDrop]="true" [itemTemplate]="itemTemplate" [fields]="{ text: 'field', iconCss: 'fontIcon' }" aria-label="list of fields" role="list"></ejs-listbox>
+        <button ejs-button iconCss="e-icons e-plus" cssClass="e-flat e-primary mt-2" type="button" content="Add a field" aria-label="add new custom field" role="button"></button>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body">
+    <div id="custom-field-list" class="container-lg w-100 mx-auto px-3 py-5 min-vh-100" [style]="width">
+        <p class="small">Increase the amount of data that you collect re-order the fields.</p>
+        <ng-template #itemTemplate let-data>
+            <div class="list-wrapper d-flex align-items-center gap-2 p-2">
+                <span class="e-icons sf-icon-drag-dot-vertical fs-6 pe-1"></span>
+                <span class="pe-1 fs-6 {{data.fontIcon}}"></span>
+                <span class="e-list-item-header fw-medium">{{data.field}}</span>
+            </div>
+        </ng-template>
+        <ejs-listbox class="e-bigger" [dataSource]="data" [allowDragAndDrop]="true" [itemTemplate]="itemTemplate" [fields]="{ text: 'field', iconCss: 'fontIcon' }" aria-label="list of fields" role="list"></ejs-listbox>
+        <button ejs-button iconCss="e-icons e-plus" cssClass="e-flat e-primary mt-2" type="button" content="Add a field" aria-label="add new custom field" role="button"></button>
+    </div>
+</section>
+
+}

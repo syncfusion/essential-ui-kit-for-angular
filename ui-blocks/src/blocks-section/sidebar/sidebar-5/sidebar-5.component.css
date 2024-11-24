@@ -1,0 +1,8 @@
+.e-list-item {
+    border-bottom: none !important;
+    height: auto !important;
+}
+
+#notification-sidebar .e-accordion .e-acrdn-item.e-selected.e-select.e-active {
+    background: transparent;
+}

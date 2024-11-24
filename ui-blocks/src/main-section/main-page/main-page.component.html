@@ -1,0 +1,59 @@
+<app-header></app-header>
+<div class="main-container">
+    <div class="main-container-header">
+        <div class="main-header">
+            <span class="vector-img">
+                <img src="assets/images/sample-browser/vector.svg" alt="UI Blocks: Logo" />
+            </span>
+            Pre-Built UI Blocks
+        </div>
+        <h1 class="main-title">Build Apps Faster with Stunning Designs</h1>
+        <p class="main-description">Build your web apps with 120+ responsive UI Blocks for Angular, compatible with Tailwind and Bootstrap 5.3.</p>
+        <div class="button-container">
+            <a href="https://www.syncfusion.com/feedback/angular" target="_blank" class="request-btn" role="button" tabindex="0" aria-label="Request a block">Request a block</a>
+            <a href="https://www.figma.com/@Syncfusion" target="_blank" class="figma-btn" role="button" tabindex="0" aria-label="Download Figma">
+                <span class="figma-img">
+                    <img src="assets/images/sample-browser/figma.svg" alt="Figma Logo" />
+                </span>
+                Download Figma
+            </a>
+        </div>
+    </div>
+</div>
+<div class="component-div">
+    <div class="tab-container" role="tablist">
+        <ul id="block-tab" class="tabs">
+            <li *ngFor="let tab of tabs; let i = index" class="tab-item" [class.active]="i === activeTabIndex" (click)="selectTab(i)" (keydown.enter)="selectTab(i)" (keydown.space)="selectTab(i)" role="tab" [attr.aria-selected]="i === activeTabIndex" tabindex="0">
+                {{ tab.title }}
+            </li>
+        </ul>
+        <div class="tab-content">
+            <ng-container *ngFor="let tab of tabs; let i = index">
+                <div *ngIf="activeTabIndex === i" class="component-list-blocks" role="tabpanel" [attr.aria-labelledby]="'tab-' + i">
+                    <div class="component-list-container">
+                        <ul class="components">
+                            <li class="component-list" *ngFor="let block of currentBlocks" (click)="navigateToDemo(block.url)" (keydown.enter)="navigateToDemo(block.url)" (keydown.space)="navigateToDemo(block.url)" [title]="block.name" role="button" tabindex="0">
+                                <div class="component-list-text">{{ block.name }}<span *ngIf="block.isNew">New</span></div>
+                                <div class="component-count">{{ block.subBlockList.length + " Blocks" }}</div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="blocks-list">
+                        <div class="blocks-col" *ngFor="let block of currentBlocks" (click)="navigateToDemo(block.url)" (keydown.enter)="navigateToDemo(block.url)" (keydown.space)="navigateToDemo(block.url)" role="button" tabindex="0">
+                            <div class="block-container">
+                                <div class="block-content">
+                                    <img [src]="'assets/images/sample-browser/' + block.url + '.png'" alt="{{ block.name }} - Image" style="height: 100%; width: 100%;" />
+                                </div>
+                                <div class="block-footer" [title]="block.name">
+                                    <div class="block-title">{{ block.name }}<span *ngIf="block.isNew">New</span></div>
+                                    <div class="block-count">{{ block.subBlockList.length + " Blocks" }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

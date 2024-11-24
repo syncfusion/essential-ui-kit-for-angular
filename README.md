@@ -8,6 +8,7 @@ The Essential UI Kit for Angular provides a collection of thoughtfully designed,
 - [Supported Angular Versions](#supported-angular-versions)
 - [Supported Browsers](#supported-browsers)
 - [Supported CSS Frameworks](#supported-css-frameworks)
+- [Online Demo](#online-demo)
 - [Requesting Blocks & Reporting Bugs](#requesting-blocks--reporting-bugs)
 - [License](#license)
 - [About Syncfusion](#about-syncfusion)
@@ -25,7 +26,7 @@ The Essential UI Kit for Angular provides a collection of thoughtfully designed,
 Refer to the [Angular system requirements documentation](https://angular.io/guide/setup-local) to learn more about the development environments.
 
 ## Supported Angular Versions
-The blocks are compatible with any active version of Angular, as they are primarily developed using HTML, CSS, and TypeScript. Additionally, for using Syncfusion Angular components, the compatible versions of Angular and Syncfusion are detailed in this [link](https://ej2.syncfusion.com/angular/documentation/system-requirement#angular-supported-versions) for your reference.
+The blocks are compatible with any active version of Angular, as they are primarily developed using HTML, CSS, and TypeScript. Additionally, for using Syncfusion Angular components, the compatible versions of Angular and Syncfusion Angular components are detailed in this [link](https://ej2.syncfusion.com/angular/documentation/system-requirement#angular-supported-versions) for your reference.
 
 ## Supported Browsers
 The supported browsers are:
@@ -39,11 +40,14 @@ The blocks are built using the following CSS frameworks:
 1. Tailwind (Light and Dark Modes)
 2. Bootstrap 5.3 (Light and Dark Modes)
 
+## Online Demo
+To view the designed blocks, please visit our online demo using the link [here](https://ej2.syncfusion.com/angular/essential-ui-kit/#/blocks).
+
 ## Requesting Blocks & Reporting Bugs
 If you'd like to request a new block or report a bug with existing blocks, please create a feature request or submit a bug through our [feedback portal](https://www.syncfusion.com/feedback/angular).
 
 ## License
-The blocks in the Angular application are built using HTML, CSS, TypeScript, and Syncfusion Angular Components. A license for Syncfusion Angular Components is required to ensure smooth browsing and usage of the blocks. For more details, please refer [here](https://ej2.syncfusion.com/angular/documentation/licensing/overview).
+The blocks in the Angular application are built using HTML, CSS, TypeScript, and Syncfusion Angular Components. The blocks code is free to use, but licensing for the Syncfusion Angular Components part is alone required to ensure smooth browsing and viewing of the blocks. For more details about Syncfusion Angular Components licensing, please refer [here](https://ej2.syncfusion.com/angular/documentation/licensing/overview).
 
 ## About Syncfusion
 Founded in 2001 and headquartered in Research Triangle Park, N.C., Syncfusion has more than 20,000 customers and more than 1 million users, including large financial institutions, Fortune 500 companies, and global IT consultancies.

@@ -1,0 +1,43 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-white dark:bg-gray-900">
+    <div class="max-w-7xl mx-auto px-6">
+        <ejs-pager class="border-0 bg-transparent" [template]="pagerTemplate"></ejs-pager>
+        <ng-template #pagerTemplate>
+            <div class="!flex w-fit shadow text-gray-700 rounded sm:gap-3 gap-2 text-sm font-medium px-2 sm:px-3 py-1 dark:text-gray-300 bg-gray-50 dark:bg-gray-900">
+                <button ejs-button cssClass="e-flat rounded-none" iconCss="e-icons e-chevron-left-double" type="button" aria-label="go to page 1" role="button"></button>
+                <div class="border-s border-gray-200 my-1 dark:border-gray-600 leading-6"></div>
+                <button ejs-button cssClass="e-flat rounded-none" iconCss="e-icons e-chevron-left" type="button" aria-label="go to previous page" role="button"></button>
+                <div class="border-s border-gray-200 my-1 dark:border-gray-600 leading-6"></div>
+                <span class="flex items-center my-1 px-2">1 of 999</span>
+                <div class="border-s border-gray-200 my-1 dark:border-gray-600 leading-6"></div>
+                <button ejs-button cssClass="e-flat rounded-none" iconCss="e-icons e-chevron-right" type="button" aria-label="go to next page" role="button"></button>
+                <div class="border-s border-gray-200 my-1 dark:border-gray-600 leading-6"></div>
+                <button ejs-button cssClass="e-flat rounded-none" iconCss="e-icons e-chevron-right-double" type="button" aria-label="go to last page" role="button"></button>
+            </div>
+        </ng-template>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body">
+    <div class="container-xxl mx-auto px-4">
+        <ejs-pager class="border-0" [template]="pagerTemplate"></ejs-pager>
+        <ng-template #pagerTemplate>
+            <div class="d-flex shadow rounded gap-2 fs-6 p-1 text-body bg-body-tertiary" style="width: fit-content;">
+                <button ejs-button cssClass="e-flat rounded-0" iconCss="e-icons e-chevron-left-double" type="button" aria-label="go to page 1" role="button"></button>
+                <div class="mx-0 mx-sm-1 my-2 border border-light-subtle"></div>
+                <button ejs-button cssClass="e-flat rounded-0" iconCss="e-icons e-chevron-left" type="button" aria-label="go to previous page" role="button"></button>
+                <div class="mx-0 mx-sm-1 my-2 border border-light-subtle"></div>
+                <span class="d-flex align-items-center px-2">1 of 999</span>
+                <div class="mx-0 mx-sm-1 my-2 border border-light-subtle"></div>
+                <button ejs-button cssClass="e-flat rounded-0" iconCss="e-icons e-chevron-right" type="button" aria-label="go to next page" role="button"></button>
+                <div class="mx-0 mx-sm-1 my-2 border border-light-subtle"></div>
+                <button ejs-button cssClass="e-flat rounded-0" iconCss="e-icons e-chevron-right-double" type="button" aria-label="go to last page" role="button"></button>
+            </div>
+        </ng-template>
+    </div>
+</section>
+
+}
