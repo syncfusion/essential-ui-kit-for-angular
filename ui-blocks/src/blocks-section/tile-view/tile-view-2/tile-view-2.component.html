@@ -1,0 +1,161 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-white dark:bg-gray-900">
+    <div id="product-details">
+        <ejs-appbar class="shadow-none px-0">
+            <div class="max-w-7xl w-full mx-auto px-4 sm:px-6 xl:px-2">
+                <ejs-breadcrumb [enableNavigation]="false">
+                    <e-breadcrumb-items>
+                        <e-breadcrumb-item iconCss="e-icons e-home" text="Dashboard"></e-breadcrumb-item>
+                        <e-breadcrumb-item iconCss="sf-icon-cart" text="Shopping Cart"></e-breadcrumb-item>
+                    </e-breadcrumb-items>
+                    <ng-template #separatorTemplate>
+                        <span class="e-icons e-chevron-right"></span>
+                    </ng-template>
+                </ejs-breadcrumb>
+                <div class="e-appbar-spacer"></div>
+                <button ejs-button class="e-flat sf-icon-notification-bell-01 e-small !text-base ml-1" type="button" aria-label="notification" role="button"></button>
+                <span class="e-avatar e-avatar-circle e-avatar-small shrink-0 ml-2 sm:ml-3">
+                    <img src="assets/images/common/avatar/avatar-1.jpg" alt="profile picture" />
+                </span>
+            </div>
+        </ejs-appbar>
+        <div class="border-t border-gray-200 dark:border-gray-600">
+            <div class="px-4 sm:px-6 py-4 xl:px-2 max-w-7xl w-full mx-auto">
+                <div class="sm:flex items-center justify-between w-full gap-4">
+                    <h4 class="text-xl font-medium text-gray-900 dark:text-gray-50 shrink-0">Shopping cart</h4>
+                    <div class="e-input-group mt-3 sm:mt-0" style="max-width: 517px;">
+                        <span class="e-input-group-icon e-icons e-search border-0"></span>
+                        <input class="e-input !pl-0" type="text" placeholder="Search product" aria-label="search product" role="textbox" />
+                    </div>
+                </div>
+                <div class="mt-4 sm:flex items-center justify-between w-full">
+                    <span class="flex items-center">
+                        <ejs-switch [checked]="true" cssClass="w-9" aria-label="show only discounted items" role="switch"></ejs-switch>
+                        <span class="text-base sm:text-sm text-gray-900 dark:text-gray-50 ml-2">Show only discounted items</span>
+                    </span>
+                    <button ejs-dropdownbutton class="mt-3 sm:mt-0" type="button" content="All Categories" (beforeOpen)="$event.cancel = true;" aria-label="choose category" role="button"></button>
+                </div>
+                <ejs-listview class="!border-0 mt-6" cssClass="e-list-template" [dataSource]="productDetails" aria-label="list of product with details" role="list">
+                    <ng-template #template let-data>
+                        <div class="e-card flex flex-row p-4 sm:py-5 sm:px-5">
+                            <div class="e-card-image !w-auto shrink-0">
+                                <img class="!w-28 h-24 sm:h-28" src="assets/images/tile-view/shopping-cart/{{data.image}}" alt="product picture" />
+                            </div>
+                            <div class="e-card-stacked ml-3 flex sm:!flex-row flex-col w-full sm:!justify-between">
+                                <div class="e-card-header !p-0 !flex !flex-col !justify-start">
+                                    <div class="e-card-header-title mb-1">
+                                        <p class="text-sm md:text-lg xl:text-xl font-medium text-gray-900 dark:text-gray-50 !whitespace-normal !text-wrap !line-clamp-2 truncate">{{data.name}}</p>
+                                    </div>
+                                    <span class="e-card-sub-title text-gray-500 dark:text-gray-400">{{data.description}}</span>
+                                    <div class="mt-3 hidden sm:block">
+                                        <span class="e-badge e-badge-pill e-badge-success e-bigger">{{data.status}}</span>
+                                        <span class="e-badge e-badge-pill e-badge-info e-bigger ml-2">{{data.deliveryType}}</span>
+                                    </div>
+                                </div>
+                                <div class="e-card-content !px-0 mt-2 sm:mt-0 shrink-0 ml-0 sm:ml-2">
+                                    <div class="flex items-center sm:justify-end flex-wrap">
+                                        <span class="pr-1 text-lg sm:text-xl font-semibold text-gray-900 dark:text-gray-50">{{data.price | currency}}</span>
+                                        <span class="pr-1 text-xs sm:text-sm text-gray-500 dark:text-gray-400 line-through">{{data.originalPrice | currency}}</span>
+                                        <span class="font-medium text-xs text-primary-600 dark:text-primary-400">({{data.discount}})</span>
+                                    </div>
+                                    <div class="mt-3 sm:justify-end sm:flex items-center hidden sm:block pr-1">
+                                        <span class="text-gray-500 dark:text-gray-400 mr-2">Quantity</span>
+                                        <ejs-numerictextbox format="###.##" value="1" width="130px" aria-label="quantity of items" role="spinbutton"></ejs-numerictextbox>
+                                    </div>
+                                    <div class="mt-3 text-end flex px-1">
+                                        <button ejs-button class="e-primary sm:w-44 w-full" iconCss="sf-icon-cart !text-base" type="button" content="Add to Cart" aria-label="add to cart" role="button"></button>
+                                        <button ejs-button class="sf-icon-heart text-base sm:!flex sm:!items-center ml-2 h-8 px-2 !hidden" type="button" aria-label="add to wishlist" role="button"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </ejs-listview>
+            </div>
+        </div>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body-tertiary">
+    <div id="product-details">
+        <ejs-appbar class="px-0">
+            <div class="container-xxl mx-auto px-3 px-sm-4 px-xl-5">
+                <ejs-breadcrumb [enableNavigation]="false">
+                    <e-breadcrumb-items>
+                        <e-breadcrumb-item iconCss="e-icons e-home" text="Dashboard"></e-breadcrumb-item>
+                        <e-breadcrumb-item iconCss="sf-icon-cart" text="Shopping Cart"></e-breadcrumb-item>
+                    </e-breadcrumb-items>
+                    <ng-template #separatorTemplate>
+                        <span class="e-icons e-chevron-right"></span>
+                    </ng-template>
+                </ejs-breadcrumb>
+                <div class="e-appbar-spacer"></div>
+                <button ejs-button class="e-icons e-flat sf-icon-notification-bell-01 fs-6" type="button" aria-label="notification" role="button"></button>
+                <span class="e-avatar e-avatar-circle e-avatar-small ms-3">
+                    <img src="assets/images/common/avatar/avatar-1.jpg" alt="profile picture" />
+                </span>
+            </div>
+        </ejs-appbar>
+        <div class="border-top border-light-subtle">
+            <div class="container-xxl mx-auto p-3 px-sm-4 px-xl-5">
+                <div class="d-sm-flex align-items-center justify-content-between">
+                    <h4 class="fs-5 fw-medium text-body mb-0">Shopping cart</h4>
+                    <div class="col-12 col-sm-5 mt-3 mt-sm-0">
+                        <div class="e-input-group">
+                            <span class="e-input-group-icon e-icons e-search border-0"></span>
+                            <input class="e-input ps-0" type="text" placeholder="Search product" aria-label="search product" role="textbox" />
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-3 d-sm-flex align-items-center justify-content-between">
+                    <span class="d-flex align-items-center">
+                        <ejs-switch [checked]="true" aria-label="show only discounted items" role="switch" style="width: 36px;"></ejs-switch>
+                        <span class="fs-6 text-body ms-2 ps-1">Show only discounted items</span>
+                    </span>
+                    <button ejs-dropdownbutton class="mt-3 mt-sm-0 e-outline" type="button" content="All Categories" (beforeOpen)="$event.cancel = true;" aria-label="choose category" role="button"></button>
+                </div>
+                <ejs-listview class="border-0 mt-4" cssClass="e-list-template" [dataSource]="productDetails" aria-label="list of product with details" role="list">
+                    <ng-template #template let-data>
+                        <div class="e-card d-flex flex-row p-2 rounded-3">
+                            <div class="e-card-image w-auto ps-2">
+                                <img src="assets/images/tile-view/shopping-cart/{{data.image}}" alt="product picture" style="width: 112px; height: 108px;" />
+                            </div>
+                            <div class="e-card-stacked ms-2 ps-1 py-1 d-flex flex-column flex-sm-row w-100 justify-content-between">
+                                <div class="e-card-header flex flex-column p-0 justify-content-start">
+                                    <div class="e-card-header-title mb-1">
+                                        <p class="fs-5 fw-medium text-body mb-0 line-clamp-2 text-truncate text-wrap overflow-hidden" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">{{data.name}}</p>
+                                    </div>
+                                    <span class="e-card-sub-title text-body-secondary">{{data.description}}</span>
+                                    <div class="mt-2 pt-1 d-none d-sm-block">
+                                        <span class="e-badge e-badge-pill e-badge-success e-bigger">{{data.status}}</span>
+                                        <span class="e-badge e-badge-pill e-badge-info e-bigger ms-2">{{data.deliveryType}}</span>
+                                    </div>
+                                </div>
+                                <div class="e-card-content p-0 pe-1 mt-2 mt-sm-0 flex-shrink-0 ms-0 ms-sm-2">
+                                    <div class="d-flex justify-content-sm-end align-items-center flex-wrap">
+                                        <span class="fs-5 fw-medium text-body me-1">{{data.price | currency}}</span>
+                                        <span class="me-1 fs-6 text-body-secondary text-decoration-line-through">{{data.originalPrice | currency}}</span>
+                                        <span class="fw-medium text-primary">({{data.discount}})</span>
+                                    </div>
+                                    <div class="mt-2 pt-1 d-none d-sm-flex justify-content-sm-end align-items-center">
+                                        <span class="text-body-secondary me-2">Quantity</span>
+                                        <ejs-numerictextbox format="###.##" value="1" width="130px" aria-label="quantity of items" role="spinbutton"></ejs-numerictextbox>
+                                    </div>
+                                    <div class="mt-2 pt-1 d-flex justify-content-sm-end">
+                                        <button ejs-button class="e-primary w-100 w-sm-25" iconCss="sf-icon-cart" type="button" content="Add to Cart" aria-label="add to cart" role="button"></button>
+                                        <button ejs-button class="e-outline sf-icon-heart fs-6 ms-2 d-none d-sm-block" type="button" aria-label="add to wishlist" role="button"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </ejs-listview>
+            </div>
+        </div>
+    </div>
+</section>
+
+}

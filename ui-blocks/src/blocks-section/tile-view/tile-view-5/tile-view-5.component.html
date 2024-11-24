@@ -1,0 +1,143 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-white dark:bg-gray-900">
+    <div id="job-details">
+        <ejs-appbar class="shadow-none px-0 h-auto">
+            <div class="max-w-7xl flex flex-wrap mx-auto gap-x-4 gap-y-3 px-6 xl:px-2">
+                <button ejs-dropdownbutton class="e-primary" content="All jobs" type="button" (beforeOpen)="$event.cancel = true;" aria-label="choose job options" role="button"></button>
+                <button ejs-dropdownbutton content="Any time" type="button" (beforeOpen)="$event.cancel = true;" aria-label="choose time" role="button"></button>
+                <button ejs-dropdownbutton content="Any experience" type="button" (beforeOpen)="$event.cancel = true;" aria-label="choose experience" role="button"></button>
+                <button ejs-dropdownbutton content="Any company" type="button" (beforeOpen)="$event.cancel = true;" aria-label="choose company" role="button"></button>
+                <button ejs-dropdownbutton content="Any location" type="button" (beforeOpen)="$event.cancel = true;" aria-label="choose location" role="button"></button>
+            </div>
+        </ejs-appbar>
+        <div class="border-t border-gray-200 dark:border-gray-600">
+            <div class="flex flex-col max-w-7xl mx-auto py-6 px-4 sm:px-6 xl:px-2">
+                <div class="flex justify-between mb-6 dark:text-gray-50">
+                    <p class="text-xl font-semibold">250 jobs found</p>
+                    <div class="flex items-center gap-2 text-sm">
+                        <ejs-switch cssClass="w-9" [checked]="true" aria-label="remote only" role="switch"></ejs-switch>
+                        <span>Remote Only</span>
+                    </div>
+                </div>
+                <div class="e-input-group mb-6">
+                    <span class="e-input-group-icon e-icons e-search"></span>
+                    <input class="e-input !pl-0" type="text" placeholder="Search Jobs" aria-label="search jobs" role="textbox" />
+                </div>
+                <ejs-listview class="!border-0 mb-2" cssClass="e-list-template" [dataSource]="jobDetails" aria-label="list of job with details" role="list">
+                    <ng-template #template let-data>
+                        <div class="e-card flex-col gap-4 p-4 rounded-2xl sm:pr-5 sm:p-6 sm:flex-row">
+                            <span class="e-avatar e-avatar-xlarge e-avatar-circle shrink-0">
+                                <img src="assets/images/tile-view/job-site/{{data.logo}}" alt="company logo" />
+                            </span>
+                            <div class="e-card-stacked grow space-y-3 px-1">
+                                <div class="e-card-header !flex-col gap-2 !p-0">
+                                    <div class="e-card-header-title">
+                                        <p class="text-base font-medium text-wrap sm:w-11/12 text-gray-900 dark:text-gray-50">{{data.title}}</p>
+                                    </div>
+                                    <div class="e-card-sub-title text-nowrap !flex items-center gap-1.5">
+                                        <p class="border-e text-sm text-gray-500 pr-3 dark:border-gray-600 dark:text-gray-400 text-truncate">{{data.company}}</p>
+                                        <div class="flex items-center gap-1">
+                                            <button ejs-button class="e-flat e-icons e-star-filled e-small !text-yellow-300" type="button" aria-label="favorite" role="button"></button>
+                                            <span class="text-xs text-gray-700 dark:text-gray-200">{{data.reviews}} reviews</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="e-card-content flex flex-wrap gap-3 !px-0 !pb-1 text-gray-700 dark:text-gray-200">
+                                    <span class="flex items-center gap-1"><i class="sf-icon-laptop text-sm mx-2 text-gray-500 dark:text-gray-300"></i>{{data.experience}}</span>
+                                    <div class="border-e dark:border-gray-600 my-1"></div>
+                                    <span class="flex items-center gap-1"><i class="sf-icon-dollar text-base mx-2 text-gray-500 dark:text-gray-300"></i>{{data.salary}}</span>
+                                    <div class="border-e dark:border-gray-600 my-1"></div>
+                                    <span class="flex items-center gap-1"><i class="e-icons e-location mx-2 text-gray-500 dark:text-gray-300"></i>{{data.location}}</span>
+                                </div>
+                                <div class="e-card-actions !px-0 !pb-1 !flex flex-col gap-6 sm:flex-row">
+                                    <div class="flex items-center flex-wrap gap-x-3 gap-y-2 text-sm text-gray-500 dark:text-gray-400">
+                                        <p class="border-e pr-2 dark:border-gray-600">Posted: {{data.posted}}</p>
+                                        <p class="border-e pr-2 dark:border-gray-600">Openings: 1</p>
+                                        <p>Applicants: {{data.applicants}}</p>
+                                    </div>
+                                    <button ejs-button class="e-primary ml-auto w-full sm:w-fit" type="button" aria-label="apply" role="button">Apply</button>
+                                </div>
+                            </div>
+                            <button ejs-button class="e-flat e-round e-icons e-bookmark absolute top-6 right-4 sm:right-6" type="button" aria-label="bookmark" role="button"></button>
+                        </div>
+                    </ng-template>
+                </ejs-listview>
+                <button ejs-button class="mx-auto !px-11" type="button" aria-label="load more jobs" role="button">Load More Jobs</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body-tertiary">
+    <div id="job-details">
+        <ejs-appbar class="px-0 h-auto">
+            <div class="container-xxl d-flex flex-wrap gap-3 px-3 px-sm-4 px-xl-5">
+                <button ejs-dropdownbutton class="e-primary" content="All jobs" type="button" (beforeOpen)="$event.cancel = true;" aria-label="choose job options" role="button"></button>
+                <button ejs-dropdownbutton class="e-outline" content="Any time" type="button" (beforeOpen)="$event.cancel = true;" aria-label="choose time" role="button"></button>
+                <button ejs-dropdownbutton class="e-outline" content="Any experience" type="button" (beforeOpen)="$event.cancel = true;" aria-label="choose experience" role="button"></button>
+                <button ejs-dropdownbutton class="e-outline" content="Any company" type="button" (beforeOpen)="$event.cancel = true;" aria-label="choose company" role="button"></button>
+                <button ejs-dropdownbutton class="e-outline" content="Any location" type="button" (beforeOpen)="$event.cancel = true;" aria-label="choose location" role="button"></button>
+            </div>
+        </ejs-appbar>
+        <div class="border-top border-light-subtle">
+            <div class="container-xxl d-flex flex-column px-3 py-4 px-sm-4 px-xl-5">
+                <div class="d-flex justify-content-between text-body mb-4">
+                    <h5 class="fw-bold mb-0">250 jobs found</h5>
+                    <div class="d-flex align-items-center gap-2">
+                        <ejs-switch [checked]="true" aria-label="remote only" role="switch" style="width: 36px;"></ejs-switch>
+                        <span>Remote Only</span>
+                    </div>
+                </div>
+                <div class="e-input-group mb-4">
+                    <span class="e-input-group-icon e-icons e-search border-0"></span>
+                    <input class="e-input" type="text" placeholder="Search Jobs" aria-label="search jobs" role="textbox" />
+                </div>
+                <ejs-listview class="border-0 mb-1" cssClass="e-list-template" [dataSource]="jobDetails" aria-label="list of job with details" role="list">
+                    <ng-template #template let-data>
+                        <div class="e-card d-flex flex-column gap-3 flex-md-row rounded-4 p-3 ps-4">
+                            <span class="e-avatar e-avatar-xlarge e-avatar-circle flex-shrink-0">
+                                <img src="assets/images/tile-view/job-site/{{data.logo}}" alt="company logo" />
+                            </span>
+                            <div class="e-card-stacked flex-grow-1 pe-1 py-1">
+                                <div class="e-card-header flex-column mb-2 p-0">
+                                    <div class="e-card-header-title pt-1">
+                                        <h6 class="lh-base text-body mb-sm-1">{{data.title}}</h6>
+                                    </div>
+                                    <div class="e-card-sub-title d-flex align-items-center gap-2 mb-1">
+                                        <p class="border-end text-body-secondary pe-3 mb-0 border-light-subtle text-truncate">{{data.company}}</p>
+                                        <div class="d-flex align-items-center gap-1 ms-1">
+                                            <button ejs-button class="e-flat e-icons e-star-filled text-warning" type="button" aria-label="favorite" role="button"></button>
+                                            <span class="small text-body-secondary mb-0 text-nowrap">{{data.reviews}} reviews</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="e-card-content p-0 d-flex flex-wrap gap-2 mb-3 text-body-secondary">
+                                    <span class="d-flex align-items-center gap-1"><i class="sf-icon-laptop fs-6 mx-1"></i>{{data.experience}}</span>
+                                    <div class="border-end border-light-subtle m-1"></div>
+                                    <span class="d-flex align-items-center gap-1"><i class="sf-icon-dollar fs-6 mx-1"></i>{{data.salary}}</span>
+                                    <div class="border-end border-light-subtle m-1"></div>
+                                    <span class="d-flex align-items-center gap-1"><i class="e-icons e-location mx-1"></i>{{data.location}}</span>
+                                </div>
+                                <div class="e-card-actions d-flex flex-column gap-3 justify-content-between flex-sm-row lh-sm p-1 ps-0 text-body-secondary">
+                                    <div class="d-flex align-items-center flex-wrap gap-2 lh-base">
+                                        <p class="border-end pe-2 mb-0">Posted: {{data.posted}}</p>
+                                        <p class="border-end pe-2 mb-0">Openings: {{data.openings}}</p>
+                                        <p class="mb-0">Applicants: {{data.applicants}}</p>
+                                    </div>
+                                    <button ejs-button class="e-primary col-12 col-sm-auto" type="button" aria-label="apply" role="button">Apply</button>
+                                </div>
+                            </div>
+                            <button ejs-button class="e-flat e-round e-icons e-bookmark position-absolute" type="button" aria-label="bookmark" role="button" style="right: 24px; top: 24px;"></button>
+                        </div>
+                    </ng-template>
+                </ejs-listview>
+                <button ejs-button class="e-outline mx-auto px-5" type="button" aria-label="load more jobs" role="button">Load More Jobs</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+}

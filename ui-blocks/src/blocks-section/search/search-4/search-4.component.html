@@ -1,0 +1,59 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-white dark:bg-gray-900 h-100">
+    <div class="w-full pt-5 pb-4 h-screen">
+        <div class="px-4 mx-auto lg:px-0" [style]="width">
+            <ejs-autocomplete
+                class="e-bigger"
+                #search
+                [dataSource]="data"
+                [fields]="{ value: 'name' }"
+                [popupHeight]="'750px'"
+                placeholder="Search"
+                (focus)="search.showPopup()"
+                (created)="openPopup(search)"
+                role="combobox">
+                <ng-template #itemTemplate let-data>
+                    <div class="flex items-center px-5 py-2">
+                        <span class="indent-0 e-avatar e-avatar-medium e-avatar-circle text-sm shrink-0" [ngClass]="{'bg-orange-100 dark:bg-orange-800 dark:text-orange-300 text-orange-700': data.colorTheme === 'Orange', 'bg-cyan-100 dark:bg-cyan-800 dark:text-cyan-200 text-cyan-700': data.colorTheme === 'Blue', 'bg-red-100 dark:bg-red-800 dark:text-red-300 text-red-600': data.colorTheme === 'Red'}">{{data.initial}}</span>
+                        <div class="w-full">
+                            <div class="text-sm !font-medium flex items-center !text-wrap text-gray-900 dark:text-white mb-0.5">{{data.name}}</div>
+                            <div class="text-gray-600 font-normal flex items-center !text-wrap dark:text-gray-300 text-sm">{{data.emailId}}</div>
+                        </div>
+                    </div>
+                </ng-template>
+            </ejs-autocomplete>
+        </div>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body h-100">
+    <div class="w-100 pt-4 pb-3">
+        <div class="px-3 px-lg-0 mx-auto" [style]="width">
+            <ejs-autocomplete
+                class="e-bigger"
+                #search
+                [dataSource]="data"
+                [fields]="{ value: 'name' }"
+                [popupHeight]="750"
+                placeholder="Search"
+                (focus)="search.showPopup()"
+                (created)="openPopup(search)"
+                role="combobox">
+                <ng-template #itemTemplate let-data>
+                    <div class="d-flex align-items-center px-3 p-2" style="text-indent: 0;">
+                        <span class="e-avatar e-avatar-medium e-avatar-circle shrink-0" [ngClass]="{'text-warning-emphasis bg-warning-subtle': data.colorTheme === 'Orange', 'text-info-emphasis bg-info-subtle': data.colorTheme === 'Blue', 'text-danger-emphasis bg-danger-subtle': data.colorTheme === 'Red'}">{{data.initial}}</span>
+                        <div class="flex-grow-1 mx-2">
+                            <div class="text-wrap lh-base fw-medium fs-6">{{data.name}}</div>
+                            <div class="text-body-secondary text-wrap lh-base fw-normal fs-6">{{data.emailId}}</div>
+                        </div>
+                    </div>
+                </ng-template>
+            </ejs-autocomplete>
+        </div>
+    </div>
+</section>
+
+}

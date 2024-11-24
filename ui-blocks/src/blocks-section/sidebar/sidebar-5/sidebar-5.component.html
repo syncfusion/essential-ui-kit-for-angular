@@ -1,0 +1,144 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-white dark:bg-gray-950">
+    <div id="notification-sidebar" style="height: 700px;">
+        <ejs-sidebar #sidebar class="bg-gray-50 dark:bg-gray-900 !border-r !border-gray-200 dark:!border-gray-700" width="256px" aria-label="main navigation menu" role="complementary" style="display: block;">
+            <div class="h-screen">
+                <div class="flex items-center py-4 px-3">
+                    <img src="assets/images/common/brand-logos/svg/vector.svg" alt="company logo" />
+                    <span class="text-lg font-bold text-gray-900 dark:text-white ml-3">Company Name</span>
+                </div>
+                <div class="mt-1">
+                    <ejs-listview class="border-0" [dataSource]="data" [template]="itemTemplate" aria-label="main navigation links" role="list">
+                        <ng-template #itemTemplate let-data>
+                            <div class="e-list-wrapper flex items-center justify-between py-1 pr-2">
+                                <div class="text-base leading-6 flex items-center">
+                                    <span class="e-icons {{data.fontIcon}}"></span>
+                                    <span class="font-normal pl-4">{{data.field}}</span>
+                                </div>
+                                <span class="e-badge e-badge-info e-badge-pill !px-1.5 e-bigger" *ngIf="data.field === 'Notifications'">99+</span>
+                            </div>
+                        </ng-template>
+                    </ejs-listview>
+                </div>
+                <hr class="border-gray-200 dark:border-gray-700 m-4" />
+                <ejs-accordion class="bg-transparent !border-0" role="button">
+                    <e-accordionitems>
+                        <e-accordionitem iconCss="e-icons e-file-new e-medium" cssClass="!border-0">
+                            <ng-template #header>
+                                <div class="text-base font-normal pl-2">News</div>
+                            </ng-template>
+                        </e-accordionitem>
+                        <e-accordionitem iconCss="e-icons e-agenda-date-range e-medium" cssClass="!border-0">
+                            <ng-template #header>
+                                <div class="text-base font-normal pl-2">Events</div>
+                            </ng-template>
+                        </e-accordionitem>
+                        <e-accordionitem iconCss="e-icons e-user e-medium" cssClass="!border-0">
+                            <ng-template #header>
+                                <div class="text-base font-normal pl-2">People</div>
+                            </ng-template>
+                            <ng-template #content>
+                                <div></div>
+                            </ng-template>
+                        </e-accordionitem>
+                    </e-accordionitems>
+                </ejs-accordion>
+                <ejs-toast #element1 class="!absolute !left-4 !top-auto" cssClass="e-toast-info" width="224" showCloseButton="true" timeOut="0" aria-label="alert message" role="alert" (created)="element1.show();" style="bottom: 28%;">
+                    <ng-template #title>
+                        <div class="pr-2">Adaptive Tiles Meeting</div>
+                    </ng-template>
+                    <ng-template #content>
+                        <div>There was a problem with your network connection</div>
+                    </ng-template>
+                </ejs-toast>
+                <ejs-toast #element2 class="!absolute !left-4 !top-auto !bottom-0" cssClass="e-toast-warning" width="224" showCloseButton="true" timeOut="0" aria-label="alert message" role="alert" (created)="element2.show();">
+                    <ng-template #title>
+                        <div class="pr-2">Adaptive Tiles Meeting</div>
+                    </ng-template>
+                    <ng-template #content>
+                        <div>There was a problem with your network connection</div>
+                    </ng-template>
+                </ejs-toast>
+            </div>
+        </ejs-sidebar>
+    </div>
+</section>
+<!-- SB Code - Start -->
+<div class="p-3 top-0 left-0 absolute">
+    <button ejs-button cssClass="e-large e-icons e-chevron-right e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+</div>
+<!-- SB Code - End -->
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body">
+    <div id="notification-sidebar" style="height: 700px;">
+        <ejs-sidebar #sidebar width="256px" aria-label="main navigation menu" role="complementary" style="display: block;">
+            <div class="vh-100">
+                <div class="d-flex align-items-center p-3">
+                    <img src="assets/images/common/brand-logos/svg/vector.svg" alt="company logo" />
+                    <span class="fs-5 ms-2 fw-bold text-body lh-sm">Company Name</span>
+                </div>
+                <ejs-listview class="border-0 e-bigger" [dataSource]="data" [template]="itemTemplate" aria-label="main navigation links" role="list">
+                    <ng-template #itemTemplate let-data>
+                        <div class="e-list-wrapper px-1 d-flex justify-content-between align-items-center">
+                            <div class="fs-6 lh-base">
+                                <span class="e-icons {{data.fontIcon}}"></span>
+                                <span class="fw-normal ps-2 ms-1">{{data.field}}</span>
+                            </div>
+                            <span class="e-badge e-badge-info e-badge-pill" *ngIf="data.field === 'Notifications'">99+</span>
+                        </div>
+                    </ng-template>
+                </ejs-listview>
+                <p class="m-3 fs-6 text-body-secondary">Others</p>
+                <ejs-accordion class="border-0 bg-transparent" role="button">
+                    <e-accordionitems>
+                        <e-accordionitem iconCss="e-icons e-notes e-medium" cssClass="border-0">
+                            <ng-template #header>
+                                <div class="fs-6 fw-normal ps-1">News</div>
+                            </ng-template>
+                        </e-accordionitem>
+                        <e-accordionitem iconCss="e-icons sf-icon-announcement-01 fs-6" cssClass="border-0">
+                            <ng-template #header>
+                                <div class="fs-6 fw-normal ps-1">Events</div>
+                            </ng-template>
+                        </e-accordionitem>
+                        <e-accordionitem iconCss="e-icons e-user e-medium" cssClass="border-0">
+                            <ng-template #header>
+                                <div class="fs-6 fw-normal ps-1">People</div>
+                            </ng-template>
+                            <ng-template #content>
+                                <div></div>
+                            </ng-template>
+                        </e-accordionitem>
+                    </e-accordionitems>
+                </ejs-accordion>
+                <div id="toastmsg" class="position-absolute" style="bottom: 25%;"></div>
+                <ejs-toast #element1 [position]="{ X: 'Left', Y: 'Bottom' }" cssClass="e-toast-info" width="224" showCloseButton="true" timeOut="0" aria-label="alert message" role="alert" (created)="element1.show();" target="#toastmsg" newestOnTop="true">
+                    <ng-template #title>
+                        <div>Adaptive Tiles Meeting</div>
+                    </ng-template>
+                    <ng-template #content>
+                        <div>There was a problem with your network connection.</div>
+                    </ng-template>
+                </ejs-toast>
+                <ejs-toast #element2 [position]="{ X: 'Left', Y: 'Top' }" cssClass="e-toast-warning" width="224" showCloseButton="true" timeOut="0" aria-label="alert message" role="alert" (created)="element2.show();" target="#toastmsg" newestOnTop="true">
+                    <ng-template #title>
+                        <div>Adaptive Tiles Meeting</div>
+                    </ng-template>
+                    <ng-template #content>
+                        <div>There was a problem with your network connection.</div>
+                    </ng-template>
+                </ejs-toast>
+            </div>
+        </ejs-sidebar>
+    </div>
+</section>
+<!-- SB Code - Start -->
+<div class="py-3 px-1 position-absolute top-0 start-0">
+    <button ejs-button cssClass="e-large e-icons e-chevron-right e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+</div>
+<!-- SB Code - End -->
+
+}

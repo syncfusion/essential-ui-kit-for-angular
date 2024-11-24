@@ -1,0 +1,158 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-white dark:bg-gray-950">
+    <div style="height: 600px;">
+        <ejs-sidebar #sidebar class="bg-gray-50 dark:bg-gray-900 !border-l !border-gray-200 dark:!border-gray-700" width="328px" position="Right" showBackdrop="true" aria-label="main navigation menu" role="complementary" style="display: block;">
+            <div class="flex h-screen">
+                <div class="py-6" style="width: 72px;">
+                    <div class="flex justify-center items-center px-3 mb-2">
+                        <img src="assets/images/common/brand-logos/svg/vector.svg" alt="company logo" />
+                    </div>
+                    <ejs-listview class="border-0 e-bigger" [dataSource]="data" [template]="itemTemplate" aria-label="quick navigation links" role="list">
+                        <ng-template #itemTemplate let-data>
+                            <div class="e-list-wrapper flex justify-center items-center">
+                                <span class="e-icons e-large {{data.fontIcon}}"></span>
+                            </div>
+                        </ng-template>
+                    </ejs-listview>
+                </div>
+                <div class="pt-6 border-l h-full px-4 border-gray-200 dark:border-gray-700" style="width: 256px;">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <span class="e-avatar e-avatar-circle e-avatar-small">
+                                <img src="assets/images/common/avatar/avatar-2.jpg" alt="profile picture" />
+                            </span>
+                            <div class="ml-3">
+                                <div class="text-base font-medium leading-normal text-gray-900 dark:text-white">John Wick</div>
+                                <p class="mb-0 text-gray-900 dark:text-white">johnwick&#64;123.com</p>
+                            </div>
+                        </div>
+                        <button ejs-button cssClass="e-icons e-chevron-down-double e-flat e-large" type="button" aria-label="view additional profile settings" role="button"></button>
+                    </div>
+                    <div class="mt-4">
+                        <div class="flex justify-between">
+                            <button ejs-button iconCss="e-icons e-plus e-medium" cssClass="e-flat e-primary" content="Add Task" type="button" aria-label="add task" role="button"></button>
+                            <button ejs-button cssClass="e-medium e-icons e-more-horizontal-1 e-flat" type="button" aria-label="more options" role="button"></button>
+                        </div>
+                        <div class="mt-4 flex">
+                            <span class="pt-0.5"><ejs-checkbox #checkbox1 cssClass="e-bigger" aria-label="task 1" role="checkbox"></ejs-checkbox></span>
+                            <p class="text-base text-gray-900 dark:text-white ml-2" [ngClass]="{'line-through' :checkbox1.checked}">Effortlessly resolve 70% of customer inquiries with our all-in-one platform.</p>
+                        </div>
+                        <div class="mt-4 flex">
+                            <span class="pt-0.5"><ejs-checkbox #checkbox2 cssClass="e-bigger" aria-label="task 2" role="checkbox"></ejs-checkbox></span>
+                            <p class="text-base text-gray-900 dark:text-white ml-2" [ngClass]="{'line-through' :checkbox2.checked}">Online customer service tool used to operations.</p>
+                        </div>
+                        <div class="mt-4 flex">
+                            <span class="pt-0.5"><ejs-checkbox #checkbox3 cssClass="e-bigger" aria-label="task 3" role="checkbox"></ejs-checkbox></span>
+                            <p class="text-base text-gray-900 dark:text-white ml-2" [ngClass]="{'line-through' :checkbox3.checked}">Managing and tracking client support.</p>
+                        </div>
+                    </div>
+                    <hr class="my-4 border-gray-200 dark:border-gray-700" />
+                    <div class="flex justify-between items-center">
+                        <span class="text-base text-gray-900 dark:text-white">Completed</span>
+                        <button ejs-button cssClass="e-medium e-icons e-more-horizontal-1 e-flat" type="button" aria-label="more options" role="button"></button>
+                    </div>
+                    <div class="mt-4 flex">
+                        <span class="pt-0.5"><ejs-checkbox #checkbox4 cssClass="e-bigger" checked="true" aria-label="task 4" role="checkbox"></ejs-checkbox></span>
+                        <p class="text-base text-gray-900 dark:text-white ml-2" [ngClass]="{'line-through' :checkbox4.checked}" >Effortlessly resolve 70% of customer inquiries with our all-in-one platform.</p>
+                    </div>
+                    <div id="toast" class="!absolute bottom-0 right-0"></div>
+                    <ejs-toast #element [position]="{ X: 'Right', Y: 'Bottom' }" cssClass="e-toast-info" width="224" showCloseButton="true" timeOut="0" target="#toast" newestOnTop="true" aria-label="alert message" role="alert" (created)="element.show();">
+                        <ng-template #title>
+                            <div class="pr-2">Adaptive Tiles Meeting</div>
+                        </ng-template>
+                        <ng-template #content>
+                            <div>There was a problem with your network connection</div>
+                        </ng-template>
+                    </ejs-toast>
+                </div>
+            </div>
+        </ejs-sidebar>
+    </div>
+</section>
+<!-- SB Code - Start -->
+<div class="p-3 top-0 right-0 absolute">
+    <button ejs-button cssClass="e-large e-icons e-chevron-left e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+</div>
+<!-- SB Code - End -->
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body">
+    <div style="height: 600px;">
+        <ejs-sidebar #sidebar width="328px" position="Right" showBackdrop="true" aria-label="main navigation menu" role="complementary" style="display: block;">
+            <div class="d-flex vh-100">
+                <div class="py-4 d-flex flex-column align-items-center" style="width: 72px;">
+                    <div class="d-flex justify-content-center align-items-center px-3 mb-2">
+                        <img src="assets/images/common/brand-logos/svg/vector.svg" alt="company logo" />
+                    </div>
+                    <ejs-listview class="border-0 e-bigger" [dataSource]="data" [template]="itemTemplate" aria-label="quick navigation links" role="list">
+                        <ng-template #itemTemplate let-data>
+                            <div class="e-list-wrapper d-flex justify-content-center align-items-center">
+                                <span class="e-icons e-large {{data.fontIcon}}"></span>
+                            </div>
+                        </ng-template>
+                    </ejs-listview>
+                </div>
+                <div class="p-3 border-start border-light-subtle opacity-100" style="width: 256px;">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex align-items-center">
+                            <span class="e-avatar e-avatar-circle e-avatar-small">
+                                <img src="assets/images/common/avatar/avatar-2.jpg" alt="profile picture" />
+                            </span>
+                            <div class="ms-3">
+                                <div class="text-body fs-6 fw-medium">John Wick</div>
+                                <p class="mb-0 text-body-secondary">johnwick&#64;123.com</p>
+                            </div>
+                        </div>
+                        <button ejs-button cssClass="e-icons e-chevron-down-double e-flat" type="button" aria-label="view additional profile settings" role="button"></button>
+                    </div>
+                    <hr class="border-light-subtle opacity-100" />
+                    <div>
+                        <div class="d-flex justify-content-between">
+                            <button ejs-button cssClass="e-flat e-primary" iconCss="e-icons e-plus e-medium" content="Add Task" type="button" aria-label="add task" role="button"></button>
+                            <button ejs-button cssClass="e-medium e-icons e-more-horizontal-1 e-flat" type="button" aria-label="more options" role="button"></button>
+                        </div>
+                        <div class="mt-2 d-flex">
+                            <span class="pt-1"><ejs-checkbox #checkbox1 cssClass="e-bigger" aria-label="task 1" role="checkbox"></ejs-checkbox></span>
+                            <p class="fs-6 text-body ms-2 ps-1 mb-0" [ngClass]="{'text-decoration-line-through' :checkbox1.checked}">Effortlessly resolve 70% of customer inquiries with our all-in-one platform.</p>
+                        </div>
+                        <div class="mt-2 d-flex">
+                            <span class="pt-1"><ejs-checkbox #checkbox2 cssClass="e-bigger" aria-label="task 2" role="checkbox"></ejs-checkbox></span>
+                            <p class="fs-6 text-body ms-2 ps-1 mb-0" [ngClass]="{'text-decoration-line-through' :checkbox2.checked}">Online customer service tool used to operations.</p>
+                        </div>
+                        <div class="mt-2 d-flex">
+                            <span class="pt-1"><ejs-checkbox #checkbox3 cssClass="e-bigger" aria-label="task 3" role="checkbox"></ejs-checkbox></span>
+                            <p class="fs-6 text-body ms-2 ps-1 mb-0" [ngClass]="{'text-decoration-line-through' :checkbox3.checked}">Managing and tracking client support.</p>
+                        </div>
+                    </div>
+                    <hr class="border-light-subtle opacity-100" />
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="fs-6 text-body-secondary">Completed</span>
+                        <button ejs-button cssClass="e-medium e-icons e-more-horizontal-1 e-flat" type="button" aria-label="more options" role="button"></button>
+                    </div>
+                    <div class="mt-3 d-flex">
+                        <span class="pt-1"><ejs-checkbox #checkbox4 cssClass="e-bigger" checked="true" aria-label="task 4" role="checkbox"></ejs-checkbox></span>
+                        <p class="fs-6 text-body ms-2 ps-1 mb-0" [ngClass]="{'text-decoration-line-through' :checkbox4.checked}">Effortlessly resolve 70% of customer inquiries with our all-in-one platform.</p>
+                    </div>
+                    <div id="toast" class="position-absolute bottom-0 end-0"></div>
+                    <ejs-toast #element [position]="{ X: 'Right', Y: 'Bottom' }" cssClass="e-toast-info" width="224" showCloseButton="true" timeOut="0" target="#toast" newestOnTop="true" aria-label="alert message" role="alert" (created)="element.show();">
+                        <ng-template #title>
+                            <div>Adaptive Tiles Meeting</div>
+                        </ng-template>
+                        <ng-template #content>
+                            <div>There was a problem with your network connection.</div>
+                        </ng-template>
+                    </ejs-toast>
+                </div>
+            </div>
+        </ejs-sidebar>
+    </div>
+</section>
+<!-- SB Code - Start -->
+<div class="py-3 px-1 position-absolute top-0 end-0">
+    <button ejs-button cssClass="e-large e-icons e-chevron-left e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+</div>
+<!-- SB Code - End -->
+
+}

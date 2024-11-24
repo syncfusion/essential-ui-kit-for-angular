@@ -1,0 +1,71 @@
+@if (currentTheme === 'tailwind') {
+<section class="bg-white dark:bg-gray-900">
+    <div class="flex items-center justify-center min-h-screen">
+        <div class="max-w-none lg:max-w-2xl w-full m-auto p-4 md:py-8 lg:px-14">
+            <div class="e-input-group e-bigger flex w-full">
+                <span class="e-input-group-icon e-icons e-search !text-base"></span>
+                <input class="e-input !pl-0" type="text" placeholder="People, chat, keywords" aria-label="search for people, chats, or keywords" role="textbox" />
+            </div>
+            <ejs-listview class="!border-0 mt-4" cssClass="e-list-template" [dataSource]="data" aria-label="list of chats" role="list">
+                <ng-template #template let-data>
+                    <div class="e-list-wrapper e-list-multi-line border-b border-gray-200 dark:border-gray-600 !py-4 !px-1 sm:!px-3">
+                        <div class="flex justify-between">
+                            <div class="flex items-center grow">
+                                <img class="e-avatar e-avatar-circle e-avatar-large shrink-0" src="assets/images/common/avatar/{{data.image}}" alt="profile picture" />
+                                <div class="ml-3 w-11/12">
+                                    <div class="flex justify-between w-full relative">
+                                        <span class="e-list-item-header flex items-center !text-base !font-medium !text-wrap !line-clamp-2 w-3/5 sm:w-4/5 truncate !text-gray-900 dark:!text-gray-200">{{data.name}}</span>
+                                        <span [ngClass]="data.badge ? 'text-primary-600 dark:text-primary-400' : 'text-gray-500'">{{data.time}}</span>
+                                    </div>
+                                    <div class="flex !pt-1">
+                                        <span class="sf-icon-double-check-01 text-base me-1" [ngClass]="data.status.isViewed ? 'text-primary-600 dark:text-primary-400' : 'text-gray-500 dark:!text-gray-300'" *ngIf="data.status"></span>
+                                        <span class="e-list-content !text-sm !text-gray-700 dark:!text-gray-200 !whitespace-normal !truncate w-full md:w-full !line-clamp-1">{{data.message}}</span>
+                                        <div class="flex justify-end">
+                                            <span class="e-badge e-badge-primary e-badge-pill" *ngIf="data.badge">{{data.badge}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </ejs-listview>
+        </div>
+    </div>
+</section>
+} @else if (currentTheme === 'bootstrap5.3') {
+<section class="bg-body">
+    <div class="d-flex align-items-center justify-content-center min-vh-100">
+        <div class="container-lg w-100 m-auto p-3 p-md-6" [style]="width">
+            <div class="e-input-group e-bigger d-flex w-100">
+                <span class="e-input-group-icon e-icons e-search border-0 !pr-3"></span>
+                <input class="e-input ps-0" type="text" placeholder="People, chat, keywords" aria-label="search for people, chats, or keywords" role="textbox" />
+            </div>
+            <ejs-listview class="border-0 mt-2" cssClass="e-list-template" [dataSource]="data" aria-label="list of chats" role="list">
+                <ng-template #template let-data>
+                    <div class="e-list-wrapper e-list-multi-line py-3 px-1 px-sm-3">
+                        <div class="d-flex justify-content-between">
+                            <div class="d-flex w-100">
+                                <img class="e-avatar e-avatar-circle e-avatar-large flex-shrink-0" src="assets/images/common/avatar/{{data.image}}" alt="profile picture" />
+                                <span class="ms-3 w-100">
+                                    <div class="d-flex justify-content-between position-relative">
+                                        <span class="e-list-item-header text-wrap fs-6 fw-medium text-truncate col-6 col-sm-12" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-width: 150px; max-width: 350px;">{{data.name}}</span>
+                                        <span class="m-0 position-absolute top-0 end-0" [class.text-info]="data.badge">{{data.time}}</span>
+                                    </div>
+                                    <div class="d-flex align-items-center pt-1">
+                                        <span class="sf-icon-double-check-01 fs-6 me-1 mt-1" [ngClass]="data.status.isViewed ? 'text-info' : 'text-secondary-subtle'" *ngIf="data.status"></span>
+                                        <span class="e-list-content text-wrap text-truncate w-100" [innerHTML]="data.message" style="display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden;"></span>
+                                        <div class="d-flex justify-content-end">
+                                            <span class="e-badge e-badge-info e-badge-pill d-flex align-items-center" style="padding: 0 10px;" *ngIf="data.badge">{{data.badge}}</span>
+                                        </div>
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </ejs-listview>
+        </div>
+    </div>
+</section>
+}

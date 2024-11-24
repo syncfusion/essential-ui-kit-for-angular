@@ -1,0 +1,87 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-white dark:bg-gray-900 h-100">
+    <div class="w-full pt-5 pb-4 h-screen" style="height: 600px;">
+        <div class="px-4 mx-auto lg:px-0" [style]="width">
+            <ejs-autocomplete
+                class="e-bigger"
+                #search
+                [dataSource]="data"
+                [fields]="{ groupBy: 'category', value: 'title' }"
+                popupHeight="530px"
+                placeholder="Search"
+                (focus)="search.showPopup()"
+                (created)="openPopup(search)"
+                role="combobox">
+                <ng-template #itemTemplate let-data>
+                    <div class="flex justify-between pl-6 pr-2 py-3">
+                        <div class="flex items-center">
+                            <div class="indent-0 shrink-0">
+                                <img class="rounded-lg" src="assets/images/search/{{data.image}}" alt="{{data.title.toLowerCase()}} logo" *ngIf="data.image" />
+                                <span class="e-avatar indent-0 e-avatar-large" [ngClass]="{'text-green-600 bg-green-200 dark:bg-green-800 dark:text-green-200': data.tag === 'Automation', 'text-cyan-600 bg-cyan-100 dark:bg-cyan-800 dark:text-cyan-200': data.tag === 'Logging', 'text-orange-600 bg-orange-100 dark:bg-orange-800 dark:text-orange-200': data.tag === 'Integration'}" *ngIf="data.tag">
+                                    <span class="e-icons text-2xl" [ngClass]="{'e-settings': data.tag === 'Automation', 'sf-icon-clock-fast-backward': data.tag === 'Logging', 'e-import-1': data.tag === 'Integration'}"></span>
+                                </span>
+                            </div>
+                            <div class="text-sm indent-0 ml-2">
+                                <p class="font-medium text-gray-900 dark:text-white">{{data.title}}</p>
+                                <p class="text-gray-600 dark:text-gray-300 !text-wrap">{{data.text}}</p>
+                            </div>
+                        </div>
+                        <div [ngClass]="{'w-2/5': data.avatar?.length > 0}">
+                            <div *ngIf="data.avatar" class="flex h-full items-center relative">
+                                <span *ngFor="let img of data.avatar; let i = index" class="absolute e-avatar e-avatar-circle overflow-hidden" style="width: 32px; height: 32px;" [ngStyle]="{'right': i * 22 + 'px'}">
+                                    <img [src]="'assets/images/common/avatar/' + img" class="w-100 h-100 object-cover" alt="logo" />
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </ejs-autocomplete>
+        </div>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body h-100">
+    <div class="w-100 pt-4 pb-3" style="height: 600px;">
+        <div class="px-3 px-lg-0 mx-auto" [style]="width">
+            <ejs-autocomplete
+                class="e-bigger"
+                #search
+                [dataSource]="data"
+                [fields]="{ groupBy: 'category', value: 'title' }"
+                popupHeight="510px"
+                placeholder="Search"
+                (focus)="search.showPopup()"
+                (created)="openPopup(search)"
+                role="combobox">
+                <ng-template #itemTemplate let-data>
+                    <div class="d-flex justify-content-between ps-4 py-2 pe-2" style="text-indent: 0;">
+                        <div class="d-flex align-items-center">
+                            <div>
+                                <img class="rounded" src="assets/images/search/{{data.image}}" alt="{{data.title.toLowerCase()}} logo" *ngIf="data.image" />
+                                <span class="e-avatar ms-0 e-avatar-large" [ngClass]="{'text-success-emphasis bg-success-subtle': data.tag === 'Automation', 'text-info-emphasis bg-info-subtle': data.tag === 'Logging', 'text-warning-emphasis bg-warning-subtle': data.tag === 'Integration'}" *ngIf="data.tag">
+                                    <span class="e-icons fs-2" [ngClass]="{'e-settings': data.tag === 'Automation', 'sf-icon-clock-fast-backward': data.tag === 'Logging', 'e-import-1': data.tag === 'Integration'}"></span>
+                                </span>
+                            </div>
+                            <div class="mx-2">
+                                <div class="fw-medium text-body m-0 lh-base !fs-6">{{data.title}}</div>
+                                <p class="text-body-secondary text-wrap m-0 lh-base fw-normal">{{data.text}}</p>
+                            </div>
+                        </div>
+                        <div [ngStyle]="{'width': data.avatar?.length > 0 ? '40%' : 'auto'}">
+                            <div *ngIf="data.avatar" class="d-flex position-relative align-items-center h-100">
+                                <span *ngFor="let img of data.avatar; let i = index" class="position-absolute rounded-circle overflow-hidden" style="width: 32px; height: 32px;" [ngStyle]="{'right': i * 22 + 'px'}">
+                                    <img [src]="'assets/images/common/avatar/' + img" class="w-100 h-100 object-cover" alt="logo" />
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </ejs-autocomplete>
+        </div>
+    </div>
+</section>
+
+}

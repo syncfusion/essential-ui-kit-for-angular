@@ -1,0 +1,7 @@
+#calendar-todo-list .e-list-item {
+    border-bottom: 0px;
+}
+
+#calendar-todo-list .e-footer-container {
+    display: none;
+}

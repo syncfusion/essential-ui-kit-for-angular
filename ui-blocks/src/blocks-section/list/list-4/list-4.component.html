@@ -1,0 +1,105 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-white dark:bg-gray-900">
+    <div class="flex items-center justify-center min-h-screen">
+        <div class="lg:max-w-2xl w-full m-auto p-4 md:p-6 lg:py-8 lg:px-14">
+            <ejs-listview class="!border-0" cssClass="e-list-template" [dataSource]="data" aria-label="items in shopping cart" role="list">
+                <ng-template #template let-data>
+                    <div class="e-list-wrapper !px-1 sm:!px-3 border-b border-gray-200 dark:border-gray-600 !py-4 flex flex-col">
+                        <span class="flex">
+                            <img class="rounded-lg" src="assets/images/listview/carts/{{data.pic}}" width="80px" alt="product image" />
+                            <span class="ml-4 flex flex-col">
+                                <span class="e-list-item-header text-sm font-medium text-gray-900 dark:text-white !text-wrap !line-clamp-1 w-full truncate">{{data.header}}</span>
+                                <p class="flex space-x-3 mt-1">
+                                    <span class="text-xs text-gray-700 dark:text-gray-200">Size : {{data.size}}</span>
+                                    <span class="text-xs text-gray-700 dark:text-gray-200">Color : {{data.color}}</span>
+                                </p>
+                                <span class="mt-0.5 text-xs text-gray-700 dark:text-gray-200">Seller : {{data.seller}}</span>
+                            </span>
+                            <div class="ml-auto text-end">
+                                <div class="text-gray-900 dark:text-white text-lg font-semibold">{{data.amount}}</div>
+                                <span class="e-badge e-badge-pill e-badge-success !px-1.5" *ngIf="data.badge!=''">{{data.badge}}</span>
+                            </div>
+                        </span>
+                        <div class="flex items-center mt-4 sm:mt-0 ml-0 sm:ml-24">
+                            <div class="flex items-center">
+                                <span class="e-small">
+                                    <button ejs-button class="e-round mr-2" cssClass="e-icons e-plus !text-sm" type="button" aria-label="add another item to cart" role="button"></button>
+                                </span>
+                                <ejs-textbox class="text-center !pl-0" cssClass="e-small" width="50px" value="1" aria-label="quantity of the product" role="textbox"></ejs-textbox>
+                                <span class="e-small">
+                                    <button ejs-button class="e-round ml-2" cssClass="e-icons e-intermediate-state !text-sm" type="button" aria-label="remove item from cart" role="button"></button>
+                                </span>
+                            </div>
+                            <div class="flex items-center ml-4">
+                                <span class="e-small border-r border-gray-200 dark:border-gray-600 px-2">
+                                    <button ejs-button class="e-flat" iconCss="e-icons e-trash e-medium" type="button" aria-label="delete the product" role="button"></button>
+                                </span>
+                                <span class="e-small border-r border-gray-200 dark:border-gray-600 px-2">
+                                    <button ejs-button class="e-flat" iconCss="e-icons e-medium e-bookmark" type="button" aria-label="bookmark this product" role="button"></button>
+                                </span>
+                                <span class="e-small px-2">
+                                    <button ejs-button class="e-flat" iconCss="e-icons text-sm sf-icon-share-arrow-02" type="button" aria-label="share this product details" role="button"></button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </ejs-listview>
+        </div>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body">
+    <div class="d-flex align-items-center justify-content-center min-vh-100">
+        <div class="container-lg w-100 m-auto p-3 p-md-4" [style]="width">
+            <ejs-listview class="border-0" cssClass="e-list-template" [dataSource]="data" aria-label="items in shopping cart" role="list">
+                <ng-template #template let-data>
+                    <div class="e-list-wrapper px-1 px-sm-3 py-3 d-flex flex-column">
+                        <span class="d-flex">
+                            <img class="rounded" src="assets/images/listview/carts/{{data.pic}}" width="80px" alt="product image" />
+                            <span class="ms-2 ps-1 d-flex flex-column">
+                                <p class="e-list-item-header fw-medium mb-0 w-100 text-wrap overflow-hidden" style="display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical;">{{data.header}}</p>
+                                <p class="mt-1 mb-0">
+                                    <span class="small pe-2 me-1">Size : {{data.size}}</span>
+                                    <span class="small">Color : {{data.color}}</span>
+                                </p>
+                                <span class="mt-1 small">Seller : {{data.seller}}</span>
+                            </span>
+                            <div class="ms-auto text-end ps-2">
+                                <div class="fs-5 fw-bold">{{data.amount}}</div>
+                                <span class="e-badge e-badge-pill e-badge-success px-2" *ngIf="data.badge!=''">{{data.badge}}</span>
+                            </div>
+                        </span>
+                        <div class="d-flex align-items-center mt-3 mt-sm-0 ms-0 ms-sm-5 ps-sm-5">
+                            <div class="d-flex align-items-center">
+                                <span class="e-small">
+                                    <button ejs-button class="e-round e-outline me-2" cssClass="e-icons e-plus" type="button" aria-label="add another item to cart" role="button"></button>
+                                </span>
+                                <ejs-textbox class="ps-0 text-center" cssClass="e-small" width="50px" value="1" aria-label="quantity of the product" role="textbox"></ejs-textbox>
+                                <span class="e-small">
+                                    <button ejs-button class="e-round e-outline ms-2" cssClass="e-icons e-intermediate-state-2" type="button" aria-label="remove item from cart" role="button"></button>
+                                </span>
+                            </div>
+                            <div class="d-flex align-items-center ms-4">
+                                <span class="border-end px-2">
+                                    <button ejs-button class="e-flat" iconCss="e-icons e-trash e-medium" type="button" aria-label="delete this product" role="button"></button>
+                                </span>
+                                <span class="border-end px-2">
+                                    <button ejs-button class="e-flat" iconCss="e-icons e-medium e-bookmark" type="button" aria-label="bookmark this product" role="button"></button>
+                                </span>
+                                <span class="px-2">
+                                    <button ejs-button class="e-flat" iconCss="e-icons small sf-icon-share-arrow-02" type="button" aria-label="share this product details" role="button"></button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </ejs-listview>
+        </div>
+    </div>
+</section>
+
+}
