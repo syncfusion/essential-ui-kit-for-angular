@@ -1,0 +1,6 @@
+#floating-contact .e-dlg-header-content,
+#floating-contact .e-dlg-content,
+#floating-contact .e-footer-content {
+    border: 0 !important;
+    padding: 0 !important;
+}

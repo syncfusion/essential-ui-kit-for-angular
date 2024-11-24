@@ -1,0 +1,76 @@
+@if (currentTheme === 'tailwind') {
+<section class="bg-white dark:bg-gray-900">
+    <div id="my-file-list" class="flex items-center justify-center min-h-screen">
+        <div class="max-w-none lg:max-w-2xl w-full m-auto p-2 md:py-8 lg:px-14">
+            <ejs-listview #listview class="!border-0" cssClass="e-list-template" [dataSource]="data" (actionComplete)="actionComplete()" aria-label="my file with its path" role="list">
+                <ng-template #template let-data>
+                    <div class="e-list-wrapper e-list-multi-line border-b border-gray-200 dark:border-gray-600 !py-4 !px-1 sm:!px-3">
+                        <div class="flex justify-between">
+                            <div class="flex items-center">
+                                <span class="shrink-0"><img src="assets/images/listview/my-files/{{data.image}}" width="40px" height="40px" alt="document image" /></span>
+                                <span>
+                                    <div class="flex mb-1">
+                                        <span class="e-list-item-header !text-sm !font-medium flex items-center !ml-4 !truncate w-72">{{data.fileName}}</span>
+                                    </div>
+                                    <div class="!text-gray-700 dark:!text-gray-200 !ml-4 w-60 sm:w-full">
+                                        <ejs-breadcrumb class="w-100" #breadcrumb [enableNavigation]="false" [overflowMode]="overflowMode" [maxItems]="maxItems">
+                                            <e-breadcrumb-items>
+                                                <e-breadcrumb-item text="{{data.data1}}"></e-breadcrumb-item>
+                                                <e-breadcrumb-item text="{{data.data2}}"></e-breadcrumb-item>
+                                                <e-breadcrumb-item text="{{data.data3}}"></e-breadcrumb-item>
+                                                <e-breadcrumb-item text="{{data.data4}}"></e-breadcrumb-item>
+                                            </e-breadcrumb-items>
+                                            <ng-template #separatorTemplate>
+                                                <span class="e-icons e-chevron-right"></span>
+                                            </ng-template>
+                                        </ejs-breadcrumb>
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </ejs-listview>
+        </div>
+    </div>
+</section>
+} @else if (currentTheme === 'bootstrap5.3') {
+<section class="bg-body">
+    <div class="d-flex align-items-center justify-content-center min-vh-100">
+        <div class="container-lg w-100 m-auto p-3 p-md-6" [style]="width">
+            <ejs-listview #listview class="border-0" cssClass="e-list-template" [dataSource]="data" (actionComplete)="actionComplete()" aria-label="my file with its path" role="list">
+                <ng-template #template let-data>
+                    <div class="e-list-wrapper e-list-multi-line py-3 px-1 px-sm-3">
+                        <div class="d-flex justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <span class="flex-shrink-0"><img src="assets/images/listview/my-files/{{data.image}}" width="40px" height="40px" alt="document image" /></span>
+                                <span>
+                                    <div class="d-flex">
+                                        <span class="e-list-item-header small fw-medium d-flex align-items-center ms-3">{{data.fileName}}</span>
+                                    </div>
+                                    <div class="ms-3 mt-1 col-6 col-sm-12" style="min-width: 250px; max-width: 500px;">
+                                        <ejs-breadcrumb class="w-100" #breadcrumb [enableNavigation]="false" [overflowMode]="overflowMode" [maxItems]="maxItems">
+                                            <e-breadcrumb-items>
+                                                <e-breadcrumb-item text="{{data.data1}}"></e-breadcrumb-item>
+                                                <e-breadcrumb-item text="{{data.data2}}"></e-breadcrumb-item>
+                                                <e-breadcrumb-item text="{{data.data3}}"></e-breadcrumb-item>
+                                                <e-breadcrumb-item text="{{data.data4}}"></e-breadcrumb-item>
+                                            </e-breadcrumb-items>
+                                            <ng-template #itemTemplate let-data>
+                                                <a class="text-body">{{data.text}}</a>
+                                            </ng-template>
+                                            <ng-template #separatorTemplate>
+                                                <span class="e-icons e-chevron-right"></span>
+                                            </ng-template>
+                                        </ejs-breadcrumb>
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </ejs-listview>
+        </div>
+    </div>
+</section>
+}

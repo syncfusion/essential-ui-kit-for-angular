@@ -1,0 +1,13 @@
+#transaction-details .e-list-item {
+    border-bottom: 0px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+#transaction-details .e-breadcrumb .e-home {
+    height: inherit;
+}
+
+#transaction-details .e-breadcrumb-text {
+    padding: 0px !important;
+}

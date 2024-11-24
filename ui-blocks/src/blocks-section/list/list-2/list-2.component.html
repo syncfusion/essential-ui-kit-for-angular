@@ -1,0 +1,69 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-white dark:bg-gray-900">
+    <div id="inbox-list" class="flex items-center justify-center min-h-screen">
+        <div class="lg:max-w-2xl w-full m-auto p-4 md:p-6 lg:py-8 lg:px-14">
+            <ejs-listview class="!border-0" cssClass="e-list-template" [dataSource]="data" aria-label="list of e-mail conversations" role="list">
+                <ng-template #template let-data>
+                    <div class="e-list-wrapper flex items-start !px-1 sm:!px-3">
+                        <span class="flex items-center gap-4">
+                            <ejs-checkbox cssClass="e-bigger hidden sm:block" aria-label="select e-mail from inbox" role="checkbox"></ejs-checkbox>
+                            <span class="hidden sm:block">
+                                <a href="javascript:void(0);" class="flex items-center sf-icon-star-filled-01 text-base e-medium text-gray-400" onclick="this.classList.toggle('!text-orange-400');"></a>
+                            </span>
+                            <span class="e-avatar e-avatar-small e-avatar-circle">
+                                <img src="assets/images/common/avatar/{{data.avatar}}" alt="profile picture" />
+                            </span>
+                        </span>
+                        <div class="ml-3 flex flex-col w-11/12">
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="e-list-item-header text-base" [ngClass]="[data.read ? 'text-gray-700 dark:text-gray-200' : 'font-semibold text-gray-900 dark:text-white']">{{data.name}}</span>
+                                <span class="text-xs" [ngClass]="[data.read ? 'text-gray-700 dark:text-gray-200' : 'font-semibold text-gray-900 dark:text-white']">{{data.time}}</span>
+                            </div>
+                            <span class="!text-sm !text-wrap !line-clamp-1 w-full truncate" [ngClass]="[data.read ? 'text-gray-700 dark:text-gray-200' : 'font-medium text-gray-900 dark:text-white']">{{data.content}}</span>
+                            <span class="!text-sm !text-gray-700 dark:!text-gray-200 !whitespace-normal !mt-0.5 !truncate w-full !line-clamp-1">{{data.subContent}}</span>
+                        </div>
+                    </div>
+                </ng-template>
+            </ejs-listview>
+        </div>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body">
+    <div id="inbox-list" class="d-flex align-items-center justify-content-center min-vh-100">
+        <div class="container-lg w-100 m-auto p-3 p-md-4" [style]="width">
+            <ejs-listview class="border-0" cssClass="e-list-template" [dataSource]="data" aria-label="list of e-mail conversations" role="list">
+                <ng-template #template let-data>
+                    <div class="e-list-wrapper d-flex align-items-start px-1 px-sm-3 py-2 w-100">
+                        <span class="d-flex align-items-center gap-3">
+                            <ejs-checkbox cssClass="e-bigger d-none d-sm-inline-block" aria-label="select e-mail from inbox" role="checkbox"></ejs-checkbox>
+                            <span class="d-none d-sm-inline-block">
+                                <a href="javascript:void(0);" class="text-secondary text-decoration-none d-flex align-items-center sf-icon-star-filled-01 fs-6" onclick="this.classList.toggle('text-warning');"></a>
+                            </span>
+                            <span class="e-avatar e-avatar-small e-avatar-circle">
+                                <img src="assets/images/common/avatar/{{data.avatar}}" alt="profile picture" />
+                            </span>
+                        </span>
+                        <span class="ms-2 ps-1 flex-grow-1 w-75">
+                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                <span class="e-list-item-header fs-6" [ngClass]="[data.read ? '' : 'fw-bold']">{{data.name}}</span>
+                                <span class="small" [ngClass]="[data.read ? '' : 'fw-medium']">{{data.time}}</span>
+                            </div>
+                            <div class="text-truncate" style="max-width: 580px;">
+                                <div class="text-truncate" style="min-width: 100px; max-width: 580px;">
+                                    <span class="mb-0" [ngClass]="[data.read ? '' : 'fw-medium']">{{data.content}}</span>
+                                </div>
+                                <span class="mt-1 text-truncate col-4 col-sm-12">{{data.subContent}}</span>
+                            </div>
+                        </span>
+                    </div>
+                </ng-template>
+            </ejs-listview>
+        </div>
+    </div>
+</section>
+
+}

@@ -1,0 +1,79 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-gray-50 dark:bg-gray-950">
+    <div class="max-w-7xl mx-auto w-full py-12 sm:px-6 px-4">
+        <ejs-grid [dataSource]="data" width="100%" height="560" gridLines="None" [allowPaging]="true" role="grid">
+            <e-columns>
+                <e-column type="checkbox" isPrimaryKey="true" textAlign="Center" width="40"></e-column>
+                <e-column fields="assetId" headerText="Asset ID" width="90">
+                    <ng-template #template let-data>
+                        <a class="text-primary-700 dark:text-primary-500 font-medium" href="javascript:void(0);" aria-label="asset ID" role="link">{{data.assetId}}</a>
+                    </ng-template>
+                </e-column>
+                <e-column field="hardware" headerText="Hardware" width="155"></e-column>
+                <e-column field="category" headerText="Category" width="124"></e-column>
+                <e-column field="serialNum" headerText="Serial Number" width="136"></e-column>
+                <e-column field="invoice" headerText="Invoice" width="94"></e-column>
+                <e-column field="purchaseDate" headerText="Purchase Date" [format]="{type: 'date', format: 'MM/dd/yyyy'}" width="100" textAlign="Right"></e-column>
+                <e-column field="warrantyEndDate" headerText="Warranty Ends On" [format]="{type: 'date', format: 'MM/dd/yyyy'}" width="130" textAlign="Right"></e-column>
+                <e-column field="status" headerText="Status" width="100"></e-column>
+                <e-column field="assigned" headerText="Assigned" width="136" textAlign="Center">
+                    <ng-template #template let-data>
+                        <div class="text-sm text-gray-700 dark:text-gray-300">
+                            <p>{{data.assigned ? data.assigned : '-'}}</p>
+                        </div>
+                    </ng-template>
+                </e-column>
+                <e-column headerText="Action" width="90" textAlign="Right">
+                    <ng-template #template let-data>
+                        <div class="e-small py-2">
+                            <button ejs-button class="e-flat me-1" iconCss="e-icons e-edit" type="button" aria-label="edit details" role="button"></button>
+                            <button ejs-button class="e-flat" iconCss="e-icons e-trash" type="button" aria-label="delete details" role="button"></button>
+                        </div>
+                    </ng-template>
+                </e-column>
+            </e-columns>
+        </ejs-grid>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body">
+    <div class="container-xxl w-100 py-5 px-3 px-sm-4 mx-auto">
+        <ejs-grid [dataSource]="data" width="100%" height="545" gridLines="None" [allowPaging]="true" role="grid">
+            <e-columns>
+                <e-column type="checkbox" isPrimaryKey="true" textAlign="Center" width="40"></e-column>
+                <e-column fields="assetId" headerText="Asset ID" width="85">
+                    <ng-template #template let-data>
+                        <a class="text-primary fw-medium text-decoration-none" href="javascript:void(0);" aria-label="asset ID" role="link">{{data.assetId}}</a>
+                    </ng-template>
+                </e-column>
+                <e-column field="hardware" headerText="Hardware" width="157"></e-column>
+                <e-column field="category" headerText="Category" width="146"></e-column>
+                <e-column field="serialNum" headerText="Serial Number" width="116"></e-column>
+                <e-column field="invoice" headerText="Invoice" width="114"></e-column>
+                <e-column field="purchaseDate" headerText="Purchase Date" [format]="{type: 'date', format: 'MM/dd/yyyy'}" width="108" textAlign="Right"></e-column>
+                <e-column field="warrantyEndDate" headerText="Warranty Ends On" [format]="{type: 'date', format: 'MM/dd/yyyy'}" width="150" textAlign="Right"></e-column>
+                <e-column field="status" headerText="Status" width="97"></e-column>
+                <e-column field="assigned" headerText="Assigned" width="128" textAlign="Center">
+                    <ng-template #template let-data>
+                        <div class="text-body">
+                            <p class="mb-0">{{data.assigned ? data.assigned : '-'}}</p>
+                        </div>
+                    </ng-template>
+                </e-column>
+                <e-column headerText="Action" width="140" textAlign="Right">
+                    <ng-template #template let-data>
+                        <div class="e-small py-2">
+                            <button ejs-button class="e-flat me-1" iconCss="e-icons e-edit" type="button" aria-label="edit details" role="button"></button>
+                            <button ejs-button class="e-flat" iconCss="e-icons e-trash" type="button" aria-label="delete details" role="button"></button>
+                        </div>
+                    </ng-template>
+                </e-column>
+            </e-columns>
+        </ejs-grid>
+    </div>
+</section>
+
+}

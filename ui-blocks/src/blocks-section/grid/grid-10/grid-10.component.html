@@ -1,0 +1,77 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-gray-50 dark:bg-gray-950">
+    <div class="max-w-7xl mx-auto w-full py-12 xl:px-0 sm:px-6 px-4">
+        <ejs-grid [dataSource]="data" width="100%" height="480" rowHeight="48" role="grid">
+            <e-columns>
+                <e-column field="product" headerText="Product" width="206">
+                    <ng-template #template let-data>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8">
+                                <img class="rounded h-8" src="assets/images/advance-grid/product-sales-table/{{data.productImage}}" width="32px" alt="product image" />
+                            </div>
+                            <div class="text-sm">{{data.product}}</div>
+                        </div>
+                    </ng-template>
+                </e-column>
+                <e-column field="unitSold" headerText="Unit Sold" width="96">
+                    <ng-template #template let-data>
+                        <p>{{data.unitSold | number}}</p>
+                    </ng-template>
+                </e-column>
+                <e-column field="totalRevenue" headerText="Total Revenue" format="c0" width="126"></e-column>
+                <e-column field="averageSellingPrice" headerText="Average Selling Price" format="c0" width="158"></e-column>
+                <e-column field="percentOfTotalSales" headerText="% of Total Sales" width="128"></e-column>
+                <e-column field="totalSalesRep" headerText="Sales Representative" width="186">
+                    <ng-template #template let-data>
+                        <div class="flex items-center gap-5">
+                            <span [ngClass]="{'e-avatar e-avatar-circle e-avatar-small text-white dark:text-black': true, '!bg-red-600': data.totalSalesRep.colorTheme === 'Red', '!bg-green-600': data.totalSalesRep.colorTheme === 'Green', '!bg-cyan-600': data.totalSalesRep.colorTheme === 'Blue', '!bg-orange-600': data.totalSalesRep.colorTheme === 'Orange', '!bg-indigo-600': data.totalSalesRep.colorTheme === 'Purple'}">{{data.totalSalesRep.initial}}</span>
+                            <p>{{data.totalSalesRep.name}}</p>
+                        </div>
+                    </ng-template>
+                </e-column>
+                <e-column field="returnRate" headerText="Return Rate" width="103"></e-column>
+            </e-columns>
+        </ejs-grid>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body">
+    <div class="container-xxl py-5 px-4 px-sm-6 mx-auto">
+        <ejs-grid [dataSource]="data" width="100%" height="480" rowHeight="48" role="grid">
+            <e-columns>
+                <e-column field="product" headerText="Product" width="212">
+                    <ng-template #template let-data>
+                        <div class="d-flex align-items-center gap-2">
+                            <div class="w-8">
+                                <img class="rounded h-8" src="assets/images/advance-grid/product-sales-table/{{data.productImage}}" width="32" alt="product image" />
+                            </div>
+                            <div>{{data.product}}</div>
+                        </div>
+                    </ng-template>
+                </e-column>
+                <e-column field="unitSold" headerText="Unit Sold" width="96">
+                    <ng-template #template let-data>
+                        <p class="mb-0">{{data.unitSold | number}}</p>
+                    </ng-template>
+                </e-column>
+                <e-column field="totalRevenue" headerText="Total Revenue" format="c0" width="126"></e-column>
+                <e-column field="averageSellingPrice" headerText="Average Selling Price" format="c0" width="158"></e-column>
+                <e-column field="percentOfTotalSales" headerText="% of Total Sales" width="128"></e-column>
+                <e-column field="totalSalesRep" headerText="Sales Representative" width="186">
+                    <ng-template #template let-data>
+                        <div class="d-flex align-items-center gap-3">
+                            <span [ngClass]="{'e-avatar e-avatar-circle e-avatar-small text-white': true, 'bg-danger': data.totalSalesRep.colorTheme === 'Red', 'bg-success': data.totalSalesRep.colorTheme === 'Green', 'bg-info': data.totalSalesRep.colorTheme === 'Blue', 'bg-warning': data.totalSalesRep.colorTheme === 'Orange', 'bg-primary': data.totalSalesRep.colorTheme === 'Purple'}">{{data.totalSalesRep.initial}}</span>
+                            <p class="mb-0">{{data.totalSalesRep.name}}</p>
+                        </div>
+                    </ng-template>
+                </e-column>
+                <e-column field="returnRate" headerText="Return Rate" width="103"></e-column>
+            </e-columns>
+        </ejs-grid>
+    </div>
+</section>
+
+}

@@ -1,0 +1,162 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-white dark:bg-gray-900">
+    <div id="transaction-details">
+        <ejs-appbar class="shadow-none px-0">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 xl:px-2">
+                <div class="e-input-group w-full sm:max-w-lg">
+                    <span class="e-input-group-icon e-icons e-search"></span>
+                    <input class="e-input !pl-0" type="text" placeholder="Search" aria-label="search transactions" role="textbox" />
+                </div>
+                <div class="e-appbar-spacer"></div>
+                <button ejs-button class="e-flat sf-icon-notification-bell-01 text-base ml-2" type="button" aria-label="notification" role="button"></button>
+                <span class="e-avatar e-avatar-circle e-avatar-small shrink-0 ml-3">
+                    <img src="assets/images/common/avatar/avatar-1.jpg" alt="profile picture" />
+                </span>
+            </div>
+        </ejs-appbar>
+        <div class="border-t border-gray-200 dark:border-gray-600">
+            <div class="flex flex-col gap-3 mx-auto p-4 max-w-7xl sm:px-6 xl:px-2">
+                <ejs-breadcrumb [enableNavigation]="false">
+                    <e-breadcrumb-items>
+                        <e-breadcrumb-item iconCss="e-icons e-home" text="Dashboard"></e-breadcrumb-item>
+                        <e-breadcrumb-item iconCss="sf-icon-dollar" text="Transactions"></e-breadcrumb-item>
+                    </e-breadcrumb-items>
+                    <ng-template #separatorTemplate>
+                        <span class="e-icons e-chevron-right"></span>
+                    </ng-template>
+                </ejs-breadcrumb>
+                <div class="flex flex-col justify-between gap-4 mb-3 text-gray-900 dark:text-gray-50 md:flex-row">
+                    <div class="flex justify-between">
+                        <p class="text-xl font-medium">Transactions</p>
+                        <button ejs-button class="e-primary sm:hidden e-icons e-plus" type="button" aria-label="add new transaction" role="button"></button>
+                    </div>
+                    <div class="flex flex-col gap-4 sm:flex-row">
+                        <div class="flex items-center gap-2 text-sm">
+                            <ejs-switch cssClass="w-9" aria-label="show pending only" role="switch"></ejs-switch>
+                            <span>Show pending only</span>
+                        </div>
+                        <button ejs-dropdownbutton class="w-fit" content="This week" type="button" (beforeOpen)="$event.cancel = true;" aria-label="choose the week" role="button"></button>
+                        <button ejs-button class="e-primary hidden sm:inline-block" type="button" aria-label="add new transaction" role="button">Add New Transaction</button>
+                    </div>
+                </div>
+                <ejs-listview class="!border-0" cssClass="e-list-template" [dataSource]="transactionDetails" aria-label="list of transaction with details" role="list">
+                    <ng-template #template let-data>
+                        <div class="e-card flex-row gap-3 rounded-lg sm:gap-0 p-4">
+                            <span class="e-avatar e-avatar-large e-avatar-circle shrink-0 bg-green-100 sm:mr-4" [ngClass]="{'bg-green-100 text-green-700 dark:text-green-500': data.paymentType === 'Credit Card', 'bg-indigo-100 dark:bg-cyan-800 text-indigo-600 dark:text-cyan-400': data.paymentType === 'Wire Transfer', 'bg-orange-100 text-orange-500 dark:text-orange-700': data.paymentType === 'Deposit', 'bg-cyan-100 dark:bg-sky-100 text-cyan-700 dark:text-cyan-600': data.paymentType === 'ACH Transfer'}">
+                                <i class="sf-icon-dollar text-2xl"></i>
+                            </span>
+                            <div class="e-card-stacked grow sm:space-y-3">
+                                <div class="e-card-header !flex-col gap-2 sm:!flex-row items-start !p-0">
+                                    <div class="e-card-header-title">
+                                        <p class="text-sm sm:text-base xl:text-lg font-medium text-gray-900 dark:text-gray-50">{{data.title}}</p>
+                                        <p class="text-xs sm:text-sm text-gray-500 mt-1 dark:text-gray-400">{{data.company}}</p>
+                                    </div>
+                                    <div class="e-card-sub-title !flex flex-row-reverse grow gap-2 justify-between items-center sm:flex-row sm:mr-4">
+                                        <span class="e-bigger e-badge e-badge-pill e-badge-success" [ngClass]="{'e-badge-success': data.status === 'Completed', 'e-badge-danger': data.status === 'Pending'}">{{data.status}}</span>
+                                        <p class="text-base sm:text-lg xl:text-xl font-medium text-gray-900 dark:text-gray-50">{{data.amount | currency}}</p>
+                                    </div>
+                                </div>
+                                <div class="e-card-content !p-0 text-gray-700 dark:text-gray-200">
+                                    <div class="hidden items-center gap-x-6 gap-y-2 text-sm text-gray-500 dark:text-gray-400 sm:flex flex-wrap">
+                                        <p class="flex items-center gap-2">
+                                            Transaction ID:<a class="font-medium text-primary-600 hover:underline dark:text-primary-400" href="javascript:void(0);" aria-label="transaction ID">{{data.transactionId}}</a>
+                                        </p>
+                                        <p class="flex gap-2">Payment Type:<span class="text-gray-700 dark:text-gray-200">{{data.paymentType}}</span></p>
+                                        <p class="flex gap-2">Category:<span class="text-gray-700 dark:text-gray-200">{{data.category}}</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="e-card-actions self-start !p-0 leading-none">
+                                <button ejs-button class="e-round e-icons e-more-vertical-1 e-flat" type="button" aria-label="more options" role="button"></button>
+                            </div>
+                        </div>
+                    </ng-template>
+                </ejs-listview>
+            </div>
+        </div>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body-tertiary">
+    <div id="transaction-details">
+        <ejs-appbar class="px-0">
+            <div class="container-xxl justify-content-between gap-4 px-3 px-sm-4 px-xl-5">
+                <div class="e-input-group" style="max-width: 514px;">
+                    <span class="e-input-group-icon e-icons e-search border-0"></span>
+                    <input class="e-input ps-0" type="text" placeholder="Search" aria-label="search transactions" role="textbox" />
+                </div>
+                <div class="d-flex gap-2">
+                    <button ejs-button class="e-flat sf-icon-notification-bell-01 fs-6" type="button" aria-label="notification" role="button"></button>
+                    <span class="e-avatar e-avatar-circle e-avatar-small flex-shrink-0 ms-1">
+                        <img src="assets/images/common/avatar/avatar-1.jpg" alt="profile picture" />
+                    </span>
+                </div>
+            </div>
+        </ejs-appbar>
+        <div class="border-top border-light-subtle">
+            <div class="container-xxl p-3 px-sm-4 px-xl-5">
+                <ejs-breadcrumb [enableNavigation]="false">
+                    <e-breadcrumb-items>
+                        <e-breadcrumb-item iconCss="e-icons e-home" text="Dashboard"></e-breadcrumb-item>
+                        <e-breadcrumb-item iconCss="sf-icon-dollar" text="Transactions"></e-breadcrumb-item>
+                    </e-breadcrumb-items>
+                    <ng-template #separatorTemplate>
+                        <span class="e-icons e-chevron-right"></span>
+                    </ng-template>
+                </ejs-breadcrumb>
+                <div class="d-flex flex-column justify-content-between gap-4 mt-2 pt-1 flex-md-row">
+                    <div class="d-flex justify-content-between">
+                        <h5 class="mb-0 fw-medium lh-base text-body">Transactions</h5>
+                        <button ejs-button class="e-primary d-sm-none e-icons e-plus" type="button" aria-label="add new transaction" role="button"></button>
+                    </div>
+                    <div class="d-flex flex-column align-items-start align-items-sm-center gap-3 flex-sm-row">
+                        <div class="d-flex align-items-center gap-2 fs-6 text-body">
+                            <ejs-switch cssClass="me-1" aria-label="show pending only" role="switch" style="width: 36px;"></ejs-switch>
+                            <span>Show pending only</span>
+                        </div>
+                        <button ejs-dropdownbutton class="e-outline" content="This week" type="button" (beforeOpen)="$event.cancel = true;" aria-label="choose the week" role="button"></button>
+                        <button ejs-button class="e-primary d-none d-sm-inline-block" type="button" aria-label="add new transaction" role="button">Add New Transaction</button>
+                    </div>
+                </div>
+                <ejs-listview class="border-0 mt-4" cssClass="e-list-template" [dataSource]="transactionDetails" aria-label="list of transaction with details" role="list">
+                    <ng-template #template let-data>
+                        <div class="e-card d-flex flex-row gap-3 gap-sm-0 lh-base px-2 py-3 rounded-3 px-sm-3">
+                            <span class="e-avatar e-avatar-large e-avatar-circle flex-shrink-0 me-sm-3 bg-primary-subtle" [ngClass]="{'bg-warning-subtle text-warning-emphasis': data.paymentType === 'Deposit', 'bg-success-subtle text-success-emphasis': data.paymentType === 'Wire Transfer', 'bg-info-subtle text-info-emphasis': data.paymentType === 'Credit Card', 'bg-primary-subtle text-primary': data.paymentType === 'ACH Transfer'}">
+                                <i class="sf-icon-dollar fs-3"></i>
+                            </span>
+                            <div class="e-card-stacked flex-grow-1">
+                                <div class="e-card-header flex-column gap-2 flex-sm-row align-items-start p-0 mb-sm-2">
+                                    <div class="e-card-header-title">
+                                        <h6 class="fw-medium mb-0 text-body">{{data.title}}</h6>
+                                        <p class="fs-6 text-body-secondary my-1">{{data.company}}</p>
+                                    </div>
+                                    <div class="e-card-sub-title d-flex flex-row-reverse gap-2 justify-content-between flex-sm-row align-items-center flex-grow-1 me-md-3">
+                                        <span class="e-bigger e-badge e-badge-pill" [ngClass]="{'e-badge-success': data.status === 'Completed', 'e-badge-danger': data.status === 'Pending'}">{{data.status}}</span>
+                                        <p class="fw-medium text-body fs-5 mb-0 lh-sm">{{data.amount | currency}}</p>
+                                    </div>
+                                </div>
+                                <div class="e-card-content p-0">
+                                    <div class="d-none d-sm-flex align-items-center gap-4 fs-6 text-body-secondary flex-wrap row-gap-2">
+                                        <p class="d-flex align-items-center gap-2 mb-0">
+                                            Transaction ID:<a class="link-underline link-underline-opacity-0 link-underline-opacity-100-hover fw-medium" href="javascript:void(0);" aria-label="transaction ID">{{data.transactionId}}</a>
+                                        </p>
+                                        <p class="d-flex gap-2 mb-0">Payment Type:<span class="fw-medium">{{data.paymentType}}</span></p>
+                                        <p class="d-flex gap-2 mb-0">Category:<span class="fw-medium">{{data.category}}</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="e-card-actions align-self-start p-0">
+                                <button ejs-button class="e-round e-icons e-more-vertical-1 e-flat" type="button" aria-label="more options" role="button"></button>
+                            </div>
+                        </div>
+                    </ng-template>
+                </ejs-listview>
+            </div>
+        </div>
+    </div>
+</section>
+
+}
