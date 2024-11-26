@@ -1,7 +1,7 @@
 @if (currentTheme === 'tailwind') {
 
 <section class="bg-white dark:bg-gray-900">
-    <div class="max-w-7xl mx-auto px-6">
+    <div class="px-6">
         <ejs-pager class="border-t-0 border-x-0 px-0 py-2 bg-transparent" [template]="pagerTemplate"></ejs-pager>
         <ng-template #pagerTemplate>
             <div class="!flex items-center gap-2 sm:gap-4 text-lg font-medium text-gray-700 dark:text-gray-300">
@@ -33,7 +33,7 @@
 } @else if (currentTheme === 'bootstrap5.3') {
 
 <section class="bg-body">
-    <div class="container-xxl mx-auto px-4">
+    <div class="px-4">
         <ejs-pager class="border-top-0 border-start-0 border-end-0 px-0 py-2" [template]="pagerTemplate"></ejs-pager>
         <ng-template #pagerTemplate>
             <div class="d-flex align-items-center gap-2 fs-6 text-body">

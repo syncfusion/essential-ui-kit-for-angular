@@ -907,12 +907,6 @@ video {
 .max-w-4xl {
   max-width: 56rem;
 }
-.max-w-6xl {
-  max-width: 72rem;
-}
-.max-w-7xl {
-  max-width: 80rem;
-}
 .max-w-lg {
   max-width: 32rem;
 }
@@ -2482,9 +2476,6 @@ video {
   .sm\:w-max {
     width: max-content;
   }
-  .sm\:max-w-5xl {
-    max-width: 64rem;
-  }
   .sm\:max-w-lg {
     max-width: 32rem;
   }
@@ -3095,17 +3086,13 @@ video {
   .xl\:p-0 {
     padding: 0px;
   }
-  .xl\:px-0 {
-    padding-left: 0px;
-    padding-right: 0px;
+  .xl\:px-10 {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
   }
   .xl\:px-11 {
     padding-left: 2.75rem;
     padding-right: 2.75rem;
-  }
-  .xl\:px-2 {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
   }
   .xl\:py-6 {
     padding-top: 1.5rem;
@@ -3136,3 +3123,4 @@ video {
     line-height: 1.75rem;
   }
 }
+

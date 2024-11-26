@@ -44,7 +44,7 @@ The blocks are built using the following CSS frameworks:
 To view the designed blocks, please visit our online demo using the link [here](https://ej2.syncfusion.com/angular/essential-ui-kit/#/blocks).
 
 ## Requesting Blocks & Reporting Bugs
-If you'd like to request a new block or report a bug with existing blocks, please create a feature request or submit a bug through our [feedback portal](https://www.syncfusion.com/feedback/angular).
+If you'd like to request a new block or report a bug with an existing blocks, you can either raise a request directly on GitHub or submit it through our [feedback portal](https://www.syncfusion.com/feedback/angular).
 
 ## License
 The blocks in the Angular application are built using HTML, CSS, TypeScript, and Syncfusion Angular Components. The blocks code is free to use, but licensing for the Syncfusion Angular Components part is alone required to ensure smooth browsing and viewing of the blocks. For more details about Syncfusion Angular Components licensing, please refer [here](https://ej2.syncfusion.com/angular/documentation/licensing/overview).
