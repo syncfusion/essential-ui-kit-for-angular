@@ -14,27 +14,6 @@
     background: url("../../assets/images/sample-browser/main-banner.png") no-repeat 45% 100% / cover;
 }
 
-.main-header {
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 19px;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: #4F46E5;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.vector-img {
-    margin-right: 8px;
-}
-
-.vector-img img {
-    width: 24px;
-    height: 24px;
-}
-
 .figma-img {
     margin-right: 4px;
 }
