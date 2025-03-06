@@ -1,0 +1,110 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-white dark:bg-gray-900">
+    <div [ngStyle]="{'height': '730px', 'width': width, float:'Right'}">
+        <ejs-sidebar #sidebar class="flex flex-col bg-white dark:bg-gray-800" position="Right" type="push" [width]="width" [isOpen]="true" [closeOnDocumentClick]="false" showBackdrop="true" role="complementary" style="display: block;">
+            <div>
+                <div class="flex justify-between items-center p-4 border-b border-gray-200 dark:border-gray-600">
+                    <h2 class="text-base font-semibold text-gray-900 dark:text-white">Filters</h2>
+                    <button ejs-button class="e-flat text-base" iconCss="e-icons e-close" (click)="sidebar.toggle()" content=" " type="button" aria-label="close sidebar" role="button"></button>
+                </div>
+                <div class="p-4">
+                    <div class="border-b border-gray-200 dark:border-gray-600 pb-4">
+                        <h6 class="mb-3 text-sm font-medium text-gray-900 dark:text-white">Active Users</h6>
+                        <div class="flex items-center space-x-2">
+                            <ejs-switch aria-label="switch between monthly and yearly pricing plans" role="switch"></ejs-switch>
+                            <p class="text-sm text-gray-900 dark:text-white">Only show active users</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-4 py-4 border-b border-gray-200 dark:border-gray-600">
+                        <h6 class="text-sm mb-1 font-medium text-gray-900 dark:text-white">Features Set</h6>
+                        <ejs-checkbox label="Project Management" checked="true" aria-label="Project Management" role="checkbox"></ejs-checkbox>
+                        <ejs-checkbox label="CRM" checked="true" aria-label="crm" role="checkbox"></ejs-checkbox>
+                        <ejs-checkbox label="Analytics" aria-label="analytics" role="checkbox"></ejs-checkbox>
+                        <ejs-checkbox label="HR tools" aria-label="hr tools" role="checkbox"></ejs-checkbox>
+                        <ejs-checkbox label="Marketing" aria-label="marketing" role="checkbox"></ejs-checkbox>
+                    </div>
+                    <div class="flex flex-col gap-4 py-4 border-b border-gray-200 dark:border-gray-600">
+                        <h6 class="text-sm mb-1 font-medium text-gray-900 dark:text-white">Subscription Type</h6>
+                        <ejs-radiobutton label="Free" name="subscriptiontype" value="free" aria-label="free" role="radio"></ejs-radiobutton>
+                        <ejs-radiobutton label="Basic" name="subscriptiontype" value="basic" checked="true" aria-label="basic" role="radio"></ejs-radiobutton>
+                        <ejs-radiobutton label="Premium" name="subscriptiontype" value="premium" aria-label="premium" role="radio"></ejs-radiobutton>
+                        <ejs-radiobutton label="Enterprise" name="subscriptiontype" value="enterprise" aria-label="enterprise" role="radio"></ejs-radiobutton>
+                    </div>
+                    <div class="my-4">
+                        <label class="text-sm font-medium text-gray-900 dark:text-white">User Ratings</label>
+                        <div class="px-3">
+                            <ejs-slider #slider type="Range" [value]="[0, 4.5]" [tooltip]="tooltipInfo" min="0" max="5" [step]="1" [ticks]="{ placement: 'After', largeStep: 5, showlargeTicks: true }" style="width: 256px; left: 5px;"></ejs-slider>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-end gap-3 w-full p-4 border-t border-gray-200 dark:border-gray-600">
+                    <button ejs-button class="e-outline" content="Clear" type="button" aria-label="clear" role="button"></button>
+                    <button ejs-button class="e-primary" content="Apply" type="button" aria-label="apply" role="button"></button>
+                </div>
+            </div>
+        </ejs-sidebar>
+    </div>
+</section>
+<!-- SB Code - Start -->
+<div class="p-3 absolute top-0 right-0">
+    <button ejs-button cssClass="e-large e-icons e-chevron-left e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+</div>
+<!-- SB Code - End -->
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body">
+    <div [ngStyle]="{'height': '750px', 'width': width, float:'right'}">
+        <ejs-sidebar #sidebar class="d-flex flex-column bg-body" position="Right" type="push" [width]="width" [isOpen]="true" [closeOnDocumentClick]="false" showBackdrop="true" role="complementary" style="display: block;">
+            <div>
+                <div class="d-flex justify-content-between align-items-center p-3 border-bottom">
+                    <h2 class="h6 mb-0 fw-bold">Filters</h2>
+                    <button ejs-button class="e-flat fs-6" iconCss="e-icons e-close" (click)="sidebar.toggle()" content=" " type="button" aria-label="close sidebar" role="button"></button>
+                </div>
+                <div class="p-3">
+                    <div class="border-bottom pb-3">
+                        <h6 class="mb-3 text-body fw-medium">Active Users</h6>
+                        <div class="d-flex align-items-center gap-2">
+                            <ejs-switch aria-label="switch between monthly and yearly pricing plans" role="switch"></ejs-switch>
+                            <p class="text-body mb-0 fs-6">Only show active users</p>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column gap-3 py-3 border-bottom">
+                        <h6 class="text-body fw-medium">Features Set</h6>
+                        <ejs-checkbox label="Project Management" checked="true" aria-label="Project Management" role="checkbox"></ejs-checkbox>
+                        <ejs-checkbox label="CRM" checked="true" aria-label="crm" role="checkbox"></ejs-checkbox>
+                        <ejs-checkbox label="Analytics" aria-label="analytics" role="checkbox"></ejs-checkbox>
+                        <ejs-checkbox label="HR tools" aria-label="hr tools" role="checkbox"></ejs-checkbox>
+                        <ejs-checkbox label="Marketing" aria-label="marketing" role="checkbox"></ejs-checkbox>
+                    </div>
+                    <div class="d-flex flex-column gap-3 py-3 border-bottom">
+                        <h6 class="text-body fw-medium">Subscription Type</h6>
+                        <ejs-radiobutton label="Free" name="subscriptiontype" value="free" aria-label="free" role="radio"></ejs-radiobutton>
+                        <ejs-radiobutton label="Basic" name="subscriptiontype" value="basic" checked="true" aria-label="basic" role="radio"></ejs-radiobutton>
+                        <ejs-radiobutton label="Premium" name="subscriptiontype" value="premium" aria-label="premium" role="radio"></ejs-radiobutton>
+                        <ejs-radiobutton label="Enterprise" name="subscriptiontype" value="enterprise" aria-label="enterprise" role="radio"></ejs-radiobutton>
+                    </div>
+                    <div class="my-3">
+                        <label class="text-body fs-6 fw-medium">User Ratings</label>
+                        <div class="px-2">
+                            <ejs-slider #slider type="Range" [value]="[0, 4.5]" [tooltip]="tooltipInfo" min="0" max="5" [step]="1" [ticks]="{ placement: 'After', largeStep: 5, showlargeTicks: true }" style="width: 100%;"></ejs-slider>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end gap-2 p-3 border-top">
+                    <button ejs-button class="e-outline" content="Clear" type="button" aria-label="clear" role="button"></button>
+                    <button ejs-button class="e-primary" content="Apply" type="button" aria-label="apply" role="button"></button>
+                </div>
+            </div>
+        </ejs-sidebar>
+    </div>
+</section>
+
+<!-- SB Code - Start -->
+<div class="p-3 position-absolute top-0 end-0">
+    <button ejs-button cssClass="e-large e-icons e-chevron-left e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+</div>
+<!-- SB Code - End -->
+
+}

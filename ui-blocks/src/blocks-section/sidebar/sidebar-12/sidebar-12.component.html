@@ -2,7 +2,7 @@
 
 <section class="bg-white dark:bg-gray-950">
     <div class="float-right" style="height: 600px;">
-        <ejs-sidebar #sidebar class="bg-gray-50 dark:bg-gray-900 !border-l !border-gray-200 dark:!border-gray-700" width="256px" position="Right" showBackdrop="true" aria-label="main navigation menu" role="complementary" style="display: block;">
+        <ejs-sidebar #sidebar class="bg-gray-50 dark:bg-gray-900 !border-l !border-gray-200 dark:!border-gray-700" width="256px" [isOpen]="true" position="Right" showBackdrop="true" aria-label="main navigation menu" role="complementary" style="display: block;">
             <div class="py-6 h-screen">
                 <div class="flex justify-between items-center px-3 mb-2">
                     <span class="text-base text-gray-600 dark:text-gray-400">Market Cap</span>
@@ -15,7 +15,7 @@
                                 <span class="e-avatar e-avatar-xsmall e-avatar-circle">
                                     <img src="assets/images/side-panel/crypto-sidebar/{{data.image}}" alt="profile picture" />
                                 </span>
-                                <span class="text-base ml-2 text-gray-500 dark:text-gray-400">{{data.name}}</span>
+                                <span class="text-base ml-2 text-gray-700 dark:text-gray-300">{{data.name}}</span>
                                 <span class="ml-1.5 text-xs text-gray-500 dark:text-gray-400" style="line-height: 18px;">BTC</span>
                             </div>
                             <div>
@@ -42,7 +42,7 @@
 
 <section class="bg-body">
     <div class="float-right" style="height: 600px;">
-        <ejs-sidebar #sidebar width="256px" position="Right" aria-label="main navigation menu" showBackdrop="true" role="complementary" style="display: block;">
+        <ejs-sidebar #sidebar width="256px" [isOpen]="true" position="Right" aria-label="main navigation menu" showBackdrop="true" role="complementary" style="display: block;">
             <div class="py-4 vh-100">
                 <div class="d-flex justify-content-between align-items-center mb-2 px-2 ms-1">
                     <span class="fs-6 text-body-secondary">Market Cap</span>

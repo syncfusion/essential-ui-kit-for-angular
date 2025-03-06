@@ -2,7 +2,7 @@
 
 <section class="bg-white dark:bg-gray-950">
     <div id="notification-sidebar" style="height: 700px;">
-        <ejs-sidebar #sidebar class="bg-gray-50 dark:bg-gray-900 !border-r !border-gray-200 dark:!border-gray-700" width="256px" aria-label="main navigation menu" role="complementary" style="display: block;">
+        <ejs-sidebar #sidebar class="bg-gray-50 dark:bg-gray-900 !border-r !border-gray-200 dark:!border-gray-700" width="256px" [isOpen]="true" aria-label="main navigation menu" role="complementary" style="display: block;">
             <div class="h-screen">
                 <div class="flex items-center py-4 px-3">
                     <img src="assets/images/common/brand-logos/svg/vector.svg" alt="company logo" />
@@ -11,9 +11,9 @@
                 <div class="mt-1">
                     <ejs-listview class="border-0" [dataSource]="data" [template]="itemTemplate" aria-label="main navigation links" role="list">
                         <ng-template #itemTemplate let-data>
-                            <div class="e-list-wrapper flex items-center justify-between py-1 pr-2">
+                            <div class="e-list-wrapper flex items-center justify-between pr-2">
                                 <div class="text-base leading-6 flex items-center">
-                                    <span class="e-icons {{data.fontIcon}}"></span>
+                                    <span class="e-icons text-base {{data.fontIcon}}"></span>
                                     <span class="font-normal pl-4">{{data.field}}</span>
                                 </div>
                                 <span class="e-badge e-badge-info e-badge-pill !px-1.5 e-bigger" *ngIf="data.field === 'Notifications'">99+</span>
@@ -44,7 +44,8 @@
                         </e-accordionitem>
                     </e-accordionitems>
                 </ejs-accordion>
-                <ejs-toast #element1 class="!absolute !left-4 !top-auto" cssClass="e-toast-info" width="224" showCloseButton="true" timeOut="0" aria-label="alert message" role="alert" (created)="element1.show();" style="bottom: 28%;">
+                <div id="toastmsg" class="!absolute" style="bottom: 25%;"></div>
+                <ejs-toast #element1 target="#toastmsg" [position]="{ X: 'Left', Y: 'Bottom' }" newestOnTop="true" cssClass="e-toast-info" width="224" showCloseButton="true" timeOut="0" aria-label="alert message" role="alert" (created)="element1.show();">
                     <ng-template #title>
                         <div class="pr-2">Adaptive Tiles Meeting</div>
                     </ng-template>
@@ -52,7 +53,7 @@
                         <div>There was a problem with your network connection</div>
                     </ng-template>
                 </ejs-toast>
-                <ejs-toast #element2 class="!absolute !left-4 !top-auto !bottom-0" cssClass="e-toast-warning" width="224" showCloseButton="true" timeOut="0" aria-label="alert message" role="alert" (created)="element2.show();">
+                <ejs-toast #element2 target="#toastmsg" [position]="{ X: 'Left', Y: 'Top' }" newestOnTop="true" cssClass="e-toast-warning" width="224" showCloseButton="true" timeOut="0" aria-label="alert message" role="alert" (created)="element2.show();">
                     <ng-template #title>
                         <div class="pr-2">Adaptive Tiles Meeting</div>
                     </ng-template>
@@ -74,7 +75,7 @@
 
 <section class="bg-body">
     <div id="notification-sidebar" style="height: 700px;">
-        <ejs-sidebar #sidebar width="256px" aria-label="main navigation menu" role="complementary" style="display: block;">
+        <ejs-sidebar #sidebar width="256px" [isOpen]="true" aria-label="main navigation menu" role="complementary" style="display: block;">
             <div class="vh-100">
                 <div class="d-flex align-items-center p-3">
                     <img src="assets/images/common/brand-logos/svg/vector.svg" alt="company logo" />
@@ -84,7 +85,7 @@
                     <ng-template #itemTemplate let-data>
                         <div class="e-list-wrapper px-1 d-flex justify-content-between align-items-center">
                             <div class="fs-6 lh-base">
-                                <span class="e-icons {{data.fontIcon}}"></span>
+                                <span class="e-icons fs-6 {{data.fontIcon}}"></span>
                                 <span class="fw-normal ps-2 ms-1">{{data.field}}</span>
                             </div>
                             <span class="e-badge e-badge-info e-badge-pill" *ngIf="data.field === 'Notifications'">99+</span>

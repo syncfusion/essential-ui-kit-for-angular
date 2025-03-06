@@ -2,7 +2,7 @@
 
 <section class="bg-white dark:bg-gray-950">
     <div class="float-right" style="height: 600px;">
-        <ejs-sidebar #sidebar class="bg-gray-50 dark:bg-gray-900 !border-l !border-gray-200 dark:!border-gray-700" width="256px" position="Right" showBackdrop="true" aria-label="main navigation menu" role="complementary" style="display: block;">
+        <ejs-sidebar #sidebar class="bg-gray-50 dark:bg-gray-900 !border-l !border-gray-200 dark:!border-gray-700" width="256px" [isOpen]="true" position="Right" showBackdrop="true" aria-label="main navigation menu" role="complementary" style="display: block;">
             <div class="py-6 h-screen">
                 <div class="flex justify-between mb-2 px-3">
                     <span class="text-base text-gray-900 dark:text-white">Contacts</span>
@@ -43,7 +43,7 @@
 
 <section class="bg-body">
     <div class="float-end" style="height: 600px;">
-        <ejs-sidebar #sidebar width="256px" position="Right" showBackdrop="true" aria-label="main navigation menu" role="complementary" style="display: block;">
+        <ejs-sidebar #sidebar width="256px" [isOpen]="true" position="Right" showBackdrop="true" aria-label="main navigation menu" role="complementary" style="display: block;">
             <div class="py-4 vh-100">
                 <div class="d-flex justify-content-between mb-2 px-2 ms-1">
                     <span class="fs-6 text-body-secondary">Contacts</span>

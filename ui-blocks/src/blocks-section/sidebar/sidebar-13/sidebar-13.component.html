@@ -2,7 +2,7 @@
 
 <section class="bg-white dark:bg-gray-950">
     <div style="height: 600px;">
-        <ejs-sidebar #sidebar class="bg-gray-50 dark:bg-gray-900 !border-l !border-gray-200 dark:!border-gray-700" width="328px" position="Right" showBackdrop="true" aria-label="main navigation menu" role="complementary" style="display: block;">
+        <ejs-sidebar #sidebar class="bg-gray-50 dark:bg-gray-900 !border-l !border-gray-200 dark:!border-gray-700" width="328px" [isOpen]="true" position="Right" showBackdrop="true" aria-label="main navigation menu" role="complementary" style="display: block;">
             <div class="flex h-screen">
                 <div class="py-6" style="width: 72px;">
                     <div class="flex justify-center items-center px-3 mb-2">
@@ -80,7 +80,7 @@
 
 <section class="bg-body">
     <div style="height: 600px;">
-        <ejs-sidebar #sidebar width="328px" position="Right" showBackdrop="true" aria-label="main navigation menu" role="complementary" style="display: block;">
+        <ejs-sidebar #sidebar width="328px" [isOpen]="true" position="Right" showBackdrop="true" aria-label="main navigation menu" role="complementary" style="display: block;">
             <div class="d-flex vh-100">
                 <div class="py-4 d-flex flex-column align-items-center" style="width: 72px;">
                     <div class="d-flex justify-content-center align-items-center px-3 mb-2">

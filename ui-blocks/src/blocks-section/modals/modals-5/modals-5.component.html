@@ -1,0 +1,137 @@
+@if (currentTheme === 'tailwind') {
+
+<section>
+    <div id="dialog-container" class="relative flex justify-center" [style]="containerHeight">
+        <button ejs-button class="h-fit my-5" (click)="dialog?.show()" type="button" aria-label="add experience" role="button">Add Experience</button>
+        <ejs-dialog #dialog class="rounded-none sm:rounded-lg sm:m-4" target="#dialog-container" [isModal]="true" [showCloseIcon]="true" width="548px" (open)="$event.preventFocus = true" (beforeOpen)="$event.maxHeight='598px'" aria-label="add experience to your profile" role="dialog">
+            <ng-template #header>
+                <div class="flex gap-3">
+                    <span class="e-avatar e-avater-large shrink-0 bg-gray-100 dark:bg-gray-700 rounded-lg"><i class="e-icons e-flags text-xl text-gray-500 dark:text-gray-300"></i></span>
+                    <div>
+                        <p class="font-semibold leading-normal mb-0.5">Add Experience</p>
+                        <p class="text-xs leading-normal text-gray-500 dark:text-gray-400 text-wrap">Share where you've worked on your profile.</p>
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template #content>
+                <form action="#" class="grid grid-cols-1 gap-4 sm:gap-3 text-xs font-medium leading-normal text-gray-700 dark:text-gray-200" onsubmit="event.preventDefault();">
+                    <div class="flex flex-col gap-1">
+                        <label>Designation <span class="text-red-600 dark:text-red-400 font-normal">*</span></label>
+                        <ejs-textbox type="text" placeholder="Enter the job title" aria-label="enter the job title" role="textbox"></ejs-textbox>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="flex flex-col gap-1 order-1 sm:order-none">
+                            <label>Company <span class="text-red-600 dark:text-red-400 font-normal">*</span></label>
+                            <ejs-textbox #companyNameTextbox type="text" placeholder="Enter the company name" (created)="companyNameTextbox.addIcon('prepend', 'e-icons e-search !pr-0')" aria-label="enter the company name" role="textbox"></ejs-textbox>
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <label>Website</label>
+                            <ejs-textbox type="url" placeholder="https://www.example.com" aria-label="enter the website" role="textbox"></ejs-textbox>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="flex flex-col gap-1 order-1 sm:order-none">
+                            <label>Location <span class="text-red-600 dark:text-red-400 font-normal">*</span></label>
+                            <ejs-textbox #locationTextbox class="ml-0" type="text" placeholder="Enter the city or state" (created)="locationTextbox.addIcon('prepend', 'e-icons e-location !pr-0')" aria-label="enter the city or state" role="textbox"></ejs-textbox>
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <label>Employment type <span class="text-red-600 dark:text-red-400 font-normal">*</span></label>
+                            <ejs-dropdownlist placeholder="Select the employment type" aria-label="choose an employment type" role="listbox"></ejs-dropdownlist>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <label>Description</label>
+                        <ejs-textarea placeholder="Provide a brief overview of your role" resizeMode="None" rows="5" aria-label="enter a brief overview of your role" role="textbox"></ejs-textarea>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="flex flex-col gap-1">
+                            <label>Start Date</label>
+                            <ejs-datepicker placeholder="MM/DD/YYYY" aria-label="enter a start date here" role="combobox"></ejs-datepicker>
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <label>End Date</label>
+                            <ejs-datepicker placeholder="MM/DD/YYYY" aria-label="enter an end date here" role="combobox"></ejs-datepicker>
+                        </div>
+                    </div>
+                    <ejs-checkbox label="I currently work here" aria-label="i currently work here" role="checkbox"></ejs-checkbox>
+                </form>
+            </ng-template>
+            <ng-template #footerTemplate>
+                <div class="flex justify-end gap-2 sm:gap-1 py-2">
+                    <button ejs-button cssClass="grow sm:grow-0 !ml-0" type="button" aria-label="discard" role="button">Discard</button>
+                    <button ejs-button cssClass="e-primary grow sm:grow-0" type="button" aria-label="save" role="button">Save</button>
+                </div>
+            </ng-template>
+        </ejs-dialog>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section>
+    <div id="dialog-container" class="position-relative d-flex align-items-start" [style]="containerHeight">
+        <button ejs-button class="e-outline mx-auto my-3" (click)="dialog?.show()" type="button" aria-label="add experience" role="button">Add Experience</button>
+        <ejs-dialog #dialog class="rounded-3 m-sm-2" target="#dialog-container" [isModal]="true" [showCloseIcon]="true" width="548px" (open)="$event.preventFocus = true" (beforeOpen)="$event.maxHeight='598px'" aria-label="add experience to your profile" role="dialog">
+            <ng-template #header>
+                <div class="d-flex gap-2">
+                    <span class="e-avatar e-avater-large flex-shrink-0 rounded-3 bg-body-secondary"><i class="e-icons e-flags fs-5 text-body-secondary"></i></span>
+                    <div class="ms-1">
+                        <p class="fw-bold mb-0 text-body">Add Experience</p>
+                        <p class="small fw-normal text-wrap text-body text-opacity-50 mb-0">Share where you've worked on your profile.</p>
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template #content>
+                <form action="#" class="d-flex flex-column gap-3 gap-sm-2 text-body-secondary small" onsubmit="event.preventDefault();">
+                    <div class="d-flex flex-column gap-1">
+                        <label>Designation <span class="text-danger">*</span></label>
+                        <ejs-textbox type="text" placeholder="Enter the job title" aria-label="enter the job title" role="textbox"></ejs-textbox>
+                    </div>
+                    <div class="row flex-column-reverse flex-sm-row gap-3 gap-sm-0 gx-3 mt-sm-1">
+                        <div class="col-12 col-sm-6 d-flex flex-column gap-1">
+                            <label>Company <span class="text-danger">*</span></label>
+                            <ejs-textbox #companyNameTextbox type="text" placeholder="Enter the company name" (created)="companyNameTextbox.addIcon('prepend', 'e-icons e-search')" aria-label="enter the company name" role="textbox"></ejs-textbox>
+                        </div>
+                        <div class="col-12 col-sm-6 d-flex flex-column gap-1">
+                            <label>Website</label>
+                            <ejs-textbox type="url" placeholder="https://www.example.com" aria-label="enter the website" role="textbox"></ejs-textbox>
+                        </div>
+                    </div>
+                    <div class="row flex-column-reverse flex-sm-row gap-3 gap-sm-0 gx-3 mt-sm-1">
+                        <div class="col-12 col-sm-6 d-flex flex-column gap-1">
+                            <label>Location <span class="text-danger">*</span></label>
+                            <ejs-textbox #locationTextbox class="ml-0" type="text" placeholder="Enter the city or state" (created)="locationTextbox.addIcon('prepend', 'e-icons e-location')" aria-label="enter the city or state" role="textbox"></ejs-textbox>
+                        </div>
+                        <div class="col-12 col-sm-6 d-flex flex-column gap-1">
+                            <label>Employment type <span class="text-danger">*</span></label>
+                            <ejs-dropdownlist placeholder="Select the employment type" aria-label="choose an employment type" role="listbox"></ejs-dropdownlist>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column gap-1 mt-sm-1">
+                        <label>Description</label>
+                        <ejs-textarea placeholder="Provide a brief overview of your role" resizeMode="None" rows="5" aria-label="enter a brief overview of your role" role="textbox"></ejs-textarea>
+                    </div>
+                    <div class="row gap-3 gap-sm-0 gx-3 mt-sm-1">
+                        <div class="col-12 col-sm-6 d-flex flex-column gap-1">
+                            <label>Start Date</label>
+                            <ejs-datepicker placeholder="MM/DD/YYYY" aria-label="enter a start date here" role="combobox"></ejs-datepicker>
+                        </div>
+                        <div class="col-12 col-sm-6 d-flex flex-column gap-1">
+                            <label>End Date</label>
+                            <ejs-datepicker placeholder="MM/DD/YYYY" aria-label="enter an end date here" role="combobox"></ejs-datepicker>
+                        </div>
+                    </div>
+                    <ejs-checkbox cssClass="mt-sm-2" label="I currently work here" aria-label="i currently work here" role="checkbox"></ejs-checkbox>
+                </form>
+            </ng-template>
+            <ng-template #footerTemplate>
+                <div class="d-flex justify-content-end gap-2 gap-sm-1 py-1">
+                    <button ejs-button cssClass="flex-grow-1 flex-sm-grow-0 ms-0" type="button" aria-label="discard" role="button">Discard</button>
+                    <button ejs-button cssClass="e-primary flex-grow-1 flex-sm-grow-0" type="button" aria-label="save" role="button">Save</button>
+                </div>
+            </ng-template>
+        </ejs-dialog>
+    </div>
+</section>
+
+}

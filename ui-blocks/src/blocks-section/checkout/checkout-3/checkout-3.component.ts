@@ -1,14 +1,14 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { GridModule } from '@syncfusion/ej2-angular-grids';
 import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { TextBoxModule, TextAreaModule, MaskedTextBoxModule } from '@syncfusion/ej2-angular-inputs';
 import { ButtonModule, RadioButtonModule, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
-import { GridModule } from '@syncfusion/ej2-angular-grids';
-import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-checkout-3',
     standalone: true,
-    imports: [DropDownListModule, TextBoxModule, RadioButtonModule, ButtonModule, CheckBoxModule, TextAreaModule, MaskedTextBoxModule, GridModule, CommonModule],
+    imports: [CommonModule, GridModule, DropDownListModule, TextBoxModule, TextAreaModule, MaskedTextBoxModule, RadioButtonModule, ButtonModule, CheckBoxModule],
     templateUrl: './checkout-3.component.html'
 })
 export class Checkout3Component implements OnInit, OnDestroy {
@@ -72,7 +72,7 @@ export class Checkout3Component implements OnInit, OnDestroy {
             description: "Original iPhone Charger: 20W Fast USB Type-C Adapter for iPhone 15/15 Plus/15 Pro/15 Pro Max, iPhone 14/14 Plus/14 Pro/14 Pro Max, iPhone 13/12/11 & Others. PD 3.0, 20 Watt, BIS Certified, 2 Years Warranty",
             quantity: 1,
             amount: "$1,900"
-        },
+        }
     ];
 
     /* SB Code - Start */

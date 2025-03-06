@@ -2,11 +2,11 @@
 
 <section class="bg-gray-100 dark:bg-gray-900">
     <div [ngStyle]="{'height': '1298px', 'width': width, float:'Right'}">
-        <ejs-sidebar class="w-full" #sidebar position="Right" [type]="type" [width]="width" [isOpen]="true" [closeOnDocumentClick]="false" showBackdrop="true" role="sidebar" style="display: block;">
+        <ejs-sidebar class="w-full" #sidebar position="Right" [type]="type" [width]="width" [isOpen]="true" [closeOnDocumentClick]="false" showBackdrop="true" role="complementary" style="display: block;">
             <div class="p-4 md:p-6 bg-gray-100 dark:bg-gray-900">
                 <div class="flex justify-between items-center mb-5">
                     <h2 class="text-lg font-medium text-gray-900 dark:text-white">My shopping cart</h2>
-                    <button ejs-button class="e-icons e-btn e-flat text-xl" (click)="sidebar.toggle()" type="button" aria-label="close the sidebar" role="button">
+                    <button ejs-button class="e-icons e-flat text-xl" (click)="sidebar.toggle()" type="button" aria-label="close the sidebar" role="button">
                         <i class="e-icons e-close"></i>
                     </button>
                 </div>
@@ -31,7 +31,7 @@
                             </div>
                         </div>
                         <div>
-                            <hr class="w-full border-gray-200 dark:border-gray-600" />
+                            <hr class="w-full border-gray-300 dark:border-gray-600" />
                         </div>
                         <div class="flex justify-between">
                             <div class="text-base font-semibold text-gray-700 dark:text-gray-300">Total</div>
@@ -119,10 +119,10 @@
                 </div>
                 <div class="flex flex-col md:flex-row items-center justify-center gap-4 pt-2">
                     <div class="w-full md:w-1/2 e-bigger">
-                        <button ejs-button class="w-full e-primary e-btn text-lg" type="submit" aria-label="proceed to checkout" role="button">Proceed to checkout</button>
+                        <button ejs-button class="w-full e-primary text-lg" type="submit" aria-label="proceed to checkout" role="button">Proceed to checkout</button>
                     </div>
                     <div class="w-full md:w-1/2 e-bigger">
-                        <button ejs-button class="w-full e-outline e-btn text-lg" type="submit" aria-label="continue shopping" role="button">Continue shopping</button>
+                        <button ejs-button class="w-full e-outline text-lg" type="submit" aria-label="continue shopping" role="button">Continue shopping</button>
                     </div>
                 </div>
             </div>
@@ -139,11 +139,11 @@
 
 <section class="bg-light-subtle">
     <div class="main-sidebar-content" [ngStyle]="{'height': '1298px', 'width': width, float:'Right'}">
-        <ejs-sidebar #sidebar position="Right" [type]="type" [width]="width" [isOpen]="true" [closeOnDocumentClick]="false" showBackdrop="true" role="sidebar" style="display: block;">
+        <ejs-sidebar #sidebar position="Right" [type]="type" [width]="width" [isOpen]="true" [closeOnDocumentClick]="false" showBackdrop="true" role="complementary" style="display: block;">
             <div class="p-3 p-md-4 bg-light-subtle">
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <h2 class="h5 fs-5 fw-bold text-body mb-0">My shopping cart</h2>
-                    <button ejs-button class="e-icons e-btn e-flat" (click)="sidebar.toggle()" type="button" aria-label="close the sidebar" role="button">
+                    <button ejs-button class="e-icons e-flat" (click)="sidebar.toggle()" type="button" aria-label="close the sidebar" role="button">
                         <i class="e-icons e-close"></i>
                     </button>
                 </div>
@@ -250,10 +250,10 @@
                 </div>
                 <div class="d-flex flex-column flex-md-row align-items-center justify-content-center gap-3">
                     <div class="w-100">
-                        <button ejs-button class="e-btn e-primary e-block" type="submit" aria-label="proceed to checkout" role="button">Proceed to checkout</button>
+                        <button ejs-button class="e-primary e-block" type="submit" aria-label="proceed to checkout" role="button">Proceed to checkout</button>
                     </div>
                     <div class="w-100">
-                        <button ejs-button class="e-btn e-secondary e-block" type="submit" aria-label="continue shopping" role="button">Continue shopping</button>
+                        <button ejs-button class="e-secondary e-block" type="submit" aria-label="continue shopping" role="button">Continue shopping</button>
                     </div>
                 </div>
             </div>

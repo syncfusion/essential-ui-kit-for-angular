@@ -3,3 +3,11 @@
     border-radius: 16px;
     margin-bottom: 24px;
 }
+
+#bus-details .e-breadcrumb .e-home {
+    height: inherit;
+}
+
+#bus-details .e-breadcrumb-text {
+    padding: 0px !important;
+}

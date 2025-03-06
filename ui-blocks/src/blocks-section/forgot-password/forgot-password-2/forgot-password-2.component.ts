@@ -1,12 +1,12 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { TextBoxModule } from '@syncfusion/ej2-angular-inputs';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 
 @Component({
     selector: 'app-forgot-password-2',
     standalone: true,
-    imports: [TextBoxModule, ButtonModule, CommonModule],
+    imports: [CommonModule, TextBoxModule, ButtonModule],
     templateUrl: './forgot-password-2.component.html'
 })
 export class ForgotPassword2Component implements OnInit, OnDestroy {

@@ -1,0 +1,371 @@
+@if (currentTheme === 'tailwind') {
+
+<section>
+    <div id="dialog-container" class="relative flex justify-center" style="min-height: 600px;">
+        <button ejs-button class="h-fit my-5" (click)="dialog?.show()" type="button" aria-label="add team member" role="button">Add Team Member</button>
+        <ejs-dialog #dialog class="rounded-none sm:rounded-lg sm:m-4" target="#dialog-container" [isModal]="true" [showCloseIcon]="true" [visible]="false" width="545px" (open)="$event.preventFocus = true" aria-label="add a new team member" role="dialog">
+            <ng-template #header>
+                <p class="mb-0.5 font-semibold leading-normal">Add Team Member</p>
+                <p class="text-xs leading-normal text-gray-500 dark:text-gray-400 text-wrap">Complete all sections to add a new team member.</p>
+            </ng-template>
+            <ng-template #content>
+                <div class="space-y-5 sm:space-y-4">
+                    <div class="py-2" [style]="stepperStyle">
+                        <ejs-stepper #stepper cssClass="e-small" [orientation]="stepperOrientation" [labelPosition]="labelPos">
+                            <e-steps>
+                                <e-step iconCss="e-icons" label="User Information"></e-step>
+                                <e-step iconCss="e-icons" label="Workspace Access"></e-step>
+                                <e-step iconCss="e-icons" label="Security Settings"></e-step>
+                                <e-step iconCss="e-icons" label="Resource Access"></e-step>
+                            </e-steps>
+                        </ejs-stepper>
+                    </div>
+                    <div class="sm:overflow-y-scroll" style="height: 298px; scrollbar-width: none;">
+                        <ejs-accordion class="border-0" expandMode="Single" role="button">
+                            <e-accordionitems>
+                                <e-accordionitem cssClass="mb-3 !border !rounded-lg" [expanded]="stepper.activeStep === 0">
+                                    <ng-template #header>
+                                        <div class="flex gap-2.5 items-center mr-4">
+                                            <span class="e-avatar e-avatar rounded-lg border bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300"><i class="e-icons sf-icon-users text-xl"></i></span>
+                                            <div class="flex flex-col gap-0.5">
+                                                <p class="text-base">User Information</p>
+                                                <p class="text-gray-500 font-normal dark:text-gray-400 text-wrap line-clamp-1">Basic details about the team member</p>
+                                            </div>
+                                        </div>
+                                    </ng-template>
+                                    <ng-template #content>
+                                        <div class="flex flex-col gap-3 p-1 pt-3">
+                                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                                <div class="flex flex-col gap-1">
+                                                    <label class="text-xs font-medium text-gray-700 dark:text-gray-200">First Name <span class="text-red-600 font-normal dark:text-red-400">*</span></label>
+                                                    <ejs-textbox type="text" placeholder="Enter first name" aria-label="enter your first name" role="textbox"></ejs-textbox>
+                                                </div>
+                                                <div class="flex flex-col gap-1">
+                                                    <label class="text-xs font-medium text-gray-700 dark:text-gray-200">Last Name <span class="text-red-600 font-normal dark:text-red-400">*</span></label>
+                                                    <ejs-textbox type="text" placeholder="Enter last name" aria-label="enter your last name" role="textbox"></ejs-textbox>
+                                                </div>
+                                            </div>
+                                            <div class="flex flex-col gap-1">
+                                                <label class="text-xs font-medium text-gray-700 dark:text-gray-200">Work Email <span class="text-red-600 font-normal dark:text-red-400">*</span></label>
+                                                <ejs-textbox type="email" placeholder="name@company.com" aria-label="enter your work email address" role="textbox"></ejs-textbox>
+                                            </div>
+                                        </div>
+                                    </ng-template>
+                                </e-accordionitem>
+                                <e-accordionitem cssClass="mb-3 !border !rounded-lg" [expanded]="stepper.activeStep === 1">
+                                    <ng-template #header>
+                                        <div class="flex gap-2.5 items-center mr-4">
+                                            <span class="e-avatar e-avatar rounded-lg border bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300"><i class="e-icons sf-icon-building-03 text-xl"></i></span>
+                                            <div class="flex flex-col gap-0.5">
+                                                <p class="text-base">Workspace Access</p>
+                                                <p class="text-gray-500 font-normal dark:text-gray-400 text-wrap line-clamp-1">Workspace and role assignment</p>
+                                            </div>
+                                        </div>
+                                    </ng-template>
+                                    <ng-template #content>
+                                        <div class="grid grid-cols-1 gap-3 p-1 pt-3">
+                                            <div class="flex flex-col gap-1">
+                                                <label class="text-xs font-medium text-gray-700 dark:text-gray-200">Workspace <span class="text-red-600 font-normal dark:text-red-400">*</span></label>
+                                                <ejs-dropdownlist placeholder="Select a workspace" aria-label="choose a workspace" role="listbox"></ejs-dropdownlist>
+                                            </div>
+                                            <div class="flex flex-col gap-1">
+                                                <label class="text-xs font-medium text-gray-700 dark:text-gray-200">Role <span class="text-red-600 font-normal dark:text-red-400">*</span></label>
+                                                <ejs-dropdownlist [dataSource]="[{ Id: 'value1', value: 'Select role' }]" [fields]="{text: 'value', value: 'Id'}" value="value1" aria-label="choose a role" role="listbox"></ejs-dropdownlist>
+                                            </div>
+                                        </div>
+                                    </ng-template>
+                                </e-accordionitem>
+                                <e-accordionitem cssClass="mb-3 !border !rounded-lg" [expanded]="stepper.activeStep === 2">
+                                    <ng-template #header>
+                                        <div class="flex gap-2.5 items-center mr-4">
+                                            <span class="e-avatar e-avatar rounded-lg border bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300"><i class="e-icons sf-icon-shield text-xl"></i></span>
+                                            <div class="flex flex-col gap-0.5">
+                                                <p class="text-base">Security Settings</p>
+                                                <p class="text-gray-500 font-normal dark:text-gray-400 text-wrap line-clamp-1">Configure security and authentication</p>
+                                            </div>
+                                        </div>
+                                    </ng-template>
+                                    <ng-template #content>
+                                        <div class="p-1 pt-1.5 space-y-5">
+                                            <div class="flex items-center justify-between gap-4">
+                                                <div>
+                                                    <p class="font-medium mb-1">SSO Authentication</p>
+                                                    <p class="text-gray-500 dark:text-gray-400">Enable single sign-on access</p>
+                                                </div>
+                                                <ejs-switch cssClass="w-10 shrink-0" checked="true" aria-label="enable SSO authentication" role="switch"></ejs-switch>
+                                            </div>
+                                            <div class="flex items-center justify-between gap-4">
+                                                <div>
+                                                    <p class="font-medium mb-1">Two-Factor Authentication</p>
+                                                    <p class="text-gray-500 dark:text-gray-400">Require 2FA for account access</p>
+                                                </div>
+                                                <ejs-switch cssClass="w-10 shrink-0" checked="true" aria-label="enable two-factor authentication" role="switch"></ejs-switch>
+                                            </div>
+                                        </div>
+                                    </ng-template>
+                                </e-accordionitem>
+                                <e-accordionitem cssClass="!border !rounded-lg" [expanded]="stepper.activeStep === 3">
+                                    <ng-template #header>
+                                        <div class="flex gap-2.5 items-center mr-4">
+                                            <span class="e-avatar e-avatar rounded-lg border bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300"><i class="e-icons sf-icon-laptop-01 text-xl"></i></span>
+                                            <div class="flex flex-col gap-0.5">
+                                                <p class="text-base">Resource Access</p>
+                                                <p class="text-gray-500 font-normal dark:text-gray-400 text-wrap line-clamp-1">Configure access to various tools</p>
+                                            </div>
+                                        </div>
+                                    </ng-template>
+                                    <ng-template #content>
+                                        <div class="p-1 pt-1.5 space-y-5">
+                                            <div class="flex items-center justify-between gap-4">
+                                                <div>
+                                                    <p class="font-medium mb-1">GitHub Access</p>
+                                                    <p class="text-gray-500 dark:text-gray-400">Access to code repositories and version control.</p>
+                                                </div>
+                                                <ejs-switch cssClass="w-10 shrink-0" aria-label="enable github access" role="switch"></ejs-switch>
+                                            </div>
+                                            <div class="flex items-center justify-between gap-4">
+                                                <div>
+                                                    <p class="font-medium mb-1">AWS Console</p>
+                                                    <p class="text-gray-500 dark:text-gray-400">Access to cloud computing services and resources.</p>
+                                                </div>
+                                                <ejs-switch cssClass="w-10 shrink-0" aria-label="enable AWS console access" role="switch"></ejs-switch>
+                                            </div>
+                                            <div class="flex items-center justify-between gap-4">
+                                                <div>
+                                                    <p class="font-medium mb-1">Slack Access</p>
+                                                    <p class="text-gray-500 dark:text-gray-400">Access to team communication and collaboration tools.</p>
+                                                </div>
+                                                <ejs-switch cssClass="w-10 shrink-0" aria-label="enable slack access" role="switch"></ejs-switch>
+                                            </div>
+                                            <div class="flex items-center justify-between gap-4">
+                                                <div>
+                                                    <p class="font-medium mb-1">JIRA Access</p>
+                                                    <p class="text-gray-500 dark:text-gray-400">Access to project management and issue tracking.</p>
+                                                </div>
+                                                <ejs-switch cssClass="w-10 shrink-0" aria-label="enable JIRA access" role="switch"></ejs-switch>
+                                            </div>
+                                            <div class="flex items-center justify-between gap-4">
+                                                <div>
+                                                    <p class="font-medium mb-1">Google Drive Access</p>
+                                                    <p class="text-gray-500 dark:text-gray-400">Access to cloud storage and shared documents.</p>
+                                                </div>
+                                                <ejs-switch cssClass="w-10 shrink-0" aria-label="enable google drive access" role="switch"></ejs-switch>
+                                            </div>
+                                            <div class="flex items-center justify-between gap-4">
+                                                <div>
+                                                    <p class="font-medium mb-1">Salesforce Access</p>
+                                                    <p class="text-gray-500 dark:text-gray-400">Access to customer relationship management tools.</p>
+                                                </div>
+                                                <ejs-switch cssClass="w-10 shrink-0" aria-label="enable salesforce access" role="switch"></ejs-switch>
+                                            </div>
+                                            <div class="flex items-center justify-between gap-4">
+                                                <div>
+                                                    <p class="font-medium mb-1">VPN Access</p>
+                                                    <p class="text-gray-500 dark:text-gray-400">Access to secure internal networks.</p>
+                                                </div>
+                                                <ejs-switch cssClass="w-10 shrink-0" aria-label="enable VPN access" role="switch"></ejs-switch>
+                                            </div>
+                                        </div>
+                                    </ng-template>
+                                </e-accordionitem>
+                            </e-accordionitems>
+                        </ejs-accordion>
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template #footerTemplate>
+                <div class="flex justify-end gap-2 sm:gap-1 py-2">
+                    <button ejs-button cssClass="grow sm:grow-0 !ml-0" type="button" aria-label="cancel" role="button">Cancel</button>
+                    <button ejs-button cssClass="e-primary grow sm:grow-0" type="button" aria-label="add member" role="button">Add Member</button>
+                </div>
+            </ng-template>
+        </ejs-dialog>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section>
+    <div id="dialog-container" class="position-relative d-flex align-items-start" style="min-height: 600px;">
+        <button ejs-button class="e-outline mx-auto my-3" (click)="dialog?.show()" type="button" aria-label="add team member" role="button">Add Team Member</button>
+        <ejs-dialog #dialog class="rounded-3 m-sm-2" target="#dialog-container" [isModal]="true" [showCloseIcon]="true" [visible]="false" width="545px" (open)="$event.preventFocus = true" aria-label="add a new team member" role="dialog">
+            <ng-template #header>
+                <p class="fw-bold text-body mb-0">Add Team Member</p>
+                <p class="small fw-normal text-body text-opacity-50 text-wrap mb-0">Complete all sections to add a new team member.</p>
+            </ng-template>
+            <ng-template #content>
+                <div class="d-flex flex-column gap-4 mt-2">
+                    <div class="mt-sm-1 mb-2 mb-sm-0 mb-md-3" [style]="stepperStyle">
+                        <ejs-stepper #stepper cssClass="e-small" [orientation]="stepperOrientation" [labelPosition]="labelPos">
+                            <e-steps>
+                                <e-step iconCss="e-icons" label="User Information"></e-step>
+                                <e-step iconCss="e-icons" label="Workspace Access"></e-step>
+                                <e-step iconCss="e-icons" label="Security Settings"></e-step>
+                                <e-step iconCss="e-icons" label="Resource Access"></e-step>
+                            </e-steps>
+                        </ejs-stepper>
+                    </div>
+                    <div class="overflow-auto" style="height: 298px; scrollbar-width: none;">
+                        <ejs-accordion class="border-0" expandMode="Single" role="button">
+                            <e-accordionitems>
+                                <e-accordionitem cssClass="mb-3 border rounded-3 overflow-hidden" [expanded]="stepper.activeStep === 0">
+                                    <ng-template #header>
+                                        <div class="d-flex gap-2 align-items-center me-3">
+                                            <span class="e-avatar e-avatar rounded-3 border bg-body-secondary"><i class="e-icons sf-icon-users fs-4"></i></span>
+                                            <div class="d-flex flex-column ms-1">
+                                                <p class="fs-6 fw-medium mb-0">User Information</p>
+                                                <p class="text-body text-wrap text-opacity-50 text-truncate mb-0" style="display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden;">Basic details about the team member</p>
+                                            </div>
+                                        </div>
+                                    </ng-template>
+                                    <ng-template #content>
+                                        <div class="d-flex flex-column gap-2 p-1 mt-1 small text-body-secondary">
+                                            <div class="row gap-1 gap-sm-0 gy-2 gy-sm-0 gx-3">
+                                                <div class="col-sm-6 d-flex flex-column gap-1">
+                                                    <label>First Name <span class="text-danger">*</span></label>
+                                                    <ejs-textbox type="text" placeholder="Enter first name" aria-label="enter your first name" role="textbox"></ejs-textbox>
+                                                </div>
+                                                <div class="col-sm-6 d-flex flex-column gap-1">
+                                                    <label>Last Name <span class="text-danger">*</span></label>
+                                                    <ejs-textbox type="text" placeholder="Enter last name" aria-label="enter your last name" role="textbox"></ejs-textbox>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex flex-column gap-1 mt-1">
+                                                <label>Work Email <span class="text-danger">*</span></label>
+                                                <ejs-textbox type="email" placeholder="name@company.com" aria-label="enter your work email address" role="textbox"></ejs-textbox>
+                                            </div>
+                                        </div>
+                                    </ng-template>
+                                </e-accordionitem>
+                                <e-accordionitem cssClass="mb-3 border rounded-3 overflow-hidden" [expanded]="stepper.activeStep === 1">
+                                    <ng-template #header>
+                                        <div class="d-flex gap-2 align-items-center me-3">
+                                            <span class="e-avatar e-avatar rounded-3 border bg-body-secondary"><i class="e-icons sf-icon-building-03 fs-4"></i></span>
+                                            <div class="d-flex flex-column ms-1">
+                                                <p class="fs-6 fw-medium mb-0">Workspace Access</p>
+                                                <p class="text-body text-wrap text-opacity-50 text-truncate mb-0" style="display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden;">Workspace and role assignment</p>
+                                            </div>
+                                        </div>
+                                    </ng-template>
+                                    <ng-template #content>
+                                        <div class="d-flex flex-column gap-2 p-1 mt-1 small text-body-secondary">
+                                            <div class="d-flex flex-column gap-1 mt-1">
+                                                <label>Workspace <span class="text-danger">*</span></label>
+                                                <ejs-dropdownlist placeholder="Select a workspace" aria-label="choose a workspace" role="listbox"></ejs-dropdownlist>
+                                            </div>
+                                            <div class="d-flex flex-column gap-1 mt-1">
+                                                <label>Role <span class="text-danger">*</span></label>
+                                                <ejs-dropdownlist [dataSource]="[{ Id: 'value1', value: 'Select role' }]" [fields]="{text: 'value', value: 'Id'}" value="value1" aria-label="choose a role" role="listbox"></ejs-dropdownlist>
+                                            </div>
+                                        </div>
+                                    </ng-template>
+                                </e-accordionitem>
+                                <e-accordionitem cssClass="mb-3 border rounded-3 overflow-hidden" [expanded]="stepper.activeStep === 2">
+                                    <ng-template #header>
+                                        <div class="d-flex gap-2 align-items-center me-3">
+                                            <span class="e-avatar e-avatar rounded-3 border bg-body-secondary"><i class="e-icons sf-icon-shield fs-4"></i></span>
+                                            <div class="d-flex flex-column ms-1">
+                                                <p class="fs-6 fw-medium mb-0">Security Settings</p>
+                                                <p class="text-body text-wrap text-opacity-50 text-truncate mb-0" style="display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden;">Configure security and authentication</p>
+                                            </div>
+                                        </div>
+                                    </ng-template>
+                                    <ng-template #content>
+                                        <div class="d-flex flex-column gap-3 p-1 mt-1">
+                                            <div class="d-flex align-items-center justify-content-between gap-3">
+                                                <div>
+                                                    <p class="fw-medium text-body mb-1">SSO Authentication</p>
+                                                    <p class="text-body-secondary mb-0">Enable single sign-on access</p>
+                                                </div>
+                                                <ejs-switch cssClass="flex-shrink-0" checked="true" aria-label="enable SSO authentication" style="width: 36px;" role="switch"></ejs-switch>
+                                            </div>
+                                            <div class="d-flex align-items-center justify-content-between gap-3">
+                                                <div>
+                                                    <p class="fw-medium text-body mb-1">Two-Factor Authentication</p>
+                                                    <p class="text-body-secondary mb-0">Require 2FA for account access</p>
+                                                </div>
+                                                <ejs-switch cssClass="flex-shrink-0" checked="true" aria-label="enable two-factor authentication" style="width: 36px;" role="switch"></ejs-switch>
+                                            </div>
+                                        </div>
+                                    </ng-template>
+                                </e-accordionitem>
+                                <e-accordionitem cssClass="border rounded-3 overflow-hidden" [expanded]="stepper.activeStep === 3">
+                                    <ng-template #header>
+                                        <div class="d-flex gap-2 align-items-center me-3">
+                                            <span class="e-avatar e-avatar rounded-3 border bg-body-secondary"><i class="e-icons sf-icon-laptop-01 fs-4"></i></span>
+                                            <div class="d-flex flex-column ms-1">
+                                                <p class="fs-6 fw-medium mb-0">Resource Access</p>
+                                                <p class="text-body text-wrap text-opacity-50 text-truncate mb-0" style="display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden;">Configure access to various tools</p>
+                                            </div>
+                                        </div>
+                                    </ng-template>
+                                    <ng-template #content>
+                                        <div class="d-flex flex-column gap-3 p-1 mt-1">
+                                            <div class="d-flex align-items-center justify-content-between gap-3">
+                                                <div>
+                                                    <p class="fw-medium text-body mb-1">GitHub Access</p>
+                                                    <p class="text-body-secondary mb-0">Access to code repositories and version control.</p>
+                                                </div>
+                                                <ejs-switch cssClass="flex-shrink-0" aria-label="enable github access" style="width: 36px;" role="switch"></ejs-switch>
+                                            </div>
+                                            <div class="d-flex align-items-center justify-content-between gap-3">
+                                                <div>
+                                                    <p class="fw-medium text-body mb-1">AWS Console</p>
+                                                    <p class="text-body-secondary mb-0">Access to cloud computing services and resources.</p>
+                                                </div>
+                                                <ejs-switch cssClass="flex-shrink-0" aria-label="enable AWS console access" style="width: 36px;" role="switch"></ejs-switch>
+                                            </div>
+                                            <div class="d-flex align-items-center justify-content-between gap-3">
+                                                <div>
+                                                    <p class="fw-medium text-body mb-1">Slack Access</p>
+                                                    <p class="text-body-secondary mb-0">Access to team communication and collaboration tools.</p>
+                                                </div>
+                                                <ejs-switch cssClass="flex-shrink-0" aria-label="enable slack access" style="width: 36px;" role="switch"></ejs-switch>
+                                            </div>
+                                            <div class="d-flex align-items-center justify-content-between gap-3">
+                                                <div>
+                                                    <p class="fw-medium text-body mb-1">JIRA Access</p>
+                                                    <p class="text-body-secondary mb-0">Access to project management and issue tracking.</p>
+                                                </div>
+                                                <ejs-switch cssClass="flex-shrink-0" aria-label="enable JIRA access" style="width: 36px;" role="switch"></ejs-switch>
+                                            </div>
+                                            <div class="d-flex align-items-center justify-content-between gap-3">
+                                                <div>
+                                                    <p class="fw-medium text-body mb-1">Google Drive Access</p>
+                                                    <p class="text-body-secondary mb-0">Access to cloud storage and shared documents.</p>
+                                                </div>
+                                                <ejs-switch cssClass="flex-shrink-0" aria-label="enable google drive access" style="width: 36px;" role="switch"></ejs-switch>
+                                            </div>
+                                            <div class="d-flex align-items-center justify-content-between gap-3">
+                                                <div>
+                                                    <p class="fw-medium text-body mb-1">Salesforce Access</p>
+                                                    <p class="text-body-secondary mb-0">Access to customer relationship management tools.</p>
+                                                </div>
+                                                <ejs-switch cssClass="flex-shrink-0" aria-label="enable salesforce access" style="width: 36px;" role="switch"></ejs-switch>
+                                            </div>
+                                            <div class="d-flex align-items-center justify-content-between gap-3">
+                                                <div>
+                                                    <p class="fw-medium text-body mb-1">VPN Access</p>
+                                                    <p class="text-body-secondary mb-0">Access to secure internal networks.</p>
+                                                </div>
+                                                <ejs-switch cssClass="flex-shrink-0" aria-label="enable VPN access" style="width: 36px;" role="switch"></ejs-switch>
+                                            </div>
+                                        </div>
+                                    </ng-template>
+                                </e-accordionitem>
+                            </e-accordionitems>
+                        </ejs-accordion>
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template #footerTemplate>
+                <div class="d-flex justify-content-end gap-2 py-1">
+                    <button ejs-button cssClass="flex-grow-1 flex-sm-grow-0 ms-0" type="button" aria-label="cancel" role="button">Cancel</button>
+                    <button ejs-button cssClass="e-primary flex-grow-1 flex-sm-grow-0" type="button" aria-label="add member" role="button">Add Member</button>
+                </div>
+            </ng-template>
+        </ejs-dialog>
+    </div>
+</section>
+
+}

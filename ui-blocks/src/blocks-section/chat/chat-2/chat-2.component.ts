@@ -3,13 +3,12 @@ import { CommonModule } from '@angular/common';
 import { ListViewModule } from '@syncfusion/ej2-angular-lists';
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { DropDownButtonModule } from '@syncfusion/ej2-angular-splitbuttons';
-import { SidebarModule } from '@syncfusion/ej2-angular-navigations';
 import { TextBoxModule } from '@syncfusion/ej2-angular-inputs';
 
 @Component({
     selector: 'app-chat-2',
     standalone: true,
-    imports: [CommonModule, ListViewModule, ButtonModule, DropDownButtonModule, SidebarModule, TextBoxModule],
+    imports: [CommonModule, ListViewModule, ButtonModule, DropDownButtonModule, TextBoxModule],
     templateUrl: './chat-2.component.html',
     styleUrl: './chat-2.component.css'
 })

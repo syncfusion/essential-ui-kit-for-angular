@@ -134,13 +134,13 @@
                                         <span class="e-badge e-badge-pill e-badge-info e-bigger ms-2">{{data.deliveryType}}</span>
                                     </div>
                                 </div>
-                                <div class="e-card-content p-0 pe-1 mt-2 mt-sm-0 flex-shrink-0 ms-0 ms-sm-2">
+                                <div class="e-card-content p-0 pe-1 mt-2 mt-sm-0 flex-shrink-0 ms-0 col-sm-5 col-md-4 col-lg-3 ps-xl-3">
                                     <div class="d-flex justify-content-sm-end align-items-center flex-wrap">
                                         <span class="fs-5 fw-medium text-body me-1">{{data.price | currency}}</span>
                                         <span class="me-1 fs-6 text-body-secondary text-decoration-line-through">{{data.originalPrice | currency}}</span>
                                         <span class="fw-medium text-primary">({{data.discount}})</span>
                                     </div>
-                                    <div class="mt-2 pt-1 d-none d-sm-flex justify-content-sm-end align-items-center">
+                                    <div class="mt-2 pt-1 d-none d-sm-flex justify-content-sm-end align-items-center flex-wrap">
                                         <span class="text-body-secondary me-2">Quantity</span>
                                         <ejs-numerictextbox format="###.##" value="1" width="130px" aria-label="quantity of items" role="spinbutton"></ejs-numerictextbox>
                                     </div>

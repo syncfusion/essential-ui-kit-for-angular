@@ -35,35 +35,35 @@ export class List9Component implements OnInit, OnDestroy {
             time: 'Just now',
             title: 'Great News: Your salary has been deposited!',
             message: 'Your salary for the month September 2024 is credited to your account. Check your balance to ensure everything is accurate!',
-            tag: 'financial',
+            tag: 'financial'
         },
         {
             id: 2,
             time: '7 hours ago',
             title: 'Friendly reminder: Rent payment due soon!',
             message: 'Just a heads-up that your rent payment is due soon. Please make sure to pay on time to avoid any late fees!',
-            tag: 'remainder',
+            tag: 'remainder'
         },
         {
             id: 3,
             time: 'Yesterday',
             title: 'Scheduled maintenance notification',
             message: 'We’ll be conducting maintenance in your apartment on Wednesday at 10.00 AM. Please ensure access to your unit.',
-            tag: 'maintenance',
+            tag: 'maintenance'
         },
         {
             id: 4,
             time: '20 Sep',
             title: 'Don’t forget: Grocery shopping time!',
             message: 'Time to stock up on groceries! Check your pantry for essentials and make your shopping list to save time.',
-            tag: 'shopping',
+            tag: 'shopping'
         },
         {
             id: 5,
             time: '20 Sep',
             title: 'Heads Up: Your utility bill is due soon!',
             message: 'Just a reminder that your utility bill is due in one week. Please make sure to pay on time to avoid any interruptions in service!',
-            tag: 'financial',
+            tag: 'financial'
         }
     ]
 

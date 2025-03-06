@@ -1,0 +1,53 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-gray-50 dark:bg-gray-900">
+    <div class="px-4 sm:px-6 xl:px-11 py-12">
+        <div class="grid sm:grid-cols-2 gap-6 lg:gap-4 lg:grid-cols-4">
+            <div *ngFor="let data of metricsData" class="e-card pt-6 e-bigger rounded-lg shadow-none !border-gray-300 dark:!border-gray-600">
+                <div class="e-card-stacked">
+                    <div class="e-card-header !py-0 !justify-start !flex-col">
+                        <span class="e-avatar e-avatar-large rounded-lg" [ngClass]="{'bg-red-100 dark:bg-red-800 text-red-600 dark:text-red-400': data.metricName === 'Incoming Calls','bg-green-100 dark:bg-green-800 text-green-700 dark:text-green-500': data.metricName === 'Answered Calls','bg-orange-100 dark:bg-orange-800 text-orange-700 dark:text-orange-500': data.metricName === 'Abandoned Calls','bg-gray-200 dark:bg-gray-700 text-gray-500 dark:text-gray-400': data.metricName === 'Total Calls'}">
+                            <span class="text-2xl" [ngClass]="{'sf-icon-phone-call-incoming': data.metricName === 'Incoming Calls','sf-icon-phone-call-outgoing': data.metricName === 'Answered Calls','sf-icon-phone-call-missed': data.metricName === 'Abandoned Calls','sf-icon-phone': data.metricName === 'Total Calls'}"></span>
+                        </span>
+                        <h4 class="text-base font-medium text-gray-800 dark:text-gray-300 mt-3">{{data.metricName}}</h4>
+                    </div>
+                    <div class="e-card-content !pb-6 !pt-2 flex">
+                        <span class="text-xl font-semibold text-gray-900 dark:text-white mr-2">{{data.callCount}}K</span>
+                        <span class="gap-1 flex items-center" [ngClass]="data.trend === 'up' ? 'text-green-700 dark:text-green-500' : 'text-red-600 dark:text-red-400'">{{data.currentPercentage > 0 ? '+' : ''}}{{data.currentPercentage}}&#37;
+                            <span class="e-icons e-medium" [ngClass]="data.trend === 'up'? 'e-arrow-up' : 'e-arrow-down'"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body-tertiary">
+    <div class="px-3 px-sm-4 px-xl-5 py-5">
+        <div class="row g-4 g-lg-3">
+            <div *ngFor="let data of metricsData" class="col-12 col-sm-6 col-lg-3">
+                <div class="e-card rounded-3 e-bigger pt-4">
+                    <div class="e-card-stacked">
+                        <div class="e-card-header py-0 px-4 d-flex flex-column align-items-start">
+                            <span class="e-avatar e-avatar-large rounded-3" [ngClass]="{'bg-danger-subtle text-danger': data.metricName === 'Incoming Calls','bg-success-subtle text-success': data.metricName === 'Answered Calls','bg-warning-subtle text-warning-emphasis ': data.metricName === 'Abandoned Calls','bg-body-secondary text-secondary': data.metricName === 'Total Calls'}">
+                                <span class="fs-4" [ngClass]="{'sf-icon-phone-call-incoming': data.metricName === 'Incoming Calls','sf-icon-phone-call-outgoing': data.metricName === 'Answered Calls','sf-icon-phone-call-missed': data.metricName === 'Abandoned Calls','sf-icon-phone': data.metricName === 'Total Calls'}"></span>
+                            </span>
+                            <h4 class="fs-6 fw-medium lh-base text-body-secondary mt-3 mb-0">{{data.metricName}}</h4>
+                        </div>
+                        <div class="e-card-content pb-4 px-4 pt-2 d-flex align-items-center">
+                            <span class="fs-5 fw-bold lh-sm text-body me-2">{{data.callCount}}K</span>
+                            <span class="d-flex align-items-center gap-1" [ngClass]="data.trend === 'up' ? 'text-success' : 'text-danger'">{{data.currentPercentage > 0 ? '+' : ''}}{{data.currentPercentage}}&#37;
+                                <span class="e-icons e-medium" [ngClass]="data.trend === 'up' ? 'e-arrow-up' : 'e-arrow-down'"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+}

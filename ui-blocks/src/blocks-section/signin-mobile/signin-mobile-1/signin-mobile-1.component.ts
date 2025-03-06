@@ -1,13 +1,13 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { CommonModule } from '@angular/common';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { MaskedTextBoxModule } from '@syncfusion/ej2-angular-inputs';
 
 @Component({
     selector: 'app-signin-mobile-1',
     standalone: true,
-    imports: [DropDownListModule, ButtonModule, MaskedTextBoxModule, CommonModule],
+    imports: [CommonModule, ButtonModule, DropDownListModule, MaskedTextBoxModule],
     templateUrl: './signin-mobile-1.component.html'
 })
 export class SigninMobile1Component implements OnInit, OnDestroy {

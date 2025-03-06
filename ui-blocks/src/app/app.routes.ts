@@ -176,6 +176,53 @@ import { TileView3Component } from '../blocks-section/tile-view/tile-view-3/tile
 import { TileView4Component } from '../blocks-section/tile-view/tile-view-4/tile-view-4.component';
 import { TileView5Component } from '../blocks-section/tile-view/tile-view-5/tile-view-5.component';
 
+import { HeaderDemoComponent } from '../blocks-section/header/header-demo/header-demo.component';
+import { Header1Component } from '../blocks-section/header/header-1/header-1.component';
+import { Header2Component } from '../blocks-section/header/header-2/header-2.component';
+import { Header3Component } from '../blocks-section/header/header-3/header-3.component';
+import { Header4Component } from '../blocks-section/header/header-4/header-4.component';
+import { Header5Component } from '../blocks-section/header/header-5/header-5.component';
+import { Header6Component } from '../blocks-section/header/header-6/header-6.component';
+import { Header7Component } from '../blocks-section/header/header-7/header-7.component';
+import { Header8Component } from '../blocks-section/header/header-8/header-8.component';
+import { Header9Component } from '../blocks-section/header/header-9/header-9.component';
+import { Header10Component } from '../blocks-section/header/header-10/header-10.component';
+import { Header11Component } from '../blocks-section/header/header-11/header-11.component';
+import { Header12Component } from '../blocks-section/header/header-12/header-12.component';
+import { Header13Component } from '../blocks-section/header/header-13/header-13.component';
+
+import { StatisticsDemoComponent } from '../blocks-section/statistics/statistics-demo/statistics-demo.component';
+import { Statistics1Component } from '../blocks-section/statistics/statistics-1/statistics-1.component';
+import { Statistics2Component } from '../blocks-section/statistics/statistics-2/statistics-2.component';
+import { Statistics3Component } from '../blocks-section/statistics/statistics-3/statistics-3.component';
+import { Statistics4Component } from '../blocks-section/statistics/statistics-4/statistics-4.component';
+import { Statistics5Component } from '../blocks-section/statistics/statistics-5/statistics-5.component';
+import { Statistics6Component } from '../blocks-section/statistics/statistics-6/statistics-6.component';
+import { Statistics7Component } from '../blocks-section/statistics/statistics-7/statistics-7.component';
+import { Statistics8Component } from '../blocks-section/statistics/statistics-8/statistics-8.component';
+import { Statistics9Component } from '../blocks-section/statistics/statistics-9/statistics-9.component';
+import { Statistics10Component } from '../blocks-section/statistics/statistics-10/statistics-10.component';
+
+import { FilterPanelDemoComponent } from '../blocks-section/filter-panel/filter-panel-demo/filter-panel-demo.component';
+import { FilterPanel1Component } from '../blocks-section/filter-panel/filter-panel-1/filter-panel-1.component';
+import { FilterPanel2Component } from '../blocks-section/filter-panel/filter-panel-2/filter-panel-2.component';
+import { FilterPanel3Component } from '../blocks-section/filter-panel/filter-panel-3/filter-panel-3.component';
+import { FilterPanel4Component } from '../blocks-section/filter-panel/filter-panel-4/filter-panel-4.component';
+import { FilterPanel5Component } from '../blocks-section/filter-panel/filter-panel-5/filter-panel-5.component';
+import { FilterPanel6Component } from '../blocks-section/filter-panel/filter-panel-6/filter-panel-6.component';
+import { FilterPanel7Component } from '../blocks-section/filter-panel/filter-panel-7/filter-panel-7.component';
+import { FilterPanel8Component } from '../blocks-section/filter-panel/filter-panel-8/filter-panel-8.component';
+
+import { ModalsDemoComponent } from '../blocks-section/modals/modals-demo/modals-demo.component';
+import { Modals1Component } from '../blocks-section/modals/modals-1/modals-1.component';
+import { Modals2Component } from '../blocks-section/modals/modals-2/modals-2.component';
+import { Modals3Component } from '../blocks-section/modals/modals-3/modals-3.component';
+import { Modals4Component } from '../blocks-section/modals/modals-4/modals-4.component';
+import { Modals5Component } from '../blocks-section/modals/modals-5/modals-5.component';
+import { Modals6Component } from '../blocks-section/modals/modals-6/modals-6.component';
+import { Modals7Component } from '../blocks-section/modals/modals-7/modals-7.component';
+import { Modals8Component } from '../blocks-section/modals/modals-8/modals-8.component';
+
 import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
 
 export const routes: Routes = [
@@ -356,6 +403,53 @@ export const routes: Routes = [
   { path: 'blocks/tile-view-3', component: TileView3Component },
   { path: 'blocks/tile-view-4', component: TileView4Component },
   { path: 'blocks/tile-view-5', component: TileView5Component },
+
+  { path: 'blocks/header', component: HeaderDemoComponent },
+  { path: 'blocks/header-1', component: Header1Component },
+  { path: 'blocks/header-2', component: Header2Component },
+  { path: 'blocks/header-3', component: Header3Component },
+  { path: 'blocks/header-4', component: Header4Component },
+  { path: 'blocks/header-5', component: Header5Component },
+  { path: 'blocks/header-6', component: Header6Component },
+  { path: 'blocks/header-7', component: Header7Component },
+  { path: 'blocks/header-8', component: Header8Component },
+  { path: 'blocks/header-9', component: Header9Component },
+  { path: 'blocks/header-10', component: Header10Component },
+  { path: 'blocks/header-11', component: Header11Component },
+  { path: 'blocks/header-12', component: Header12Component },
+  { path: 'blocks/header-13', component: Header13Component },
+
+  { path: 'blocks/statistics', component: StatisticsDemoComponent },
+  { path: 'blocks/statistics-1', component: Statistics1Component },
+  { path: 'blocks/statistics-2', component: Statistics2Component },
+  { path: 'blocks/statistics-3', component: Statistics3Component },
+  { path: 'blocks/statistics-4', component: Statistics4Component },
+  { path: 'blocks/statistics-5', component: Statistics5Component },
+  { path: 'blocks/statistics-6', component: Statistics6Component },
+  { path: 'blocks/statistics-7', component: Statistics7Component },
+  { path: 'blocks/statistics-8', component: Statistics8Component },
+  { path: 'blocks/statistics-9', component: Statistics9Component },
+  { path: 'blocks/statistics-10', component: Statistics10Component },
+
+  { path: 'blocks/filter-panel', component: FilterPanelDemoComponent },
+  { path: 'blocks/filter-panel-1', component: FilterPanel1Component },
+  { path: 'blocks/filter-panel-2', component: FilterPanel2Component },
+  { path: 'blocks/filter-panel-3', component: FilterPanel3Component },
+  { path: 'blocks/filter-panel-4', component: FilterPanel4Component },
+  { path: 'blocks/filter-panel-5', component: FilterPanel5Component },
+  { path: 'blocks/filter-panel-6', component: FilterPanel6Component },
+  { path: 'blocks/filter-panel-7', component: FilterPanel7Component },
+  { path: 'blocks/filter-panel-8', component: FilterPanel8Component },
+
+  { path: 'blocks/modals', component: ModalsDemoComponent },
+  { path: 'blocks/modals-1', component: Modals1Component },
+  { path: 'blocks/modals-2', component: Modals2Component },
+  { path: 'blocks/modals-3', component: Modals3Component },
+  { path: 'blocks/modals-4', component: Modals4Component },
+  { path: 'blocks/modals-5', component: Modals5Component },
+  { path: 'blocks/modals-6', component: Modals6Component },
+  { path: 'blocks/modals-7', component: Modals7Component },
+  { path: 'blocks/modals-8', component: Modals8Component },
 
   { path: '**', component: PageNotFoundComponent }
 ];

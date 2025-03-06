@@ -1,0 +1,80 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-white dark:bg-gray-800">
+    <div [ngStyle]="{'height': '576px', 'width': width, float:'Right'}">
+        <ejs-sidebar #sidebar class="flex flex-col bg-white dark:bg-gray-800" position="Right" type="push" [width]="width" [isOpen]="true" [closeOnDocumentClick]="false" showBackdrop="true" role="complementary" style="display: block;">
+            <div>
+                <div class="flex justify-between items-center p-4 border-b border-gray-200 dark:border-gray-600">
+                    <h2 class="text-base font-semibold text-gray-900 dark:text-white">Apply Filter</h2>
+                    <button ejs-button class="e-flat text-base" iconCss="e-icons e-close" (click)="sidebar.toggle()" content=" " type="button" aria-label="close sidebar" role="button"></button>
+                </div>
+                <div class="flex-grow overflow-y-auto p-4" style="min-height: 442px;">
+                    <div class="grid grid-cols-1 gap-4">
+                        <div>
+                            <label class="block mb-1 text-sm font-semibold text-gray-900 dark:text-white">Location</label>
+                            <ejs-dropdownlist [dataSource]='location' placeholder="Select location" aria-label="choose a location" role="listbox"></ejs-dropdownlist>
+                        </div>
+                        <div>
+                            <label class="block mb-1 text-sm font-semibold text-gray-900 dark:text-white">Department</label>
+                            <ejs-dropdownlist [dataSource]='department' placeholder="Select department" aria-label="choose a department" role="listbox"></ejs-dropdownlist>
+                        </div>
+                        <div>
+                            <label class="block mb-1 text-sm font-semibold text-gray-900 dark:text-white">User Role</label>
+                            <ejs-dropdownlist [dataSource]='role' placeholder="Select role" aria-label="choose a role" role="listbox"></ejs-dropdownlist>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full p-4 border-t border-gray-200 dark:border-gray-600">
+                    <button ejs-button class="w-full text-sm e-primary" content="Apply" type="button" aria-label="apply" role="button"></button>
+                </div>
+            </div>
+        </ejs-sidebar>
+    </div>
+</section>
+<!-- SB Code - Start -->
+<div class="p-3 absolute top-0 right-0">
+    <button ejs-button cssClass="e-large e-icons e-chevron-left e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+</div>
+<!-- SB Code - End -->
+
+} @else if (currentTheme === 'bootstrap5.3') {
+    
+<section class="bg-body">
+    <div [ngStyle]="{'height': '576px', 'width': width, float:'right'}">
+        <ejs-sidebar #sidebar class="d-flex flex-column bg-body" position="Right" type="push" [width]="width" [isOpen]="true" [closeOnDocumentClick]="false" showBackdrop="true" role="complementary" style="display: block;">
+            <div>
+                <div class="d-flex justify-content-between align-items-center p-3 border-bottom">
+                    <h2 class="h6 mb-0 fw-bold text-body">Apply Filter</h2>
+                    <button ejs-button class="e-flat fs-6" iconCss="e-icons e-close" (click)="sidebar.toggle()" content=" " type="button" aria-label="close sidebar" role="button"></button>
+                </div>
+                <div class="flex-grow overflow-auto p-3" style="min-height: 442px;">
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <label class="fs-6 mb-1 fw-medium text-body">Location</label>
+                            <ejs-dropdownlist [dataSource]='location' placeholder="Select location" aria-label="choose a location" role="listbox"></ejs-dropdownlist>
+                        </div>
+                        <div class="col-12">
+                            <label class="fs-6 mb-1 fw-medium text-body">Department</label>
+                            <ejs-dropdownlist [dataSource]='department' placeholder="Select department" aria-label="choose a department" role="listbox"></ejs-dropdownlist>
+                        </div>
+                        <div class="col-12">
+                            <label class="fs-6 mb-1 fw-medium text-body">User Role</label>
+                            <ejs-dropdownlist [dataSource]='role' placeholder="Select role" aria-label="choose a role" role="listbox"></ejs-dropdownlist>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-100 p-3 border-top">
+                    <button ejs-button class="w-100 e-primary e-block" content="Apply" type="button" aria-label="apply" role="button"></button>
+                </div>
+            </div>
+        </ejs-sidebar>
+    </div>
+</section>
+
+<!-- SB Code - Start -->
+<div class="p-3 position-absolute top-0 end-0">
+    <button ejs-button cssClass="e-large e-icons e-chevron-left e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+</div>
+<!-- SB Code - End -->
+
+}

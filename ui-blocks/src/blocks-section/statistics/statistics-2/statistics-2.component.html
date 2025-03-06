@@ -1,0 +1,59 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-gray-50 dark:bg-gray-900">
+    <div class="px-4 sm:px-6 xl:px-11 py-12">
+        <div class="e-card rounded-lg grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 shadow-none !border-gray-300 dark:!border-gray-600">
+            <div *ngFor="let data of metricsData; let i = index" class="border-gray-200 dark:border-gray-600" [ngClass]="{ 'border-b': !isLastRowAndColumn(i, metricsData.length).isLastRow, 'sm:border-r': !isLastRowAndColumn(i, metricsData.length).isLastColumn }">
+                <div class="py-6 md:py-5">
+                    <div class="e-card-stacked">
+                        <div class="e-card-header !justify-start !pt-0 !pb-2 space-x-1 !px-4 items-center">
+                            <h3 class="text-sm font-medium text-gray-500 dark:text-gray-400">{{data.metricName}}</h3>
+                            <div *ngIf="data.contextInfo" class="flex items-center">
+                                <ejs-tooltip opensOn="Hover" content="{{data.contextInfo}}" width="210" aria-label="get more context on this metric" role="tooltip" style="height: 16px;">
+                                    <span class="e-icons e-circle-info e-medium text-gray-500 dark:text-gray-400"></span>
+                                </ejs-tooltip>
+                            </div>
+                        </div>
+                        <div class="e-card-content !px-4 !pb-0">
+                            <p class="text-xl !leading-7 font-semibold text-gray-900 dark:text-white">{{data.currentValue}}</p>
+                            <div class="text-sm text-gray-500 dark:text-gray-400 mt-3">{{data.currentPercentage}} of Total:<span class="font-medium text-gray-900 dark:text-white ml-1">{{data.total}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> 
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body-tertiary">
+    <div class="px-3 px-sm-4 px-xl-5 py-5">
+        <div class="e-card rounded-3">
+            <div class="row g-0 justify-content-start">
+                <div *ngFor="let data of metricsData; let i = index" class="col-12 col-sm-4 col-lg-auto flex-lg-grow-1" [ngClass]="{ 'border-bottom': !isLastRowAndColumn(i, metricsData.length).isLastRow, 'border-end': !isLastRowAndColumn(i, metricsData.length).isLastColumn }">
+                    <div class="p-4">
+                        <div class="e-card-stacked">
+                            <div class="e-card-header d-flex align-items-center justify-content-start pt-0 pb-2 px-0 gap-1">
+                                <h3 class="small fw-medium text-body-secondary mb-0 lh-base">{{data.metricName}}</h3>
+                                <div *ngIf="data.contextInfo" class="d-flex align-items-center">
+                                    <ejs-tooltip opensOn="Hover" content="{{data.contextInfo}}" width="210" aria-label="get more context on this metric" role="tooltip" style="height: 16px;">
+                                        <span class="e-icons e-circle-info e-medium text-secondary"></span>
+                                    </ejs-tooltip>
+                                </div>
+                            </div>
+                            <div class="e-card-content px-0 pb-0 pt-0">
+                                <p class="fs-5 fw-bold text-body mb-2 lh-sm">{{data.currentValue}}</p>
+                                <div class="text-body text-opacity-50">{{data.currentPercentage}} of Total:<span class="fw-medium text-body text-opacity-100 ms-1">{{data.total}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+}

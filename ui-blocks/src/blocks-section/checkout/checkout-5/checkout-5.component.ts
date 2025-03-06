@@ -1,13 +1,13 @@
 import { Component, OnInit, OnDestroy, ViewChild, HostListener } from '@angular/core';
 import { MaskedTextBoxAllModule, TextBoxModule } from '@syncfusion/ej2-angular-inputs';
 import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
-import { RadioButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { ButtonModule, RadioButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { DialogModule, DialogComponent } from '@syncfusion/ej2-angular-popups';
 
 @Component({
     selector: 'app-checkout-5',
     standalone: true,
-    imports: [TextBoxModule, DropDownListModule, RadioButtonModule, MaskedTextBoxAllModule, DialogModule],
+    imports: [TextBoxModule, DropDownListModule, ButtonModule, RadioButtonModule, MaskedTextBoxAllModule, DialogModule],
     templateUrl: './checkout-5.component.html'
 })
 export class Checkout5Component implements OnInit, OnDestroy {

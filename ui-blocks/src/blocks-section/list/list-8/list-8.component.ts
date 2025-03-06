@@ -59,7 +59,7 @@ export class List8Component implements OnInit, OnDestroy {
             time: '24 Sep',
             name: 'Kristina Watson',
             message: 'Actually, I started taking a pottery class! It’s so much fun. What about you?',
-            image: 'avatar-10.jpg',
+            image: 'avatar-10.jpg'
         },
         {
             id: '5',

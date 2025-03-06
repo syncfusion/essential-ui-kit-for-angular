@@ -1,13 +1,13 @@
 @if (currentTheme === 'tailwind') {
 
 <section class="bg-white dark:bg-gray-900">
-    <div [ngStyle]="{'height': '905px', 'width': width, float:'Right'}">
-        <ejs-sidebar class="w-full bg-white dark:bg-gray-900" #sidebar position="Right" type="push" [width]="width" [isOpen]="true" showBackdrop="true" (created)="refreshPriceSlider()" role="sidebar" style="display: block;">
+    <div [ngStyle]="{'height': '915px', 'width': width, float:'Right'}">
+        <ejs-sidebar class="w-full bg-white dark:bg-gray-900" #sidebar position="Right" type="push" [width]="width" [isOpen]="true" showBackdrop="true" (created)="refreshPriceSlider()" role="complementary" style="display: block;">
             <div class="bg-white dark:bg-gray-900">
                 <div class="border-b border-gray-200 dark:border-gray-600">
                     <div class="flex justify-between items-center px-4 py-3 border-b border-gray-200 dark:border-gray-600">
                         <h2 class="text-base font-semibold text-gray-900 dark:text-white">Room Filters</h2>
-                        <button ejs-button class="e-icons e-btn e-flat" (click)="sidebar.toggle()" iconCss="e-icons e-close" content=" " type="button" aria-label="close sidebar" role="button"></button>
+                        <button ejs-button class="e-flat text-base" iconCss="e-icons e-close" (click)="sidebar.toggle()" content=" " type="button" aria-label="close sidebar" role="button"></button>
                     </div>
                     <div class="p-4 flex justify-center">
                         <ejs-calendar class="e-bigger shadow-none border-none"></ejs-calendar>
@@ -40,7 +40,7 @@
                         </e-accordionitems>
                     </ejs-accordion>
                     <div class="sliderwrap px-3 my-6">
-                        <label class="labeltext text-sm text-gray-500 dark:text-gray-400">
+                        <label class="text-sm text-gray-500 dark:text-gray-400">
                             Price Range
                             <span class="e-icons e-circle-info ml-2"></span>
                         </label>
@@ -88,12 +88,12 @@
 
 <section class="bg-body">
     <div [ngStyle]="{'height': '955px', 'width': width, float:'Right'}">
-        <ejs-sidebar class="bg-body" #sidebar position="Right" type="push" [width]="width" [isOpen]="true" showBackdrop="true" (created)="refreshPriceSlider()" role="sidebar" style="display: block;">
+        <ejs-sidebar class="bg-body" #sidebar position="Right" type="push" [width]="width" [isOpen]="true" showBackdrop="true" (created)="refreshPriceSlider()" role="complementary" style="display: block;">
             <div class="bg-body">
                 <div class="border-bottom border-light-subtle">
-                    <div class="d-flex justify-content-between align-items-center px-4 pt-3 pb-2 border-bottom border-light-subtle">
-                        <h2 class="h6 font-weight-semibold text-body mb-0">Room Filters</h2>
-                        <button ejs-button class="e-icons e-btn e-flat fs-6" (click)="sidebar.toggle()" iconCss="e-icons e-close" content=" " aria-label="close sidebar" role="button"></button>
+                    <div class="d-flex justify-content-between align-items-center px-4 py-3 border-bottom border-light-subtle">
+                        <h2 class="h6 fw-semibold text-body mb-0">Room Filters</h2>
+                        <button ejs-button class="e-flat fs-6" iconCss="e-icons e-close" (click)="sidebar.toggle()" type="button" content=" " aria-label="close sidebar" role="button"></button>
                     </div>
                     <div class="p-4 pb-0 d-flex justify-content-center align-items-center">
                         <ejs-calendar class="e-bigger shadow-none border-0"></ejs-calendar>
@@ -152,7 +152,7 @@
                                             <ejs-checkbox label="Television" aria-label="television" role="checkbox"></ejs-checkbox>
                                         </div>
                                         <div>
-                                            <button ejs-button class="e-primary e-flat" content="Show more" iconCss="e-icons e-plus" aria-label="show more" role="button"></button>
+                                            <button ejs-button class="e-primary e-flat" content="Show more" iconCss="e-icons e-plus" type="button" aria-label="show more" role="button"></button>
                                         </div>
                                     </div>
                                 </ng-template>

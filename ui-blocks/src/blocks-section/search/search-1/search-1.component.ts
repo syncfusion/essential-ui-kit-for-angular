@@ -90,9 +90,9 @@ export class Search1Component implements OnInit, OnDestroy {
 
     public openPopup(args: any): void {
         var searchIcon = document.createElement('span');
-        searchIcon.style.cssText = 'display: flex; align-items: center; margin-left: 10px;';
+        searchIcon.style.cssText = 'display: flex; align-items: center; margin-right: 10px;';
         searchIcon.setAttribute('class', 'e-icons e-search');
-        args.inputWrapper.container.insertAdjacentElement('afterbegin', searchIcon);
+        args.inputWrapper.container.insertAdjacentElement('beforeend', searchIcon);
         setTimeout(() => {
             this.search.showPopup();
         }, 2000);

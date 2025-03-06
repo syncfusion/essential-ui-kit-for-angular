@@ -1,7 +1,7 @@
 @if (currentTheme === 'tailwind') {
 
 <section>
-    <div id="chat-sidepanel" class="max-w-4xl mx-auto bg-white dark:bg-gray-900 rounded-xl overflow-hidden" style="max-width: 900px; max-height: 1406px;">
+    <div id="chat-sidepanel" class="max-w-4xl mx-auto bg-white dark:bg-gray-900 rounded-xl overflow-hidden" style="max-height: 1406px;">
         <div class="w-full p-2">
             <div class="flex items-center justify-between py-1 pl-2 sm:pl-4 pr-2">
                 <div class="flex items-center">
@@ -13,9 +13,8 @@
                         <span class="text-base font-semibold text-gray-900 dark:text-white">Mark Davis</span>
                     </span>
                 </div>
-                <div class="e-appbar-spacer"></div>
                 <div class="flex items-center gap-3">
-                    <button ejs-button class="sf-icon sf-icon-phone-01 leading-3 text-base sm:block hidden" cssClass="e-flat" type="button" aria-label="audio call" role="button"></button>
+                    <button ejs-button class="sf-icon-phone-01 leading-3 text-base sm:block hidden" cssClass="e-flat" type="button" aria-label="audio call" role="button"></button>
                     <button ejs-button class="e-icons e-video sm:block hidden" cssClass="e-flat" type="button" aria-label="video call" role="button"></button>
                     <button ejs-button class="e-icons e-more-vertical-1" cssClass="e-flat" type="button" aria-label="more options" role="button"></button>
                     <div class="border-l h-6 border-gray-200 dark:border-gray-600 sm:block hidden"></div>
@@ -33,12 +32,12 @@
                             <ng-template #senderTemplate>
                                 <div class="flex justify-end ml-auto sm:mr-3 gap-3 items-start w-4/5 sm:w-9/12 lg:w-11/12">
                                     <div class="flex flex-col gap-1 items-end">
-                                        <div class="py-2 px-3 rounded-lg rounded-se-none bg-indigo-100 dark:bg-cyan-800">
-                                            <div class="dark:text-gray-50">{{data.text}}</div>
+                                        <div class="py-2 px-3 rounded-lg rounded-se-none bg-primary-100 dark:bg-primary-800">
+                                            <div class="text-gray-900 dark:text-gray-50">{{data.text}}</div>
                                         </div>
-                                        <div class="flex relative">
+                                        <div class="flex">
                                             <p class="text-xs text-gray-500">{{data.time}}</p>
-                                            <div class="sf-icon sf-icon-double-check-01 ml-0.5 sm:ml-1 leading-4 text-base text-primary-600 dark:text-primary-400" *ngIf="data.open"></div>
+                                            <div class="sf-icon-double-check-01 ml-0.5 sm:ml-1 leading-4 text-base text-primary-600 dark:text-primary-400" *ngIf="data.open"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -50,9 +49,9 @@
                                     </div>
                                     <div class="flex flex-col gap-1">
                                         <div class="py-2 px-3 rounded-lg rounded-ss-none bg-gray-100 dark:bg-gray-800">
-                                            <div class="dark:text-gray-50">{{data.text}}</div>
+                                            <div class="text-gray-900 dark:text-gray-50">{{data.text}}</div>
                                         </div>
-                                        <p class="text-xs text-gray-500">{{data.name}}<span class="ps-1.5">{{data.time}}</span></p>
+                                        <p class="text-xs text-gray-500">{{data.name}}<span class="ms-1.5">{{data.time}}</span></p>
                                     </div>
                                 </div>
                             </ng-template>
@@ -77,9 +76,9 @@
                                     <span class="e-avatar e-avatar-circle e-avatar-small" [ngStyle]="{'background-image': 'url(assets/images/common/avatar/' + data.avatar + ')'}" alt="sender avatar"></span>
                                 </div>
                                 <div class="flex flex-col gap-1">
-                                    <p class="text-xs text-gray-500 dark:text-gray-400">{{data.name}} {{data.time}}</p>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400">{{data.name}} <span class="ms-1.5">{{data.time}}</span></p>
                                     <div class="rounded-lg">
-                                        <div class="dark:text-gray-50">{{data.text}}</div>
+                                        <div class="text-gray-900 dark:text-gray-50">{{data.text}}</div>
                                     </div>
                                 </div>
                             </div>
@@ -90,9 +89,9 @@
                                     <span class="e-avatar e-avatar-circle e-avatar-small" [ngStyle]="{'background-image': 'url(assets/images/common/avatar/' + data.avatar + ')'}" alt="receiver avatar"></span>
                                 </div>
                                 <div class="flex flex-col gap-1">
-                                    <p class="text-xs text-gray-500 dark:text-gray-400">{{data.name}} {{data.time}}</p>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400">{{data.name}} <span class="ms-1.5">{{data.time}}</span></p>
                                     <div class="rounded-lg">
-                                        <div class="dark:text-gray-50">{{data.text}}</div>
+                                        <div class="text-gray-900 dark:text-gray-50">{{data.text}}</div>
                                     </div>
                                 </div>
                             </div>
@@ -119,9 +118,8 @@
                         <span class="h6 mb-0 text-body">Mark Davis</span>
                     </span>
                 </div>
-                <div class="e-appbar-spacer"></div>
                 <div class="d-flex align-items-center gap-3">
-                    <button ejs-button class="sf-icon sf-icon-phone-01 fs-6 d-none d-sm-block" cssClass="e-flat" type="button" aria-label="audio call" role="button"></button>
+                    <button ejs-button class="sf-icon-phone-01 fs-6 d-none d-sm-block" cssClass="e-flat" type="button" aria-label="audio call" role="button"></button>
                     <button ejs-button class="e-icons e-video d-none d-sm-block" cssClass="e-flat" type="button" aria-label="video call" role="button"></button>
                     <button ejs-button class="e-icons e-more-vertical-1" cssClass="e-flat" type="button" aria-label="more options" role="button"></button>
                     <div class="border-start border-secondary-subtle d-none d-sm-block" style="height: 24px;"></div>
@@ -142,7 +140,7 @@
                                         <div class="py-2 px-3 rounded bg-body-secondary" style="border-top-right-radius: 0px !important;">
                                             <div class="text-body">{{data.text}}</div>
                                         </div>
-                                        <div class="d-flex position-relative">
+                                        <div class="d-flex">
                                             <p class="text-body-secondary small m-0">{{data.time}}</p>
                                             <div class="sf-icon-double-check-01 text-primary fs-6 ms-1" *ngIf="data.open"></div>
                                         </div>
@@ -150,7 +148,7 @@
                                 </div>
                             </ng-template>
                             <ng-template #receiverTemplate>
-                                <div class="d-flex justify-content-start gap-2 align-items-start w-100">
+                                <div class="d-flex justify-content-start gap-2 align-items-start me-sm-3">
                                     <div *ngIf="data.avatar != ''">
                                         <span class="e-avatar e-avatar-circle e-avatar-small" [ngStyle]="{'background-image': 'url(assets/images/common/avatar/' + data.avatar + ')'}" alt="receiver avatar"></span>
                                     </div>
@@ -158,14 +156,14 @@
                                         <div class="py-2 px-3 rounded bg-body-tertiary" style="border-top-left-radius: 0px !important;">
                                             <div class="text-body">{{data.text}}</div>
                                         </div>
-                                        <p class="small text-body-secondary m-0">{{data.name}} {{data.time}}</p>
+                                        <p class="small text-body-secondary m-0">{{data.name}} <span class="ms-1">{{data.time}}</span></p>
                                     </div>
                                 </div>
                             </ng-template>
                         </ng-template>
                     </ejs-listview>
                 </div>
-                <div class="e-bigger ms-sm-4 ms-3 me-md-5 me-4">
+                <div class="e-bigger ms-sm-4 ms-3 me-md-5 me-3">
                     <ejs-textbox #textbox cssClass="w-100" type="text" placeholder="Enter a message" (created)="textbox.addIcon('append', 'sf-icon-navigation-right-up border-0')" aria-label="enter a message" role="textbox"></ejs-textbox>
                 </div>
             </div>

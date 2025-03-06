@@ -43,14 +43,14 @@ export class Search4Component implements OnInit, OnDestroy {
             name: 'Emily White',
             initial: 'EW',
             emailId: 'emily.white@example.com',
-            colorTheme: 'Blue',
+            colorTheme: 'Blue'
         },
         {
             id: 3,
             name: 'Tom Harris',
             initial: 'TH',
             emailId: 'tom.harris@example.com',
-            colorTheme: 'Blue',
+            colorTheme: 'Blue'
         },
         {
             id: 4,
@@ -64,14 +64,14 @@ export class Search4Component implements OnInit, OnDestroy {
             name: 'David Clark',
             initial: 'DC',
             emailId: 'david.clark@example.com',
-            colorTheme: 'Red',
+            colorTheme: 'Red'
         },
         {
             id: 6,
             name: 'Rachel Lee',
             initial: 'RL',
             emailId: 'rachel.lee@example.com',
-            colorTheme: 'Blue',
+            colorTheme: 'Blue'
         }
     ];
 

@@ -1,14 +1,14 @@
 @if (currentTheme === 'tailwind') {
 
 <section class="bg-gray-50 dark:bg-gray-950">
-    <div class="flex flex-col lg:flex-row md:min-h-screen">
+    <div class="flex flex-col lg:flex-row" style="min-height: 580px;">
         <div class="w-full lg:w-7/12 p-0">
             <img class="w-full h-full object-cover" src="assets/images/authentication/split-screen/split-screen.png" alt="image" />
         </div>
         <div class="w-full lg:w-5/12 p-0">
             <div class="bg-gray-50 dark:bg-gray-950">
                 <div class="flex justify-center py-12">
-                    <div class="w-full max-w-md rounded-lg p-4 p-md-6">
+                    <div class="w-full max-w-md rounded-lg p-4">
                         <div class="flex justify-center mb-6">
                             <img class="mr-2" src="assets/images/common/brand-logos/svg/vector.svg" alt="company logo" />
                             <h2 class="text-center text-gray-900 dark:text-white text-xl font-semibold">Company Name</h2>
@@ -20,10 +20,10 @@
                                 <div ejs-otpinput aria-label="enter the OTP" role="group"></div>
                             </div>
                             <div class="e-bigger mt-6">
-                                <button ejs-button class="e-btn e-primary w-full" type="submit" aria-label="verify OTP" role="button">Verify</button>
+                                <button ejs-button class="e-primary w-full" type="submit" aria-label="verify OTP" role="button">Verify</button>
                             </div>
                         </form>
-                        <span class="flex items-center justify-center gap-2 mt-7 e-bigger">
+                        <span class="flex items-center justify-center gap-2 mt-7">
                             <p class="text-center text-gray-900 dark:text-white">Not yet received?</p>
                             <a href="javascript:void(0);" class="text-primary-600 dark:text-primary-400 font-medium text-base !p-0" aria-label="resend OTP" role="link">Resend OTP</a>
                         </span>
@@ -37,7 +37,7 @@
 } @else if (currentTheme === 'bootstrap5.3') {
 
 <section>
-    <div class="d-flex flex-column flex-lg-row min-vh-100">
+    <div class="d-flex flex-column flex-lg-row" style="min-height: 580px;">
         <div class="col-12 col-lg-7 p-0">
             <img class="img-fluid w-100 h-100" src="assets/images/authentication/split-screen/split-screen.png" style="max-height: 100%; max-width: 100%; object-fit: cover;" alt="image" />
         </div>
@@ -51,11 +51,11 @@
                     <h2 class="text-center fs-4 text-body fw-bold mb-2">Enter OTP</h2>
                     <p class="text-center text-light-emphasis mb-0">We have sent an OTP to your mobile number</p>
                     <form action="#" class="mt-4" onsubmit="event.preventDefault();">
-                        <div class="d-flex justify-content-evenly">
+                        <div class="d-flex justify-content-evenly e-bigger">
                             <div ejs-otpinput separator="-" aria-label="enter the OTP" role="group"></div>
                         </div>
                         <div class="mt-4 e-bigger">
-                            <button ejs-button class="e-btn e-block e-primary" type="submit" aria-label="verify OTP" role="button">Verify</button>
+                            <button ejs-button class="e-block e-primary" type="submit" aria-label="verify OTP" role="button">Verify</button>
                         </div>
                     </form>
                     <div class="d-flex align-items-center justify-content-center gap-2 mt-4">

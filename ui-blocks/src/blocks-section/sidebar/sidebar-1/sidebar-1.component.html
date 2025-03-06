@@ -2,7 +2,7 @@
 
 <section class="bg-white dark:bg-gray-950">
     <div id="simple-sidebar" style="height: 710px;">
-        <ejs-sidebar #sidebar class="bg-gray-50 dark:bg-gray-900 !border-r !border-gray-200 dark:!border-gray-700" width="256px" aria-label="main navigation menu" role="complementary" style="display: block;">
+        <ejs-sidebar #sidebar class="bg-gray-50 dark:bg-gray-900 !border-r !border-gray-200 dark:!border-gray-700" width="256px" [isOpen]="true" aria-label="main navigation menu" role="complementary" style="display: block;">
             <div class="h-screen">
                 <div class="flex items-center py-4 px-3">
                     <img src="assets/images/common/brand-logos/svg/vector.svg" alt="company logo" />
@@ -88,7 +88,7 @@
 
 <section class="bg-body">
     <div id="simple-sidebar" style="height: 710px;">
-        <ejs-sidebar #sidebar width="256px" aria-label="main navigation menu" role="complementary" style="display: block;">
+        <ejs-sidebar #sidebar width="256px" [isOpen]="true" aria-label="main navigation menu" role="complementary" style="display: block;">
             <div class="min-vh-100">
                 <div class="d-flex align-items-center p-3">
                     <img src="assets/images/common/brand-logos/svg/vector.svg" alt="company logo" />

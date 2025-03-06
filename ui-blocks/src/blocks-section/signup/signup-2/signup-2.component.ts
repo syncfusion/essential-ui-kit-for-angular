@@ -1,12 +1,12 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ButtonModule, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
-import { TextBoxModule } from '@syncfusion/ej2-angular-inputs';
 import { CommonModule } from '@angular/common';
+import { TextBoxModule } from '@syncfusion/ej2-angular-inputs';
+import { CheckBoxModule, ButtonModule } from '@syncfusion/ej2-angular-buttons';
 
 @Component({
     selector: 'app-signup-2',
     standalone: true,
-    imports: [TextBoxModule, ButtonModule, CheckBoxModule, CommonModule],
+    imports: [CommonModule, TextBoxModule, CheckBoxModule, ButtonModule],
     templateUrl: './signup-2.component.html'
 })
 export class Signup2Component implements OnInit, OnDestroy {

@@ -1,0 +1,107 @@
+@if (currentTheme === 'tailwind') {
+
+<section>
+    <div id="dialog-container" class="relative flex justify-center" [style]="containerHeight">
+        <button ejs-button class="h-fit my-5" (click)="dialog?.show()" type="button" aria-label="transaction details" role="button">Transaction Details</button>
+        <ejs-dialog #dialog class="rounded-none sm:rounded-lg overflow-hidden sm:m-4" target="#dialog-container" [isModal]="true" [showCloseIcon]="true" [visible]="false" width="835px" (open)="$event.preventFocus = true" (beforeOpen)="$event.maxHeight = '630px'" aria-label="view transaction details" role="dialog">
+            <ng-template #header>
+                <p class="font-semibold leading-normal">Transaction Details</p>
+            </ng-template>
+            <ng-template #content>
+                <div class="flex flex-col sm:flex-row justify-between gap-4 sm:items-center mb-5 sm:mb-6">
+                    <ejs-checkbox label="Export time fields in minutes formats" aria-label="export time fields in minutes format" role="checkbox"></ejs-checkbox>
+                    <div class="flex flex-row justify-end gap-3">
+                        <button ejs-button class="grow sm:grow-0 e-outline" iconCss="e-icons e-export" type="button" aria-label="export" role="button">Export</button>
+                        <button ejs-dropdownbutton class="grow sm:grow-0 e-outline" iconCss="e-icons e-user" (beforeOpen)="$event.cancel = true;" type="button" aria-label="choose a contact" role="button">Contact</button>
+                    </div>
+                </div>
+                    <ejs-grid cssClass="e-bigger mb-1.5" [dataSource]="data" width="100%" [allowSorting]="true" [allowFiltering]="true" [filterSettings]="{type: 'Menu'}" gridLines="None" rowHeight="44" role="grid">
+                        <e-columns>
+                            <e-column field="transactionId" headerText="Transaction ID" width="165">
+                                <ng-template #template let-data>
+                                    <p class="text-sm text-gray-700 dark:text-gray-200">{{data.transactionId}}</p>
+                                </ng-template>
+                            </e-column>
+                            <e-column field="customerDetails" headerText="Customer Name" textAlign="Left" width="260">
+                                <ng-template #template let-data>
+                                    <div class="flex gap-2 items-center py-1.5">
+                                        <div class="w-8 h-8">
+                                            <span class="e-avatar e-avatar-circle e-avatar-small" [ngStyle]="{ 'background-image': 'url(assets/images/common/avatar/' + data.customerDetails.avatar + ')' }"></span>
+                                        </div>
+                                        <div class="flex flex-col text-sm">
+                                            <p class="text-gray-900 dark:text-white">{{data.customerDetails.name}}</p>
+                                            <p class="text-gray-700 dark:text-gray-200">{{data.customerDetails.email}}</p>
+                                        </div>
+                                    </div>
+                                </ng-template>
+                            </e-column>
+                            <e-column field="invoiceNumber" headerText="Invoice Number" width="170">
+                                <ng-template #template let-data>
+                                    <a class="text-sm text-primary-700 dark:text-primary-500 font-medium underline" href="javascript:void(0);" aria-label="invoice number" role="link">{{data.invoiceNumber}}</a>
+                                </ng-template>
+                            </e-column>
+                            <e-column field="description" headerText="Description" width="190">
+                                <ng-template #template let-data>
+                                    <p class="text-sm text-gray-700 dark:text-gray-200">{{data.description}}</p>
+                                </ng-template>
+                            </e-column>
+                        </e-columns>
+                    </ejs-grid>
+            </ng-template>
+        </ejs-dialog>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section>
+    <div id="dialog-container" class="position-relative d-flex align-items-start" [style]="containerHeight">
+        <button ejs-button class="e-outline mx-auto my-3" (click)="dialog?.show()" type="button" aria-label="transaction details" role="button">Transaction Details</button>
+        <ejs-dialog #dialog class="rounded-3 m-sm-2 overflow-hidden" target="#dialog-container" [isModal]="true" [showCloseIcon]="true" [visible]="false" width="865px" (open)="$event.preventFocus = true" (beforeOpen)="$event.maxHeight = '630px'" aria-label="view transaction details" role="dialog">
+            <ng-template #header>
+                <p class="fw-bold text-body mb-0 lh-sm">Transaction Details</p>
+            </ng-template>
+            <ng-template #content>
+                <div class="d-flex flex-column flex-sm-row justify-content-between gap-3 align-items-sm-center mb-4 mb-sm-3">
+                    <ejs-checkbox label="Export time fields in minutes formats" aria-label="export time fields in minutes format" role="checkbox"></ejs-checkbox>
+                    <div class="d-flex flex-row justify-content-end gap-3 gap-sm-2">
+                        <button ejs-button class="flex-grow-1 flex-sm-grow-0 e-outline" iconCss="e-icons e-export" type="button" aria-label="export" role="button">Export</button>
+                        <button ejs-dropdownbutton class="flex-grow-1 flex-sm-grow-0 e-outline ms-sm-1" iconCss="e-icons e-user" (beforeOpen)="$event.cancel = true;" type="button" aria-label="choose a contact" role="button">Contact</button>
+                    </div>
+                </div>
+                    <ejs-grid cssClass="e-bigger mb-1" [dataSource]="data" width="100%" [allowSorting]="true" [allowFiltering]="true" [filterSettings]="{type: 'Menu'}" gridLines="None" rowHeight="44" role="grid">
+                        <e-columns>
+                            <e-column field="transactionId" headerText="Transaction ID" width="168">
+                                <ng-template #template let-data>
+                                    <p class="text-body mb-0">{{data.transactionId}}</p>
+                                </ng-template>
+                            </e-column>
+                            <e-column field="customerDetails" headerText="Customer Name" textAlign="Left" width="260">
+                                <ng-template #template let-data>
+                                    <div class="d-flex gap-2 align-items-center py-1">
+                                        <span class="e-avatar e-avatar-circle e-avatar-small flex-shrink-0" [ngStyle]="{ 'background-image': 'url(assets/images/common/avatar/' + data.customerDetails.avatar + ')' }"></span>
+                                        <div class="small ms-1 lh-base">
+                                            <p class="text-body mb-0">{{data.customerDetails.name}}</p>
+                                            <p class="text-body-secondary mb-0">{{data.customerDetails.email}}</p>
+                                        </div>
+                                    </div>
+                                </ng-template>
+                            </e-column>
+                            <e-column field="invoiceNumber" headerText="Invoice Number" width="186">
+                                <ng-template #template let-data>
+                                    <a class="small text-primary fw-medium text-decoration-underline" href="javascript:void(0);" aria-label="invoice number" role="link">{{data.invoiceNumber}}</a>
+                                </ng-template>
+                            </e-column>
+                            <e-column field="description" headerText="Description" width="200">
+                                <ng-template #template let-data>
+                                    <p class="text-body mb-0">{{data.description}}</p>
+                                </ng-template>
+                            </e-column>
+                        </e-columns>
+                    </ejs-grid>
+            </ng-template>
+        </ejs-dialog>
+    </div>
+</section>
+
+}

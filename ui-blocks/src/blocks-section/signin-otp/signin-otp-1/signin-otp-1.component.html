@@ -2,7 +2,7 @@
 
 <section class="bg-gray-50 dark:bg-gray-950">
     <div class="flex justify-center min-h-screen">
-        <div class="w-full max-w-md rounded-lg p-4 p-md-6 py-12">
+        <div class="w-full max-w-md rounded-lg p-4 py-12">
             <div class="flex justify-center mb-6">
                 <img class="mr-2" src="assets/images/common/brand-logos/svg/vector.svg" alt="company logo" />
                 <h2 class="text-center text-gray-900 dark:text-white text-xl font-semibold">Company Name</h2>
@@ -14,10 +14,10 @@
                     <div ejs-otpinput aria-label="enter the OTP" role="group"></div>
                 </div>
                 <div class="e-bigger mt-6">
-                    <button ejs-button class="e-btn e-primary w-full" type="submit" aria-label="verify OTP" role="button">Verify</button>
+                    <button ejs-button class="e-primary w-full" type="submit" aria-label="verify OTP" role="button">Verify</button>
                 </div>
             </form>
-            <span class="flex items-center justify-center gap-2 mt-7 e-bigger">
+            <span class="flex items-center justify-center gap-2 mt-7">
                 <p class="text-center text-gray-900 dark:text-white">Not yet received?</p>
                 <a href="javascript:void(0);" class="text-primary-600 dark:text-primary-400 font-medium text-base !p-0" aria-label="resend OTP" role="link">Resend OTP</a>
             </span>
@@ -36,11 +36,11 @@
         <h2 class="text-center fs-4 text-body fw-bold mb-2">Enter OTP</h2>
         <p class="text-center text-light-emphasis mb-0">We have sent an OTP to your mobile number</p>
         <form action="#" class="mt-4" onsubmit="event.preventDefault();">
-            <div class="d-flex justify-content-evenly">
+            <div class="d-flex justify-content-evenly e-bigger">
                 <div ejs-otpinput separator="-" aria-label="enter the OTP" role="group"></div>
             </div>
             <div class="mt-4 e-bigger">
-                <button ejs-button class="e-btn e-block e-primary" type="submit" aria-label="verify OTP" role="button">Verify</button>
+                <button ejs-button class="e-block e-primary" type="submit" aria-label="verify OTP" role="button">Verify</button>
             </div>
         </form>
         <div class="d-flex align-items-center justify-content-center gap-2 mt-4">

@@ -2,14 +2,14 @@
 
 <section class="bg-white dark:bg-gray-900">
     <div [ngStyle]="{'height': '912px', 'width': width, float:'Right'}">
-        <ejs-sidebar class="w-full bg-white dark:bg-gray-900" #sidebar position="Right" type="push" [width]="width" [isOpen]="true" showBackdrop="true" role="sidebar" style="display: block;">
+        <ejs-sidebar class="w-full bg-white dark:bg-gray-900" #sidebar position="Right" type="push" [width]="width" [isOpen]="true" showBackdrop="true" role="complementary" style="display: block;">
             <div>
                 <div class="flex justify-between items-center px-4 py-3">
                     <div class="w-32">
                         <label class="text-sm text-gray-900 dark:text-white">CALENDAR</label>
-                        <ejs-datepicker [start]="start" [depth]="depth" format="yyyy"></ejs-datepicker>
+                        <ejs-datepicker [start]="start" [depth]="depth" format="yyyy" aria-label="enter a year here" role="combobox"></ejs-datepicker>
                     </div>
-                    <button ejs-button class="e-btn e-flat text-lg" (click)="sidebar.hide()" type="button" iconCss="e-icons e-close" aria-label="close sidebar" role="button"></button>
+                    <button ejs-button class="e-flat text-base" iconCss="e-icons e-close" (click)="sidebar.hide()" type="button" aria-label="close sidebar" role="button"></button>
                 </div>
             </div>
             <div class="flex px-4 py-2 border-y border-gray-200 dark:border-gray-600 justify-between">
@@ -131,20 +131,20 @@
 
 <section class="bg-light">
     <div [ngStyle]="{'height': '940px', 'width': width, float:'Right'}">
-        <ejs-sidebar class="bg-body" #sidebar position="Right" type="push" [width]="width" [isOpen]="true" showBackdrop="true" role="sidebar" style="display: block;">
+        <ejs-sidebar class="bg-body" #sidebar position="Right" type="push" [width]="width" [isOpen]="true" showBackdrop="true" role="complementary" style="display: block;">
             <div>
                 <div class="d-flex justify-content-between align-items-center p-3">
                     <div class="w-50">
                         <label class="fs-6 text-body-secondary">CALENDAR</label>
-                        <ejs-datepicker [start]="start" [depth]="depth" format="yyyy"></ejs-datepicker>
+                        <ejs-datepicker [start]="start" [depth]="depth" format="yyyy" aria-label="enter a year here" role="combobox"></ejs-datepicker>
                     </div>
-                    <button ejs-button class="e-btn e-flat fs-6" (click)="sidebar.hide()" iconCss="e-icons e-close" type="button" aria-label="close sidebar" role="button"></button>
+                    <button ejs-button class="e-flat fs-6" iconCss="e-icons e-close" (click)="sidebar.hide()" type="button" aria-label="close sidebar" role="button"></button>
                 </div>
             </div>
             <div class="d-flex p-3 border-bottom border-top border-light-subtley justify-content-between">
-                <button ejs-button class="e-btn e-primary e-outline" content="Request time off" iconCss="e-icons e-plus" type="button" aria-label="request time off" role="button"></button>
+                <button ejs-button class="e-primary e-outline" content="Request time off" iconCss="e-icons e-plus" type="button" aria-label="request time off" role="button"></button>
                 <div class="my-auto">
-                    <button ejs-dropdownbutton #leaveselection [items]="[ { text: 'Holiday', iconCss: 'e-icons e-check' }, { text: 'My PTO' } ]" class="e-btn e-flat border-0" iconCss="e-icons e-more-vertical-2" content=" " (select)="leaveOptions(leaveselection,$event)" cssClass="e-caret-hide" type="button" aria-label="select the leave options" role="button"></button>
+                    <button ejs-dropdownbutton #leaveselection [items]="[ { text: 'Holiday', iconCss: 'e-icons e-check' }, { text: 'My PTO' } ]" class="e-flat border-0" iconCss="e-icons e-more-vertical-2" content=" " (select)="leaveOptions(leaveselection,$event)" cssClass="e-caret-hide" type="button" aria-label="select the leave options" role="button"></button>
                 </div>
             </div>
             @if (selectedItem === 'Holiday') {

@@ -1,14 +1,13 @@
 import { Component, OnInit, OnDestroy, ViewChild, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AppBarModule, MenuModule, BreadcrumbModule, BreadcrumbComponent, OpenCloseMenuEventArgs } from '@syncfusion/ej2-angular-navigations';
+import { MenuModule, BreadcrumbModule, BreadcrumbComponent, OpenCloseMenuEventArgs } from '@syncfusion/ej2-angular-navigations';
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
-import { TextBoxModule } from '@syncfusion/ej2-angular-inputs';
 import { DropDownButtonModule, DropDownButtonComponent } from '@syncfusion/ej2-angular-splitbuttons';
 
 @Component({
     selector: 'app-navbar-5',
     standalone: true,
-    imports: [CommonModule, AppBarModule, MenuModule, BreadcrumbModule, ButtonModule, TextBoxModule, DropDownButtonModule],
+    imports: [CommonModule, MenuModule, BreadcrumbModule, ButtonModule, DropDownButtonModule],
     templateUrl: './navbar-5.component.html',
     styleUrl: './navbar-5.component.css'
 })

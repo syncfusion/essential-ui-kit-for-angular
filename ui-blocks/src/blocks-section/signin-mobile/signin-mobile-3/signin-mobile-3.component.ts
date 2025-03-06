@@ -7,7 +7,7 @@ import { MaskedTextBoxModule } from '@syncfusion/ej2-angular-inputs';
 @Component({
     selector: 'app-signin-mobile-3',
     standalone: true,
-    imports: [DropDownListModule, ButtonModule, MaskedTextBoxModule, CommonModule],
+    imports: [CommonModule, ButtonModule, DropDownListModule, MaskedTextBoxModule],
     templateUrl: './signin-mobile-3.component.html'
 })
 export class SigninMobile3Component implements OnInit, OnDestroy {

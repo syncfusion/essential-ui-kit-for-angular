@@ -1,0 +1,175 @@
+@if (currentTheme === 'tailwind') {
+
+<section>
+    <div id="dialog-container" class="relative flex justify-center" [style]="containerHeight">
+        <button ejs-button class="h-fit my-5" (click)="dialog?.show()" type="button" aria-label="contact information" role="button">Contact Information</button>
+        <ejs-dialog #dialog class="rounded-none sm:rounded-lg sm:m-4" target="#dialog-container" [isModal]="true" [showCloseIcon]="true" width="548px" (beforeOpen)="$event.maxHeight = '726px'" (open)="$event.preventFocus = true" aria-label="add or update contact information" role="dialog">
+            <ng-template #header>
+                <div class="font-semibold leading-normal mb-0.5">Contact Information</div>
+                <div class="text-xs leading-normal text-gray-500 dark:text-gray-400">Add or update contact information</div>
+            </ng-template>
+            <ng-template #content>
+                <div class="mb-5">
+                    <p class="text-sm font-medium mb-3">Profile Photo</p>
+                    <div class="flex items-center gap-4">
+                        <span class="e-avatar e-avatar-circle size-20 shrink-0">
+                            <i class="e-icons e-user text-4xl text-gray-500 dark:text-gray-300"></i>
+                        </span>
+                        <div id="upload-template">
+                            <ejs-uploader [multiple]="false" [allowedExtensions]="'image/*'" [maxFileSize]="2000000" [buttons]="{ browse: 'Upload Photo' }" (selected)="$event.cancel = true"></ejs-uploader>
+                            <p class="text-xs font-medium text-wrap line-clamp-1 text-gray-500 dark:text-gray-400 mt-2">SVG, JPG, PNG or GIF (Maximum: 2 MB)</p>
+                        </div>
+                    </div>
+                </div>
+                <form action="#" class="grid grid-cols-1 gap-4 text-xs font-medium leading-normal text-gray-700 dark:text-gray-200" onsubmit="event.preventDefault();">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-y-3">
+                        <div class="flex flex-col gap-1">
+                            <label>Full Name</label>
+                            <ejs-textbox type="text" placeholder="Enter your full name" aria-label="enter your full name" role="textbox"></ejs-textbox>
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <label>Email Address <span class="text-red-600 dark:text-red-400 font-normal">*</span></label>
+                            <ejs-textbox type="email" placeholder="Enter a valid email address" aria-label="enter a valid email address" role="textbox"></ejs-textbox>
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <label>Company Name</label>
+                            <ejs-textbox type="text" placeholder="Enter the company name" aria-label="enter the company name" role="textbox"></ejs-textbox>
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <label>Job Profile</label>
+                            <ejs-dropdownlist placeholder="Select a job title" aria-label="choose a job title" role="listbox"></ejs-dropdownlist>
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <label>Location</label>
+                            <ejs-dropdownlist placeholder="Select a city or state" aria-label="choose a city or state" role="listbox"></ejs-dropdownlist>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="text-sm text-gray-900 dark:text-white">Communication Preferences</label>
+                        <div class="flex gap-5 sm:gap-8 mt-2">
+                            <ejs-checkbox label="Email" checked="true" aria-label="email communication preference" role="checkbox"></ejs-checkbox>
+                            <ejs-checkbox label="Phone" checked="true" aria-label="phone communication preference" role="checkbox"></ejs-checkbox>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-y-3">
+                        <div class="flex flex-col gap-1">
+                            <label>Lead Source <span class="text-red-600 dark:text-red-400 font-normal">*</span></label>
+                            <ejs-textbox type="text" placeholder="Enter the lead source" aria-label="enter the lead source" role="textbox"></ejs-textbox>
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <label>Status</label>
+                            <ejs-dropdownlist placeholder="Active" aria-label="choose a status" role="listbox"></ejs-dropdownlist>
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <label>Date Added</label>
+                            <ejs-datepicker placeholder="MM/DD/YYYY" aria-label="enter the date added here" role="combobox"></ejs-datepicker>
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <label>Tags/ Labels</label>
+                            <ejs-dropdownlist placeholder="Select keywords or tags" aria-label="choose keywords or tags" role="listbox"></ejs-dropdownlist>
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <label>Time Zone</label>
+                            <ejs-dropdownlist placeholder="Select your time zone" aria-label="choose a time zone" role="listbox"></ejs-dropdownlist>
+                        </div>
+                    </div>
+                </form>
+            </ng-template>
+            <ng-template #footerTemplate>
+                <div class="flex justify-end gap-2 sm:gap-1 mt-1 mb-2">
+                    <button ejs-button class="grow sm:grow-0 !ml-0" type="button" aria-label="cancel" role="button">Cancel</button>
+                    <button ejs-button class="e-primary grow sm:grow-0" type="button" aria-label="save contact" role="button">Save Contact</button>
+                </div>
+            </ng-template>
+        </ejs-dialog>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section>
+    <div id="dialog-container" class="position-relative d-flex align-items-start" [style]="containerHeight">
+        <button ejs-button class="e-outline mx-auto my-3" (click)="dialog?.show()" type="button" aria-label="contact information" role="button">Contact Information</button>
+        <ejs-dialog #dialog class="rounded-3 m-sm-2" target="#dialog-container" [isModal]="true" [showCloseIcon]="true" width="548px" (beforeOpen)="$event.maxHeight = '736px'" (open)="$event.preventFocus = true" aria-label="add or update contact information" role="dialog">
+            <ng-template #header>
+                <div class="fw-bold text-body">Contact Information</div>
+                <div class="small text-body text-opacity-50">Add or update contact information</div>
+            </ng-template>
+            <ng-template #content>
+                <div class="mb-3 px-1">
+                    <p class="fw-medium mb-2 text-body">Profile Photo</p>
+                    <div class="d-flex align-items-center gap-3 pt-1">
+                        <span class="e-avatar e-avatar-circle" style="width: 80px; height: 80px;">
+                            <i class="e-icons e-user fs-2"></i>
+                        </span>
+                        <div id="upload-template">
+                            <ejs-uploader [multiple]="false" [allowedExtensions]="'image/*'" [maxFileSize]="2000000" [buttons]="{ browse: 'Upload Photo' }" (selected)="$event.cancel = true"></ejs-uploader>
+                            <p class="small fw-medium text-wrap text-body text-opacity-50 mt-2 mb-0" style="display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden;">SVG, JPG, PNG or GIF (Maximum: 2 MB)</p>
+                        </div>
+                    </div>
+                </div>
+                <form action="#" class="d-flex flex-column gap-3 text-body-secondary small" onsubmit="event.preventDefault();">
+                    <div class="row gx-3 gy-sm-1 row-gap-3 row-gap-sm-2">
+                        <div class="col-12 col-sm-6 d-flex flex-column gap-1">
+                            <label>Full Name</label>
+                            <ejs-textbox type="text" placeholder="Enter your full name" aria-label="enter your full name" role="textbox"></ejs-textbox>
+                        </div>
+                        <div class="col-12 col-sm-6 d-flex flex-column gap-1">
+                            <label>Email Address <span class="text-danger">*</span></label>
+                            <ejs-textbox type="email" placeholder="Enter a valid email address" aria-label="enter a valid email address" role="textbox"></ejs-textbox>
+                        </div>
+                        <div class="col-12 col-sm-6 d-flex flex-column gap-1">
+                            <label>Company Name</label>
+                            <ejs-textbox type="text" placeholder="Enter the company name" aria-label="enter the company name" role="textbox"></ejs-textbox>
+                        </div>
+                        <div class="col-12 col-sm-6 d-flex flex-column gap-1">
+                            <label>Job Profile</label>
+                            <ejs-dropdownlist placeholder="Select a job title" aria-label="choose a job title" role="listbox"></ejs-dropdownlist>
+                        </div>
+                        <div class="col-12 col-sm-6 d-flex flex-column gap-1">
+                            <label>Location</label>
+                            <ejs-dropdownlist placeholder="Select a city or state" aria-label="choose a city or state" role="listbox"></ejs-dropdownlist>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="fs-6 fw-medium text-body">Communication Preferences</label>
+                        <div class="d-flex gap-4 mt-2">
+                            <ejs-checkbox cssClass="me-md-2" label="Email" checked="true" aria-label="email communication preference" role="checkbox"></ejs-checkbox>
+                            <ejs-checkbox label="Phone" checked="true" aria-label="phone communication preference" role="checkbox"></ejs-checkbox>
+                        </div>
+                    </div>
+                    <div class="row gx-3 gy-sm-1 row-gap-3 row-gap-sm-2">
+                        <div class="col-12 col-sm-6 d-flex flex-column gap-1 mt-0">
+                            <label>Lead Source <span class="text-danger">*</span></label>
+                            <ejs-textbox type="text" placeholder="Enter the lead source" aria-label="enter the lead source" role="textbox"></ejs-textbox>
+                        </div>
+                        <div class="col-12 col-sm-6 d-flex flex-column gap-1 mt-0">
+                            <label>Status</label>
+                            <ejs-dropdownlist placeholder="Active" aria-label="choose a status" role="listbox"></ejs-dropdownlist>
+                        </div>
+                        <div class="col-12 col-sm-6 d-flex flex-column gap-1">
+                            <label>Date Added</label>
+                            <ejs-datepicker placeholder="MM/DD/YYYY" aria-label="enter the date added here" role="combobox"></ejs-datepicker>
+                        </div>
+                        <div class="col-12 col-sm-6 d-flex flex-column gap-1">
+                            <label>Tags/ Labels</label>
+                            <ejs-dropdownlist placeholder="Select keywords or tags" aria-label="choose keywords or tags" role="listbox"></ejs-dropdownlist>
+                        </div>
+                        <div class="col-12 col-sm-6 d-flex flex-column gap-1">
+                            <label>Time Zone</label>
+                            <ejs-dropdownlist placeholder="Select your time zone" aria-label="choose a time zone" role="listbox"></ejs-dropdownlist>
+                        </div>
+                    </div>
+                </form>
+            </ng-template>
+            <ng-template #footerTemplate>
+                <div class="d-flex justify-content-end gap-2 gap-sm-1 py-1">
+                    <button ejs-button class="flex-grow-1 flex-sm-grow-0 ms-0" type="button" aria-label="cancel" role="button">Cancel</button>
+                    <button ejs-button class="e-primary flex-grow-1 flex-sm-grow-0" type="button" aria-label="save contact" role="button">Save Contact</button>
+                </div>
+            </ng-template>
+        </ejs-dialog>
+    </div>
+</section>
+
+}

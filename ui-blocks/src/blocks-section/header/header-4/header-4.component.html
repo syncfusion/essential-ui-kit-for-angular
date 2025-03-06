@@ -1,0 +1,171 @@
+@if (currentTheme === 'tailwind') {
+ 
+<section class="bg-white dark:bg-gray-800">
+    <div class="pt-4 md:!pt-6" style="min-height: 36rem;">
+        <div class="flex justify-between mb-3">
+            <div class="flex items-center">
+                <h1 class="text-lg font-semibold text-gray-900 dark:text-white ms-4 sm:ms-6">Tickets</h1>
+            </div>
+            <div class="flex gap-3">
+                <button ejs-button class="block sm:hidden sm:me-6" iconCss="e-icons e-filter" type="button" aria-label="filter" role="button"></button>
+                <button ejs-dropdownbutton id="dropdown" class="block sm:hidden me-4" iconCss="e-icons e-more-vertical-1" type="button" (beforeOpen)="$event.cancel = true;" aria-label="choose the additional option" role="button"></button>
+            </div>
+        </div>
+        <div class="flex items-center justify-between px-4 sm:px-6">
+            <div id="tab" class="w-full">
+                <ejs-tab #tab heightAdjustMode="Auto" width="100%" [overflowMode]="overflowMode" (created)="onTabCreated()" (selected)="onTabSelected($event)">
+                    <e-tabitems>
+                        <e-tabitem>
+                            <ng-template #headerText>
+                                <div class="space-x-2 flex items-center">
+                                    <span>All</span>
+                                    <span class="e-badge e-badge-pill !px-2">141</span>
+                                </div>
+                            </ng-template>
+                            <ng-template #content>
+                                <div class="hidden sm:flex py-3 items-center gap-2">
+                                    <button ejs-button class="mr-2" iconCss="e-icons e-filter" type="button" content="Add filters" aria-label="add filters" role="button"></button>
+                                    <div class="border-l border-gray-200 dark:border-gray-600 h-5"></div>
+                                    <ejs-chiplist cssClass="e-outline !rounded-2xl" enableDelete="true">
+                                        <e-chips>
+                                            <e-chip text="Status: Active"></e-chip>
+                                            <e-chip text="Priority: High"></e-chip>
+                                        </e-chips>
+                                    </ejs-chiplist>
+                                    <button ejs-button class="ml-1" cssClass="e-flat" type="button" aria-label="clear all" role="button">Clear all</button>
+                                </div>
+                            </ng-template>
+                        </e-tabitem>
+                        <e-tabitem>
+                            <ng-template #headerText>
+                                <div class="space-x-2 flex items-center">
+                                    <span class="sf-icon-inprogress text-base"></span>
+                                    <span>In Progress</span>
+                                    <span class="e-badge e-badge-pill !px-2">156</span>
+                                </div>
+                            </ng-template>
+                            <ng-template #content>
+                                <div class="hidden sm:flex py-3 items-center gap-2">
+                                    <button ejs-button class="mr-3" iconCss="e-icons e-filter" type="button" content="Add filters" aria-label="add filters" role="button"></button>
+                                    <div class="border-l border-gray-200 dark:border-gray-600 h-5"></div>
+                                    <ejs-chiplist class="flex flex-wrap gap-2" cssClass="e-outline !rounded-2xl" enableDelete="true">
+                                        <e-chips>
+                                            <e-chip text="Status: Active"></e-chip>
+                                            <e-chip text="Priority: High"></e-chip>
+                                        </e-chips>
+                                    </ejs-chiplist>
+                                    <button ejs-button class="ml-1" cssClass="e-flat" type="button" aria-label="clear all" role="button">Clear all</button>
+                                </div>
+                            </ng-template>
+                        </e-tabitem>
+                        <e-tabitem>
+                            <ng-template #headerText>
+                                <div class="space-x-2 flex items-center">
+                                    <span class="e-icons e-clock e-medium"></span>
+                                    <span>Pending</span>
+                                    <span class="e-badge e-badge-pill !px-2">18</span>
+                                </div>
+                            </ng-template>
+                        </e-tabitem>
+                        <e-tabitem>
+                            <ng-template #headerText>
+                                <div class="space-x-2 flex items-center">
+                                    <span class="e-icons e-circle-check e-medium"></span>
+                                    <span>Resolved</span>
+                                    <span class="e-badge e-badge-pill !px-2">18</span>
+                                </div>
+                            </ng-template>
+                        </e-tabitem>
+                    </e-tabitems>
+                </ejs-tab>
+            </div>
+        </div>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body">
+    <div class="pt-3 pt-md-4" style="min-height: 36rem;">
+        <div class="d-flex justify-content-between mb-3">
+            <div class="d-flex align-items-center">
+                <h1 class="fs-6 fw-bold text-body ms-3 ms-sm-4 mb-0">Tickets</h1>
+            </div>
+            <div class="d-flex gap-3">
+                <button ejs-button class="d-block d-sm-none me-sm-4" cssClass="e-outline" iconCss="e-icons e-filter" type="button" aria-label="filter" role="button"></button>
+                <button ejs-dropdownbutton id="dropdown" class="d-block d-sm-none me-3" cssClass="e-outline" iconCss="e-icons e-more-vertical-1" type="button" (beforeOpen)="$event.cancel = true;" aria-label="choose the additional option" role="button"></button>
+            </div>
+        </div>
+        <div class="d-flex align-items-center justify-content-between px-3 px-sm-4">
+            <div id="tab" class="w-100">
+                <ejs-tab #tab heightAdjustMode="Auto" width="100%" [overflowMode]="overflowMode" (selected)="onTabSelected($event)">
+                    <e-tabitems>
+                        <e-tabitem>
+                            <ng-template #headerText>
+                                <div class="d-flex align-items-center gap-2">
+                                    <span>All</span>
+                                    <span class="e-badge e-badge-pill px-2">141</span>
+                                </div>
+                            </ng-template>
+                            <ng-template #content>
+                                <div class="d-none d-sm-flex py-3 align-items-center gap-2">
+                                    <button ejs-button class="me-1" cssClass="e-outline" iconCss="e-icons e-filter" type="button" content="Add filters" aria-label="add filters" role="button"></button>
+                                    <div class="border-start" style="height: 16px;"></div>
+                                    <ejs-chiplist cssClass="e-outline rounded-pill py-2" enableDelete="true">
+                                        <e-chips>
+                                            <e-chip text="Status: Active"></e-chip>
+                                            <e-chip text="Priority: High"></e-chip>
+                                        </e-chips>
+                                    </ejs-chiplist>
+                                    <button ejs-button cssClass="e-flat" type="button" aria-label="clear all" role="button">Clear all</button>
+                                </div>
+                            </ng-template>
+                        </e-tabitem>
+                        <e-tabitem>
+                            <ng-template #headerText>
+                                <div class="d-flex align-items-center gap-2">
+                                    <span class="sf-icon-inprogress fs-6"></span>
+                                    <span>In Progress</span>
+                                    <span class="e-badge e-badge-pill px-2">156</span>
+                                </div>
+                            </ng-template>
+                            <ng-template #content>
+                                <div class="d-none d-sm-flex py-3 align-items-center gap-2">
+                                    <button ejs-button class="me-1" cssClass="e-outline" iconCss="e-icons e-filter" type="button" content="Add filters" aria-label="add filters" role="button"></button>
+                                    <div class="border-start" style="height: 16px;"></div>
+                                    <ejs-chiplist class="d-flex flex-wrap gap-2 rounded-pill" cssClass="e-outline" enableDelete="true">
+                                        <e-chips>
+                                            <e-chip text="Status: Active"></e-chip>
+                                            <e-chip text="Priority: High"></e-chip>
+                                        </e-chips>
+                                    </ejs-chiplist>
+                                    <button ejs-button cssClass="e-flat" type="button" aria-label="clear all" role="button">Clear all</button>
+                                </div>
+                            </ng-template>
+                        </e-tabitem>
+                        <e-tabitem>
+                            <ng-template #headerText>
+                                <div class="d-flex align-items-center gap-2">
+                                    <span class="e-icons e-clock e-medium"></span>
+                                    <span>Pending</span>
+                                    <span class="e-badge e-badge-pill px-2">18</span>
+                                </div>
+                            </ng-template>
+                        </e-tabitem>
+                        <e-tabitem>
+                            <ng-template #headerText>
+                                <div class="d-flex align-items-center gap-2">
+                                    <span class="e-icons e-circle-check e-medium"></span>
+                                    <span>Resolved</span>
+                                    <span class="e-badge e-badge-pill px-2">18</span>
+                                </div>
+                            </ng-template>
+                        </e-tabitem>
+                    </e-tabitems>
+                </ejs-tab>
+            </div>
+        </div>
+    </div>
+</section>          
+
+}

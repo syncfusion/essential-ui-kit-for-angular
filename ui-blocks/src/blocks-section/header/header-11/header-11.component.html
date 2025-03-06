@@ -1,0 +1,99 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-white dark:bg-gray-800">
+    <div class="pt-4 sm:pt-6" style="min-height: 36rem;">
+        <h1 class="text-lg font-semibold text-gray-900 dark:text-white ms-4 sm:ms-6">API Reference Builder</h1>
+        <div class="flex items-center justify-between">
+            <div class="mx-4 sm:mx-6 w-full">
+                <div id="breadcrumb" class="pt-2 pb-3">
+                    <ejs-breadcrumb #breadcrumb [enableNavigation]="false" [overflowMode]="breadcrumbOverflowMode" [maxItems]="maxItems">
+                        <e-breadcrumb-items>
+                            <e-breadcrumb-item text="Documentation"></e-breadcrumb-item>
+                            <e-breadcrumb-item text="API Reference Builder"></e-breadcrumb-item>
+                        </e-breadcrumb-items>
+                        <ng-template #separatorTemplate>
+                            <span class="e-icons e-chevron-right"></span>
+                        </ng-template>
+                    </ejs-breadcrumb>
+                </div>
+                <div id="tab" class="w-full">
+                    <ejs-tab #tab heightAdjustMode="Auto" width="100%" [overflowMode]="tabOverflowMode">
+                        <e-tabitems>
+                            <e-tabitem>
+                                <ng-template #headerText>
+                                    <div>Settings</div>
+                                </ng-template>
+                            </e-tabitem>
+                            <e-tabitem>
+                                <ng-template #headerText>
+                                    <div>Parameters</div>
+                                </ng-template>
+                            </e-tabitem>
+                            <e-tabitem>
+                                <ng-template #headerText>
+                                    <div>Examples</div>
+                                </ng-template>
+                            </e-tabitem>
+                            <e-tabitem>
+                                <ng-template #headerText>
+                                    <div>Preview</div>
+                                </ng-template>
+                            </e-tabitem>
+                        </e-tabitems>
+                    </ejs-tab>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body">
+    <div class="pt-3 pt-sm-4" style="min-height: 36rem;">
+        <h1 class="fs-5 fw-bold text-body ms-3 ms-sm-4 mb-1">API Reference Builder</h1>
+        <div class="d-flex align-items-center justify-content-between">
+            <div class="mx-3 mx-sm-4 w-100">
+                <div id="breadcrumb" class="pt-2 pb-3">
+                    <ejs-breadcrumb #breadcrumb [enableNavigation]="false" [overflowMode]="breadcrumbOverflowMode" [maxItems]="maxItems">
+                        <e-breadcrumb-items>
+                            <e-breadcrumb-item text="Documentation"></e-breadcrumb-item>
+                            <e-breadcrumb-item text="API Reference Builder"></e-breadcrumb-item>
+                        </e-breadcrumb-items>
+                        <ng-template #separatorTemplate>
+                            <span class="e-icons e-chevron-right"></span>
+                        </ng-template>
+                    </ejs-breadcrumb>
+                </div>
+                <div id="tab" class="w-100">
+                    <ejs-tab #tab heightAdjustMode="Auto" width="100%" [overflowMode]="tabOverflowMode">
+                        <e-tabitems>
+                            <e-tabitem>
+                                <ng-template #headerText>
+                                    <div>Settings</div>
+                                </ng-template>
+                            </e-tabitem>
+                            <e-tabitem>
+                                <ng-template #headerText>
+                                    <div>Parameters</div>
+                                </ng-template>
+                            </e-tabitem>
+                            <e-tabitem>
+                                <ng-template #headerText>
+                                    <div>Examples</div>
+                                </ng-template>
+                            </e-tabitem>
+                            <e-tabitem>
+                                <ng-template #headerText>
+                                    <div>Preview</div>
+                                </ng-template>
+                            </e-tabitem>
+                        </e-tabitems>
+                    </ejs-tab>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    
+}
