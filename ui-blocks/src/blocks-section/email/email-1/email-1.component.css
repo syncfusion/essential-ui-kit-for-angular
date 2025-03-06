@@ -2,3 +2,13 @@
 .e-rte-backgroundcolor-dropdown .e-colorpicker-wrapper .e-container.e-color-palette {
     width: auto !important;
 }
+
+::ng-deep .e-richtexteditor .e-rte-content .e-content ol {
+    list-style: auto;
+    margin-left: 24px;
+}
+
+::ng-deep .e-richtexteditor .e-rte-content .e-content ul {
+    list-style: disc;
+    margin-left: 24px;
+}

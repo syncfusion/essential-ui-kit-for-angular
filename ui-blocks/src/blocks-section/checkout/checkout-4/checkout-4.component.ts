@@ -10,7 +10,7 @@ import { Subscription } from 'rxjs';
 @Component({
     selector: 'app-checkout-4',
     standalone: true,
-    imports: [CommonModule, SidebarModule, ButtonModule, RadioButtonModule, TextBoxModule, CheckBoxModule, DropDownListModule, TextAreaModule, MaskedTextBoxAllModule],
+    imports: [CommonModule, SidebarModule, ButtonModule, RadioButtonModule, CheckBoxModule, TextBoxModule, TextAreaModule, MaskedTextBoxAllModule, DropDownListModule],
     templateUrl: './checkout-4.component.html'
 })
 export class Checkout4Component implements OnInit, OnDestroy {

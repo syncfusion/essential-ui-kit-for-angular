@@ -1,13 +1,13 @@
 import { Component, OnInit, OnDestroy, ViewChild, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AppBarModule, MenuModule } from '@syncfusion/ej2-angular-navigations';
+import { MenuModule } from '@syncfusion/ej2-angular-navigations';
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { DropDownButtonModule, DropDownButtonComponent } from '@syncfusion/ej2-angular-splitbuttons';
 
 @Component({
     selector: 'app-navbar-3',
     standalone: true,
-    imports: [CommonModule, AppBarModule, MenuModule, ButtonModule, DropDownButtonModule],
+    imports: [CommonModule, MenuModule, ButtonModule, DropDownButtonModule],
     templateUrl: './navbar-3.component.html',
     styleUrl: './navbar-3.component.css'
 })

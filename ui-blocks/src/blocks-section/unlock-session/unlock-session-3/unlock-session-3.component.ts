@@ -1,12 +1,12 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { TextBoxModule } from '@syncfusion/ej2-angular-inputs';
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
-import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-unlock-session-3',
     standalone: true,
-    imports: [TextBoxModule, ButtonModule, CommonModule],
+    imports: [CommonModule,TextBoxModule, ButtonModule],
     templateUrl: './unlock-session-3.component.html'
 })
 export class UnlockSession3Component implements OnInit, OnDestroy {

@@ -1,0 +1,145 @@
+@if (currentTheme === 'tailwind') {
+
+<section>
+    <div id="dialog-container" class="relative flex justify-center" [style]="containerHeight">
+        <button ejs-button class="h-fit my-5" (click)="dialog?.show()" type="button" aria-label="track new feature" role="button">Track New Feature</button>
+        <ejs-dialog #dialog class="rounded-none sm:rounded-lg sm:m-4" target="#dialog-container" [isModal]="true" [showCloseIcon]="true" width="515px" (open)="$event.preventFocus = true" (beforeOpen)="$event.maxHeight = '624px'" aria-label="track new feature" role="dialog">
+            <ng-template #header>
+                <p class="font-semibold leading-normal">Track New Feature</p>
+            </ng-template>
+            <ng-template #content>
+                <form action="#" class="flex flex-col gap-4" onsubmit="event.preventDefault();">
+                    <div class="flex flex-col gap-4 sm:gap-3">
+                        <div class="flex flex-col sm:flex-row sm:items-center gap-1">
+                            <label class="w-44 text-sm font-medium shrink-0">Feature Name</label>
+                            <ejs-textbox class="w-full" type="text" placeholder="Enter the feature name" aria-label="enter the feature name" role="textbox"></ejs-textbox>
+                        </div>
+                        <div class="flex flex-col sm:flex-row sm:items-center gap-1">
+                            <label class="flex items-center gap-1 w-44 text-sm font-medium shrink-0">No Views<span class="e-icons e-circle-info text-gray-500 dark:text-gray-300"></span></label>
+                            <ejs-dropdownlist class="w-full grow" (created)="onCreated(0, 'e-grid-view')" placeholder="Select the number of views" aria-label="choose a number of views" role="listbox"></ejs-dropdownlist>
+                        </div>
+                    </div>
+                    <p class="text-sm font-semibold px-2 py-1.5 bg-gray-100 rounded-md dark:bg-gray-700">Tracking Criteria</p>
+                    <div class="flex flex-col gap-4 sm:gap-3">
+                        <div class="flex flex-col sm:flex-row sm:items-center gap-1">
+                            <label class="flex items-center gap-1 w-44 text-sm font-medium shrink-0">Source<span class="e-icons e-circle-info text-gray-500 dark:text-gray-300"></span></label>
+                            <div class="e-input-group">
+                                <span class="flex items-center border-r border-inherit px-1">
+                                    <ejs-checkbox label="Event" labelPosition="Before" checked="true" aria-label="select event" role="checkbox"></ejs-checkbox>
+                                </span>
+                                <input class="e-input" type="text" placeholder="Company attributes" (focus)="focusIn($event.target)" (blur)="focusOut($event.target)" aria-label="enter the company attributes" role="textbox" />
+                            </div>
+                        </div>
+                        <div class="flex flex-col sm:flex-row sm:items-center gap-1">
+                            <label class="w-44 text-sm font-medium shrink-0">Event Name</label>
+                            <ejs-textbox class="w-full" type="text" placeholder="Enter the event name" aria-label="enter the event name" role="textbox"></ejs-textbox>
+                        </div>
+                        <div class="flex flex-col sm:flex-row sm:items-center gap-1">
+                            <label class="w-44 text-sm font-medium shrink-0">Target Segment</label>
+                            <ejs-dropdownlist class="w-full" placeholder="Select the target audience" aria-label="choose a target audience" role="listbox"> </ejs-dropdownlist>
+                        </div>
+                        <div class="flex flex-row items-center justify-between sm:justify-normal gap-1">
+                            <label class="w-44 text-sm font-medium shrink-0">Event Attributes</label>
+                            <button ejs-button class="e-primary e-outline" type="button" aria-label="add filter" role="button">Add filter</button>
+                        </div>
+                    </div>
+                    <p class="text-sm font-semibold px-2 py-1.5 bg-gray-100 rounded-md dark:bg-gray-700">Workflow</p>
+                    <div class="flex flex-col gap-4 sm:gap-3">
+                        <div class="flex flex-col sm:flex-row sm:items-center gap-1">
+                            <label class="flex items-center gap-1 w-44 text-sm font-medium shrink-0">Status<span class="e-icons e-circle-info text-gray-500 dark:text-gray-300"></span></label>
+                            <ejs-dropdownlist class="w-full grow" placeholder="Evaluating" (created)="onCreated(2, 'e-contrast')" aria-label="choose an evaluating option" role="listbox"></ejs-dropdownlist>
+                        </div>
+                        <div class="flex flex-col sm:flex-row sm:items-center gap-1">
+                            <label class="w-44 text-sm font-medium shrink-0">Evaluation Period</label>
+                            <ejs-dropdownlist class="w-full grow" placeholder="Select the evaluation timeframe" aria-label="choose an evaluation timeframe" role="listbox"></ejs-dropdownlist>
+                        </div>
+                        <div class="flex flex-col sm:flex-row sm:items-center gap-1">
+                            <label class="w-44 text-sm font-medium shrink-0">Release Date</label>
+                            <ejs-datepicker class="w-full grow" placeholder="MM/DD/YYYY" aria-label="enter a release date here" role="combobox"></ejs-datepicker>
+                        </div>
+                    </div>
+                </form>
+            </ng-template>
+            <ng-template #footerTemplate>
+                <div class="flex justify-end gap-2 sm:gap-1 mt-1 sm:mt-0 mb-2">
+                    <button ejs-button cssClass="grow sm:grow-0 !ml-0" type="button" aria-label="cancel" role="button">Cancel</button>
+                    <button ejs-button cssClass="e-primary grow sm:grow-0" type="button" aria-label="save feature" role="button">Save Feature</button>
+                </div>
+            </ng-template>
+        </ejs-dialog>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section>
+    <div id="dialog-container" class="position-relative d-flex align-items-start" [style]="containerHeight">
+        <button ejs-button class="e-outline mx-auto my-3" (click)="dialog?.show()" type="button" aria-label="track new feature" role="button">Track New Feature</button>
+        <ejs-dialog #dialog class="rounded-3 m-sm-2" target="#dialog-container" [isModal]="true" [showCloseIcon]="true" width="515px" (open)="$event.preventFocus = true" (beforeOpen)="$event.maxHeight = '630px'" aria-label="track new feature" role="dialog">
+            <ng-template #header>
+                <p class="fw-bold mb-0 text-body">Track New Feature</p>
+            </ng-template>
+            <ng-template #content>
+                <form action="#" class="d-flex flex-column gap-3 pt-1 text-body" onsubmit="event.preventDefault();">
+                    <div class="row gap-3 gap-sm-2 gy-sm-1">
+                        <div class="d-flex flex-column flex-sm-row align-items-sm-center gap-1 mt-0">
+                            <label class="fw-medium flex-shrink-0" style="width: 175px;">Feature Name</label>
+                            <ejs-textbox class="w-100" type="text" placeholder="Enter the feature name" aria-label="enter the feature name" role="textbox"></ejs-textbox>
+                        </div>
+                        <div class="d-flex flex-column flex-sm-row align-items-sm-center gap-1">
+                            <label class="d-flex align-items-center gap-1 fw-medium flex-shrink-0" style="width: 175px;">No Views<span class="e-icons e-circle-info text-secondary"></span></label>
+                            <ejs-dropdownlist class="w-100 flex-grow-1" (created)="onCreated(0, 'e-grid-view')" placeholder="Select the number of views" aria-label="choose a number of views" role="listbox"></ejs-dropdownlist>
+                        </div>
+                    </div>
+                    <p class="fw-bold px-2 py-1 bg-body-secondary rounded mb-0">Tracking Criteria</p>
+                    <div class="row gap-3 gap-sm-2 gy-sm-1 mt-0">
+                        <div class="d-flex flex-column flex-sm-row align-items-sm-center gap-1">
+                            <label class="d-flex align-items-center gap-1 fw-medium flex-shrink-0" style="width: 175px;">Source<span class="e-icons e-circle-info text-secondary"></span></label>
+                            <div class="e-input-group">
+                                <span class="d-flex align-items-center border-end px-1">
+                                    <ejs-checkbox label="Event" labelPosition="Before" checked="true" aria-label="select event" role="checkbox"></ejs-checkbox>
+                                </span>
+                                <input class="e-input" type="text" placeholder="Company attributes" (focus)="focusIn($event.target)" (blur)="focusOut($event.target)" aria-label="enter the company attributes" role="textbox" />
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column flex-sm-row align-items-sm-center gap-1">
+                            <label class="fw-medium flex-shrink-0" style="width: 175px;">Event Name</label>
+                            <ejs-textbox class="w-100" type="text" placeholder="Enter the event name" aria-label="enter the event name" role="textbox"></ejs-textbox>
+                        </div>
+                        <div class="d-flex flex-column flex-sm-row align-items-sm-center gap-1">
+                            <label class="fw-medium flex-shrink-0" style="width: 175px;">Target Segment</label>
+                            <ejs-dropdownlist class="w-100" placeholder="Select the target audience" aria-label="choose a target audience" role="listbox"> </ejs-dropdownlist>
+                        </div>
+                        <div class="d-flex flex-row align-items-center justify-content-between justify-content-sm-start gap-1">
+                            <label class="fw-medium flex-shrink-0" style="width: 175px;">Event Attributes</label>
+                            <button ejs-button class="e-primary e-outline" type="button" aria-label="add filter" role="button">Add filter</button>
+                        </div>
+                    </div>
+                    <p class="fw-bold px-2 py-1 bg-body-secondary rounded mb-0">Workflow</p>
+                    <div class="row gap-3 gap-sm-2 gy-sm-1 mt-0">
+                        <div class="d-flex flex-column flex-sm-row align-items-sm-center gap-1">
+                            <label class="d-flex align-items-center gap-1 fw-medium flex-shrink-0" style="width: 175px;">Status<span class="e-icons e-circle-info text-secondary"></span></label>
+                            <ejs-dropdownlist class="w-100 flex-grow-1" placeholder="Evaluating" (created)="onCreated(2, 'e-contrast')" aria-label="choose an evaluating option" role="listbox"></ejs-dropdownlist>
+                        </div>
+                        <div class="d-flex flex-column flex-sm-row align-items-sm-center gap-1">
+                            <label class="fw-medium flex-shrink-0" style="width: 175px;">Evaluation Period</label>
+                            <ejs-dropdownlist class="w-100 flex-grow-1" placeholder="Select the evaluation timeframe" aria-label="choose an evaluation timeframe" role="listbox"></ejs-dropdownlist>
+                        </div>
+                        <div class="d-flex flex-column flex-sm-row align-items-sm-center gap-1">
+                            <label class="fw-medium flex-shrink-0" style="width: 175px;">Release Date</label>
+                            <ejs-datepicker class="w-100 flex-grow-1" placeholder="MM/DD/YYYY" aria-label="enter a release date here" role="combobox"></ejs-datepicker>
+                        </div>
+                    </div>
+                </form>
+            </ng-template>
+            <ng-template #footerTemplate>
+                <div class="d-flex justify-content-end gap-2 gap-sm-1 py-1">
+                    <button ejs-button cssClass="flex-grow-1 flex-sm-grow-0 ms-0" type="button" aria-label="cancel" role="button">Cancel</button>
+                    <button ejs-button cssClass="e-primary flex-grow-1 flex-sm-grow-0" type="button" aria-label="save feature" role="button">Save Feature</button>
+                </div>
+            </ng-template>
+        </ejs-dialog>
+    </div>
+</section>
+
+}

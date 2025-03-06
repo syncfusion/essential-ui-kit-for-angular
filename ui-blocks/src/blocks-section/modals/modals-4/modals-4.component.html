@@ -1,0 +1,93 @@
+@if (currentTheme === 'tailwind') {
+
+<section>
+    <div id="dialog-container" class="relative flex justify-center" style="min-height: 660px;">
+        <button ejs-button class="h-fit my-5" (click)="dialog?.show()" type="button" aria-label="manage access" role="button">Manage Access</button>
+        <ejs-dialog #dialog class="rounded-none sm:rounded-lg sm:m-4" target="#dialog-container" [isModal]="true" [showCloseIcon]="true" width="540px" (beforeOpen)="$event.maxHeight = '660px'" (open)="$event.preventFocus = true" aria-label="manage team member access" role="dialog">
+            <ng-template #header>
+                <h3 class="font-semibold leading-normal mb-0.5">Manage Access</h3>
+                <p class="text-xs leading-normal text-gray-500 dark:text-gray-400">Update team member permissions.</p>
+            </ng-template>
+            <ng-template #content>
+                <div class="e-input-group mb-6">
+                    <input class="e-input" type="text" placeholder="Search by name or email address" aria-label="search by name or email address" role="textbox" />
+                    <span class="e-input-group-icon e-icons e-search border-0"></span>
+                </div>
+                <ejs-checkbox cssClass="mb-2.5" label="Select all" (change)="$event.checked ? listview.checkAllItems() : listview.uncheckAllItems();" aria-label="select all" role="checkbox"></ejs-checkbox>
+                <ejs-listview #listview class="!border-0" cssClass="e-list-template" [dataSource]="dataSource" [showCheckBox]="true" aria-label="list of team members" role="list">
+                    <ng-template #template let-data>
+                        <div class="e-list-wrapper e-list-multi-line flex gap-1 sm:items-center !px-0 !py-5 sm:!py-3">
+                            <div class="e-list-content !flex flex-col sm:flex-row sm:items-center grow gap-4">
+                                <div class="flex items-center justify-between gap-4 grow">
+                                    <div class="text-sm">
+                                        <div class="e-list-item-header">{{data.name}}</div>
+                                        <div>{{data.email}}</div>
+                                    </div>
+                                    <span class="e-badge e-badge-pill" [ngClass]="{'e-badge-success': data.status === 'Active', 'e-badge-warning': data.status === 'Pending'}">{{data.status}}</span>
+                                </div>
+                                <button ejs-dropdownbutton class="m-1 e-outline" [content]="data.role" type="button" (beforeOpen)="$event.cancel = true;" style="width: 100px;" aria-label="choose a role" role="button"></button>
+                            </div>
+                        </div>
+                    </ng-template>
+                </ejs-listview>
+            </ng-template>
+            <ng-template #footerTemplate>
+                <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-4 sm:gap-1 py-2">
+                    <p class="text-left text-sm text-gray-500 dark:text-gray-400">Changes will be logged for audit purposes</p>
+                    <div class="flex gap-2 sm:gap-1">
+                        <button ejs-button cssClass="grow sm:grow-0 !ml-0" type="button" aria-label="cancel" role="button">Cancel</button>
+                        <button ejs-button cssClass="e-primary grow sm:grow-0" type="button" aria-label="apply changes" role="button">Apply Changes</button>
+                    </div>
+                </div>
+            </ng-template>
+        </ejs-dialog>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section>
+    <div id="dialog-container" class="position-relative d-flex align-items-start" style="min-height: 660px;">
+        <button ejs-button class="e-outline mx-auto my-3" (click)="dialog?.show()" type="button" aria-label="manage access" role="button">Manage Access</button>
+        <ejs-dialog #dialog class="rounded-3 m-sm-2" target="#dialog-container" [isModal]="true" [showCloseIcon]="true" width="540px" (beforeOpen)="$event.maxHeight = '660px'" (open)="$event.preventFocus = true" aria-label="manage team member access" role="dialog">
+            <ng-template #header>
+                <h3 class="fw-bold mb-0 text-body">Manage Access</h3>
+                <p class="small fw-normal text-body text-opacity-50 mb-0">Update team member permissions.</p>
+            </ng-template>
+            <ng-template #content>
+                <div class="e-input-group mb-4">
+                    <input class="e-input" type="text" placeholder="Search by name or email address" aria-label="search by name or email address" role="textbox" />
+                    <span class="e-input-group-icon e-icons e-search border-0"></span>
+                </div>
+                <ejs-checkbox cssClass="mb-3" label="Select all" (change)="$event.checked ? listview.checkAllItems() : listview.uncheckAllItems();" aria-label="select all" role="checkbox"></ejs-checkbox>
+                <ejs-listview #listview class="border-0" cssClass="e-list-template" [dataSource]="dataSource" [showCheckBox]="true" aria-label="list of team members" role="list">
+                    <ng-template #template let-data>
+                        <div class="e-list-wrapper e-list-multi-line d-flex align-items-sm-center px-0 py-3 py-sm-2 mb-2 mb-sm-1">
+                            <div class="e-list-content d-flex flex-column flex-sm-row align-items-sm-center flex-grow-1 gap-3">
+                                <div class="d-flex align-items-center justify-content-between gap-3 flex-grow-1">
+                                    <div>
+                                        <div class="e-list-item-header text-body fw-medium">{{data.name}}</div>
+                                        <div class="text-body text-opacity-50">{{data.email}}</div>
+                                    </div>
+                                    <span class="e-badge e-badge-pill" [ngClass]="{'e-badge-success': data.status === 'Active', 'e-badge-warning': data.status === 'Pending'}">{{data.status}}</span>
+                                </div>
+                                <button ejs-dropdownbutton class="m-1 m-sm-0 me-sm-1 e-outline" [content]="data.role" type="button" (beforeOpen)="$event.cancel = true;" style="width: 100px;" aria-label="choose a role" role="button"></button>
+                            </div>
+                        </div>
+                    </ng-template>
+                </ejs-listview>
+            </ng-template>
+            <ng-template #footerTemplate>
+                <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-3 py-1">
+                    <p class="text-body text-opacity-50 text-start mb-0">Changes will be logged for audit purposes</p>
+                    <div class="d-flex justify-content-end gap-2 gap-sm-1">
+                        <button ejs-button cssClass="flex-grow-1 flex-sm-grow-0 ms-0" type="button" aria-label="cancel" role="button">Cancel</button>
+                        <button ejs-button cssClass="e-primary flex-grow-1 flex-sm-grow-0" type="button" aria-label="apply changes" role="button">Apply Changes</button>
+                    </div>
+                </div>
+            </ng-template>
+        </ejs-dialog>
+    </div>
+</section>
+
+}

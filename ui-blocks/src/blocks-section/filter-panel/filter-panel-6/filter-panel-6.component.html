@@ -1,0 +1,195 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-white dark:bg-gray-900">
+    <div [ngStyle]="{'height': '957px', 'width': width, float:'Right'}">
+        <ejs-sidebar #sidebar class="flex flex-col bg-white dark:bg-gray-800" position="Right" type="push" [width]="width" [isOpen]="true" [closeOnDocumentClick]="false" showBackdrop="true" role="complementary" style="display: block;">
+            <div>
+                <div class="flex justify-between items-center p-4 border-b border-gray-200 dark:border-gray-600">
+                    <h2 class="text-base font-semibold text-gray-900 dark:text-white">Filters</h2>
+                    <button ejs-button class="e-flat text-sm" [isPrimary]="true" content="Clear all" type="button" aria-label="clear all" role="button"></button>
+                </div>
+                <div class="p-4 pt-3 pb-0 flex">
+                    <ejs-autocomplete #search class="w-full" (created)="openPopup(search)" placeholder="Search" [showClearButton]="true" role="combobox"></ejs-autocomplete>
+                </div>
+                <div class="pt-3">
+                    <ejs-accordion #industryAccordion class="border-b-0 border-r-0" expandMode="Single" role="accordion">
+                        <e-accordionitems>
+                            <e-accordionitem expanded="true">
+                                <ng-template #header>
+                                    <div class="font-medium text-gray-900 dark:text-white">Industry</div>
+                                </ng-template>
+                                <ng-template #content>
+                                    <div class="flex flex-col gap-4 py-1 px-1">
+                                        <ejs-checkbox label="Technology" checked="true" aria-label="technology" role="checkbox"></ejs-checkbox>
+                                        <ejs-checkbox label="Healthcare" checked="true" aria-label="healthcare" role="checkbox"></ejs-checkbox>
+                                        <ejs-checkbox label="Finance" aria-label="finance" role="checkbox"></ejs-checkbox>
+                                        <ejs-checkbox label="Education" aria-label="education" role="checkbox"></ejs-checkbox>
+                                        <ejs-checkbox label="Manufacturing" aria-label="manufacturing" role="checkbox"></ejs-checkbox>
+                                    </div>
+                                </ng-template>
+                            </e-accordionitem>
+                        </e-accordionitems>
+                    </ejs-accordion>
+                    <ejs-accordion #sizeAccordion class="border-b-0 border-r-0" expandMode="Single" role="accordion">
+                        <e-accordionitems>
+                            <e-accordionitem expanded="true">
+                                <ng-template #header>
+                                    <div class="font-medium text-gray-900 dark:text-white">Company Size</div>
+                                </ng-template>
+                                <ng-template #content>
+                                    <div class="flex flex-col gap-4 py-1 px-1">
+                                        <ejs-checkbox label="1-50" checked="true" aria-label="Select range 1 to 50" role="checkbox"></ejs-checkbox>
+                                        <ejs-checkbox label="51-200" checked="true" aria-label="Select range 51 to 200" role="checkbox"></ejs-checkbox>
+                                        <ejs-checkbox label="201-500" aria-label="Select range 201 to 500" role="checkbox"></ejs-checkbox>
+                                        <ejs-checkbox label="501-1000" aria-label="Select range 501 to 1000" role="checkbox"></ejs-checkbox>
+                                        <ejs-checkbox label="1000+" aria-label="Select range above 1000" role="checkbox"></ejs-checkbox>
+                                    </div>
+                                </ng-template>
+                            </e-accordionitem>
+                        </e-accordionitems>
+                    </ejs-accordion>
+                    <ejs-accordion #locationAccordion class="border-b-0 border-r-0" expandMode="Single" role="accordion">
+                        <e-accordionitems>
+                            <e-accordionitem expanded="true">
+                                <ng-template #header>
+                                    <div class="font-medium text-gray-900 dark:text-white">Company Places</div>
+                                </ng-template>
+                                <ng-template #content>
+                                    <div class="flex flex-col gap-4 py-1 px-1">
+                                        <ejs-checkbox label="North America" checked="true" aria-label="north america" role="checkbox"></ejs-checkbox>
+                                        <ejs-checkbox label="Europe" checked="true" aria-label="europe" role="checkbox"></ejs-checkbox>
+                                        <ejs-checkbox label="Asia" aria-label="asia" role="checkbox"></ejs-checkbox>
+                                        <ejs-checkbox label="South America" aria-label="south america" role="checkbox"></ejs-checkbox>
+                                        <ejs-checkbox label="Africa" aria-label="africa" role="checkbox"></ejs-checkbox>
+                                    </div>
+                                </ng-template>
+                            </e-accordionitem>
+                        </e-accordionitems>
+                    </ejs-accordion>
+                    <ejs-accordion #typeAccordion class="border-b-0 border-r-0" expandMode="Single" role="accordion">
+                        <e-accordionitems>
+                            <e-accordionitem expanded="true">
+                                <ng-template #header>
+                                    <div class="font-medium text-gray-900 dark:text-white">Company Type</div>
+                                </ng-template>
+                                <ng-template #content>
+                                    <div class="flex flex-col gap-4 py-1 px-1">
+                                        <ejs-checkbox label="Public" aria-label="public" role="checkbox"></ejs-checkbox>
+                                        <ejs-checkbox label="Private" aria-label="private" role="checkbox"></ejs-checkbox>
+                                    </div>
+                                </ng-template>
+                            </e-accordionitem>
+                        </e-accordionitems>
+                    </ejs-accordion>
+                </div>
+                <div class="flex justify-end gap-3 w-full p-4 border-t border-gray-200 dark:border-gray-600">
+                    <button ejs-button class="text-sm e-primary" content="Apply Filters" type="button" aria-label="apply filters" role="button"></button>
+                </div>
+            </div>
+        </ejs-sidebar>
+    </div>
+</section>
+<!-- SB Code - Start -->
+<div class="p-3 absolute top-0 right-0">
+    <button ejs-button cssClass="e-large e-icons e-chevron-left e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+</div>
+<!-- SB Code - End -->
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body">
+    <div [ngStyle]="{'height': '988px', 'width': width, float:'Right'}">
+        <ejs-sidebar #sidebar class="d-flex flex-column bg-body" position="Right" type="push" [width]="width" [isOpen]="true" [closeOnDocumentClick]="false" showBackdrop="true" role="complementary" style="display: block;">
+            <div>
+                <div class="d-flex justify-content-between align-items-center p-3 border-bottom border-light-subtle">
+                    <h2 class="h6 mb-0 fw-bold text-body">Filters</h2>
+                    <button ejs-button class="e-flat" [isPrimary]="true" content="Clear all" type="button" aria-label="clear all" role="button"></button>
+                </div>
+                <div class="p-3 d-flex border-bottom border-light-subtle">
+                    <ejs-autocomplete #search class="w-100" (created)="openPopup(search)" placeholder="Search" [showClearButton]="true" role="combobox"></ejs-autocomplete>
+                </div>
+                <div class="pt-3">
+                    <ejs-accordion #industryAccordion class="border-0 border-bottom rounded-0 border-light-subtle" expandMode="Single" role="accordion">
+                        <e-accordionitems>
+                            <e-accordionitem expanded="true">
+                                <ng-template #header>
+                                    <div class="fw-medium text-body">Industry</div>
+                                </ng-template>
+                                <ng-template #content>
+                                    <div class="d-flex flex-column gap-3 py-1 px-1">
+                                        <ejs-checkbox label="Technology" checked="true" aria-label="technology" role="checkbox"></ejs-checkbox>
+                                        <ejs-checkbox label="Healthcare" checked="true" aria-label="healthcare" role="checkbox"></ejs-checkbox>
+                                        <ejs-checkbox label="Finance" aria-label="finance" role="checkbox"></ejs-checkbox>
+                                        <ejs-checkbox label="Education" aria-label="education" role="checkbox"></ejs-checkbox>
+                                        <ejs-checkbox label="Manufacturing" aria-label="manufacturing" role="checkbox"></ejs-checkbox>
+                                    </div>
+                                </ng-template>
+                            </e-accordionitem>
+                        </e-accordionitems>
+                    </ejs-accordion>
+                    <ejs-accordion #sizeAccordion class="border-0 border-bottom rounded-0 border-light-subtle" expandMode="Single" role="accordion">
+                        <e-accordionitems>
+                            <e-accordionitem expanded="true">
+                                <ng-template #header>
+                                    <div class="fw-medium text-body">Company Size</div>
+                                </ng-template>
+                                <ng-template #content>
+                                    <div class="d-flex flex-column gap-3 py-1 px-1">
+                                        <ejs-checkbox label="1-50" checked="true" aria-label="Select range 1 to 50" role="checkbox"></ejs-checkbox>
+                                        <ejs-checkbox label="51-200" checked="true" aria-label="Select range 51 to 200" role="checkbox"></ejs-checkbox>
+                                        <ejs-checkbox label="201-500" aria-label="Select range 201 to 500" role="checkbox"></ejs-checkbox>
+                                        <ejs-checkbox label="501-1000" aria-label="Select range 501 to 1000" role="checkbox"></ejs-checkbox>
+                                        <ejs-checkbox label="1000+" aria-label="Select range above 1000" role="checkbox"></ejs-checkbox>
+                                    </div>
+                                </ng-template>
+                            </e-accordionitem>
+                        </e-accordionitems>
+                    </ejs-accordion>
+                    <ejs-accordion #locationAccordion class="border-0 border-bottom rounded-0 border-light-subtle" expandMode="Single" role="accordion">
+                        <e-accordionitems>
+                            <e-accordionitem expanded="true">
+                                <ng-template #header>
+                                    <div class="fw-medium text-body">Company Places</div>
+                                </ng-template>
+                                <ng-template #content>
+                                    <div class="d-flex flex-column gap-3 py-1 px-1">
+                                        <ejs-checkbox label="North America" checked="true" aria-label="north america" role="checkbox"></ejs-checkbox>
+                                        <ejs-checkbox label="Europe" checked="true" aria-label="europe" role="checkbox"></ejs-checkbox>
+                                        <ejs-checkbox label="Asia" aria-label="asia" role="checkbox"></ejs-checkbox>
+                                        <ejs-checkbox label="South America" aria-label="south america" role="checkbox"></ejs-checkbox>
+                                        <ejs-checkbox label="Africa" aria-label="africa" role="checkbox"></ejs-checkbox>
+                                    </div>
+                                </ng-template>
+                            </e-accordionitem>
+                        </e-accordionitems>
+                    </ejs-accordion>
+                    <ejs-accordion #typeAccordion class="border-0 border-bottom rounded-0 border-light-subtle" expandMode="Single" role="accordion">
+                        <e-accordionitems>
+                            <e-accordionitem expanded="true">
+                                <ng-template #header>
+                                    <div class="fw-medium text-body">Company Type</div>
+                                </ng-template>
+                                <ng-template #content>
+                                    <div class="d-flex flex-column gap-3 py-1 px-1">
+                                        <ejs-checkbox label="Public" aria-label="public" role="checkbox"></ejs-checkbox>
+                                        <ejs-checkbox label="Private" aria-label="private" role="checkbox"></ejs-checkbox>
+                                    </div>
+                                </ng-template>
+                            </e-accordionitem>
+                        </e-accordionitems>
+                    </ejs-accordion>
+                </div>
+                <div class="d-flex justify-content-end gap-3 w-100 p-3">
+                    <button ejs-button class="e-primary" content="Apply Filters" type="button" aria-label="apply filters" role="button"></button>
+                </div>
+            </div>
+        </ejs-sidebar>
+    </div>
+</section>
+
+<!-- SB Code - Start -->
+<div class="p-3 position-absolute top-0 end-0">
+    <button ejs-button cssClass="e-large e-icons e-chevron-left e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+</div>
+<!-- SB Code - End -->
+}

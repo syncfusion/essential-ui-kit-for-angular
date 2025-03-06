@@ -23,51 +23,51 @@ export class Returns1Component implements OnInit, OnDestroy {
         {
             product: {
                 productName: 'Apple iPhone 15 Pro Max (256 GB) - Blue Titanium',
-                productImage: 'apple-iphone-15',
+                productImage: 'apple-iphone-15'
             },
             orderNumber: '#49463',
-            returnTerm: new Date(2017, 7, 15),
+            returnTerm: new Date(2017, 7, 15)
         },
         {
             product: {
                 productName: 'Apple MacBook Air 2022 (13.6-inch, M2, 8GB, 256GB, macOS, Midnight)',
-                productImage: 'apple-macbook-air-2022',
+                productImage: 'apple-macbook-air-2022'
             },
             orderNumber: '#40938',
-            returnTerm: new Date(2022, 9, 28),
+            returnTerm: new Date(2022, 9, 28)
         },
         {
             product: {
                 productName: 'Apple AirPods Pro (2nd Generation - USB-C) TWS Earbuds with Active Noise',
-                productImage: 'apple-airpods-pro',
+                productImage: 'apple-airpods-pro'
             },
             orderNumber: '#50929',
-            returnTerm: new Date(2020, 5, 12),
+            returnTerm: new Date(2020, 5, 12)
         },
         {
             product: {
                 productName: 'Apple AirPods (2nd Generation) with Charging Case',
-                productImage: 'apple-airpods',
+                productImage: 'apple-airpods'
             },
             orderNumber: '#50924',
-            returnTerm: new Date(2016, 8, 18),
+            returnTerm: new Date(2016, 8, 18)
         },
         {
             product: {
                 productName: 'Apple Watch SE GPS with Starlight Sport Band - S/M (40mm Display, Starlight Aluminium Case)',
-                productImage: 'apple-watch',
+                productImage: 'apple-watch'
             },
             orderNumber: '#19340',
-            returnTerm: new Date(2016, 4, 7),
+            returnTerm: new Date(2016, 4, 7)
         },
         {
             product: {
                 productName: 'Apple MacBook Air 2024 (13.6-inch, M3, 8GB, 256GB, macOS, Space Grey)',
-                productImage: 'apple-macbook-air-2024',
+                productImage: 'apple-macbook-air-2024'
             },
             orderNumber: '#36101',
-            returnTerm: new Date(2024, 7, 16),
-        },
+            returnTerm: new Date(2024, 7, 16)
+        }
     ];
 
     constructor() { }

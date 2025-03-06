@@ -1,12 +1,12 @@
 import { Component, HostListener, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ListViewModule } from '@syncfusion/ej2-angular-lists';
-import { ButtonModule, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
+import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 
 @Component({
     selector: 'app-list-2',
     standalone: true,
-    imports: [CommonModule, ListViewModule, ButtonModule, CheckBoxModule],
+    imports: [CommonModule, ListViewModule, CheckBoxModule],
     templateUrl: './list-2.component.html',
     styleUrl: './list-2.component.css'
 })

@@ -1,12 +1,12 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ButtonModule, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 import { TextBoxModule } from '@syncfusion/ej2-angular-inputs';
+import { CheckBoxModule, ButtonModule } from '@syncfusion/ej2-angular-buttons';
 
 @Component({
     selector: 'app-signin-1',
     standalone: true,
-    imports: [TextBoxModule, ButtonModule, CheckBoxModule, CommonModule],
+    imports: [CommonModule, TextBoxModule, CheckBoxModule, ButtonModule],
     templateUrl: './signin-1.component.html'
 })
 export class Signin1Component implements OnInit, OnDestroy {

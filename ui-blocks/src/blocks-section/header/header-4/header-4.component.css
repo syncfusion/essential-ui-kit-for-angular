@@ -1,0 +1,18 @@
+::ng-deep html.light #tab .e-tab .e-tab-header .e-toolbar-item:not(.e-active) .e-tab-wrap:hover .e-tab-text,
+::ng-deep html.light #tab .e-tab .e-tab-header .e-toolbar-item:not(.e-active) .e-tab-wrap:hover .e-badge {
+    color: #4F46E5 !important;
+}
+
+::ng-deep html.dark #tab .e-tab .e-tab-header .e-toolbar-item:not(.e-active) .e-tab-wrap:hover .e-tab-text,
+::ng-deep html.dark #tab .e-tab .e-tab-header .e-toolbar-item:not(.e-active) .e-tab-wrap:hover .e-badge {
+    color: #22d3ee !important;
+}
+
+#tab .e-tab-wrap {
+    display: flex;
+    align-items: center;
+}
+
+#dropdown .e-caret {
+    display: none;
+}

@@ -1,12 +1,12 @@
 @if (currentTheme === 'tailwind') {
 
 <section class="bg-white dark:bg-gray-900">
-    <div id="calendar-todo-list" [ngStyle]="{'height': '748px', 'width': width, float:'Right'}">
-        <ejs-sidebar class="w-full h-full flex flex-col bg-white dark:bg-gray-900" #sidebar position="Right" type="push" [width]="width" [isOpen]="true" showBackdrop="true" role="sidebar" style="display: block;">
+    <div id="calendar-todo-list" [ngStyle]="{'height': '756px', 'width': width, float:'Right'}">
+        <ejs-sidebar class="w-full h-full flex flex-col bg-white dark:bg-gray-900" #sidebar position="Right" type="push" [width]="width" [isOpen]="true" showBackdrop="true" role="complementary" style="display: block;">
             <div class="flex-none border-b border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-900">
                 <div class="flex justify-between items-center px-4 py-3 border-b border-gray-200 dark:border-gray-600">
                     <h2 class="text-base font-semibold text-gray-900 dark:text-white">To-Do List</h2>
-                    <button ejs-button class="e-icons e-flat font-semibold" (click)="sidebar.toggle()" iconCss="e-icons e-close" content=" " type="button" aria-label="close sidebar" role="button"></button>
+                    <button ejs-button class="e-flat text-base" iconCss="e-icons e-close" (click)="sidebar.toggle()" content=" " type="button" aria-label="close sidebar" role="button"></button>
                 </div>
                 <div class="p-4 flex justify-center">
                     <ejs-calendar class="e-bigger shadow-none border-none"></ejs-calendar>
@@ -43,13 +43,13 @@
 } @else if (currentTheme === 'bootstrap5.3') {
 
 <section class="bg-body">
-    <div id="calendar-todo-list" [ngStyle]="{'height': '776px', 'width': width, float:'Right'}">
-        <ejs-sidebar class="d-flex flex-column h-100 bg-body" #sidebar position="Right" type="push" [width]="width" [isOpen]="true" showBackdrop="true" role="sidebar" style="display: block;">
+    <div id="calendar-todo-list" [ngStyle]="{'height': '780px', 'width': width, float:'Right'}">
+        <ejs-sidebar class="d-flex flex-column h-100 bg-body" #sidebar position="Right" type="push" [width]="width" [isOpen]="true" showBackdrop="true" role="complementary" style="display: block;">
             <div class="bg-body">
                 <div class="border-bottom flex-shrink-0 B5 border-light-subtle">
                     <div class="d-flex justify-content-between align-items-center px-3 py-2 border-bottom border-light-subtle">
                         <h2 class="mb-0 fs-6 fw-bold text-body mb-0">To-Do List</h2>
-                        <button ejs-button class="e-icons e-btn e-flat btn btn-link fs-6" (click)="sidebar.toggle()" iconCss="e-icons e-close" content=" " aria-label="close sidebar" role="button"></button>
+                        <button ejs-button class="e-flat fs-6" iconCss="e-icons e-close" (click)="sidebar.toggle()" content=" " type="button" aria-label="close sidebar" role="button"></button>
                     </div>
                     <div class="pb-0 d-flex justify-content-center align-items-center">
                         <ejs-calendar class="e-bigger shadow-none w-100 border-0"></ejs-calendar>
@@ -72,7 +72,7 @@
                     </ejs-listview>
                 </div>
                 <div class="flex-shrink-0 px-3 py-2 border-top border-light-subtle bg-body-tertiary">
-                    <button ejs-button class="e-btn e-primary e-flat btn btn-primary btn-sm" content="Create New" iconCss="e-icons e-plus" aria-label="create new" role="button"></button>
+                    <button ejs-button class="e-primary e-flat" content="Create New" iconCss="e-icons e-plus" type="button" aria-label="create new" role="button"></button>
                 </div>
             </div>
         </ejs-sidebar>

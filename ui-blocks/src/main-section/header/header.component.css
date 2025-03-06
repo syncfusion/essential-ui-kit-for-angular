@@ -1,6 +1,5 @@
 .header-content {
     font-family: "Inter", sans-serif;
-    width: 100%;
     height: 56px;
     background: #ffffff;
     border-bottom: 1px solid #e5e7eb;
@@ -11,12 +10,13 @@
     position: sticky;
     top: 0;
     z-index: 1000;
+    padding: 0 35px;
 }
 
 .title-container {
     display: flex;
     align-items: center;
-    padding: 8px 0 8px 32px;
+    padding: 8px 0 8px 0;
     text-decoration: none;
 }
 
@@ -59,7 +59,7 @@
 }
 
 .github-logo {
-    margin: 12px 24px 12px 32px;
+    margin: 12px 0 12px 32px;
 }
 
 .header-link {
@@ -73,12 +73,14 @@
     }
 }
 
+@media (max-width: 1024px) {
+    .header-content {
+        padding: 0 24px;
+    }
+}
+
 @media (max-width: 768px) {
     .header-link {
         display: none;
-    }
-
-    .title-container {
-        padding-left: 24px;
     }
 }

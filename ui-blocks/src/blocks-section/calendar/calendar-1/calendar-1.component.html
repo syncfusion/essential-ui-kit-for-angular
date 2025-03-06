@@ -2,11 +2,11 @@
 
 <section class="bg-white dark:bg-gray-800">
     <div [ngStyle]="{'height': '815px', 'width': width, float:'Right'}">
-        <ejs-sidebar class="w-full bg-white dark:bg-gray-800" #sidebar position="Right" type="push" [width]="width" [isOpen]="true" [closeOnDocumentClick]="false" showBackdrop="true" role="sidebar" style="display: block;">
+        <ejs-sidebar class="w-full bg-white dark:bg-gray-800" #sidebar position="Right" type="push" [width]="width" [isOpen]="true" [closeOnDocumentClick]="false" showBackdrop="true" role="complementary" style="display: block;">
             <div class="border-b border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800">
                 <div class="flex justify-between items-center px-4 py-3 border-b border-gray-200 dark:border-gray-600">
-                    <h2 class="text-base text-gray-900 dark:text-white">Quick view</h2>
-                    <button ejs-button class="e-icons e-btn e-flat" (click)="sidebar.toggle()" iconCss="e-icons e-close" content=" " type="button" aria-label="close sidebar" role="button"></button>
+                    <h2 class="text-base font-semibold text-gray-900 dark:text-white">Quick view</h2>
+                    <button ejs-button class="e-flat text-base" iconCss="e-icons e-close" (click)="sidebar.toggle()" content=" " type="button" aria-label="close sidebar" role="button"></button>
                 </div>
                 <div class="p-4 flex justify-center items-center">
                     <ejs-calendar class="e-bigger shadow-none border-none"></ejs-calendar>
@@ -23,7 +23,7 @@
                                     <h5 class="font-medium text-gray-700 dark:text-gray-300 mb-1">Project Kickoff</h5>
                                     <p class="text-xs text-gray-700 dark:text-gray-300">10:00 AM - 11:00 AM</p>
                                     <div class="flex items-center space-x-2 mt-1">
-                                        <span class="w-6 h-6 bg-green-700 dark:bg-green-500 text-xs text-white dark:text-black flex items-center justify-center rounded-full">JB</span>
+                                        <span class="e-avatar e-avatar-xsmall e-avatar-circle bg-green-700 dark:bg-green-500 text-xs text-white dark:text-black flex items-center justify-center rounded-full">JB</span>
                                         <span class="text-sm text-gray-700 dark:text-gray-300">Jerome Bell</span>
                                     </div>
                                 </div>
@@ -38,7 +38,7 @@
                                     <h5 class="font-medium text-gray-700 dark:text-gray-300 mb-1">Marketing Strategy</h5>
                                     <p class="text-xs text-gray-700 dark:text-gray-300">02:00 PM - 04:00 PM</p>
                                     <div class="flex items-center space-x-2 mt-1">
-                                        <span class="w-6 h-6 bg-primary-600 dark:bg-primary-400 text-xs text-white dark:text-black flex items-center justify-center rounded-full">JP</span>
+                                        <span class="e-avatar e-avatar-xsmall e-avatar-circle bg-primary-600 dark:bg-primary-400 text-xs text-white dark:text-black flex items-center justify-center rounded-full">JP</span>
                                         <span class="text-sm text-gray-700 dark:text-gray-300">John Peterson</span>
                                     </div>
                                 </div>
@@ -53,7 +53,7 @@
                                     <h5 class="font-medium text-gray-700 dark:text-gray-300 mb-1">Product Design Review</h5>
                                     <p class="text-xs text-gray-700 dark:text-gray-300">05:00 PM - 06:30 PM</p>
                                     <div class="flex items-center space-x-2 mt-1">
-                                        <span class="w-6 h-6 bg-orange-700 dark:bg-orange-500 text-xs text-white dark:text-black flex items-center justify-center rounded-full">KW</span>
+                                        <span class="e-avatar e-avatar-xsmall e-avatar-circle bg-orange-700 dark:bg-orange-500 text-xs text-white dark:text-black flex items-center justify-center rounded-full">KW</span>
                                         <span class="text-sm text-gray-700 dark:text-gray-300">Kristin Watson</span>
                                     </div>
                                 </div>
@@ -75,14 +75,12 @@
 
 <section class="bg-body">
     <div [ngStyle]="{'height': '930px', 'width': width, float:'Right'}">
-        <ejs-sidebar class="d-flex flex-column h-100 bg-body" #sidebar position="Right" type="push" [width]="width" [isOpen]="true" [closeOnDocumentClick]="false" showBackdrop="true" role="sidebar" style="display: block;">
+        <ejs-sidebar class="d-flex flex-column h-100 bg-body" #sidebar position="Right" type="push" [width]="width" [isOpen]="true" [closeOnDocumentClick]="false" showBackdrop="true" role="complementary" style="display: block;">
             <div class="bg-body">
                 <div class="border-bottom">
                     <div class="d-flex justify-content-between align-items-center px-3 py-2 pt-3 border-bottom">
                         <h2 class="h6 text-body fw-bold mb-0">Quick view</h2>
-                        <button ejs-button class="e-icons e-btn e-flat fs-6" (click)="sidebar.toggle()" type="button" aria-label="close sidebar" role="button">
-                            <i class="e-icons e-close"></i>
-                        </button>
+                        <button ejs-button class="e-flat fs-6" iconCss="e-icons e-close" (click)="sidebar.toggle()" content=" " type="button" aria-label="close sidebar" role="button"></button>
                     </div>
                     <div class="p-3 d-flex justify-content-center align-items-center">
                         <ejs-calendar class="e-bigger shadow-none border-0"></ejs-calendar>
@@ -99,7 +97,7 @@
                                         <h5 class="fs-6 fw-medium text-body mb-1">Project Kickoff</h5>
                                         <p class="fs-sm text-body-secondary mb-1">10:00 AM - 11:00 AM</p>
                                         <div class="d-flex align-items-center mt-1">
-                                            <span class="bg-success text-white p-1 px-2 rounded-circle">JB</span>
+                                            <span class="e-avatar e-avatar-xsmall e-avatar-circle bg-success text-white p-1 px-2 rounded-circle">JB</span>
                                             <span class="fs-sm fw-medium text-body ms-2">Jerome Bell</span>
                                         </div>
                                     </div>
@@ -114,7 +112,7 @@
                                         <h5 class="fs-6 fw-medium text-body mb-1">Marketing Strategy</h5>
                                         <p class="fs-sm text-body-secondary mb-1">02:00 PM - 04:00 PM</p>
                                         <div class="d-flex align-items-center mt-1">
-                                            <span class="bg-info text-white p-1 px-2 rounded-circle">JP</span>
+                                            <span class="e-avatar e-avatar-xsmall e-avatar-circle bg-info text-white p-1 px-2 rounded-circle">JP</span>
                                             <span class="fs-sm fw-medium text-body ms-2">John Peterson</span>
                                         </div>
                                     </div>
@@ -129,7 +127,7 @@
                                         <h5 class="fs-6 fw-medium text-body mb-1">Product Design Review</h5>
                                         <p class="fs-sm text-body-secondary mb-1">05:00 PM - 06:30 PM</p>
                                         <div class="d-flex align-items-center mt-1">
-                                            <span class="bg-warning text-white p-1 rounded-circle">KW</span>
+                                            <span class="e-avatar e-avatar-xsmall e-avatar-circle bg-warning text-white p-1 rounded-circle">KW</span>
                                             <span class="fs-sm fw-medium text-body ms-2">Kristin Watson</span>
                                         </div>
                                     </div>

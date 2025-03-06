@@ -1,0 +1,155 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-white dark:bg-gray-900"> 
+    <div [ngStyle]="{'height': '962px', 'width': width, float:'Right'}">
+        <ejs-sidebar #sidebar class="flex flex-col bg-white dark:bg-gray-800" position="Right" type="push" [width]="width" [isOpen]="true" [closeOnDocumentClick]="false" showBackdrop="true" role="complementary" style="display: block;">
+            <div>
+                <div class="flex justify-between items-center p-4 border-b border-gray-200 dark:border-gray-600">
+                    <div>
+                        <h2 class="text-base font-semibold text-gray-900 dark:text-white">Job Filters</h2>
+                        <p class="text-xs mt-0.5 text-gray-500 dark:text-gray-300">Refine job listings</p>
+                    </div>
+                    <button ejs-button class="e-flat text-base" iconCss="e-icons e-close" (click)="sidebar.toggle()" content=" " type="button" aria-label="close sidebar" role="button"></button>
+                </div>
+                <div class="p-4 border-b border-gray-200 dark:border-gray-600">
+                    <ejs-chiplist id="chip-filter" #chipFilter selection="Multiple" (click)="updateSelectedChips($event)">
+                        <e-chips>
+                            <e-chip cssClass="e-active e-primary !rounded-2xl" text="Remote"></e-chip>
+                            <e-chip cssClass="e-active e-primary !rounded-2xl" text="Immediate start"></e-chip>
+                            <e-chip cssClass="e-active e-primary !rounded-2xl" text="Full-Time"></e-chip>
+                        </e-chips>
+                    </ejs-chiplist>
+                </div>
+                <div class="p-4">
+                    <p class="font-medium text-sm text-gray-900 dark:text-white mb-3">Required Skills</p>
+                    <ejs-chiplist id="chip-filter" #chipFilter selection="Multiple" (click)="updateSelectedChips($event)">
+                        <e-chips>
+                            <e-chip cssClass="e-active e-primary !rounded" text="React"></e-chip>
+                            <e-chip cssClass="e-active e-primary !rounded" text="TypeScript"></e-chip>
+                            <e-chip cssClass="!rounded" text="Node.js"></e-chip>
+                            <e-chip cssClass="!rounded" text="Python"></e-chip>
+                            <e-chip cssClass="!rounded" text="AWS"></e-chip>
+                        </e-chips>
+                    </ejs-chiplist>
+                    <hr class="border-gray-200 dark:border-gray-600 my-4" />
+                    <p class="font-medium text-sm text-gray-900 dark:text-white mb-5">Experience Level</p>
+                    <div class="flex flex-col gap-5 px-3 mb-6">
+                        <ejs-radiobutton label="Entry level" name="skills" value="Entry level" checked="true" aria-label="entry level" role="radio"></ejs-radiobutton>
+                        <ejs-radiobutton label="Mid level" name="skills" value="Mid level" aria-label="mid level" role="radio"></ejs-radiobutton>
+                        <ejs-radiobutton label="Senior" name="skills" value="Senior" aria-label="senior level" role="radio"></ejs-radiobutton>
+                        <ejs-radiobutton label="Lead" name="skills" value="Lead" aria-label="lead level" role="radio"></ejs-radiobutton>
+                    </div>
+                    <hr class="border-gray-200 dark:border-gray-600 mb-4" />
+                    <p class="font-medium text-sm text-gray-900 dark:text-white mb-5">Salary Range</p>
+                    <div class="flex flex-col gap-5 px-3 mb-6">
+                        <ejs-radiobutton label="$0 - $50k" name="salary-range" value="$0 - $50k" checked="true" aria-label="select salary range 0 to 50k" role="radio"></ejs-radiobutton>
+                        <ejs-radiobutton label="$50k - $100k" name="salary-range" value="$50k - $100k" aria-label="select salary range 50 to 100k" role="radio"></ejs-radiobutton>
+                        <ejs-radiobutton label="$100k - $150K" name="salary-range" value="$100k - $150K" aria-label="select salary range 100 to 150k" role="radio"></ejs-radiobutton>
+                        <ejs-radiobutton label="$150k+" name="salary-range" value="$150k+" aria-label="select salary range above 150k" role="radio"></ejs-radiobutton>
+                    </div>
+                    <hr class="border-gray-200 dark:border-gray-600 mb-4" />
+                    <p class="font-medium text-sm text-gray-900 dark:text-white mb-5">Location</p>
+                    <div class="flex justify-between">
+                        <p class="font-medium text-sm text-gray-800 dark:text-gray-100">Remote</p>
+                        <ejs-switch [checked]="true" aria-label="remote" role="switch"></ejs-switch>
+                    </div>
+                    <hr class="border-gray-200 dark:border-gray-600 my-4" />
+                    <p class="font-medium text-sm text-gray-900 dark:text-white mb-5">Company Rating</p>
+                    <div class="space-x-3 flex items-center mb-2">
+                        <input ejs-rating cssClass="e-small" value="4" precision="Exact" readonly="true" aria-label="rate us out of 5" role="slider" />
+                        <span class="text-gray-900 dark:text-white text-sm">4+ stars</span>
+                    </div>
+                </div>
+                <hr class="border-gray-200 dark:border-gray-600" />
+                <div class="p-4 flex justify-end gap-3">
+                    <button ejs-button cssClass="e-outline text-sm" type="button" content="Clear" aria-label="clear" role="button"></button>
+                    <button ejs-button cssClass="e-primary text-sm" type="button" content="Show jobs" aria-label="show jobs" role="button"></button>
+                </div>
+            </div>
+        </ejs-sidebar>
+    </div>
+</section>
+<!-- SB Code - Start -->
+<div class="p-3 absolute top-0 right-0">
+    <button ejs-button cssClass="e-large e-icons e-chevron-left e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+</div>
+<!-- SB Code - End -->
+ 
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body"> 
+    <div [ngStyle]="{'height': '962px', 'width': width, float:'Right'}">
+        <ejs-sidebar #sidebar class="d-flex flex-column bg-body" position="Right" type="push" [width]="width" [isOpen]="true" [closeOnDocumentClick]="false" showBackdrop="true" role="complementary" style="display: block;">
+            <div>
+                <div class="d-flex justify-content-between align-items-center p-3 border-bottom">
+                    <div>
+                        <h2 class="fs-6 fw-bold text-body lh-sm mb-0">Job Filters</h2>
+                        <p class="mt-1 text-body-secondary mb-0">Refine job listings</p>
+                    </div>
+                    <button ejs-button class="e-flat fs-6" iconCss="e-icons e-close" (click)="sidebar.toggle()" content=" " type="button" aria-label="close sidebar" role="button"></button>
+                </div>
+                <div class="p-3 border-bottom">
+                    <ejs-chiplist id="chip-filter" #chipFilter selection="Multiple" (click)="updateSelectedChips($event)">
+                        <e-chips>
+                            <e-chip cssClass="e-active e-primary rounded-pill" text="Remote"></e-chip>
+                            <e-chip cssClass="e-active e-primary rounded-pill" text="Immediate start"></e-chip>
+                            <e-chip cssClass="e-active e-primary rounded-pill" text="Full-Time"></e-chip>
+                        </e-chips>
+                    </ejs-chiplist>
+                </div>
+                <div class="p-3">
+                    <p class="fw-medium text-body fs-6">Required Skills</p>
+                    <ejs-chiplist id="chip-filter" #chipFilter selection="Multiple" (click)="updateSelectedChips($event)">
+                        <e-chips>
+                            <e-chip cssClass="e-active e-primary rounded" text="React"></e-chip>
+                            <e-chip cssClass="e-active e-primary rounded" text="TypeScript"></e-chip>
+                            <e-chip cssClass="rounded" text="Node.js"></e-chip>
+                            <e-chip cssClass="rounded" text="Python"></e-chip>
+                            <e-chip cssClass="rounded" text="AWS"></e-chip>
+                        </e-chips>
+                    </ejs-chiplist>
+                    <hr class="border-top opacity-100" />
+                    <p class="fw-medium text-body fs-6">Experience Level</p>
+                    <div class="d-flex flex-column gap-3 px-3 mb-4">
+                        <ejs-radiobutton label="Entry level" name="skills" value="Entry level" checked="true" aria-label="entry level" role="radio"></ejs-radiobutton>
+                        <ejs-radiobutton label="Mid level" name="skills" value="Mid level" aria-label="mid level" role="radio"></ejs-radiobutton>
+                        <ejs-radiobutton label="Senior" name="skills" value="Senior" aria-label="senior level" role="radio"></ejs-radiobutton>
+                        <ejs-radiobutton label="Lead" name="skills" value="Lead" aria-label="lead level" role="radio"></ejs-radiobutton>
+                    </div>
+                    <hr class="mt-0 border-top opacity-100" />
+                    <p class="fw-medium text-body fs-6">Salary Range</p>
+                    <div class="d-flex flex-column gap-3 px-3 mb-4">
+                        <ejs-radiobutton label="$0 - $50k" name="salary-range" value="$0 - $50k" checked="true" aria-label="select salary range 0 to 50k" role="radio"></ejs-radiobutton>
+                        <ejs-radiobutton label="$50k - $100k" name="salary-range" value="$50k - $100k" aria-label="select salary range 50 to 100k" role="radio"></ejs-radiobutton>
+                        <ejs-radiobutton label="$100k - $150K" name="salary-range" value="$100k - $150K" aria-label="select salary range 100 to 150k" role="radio"></ejs-radiobutton>
+                        <ejs-radiobutton label="$150k+" name="salary-range" value="$150k+" aria-label="select salary range above 150k" role="radio"></ejs-radiobutton>
+                    </div>
+                    <hr class="mt-0 border-top opacity-100" />
+                    <p class="fw-medium text-body fs-6">Location</p>
+                    <div class="d-flex justify-content-between">
+                        <p class="fw-medium fs-6 text-body-secondary mb-0">Remote</p>
+                        <ejs-switch [checked]="true" aria-label="remote" role="switch"></ejs-switch>
+                    </div>
+                    <hr class="border-top opacity-100" />
+                    <p class="fw-medium text-body fs-6">Company Rating</p>
+                    <div class="d-flex align-items-center gap-2 mb-2">
+                        <input ejs-rating cssClass="e-small" value="4" precision="Exact" readonly="true" aria-label="rate us out of 5" role="slider" />
+                        <span class="text-body fs-6">4+ stars</span>
+                    </div>
+                </div>
+                <hr class="my-0 border-top opacity-100" />
+                <div class="p-3 d-flex justify-content-end gap-2">
+                    <button ejs-button cssClass="e-outline" type="button" content="Clear" aria-label="clear" role="button"></button>
+                    <button ejs-button cssClass="e-primary" type="button" content="Show jobs" aria-label="show jobs" role="button"></button>
+                </div>
+            </div>
+        </ejs-sidebar>
+    </div>
+</section>
+<!-- SB Code - Start -->
+<div class="p-3 position-absolute top-0 end-0">
+    <button ejs-button cssClass="e-large e-icons e-chevron-left e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+</div>
+<!-- SB Code - End -->
+
+}

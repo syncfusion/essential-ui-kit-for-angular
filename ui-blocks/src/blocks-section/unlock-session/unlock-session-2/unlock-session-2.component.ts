@@ -1,12 +1,12 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
-import { TextBoxModule } from '@syncfusion/ej2-angular-inputs';
 import { CommonModule } from '@angular/common';
+import { TextBoxModule } from '@syncfusion/ej2-angular-inputs';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 
 @Component({
     selector: 'app-unlock-session-2',
     standalone: true,
-    imports: [TextBoxModule, ButtonModule, CommonModule],
+    imports: [CommonModule,TextBoxModule, ButtonModule],
     templateUrl: './unlock-session-2.component.html'
 })
 export class UnlockSession2Component implements OnInit, OnDestroy {

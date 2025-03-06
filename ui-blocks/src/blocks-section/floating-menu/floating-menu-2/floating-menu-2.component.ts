@@ -1,6 +1,6 @@
 import { Component, ViewChild, OnInit, OnDestroy, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ButtonModule, FabModule, Fab } from '@syncfusion/ej2-angular-buttons';
+import { FabModule, Fab } from '@syncfusion/ej2-angular-buttons';
 import { DialogModule, DialogComponent } from '@syncfusion/ej2-angular-popups';
 import { ListViewModule } from '@syncfusion/ej2-angular-lists';
 import { RatingModule, TextBoxModule } from '@syncfusion/ej2-angular-inputs';
@@ -8,7 +8,7 @@ import { RatingModule, TextBoxModule } from '@syncfusion/ej2-angular-inputs';
 @Component({
     selector: 'app-floating-menu-2',
     standalone: true,
-    imports: [CommonModule, ButtonModule, FabModule, DialogModule, ListViewModule, RatingModule, TextBoxModule],
+    imports: [CommonModule, FabModule, DialogModule, ListViewModule, RatingModule, TextBoxModule],
     templateUrl: './floating-menu-2.component.html',
     styleUrl: './floating-menu-2.component.css'
 })

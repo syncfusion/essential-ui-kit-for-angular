@@ -1,0 +1,7 @@
+#breadcrumb .e-breadcrumb .e-breadcrumb-item:first-child .e-breadcrumb-text {
+    padding-left: 0 !important;
+}
+
+#additionalOptionDropdown .e-caret {
+    display: none;
+}

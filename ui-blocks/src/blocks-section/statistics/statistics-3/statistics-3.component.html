@@ -1,0 +1,66 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-gray-50 dark:bg-gray-900">
+    <div class="px-4 sm:px-6 xl:px-11 py-12">
+        <div class="grid sm:grid-cols-2 gap-6 lg:gap-4 xl:grid-cols-4 grow">
+            <div *ngFor="let data of metricsData" class="e-card pt-6 e-bigger rounded-lg shadow-none !border-gray-300 dark:!border-gray-600">
+                <div class="e-card-stacked">
+                    <div class="e-card-header !py-0 !justify-between mb-1">
+                        <div class="e-card-header-title">
+                            <h3 class="text-sm font-medium text-gray-800 dark:text-gray-300">{{data.metricName}}</h3>
+                        </div>
+                        <span class="e-avatar e-avatar-circle e-avatar-small">
+                            <span class="text-base" [ngClass]="{'sf-icon-dollar': data.metricName === 'Total Revenue','sf-icon-users': data.metricName === 'Total Leads' || data.metricName === 'High Interest Leads','sf-icon-user-tick-02': data.metricName === 'Qualified Leads'}"></span>
+                        </span>
+                    </div>
+                    <div class="e-card-content !pb-6">
+                        <p class="text-xl !leading-7 font-semibold mb-3 text-gray-900 dark:text-white">{{data.currentValue}}</p>
+                        <div class="flex">
+                            <span class="flex items-center">
+                                <span class="e-badge e-badge-circle shrink-0" [ngClass]="data.trend === 'up' ? 'e-badge-success sf-icon-analysis-arrow-up' : 'e-badge-danger sf-icon-analysis-arrow-down'"></span>
+                                <span class="text-sm font-medium ml-1" [ngClass]="data.trend === 'up' ? 'text-green-700 dark:text-green-500' : 'text-red-600 dark:text-red-400'">{{data.currentPercentage > 0 ? '+' : ''}}{{data.currentPercentage}}&#37;</span>
+                            </span>
+                            <p class="text-sm text-gray-800 dark:text-gray-300 ml-2">compared to last week</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body-tertiary">
+    <div class="px-3 px-sm-4 px-xl-5 py-5">
+        <div class="row g-4 g-lg-3">
+            <div *ngFor="let data of metricsData" class="col-12 col-sm-6 col-xl-3">
+                <div class="e-card e-bigger rounded-3 pt-4">
+                    <div class="e-card-stacked">
+                        <div class="e-card-header d-flex justify-content-between px-4 mb-1 py-0">
+                            <div class="e-card-header-title">
+                                <h3 class="small fw-medium text-body-secondary mb-0 lh-base">{{data.metricName}}</h3>
+                            </div>
+                            <span class="e-avatar e-avatar-circle e-avatar-small">
+                                <span class="fs-6" [ngClass]="{'sf-icon-dollar': data.metricName === 'Total Revenue','sf-icon-users': data.metricName === 'Total Leads' || data.metricName === 'High Interest Leads','sf-icon-user-tick-02': data.metricName === 'Qualified Leads'}"></span>
+                            </span>
+                        </div>
+                        <div class="e-card-content pb-4 px-4 pt-0">
+                            <p class="fs-5 fw-bold mb-3 lh-sm text-body">{{data.currentValue}}</p>
+                            <div class="d-flex">
+                                <span class="d-flex align-items-center">
+                                    <span class="e-badge e-badge-circle flex-shrink-0 small" [ngClass]="data.trend === 'up' ? 'e-badge-success sf-icon-analysis-arrow-up' : 'e-badge-danger sf-icon-analysis-arrow-down'">
+                                    </span>
+                                    <span class="fw-medium ms-1" [ngClass]="data.trend === 'up' ? 'text-success' : 'text-danger'">{{data.currentPercentage > 0 ? '+' : ''}}{{data.currentPercentage}}&#37;</span>
+                                </span>
+                                <p class="text-body-secondary ms-2 mb-0">compared to last week</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+}

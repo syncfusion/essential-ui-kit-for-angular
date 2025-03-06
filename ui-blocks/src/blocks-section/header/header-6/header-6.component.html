@@ -1,0 +1,165 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-white dark:bg-gray-800">
+    <div class="pt-2 sm:pt-4" style="min-height: 36rem;">
+        <div class="px-4 sm:px-6">
+            <div class="flex justify-between relative">
+                <div id="tab" class="pt-2 w-full">
+                    <ejs-tab #tab heightAdjustMode="Auto" [selectedItem]="1" width="100%" [overflowMode]="overflowMode">
+                        <e-tabitems>
+                            <e-tabitem>
+                                <ng-template #headerText>
+                                    <div class="space-x-2 flex items-center">
+                                        <p>New <span>({{headerData?.new}})</span></p>
+                                    </div>
+                                </ng-template>
+                            </e-tabitem>
+                            <e-tabitem>
+                                <ng-template #headerText>
+                                    <div class="space-x-2 flex items-center">
+                                        <p>Verification Due <span>({{headerData?.verificationDue}})</span></p>
+                                    </div>
+                                </ng-template>
+                                <ng-template #content>
+                                    <div class="flex lg:hidden items-center mt-4">
+                                        <div class="e-input-group w-60 me-3">
+                                            <input class="e-input" type="text" placeholder="Search..." aria-label="search" role="textbox" />
+                                            <span class="e-input-group-icon e-icons e-search border-start-0"></span>
+                                        </div>
+                                        <div class="border-l border-gray-200 dark:border-gray-600 h-5 me-2"></div>
+                                        <button ejs-dropdownbutton #dropdown id="dropdown" cssClass="e-flat" iconCss="e-icons e-more-vertical-1" [items]="[{text:'Review Today'}, {text:'Expired'}, {text:'Upcoming'}, {text:'Unassigned'}]" type="button" aria-label="choose the additional option" role="button"></button>
+                                    </div>
+                                    <div class="border-b border-gray-200 mt-4 dark:border-gray-600 block sm:hidden"></div>
+                                    <div>
+                                        <div class="hidden lg:flex py-3 items-center">
+                                            <div class="e-input-group w-60 me-3">
+                                                <input class="e-input" type="text" placeholder="Search..." aria-label="search" role="textbox" />
+                                                <span class="e-input-group-icon e-icons e-search border-start-0"></span>
+                                            </div>
+                                            <div class="border-l border-gray-200 dark:border-gray-600 h-5 me-2"></div>
+                                            <ejs-chiplist>
+                                                <e-chips>
+                                                    <e-chip cssClass="e-outline !rounded-2xl" text="Review Today"></e-chip>
+                                                    <e-chip cssClass="e-outline !rounded-2xl" text="Expired"></e-chip>
+                                                    <e-chip cssClass="e-outline !rounded-2xl" text="Upcoming"></e-chip>
+                                                    <e-chip cssClass="e-outline !rounded-2xl" text="Unassigned"></e-chip>
+                                                </e-chips>
+                                            </ejs-chiplist>
+                                        </div>
+                                    </div>
+                                </ng-template>
+                            </e-tabitem>
+                            <e-tabitem>
+                                <ng-template #headerText>
+                                    <div class="space-x-2 flex items-center">
+                                        <p>Approval Due <span>({{headerData?.approvalDue}})</span></p>
+                                    </div>
+                                </ng-template>
+                            </e-tabitem>
+                            <e-tabitem>
+                                <ng-template #headerText>
+                                    <div class="space-x-2 flex items-center">
+                                        <p>Processed</p>
+                                    </div>
+                                </ng-template>
+                            </e-tabitem>
+                        </e-tabitems>
+                    </ejs-tab>
+                </div>
+                <div class="absolute top-0 end-0">
+                    <div class="hidden lg:flex items-center gap-3 pt-2">
+                        <button ejs-button iconCss="e-icons e-filter" content="Filter" type="button" aria-label="filter" role="button"></button>
+                        <button ejs-dropdownbutton iconCss="e-icons e-table" content="Columns" type="button" (beforeOpen)="$event.cancel = true;" aria-label="choose the columns" role="button"></button>
+                    </div>
+                    <div class="hidden sm:flex lg:hidden items-center gap-3 pt-2">
+                        <button ejs-button iconCss="e-icons e-filter" type="button" aria-label="filter" role="button"></button>
+                        <button ejs-dropdownbutton iconCss="e-icons e-table" type="button" (beforeOpen)="$event.cancel = true;" aria-label="choose the columns" role="button"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body">
+    <div class="pt-3 pt-sm-4" style="min-height: 36rem;">
+        <div class="px-3 px-sm-4">
+            <div class="d-flex justify-content-between position-relative">
+                <div id="tab" class="w-100">
+                    <ejs-tab #tab heightAdjustMode="Auto" [selectedItem]="1" width="100%" [overflowMode]="overflowMode">
+                        <e-tabitems>
+                            <e-tabitem>
+                                <ng-template #headerText>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <p class="mb-0">New <span>({{headerData?.new}})</span></p>
+                                    </div>
+                                </ng-template>
+                            </e-tabitem>
+                            <e-tabitem>
+                                <ng-template #headerText>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <p class="mb-0">Verification Due <span>({{headerData?.verificationDue}})</span></p>
+                                    </div>
+                                </ng-template>
+                                <ng-template #content>
+                                    <div class="d-none d-lg-flex py-3 align-items-center">
+                                        <div class="e-input-group me-3" style="width: 240px;">
+                                            <input class="e-input" type="text" placeholder="Search..." aria-label="search" role="textbox" />
+                                            <span class="e-input-group-icon e-icons e-search border-start-0"></span>
+                                        </div>
+                                        <div class="border-start me-2" style="height: 16px;"></div>
+                                        <ejs-chiplist>
+                                            <e-chips>
+                                                <e-chip cssClass="e-outline rounded-pill" text="Review Today"></e-chip>
+                                                <e-chip cssClass="e-outline rounded-pill" text="Expired"></e-chip>
+                                                <e-chip cssClass="e-outline rounded-pill" text="Upcoming"></e-chip>
+                                                <e-chip cssClass="e-outline rounded-pill" text="Unassigned"></e-chip>
+                                            </e-chips>
+                                        </ejs-chiplist>
+                                    </div>
+                                    <div class="d-flex d-lg-none align-items-center mt-3">
+                                        <div class="e-input-group me-3" style="width: 240px;">
+                                            <input class="e-input" type="text" placeholder="Search..." aria-label="search" role="textbox" />
+                                            <span class="e-input-group-icon e-icons e-search border-start-0"></span>
+                                        </div>
+                                        <div class="border-start me-2" style="height: 16px;"></div>
+                                        <button ejs-dropdownbutton #dropdown id="dropdown" class="btn btn-flat" iconCss="e-icons e-more-vertical-1" [items]="[{text:'Review Today'}, {text:'Expired'}, {text:'Upcoming'}, {text:'Unassigned'}]" type="button" aria-label="choose the additional option" role="button"></button>
+                                    </div>
+                                    <div class="border-bottom px-3 mt-3 d-block d-sm-none"></div>
+                                </ng-template>
+                            </e-tabitem>
+                            <e-tabitem>
+                                <ng-template #headerText>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <p class="mb-0">Approval Due <span>({{headerData?.approvalDue}})</span></p>
+                                    </div>
+                                </ng-template>
+                            </e-tabitem>
+                            <e-tabitem>
+                                <ng-template #headerText>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <p class="mb-0">Processed</p>
+                                    </div>
+                                </ng-template>
+                            </e-tabitem>
+                        </e-tabitems>
+                    </ejs-tab>
+                </div>
+                <div class="position-absolute top-0 end-0 translate-middle-y">
+                    <div class="d-flex align-items-center mt-3 d-none d-lg-block">
+                        <button ejs-button class="me-3" cssClass="e-outline" iconCss="e-icons e-filter e-medium" content="Filter" type="button" aria-label="filter" role="button"></button>
+                        <button ejs-dropdownbutton cssClass="e-outline" iconCss="e-icons e-table" content="Columns" type="button" (beforeOpen)="$event.cancel = true;" aria-label="choose the columns" role="button"></button>
+                    </div>
+                    <div class="d-flex align-items-center mt-3 d-none d-sm-block d-lg-none">
+                        <button ejs-button class="me-3" cssClass="e-outline" iconCss="e-icons e-filter e-medium" type="button" aria-label="filter" role="button"></button>
+                        <button ejs-dropdownbutton cssClass="e-outline" iconCss="e-icons e-table" type="button" (beforeOpen)="$event.cancel = true;" aria-label="choose the columns" role="button"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+     
+}

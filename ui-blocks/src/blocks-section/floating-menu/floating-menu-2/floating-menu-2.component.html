@@ -4,7 +4,7 @@
     <div id="target" class="w-full" [ngStyle]="{ height: isMobileView ? '580px' : '720px' }">
         <ejs-dialog #dialog id="floating-chat" class="sm:!rounded-t !rounded-none overflow-hidden !border-0" width="400px" minHeight="580px" (open)="setDialogPosition($event)" (created)="dialog.show()" aria-label="chatbot" role="dialog">
             <ng-template #header>
-                <div class="flex justify-between items-center bg-indigo-600 dark:bg-cyan-400 py-4 px-4 sm:px-6">
+                <div class="flex justify-between items-center bg-primary-600 dark:bg-primary-400 py-4 px-4 sm:px-6">
                     <div class="flex gap-4 items-center">
                         <div class="relative">
                             <span class="e-avatar e-avatar-circle e-icons e-user text-2xl"></span>

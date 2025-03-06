@@ -1,14 +1,14 @@
 @if (currentTheme === 'tailwind') {
 
 <section class="bg-gray-50 dark:bg-gray-950">
-    <div class="flex flex-col lg:flex-row md:min-h-screen">
+    <div class="flex flex-col lg:flex-row" style="min-height: 720px;">
         <div class="w-full lg:w-7/12 p-0">
             <img class="w-full h-full object-cover" src="assets/images/authentication/split-screen/split-screen.png" alt="image" />
         </div>
         <div class="w-full lg:w-5/12 p-0">
             <div class="bg-gray-50 dark:bg-gray-950">
                 <div class="flex items-center justify-center">
-                    <div class="w-full max-w-md rounded-lg p-4 p-md-6 py-12">
+                    <div class="w-full max-w-md rounded-lg p-4 py-12">
                         <div class="flex justify-center mb-6">
                             <img class="mr-2" src="assets/images/common/brand-logos/svg/vector.svg" alt="company logo" />
                             <h2 class="text-center text-xl font-semibold text-gray-900 dark:text-white">Company Name</h2>
@@ -37,7 +37,7 @@
                                     </span>
                                 </div>
                                 <div class="e-bigger">
-                                    <button ejs-button class="w-full text-base e-primary e-btn" type="submit" aria-label="sign up" role="button">Sign up</button>
+                                    <button ejs-button class="w-full text-base e-primary" type="submit" aria-label="sign up" role="button">Sign up</button>
                                 </div>
                             </form>
                         </div>
@@ -77,7 +77,7 @@
 } @else if (currentTheme === 'bootstrap5.3') {
 
 <section>
-    <div class="d-flex flex-column flex-lg-row min-vh-100">
+    <div class="d-flex flex-column flex-lg-row" style="min-height: 720px;">
         <div class="col-12 col-lg-7 p-0">
             <img class="img-fluid w-100 h-100" src="assets/images/authentication/split-screen/split-screen.png" style="max-height: 100%; max-width: 100%; object-fit: cover;" alt="image" />
         </div>
@@ -92,15 +92,15 @@
                     <p class="text-center text-light-emphasis m-0">Enter your information to sign up</p>
                     <form action="#" class="mt-4 mb-4" onsubmit="event.preventDefault();">
                         <div class="mb-3">
-                            <label class="form-label fw-medium text-dark-emphasis small">Name</label>
+                            <label class="form-label mb-1 fw-medium text-dark-emphasis small">Name</label>
                             <ejs-textbox class="py-2 e-bigger" type="text" placeholder="Name" floatLabelType="Never" aria-label="enter your name" role="textbox"></ejs-textbox>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label fw-medium text-dark-emphasis small">Email</label>
+                            <label class="form-label mb-1 fw-medium text-dark-emphasis small">Email</label>
                             <ejs-textbox class="py-2 e-bigger" type="email" placeholder="Email" floatLabelType="Never" aria-label="enter your email address" role="textbox"></ejs-textbox>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label fw-medium text-dark-emphasis small">Password</label>
+                            <label class="form-label mb-1 fw-medium text-dark-emphasis small">Password</label>
                             <ejs-textbox class="py-2 e-bigger" type="password" placeholder="Password" floatLabelType="Never" aria-label="enter your email password" role="textbox"></ejs-textbox>
                         </div>
                         <div class="mb-4 e-bigger">
@@ -111,7 +111,7 @@
                             </span>
                         </div>
                         <div class="e-bigger">
-                            <button ejs-button class="e-btn e-block e-primary" cssClass="e-bigger" type="submit" aria-label="sign up" role="button">Sign up</button>
+                            <button ejs-button class="e-block e-primary" cssClass="e-bigger" type="submit" aria-label="sign up" role="button">Sign up</button>
                         </div>
                     </form>
                     <div>
@@ -120,18 +120,18 @@
                             <hr class="w-100 border-light-subtle opacity-100" />
                         </div>
                         <div class="d-flex justify-content-center mt-3 gap-3">
-                            <button ejs-button class="e-btn e-outline d-flex align-items-center" type="submit" aria-label="sign in with google account" role="button">
+                            <button ejs-button class="e-outline d-flex align-items-center" type="submit" aria-label="sign in with google account" role="button">
                                 <img src="assets/images/common/brand-logos/png/google.png" width="24px" alt="google logo" />
                             </button>
-                            <button ejs-button class="e-btn e-outline d-flex align-items-center" type="submit" aria-label="sign in with facebook account" role="button">
+                            <button ejs-button class="e-outline d-flex align-items-center" type="submit" aria-label="sign in with facebook account" role="button">
                                 <img src="assets/images/common/brand-logos/png/facebook.png" width="24px" alt="facebook logo" />
                             </button>
-                            <button ejs-button class="e-btn e-outline d-flex align-items-center" type="submit" aria-label="sign in with twitter account" role="button">
+                            <button ejs-button class="e-outline d-flex align-items-center" type="submit" aria-label="sign in with twitter account" role="button">
                                 <svg class="svg-icon" width="24" height="24" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M0 0.617188L5.81975 8.93442L0.302812 15.3829H2.26965L6.70223 10.1918L10.3302 15.3829H16L9.81975 6.53788L14.8724 0.617188H12.9373L8.94593 5.28337L5.68709 0.617188H0ZM2.75415 2.07645H4.94881L13.2632 13.9236H11.0541L2.75415 2.07645Z" />
                                 </svg> 
                             </button>
-                            <button ejs-button class="e-btn e-outline d-flex align-items-center" type="submit" aria-label="sign in with microsoft account" role="button">
+                            <button ejs-button class="e-outline d-flex align-items-center" type="submit" aria-label="sign in with microsoft account" role="button">
                                 <img src="assets/images/common/brand-logos/png/microsoft.png" width="24px" alt="microsoft logo" />
                             </button>
                         </div>

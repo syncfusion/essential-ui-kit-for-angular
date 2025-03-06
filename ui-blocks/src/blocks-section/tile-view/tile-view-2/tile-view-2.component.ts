@@ -1,8 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AppBarModule } from '@syncfusion/ej2-angular-navigations';
+import { AppBarModule, BreadcrumbModule } from '@syncfusion/ej2-angular-navigations';
 import { ButtonModule, SwitchModule } from '@syncfusion/ej2-angular-buttons';
-import { BreadcrumbModule } from '@syncfusion/ej2-angular-navigations';
 import { DropDownButtonModule } from '@syncfusion/ej2-angular-splitbuttons';
 import { NumericTextBoxModule } from '@syncfusion/ej2-angular-inputs';
 import { ListViewModule } from '@syncfusion/ej2-angular-lists';

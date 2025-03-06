@@ -2,12 +2,12 @@
 
 <section class="bg-white dark:bg-gray-900">
     <div [ngStyle]="{'height': '650px', 'width': width, float:'Right'}">
-        <ejs-sidebar class="w-full bg-white dark:bg-gray-900" #sidebar position="Right" type="push" [width]="width" [isOpen]="true" [closeOnDocumentClick]="false" showBackdrop="true" role="sidebar" style="display: block;">
+        <ejs-sidebar class="w-full bg-white dark:bg-gray-900" #sidebar position="Right" type="push" [width]="width" [isOpen]="true" [closeOnDocumentClick]="false" showBackdrop="true" role="complementary" style="display: block;">
             <div class="bg-white dark:bg-gray-900 min-h-screen">
                 <div class="border-b border-gray-200 dark:border-gray-600">
                     <div class="flex justify-between items-center px-4 py-3 border-b border-gray-200 dark:border-gray-600">
-                        <h2 class="text-lg text-gray-900 dark:text-white">Meetings</h2>
-                        <button ejs-button class="e-icons e-btn e-flat" (click)="sidebar.toggle()" iconCss="e-icons e-close" content=" " type="button" aria-label="close sidebar" role="button"></button>
+                        <h2 class="text-base font-semibold text-gray-900 dark:text-white">Meetings</h2>
+                        <button ejs-button class="e-flat text-base" iconCss="e-icons e-close" (click)="sidebar.toggle()" content=" " type="button" aria-label="close sidebar" role="button"></button>
                     </div>
                     <div class="p-4 flex justify-center items-center">
                         <ejs-calendar class="e-bigger shadow-none border-none"></ejs-calendar>
@@ -70,12 +70,12 @@
 
 <section class="bg-body">
     <div [ngStyle]="{'height': '676px', 'width': width, float:'Right'}">
-        <ejs-sidebar class="bg-body" #sidebar position="Right" type="push" [width]="width" [isOpen]="true" [closeOnDocumentClick]="false" showBackdrop="true" role="sidebar" style="display: block;">
+        <ejs-sidebar class="bg-body" #sidebar position="Right" type="push" [width]="width" [isOpen]="true" [closeOnDocumentClick]="false" showBackdrop="true" role="complementary" style="display: block;">
             <div class="bg-body">
                 <div class="border-bottom border-light-subtle">
                     <div class="d-flex justify-content-between align-items-center p-3 border-bottom border-light-subtle">
                         <div class="text-body fw-bold fs-6 mb-0">Meetings</div>
-                        <button ejs-button class="e-icons e-btn e-flat fs-6" (click)="sidebar.toggle()" iconCss="e-icons e-close" content=" " type="button" aria-label="close sidebar" role="button"></button>
+                        <button ejs-button class="e-flat fs-6" iconCss="e-icons e-close" (click)="sidebar.toggle()" content=" " type="button" aria-label="close sidebar" role="button"></button>
                     </div>
                     <div class="p-3 d-flex justify-content-center align-items-center">
                         <ejs-calendar class="e-bigger shadow-none border-0"></ejs-calendar>

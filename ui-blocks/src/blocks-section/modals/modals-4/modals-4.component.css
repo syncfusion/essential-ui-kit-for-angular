@@ -1,0 +1,23 @@
+#dialog-container .e-dialog .e-dlg-header-content+.e-dlg-content {
+    border: inherit;
+    border-inline: none;
+    border-radius: 0;
+}
+
+#dialog-container .e-listview .e-list-item.e-focused,
+#dialog-container .e-listview .e-list-item.e-focused.e-active.e-checklist,
+#dialog-container .e-listview .e-list-item.e-hover {
+    background: transparent;
+}
+
+#dialog-container .e-checkbox-wrapper .e-label {
+    font-weight: 500;
+}
+
+#dialog-container .e-listview .e-list-item {
+    border: 0;
+}
+
+#dialog-container .e-listview .e-checkbox .e-checkbox-left {
+    margin-top: 9px;
+}

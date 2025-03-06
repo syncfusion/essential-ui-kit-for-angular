@@ -1,0 +1,200 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-white dark:bg-gray-900">
+    <div [ngStyle]="{'height': '1430px', 'width': width, float:'Right'}">
+        <ejs-sidebar #sidebar class="flex flex-col bg-white dark:bg-gray-800" position="Right" type="push" [width]="width" [isOpen]="true" [closeOnDocumentClick]="false" showBackdrop="true" role="complementary" style="display: block;">
+            <div>
+                <div class="flex justify-between items-center p-4">
+                    <h2 class="text-base font-semibold text-gray-900 dark:text-white">Knowledge Base</h2>
+                </div>
+                <div class="pt-0 p-4">
+                    <ejs-accordion #gettingStartedAccordion class="bg-transparent mt-2 mb-3 rounded-sm" expandMode="Single" role="accordion">
+                        <e-accordionitems>
+                            <e-accordionitem expanded="true">
+                                <ng-template #header>
+                                    <div class="font-medium text-gray-900 dark:text-white">Getting Started</div>
+                                </ng-template>
+                                <ng-template #content>
+                                    <div class="flex flex-col gap-5 px-1 pb-1">
+                                        <h6 class="text-sm font-medium text-gray-900 dark:text-white">Topics</h6>
+                                        <ejs-checkbox label="Platform basics" checked="true" aria-label="platform basics" role="checkbox"></ejs-checkbox>
+                                        <ejs-checkbox label="Account setup" checked="true" aria-label="account setup" role="checkbox"></ejs-checkbox>
+                                        <ejs-checkbox label="Quick start" aria-label="quick start" role="checkbox"></ejs-checkbox>
+                                        <ejs-checkbox label="Best practices" aria-label="best practices" role="checkbox"></ejs-checkbox>
+                                        <div class="flex items-center justify-between py-2">
+                                            <h6 class="text-sm font-medium text-gray-900 dark:text-white">Recently updated only</h6>
+                                            <ejs-switch cssClass="mr-2" checked="true" aria-label="recently updated only" role="switch"></ejs-switch>
+                                        </div>
+                                        <ejs-radiobutton label="Welcome guide" name="guidelines" value="welcome-guide" aria-label="welcome guide" role="radio"></ejs-radiobutton>
+                                        <ejs-radiobutton label="Creating your first project" name="guidelines" value="creating-project" aria-label="Creating your first project" role="radio"></ejs-radiobutton>
+                                        <ejs-radiobutton label="Understanding the dashboard" name="guidelines" value="understanding-dashboard" aria-label="understanding the dashboard" role="radio"></ejs-radiobutton>
+                                        <ejs-radiobutton label="Basic configuration steps" name="guidelines" value="basic-configuration" aria-label="basic configuration steps" role="radio"></ejs-radiobutton>
+                                    </div>
+                                </ng-template>
+                            </e-accordionitem>
+                        </e-accordionitems>
+                    </ejs-accordion>
+                    <ejs-accordion #billingAccordion class="bg-transparent my-3 rounded-sm" expandMode="Single" role="accordion">
+                        <e-accordionitems>
+                            <e-accordionitem expanded="true">
+                                <ng-template #header>
+                                    <div class="font-medium text-gray-900 dark:text-white">Billing</div>
+                                </ng-template>
+                                <ng-template #content>
+                                    <div class="flex flex-col gap-5 px-1 pb-1">
+                                        <h6 class="text-sm font-medium text-gray-900 dark:text-white">Topics</h6>
+                                        <ejs-checkbox label="Subscriptions" checked="true" aria-label="subscriptions" role="checkbox"></ejs-checkbox>
+                                        <ejs-checkbox label="Invoices" checked="true" aria-label="invoices" role="checkbox"></ejs-checkbox>
+                                        <ejs-checkbox label="Payment methods" aria-label="payment methods" role="checkbox"></ejs-checkbox>
+                                        <ejs-checkbox label="Usage plans" aria-label="usage plans" role="checkbox"></ejs-checkbox>
+                                        <div class="flex items-center justify-between py-2">
+                                            <h6 class="text-sm font-medium text-gray-900 dark:text-white">Recently updated only</h6>
+                                            <ejs-switch cssClass="mr-2" checked="true" aria-label="recently updated only" role="switch"></ejs-switch>
+                                        </div>
+                                        <ejs-radiobutton label="Subscription overview" name="billing" value="subscription-overview" checked="true" aria-label="subscription overview" role="radio"></ejs-radiobutton>
+                                        <ejs-radiobutton label="Managing payment method" name="billing" value="managing-payment" aria-label="managing payment method" role="radio"></ejs-radiobutton>
+                                        <ejs-radiobutton label="Understanding your invoice" name="billing" value="understanding-invoice" aria-label="understanding your invoice" role="radio"></ejs-radiobutton>
+                                        <ejs-radiobutton label="Usage calculations" name="billing" value="usage-calculations" aria-label="usage calculations" role="radio"></ejs-radiobutton>
+                                    </div>
+                                </ng-template>
+                            </e-accordionitem>
+                        </e-accordionitems>
+                    </ejs-accordion>
+                    <ejs-accordion #supportAccordion class="bg-transparent my-3 rounded-sm" expandMode="Single" role="accordion">
+                        <e-accordionitems>
+                            <e-accordionitem expanded="true">
+                                <ng-template #header>
+                                    <div class="font-medium text-gray-900 dark:text-white">Technical Support</div>
+                                </ng-template>
+                                <ng-template #content>
+                                    <div class="flex flex-col gap-5 px-1 pb-1">
+                                        <h6 class="text-sm font-medium text-gray-900 dark:text-white">Topics</h6>
+                                        <ejs-checkbox label="API" checked="true" aria-label="API" role="checkbox"></ejs-checkbox>
+                                        <ejs-checkbox label="Integration" checked="true" aria-label="integration" role="checkbox"></ejs-checkbox>
+                                        <ejs-checkbox label="Troubleshooting" aria-label="troubleshooting" role="checkbox"></ejs-checkbox>
+                                        <ejs-checkbox label="Security" aria-label="security" role="checkbox"></ejs-checkbox>
+                                        <div class="flex items-center justify-between py-2">
+                                            <h6 class="text-sm font-medium text-gray-900 dark:text-white">Recently updated only</h6>
+                                            <ejs-switch cssClass="mr-2" checked="true" aria-label="recently updated only" role="switch"></ejs-switch>
+                                        </div>
+                                        <ejs-radiobutton label="API documentation" name="support" value="API-documentation" checked="true" aria-label="API documentation" role="radio"></ejs-radiobutton>
+                                        <ejs-radiobutton label="Common error codes" name="support" value="common-error" aria-label="common error codes" role="radio"></ejs-radiobutton>
+                                        <ejs-radiobutton label="Integration guide" name="support" value="integration-guide" aria-label="integration guide" role="radio"></ejs-radiobutton>
+                                        <ejs-radiobutton label="Security best practices" name="support" value="security-practices" aria-label="security best practices" role="radio"></ejs-radiobutton>
+                                    </div>
+                                </ng-template>
+                            </e-accordionitem>
+                        </e-accordionitems>
+                    </ejs-accordion>
+                </div>
+            </div>
+        </ejs-sidebar>
+    </div>
+</section>
+<!-- SB Code - Start -->
+<div class="p-3 absolute top-0 right-0">
+    <button ejs-button cssClass="e-large e-icons e-chevron-left e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+</div>
+<!-- SB Code - End -->
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body">
+    <div [ngStyle]="{'height': '1430px', 'width': width, float:'Right'}">
+        <ejs-sidebar #sidebar class="d-flex flex-column bg-body" position="Right" type="push" [width]="width" [isOpen]="true" [closeOnDocumentClick]="false" showBackdrop="true" role="complementary" style="display: block;">
+            <div>
+                <div class="d-flex justify-content-between align-items-center p-3">
+                    <h2 class="h6 mb-0 fw-bold text-body">Knowledge Base</h2>
+                </div>
+                <div class="p-3 pt-0">
+                    <ejs-accordion #gettingStartedAccordion class="bg-transparent mt-2 mb-3 border-bottom border-light-subtle rounded-1" expandMode="Single" role="accordion">
+                        <e-accordionitems>
+                            <e-accordionitem expanded="true">
+                                <ng-template #header>
+                                    <div class="fw-medium fs-6 text-body">Getting Started</div>
+                                </ng-template>
+                                <ng-template #content>
+                                    <div class="d-flex flex-column gap-3 px-1 pb-1">
+                                        <h6 class="fs-6 fw-medium text-body">Topics</h6>
+                                        <ejs-checkbox label="Platform basics" checked="true" aria-label="platform basics" role="checkbox"></ejs-checkbox>
+                                        <ejs-checkbox label="Account setup" checked="true" aria-label="account setup" role="checkbox"></ejs-checkbox>
+                                        <ejs-checkbox label="Quick start" aria-label="quick start" role="checkbox"></ejs-checkbox>
+                                        <ejs-checkbox label="Best practices" aria-label="best practices" role="checkbox"></ejs-checkbox>
+                                        <div class="d-flex justify-content-between align-items-center py-2">
+                                            <h6 class="mb-0 fw-medium text-body">Recently updated only</h6>
+                                            <ejs-switch class="me-2" checked="true" aria-label="recently updated only" role="switch"></ejs-switch>
+                                        </div>
+                                        <ejs-radiobutton label="Welcome guide" name="guidelines" value="welcome-guide" aria-label="welcome guide" role="radio"></ejs-radiobutton>
+                                        <ejs-radiobutton label="Creating your first project" name="guidelines" value="creating-project" aria-label="Creating your first project" role="radio"></ejs-radiobutton>
+                                        <ejs-radiobutton label="Understanding the dashboard" name="guidelines" value="understanding-dashboard" aria-label="understanding the dashboard" role="radio"></ejs-radiobutton>
+                                        <ejs-radiobutton label="Basic configuration steps" name="guidelines" value="basic-configuration" aria-label="basic configuration steps" role="radio"></ejs-radiobutton>
+                                    </div>
+                                </ng-template>
+                            </e-accordionitem>
+                        </e-accordionitems>
+                    </ejs-accordion>
+                    <ejs-accordion #billingAccordion class="bg-transparent my-3 rounded-1" expandMode="Single" role="accordion">
+                        <e-accordionitems>
+                            <e-accordionitem expanded="true">
+                                <ng-template #header>
+                                    <div class="fw-medium fs-6 text-body">Billing</div>
+                                </ng-template>
+                                <ng-template #content>
+                                    <div class="d-flex flex-column gap-3 px-1 pb-1">
+                                        <h6 class="fs-6 fw-medium text-body">Topics</h6>
+                                        <ejs-checkbox label="Subscriptions" checked="true" aria-label="subscriptions" role="checkbox"></ejs-checkbox>
+                                        <ejs-checkbox label="Invoices" checked="true" aria-label="invoices" role="checkbox"></ejs-checkbox>
+                                        <ejs-checkbox label="Payment methods" aria-label="payment methods" role="checkbox"></ejs-checkbox>
+                                        <ejs-checkbox label="Usage plans" aria-label="usage plans" role="checkbox"></ejs-checkbox>
+                                        <div class="d-flex justify-content-between align-items-center py-2">
+                                            <h6 class="mb-0 fw-medium text-body">Recently updated only</h6>
+                                            <ejs-switch class="me-2" checked="true" aria-label="recently updated only" role="switch"></ejs-switch>
+                                        </div>
+                                        <ejs-radiobutton label="Subscription overview" name="billing" value="subscription-overview" checked="true" aria-label="subscription overview" role="radio"></ejs-radiobutton>
+                                        <ejs-radiobutton label="Managing payment method" name="billing" value="managing-payment" aria-label="managing payment method" role="radio"></ejs-radiobutton>
+                                        <ejs-radiobutton label="Understanding your invoice" name="billing" value="understanding-invoice" aria-label="understanding your invoice" role="radio"></ejs-radiobutton>
+                                        <ejs-radiobutton label="Usage calculations" name="billing" value="usage-calculations" aria-label="usage calculations" role="radio"></ejs-radiobutton>
+                                    </div>
+                                </ng-template>
+                            </e-accordionitem>
+                        </e-accordionitems>
+                    </ejs-accordion>
+                    <ejs-accordion #supportAccordion class="bg-transparent my-3 rounded-1" expandMode="Single" role="accordion">
+                        <e-accordionitems>
+                            <e-accordionitem expanded="true">
+                                <ng-template #header>
+                                    <div class="fw-medium fs-6 text-body">Technical Support</div>
+                                </ng-template>
+                                <ng-template #content>
+                                    <div class="d-flex flex-column gap-3 px-1 pb-1">
+                                        <h6 class="fs-6 fw-medium text-body">Topics</h6>
+                                        <ejs-checkbox label="API" checked="true" aria-label="API" role="checkbox"></ejs-checkbox>
+                                        <ejs-checkbox label="Integration" checked="true" aria-label="integration" role="checkbox"></ejs-checkbox>
+                                        <ejs-checkbox label="Troubleshooting" aria-label="troubleshooting" role="checkbox"></ejs-checkbox>
+                                        <ejs-checkbox label="Security" aria-label="security" role="checkbox"></ejs-checkbox>
+                                        <div class="d-flex align-items-center justify-content-between py-2">
+                                            <h6 class="mb-0 fw-medium text-body">Recently updated only</h6>
+                                            <ejs-switch cssClass="me-2" checked="true" aria-label="recently updated only" role="switch"></ejs-switch>
+                                        </div>
+                                        <ejs-radiobutton label="API documentation" name="support" value="API-documentation" checked="true" aria-label="API documentation" role="radio"></ejs-radiobutton>
+                                        <ejs-radiobutton label="Common error codes" name="support" value="common-error" aria-label="common error codes" role="radio"></ejs-radiobutton>
+                                        <ejs-radiobutton label="Integration guide" name="support" value="integration-guide" aria-label="integration guide" role="radio"></ejs-radiobutton>
+                                        <ejs-radiobutton label="Security best practices" name="support" value="security-practices" aria-label="security best practices" role="radio"></ejs-radiobutton>
+                                    </div>
+                                </ng-template>
+                            </e-accordionitem>
+                        </e-accordionitems>
+                    </ejs-accordion>
+                </div>
+            </div>
+        </ejs-sidebar>
+    </div>
+</section>
+
+<!-- SB Code - Start -->
+<div class="p-3 position-absolute top-0 end-0">
+    <button ejs-button cssClass="e-large e-icons e-chevron-left e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+</div>
+<!-- SB Code - End -->
+
+}

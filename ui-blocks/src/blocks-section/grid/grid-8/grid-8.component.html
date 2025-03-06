@@ -4,7 +4,7 @@
     <div class="mx-auto w-full py-10 sm:px-6 px-4">
         <ejs-grid [dataSource]="data" rowHeight="44" width="100%" height="440" [allowGrouping]="true" groupSettings="{ showDropArea: true }" role="grid">
             <e-columns>
-                <e-column field="name" headerText="Sales Representative" width="146">
+                <e-column field="name" headerText="Sales Representative" width="156">
                     <ng-template #template let-data>
                         <span>{{data.name}}</span>
                     </ng-template>
@@ -34,11 +34,11 @@
                         </div>
                     </ng-template>
                 </e-column>
-                <e-column field="avgDealSize" headerText="Average Deal Size" format="c0" width="106" textAlign="Right"></e-column>
+                <e-column field="avgDealSize" headerText="Average Deal Size" format="c0" width="135" textAlign="Right"></e-column>
                 <e-column field="winPercent" headerText="Win Rate" width="80">
                     <ng-template #template let-data>
                         <div class="e-bigger">
-                            <span class="e-badge !px-2" [ngClass]="{'e-badge-warning': data.winRate < 70, 'e-badge-info': data.winRate >= 70 && data.winRate < 80, 'e-badge-success': data.winRate >= 80, 'e-badge-ligh': data.winRate === null || data.winRate === undefined}">
+                            <span class="e-badge !px-2" [ngClass]="{'e-badge-warning': data.winRate < 70, 'e-badge-info': data.winRate >= 70 && data.winRate < 80, 'e-badge-success': data.winRate >= 80, 'e-badge-light': data.winRate === null || data.winRate === undefined}">
                                 {{data.winRate !== null && data.winRate !== undefined ? data.winRate + '%' : 'Unknown'}}
                             </span>
                         </div>
@@ -66,7 +66,7 @@
     <div class="py-4 px-4 px-sm-6 mx-auto">
         <ejs-grid [dataSource]="data" rowHeight="44" width="100%" height="440" [allowGrouping]="true" groupSettings="{ showDropArea: true }" role="grid">
             <e-columns>
-                <e-column field="name" headerText="Sales Representative" width="136">
+                <e-column field="name" headerText="Sales Representative" width="165">
                     <ng-template #template let-data>
                         <span>{{data.name}}</span>
                     </ng-template>
@@ -90,13 +90,13 @@
                 </e-column>
                 <e-column field="progressBar" headerText="% of Target" width="210">
                     <ng-template #template let-data>
-                        <div class="d-flex flex-column w-48 pr-2.5">
+                        <div class="d-flex flex-column w-48 pe-3">
                             <ejs-progressbar id="{{data.progressBar.id}}" progressThickness="8" trackThickness="8" value="{{data.progressBar.value}}" width="182" [progressColor]="data.progressBar.value === 100 ? '#15803D' : '#4F46E5'" aria-label="target percentage" role="progressbar"></ejs-progressbar>
                             <p class="text-end small">{{data.progressBar.value | number: '1.0-1'}}%</p>
                         </div>
                     </ng-template>
                 </e-column>
-                <e-column field="avgDealSize" headerText="Average Deal Size" format="c0" width="136" textAlign="Right"></e-column>
+                <e-column field="avgDealSize" headerText="Average Deal Size" format="c0" width="160" textAlign="Right"></e-column>
                 <e-column field="winPercent" headerText="Win Rate" width="125">
                     <ng-template #template let-data>
                         <div>

@@ -1,0 +1,193 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-white dark:bg-gray-800">
+    <div [ngStyle]="{'height': '780px', 'width': width, float:'Right'}">
+        <ejs-sidebar #sidebar class="flex flex-col bg-white dark:bg-gray-800" position="Right" type="push" [width]="width" [isOpen]="true" [closeOnDocumentClick]="false" showBackdrop="true" role="complementary" style="display: block;">
+            <div class="flex justify-between w-full border-b border-gray-200 dark:border-gray-600">
+                <div class="4/5">
+                    <ejs-tab headerPlacement="Top">
+                        <e-tabitems>
+                            <e-tabitem>
+                                <ng-template #headerText>
+                                    <div class="flex items-center justify-center">
+                                        <span class="e-icons text-base e-print-layout"></span>
+                                        <span class="ml-2 font-semibold">Details</span>
+                                    </div>
+                                </ng-template>
+                            </e-tabitem>
+                            <e-tabitem>
+                                <ng-template #headerText>
+                                    <div class="flex items-center justify-center">
+                                        <span class="e-icons text-base e-grid-view"> </span>
+                                        <span class="ml-2 font-semibold">Apps</span>
+                                    </div>
+                                </ng-template>
+                            </e-tabitem>
+                        </e-tabitems>
+                    </ejs-tab>
+                </div>
+                <div class="w-1/5 px-1 border-l border-gray-200 dark:border-gray-600 flex justify-center items-center">
+                    <a class="e-icons e-chevron-right-double text-xl text-gray-500 dark:text-white cursor-pointer"></a>
+                </div>
+            </div>
+            <div>
+                <ejs-accordion #requesterAccordion class="border-0 border-b bg-transparent e-bigger" expandMode="Multiple" role="accordion">
+                    <e-accordionitems>
+                        <e-accordionitem expanded="true">
+                            <ng-template #header>
+                                <div class="text-sm font-medium text-gray-900 dark:text-white">Requester Details</div>
+                            </ng-template>
+                            <ng-template #content>
+                                <div class="flex items-center space-x-2 p-1">
+                                    <div>
+                                        <span class="e-avatar e-avatar-medium e-avatar-circle bg-primary-600 dark:bg-primary-400 text-sm text-white dark:text-black">MG</span>
+                                    </div>
+                                    <div>
+                                        <h2 class="text-sm font-medium text-gray-900 dark:text-white">Michael Green</h2>
+                                        <a class="text-xs font-normal text-gray-500 dark:text-gray-400" href="mailto:michael.green@example.com">michael.green&#64;gmail.com</a>
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </e-accordionitem>
+                    </e-accordionitems>
+                </ejs-accordion>
+                <ejs-accordion #ticketAccordion class="border-0 bg-transparent" expandMode="Multiple" role="accordion">
+                    <e-accordionitems>
+                        <e-accordionitem class="e-bigger" expanded="true">
+                            <ng-template #header>
+                                <div class="text-sm font-medium text-gray-900 dark:text-white">Ticket Properties</div>
+                            </ng-template>
+                            <ng-template #content>
+                                <div class="grid grid-cols-1 gap-4 w-full px-1 pb-1">
+                                    <div class="w-1/2">
+                                        <label class="block my-1 text-sm font-medium text-gray-900 dark:text-white">Status</label>
+                                        <ejs-dropdownlist id="dropdownlist" [dataSource]="status" placeholder="Open"></ejs-dropdownlist>
+                                    </div>
+                                    <div>
+                                        <label class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Assignee</label>
+                                        <ejs-dropdownlist [dataSource]="assignee" placeholder="Select assignee" aria-label="choose an assignee" role="listbox"></ejs-dropdownlist>
+                                    </div>
+                                    <div>
+                                        <label class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Response Due</label>
+                                        <ejs-datepicker class="shadow-none" placeholder="MM/DD/YYYY" aria-label="pick a due date" role="combobox"></ejs-datepicker>
+                                    </div>
+                                    <div>
+                                        <label class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Resolution Due</label>
+                                        <ejs-datepicker class="shadow-none" placeholder="MM/DD/YYYY" aria-label="pick a due date" role="combobox"></ejs-datepicker>
+                                    </div>
+                                    <div>
+                                        <label class="block mb-1 text-sm font-medium text-gray-900 dark:text-white">Tags</label>
+                                        <ejs-dropdownlist [dataSource]="tags" placeholder="Enter tags" aria-label="choose a tags" role="listbox"></ejs-dropdownlist>
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </e-accordionitem>
+                    </e-accordionitems>
+                </ejs-accordion>
+            </div>
+        </ejs-sidebar>
+    </div>
+</section>
+<!-- SB Code - Start -->
+<div class="p-3 absolute top-0 right-0">
+    <button ejs-button cssClass="e-large e-icons e-chevron-left e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+</div>
+<!-- SB Code - End -->
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body">
+    <div [ngStyle]="{'height': '780px', 'width': width, float:'Right'}">
+        <ejs-sidebar #sidebar class="d-flex flex-column bg-body" position="Right" type="push" [width]="width" [isOpen]="true" [closeOnDocumentClick]="false" showBackdrop="true" role="complementary" style="display: block;">
+            <div class="d-flex justify-content-between pt-2 w-100">
+                <div class="w-100">
+                    <ejs-tab #tab headerPlacement="Top">
+                        <e-tabitems>
+                            <e-tabitem>
+                                <ng-template #headerText>
+                                    <div class="d-flex align-items-center justify-content-center">
+                                        <span class="e-icons text-base e-print-layout"></span>
+                                        <span class="ms-2 fw-semibold">Details</span>
+                                    </div>
+                                </ng-template>
+                            </e-tabitem>
+                            <e-tabitem>
+                                <ng-template #headerText>
+                                    <div class="d-flex align-items-center justify-content-center">
+                                        <span class="e-icons text-base e-grid-view"></span>
+                                        <span class="ms-2 fw-semibold">Apps</span>
+                                    </div>
+                                </ng-template>
+                            </e-tabitem>
+                        </e-tabitems>
+                    </ejs-tab>
+                </div>
+                <div class="w-10 px-2 border-bottom border-subtle d-flex justify-content-center align-items-center">
+                    <a class="e-icons e-chevron-right-double fs-6 text-decoration-none text-secondary"></a>
+                </div>
+            </div>
+            <div>
+                <ejs-accordion #requesterAccordion class="border-0 border-bottom bg-transparent e-bigger" expandMode="Multiple" role="accordion">
+                    <e-accordionitems>
+                        <e-accordionitem expanded="true">
+                            <ng-template #header>
+                                <div class="fw-medium fs-6 text-body">Requester Details</div>
+                            </ng-template>
+                            <ng-template #content>
+                                <div class="d-flex align-items-center gap-2">
+                                    <div>
+                                        <span class="e-avatar e-avatar-medium e-avatar-circle bg-primary text-white">MG</span>
+                                    </div>
+                                    <div>
+                                        <h2 class="fw-medium fs-6 text-body">Michael Green</h2>
+                                        <a class="text-xs fw-normal text-secondary" href="mailto:michael.green@example.com">michael.green&#64;gmail.com</a>
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </e-accordionitem>
+                    </e-accordionitems>
+                </ejs-accordion>
+                <ejs-accordion #ticketAccordion class="border-0 bg-transparent" expandMode="Multiple" role="accordion">
+                    <e-accordionitems>
+                        <e-accordionitem class="e-bigger" expanded="true">
+                            <ng-template #header>
+                                <div class="fw-medium fs-6 text-body">Ticket Properties</div>
+                            </ng-template>
+                            <ng-template #content>
+                                <div class="row m-0 g-3 pb-1">
+                                    <div class="col-6 px-1">
+                                        <label class="mb-1 fw-medium fs-6 text-body">Status</label>
+                                        <ejs-dropdownlist [dataSource]="status" placeholder="Open"></ejs-dropdownlist>
+                                    </div>
+                                    <div class="col-12 px-1">
+                                        <label class="mb-1 fw-medium fs-6 text-body">Assignee</label>
+                                        <ejs-dropdownlist [dataSource]="assignee" placeholder="Select assignee" aria-label="choose an assignee" role="listbox"></ejs-dropdownlist>
+                                    </div>
+                                    <div class="col-12 px-1">
+                                        <label class="mb-1 fw-medium fs-6 text-body">Response Due</label>
+                                        <ejs-datepicker class="shadow-none" placeholder="MM/DD/YYYY" aria-label="pick a due date" role="combobox"></ejs-datepicker>
+                                    </div>
+                                    <div class="col-12 px-1">
+                                        <label class="mb-1 fw-medium fs-6 text-body">Resolution Due</label>
+                                        <ejs-datepicker class="shadow-none" placeholder="MM/DD/YYYY" aria-label="pick a due date" role="combobox"></ejs-datepicker>
+                                    </div>
+                                    <div class="col-12 px-1">
+                                        <label class="mb-1 fw-medium fs-6 text-body">Tags</label>
+                                        <ejs-dropdownlist [dataSource]="tags" placeholder="Enter tags" aria-label="choose a tags" role="listbox"></ejs-dropdownlist>
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </e-accordionitem>
+                    </e-accordionitems>
+                </ejs-accordion>
+            </div>
+        </ejs-sidebar>
+    </div>
+</section>
+
+<!-- SB Code - Start -->
+<div class="p-3 position-absolute top-0 end-0">
+    <button ejs-button cssClass="e-large e-icons e-chevron-left e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+</div>
+<!-- SB Code - End -->
+}

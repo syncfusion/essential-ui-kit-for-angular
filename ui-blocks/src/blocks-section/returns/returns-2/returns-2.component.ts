@@ -24,27 +24,27 @@ export class Returns2Component implements OnInit, OnDestroy {
         {
             product: {
                 productName: 'Apple iPhone 15 Pro Max (256 GB) - Blue Titanium',
-                productImage: 'apple-iphone-15-pro',
+                productImage: 'apple-iphone-15-pro'
             },
             orderNumber: '#49463',
-            returnTerm: new Date(2017, 7, 15),
+            returnTerm: new Date(2017, 7, 15)
         },
         {
             product: {
                 productName: 'Apple MacBook Air 2022 (13.6-inch, M2, 8GB, 256GB, macOS, Midnight)',
-                productImage: 'apple-macbook-air-2022',
+                productImage: 'apple-macbook-air-2022'
             },
             orderNumber: '#40938',
-            returnTerm: new Date(2022, 9, 28),
+            returnTerm: new Date(2022, 9, 28)
         },
         {
             product: {
                 productName: 'Apple AirPods Pro (2nd Generation - USB-C) TWS Earbuds with Active Noise',
-                productImage: 'apple-airpods-pro',
+                productImage: 'apple-airpods-pro'
             },
             orderNumber: '#50929',
-            returnTerm: new Date(2020, 5, 12),
-        },
+            returnTerm: new Date(2020, 5, 12)
+        }
     ];
 
     constructor() { }

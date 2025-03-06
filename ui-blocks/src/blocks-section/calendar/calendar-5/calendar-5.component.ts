@@ -42,7 +42,7 @@ export class Calendar5Component implements OnInit, OnDestroy {
     }
 
     public data: Object[] = [
-        {
+        {   
             header: 'Read a book about UI',
             date: '09:00 AM - 11:00 AM',
             completed: true
@@ -57,7 +57,7 @@ export class Calendar5Component implements OnInit, OnDestroy {
             date: '01:00 PM - 02:00 PM',
             completed: true
         },
-        {
+        {   
             header: 'Coffee break',
             date: '04:00 PM - 04:30 PM',
             completed: false

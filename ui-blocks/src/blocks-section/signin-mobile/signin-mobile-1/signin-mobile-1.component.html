@@ -2,7 +2,7 @@
 
 <section class="bg-gray-50 dark:bg-gray-950">
     <div class="flex justify-center min-h-screen">
-        <div class="w-full max-w-md rounded-lg p-4 p-md-6 py-12">
+        <div class="w-full max-w-md rounded-lg p-4 py-12">
             <div class="flex justify-center mb-6">
                 <img class="mr-2" src="assets/images/common/brand-logos/svg/vector.svg" alt="company logo" />
                 <h2 class="text-center text-xl text-gray-900 dark:text-white font-semibold">Company Name</h2>
@@ -21,7 +21,7 @@
                     </div>
                 </div>
                 <div class="e-bigger mt-6">
-                    <button ejs-button class="w-full text-lg e-primary e-btn" type="submit" aria-label="continue" role="button">Continue</button>
+                    <button ejs-button class="w-full text-lg e-primary" type="submit" aria-label="continue" role="button">Continue</button>
                 </div>
             </form>
         </div>
@@ -45,16 +45,16 @@
         <form action="#" class="mt-4" onsubmit="event.preventDefault();">
             <div class="d-flex justify-content-center gap-3 row p-0">
                 <div class="col-4 col-lg-3 p-0">
-                    <label class="form-label fw-medium text-dark-emphasis small">Country code</label>
+                    <label class="form-label mb-1 fw-medium text-dark-emphasis small">Country code</label>
                     <ejs-dropdownlist class="e-bigger" placeholder="+1" (beforeOpen)="$event.cancel = true;" aria-label="choose your country code" role="listbox"></ejs-dropdownlist>
                 </div>
                 <div class="col-7 col-lg-8 m-0">
-                    <label class="form-label fw-medium text-dark-emphasis small">Mobile number</label>
+                    <label class="form-label mb-1 fw-medium text-dark-emphasis small">Mobile number</label>
                     <ejs-maskedtextbox class="e-bigger" mask="9999999999" promptChar=" " placeholder="432 432 4321" aria-label="enter your mobile number" role="textbox"></ejs-maskedtextbox>
                 </div>
             </div>
             <div class="mt-4 e-bigger">
-                <button ejs-button class="e-btn e-block e-primary" type="submit" aria-label="continue" role="button">Continue</button>
+                <button ejs-button class="e-block e-primary" type="submit" aria-label="continue" role="button">Continue</button>
             </div>
         </form>
     </div>

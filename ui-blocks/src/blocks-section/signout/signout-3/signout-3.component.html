@@ -1,7 +1,7 @@
 @if (currentTheme === 'tailwind') {
 
 <section class="bg-gray-50 dark:bg-gray-950">
-    <div class="flex flex-col lg:flex-row mx-auto p-0 min-h-screen">
+    <div class="flex flex-col lg:flex-row mx-auto p-0" style="min-height: 580px;">
         <div class="w-full lg:w-7/12 px-6 py-14 bg-green-600 text-white flex items-center" style="background-image: url('assets/images/authentication/feature-list/feature-list.png'); background-size: cover; background-repeat: no-repeat;">
             <div class="flex flex-wrap mx-0 w-full sm:p-6 xl:p-0 md:p-8 lg:px-6">
                 <div class="hidden xl:block xl:w-1/6"></div>
@@ -31,21 +31,23 @@
             </div>
         </div>
         <div class="w-full lg:w-5/12">
-            <div class="bg-gray-50 dark:bg-gray-950 py-12">
-                <div class="flex items-center justify-center pt-12">
-                    <img class="mr-2" src="assets/images/common/brand-logos/svg/vector.svg" alt="company logo" />
-                    <h2 class="text-center text-xl font-semibold text-gray-900 dark:text-white">Company Name</h2>
-                </div>
-                <div class="flex items-center justify-center pt-20 pb-">
-                    <div class="w-full max-w-md bg-content-white rounded-lg p-6">
-                        <div>
-                            <h2 class="text-2xl font-semibold text-center mb-2 text-gray-900 dark:text-white">You have signed out!</h2>
-                            <p class="text-md text-center text-gray-700 dark:text-gray-300">Redirecting in 5 seconds</p>
+            <div class="bg-gray-50 dark:bg-gray-950">
+                <div class="py-12">
+                    <div class="flex items-center justify-center">
+                        <img class="mr-2" src="assets/images/common/brand-logos/svg/vector.svg" alt="company logo" />
+                        <h2 class="text-center text-xl font-semibold text-gray-900 dark:text-white">Company Name</h2>
+                    </div>
+                    <div class="flex items-center justify-center pt-20">
+                        <div class="w-full max-w-md bg-content-white rounded-lg p-6">
+                            <div>
+                                <h2 class="text-2xl font-semibold text-center mb-2 text-gray-900 dark:text-white">You have signed out!</h2>
+                                <p class="text-md text-center text-gray-700 dark:text-gray-300">Redirecting in 5 seconds</p>
+                            </div>
+                            <span class="flex items-center justify-center gap-2 mt-7">
+                                <p class="text-center text-base text-gray-900 dark:text-white">Go to</p>
+                                <a href="javascript:void(0);" class="text-primary-600 dark:text-primary-400 font-medium text-base p-0" aria-label="sign in" role="link">Sign in</a>
+                            </span>
                         </div>
-                        <span class="flex items-center justify-center gap-2 mt-7">
-                            <p class="text-center text-base text-gray-900 dark:text-white">Go to</p>
-                            <a href="javascript:void(0);" class="text-primary-600 dark:text-primary-400 font-medium text-base p-0" aria-label="sign in" role="link">Sign in</a>
-                        </span>
                     </div>
                 </div>
             </div>
@@ -55,7 +57,7 @@
 
 } @else if (currentTheme === 'bootstrap5.3') {
 
-<section class="container-fluid d-md-flex d-block flex-wrap mx-auto p-0 min-vh-100">
+<section class="container-fluid d-md-flex d-block flex-wrap mx-auto p-0" style="min-height: 580px;">
     <div class="col-12 col-lg-7 d-flex align-items-center bg-success p-4 p-lg-4" style="background-image: url('assets/images/authentication/feature-list/feature-list.png'); background-size: cover; background-repeat: no-repeat;">
         <div class="row mx-0 w-100 py-5">
             <div class="col-xl-2 d-lg-block"></div>

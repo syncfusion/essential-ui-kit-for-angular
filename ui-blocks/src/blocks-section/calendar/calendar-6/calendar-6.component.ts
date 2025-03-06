@@ -4,8 +4,8 @@ import { ButtonModule, ChipListModule } from '@syncfusion/ej2-angular-buttons';
 import { TimelineModule } from '@syncfusion/ej2-angular-layouts';
 import { SidebarModule } from '@syncfusion/ej2-angular-navigations';
 import { DropDownButtonAllModule, DropDownButton } from '@syncfusion/ej2-angular-splitbuttons';
-import { MenuEventArgs } from '@syncfusion/ej2-angular-splitbuttons';
 import { CalendarView, DatePickerModule } from '@syncfusion/ej2-angular-calendars';
+import { MenuEventArgs } from '@syncfusion/ej2-angular-splitbuttons';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Subscription } from 'rxjs';
 

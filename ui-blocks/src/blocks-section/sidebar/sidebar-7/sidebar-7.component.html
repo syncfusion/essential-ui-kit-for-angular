@@ -2,7 +2,7 @@
 
 <section class="bg-white dark:bg-gray-950">
     <div style="height: 605px;">
-        <ejs-sidebar #sidebar class="bg-gray-50 dark:bg-gray-900 !border-r !border-gray-200 dark:!border-gray-700" width="256px" aria-label="main navigation menu" role="complementary" style="display: block;">
+        <ejs-sidebar #sidebar class="bg-gray-50 dark:bg-gray-900 !border-r !border-gray-200 dark:!border-gray-700" width="256px" [isOpen]="true" aria-label="main navigation menu" role="complementary" style="display: block;">
             <div class="flex flex-col h-screen justify-between">
                 <div>
                     <div class="flex items-center p-4">
@@ -68,7 +68,7 @@
 
 <section class="bg-body">
     <div style="height: 630px;">
-        <ejs-sidebar #sidebar width="256px" aria-label="main navigation menu" role="complementary" style="display: block;">
+        <ejs-sidebar #sidebar width="256px" [isOpen]="true" aria-label="main navigation menu" role="complementary" style="display: block;">
             <div class="d-flex flex-column vh-100 justify-content-between">
                 <div>
                     <div class="d-flex align-items-center px-3 pb-3 mt-4">

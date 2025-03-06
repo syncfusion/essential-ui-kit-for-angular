@@ -1,7 +1,7 @@
 @if (currentTheme === 'tailwind') {
 
-<section class="bg-white dark:bg-gray-900 h-100">
-    <div class="w-full pt-5 pb-4 h-screen" style="height: 600px;">
+<section class="bg-white dark:bg-gray-900 h-full">
+    <div class="w-full pt-5 pb-4" style="height: 600px;">
         <div class="px-4 mx-auto lg:px-0" [style]="width">
             <ejs-autocomplete
                 class="e-bigger"
@@ -17,7 +17,7 @@
                     <div class="flex justify-between pl-6 pr-2 py-3">
                         <div class="flex items-center">
                             <div class="indent-0 shrink-0">
-                                <img class="rounded-lg" src="assets/images/search/{{data.image}}" alt="{{data.title.toLowerCase()}} logo" *ngIf="data.image" />
+                                <img class="rounded-xl" src="assets/images/search/{{data.image}}" alt="{{data.title.toLowerCase()}} logo" *ngIf="data.image" />
                                 <span class="e-avatar indent-0 e-avatar-large" [ngClass]="{'text-green-600 bg-green-200 dark:bg-green-800 dark:text-green-200': data.tag === 'Automation', 'text-cyan-600 bg-cyan-100 dark:bg-cyan-800 dark:text-cyan-200': data.tag === 'Logging', 'text-orange-600 bg-orange-100 dark:bg-orange-800 dark:text-orange-200': data.tag === 'Integration'}" *ngIf="data.tag">
                                     <span class="e-icons text-2xl" [ngClass]="{'e-settings': data.tag === 'Automation', 'sf-icon-clock-fast-backward': data.tag === 'Logging', 'e-import-1': data.tag === 'Integration'}"></span>
                                 </span>
@@ -60,19 +60,19 @@
                     <div class="d-flex justify-content-between ps-4 py-2 pe-2" style="text-indent: 0;">
                         <div class="d-flex align-items-center">
                             <div>
-                                <img class="rounded" src="assets/images/search/{{data.image}}" alt="{{data.title.toLowerCase()}} logo" *ngIf="data.image" />
+                                <img class="rounded-3" src="assets/images/search/{{data.image}}" alt="{{data.title.toLowerCase()}} logo" *ngIf="data.image" />
                                 <span class="e-avatar ms-0 e-avatar-large" [ngClass]="{'text-success-emphasis bg-success-subtle': data.tag === 'Automation', 'text-info-emphasis bg-info-subtle': data.tag === 'Logging', 'text-warning-emphasis bg-warning-subtle': data.tag === 'Integration'}" *ngIf="data.tag">
                                     <span class="e-icons fs-2" [ngClass]="{'e-settings': data.tag === 'Automation', 'sf-icon-clock-fast-backward': data.tag === 'Logging', 'e-import-1': data.tag === 'Integration'}"></span>
                                 </span>
                             </div>
                             <div class="mx-2">
-                                <div class="fw-medium text-body m-0 lh-base !fs-6">{{data.title}}</div>
+                                <div class="fw-medium text-body m-0 lh-base fs-6">{{data.title}}</div>
                                 <p class="text-body-secondary text-wrap m-0 lh-base fw-normal">{{data.text}}</p>
                             </div>
                         </div>
                         <div [ngStyle]="{'width': data.avatar?.length > 0 ? '40%' : 'auto'}">
                             <div *ngIf="data.avatar" class="d-flex position-relative align-items-center h-100">
-                                <span *ngFor="let img of data.avatar; let i = index" class="position-absolute rounded-circle overflow-hidden" style="width: 32px; height: 32px;" [ngStyle]="{'right': i * 22 + 'px'}">
+                                <span *ngFor="let img of data.avatar; let i = index" class="position-absolute e-avatar e-avatar-circle overflow-hidden" style="width: 32px; height: 32px;" [ngStyle]="{'right': i * 22 + 'px'}">
                                     <img [src]="'assets/images/common/avatar/' + img" class="w-100 h-100 object-cover" alt="logo" />
                                 </span>
                             </div>

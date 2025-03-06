@@ -1,0 +1,69 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-white dark:bg-gray-800">
+    <div style="min-height: 36rem;">
+        <div class="border-b border-gray-200 dark:border-gray-600">
+            <div class="px-4 sm:px-6 py-4 sm:py-3 flex items-center justify-between">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Employee Attendance</h3>
+                <div class="flex gap-2">
+                    <button ejs-button type="button" aria-label="export pdf" role="button">
+                        <div class="flex items-center gap-1">
+                            <span class="e-icons e-export-pdf e-medium"></span>
+                            <span class="ml-1 hidden sm:flex">Export PDF</span>
+                        </div>
+                    </button>
+                    <button ejs-button class="block lg:hidden" iconCss="e-icons e-more-vertical-1" type="button" aria-label="more" role="button"></button>
+                </div>
+            </div>
+        </div>
+        <div class="px-6 py-3 space-x-4 hidden lg:flex items-center">
+            <ejs-datepicker placeholder="Start date" aria-label="select a start date here" role="combobox"></ejs-datepicker>
+            <span class="text-sm font-normal text-gray-900 dark:text-white">to</span>
+            <ejs-datepicker placeholder="End date" aria-label="select a end date here" role="combobox"></ejs-datepicker>
+            <div class="flex gap-3 items-center">
+                <div class="space-x-2 flex items-center">
+                    <label class="text-sm font-normal text-gray-900 dark:text-white text-nowrap">Select Range:</label>
+                    <ejs-dropdownlist [dataSource]="['Last Week', 'Last Month', 'Last Year', 'Custom Range']" placeholder="Select range" aria-label="choose the range" role="listbox"></ejs-dropdownlist>
+                </div>
+                <div class="h-5 border-l border-gray-200 dark:border-gray-600"></div>
+                <button ejs-button content="Generate report" type="button" aria-label="generate report" role="button"></button>
+            </div>
+        </div>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body">
+    <div style="min-height: 36rem;">
+        <div class="border-bottom">
+            <div class="px-3 px-sm-4 py-2 d-flex align-items-center justify-content-between">
+                <h3 class="fs-5 fw-bold text-body mb-0">Employee Attendance</h3>
+                <div class="d-flex gap-2">
+                    <button ejs-button cssClass="e-outline" type="button" aria-label="export pdf" role="button">
+                        <div class="d-flex align-items-center gap-1">
+                            <span class="e-icons e-export-pdf e-medium"></span>
+                            <span class="ms-1 d-none d-md-flex">Export PDF</span>
+                        </div>
+                    </button>
+                    <button ejs-button class="d-block d-lg-none" cssClass="e-outline" iconCss="e-icons e-more-vertical-1" type="button" aria-label="more" role="button"></button>
+                </div>
+            </div>
+        </div>
+        <div class="px-4 py-3 d-none d-lg-flex align-items-center gap-3">
+            <ejs-datepicker placeholder="Start date" aria-label="select a start date here" role="combobox"></ejs-datepicker>
+            <span class="fs-6 fw-normal text-body">to</span>
+            <ejs-datepicker placeholder="End date" aria-label="select a end date here" role="combobox"></ejs-datepicker>
+            <div class="d-flex align-items-center gap-3">
+                <div class="d-flex align-items-center gap-2">
+                    <label class="fs-6 fw-normal text-body text-nowrap">Select Range:</label>
+                    <ejs-dropdownlist [dataSource]="['Last Week', 'Last Month', 'Last Year', 'Custom Range']" placeholder="Select range" aria-label="choose the range" role="listbox"></ejs-dropdownlist>
+                </div>
+                <div class="border-start" style="height: 16px;"></div>
+                <button ejs-button cssClass="e-outline" content="Generate report" type="button" aria-label="generate report" role="button"></button>
+            </div>
+        </div>
+    </div>
+</section>
+    
+}

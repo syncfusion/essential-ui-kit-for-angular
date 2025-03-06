@@ -1,13 +1,12 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AppBarModule, MenuModule } from '@syncfusion/ej2-angular-navigations';
+import { MenuModule } from '@syncfusion/ej2-angular-navigations';
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
-import { TextBoxModule } from '@syncfusion/ej2-angular-inputs';
 
 @Component({
     selector: 'app-navbar-2',
     standalone: true,
-    imports: [CommonModule, AppBarModule, MenuModule, ButtonModule, TextBoxModule],
+    imports: [CommonModule, MenuModule, ButtonModule],
     templateUrl: './navbar-2.component.html',
     styleUrl: './navbar-2.component.css'
 })
