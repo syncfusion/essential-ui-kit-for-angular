@@ -23,7 +23,9 @@
             <div class="flex gap-3 items-center">
                 <div class="space-x-2 flex items-center">
                     <label class="text-sm font-normal text-gray-900 dark:text-white text-nowrap">Select Range:</label>
-                    <ejs-dropdownlist [dataSource]="['Last Week', 'Last Month', 'Last Year', 'Custom Range']" placeholder="Select range" aria-label="choose the range" role="listbox"></ejs-dropdownlist>
+                    <span class="w-44">
+                        <ejs-dropdownlist [dataSource]="['Last Week', 'Last Month', 'Last Year', 'Custom Range']" placeholder="Select range" aria-label="choose the range" role="listbox"></ejs-dropdownlist>
+                    </span>
                 </div>
                 <div class="h-5 border-l border-gray-200 dark:border-gray-600"></div>
                 <button ejs-button content="Generate report" type="button" aria-label="generate report" role="button"></button>
@@ -57,7 +59,9 @@
             <div class="d-flex align-items-center gap-3">
                 <div class="d-flex align-items-center gap-2">
                     <label class="fs-6 fw-normal text-body text-nowrap">Select Range:</label>
-                    <ejs-dropdownlist [dataSource]="['Last Week', 'Last Month', 'Last Year', 'Custom Range']" placeholder="Select range" aria-label="choose the range" role="listbox"></ejs-dropdownlist>
+                    <span style="width: 182px;">
+                        <ejs-dropdownlist [dataSource]="['Last Week', 'Last Month', 'Last Year', 'Custom Range']" placeholder="Select range" aria-label="choose the range" role="listbox"></ejs-dropdownlist>
+                    </span>
                 </div>
                 <div class="border-start" style="height: 16px;"></div>
                 <button ejs-button cssClass="e-outline" content="Generate report" type="button" aria-label="generate report" role="button"></button>
