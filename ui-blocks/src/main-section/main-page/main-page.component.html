@@ -2,7 +2,7 @@
 <div class="main-container">
     <div class="main-container-header">
         <h1 class="main-title">Develop Apps Faster with Pre-Built Blocks</h1>
-        <p class="main-description">Accelerate your web app development with 160+ responsive blocks for Angular, fully compatible with Tailwind and Bootstrap 5.3.</p>
+        <p class="main-description">Accelerate your web app development with 175+ responsive blocks for Angular, fully compatible with Tailwind and Bootstrap 5.3.</p>
         <div class="button-container">
             <a href="https://www.syncfusion.com/feedback/angular" target="_blank" class="request-btn" role="button" tabindex="0" aria-label="Request a block">Request a Block</a>
             <a href="https://www.figma.com/@Syncfusion" target="_blank" class="figma-btn" role="button" tabindex="0" aria-label="Download Figma">
@@ -27,7 +27,12 @@
                     <div class="component-list-container">
                         <ul class="components">
                             <li class="component-list" *ngFor="let block of currentBlocks" (click)="navigateToDemo(block.url)" (keydown.enter)="navigateToDemo(block.url)" (keydown.space)="navigateToDemo(block.url)" [title]="block.name" role="button" tabindex="0">
-                                <div class="component-list-text">{{ block.name }}<span *ngIf="block.isNew">New</span></div>
+                                <div class="component-list-text">
+                                    {{ block.name }}
+                                    <span *ngIf="block.isNew || block.isUpdated" [ngClass]="{ 'newStatus': block.isNew, 'updatedStatus': block.isUpdated, 'sampleStatus':true }">
+                                        {{ block.isNew ? 'New' : (block.isUpdated ? 'Updated' : '') }}
+                                    </span>
+                                </div>
                                 <div class="component-count">{{ block.subBlockList.length + " Blocks" }}</div>
                             </li>
                         </ul>
@@ -39,7 +44,12 @@
                                     <img [src]="'assets/images/sample-browser/' + block.url + '.png'" alt="{{ block.name }} - Image" style="height: 100%; width: 100%;" />
                                 </div>
                                 <div class="block-footer" [title]="block.name">
-                                    <div class="block-title">{{ block.name }}<span *ngIf="block.isNew">New</span></div>
+                                    <div class="block-title">
+                                        {{ block.name }}
+                                        <span *ngIf="block.isNew || block.isUpdated" [ngClass]="{ 'newStatus': block.isNew, 'updatedStatus': block.isUpdated, 'sampleStatus':true }">
+                                            {{ block.isNew ? 'New' : (block.isUpdated ? 'Updated' : '') }}
+                                        </span>
+                                    </div>
                                     <div class="block-count">
                                         <div class="block-count-radius">{{ block.subBlockList.length + " Blocks" }}</div>
                                     </div>

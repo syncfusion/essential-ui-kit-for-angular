@@ -7,10 +7,10 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-filter-panel-5',
-  standalone: true,
-  imports: [CommonModule, SidebarModule, ButtonModule, CheckBoxModule, SwitchModule, RadioButtonModule, SliderModule],
-  templateUrl: './filter-panel-5.component.html'
+    selector: 'app-filter-panel-5',
+    standalone: true,
+    imports: [CommonModule, SidebarModule, ButtonModule, CheckBoxModule, SwitchModule, RadioButtonModule, SliderModule],
+    templateUrl: './filter-panel-5.component.html'
 })
 export class FilterPanel5Component implements OnInit, OnDestroy {
     @ViewChild('sidebar') public sidebar?: SidebarComponent;

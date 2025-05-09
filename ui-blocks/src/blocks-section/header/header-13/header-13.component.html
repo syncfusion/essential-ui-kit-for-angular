@@ -31,13 +31,19 @@
         </div>
         <div class="border-b border-gray-200 dark:border-gray-600"></div>
         <div class="hidden lg:flex items-center gap-3 mt-3 px-6">
-            <ejs-textbox type="text" placeholder="Enter email ID" aria-label="enter email id" role="textbox"></ejs-textbox>
-            <button ejs-dropdownbutton #periodDropdown content="Period: Custom" [items]="[{text:'Today'}, {text:'Yesterday'}, {text:'Last 7 Days'}, {text:'Last 30 Days'}, {text:'This Month'}, {text:'Last Month'}, {text:'Custom Range...'}]" type="button" aria-label="choose the period" role="button"></button>
+            <ejs-textbox class="w-40" type="text" placeholder="Enter email ID" aria-label="enter email id" role="textbox"></ejs-textbox>
+            <span class="w-44">
+                <ejs-dropdownlist [dataSource]="['Today', 'Yesterday', 'Last 7 Days', 'Last 30 Days', 'This Month', 'Last Month', 'Custom Range...']" placeholder="Period: Custom" aria-label="choose the period" role="listbox"></ejs-dropdownlist>
+            </span>
             <span class="w-64">
                 <ejs-daterangepicker placeholder="MM/DD/YYYY - MM/DD/YYYY" aria-label="select a date here" role="combobox"></ejs-daterangepicker>
             </span>
-            <button ejs-dropdownbutton #productDropdown content="Product: All" [items]="[{text:'All Products'}, {text:'Product A'}, {text:'Product B'}, {text:'Product C'}, {text:'Product D'}, {text:'Custom Selection...'}]" type="button" aria-label="choose the product" role="button"></button>
-            <button ejs-dropdownbutton #regionDropdown content="Region: All" [items]="[{text:'All Regions'}, {text:'North America'}, {text:'Europe'}, {text:'Asia-Pacific'}, {text:'South America'}, {text:'Middle East & Africa'}, {text:'Custom Region...'}]" type="button" aria-label="choose the region" role="button"></button>
+            <span class="w-44">
+                <ejs-dropdownlist [dataSource]="['All Products', 'Product A', 'Product B', 'Product C', 'Product D', 'Custom Selection...']" placeholder="Product: All" aria-label="choose the product" role="listbox"></ejs-dropdownlist>
+            </span>
+            <span class="w-44">
+                <ejs-dropdownlist [dataSource]="['All Regions', 'North America', 'Europe', 'Asia-Pacific', 'South America', 'Middle East & Africa', 'Custom Region...']" placeholder="Region: All" aria-label="choose the region" role="listbox"></ejs-dropdownlist>
+            </span>
             <div class="h-5 border-l border-gray-200 dark:border-gray-600"></div>
             <button ejs-button content="Reset" type="button" aria-label="reset" role="button"></button>
         </div>
@@ -64,7 +70,7 @@
                 <div class="d-flex align-items-center">
                     <h3 class="fs-5 fw-bold text-body mb-0">Sales Activity</h3>
                 </div>
-                <div class="d-flex gap-4">
+                <div class="d-flex gap-3">
                     <button ejs-button cssClass="e-outline" type="button" aria-label="download" role="button">
                         <div class="d-flex align-items-center gap-1">
                             <span class="e-icons e-download fs-5"></span>
@@ -77,17 +83,17 @@
         </div>
         <div class="border-bottom"></div>
         <div class="d-none d-lg-flex align-items-center gap-3 mt-3 px-4">
-            <ejs-textbox type="text" placeholder="Enter email ID" aria-label="enter email id" role="textbox"></ejs-textbox>
-            <button ejs-dropdownbutton #periodDropdown cssClass="e-outline" content="Period: Custom" [items]="[{text:'Today'}, {text:'Yesterday'}, {text:'Last 7 Days'}, {text:'Last 30 Days'}, {text:'This Month'}, {text:'Last Month'}, {text:'Custom Range...'}]" type="button" aria-label="choose the period" role="button"></button>
+            <ejs-textbox type="text" placeholder="Enter email ID" aria-label="enter email id" role="textbox" style="width: 150px;"></ejs-textbox>
+            <ejs-dropdownlist [dataSource]="['Today', 'Yesterday', 'Last 7 Days', 'Last 30 Days', 'This Month', 'Last Month', 'Custom Range...']" placeholder="Period: Custom" aria-label="choose the period" role="listbox"></ejs-dropdownlist>
             <span style="width: 242px;">
                 <ejs-daterangepicker placeholder="MM/DD/YYYY - MM/DD/YYYY" aria-label="select a date here" role="combobox"></ejs-daterangepicker>
             </span>
-            <button ejs-dropdownbutton #productDropdown cssClass="e-outline" content="Product: All" [items]="[{text:'All Products'}, {text:'Product A'}, {text:'Product B'}, {text:'Product C'}, {text:'Product D'}, {text:'Custom Selection...'}]" type="button" aria-label="choose the product" role="button"></button>
-            <button ejs-dropdownbutton #regionDropdown cssClass="e-outline" content="Region: All" [items]="[{text:'All Regions'}, {text:'North America'}, {text:'Europe'}, {text:'Asia-Pacific'}, {text:'South America'}, {text:'Middle East & Africa'}, {text:'Custom Region...'}]" type="button" aria-label="choose the region" role="button"></button>
-            <div class="border-start border-secondary" style="height: 16px;"></div>
+            <ejs-dropdownlist [dataSource]="['All Products', 'Product A', 'Product B', 'Product C', 'Product D', 'Custom Selection...']" placeholder="Product: All" aria-label="choose the product" role="listbox"></ejs-dropdownlist>
+            <ejs-dropdownlist [dataSource]="['All Regions', 'North America', 'Europe', 'Asia-Pacific', 'South America', 'Middle East & Africa', 'Custom Region...']" placeholder="Region: All" aria-label="choose the region" role="listbox"></ejs-dropdownlist>
+            <div class="border-start" style="height: 16px;"></div>
             <button ejs-button cssClass="e-outline" content="Reset" type="button" aria-label="reset" role="button"></button>
         </div>
     </div>
-</section>    
+</section>
 
 }

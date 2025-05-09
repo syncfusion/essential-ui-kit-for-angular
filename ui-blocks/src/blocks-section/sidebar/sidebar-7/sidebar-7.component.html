@@ -21,7 +21,7 @@
                         </div>
                     </div>
                     <div>
-                        <ejs-listview class="border-0" [dataSource]="data1" [template]="itemTemplate1" aria-label="main navigation links" role="list">
+                        <ejs-listview class="border-0" [dataSource]="navigationMenu" [template]="itemTemplate1" aria-label="main navigation links" role="list">
                             <ng-template #itemTemplate1 let-data>
                                 <div class="e-list-wrapper flex items-center px-1">
                                     <span class="e-icons {{data.fontIcon}} text-base"></span>
@@ -32,7 +32,7 @@
                     </div>
                     <hr class="m-4 border-gray-200 dark:border-gray-700" />
                     <div>
-                        <ejs-listview class="border-0" [dataSource]="data2" [template]="itemTemplate2" aria-label="other navigation links" role="list">
+                        <ejs-listview class="border-0" [dataSource]="supportMenu" [template]="itemTemplate2" aria-label="other navigation links" role="list">
                             <ng-template #itemTemplate2 let-data>
                                 <div class="e-list-wrapper flex items-center px-1">
                                     <span class="e-icons {{data.fontIcon}}"></span>
@@ -87,7 +87,7 @@
                         </div>
                     </div>
                     <div class="mt-3">
-                        <ejs-listview class="border-0 e-bigger" [dataSource]="data1" [template]="itemTemplate1" aria-label="main navigation links" role="list">
+                        <ejs-listview class="border-0 e-bigger" [dataSource]="navigationMenu" [template]="itemTemplate1" aria-label="main navigation links" role="list">
                             <ng-template #itemTemplate1 let-data>
                                 <div class="e-list-wrapper d-flex align-items-center px-1">
                                     <span class="e-icons {{data.fontIcon}} fs-6"></span>
@@ -98,7 +98,7 @@
                     </div>
                     <p class="m-3 fs-6 text-body-secondary">Others</p>
                     <div>
-                        <ejs-listview class="border-0 e-bigger" [dataSource]="data2" [template]="itemTemplate2" aria-label="other navigation links" role="list">
+                        <ejs-listview class="border-0 e-bigger" [dataSource]="supportMenu" [template]="itemTemplate2" aria-label="other navigation links" role="list">
                             <ng-template #itemTemplate2 let-data>
                                 <div class="e-list-wrapper d-flex align-items-center px-1">
                                     <span class="e-icons {{data.fontIcon}}"></span>

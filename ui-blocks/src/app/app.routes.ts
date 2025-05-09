@@ -202,6 +202,8 @@ import { Statistics7Component } from '../blocks-section/statistics/statistics-7/
 import { Statistics8Component } from '../blocks-section/statistics/statistics-8/statistics-8.component';
 import { Statistics9Component } from '../blocks-section/statistics/statistics-9/statistics-9.component';
 import { Statistics10Component } from '../blocks-section/statistics/statistics-10/statistics-10.component';
+import { Statistics11Component } from '../blocks-section/statistics/statistics-11/statistics-11.component';
+import { Statistics12Component } from '../blocks-section/statistics/statistics-12/statistics-12.component';
 
 import { FilterPanelDemoComponent } from '../blocks-section/filter-panel/filter-panel-demo/filter-panel-demo.component';
 import { FilterPanel1Component } from '../blocks-section/filter-panel/filter-panel-1/filter-panel-1.component';
@@ -222,6 +224,21 @@ import { Modals5Component } from '../blocks-section/modals/modals-5/modals-5.com
 import { Modals6Component } from '../blocks-section/modals/modals-6/modals-6.component';
 import { Modals7Component } from '../blocks-section/modals/modals-7/modals-7.component';
 import { Modals8Component } from '../blocks-section/modals/modals-8/modals-8.component';
+import { Modals9Component } from '../blocks-section/modals/modals-9/modals-9.component';
+import { Modals10Component } from '../blocks-section/modals/modals-10/modals-10.component';
+import { Modals11Component } from '../blocks-section/modals/modals-11/modals-11.component';
+
+import { NotificationDemoComponent } from '../blocks-section/notification/notification-demo/notification-demo.component';
+import { Notification1Component } from '../blocks-section/notification/notification-1/notification-1.component';
+import { Notification2Component } from '../blocks-section/notification/notification-2/notification-2.component';
+import { Notification3Component } from '../blocks-section/notification/notification-3/notification-3.component';
+import { Notification4Component } from '../blocks-section/notification/notification-4/notification-4.component';
+import { Notification5Component } from '../blocks-section/notification/notification-5/notification-5.component';
+import { Notification6Component } from '../blocks-section/notification/notification-6/notification-6.component';
+import { Notification7Component } from '../blocks-section/notification/notification-7/notification-7.component';
+import { Notification8Component } from '../blocks-section/notification/notification-8/notification-8.component';
+import { Notification9Component } from '../blocks-section/notification/notification-9/notification-9.component';
+import { Notification10Component } from '../blocks-section/notification/notification-10/notification-10.component';
 
 import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
 
@@ -430,6 +447,8 @@ export const routes: Routes = [
   { path: 'blocks/statistics-8', component: Statistics8Component },
   { path: 'blocks/statistics-9', component: Statistics9Component },
   { path: 'blocks/statistics-10', component: Statistics10Component },
+  { path: 'blocks/statistics-11', component: Statistics11Component },
+  { path: 'blocks/statistics-12', component: Statistics12Component },
 
   { path: 'blocks/filter-panel', component: FilterPanelDemoComponent },
   { path: 'blocks/filter-panel-1', component: FilterPanel1Component },
@@ -450,6 +469,21 @@ export const routes: Routes = [
   { path: 'blocks/modals-6', component: Modals6Component },
   { path: 'blocks/modals-7', component: Modals7Component },
   { path: 'blocks/modals-8', component: Modals8Component },
+  { path: 'blocks/modals-9', component: Modals9Component },
+  { path: 'blocks/modals-10', component: Modals10Component },
+  { path: 'blocks/modals-11', component: Modals11Component },
+
+  { path: 'blocks/notification', component: NotificationDemoComponent },
+  { path: 'blocks/notification-1', component: Notification1Component },
+  { path: 'blocks/notification-2', component: Notification2Component },
+  { path: 'blocks/notification-3', component: Notification3Component },
+  { path: 'blocks/notification-4', component: Notification4Component },
+  { path: 'blocks/notification-5', component: Notification5Component },
+  { path: 'blocks/notification-6', component: Notification6Component },
+  { path: 'blocks/notification-7', component: Notification7Component },
+  { path: 'blocks/notification-8', component: Notification8Component },
+  { path: 'blocks/notification-9', component: Notification9Component },
+  { path: 'blocks/notification-10', component: Notification10Component },
 
   { path: '**', component: PageNotFoundComponent }
 ];

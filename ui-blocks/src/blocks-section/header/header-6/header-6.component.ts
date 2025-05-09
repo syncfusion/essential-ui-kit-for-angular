@@ -5,17 +5,16 @@ import { DropDownButtonModule, DropDownButtonComponent } from '@syncfusion/ej2-a
 import { ButtonModule, ChipListModule } from '@syncfusion/ej2-angular-buttons';
 
 @Component({
-  selector: 'app-header-6',
-  standalone: true,
-  imports: [CommonModule, TabModule, DropDownButtonModule, ButtonModule, ChipListModule],
-  templateUrl: './header-6.component.html',
-  styleUrl: './header-6.component.css'
+    selector: 'app-header-6',
+    standalone: true,
+    imports: [CommonModule, TabModule, DropDownButtonModule, ButtonModule, ChipListModule],
+    templateUrl: './header-6.component.html'
 })
 export class Header6Component implements OnInit, OnDestroy {
     @ViewChild('tab') tab!: TabComponent;
     @ViewChild('dropdown') public dropdown!: DropDownButtonComponent;
     public overflowMode: string = 'Popup';
-    public headerData: any = {new:156, verificationDue:23, approvalDue:18};
+    public headerData: any = { new: 156, verificationDue: 23, approvalDue: 18 };
     /* SB Code - Start */
     public currentTheme: string = 'tailwind';
     /* SB Code - End */
@@ -28,7 +27,7 @@ export class Header6Component implements OnInit, OnDestroy {
         this.tab.refresh();
         /* SB Code - End */
     }
-   
+
     public ngAfterViewInit(): void {
         /* SB Code - Start */
         setTimeout(() => {
@@ -72,7 +71,7 @@ export class Header6Component implements OnInit, OnDestroy {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'header-6' && blockData.theme) {
                     this.currentTheme = blockData.theme;
-                     setTimeout(() => {
+                    setTimeout(() => {
                         this.tab.refresh();
                     }, 250);
                 }

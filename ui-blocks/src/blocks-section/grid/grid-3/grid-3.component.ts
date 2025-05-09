@@ -28,7 +28,7 @@ export class Grid3Component implements OnInit, OnDestroy {
         /* SB Code - End */
     }
 
-    public data: Object[] = [
+    public gridData: Object[] = [
         {
             id: 1,
             invoiceId: "INV202401",

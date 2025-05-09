@@ -30,7 +30,7 @@ export class Checkout5Component implements OnInit, OnDestroy {
         /* SB Code - End */
     }
 
-    @HostListener('window:resize', ['$event'])
+    @HostListener('window:resize')
     public onResize(): void {
         this.checkout.refresh();
     }

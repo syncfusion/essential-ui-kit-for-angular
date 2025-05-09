@@ -1,0 +1,149 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-gray-50 dark:bg-gray-950">
+    <div class="relative h-screen mx-auto" style="max-width: 480px;">
+        <div class="w-full flex justify-end p-4 absolute right-0 top-0" style="min-height: 730px;">
+            <div class="relative w-8 h-8">
+                <button #button ejs-button class="e-outline e-round" iconCss="sf-icon-notification-bell-02" type="button" (click)="toggleDialog()" aria-label="show/hide notification" role="button"></button>
+                <span class="e-badge e-badge-danger e-badge-notification e-badge-overlap e-badge-circle mt-1 mr-2">4</span>
+            </div>
+        </div>
+    </div>
+    <ejs-dialog #dialog id="notification" class="!bg-white dark:!bg-gray-800 rounded-lg overflow-hidden !border" width="443px" (open)="setDialogPosition($event)" (created)="dialog.show()" aria-label="chat notification" role="dialog">
+        <ng-template #header>
+            <div class="flex justify-between items-center p-4 md:py-2.5">
+                <div class="flex items-center gap-2 h-6">
+                    <span class="e-icons e-arrow-left !text-2xl !text-gray-500 dark:!text-gray-300"></span>
+                    <h1 class="text-base md:text-lg text-gray-900 dark:text-white font-medium">Notifications</h1>
+                </div>
+                <button #dropdown ejs-dropdownbutton class="e-flat e-small" cssClass="e-caret-hide" [items]="[ { text: 'Mark all as read', iconCss: 'e-icons e-link' }, { text: 'Notification settings', iconCss: 'e-icons e-settings' } ]" iconCss="e-icons e-more-vertical-1" type="button" aria-label="notification options" role="button"></button>
+            </div>
+        </ng-template>
+        <ng-template #content>
+            <ejs-tab>
+                <e-tabitems>
+                    <e-tabitem>
+                        <ng-template #headerText>
+                            <div class="w-full">Messages</div>
+                        </ng-template>
+                        <ng-template #content>
+                            <div class="px-3 py-2 mt-2 border-b border-gray-200 dark:border-gray-600">
+                                <ejs-chiplist class="flex items-center gap-2" selection="Single" [selectedChips]="[0]">
+                                    <e-chips>
+                                        <e-chip cssClass="e-outline !rounded !m-0" text="All"></e-chip>
+                                        <e-chip cssClass="e-outline !rounded !m-0" text="Unread"></e-chip>
+                                        <e-chip cssClass="e-outline !rounded !m-0" text="@mentions"></e-chip>
+                                    </e-chips>
+                                </ejs-chiplist>
+                            </div>
+                            <div class="p-3 sm:py-2">
+                                <p class="text-sm md:text-xs font-medium text-gray-900 dark:text-white">Important</p>
+                            </div>
+                            <ejs-listview class="border-0" [dataSource]="chatData" height="445px" aria-label="recent notification" role="list">
+                                <ng-template #template let-data>
+                                    <div class="flex gap-2 py-3 px-4 sm:px-3 border-b border-gray-200 dark:border-gray-600">
+                                        <div class="shrink-0">
+                                            <span [ngClass]="{'e-avatar e-avatar-circle': true, '!bg-red-100 !text-red-700 dark:!text-red-400': data.colorTheme === 'Red', '!bg-green-100 !text-green-700 dark:!text-green-500': data.colorTheme === 'Green', '!bg-cyan-100 !text-cyan-700 dark:!text-cyan-600': data.colorTheme === 'Blue', '!bg-orange-100 !text-orange-700 dark:!text-orange-500': data.colorTheme === 'Orange'}" *ngIf="data.initial!=''">{{data.initial}}</span>
+                                        </div>
+                                        <div class="w-full flex justify-between">
+                                            <div class="flex flex-col gap-0.5 text-sm text-gray-900 dark:text-white">
+                                                <p><span class="font-medium">{{data.sender}}</span> messaged you</p>
+                                                <p>{{data.content}}</p>
+                                                <p>In chat with you.</p>
+                                            </div>
+                                            <p class="text-xs text-gray-500 dark:text-gray-400 text-end w-14 shrink-0">{{data.time}}</p>
+                                        </div>
+                                    </div>
+                                </ng-template>
+                            </ejs-listview>
+                        </ng-template>
+                    </e-tabitem>
+                    <e-tabitem>
+                        <ng-template #headerText>
+                            <div class="w-full">Calls</div>
+                        </ng-template>
+                        <ng-template #content>
+                            <div class="text-center py-6" style="min-height: 340px;">No records found</div>
+                        </ng-template>
+                    </e-tabitem>
+                </e-tabitems>
+            </ejs-tab>
+        </ng-template>
+    </ejs-dialog>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body">
+    <div class="position-relative vh-100 mx-auto" style="max-width: 480px;">
+        <div class="w-100 d-flex justify-content-end p-3 position-absolute top-0 end-0" style="min-height: 830px;">
+            <div class="position-relative" style="width: 32px; height: 32px;">
+                <button #button ejs-button class="e-outline e-round" iconCss="sf-icon-notification-bell-02" type="button" (click)="toggleDialog()" aria-label="show/hide notification" role="button"></button>
+                <span class="e-badge e-badge-danger e-badge-notification e-badge-overlap e-badge-circle mt-1 me-2">4</span>
+            </div>
+        </div>
+    </div>
+    <ejs-dialog #dialog id="notification" class="bg-body rounded overflow-hidden border" width="448px" (open)="setDialogPosition($event)" (created)="dialog.show()" aria-label="chat notification" role="dialog">
+        <ng-template #header>
+            <div class="d-flex justify-content-between align-items-center p-3">
+                <div class="d-flex align-items-center gap-2">
+                    <span class="e-icons e-arrow-left fs-5 text-body-secondary"></span>
+                    <h1 class="fs-6 text-body fw-medium m-0">Notifications</h1>
+                </div>
+                <button #dropdown ejs-dropdownbutton class="e-flat e-small e-inherit" cssClass="e-caret-hide" iconCss="e-icons e-more-vertical-1" [items]="[ { text: 'Mark all as read', iconCss: 'e-icons e-link' }, { text: 'Notification settings', iconCss: 'e-icons e-settings' } ]" type="button" aria-label="notification options" role="button"></button>
+            </div>
+        </ng-template>
+        <ng-template #content>
+            <ejs-tab id="tab" class="mt-3">
+                <e-tabitems>
+                    <e-tabitem>
+                        <ng-template #headerText>
+                            <div class="w-100">Messages</div>
+                        </ng-template>
+                        <ng-template #content>
+                            <div class="px-3 py-2 mt-3">
+                                <ejs-chiplist class="d-flex align-items-center gap-2" selection="Single" [selectedChips]="[0]">
+                                    <e-chips>
+                                        <e-chip cssClass="e-outline rounded m-0" text="All"></e-chip>
+                                        <e-chip cssClass="e-outline rounded m-0" text="Unread"></e-chip>
+                                        <e-chip cssClass="e-outline rounded m-0" text="@mentions"></e-chip>
+                                    </e-chips>
+                                </ejs-chiplist>
+                            </div>
+                            <div class="px-3 py-2">
+                                <p class="small fw-medium text-body m-0">Important</p>
+                            </div>
+                            <ejs-listview class="border-0 rounded-0" [dataSource]="chatData" height="520px" aria-label="recent notification" role="list">
+                                <ng-template #template let-data>
+                                    <div class="d-flex gap-2 p-3">
+                                        <div class="flex-shrink-0">
+                                            <span *ngIf="data.initial !== ''" [ngClass]="{'e-avatar e-avatar-circle': true, 'bg-danger-subtle text-danger': data.colorTheme === 'Red', 'bg-success-subtle text-success': data.colorTheme === 'Green', 'bg-info-subtle text-info': data.colorTheme === 'Blue', 'bg-warning-subtle text-warning-emphasis': data.colorTheme === 'Orange',}">{{ data.initial }}</span>
+                                        </div>
+                                        <div class="w-100 d-flex justify-content-between">
+                                            <div class="d-flex flex-column gap-1 lh-base">
+                                                <p class="m-0"><span class="fw-medium">{{data.sender}}</span> messaged you</p>
+                                                <p class="m-0">{{data.content}}</p>
+                                                <p class="m-0">In chat with you.</p>
+                                            </div>
+                                            <p class="small text-end flex-shrink-0 m-0">{{data.time}}</p>
+                                        </div>
+                                    </div>
+                                </ng-template>
+                            </ejs-listview>
+                        </ng-template>
+                    </e-tabitem>
+                    <e-tabitem>
+                        <ng-template #headerText>
+                            <div class="w-100">Calls</div>
+                        </ng-template>
+                        <ng-template #content>
+                            <div class="text-center py-4" style="min-height: 340px;">No records found</div>
+                        </ng-template>
+                    </e-tabitem>
+                </e-tabitems>
+            </ejs-tab>
+        </ng-template>
+    </ejs-dialog> 
+</section>
+
+}

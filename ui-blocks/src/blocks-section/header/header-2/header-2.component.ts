@@ -3,11 +3,10 @@ import { TabModule, TabComponent } from '@syncfusion/ej2-angular-navigations';
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 
 @Component({
-  selector: 'app-header-2',
-  standalone: true,
-  imports: [TabModule, ButtonModule],
-  templateUrl: './header-2.component.html',
-  styleUrl: './header-2.component.css'
+    selector: 'app-header-2',
+    standalone: true,
+    imports: [TabModule, ButtonModule],
+    templateUrl: './header-2.component.html'
 })
 export class Header2Component implements OnInit, OnDestroy {
     @ViewChild('tab') tab!: TabComponent;
@@ -41,7 +40,7 @@ export class Header2Component implements OnInit, OnDestroy {
         /* SB Code - End */
     }
      
-    @HostListener('window:resize', ['$event'])
+    @HostListener('window:resize')
     public onResize(): void {
         this.updateTabItems();
     }

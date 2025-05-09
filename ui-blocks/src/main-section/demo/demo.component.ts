@@ -276,7 +276,7 @@ export class DemoComponent implements OnInit, AfterViewInit, OnDestroy {
 
         switch (themeName) {
             case 'tailwind-light':
-                syncfusionStyleUrl = 'https://cdn.syncfusion.com/ej2/27.1.48/tailwind.css';
+                syncfusionStyleUrl = 'https://cdn.syncfusion.com/ej2/29.1.38/tailwind.css';
                 frameworkStyleUrl = 'assets/themes/tailwind/tailwind.css';
                 frameworkSupportStyleUrl = 'assets/themes/tailwind/indigo.css';
                 fontIconsUrl = 'assets/font-icons/tailwind/tailwind-icons.css';
@@ -284,7 +284,7 @@ export class DemoComponent implements OnInit, AfterViewInit, OnDestroy {
                 this.themeIndex = 0;
                 break;
             case 'tailwind-dark':
-                syncfusionStyleUrl = 'https://cdn.syncfusion.com/ej2/27.1.48/tailwind-dark.css';
+                syncfusionStyleUrl = 'https://cdn.syncfusion.com/ej2/29.1.38/tailwind-dark.css';
                 frameworkStyleUrl = 'assets/themes/tailwind/tailwind.css';
                 frameworkSupportStyleUrl = 'assets/themes/tailwind/cyan.css';
                 fontIconsUrl = 'assets/font-icons/tailwind/tailwind-icons.css';
@@ -294,7 +294,7 @@ export class DemoComponent implements OnInit, AfterViewInit, OnDestroy {
             case 'bootstrap5.3-light':
                 frameworkStyleUrl = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css';
                 frameworkSupportStyleUrl = '';
-                syncfusionStyleUrl = 'https://cdn.syncfusion.com/ej2/27.2.4/bootstrap5.3.css';
+                syncfusionStyleUrl = 'https://cdn.syncfusion.com/ej2/29.1.38/bootstrap5.3.css';
                 fontIconsUrl = 'assets/font-icons/bootstrap5_3/bootstrap5_3-icons.css';
                 iframeDocument.documentElement.setAttribute('data-bs-theme', 'light');
                 this.themeIndex = 1;
@@ -302,13 +302,13 @@ export class DemoComponent implements OnInit, AfterViewInit, OnDestroy {
             case 'bootstrap5.3-dark':
                 frameworkStyleUrl = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css';
                 frameworkSupportStyleUrl = '';
-                syncfusionStyleUrl = 'https://cdn.syncfusion.com/ej2/27.2.4/bootstrap5.3-dark.css';
+                syncfusionStyleUrl = 'https://cdn.syncfusion.com/ej2/29.1.38/bootstrap5.3-dark.css';
                 fontIconsUrl = 'assets/font-icons/bootstrap5_3/bootstrap5_3-icons.css';
                 iframeDocument.documentElement.setAttribute('data-bs-theme', 'dark');
                 this.themeIndex = 1;
                 break;
             default:
-                syncfusionStyleUrl = 'https://cdn.syncfusion.com/ej2/27.1.48/tailwind.css';
+                syncfusionStyleUrl = 'https://cdn.syncfusion.com/ej2/29.1.38/tailwind.css';
                 frameworkStyleUrl = 'assets/themes/tailwind/tailwind.css';
                 frameworkSupportStyleUrl = 'assets/themes/tailwind/indigo.css';
                 fontIconsUrl = 'assets/font-icons/tailwind/tailwind-icons.css';

@@ -28,7 +28,7 @@ export class List5Component implements OnInit, OnDestroy {
         /* SB Code - End */
     }
 
-    public data: Object[] = [
+    public countries: Object[] = [
         {
             id: '1',
             country: 'Afghanistan',

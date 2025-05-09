@@ -1,0 +1,149 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-gray-50 dark:bg-gray-950">
+    <div class="relative h-screen mx-auto" style="max-width: 480px;">
+        <div class="w-full flex justify-end p-4 absolute right-0 top-0" style="min-height: 680px">
+            <div class="relative w-8 h-8">
+                <button #button ejs-button class="e-outline e-round" iconCss="sf-icon-notification-bell-02" type="button" (click)="toggleDialog()" aria-label="show/hide notification" role="button"></button>
+                <span class="e-badge e-badge-danger e-badge-notification e-badge-overlap e-badge-circle mt-1 mr-2">4</span>
+            </div>
+        </div>
+    </div>
+    <ejs-dialog #dialog id="notification" class="!bg-white dark:!bg-gray-800 rounded-lg overflow-hidden !border" (open)="setDialogPosition($event)" (created)="dialog.show()" aria-label="notification" role="dialog">
+        <ng-template #header>
+            <div class="flex justify-between items-center p-4 md:px-3 md:py-2">
+                <h1 class="text-base md:text-lg text-gray-900 dark:text-white font-medium">Notifications</h1>
+                <div class="flex items-center gap-3">
+                    <button ejs-button class="e-flat e-small block sm:hidden" iconCss="e-icons e-more-vertical-1" type="button" aria-label="more menu" role="button"></button>
+                    <button ejs-button class="e-flat e-small e-round" iconCss="e-icons e-close" type="button" (click)="toggleDialog()" aria-label="show/hide notification" role="button"></button>
+                </div>
+            </div>
+        </ng-template>
+        <ng-template #content>
+            <div id="tab" class="relative">
+                <button ejs-button class="e-link !text-gray-700 dark:!text-white absolute right-3 top-1 z-50 hidden sm:block" content="Mark all as read" type="button" aria-label="mark all as read" role="button"></button>
+                <ejs-tab #tab (created)="onTabCreated()" (selected)="onTabSelected($event)" overflowMode="None">
+                    <e-tabitems>
+                        <e-tabitem>
+                            <ng-template #headerText>
+                                <div class="flex items-center gap-2">
+                                    <p>All</p>
+                                    <span class="e-badge e-badge-circle">2</span>
+                                </div>
+                            </ng-template>
+                        </e-tabitem>
+                        <e-tabitem>
+                            <ng-template #headerText>
+                                <div><p>Following</p></div>
+                            </ng-template>
+                        </e-tabitem>
+                        <e-tabitem>
+                            <ng-template #headerText>
+                                <div><p>Archive</p></div>
+                            </ng-template>
+                        </e-tabitem>
+                    </e-tabitems>
+                </ejs-tab>
+                <ejs-listview #listview class="border-0" [dataSource]="messageData" aria-label="recent notification" role="list">
+                    <ng-template #template let-data>
+                        <div class="flex gap-2 p-4 sm:p-3 sm:!pr-5 border-b border-gray-200 dark:border-gray-600">
+                            <div class="shrink-0">
+                                <span class="e-avatar e-avatar-circle" [ngStyle]="{ 'background-image': 'url(assets/images/common/avatar/' + data.avatar + ')' }" *ngIf="data.avatar!=''"></span>
+                                <span [ngClass]="{'e-avatar e-avatar-circle': true, '!bg-green-100 !text-green-700 dark:!text-green-500': data.colorTheme === 'Green', '!bg-orange-100 !text-orange-700 dark:!text-orange-500': data.colorTheme === 'Orange'}" *ngIf="data.initial!=''">{{data.initial}}</span>
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <p class="text-gray-900 dark:text-white"><span class="font-medium">{{data.name}}</span> {{data.content.length > 36 ? (data.content | slice:0:36) + '...' : data.content}}</p>
+                                <p class="text-xs text-gray-500 dark:text-gray-400">{{data.time}}</p>
+                                <div class="flex gap-4 items-center mt-1" *ngIf="data.id == 1 || data.id == 2">
+                                    <button ejs-button class="e-primary" content="Accept" type="button" aria-label="accept" role="button"></button>
+                                    <button ejs-button class="e-outline" content="Deny" type="button" aria-label="deny" role="button"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </ejs-listview>
+            </div>
+        </ng-template>
+        <ng-template #footerTemplate>
+            <div class="py-3 sm:py-2.5 flex justify-center bg-gray-200 dark:bg-gray-700">
+                <button ejs-button class="e-flat w-max !ml-0" content="View all notification" type="button" aria-label="view all notification" role="button"></button>
+            </div>
+        </ng-template>
+    </ejs-dialog>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body">
+    <div class="position-relative vh-100 mx-auto" style="max-width: 480px;">
+        <div class="w-100 d-flex justify-content-end p-3 position-absolute top-0 end-0" style="min-height: 680px;">
+            <div class="position-relative" style="width: 32px; height: 32px;">
+                <button #button ejs-button class="e-outline e-round" iconCss="sf-icon-notification-bell-02" type="button" (click)="toggleDialog()" aria-label="show/hide notification" role="button"></button>
+                <span class="e-badge e-badge-danger e-badge-notification e-badge-overlap e-badge-circle mt-1 me-2">4</span>
+            </div>
+        </div>
+    </div>
+    <ejs-dialog #dialog id="notification" class="bg-body rounded overflow-hidden border" (open)="setDialogPosition($event)" (created)="dialog.show()" aria-label="notification" role="dialog">
+        <ng-template #header>
+            <div class="d-flex justify-content-between align-items-center p-3">
+                <h1 class="fs-5 text-body fw-medium m-0">Notifications</h1>
+                <div class="d-flex align-items-center gap-3">
+                    <button ejs-button class="e-flat e-small d-block d-sm-none e-inherit" iconCss="e-icons e-more-vertical-1" type="button" aria-label="more menu" role="button"></button>
+                    <button ejs-button class="e-flat e-small e-round e-inherit" iconCss="e-icons e-close" type="button" (click)="toggleDialog()" aria-label="show/hide notification" role="button"></button>
+                </div>
+            </div>
+        </ng-template>
+        <ng-template #content>
+            <div class="position-relative mt-1">
+                <button ejs-button class="e-link text-secondary position-absolute top-0 end-0 z-1 d-none d-sm-block me-2" content="Mark all as read" type="button" aria-label="mark all as read" role="button"></button>
+                <ejs-tab #tab (created)="onTabCreated()" (selected)="onTabSelected($event)" overflowMode="None">
+                    <e-tabitems>
+                        <e-tabitem>
+                            <ng-template #headerText>
+                                <div class="d-flex align-items-center gap-2">
+                                    <p class="mb-0">All</p>
+                                    <span class="e-badge e-badge-circle">2</span>
+                                </div>
+                            </ng-template>
+                        </e-tabitem>
+                        <e-tabitem>
+                            <ng-template #headerText>
+                                <div><p class="mb-0">Following</p></div>
+                            </ng-template>
+                        </e-tabitem>
+                        <e-tabitem>
+                            <ng-template #headerText>
+                                <div><p class="mb-0">Archive</p></div>
+                            </ng-template>
+                        </e-tabitem>
+                    </e-tabitems>
+                </ejs-tab>
+                <ejs-listview #listview class="border-0 rounded-0" [dataSource]="messageData" aria-label="recent notification" role="list">
+                    <ng-template #template let-data>
+                        <div class="d-flex gap-2 p-3 pe-sm-4">
+                            <div class="flex-shrink-0">
+                                <span class="e-avatar e-avatar-circle" [ngStyle]="{ 'background-image': 'url(assets/images/common/avatar/' + data.avatar + ')' }" *ngIf="data.avatar!=''"></span>
+                                <span [ngClass]="{'e-avatar e-avatar-circle': true, 'bg-success-subtle text-success': data.colorTheme === 'Green', 'bg-warning-subtle text-warning': data.colorTheme === 'Orange'}" *ngIf="data.initial!=''">{{data.initial}}</span>
+                            </div>
+                            <div class="d-flex flex-column gap-1">
+                                <p class="m-0"><span class="fw-medium">{{data.name}}</span> {{data.content.length > 36 ? (data.content | slice:0:36) + '...' : data.content}}</p>
+                                <p class="small m-0">{{data.time}}</p>
+                                <div class="d-flex gap-2 align-items-center mt-1" *ngIf="data.id == 1 || data.id == 2">
+                                    <button ejs-button class="e-primary" content="Accept" type="button" aria-label="accept" role="button"></button>
+                                    <button ejs-button class="e-outline e-inherit" content="Deny" type="button" aria-label="deny" role="button"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </ejs-listview>
+            </div>
+        </ng-template>
+        <ng-template #footerTemplate>
+            <div class="py-3 d-flex justify-content-center bg-body-tertiary">
+                <button ejs-button class="e-outline w-auto ms-0" content="View all notification" type="button" aria-label="view all notification" role="button"></button>
+            </div>
+        </ng-template>
+    </ejs-dialog>
+</section>
+    
+}

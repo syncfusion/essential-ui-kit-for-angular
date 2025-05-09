@@ -7,10 +7,10 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-filter-panel-6',
-  standalone: true,
-  imports: [CommonModule, SidebarModule, AccordionModule, ButtonModule, CheckBoxModule, SwitchModule, AutoCompleteModule],
-  templateUrl: './filter-panel-6.component.html'
+    selector: 'app-filter-panel-6',
+    standalone: true,
+    imports: [CommonModule, SidebarModule, AccordionModule, ButtonModule, CheckBoxModule, SwitchModule, AutoCompleteModule],
+    templateUrl: './filter-panel-6.component.html'
 })
 export class FilterPanel6Component implements OnInit, OnDestroy {
     @ViewChild('sidebar') public sidebar?: SidebarComponent;
@@ -21,7 +21,7 @@ export class FilterPanel6Component implements OnInit, OnDestroy {
     @ViewChild('sizeAccordion') public sizeAccordion!: AccordionComponent;
     @ViewChild('locationAccordion') public locationAccordion!: AccordionComponent;
     @ViewChild('typeAccordion') public typeAccordion!: AccordionComponent;
-    
+
     public currentTheme: string = 'tailwind';
     /* SB Code - End */
     public width: string = '320px';
@@ -41,12 +41,7 @@ export class FilterPanel6Component implements OnInit, OnDestroy {
 
     /* SB Code - Start */
     public ngAfterViewInit(): void {
-        setTimeout(() => {
-            this.industryAccordion.refresh();
-            this.sizeAccordion.refresh();
-            this.locationAccordion.refresh();
-            this.typeAccordion.refresh();
-        }, 5000);
+        this.refreshAccordion(3000);
     }
     /* SB Code - End */
 
@@ -73,6 +68,15 @@ export class FilterPanel6Component implements OnInit, OnDestroy {
     }
 
     /* SB Code - Start */
+    private refreshAccordion(timeout: number): void {
+        setTimeout(() => {
+            this.industryAccordion.refresh();
+            this.sizeAccordion.refresh();
+            this.locationAccordion.refresh();
+            this.typeAccordion.refresh();
+        }, timeout);
+    }
+
     private handleMessageEvent = (event: MessageEvent): void => {
         if (event.origin === window.location.origin) {
             try {
@@ -84,6 +88,7 @@ export class FilterPanel6Component implements OnInit, OnDestroy {
                 console.error('Error parsing message data: ', error);
             }
         }
+        this.refreshAccordion(1000);
     };
     /* SB Code - End */
 }

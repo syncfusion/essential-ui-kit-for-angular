@@ -30,7 +30,7 @@ export class List3Component implements OnInit, OnDestroy {
         /* SB Code - End */
     }
 
-    public data: Object[] = [
+    public messages: Object[] = [
         {
             id: '1',
             name: 'Wade Warren',

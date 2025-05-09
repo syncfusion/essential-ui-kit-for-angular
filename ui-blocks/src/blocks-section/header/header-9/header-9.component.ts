@@ -5,11 +5,11 @@ import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { DropDownButtonModule, SplitButtonModule, DropDownButtonComponent, SplitButtonComponent } from '@syncfusion/ej2-angular-splitbuttons';
 
 @Component({
-  selector: 'app-header-9',
-  standalone: true,
-  imports: [CommonModule, BreadcrumbModule, ButtonModule, DropDownButtonModule, SplitButtonModule],
-  templateUrl: './header-9.component.html',
-  styleUrl: './header-9.component.css'
+    selector: 'app-header-9',
+    standalone: true,
+    imports: [CommonModule, BreadcrumbModule, ButtonModule, DropDownButtonModule, SplitButtonModule],
+    templateUrl: './header-9.component.html',
+    styleUrl: './header-9.component.css'
 })
 export class Header9Component implements OnInit, OnDestroy {
     @ViewChild('breadcrumb') breadcrumb!: BreadcrumbComponent;

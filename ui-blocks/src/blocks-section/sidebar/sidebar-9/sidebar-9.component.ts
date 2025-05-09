@@ -30,7 +30,7 @@ export class Sidebar9Component implements OnInit, OnDestroy {
         /* SB Code - End */
     }
 
-    public data1: Object[] = [
+    public navigationMenu: Object[] = [
         {
             id: 1,
             fontIcon: 'e-home'
@@ -53,7 +53,7 @@ export class Sidebar9Component implements OnInit, OnDestroy {
         }
     ];
 
-    public data2: Object[] = [
+    public inboxMenu: Object[] = [
         {
             id: 1,
             field: 'My Inbox',
@@ -86,7 +86,7 @@ export class Sidebar9Component implements OnInit, OnDestroy {
         }
     ];
 
-    public data3: Object[] = [
+    public supportMenu: Object[] = [
         {
             "id": 1,
             "field": "Docs"

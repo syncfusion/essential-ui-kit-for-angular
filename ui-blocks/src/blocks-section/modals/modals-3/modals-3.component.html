@@ -21,12 +21,12 @@
                         </ejs-stepper>
                     </div>
                     <div class="sm:overflow-y-scroll" style="height: 298px; scrollbar-width: none;">
-                        <ejs-accordion class="border-0" expandMode="Single" role="button">
+                        <ejs-accordion class="border-0" expandMode="Single" (expanding)="stepper.activeStep = $event.index" role="button">
                             <e-accordionitems>
                                 <e-accordionitem cssClass="mb-3 !border !rounded-lg" [expanded]="stepper.activeStep === 0">
                                     <ng-template #header>
                                         <div class="flex gap-2.5 items-center mr-4">
-                                            <span class="e-avatar e-avatar rounded-lg border bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300"><i class="e-icons sf-icon-users text-xl"></i></span>
+                                            <span class="e-avatar rounded-lg border bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300"><i class="e-icons sf-icon-users text-xl"></i></span>
                                             <div class="flex flex-col gap-0.5">
                                                 <p class="text-base">User Information</p>
                                                 <p class="text-gray-500 font-normal dark:text-gray-400 text-wrap line-clamp-1">Basic details about the team member</p>
@@ -55,7 +55,7 @@
                                 <e-accordionitem cssClass="mb-3 !border !rounded-lg" [expanded]="stepper.activeStep === 1">
                                     <ng-template #header>
                                         <div class="flex gap-2.5 items-center mr-4">
-                                            <span class="e-avatar e-avatar rounded-lg border bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300"><i class="e-icons sf-icon-building-03 text-xl"></i></span>
+                                            <span class="e-avatar rounded-lg border bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300"><i class="e-icons sf-icon-building-03 text-xl"></i></span>
                                             <div class="flex flex-col gap-0.5">
                                                 <p class="text-base">Workspace Access</p>
                                                 <p class="text-gray-500 font-normal dark:text-gray-400 text-wrap line-clamp-1">Workspace and role assignment</p>
@@ -78,7 +78,7 @@
                                 <e-accordionitem cssClass="mb-3 !border !rounded-lg" [expanded]="stepper.activeStep === 2">
                                     <ng-template #header>
                                         <div class="flex gap-2.5 items-center mr-4">
-                                            <span class="e-avatar e-avatar rounded-lg border bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300"><i class="e-icons sf-icon-shield text-xl"></i></span>
+                                            <span class="e-avatar rounded-lg border bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300"><i class="e-icons sf-icon-shield text-xl"></i></span>
                                             <div class="flex flex-col gap-0.5">
                                                 <p class="text-base">Security Settings</p>
                                                 <p class="text-gray-500 font-normal dark:text-gray-400 text-wrap line-clamp-1">Configure security and authentication</p>
@@ -107,7 +107,7 @@
                                 <e-accordionitem cssClass="!border !rounded-lg" [expanded]="stepper.activeStep === 3">
                                     <ng-template #header>
                                         <div class="flex gap-2.5 items-center mr-4">
-                                            <span class="e-avatar e-avatar rounded-lg border bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300"><i class="e-icons sf-icon-laptop-01 text-xl"></i></span>
+                                            <span class="e-avatar rounded-lg border bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300"><i class="e-icons sf-icon-laptop-01 text-xl"></i></span>
                                             <div class="flex flex-col gap-0.5">
                                                 <p class="text-base">Resource Access</p>
                                                 <p class="text-gray-500 font-normal dark:text-gray-400 text-wrap line-clamp-1">Configure access to various tools</p>
@@ -175,8 +175,8 @@
             </ng-template>
             <ng-template #footerTemplate>
                 <div class="flex justify-end gap-2 sm:gap-1 py-2">
-                    <button ejs-button cssClass="grow sm:grow-0 !ml-0" type="button" aria-label="cancel" role="button">Cancel</button>
-                    <button ejs-button cssClass="e-primary grow sm:grow-0" type="button" aria-label="add member" role="button">Add Member</button>
+                    <button ejs-button cssClass="w-1/2 sm:w-fit !ml-0" type="button" aria-label="cancel" role="button">Cancel</button>
+                    <button ejs-button cssClass="e-primary w-1/2 sm:w-fit" type="button" aria-label="add member" role="button">Add Member</button>
                 </div>
             </ng-template>
         </ejs-dialog>
@@ -206,12 +206,12 @@
                         </ejs-stepper>
                     </div>
                     <div class="overflow-auto" style="height: 298px; scrollbar-width: none;">
-                        <ejs-accordion class="border-0" expandMode="Single" role="button">
+                        <ejs-accordion class="border-0" expandMode="Single" (expanding)="stepper.activeStep = $event.index" role="button">
                             <e-accordionitems>
                                 <e-accordionitem cssClass="mb-3 border rounded-3 overflow-hidden" [expanded]="stepper.activeStep === 0">
                                     <ng-template #header>
                                         <div class="d-flex gap-2 align-items-center me-3">
-                                            <span class="e-avatar e-avatar rounded-3 border bg-body-secondary"><i class="e-icons sf-icon-users fs-4"></i></span>
+                                            <span class="e-avatar rounded-3 border bg-body-secondary"><i class="e-icons sf-icon-users fs-4"></i></span>
                                             <div class="d-flex flex-column ms-1">
                                                 <p class="fs-6 fw-medium mb-0">User Information</p>
                                                 <p class="text-body text-wrap text-opacity-50 text-truncate mb-0" style="display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden;">Basic details about the team member</p>
@@ -240,7 +240,7 @@
                                 <e-accordionitem cssClass="mb-3 border rounded-3 overflow-hidden" [expanded]="stepper.activeStep === 1">
                                     <ng-template #header>
                                         <div class="d-flex gap-2 align-items-center me-3">
-                                            <span class="e-avatar e-avatar rounded-3 border bg-body-secondary"><i class="e-icons sf-icon-building-03 fs-4"></i></span>
+                                            <span class="e-avatar rounded-3 border bg-body-secondary"><i class="e-icons sf-icon-building-03 fs-4"></i></span>
                                             <div class="d-flex flex-column ms-1">
                                                 <p class="fs-6 fw-medium mb-0">Workspace Access</p>
                                                 <p class="text-body text-wrap text-opacity-50 text-truncate mb-0" style="display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden;">Workspace and role assignment</p>
@@ -263,7 +263,7 @@
                                 <e-accordionitem cssClass="mb-3 border rounded-3 overflow-hidden" [expanded]="stepper.activeStep === 2">
                                     <ng-template #header>
                                         <div class="d-flex gap-2 align-items-center me-3">
-                                            <span class="e-avatar e-avatar rounded-3 border bg-body-secondary"><i class="e-icons sf-icon-shield fs-4"></i></span>
+                                            <span class="e-avatar rounded-3 border bg-body-secondary"><i class="e-icons sf-icon-shield fs-4"></i></span>
                                             <div class="d-flex flex-column ms-1">
                                                 <p class="fs-6 fw-medium mb-0">Security Settings</p>
                                                 <p class="text-body text-wrap text-opacity-50 text-truncate mb-0" style="display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden;">Configure security and authentication</p>
@@ -292,7 +292,7 @@
                                 <e-accordionitem cssClass="border rounded-3 overflow-hidden" [expanded]="stepper.activeStep === 3">
                                     <ng-template #header>
                                         <div class="d-flex gap-2 align-items-center me-3">
-                                            <span class="e-avatar e-avatar rounded-3 border bg-body-secondary"><i class="e-icons sf-icon-laptop-01 fs-4"></i></span>
+                                            <span class="e-avatar rounded-3 border bg-body-secondary"><i class="e-icons sf-icon-laptop-01 fs-4"></i></span>
                                             <div class="d-flex flex-column ms-1">
                                                 <p class="fs-6 fw-medium mb-0">Resource Access</p>
                                                 <p class="text-body text-wrap text-opacity-50 text-truncate mb-0" style="display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden;">Configure access to various tools</p>
@@ -360,8 +360,8 @@
             </ng-template>
             <ng-template #footerTemplate>
                 <div class="d-flex justify-content-end gap-2 py-1">
-                    <button ejs-button cssClass="flex-grow-1 flex-sm-grow-0 ms-0" type="button" aria-label="cancel" role="button">Cancel</button>
-                    <button ejs-button cssClass="e-primary flex-grow-1 flex-sm-grow-0" type="button" aria-label="add member" role="button">Add Member</button>
+                    <button ejs-button cssClass="col col-sm-auto ms-0" type="button" aria-label="cancel" role="button">Cancel</button>
+                    <button ejs-button cssClass="e-primary col col-sm-auto" type="button" aria-label="add member" role="button">Add Member</button>
                 </div>
             </ng-template>
         </ejs-dialog>

@@ -11,7 +11,7 @@
             </div>
             <button ejs-button class="e-primary self-end" content="Export to CSV" iconCss="e-icons e-export" iconPosition="Left" type="button" aria-label="export to CSV file format" role="button"></button>
         </div>
-        <ejs-grid #grid [dataSource]="data" width="100%" height="668" [allowPaging]="true" role="grid">
+        <ejs-grid #grid [dataSource]="gridData" width="100%" height="668" [allowPaging]="true" role="grid">
             <e-columns>
                 <e-column field="transactionId" headerText="Transaction ID" width="116">
                     <ng-template #template let-data>
@@ -91,7 +91,7 @@
             </div>
             <button ejs-button class="e-primary align-self-end" content="Export to CSV" iconCss="e-icons e-export" iconPosition="Left" type="button" aria-label="export to CSV file format" role="button"></button>
         </div>
-        <ejs-grid #grid [dataSource]="data" width="100%" height="668" [allowPaging]="true" role="grid">
+        <ejs-grid #grid [dataSource]="gridData" width="100%" height="668" [allowPaging]="true" role="grid">
             <e-columns>
                 <e-column field="transactionId" headerText="Transaction ID" width="126">
                     <ng-template #template let-data>

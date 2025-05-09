@@ -2,9 +2,9 @@
 <section class="bg-white dark:bg-gray-900">
     <div class="flex items-center justify-center min-h-screen">
         <div class="max-w-none lg:max-w-2xl w-full m-auto p-4 md:py-8 lg:px-24">
-            <ejs-listview class="!border-0" cssClass="e-list-template" [dataSource]="data" aria-label="list of tasks" role="list">
+            <ejs-listview id="task-list" class="!border-0" cssClass="e-list-template" [dataSource]="data" aria-label="list of tasks" role="list">
                 <ng-template #template let-data>
-                    <div class="border border-gray-200 dark:border-gray-600 !py-4 px-4 my-4">
+                    <div class="border border-gray-200 dark:border-gray-600 !py-4 px-4 my-4" style= "border-radius: 8px;">
                         <div class="flex justify-between">
                             <div class="flex w-full">
                                 <span class="shrink-0"><img class="rounded-md" src="assets/images/listview/task-management/{{data.logo}}" width="48px" height="48px" alt="brand logo" /></span>
@@ -33,9 +33,9 @@
 <section class="bg-body">
     <div class="d-flex align-items-center justify-content-center min-vh-100">
         <div class="container-xl w-100 m-auto p-3 p-md-4" [style]="width">
-            <ejs-listview cssClass="e-list-template" [dataSource]="data" aria-label="task items" role="list">
+            <ejs-listview id="task-list" cssClass="e-list-template" [dataSource]="data" aria-label="task items" role="list" style= "border-width: 0px;">
                 <ng-template #template let-data>
-                    <div class="e-list-wrapper e-list-multi-line py-3 px-2 px-sm-3">
+                    <div class="e-list-wrapper e-list-multi-line border px-2 px-sm-3 py-3 mt-3" style= "border-radius: 8px;">
                         <div class="d-flex justify-content-between">
                             <span class="flex-shrink-0"><img class="rounded-2" src="assets/images/listview/task-management/{{data.logo}}" width="48px" height="48px" alt="brand logo" /></span>
                             <div class="flex-grow-1">

@@ -12,7 +12,7 @@
                 </ejs-breadcrumb>
             </div>
             <div class="flex gap-2">
-                <div class="flex items-center -space-x-3 mr-2">
+                <div class="flex items-center -space-x-3 mr-1">
                     <span class="e-avatar e-avatar-small e-avatar-circle z-30">
                         <img src="assets/images/common/avatar/avatar-1.jpg" alt="profile picture" />
                     </span>
@@ -24,7 +24,7 @@
                     </span>
                     <span class="e-avatar e-avatar-small e-avatar-circle z-0 block sm:hidden text-sm bg-gray-700 dark:bg-gray-200 text-white dark:text-black pl-1">+ 2</span>
                 </div>
-                <div class="flex items-center gap-1">
+                <div class="flex gap-1">
                     <button ejs-button class="hidden sm:block" cssClass="e-flat" type="button" aria-label="share" role="button">
                         <div class="flex items-center gap-1">
                             <span class="sf-icon-share-arrow-04 text-base"></span>
@@ -40,7 +40,7 @@
             <div class="flex justify-between gap-3 sm:gap-6">
                 <div class="block">
                     <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Business Metrics</h3>
-                    <p class="mt-1 text-sm text-gray-900 dark:text-white">Overview of our sales pipeline, customer demographics, product subscriptions, and more.</p>
+                    <p class="mt-1 text-sm text-gray-700 dark:text-gray-300">Overview of our sales pipeline, customer demographics, product subscriptions, and more.</p>
                 </div>
                 <div class="flex items-start space-x-3">
                     <button ejs-button type="button" aria-label="refresh data" role="button">
@@ -66,7 +66,7 @@
 <section class="bg-body">
     <div style="min-height: 36rem;">
         <div class="d-flex justify-content-between align-items-center px-3 px-sm-4 py-2 border-bottom">
-            <div id="breadcrumb">
+            <div>
                 <ejs-breadcrumb #breadcrumb [enableNavigation]="false" [overflowMode]="overflowMode" [maxItems]="maxItems">
                     <e-breadcrumb-items>
                         <e-breadcrumb-item iconCss="e-icons e-folder" text="Reports"></e-breadcrumb-item>
@@ -87,7 +87,7 @@
                         <img src="assets/images/common/avatar/avatar-1.jpg" alt="profile picture">
                     </span>
                 </div>
-                <div class="d-flex align-items-center gap-1">
+                <div class="d-flex gap-1">
                     <button ejs-button class="d-none d-sm-block" cssClass="e-flat" type="button" aria-label="share" role="button">
                         <div class="d-flex align-items-center gap-1">
                             <span class="sf-icon-share-arrow-04 fs-6"></span>

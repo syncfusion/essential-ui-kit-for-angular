@@ -1,9 +1,9 @@
 @if (currentTheme === 'tailwind') {
 
 <section>
-    <div id="dialog-container" class="relative flex justify-center" [style]="containerHeight">
+    <div id="dialog-container" class="relative flex justify-center" style="min-height: 750px;">
         <button ejs-button class="h-fit my-5" (click)="dialog?.show()" type="button" aria-label="my settings" role="button">My Settings</button>
-        <ejs-dialog #dialog class="rounded-none sm:rounded-lg sm:m-4" target="#dialog-container" [isModal]="true" [showCloseIcon]="true" [visible]="false" width="644px" height="100%" (open)="$event.preventFocus = true" (beforeOpen)="$event.maxHeight = '645px'" aria-label="manage my settings" role="dialog">
+        <ejs-dialog #dialog class="rounded-none sm:rounded-lg sm:m-4" target="#dialog-container" [isModal]="true" [showCloseIcon]="true" [visible]="false" width="644px" height="645px" (open)="$event.preventFocus = true" (beforeOpen)="$event.maxHeight = '100%'" aria-label="manage my settings" role="dialog">
             <ng-template #header>
                 <p class="font-semibold leading-normal">My Settings</p>
             </ng-template>
@@ -134,7 +134,7 @@
                                     </div>
                                     <div class="e-card-content !px-1 !pb-1 !pt-0">
                                         <p class="text-xs text-gray-700 dark:text-gray-300 mb-3">Your main email address for receiving forwarded message</p>
-                                        <ejs-textbox value="james@123.com" type="email" aria-label="enter your email address" role="textbox"></ejs-textbox>
+                                        <ejs-textbox value="james@company.com" type="email" aria-label="enter your email address" role="textbox"></ejs-textbox>
                                     </div>
                                 </div>
                                 <div class="e-card p-3 shadow-none">
@@ -150,11 +150,11 @@
                                         </div>
                                         <div class="border-t border-gray-200 dark:border-gray-600 mt-4 md:mt-3 pt-4 md:pt-3">
                                             <div class="flex gap-3 items-center py-1.5">
-                                                <div class="text-gray-900 dark:text-white grow">john.wick&#64;123.com</div>
+                                                <div class="text-gray-900 dark:text-white grow">john.wick&#64;company.com</div>
                                                 <button ejs-button cssClass="e-danger e-flat e-small" iconCss="e-icons e-trash" type="button" aria-label="delete" role="button"></button>
                                             </div>
                                             <div class="flex gap-3 items-center py-1.5">
-                                                <div class="text-gray-900 dark:text-white grow">charles.kri&#64;123.com</div>
+                                                <div class="text-gray-900 dark:text-white grow">charles.kri&#64;company.com</div>
                                                 <button ejs-button cssClass="e-danger e-flat e-small" iconCss="e-icons e-trash" type="button" aria-label="delete" role="button"></button>
                                             </div>
                                         </div>
@@ -242,8 +242,8 @@
             </ng-template>
             <ng-template #footerTemplate>
                 <div class="flex justify-end gap-2 sm:gap-1 py-2">
-                    <button ejs-button cssClass="grow sm:grow-0 !ml-0" type="button" aria-label="discard" role="button">Discard</button>
-                    <button ejs-button cssClass="e-primary grow sm:grow-0" type="button" aria-label="save changes" role="button">Save Changes</button>
+                    <button ejs-button cssClass="w-1/2 sm:w-fit !ml-0" type="button" aria-label="discard" role="button">Discard</button>
+                    <button ejs-button cssClass="e-primary w-1/2 sm:w-fit" type="button" aria-label="save changes" role="button">Save Changes</button>
                 </div>
             </ng-template>
         </ejs-dialog>
@@ -253,9 +253,9 @@
 } @else if (currentTheme === 'bootstrap5.3') {
     
 <section>
-    <div id="dialog-container" class="position-relative d-flex align-items-start" [style]="containerHeight">
+    <div id="dialog-container" class="position-relative d-flex align-items-start" style="min-height: 750px;">
         <button ejs-button class="e-outline mx-auto my-3" (click)="dialog?.show()" type="button" aria-label="my settings" role="button">My Settings</button>
-        <ejs-dialog #dialog class="rounded-3 m-sm-2" target="#dialog-container" [isModal]="true" [showCloseIcon]="true" [visible]="false" width="644px" height="100%" (open)="$event.preventFocus = true" (beforeOpen)="$event.maxHeight = '670px'" aria-label="manage my settings" role="dialog">
+        <ejs-dialog #dialog class="rounded-3 m-sm-2" target="#dialog-container" [isModal]="true" [showCloseIcon]="true" [visible]="false" width="644px" height="650px" (open)="$event.preventFocus = true" (beforeOpen)="$event.maxHeight = '100%'" aria-label="manage my settings" role="dialog">
             <ng-template #header>
                 <p class="fw-bold text-body mb-0 lh-sm">My Settings</p>
             </ng-template>
@@ -386,7 +386,7 @@
                                     </div>
                                     <div class="e-card-content p-1">
                                         <p class="text-body-secondary small mb-2 pb-1">Your main email address for receiving forwarded message</p>
-                                        <ejs-textbox value="james@123.com" type="email" aria-label="enter your email address" role="textbox"></ejs-textbox>
+                                        <ejs-textbox value="james@company.com" type="email" aria-label="enter your email address" role="textbox"></ejs-textbox>
                                     </div>
                                 </div>
                                 <div class="e-card rounded-2 p-3">
@@ -402,11 +402,11 @@
                                         </div>
                                         <div class="border-top mt-3 pt-3">
                                             <div class="d-flex gap-3 align-items-center py-1">
-                                                <div class="text-body fw-medium flex-grow-1">john.wick&#64;123.com</div>
+                                                <div class="text-body fw-medium flex-grow-1">john.wick&#64;company.com</div>
                                                 <button ejs-button cssClass="e-danger e-flat e-small" iconCss="e-icons e-trash" type="button" aria-label="delete" role="button"></button>
                                             </div>
                                             <div class="d-flex gap-3 align-items-center py-1">
-                                                <div class="text-body fw-medium flex-grow-1">charles.kri&#64;123.com</div>
+                                                <div class="text-body fw-medium flex-grow-1">charles.kri&#64;company.com</div>
                                                 <button ejs-button cssClass="e-danger e-flat e-small" iconCss="e-icons e-trash" type="button" aria-label="delete" role="button"></button>
                                             </div>
                                         </div>
@@ -494,8 +494,8 @@
             </ng-template>
             <ng-template #footerTemplate>
                 <div class="d-flex justify-content-end gap-2 gap-sm-1 py-1">
-                    <button ejs-button cssClass="flex-grow-1 flex-sm-grow-0 ms-0" type="button" aria-label="discard" role="button">Discard</button>
-                    <button ejs-button cssClass="e-primary flex-grow-1 flex-sm-grow-0" type="button" aria-label="save changes" role="button">Save Changes</button>
+                    <button ejs-button cssClass="col col-sm-auto ms-0" type="button" aria-label="discard" role="button">Discard</button>
+                    <button ejs-button cssClass="e-primary col col-sm-auto" type="button" aria-label="save changes" role="button">Save Changes</button>
                 </div>
             </ng-template>
         </ejs-dialog>

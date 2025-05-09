@@ -29,7 +29,7 @@ export class List8Component implements OnInit, OnDestroy {
         /* SB Code - End */
     }
 
-    public data: Object[] = [
+    public chatMessages: Object[] = [
         {
             id: '1',
             time: '12:00 PM',

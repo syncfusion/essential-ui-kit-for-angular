@@ -2,29 +2,15 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-statistics-10',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './statistics-10.component.html'
+    selector: 'app-statistics-10',
+    standalone: true,
+    imports: [CommonModule],
+    templateUrl: './statistics-10.component.html'
 })
 export class Statistics10Component implements OnInit, OnDestroy {
     /* SB Code - Start */
     public currentTheme: string = 'tailwind';
     /* SB Code - End */
-
-    constructor() { }
-
-    public ngOnInit(): void {
-        /* SB Code - Start */
-        window.addEventListener('message', this.handleMessageEvent);
-        /* SB Code - End */
-    }
-
-    public ngOnDestroy(): void {
-        /* SB Code - Start */
-        window.removeEventListener('message', this.handleMessageEvent);
-        /* SB Code - End */
-    }
 
     public metricsData: any[] = [
         {
@@ -56,6 +42,20 @@ export class Statistics10Component implements OnInit, OnDestroy {
             metricAssets: 'total-conversion.png'
         }
     ];
+    
+    constructor() { }
+
+    public ngOnInit(): void {
+        /* SB Code - Start */
+        window.addEventListener('message', this.handleMessageEvent);
+        /* SB Code - End */
+    }
+
+    public ngOnDestroy(): void {
+        /* SB Code - Start */
+        window.removeEventListener('message', this.handleMessageEvent);
+        /* SB Code - End */
+    }
     
     /* SB Code - Start */
     private handleMessageEvent = (event: MessageEvent): void => {

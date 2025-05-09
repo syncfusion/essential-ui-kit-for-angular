@@ -10,7 +10,7 @@
                 <span class="e-list-item-header text-sm font-medium text-gray-900 dark:text-white">{{data.field}}</span>
             </div>
         </ng-template>
-        <ejs-listbox class="e-bigger" [dataSource]="data" [allowDragAndDrop]="true" [itemTemplate]="itemTemplate" [fields]="{ text: 'field', iconCss: 'fontIcon' }" aria-label="list of fields" role="list"></ejs-listbox>
+        <ejs-listbox class="e-bigger" [dataSource]="fieldData" [allowDragAndDrop]="true" [itemTemplate]="itemTemplate" [fields]="{ text: 'field', iconCss: 'fontIcon' }" aria-label="list of fields" role="list"></ejs-listbox>
         <button ejs-button iconCss="e-icons e-plus" cssClass="e-flat e-primary mt-2" type="button" content="Add a field" aria-label="add new custom field" role="button"></button>
     </div>
 </section>
@@ -27,7 +27,7 @@
                 <span class="e-list-item-header fw-medium">{{data.field}}</span>
             </div>
         </ng-template>
-        <ejs-listbox class="e-bigger" [dataSource]="data" [allowDragAndDrop]="true" [itemTemplate]="itemTemplate" [fields]="{ text: 'field', iconCss: 'fontIcon' }" aria-label="list of fields" role="list"></ejs-listbox>
+        <ejs-listbox class="e-bigger" [dataSource]="fieldData" [allowDragAndDrop]="true" [itemTemplate]="itemTemplate" [fields]="{ text: 'field', iconCss: 'fontIcon' }" aria-label="list of fields" role="list"></ejs-listbox>
         <button ejs-button iconCss="e-icons e-plus" cssClass="e-flat e-primary mt-2" type="button" content="Add a field" aria-label="add new custom field" role="button"></button>
     </div>
 </section>

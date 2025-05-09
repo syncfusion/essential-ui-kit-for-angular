@@ -30,7 +30,7 @@ export class Sidebar8Component implements OnInit, OnDestroy {
         /* SB Code - End */
     }
 
-    public data: Object[] = [
+    public contactList: Object[] = [
         {
             id: 1,
             name: 'Darlene Robertson',

@@ -1,6 +1,7 @@
 import { Component, Input, OnChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { Block, BlockList, DataService } from '../../app/data.service';
+import { CommonModule } from '@angular/common';
 import { DemoComponent } from '../demo/demo.component';
 import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
@@ -8,7 +9,7 @@ import { FooterComponent } from '../footer/footer.component';
 @Component({
     selector: 'app-blocks',
     standalone: true,
-    imports: [DemoComponent, HeaderComponent, FooterComponent],
+    imports: [CommonModule, DemoComponent, HeaderComponent, FooterComponent],
     templateUrl: './blocks.component.html',
     styleUrl: './blocks.component.css'
 })

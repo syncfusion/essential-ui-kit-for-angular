@@ -1,12 +1,12 @@
 @if (currentTheme === 'tailwind') {
 
 <section>
-    <div id="dialog-container" class="relative flex justify-center" [style]="containerHeight">
+    <div id="dialog-container" class="relative flex justify-center" style="min-height: 700px;">
         <button ejs-button class="h-fit my-5" (click)="dialog?.show()" type="button" aria-label="add experience" role="button">Add Experience</button>
-        <ejs-dialog #dialog class="rounded-none sm:rounded-lg sm:m-4" target="#dialog-container" [isModal]="true" [showCloseIcon]="true" width="548px" (open)="$event.preventFocus = true" (beforeOpen)="$event.maxHeight='598px'" aria-label="add experience to your profile" role="dialog">
+        <ejs-dialog #dialog class="rounded-none sm:rounded-lg sm:m-4" target="#dialog-container" [isModal]="true" [showCloseIcon]="true" width="548px" (open)="$event.preventFocus = true" (beforeOpen)="$event.maxHeight = '100%'" aria-label="add experience to your profile" role="dialog">
             <ng-template #header>
                 <div class="flex gap-3">
-                    <span class="e-avatar e-avater-large shrink-0 bg-gray-100 dark:bg-gray-700 rounded-lg"><i class="e-icons e-flags text-xl text-gray-500 dark:text-gray-300"></i></span>
+                    <span class="e-avatar shrink-0 bg-gray-100 dark:bg-gray-700 rounded-lg"><i class="e-icons e-flags text-xl text-gray-500 dark:text-gray-300"></i></span>
                     <div>
                         <p class="font-semibold leading-normal mb-0.5">Add Experience</p>
                         <p class="text-xs leading-normal text-gray-500 dark:text-gray-400 text-wrap">Share where you've worked on your profile.</p>
@@ -58,8 +58,8 @@
             </ng-template>
             <ng-template #footerTemplate>
                 <div class="flex justify-end gap-2 sm:gap-1 py-2">
-                    <button ejs-button cssClass="grow sm:grow-0 !ml-0" type="button" aria-label="discard" role="button">Discard</button>
-                    <button ejs-button cssClass="e-primary grow sm:grow-0" type="button" aria-label="save" role="button">Save</button>
+                    <button ejs-button cssClass="w-1/2 sm:w-fit !ml-0" type="button" aria-label="discard" role="button">Discard</button>
+                    <button ejs-button cssClass="e-primary w-1/2 sm:w-fit" type="button" aria-label="save" role="button">Save</button>
                 </div>
             </ng-template>
         </ejs-dialog>
@@ -69,12 +69,12 @@
 } @else if (currentTheme === 'bootstrap5.3') {
 
 <section>
-    <div id="dialog-container" class="position-relative d-flex align-items-start" [style]="containerHeight">
+    <div id="dialog-container" class="position-relative d-flex align-items-start" style="min-height: 700px;">
         <button ejs-button class="e-outline mx-auto my-3" (click)="dialog?.show()" type="button" aria-label="add experience" role="button">Add Experience</button>
-        <ejs-dialog #dialog class="rounded-3 m-sm-2" target="#dialog-container" [isModal]="true" [showCloseIcon]="true" width="548px" (open)="$event.preventFocus = true" (beforeOpen)="$event.maxHeight='598px'" aria-label="add experience to your profile" role="dialog">
+        <ejs-dialog #dialog class="rounded-3 m-sm-2" target="#dialog-container" [isModal]="true" [showCloseIcon]="true" width="548px" (open)="$event.preventFocus = true" (beforeOpen)="$event.maxHeight = '100%'" aria-label="add experience to your profile" role="dialog">
             <ng-template #header>
                 <div class="d-flex gap-2">
-                    <span class="e-avatar e-avater-large flex-shrink-0 rounded-3 bg-body-secondary"><i class="e-icons e-flags fs-5 text-body-secondary"></i></span>
+                    <span class="e-avatar flex-shrink-0 rounded-3 bg-body-secondary"><i class="e-icons e-flags fs-5 text-body-secondary"></i></span>
                     <div class="ms-1">
                         <p class="fw-bold mb-0 text-body">Add Experience</p>
                         <p class="small fw-normal text-wrap text-body text-opacity-50 mb-0">Share where you've worked on your profile.</p>
@@ -126,8 +126,8 @@
             </ng-template>
             <ng-template #footerTemplate>
                 <div class="d-flex justify-content-end gap-2 gap-sm-1 py-1">
-                    <button ejs-button cssClass="flex-grow-1 flex-sm-grow-0 ms-0" type="button" aria-label="discard" role="button">Discard</button>
-                    <button ejs-button cssClass="e-primary flex-grow-1 flex-sm-grow-0" type="button" aria-label="save" role="button">Save</button>
+                    <button ejs-button cssClass="col col-sm-auto ms-0" type="button" aria-label="discard" role="button">Discard</button>
+                    <button ejs-button cssClass="e-primary col col-sm-auto" type="button" aria-label="save" role="button">Save</button>
                 </div>
             </ng-template>
         </ejs-dialog>

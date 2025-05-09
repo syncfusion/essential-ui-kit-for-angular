@@ -1,0 +1,8 @@
+ #task-list .e-list-item.e-active,
+ .e-list-item.e-hover {
+     border-radius: 8px;
+ }
+
+ #task-list.e-listview .e-list-item {
+     border-bottom: 0;
+ }

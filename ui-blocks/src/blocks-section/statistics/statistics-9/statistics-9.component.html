@@ -3,14 +3,14 @@
 <section class="bg-gray-50 dark:bg-gray-900">
     <div class="px-4 sm:px-6 xl:px-11 py-12">
         <div class="grid sm:grid-cols-2 gap-6 lg:gap-4 xl:grid-cols-4">
-            <div *ngFor="let data of metricsData" class="e-card pt-6 e-bigger rounded-lg shadow-none !border-gray-300 dark:!border-gray-600">
+            <div *ngFor="let data of metricsData" class="e-card pt-6 e-bigger rounded-lg shadow-none">
                 <div class="e-card-stacked">
                     <div class="e-card-header !py-0 !justify-between items-center">
                         <div class="flex items-center">
                             <span class="e-avatar e-avatar-small e-avatar-circle" [ngClass]="{'bg-orange-100 dark:bg-orange-800 text-orange-700 dark:text-orange-500': data.metricName === 'Impressions','bg-indigo-100 dark:bg-indigo-800 text-indigo-600 dark:text-indigo-300': data.metricName === 'Active Users','bg-green-100 dark:bg-green-800 text-green-700 dark:text-green-500': data.metricName === 'User Engagements','bg-cyan-100 dark:bg-sky-800 text-cyan-700 dark:text-sky-400': data.metricName === 'Total Orders'}">
                                 <span class="text-base" [ngClass]="{'e-critical-path': data.metricName === 'Impressions','sf-icon-users': data.metricName === 'Active Users','e-icons': data.metricName === 'Impressions' || data.metricName === 'User Engagements','e-chart': data.metricName === 'User Engagements','sf-icon-cart': data.metricName === 'Total Orders'}"></span>
                             </span>
-                            <h4 class="text-base font-medium text-gray-800 dark:text-gray-100 ml-3">{{data.metricName}}</h4>
+                            <h4 class="text-base font-medium text-gray-700 dark:text-gray-200 ml-3">{{data.metricName}}</h4>
                         </div>
                         <span class="gap-1 flex items-center" [ngClass]="data.currentPercentage > 0 ? 'text-green-700 dark:text-green-500' : 'text-red-600 dark:text-red-400'">
                             <span class="e-icons e-medium" [ngClass]="data.currentPercentage > 0 ? 'e-arrow-up' : 'e-arrow-down'"></span>{{data.currentPercentage > 0 ? '+' : ''}}{{data.currentPercentage}}&#37;
@@ -18,7 +18,7 @@
                     </div>
                     <div class="e-card-content !pb-6 !pt-4 flex items-center md:items-start lg:items-center md:flex-col lg:flex-row gap-2 md:gap-1 lg:gap-2">
                         <span class="text-xl font-semibold text-gray-900 dark:text-white">{{data.currentValue}}</span>
-                        <span class="text-gray-500 dark:text-gray-300">vs last 7 days</span>
+                        <span class="text-gray-500 dark:text-gray-400">vs last 7 days</span>
                     </div>
                 </div>
             </div>

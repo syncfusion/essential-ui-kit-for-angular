@@ -1,0 +1,21 @@
+#dialog-container .e-dialog .e-dlg-content {
+    padding: 0;
+}
+
+#dialog-container .e-listview .e-list-group-item {
+    height: auto;
+    background-color: transparent;
+    border: 0;
+}
+
+#dialog-container .e-message .e-msg-content {
+    padding: 0;
+}
+
+#dialog-container .e-listview .e-list-item {
+    border: 0;
+}
+
+.settings-panel {
+    margin-left: 256px !important;
+}

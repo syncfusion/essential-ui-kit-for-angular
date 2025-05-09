@@ -3,24 +3,24 @@
 <section class="bg-gray-50 dark:bg-gray-900">
     <div class="px-4 sm:px-6 xl:px-11 py-12">
         <div class="grid sm:grid-cols-2 gap-6 lg:gap-4 lg:grid-cols-4">
-            <div *ngFor="let data of metricsData" class="e-card e-bigger rounded-lg shadow-none !border-gray-300 dark:!border-gray-600">
+            <div *ngFor="let data of metricsData" class="e-card e-bigger rounded-lg shadow-none">
                 <div class="e-card-stacked">
                     <div class="e-card-header !flex-col !pb-2 !pt-5">
                         <span class="e-avatar e-avatar-circle shrink-0 mb-6 h-11 w-11" [ngClass]="{'bg-green-100 dark:bg-green-800': data.metricAssets === 'total-income.png','bg-orange-100 dark:bg-orange-800': ['total-profit.png', 'total-revenue.png'].includes(data.metricAssets),'bg-cyan-100 dark:bg-sky-800': data.metricAssets === 'total-conversion.png'}">
                             <img class="!h-6 !w-6" src="assets/images/stats/financial-performance/{{data.metricAssets}}" alt="financial logo" />
                         </span>
                         <div class="e-card-header-title">
-                            <h3 class="font-medium text-gray-800 dark:text-gray-300 text-sm">{{data.metricName}}</h3>
+                            <h3 class="font-medium text-gray-700 dark:text-gray-200 text-sm">{{data.metricName}}</h3>
                         </div>
                     </div>
                     <div class="e-card-content !pb-5">
                         <div class="gap-1 flex items-center">
                             <span class="text-2xl font-semibold text-gray-900 dark:text-white">{{data.currentValue}}</span>
                             <span class="flex items-center font-medium e-badge e-badge-pill" [ngClass]="data.trend === 'up' ? 'e-badge-success' : 'e-badge-danger'">
-                               <span [ngClass]="data.trend === 'up' ? 'e-icons e-chevron-up-fill' : 'e-icons e-chevron-down-fill'" class="mr-1"></span>{{data.currentPercentage}}&#37;
+                                <span [ngClass]="data.trend === 'up' ? 'e-icons e-chevron-up-fill' : 'e-icons e-chevron-down-fill'" class="mr-1"></span>{{data.currentPercentage}}&#37;
                             </span>
                         </div>
-                        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">Compared to last month</p>
+                        <p class="text-sm text-gray-700 dark:text-gray-200 mt-2">Compared to last month</p>
                     </div>
                 </div>
             </div>

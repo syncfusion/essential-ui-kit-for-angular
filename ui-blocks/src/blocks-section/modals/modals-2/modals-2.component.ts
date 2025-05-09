@@ -6,10 +6,10 @@ import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { TextBoxModule } from '@syncfusion/ej2-angular-inputs';
 
 @Component({
-  selector: 'app-modals-2',
-  standalone: true,
-  imports: [CommonModule, DialogModule, ButtonModule, DropDownListModule, TextBoxModule],
-  templateUrl: './modals-2.component.html',
+    selector: 'app-modals-2',
+    standalone: true,
+    imports: [CommonModule, DialogModule, ButtonModule, DropDownListModule, TextBoxModule],
+    templateUrl: './modals-2.component.html',
 })
 export class Modals2Component implements OnInit, OnDestroy {
     @ViewChild('dialog') public dialog!: DialogComponent;
@@ -38,7 +38,7 @@ export class Modals2Component implements OnInit, OnDestroy {
         /* SB Code - End */
     }
 
-    @HostListener('window:resize', ['$event'])
+    @HostListener('window:resize')
     public onResize(): void {
         this.checkWindowSize();
     }

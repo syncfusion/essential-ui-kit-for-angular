@@ -8,7 +8,7 @@
                     <div class="flex justify-center items-center px-3 mb-2">
                         <img src="assets/images/common/brand-logos/svg/vector.svg" alt="company logo" />
                     </div>
-                    <ejs-listview class="border-0 e-bigger" [dataSource]="data1" [template]="itemTemplate1" aria-label="quick navigation links" role="list">
+                    <ejs-listview class="border-0 e-bigger" [dataSource]="navigationMenu" [template]="itemTemplate1" aria-label="quick navigation links" role="list">
                         <ng-template #itemTemplate1 let-data>
                             <div class="e-list-wrapper flex justify-center items-center">
                                 <span class="e-icons e-large {{data.fontIcon}}"></span>
@@ -19,7 +19,7 @@
                 <div class="pt-4 border-l h-screen border-gray-200 dark:border-gray-700 flex flex-col justify-between" style="width: 256px;">
                     <div>
                         <p class="text-base text-gray-700 dark:text-gray-300 pb-2 px-4">Overview</p>
-                        <ejs-listview class="border-0" [dataSource]="data2" [template]="itemTemplate2" aria-label="main navigation links" role="list">
+                        <ejs-listview class="border-0" [dataSource]="inboxMenu" [template]="itemTemplate2" aria-label="main navigation links" role="list">
                             <ng-template #itemTemplate2 let-data>
                                 <div class="e-list-wrapper flex items-center justify-between ml-1.5 pr-1.5">
                                     <span class="flex items-center">
@@ -33,7 +33,7 @@
                         </ejs-listview>
                         <hr class="border-gray-200 dark:border-gray-700 m-4" />
                         <div>
-                            <ejs-listview class="!border-0" [dataSource]="data3" [template]="itemTemplate3" aria-label="other navigation links" role="list">
+                            <ejs-listview class="!border-0" [dataSource]="supportMenu" [template]="itemTemplate3" aria-label="other navigation links" role="list">
                                 <ng-template #itemTemplate3 let-data>
                                     <div class="e-list-wrapper ml-1.5">
                                         <span class="text-base font-normal">{{data.field}}</span>
@@ -64,7 +64,7 @@
                     <div class="d-flex justify-content-center align-items-center px-3 mb-2">
                         <img src="assets/images/common/brand-logos/svg/vector.svg" alt="company logo" />
                     </div>
-                    <ejs-listview class="border-0 e-bigger" [dataSource]="data1" [template]="itemTemplate1" aria-label="quick navigation links" role="list">
+                    <ejs-listview class="border-0 e-bigger" [dataSource]="navigationMenu" [template]="itemTemplate1" aria-label="quick navigation links" role="list">
                         <ng-template #itemTemplate1 let-data>
                             <div class="e-list-wrapper d-flex justify-content-center align-items-center">
                                 <span class="e-icons e-large {{data.fontIcon}}"></span>
@@ -75,7 +75,7 @@
                 <div class="pt-4 vh-100 border-start border-light-subtle opacity-100 d-flex flex-column justify-content-between" style="width: 256px;">
                     <div>
                         <p class="text-body-secondary pb-2 px-3 mb-0 fs-6 mt-2">Overview</p>
-                        <ejs-listview class="border-0 e-bigger" [dataSource]="data2" [template]="itemTemplate2" aria-label="main navigation links" role="list">
+                        <ejs-listview class="border-0 e-bigger" [dataSource]="inboxMenu" [template]="itemTemplate2" aria-label="main navigation links" role="list">
                             <ng-template #itemTemplate2 let-data>
                                 <div class="e-list-wrapper d-flex align-items-center justify-content-between ps-1 pe-2">
                                     <span class="d-flex align-items-center">
@@ -89,7 +89,7 @@
                         </ejs-listview>
                         <p class="m-3 fs-6 text-body-secondary">Others</p>
                         <div>
-                            <ejs-listview class="border-0 e-bigger" [dataSource]="data3" [template]="itemTemplate3" aria-label="other navigation links" role="list">
+                            <ejs-listview class="border-0 e-bigger" [dataSource]="supportMenu" [template]="itemTemplate3" aria-label="other navigation links" role="list">
                                 <ng-template #itemTemplate3 let-data>
                                     <div class="e-list-wrapper px-1">
                                         <span class="fs-6 fw-normal">{{data.field}}</span>

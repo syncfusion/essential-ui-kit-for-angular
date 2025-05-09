@@ -3,11 +3,11 @@ import { BreadcrumbModule, BreadcrumbOverflowMode, BreadcrumbComponent } from '@
 import { ButtonModule, SwitchModule, ChipListModule } from '@syncfusion/ej2-angular-buttons';
 
 @Component({
-  selector: 'app-header-8',
-  standalone: true,
-  imports: [BreadcrumbModule, ButtonModule, SwitchModule, ChipListModule],
-  templateUrl: './header-8.component.html',
-  styleUrl: './header-8.component.css'
+    selector: 'app-header-8',
+    standalone: true,
+    imports: [BreadcrumbModule, ButtonModule, SwitchModule, ChipListModule],
+    templateUrl: './header-8.component.html',
+    styleUrl: './header-8.component.css'
 })
 export class Header8Component implements OnInit, OnDestroy {
     @ViewChild('breadcrumb') breadcrumb!: BreadcrumbComponent;

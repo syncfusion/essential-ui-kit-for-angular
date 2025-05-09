@@ -47,7 +47,7 @@
                                 </span>
                             </div>
                             <div *ngIf="data.text == 'Personal'">
-                                <button id="mainDropdown" ejs-dropdownbutton class="e-flat pr-2 md:pr-4" content="{{data.text}}" [items]="[{ text: (data.text == 'Personal' ? 'CompanyName.com' : ''), id: 'item1' }]" type="button" aria-label="choose an item" role="button" (open)="open($event)"></button>
+                                <button id="mainDropdown" ejs-dropdownbutton class="e-flat" content="{{data.text}}" [items]="[{ text: (data.text == 'Personal' ? 'CompanyName.com' : ''), id: 'item1' }]" type="button" aria-label="choose an item" role="button" (open)="open($event)"></button>
                             </div>
                             <button ejs-button class="e-flat" *ngIf="data.text == 'CompanyName.com'" content="{{data.text}}" type="button" aria-label="open company name website" role="button"></button>
                         </ng-template>
@@ -117,7 +117,7 @@
                             </span>
                         </div>
                         <div *ngIf="data.text == 'Personal'">
-                            <button id="mainDropdown" ejs-dropdownbutton class="e-flat pe-2 pe-md-4" content="{{data.text}}" [items]="[{ text: (data.text == 'Personal' ? 'CompanyName.com' : ''), id: 'item1' }]" type="button" aria-label="choose an item" role="button" (open)="open($event)"></button>
+                            <button id="mainDropdown" ejs-dropdownbutton class="e-flat" content="{{data.text}}" [items]="[{ text: (data.text == 'Personal' ? 'CompanyName.com' : ''), id: 'item1' }]" type="button" aria-label="choose an item" role="button" (open)="open($event)"></button>
                         </div>
                         <button ejs-button class="e-flat" *ngIf="data.text == 'CompanyName.com'" content="{{data.text}}" type="button" aria-label="open company name website" role="button"></button>
                     </ng-template>

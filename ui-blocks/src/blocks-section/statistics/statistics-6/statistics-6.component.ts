@@ -3,29 +3,15 @@ import { CommonModule } from '@angular/common';
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 
 @Component({
-  selector: 'app-statistics-6',
-  standalone: true,
-  imports: [CommonModule, ButtonModule],
-  templateUrl: './statistics-6.component.html'
+    selector: 'app-statistics-6',
+    standalone: true,
+    imports: [CommonModule, ButtonModule],
+    templateUrl: './statistics-6.component.html'
 })
 export class Statistics6Component implements OnInit, OnDestroy {
     /* SB Code - Start */
     public currentTheme: string = 'tailwind';
     /* SB Code - End */
-
-    constructor() { }
-
-    public ngOnInit(): void {
-        /* SB Code - Start */
-        window.addEventListener('message', this.handleMessageEvent);
-        /* SB Code - End */
-    }
-
-    public ngOnDestroy(): void {
-        /* SB Code - Start */
-        window.removeEventListener('message', this.handleMessageEvent);
-        /* SB Code - End */
-    }
 
     public metricsData: any[] = [
         {
@@ -57,6 +43,20 @@ export class Statistics6Component implements OnInit, OnDestroy {
             trend: 'up'
         }
     ]; 
+    
+    constructor() { }
+
+    public ngOnInit(): void {
+        /* SB Code - Start */
+        window.addEventListener('message', this.handleMessageEvent);
+        /* SB Code - End */
+    }
+
+    public ngOnDestroy(): void {
+        /* SB Code - Start */
+        window.removeEventListener('message', this.handleMessageEvent);
+        /* SB Code - End */
+    }
 
     /* SB Code - Start */
     private handleMessageEvent = (event: MessageEvent): void => {

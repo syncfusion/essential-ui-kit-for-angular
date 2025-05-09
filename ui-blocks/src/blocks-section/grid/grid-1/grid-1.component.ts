@@ -29,7 +29,7 @@ export class Grid1Component implements OnInit, OnDestroy {
         /* SB Code - End */
     }
 
-    public data: Object[] = [
+    public gridData: Object[] = [
         {
             id: 1,
             leadId: "L1001",

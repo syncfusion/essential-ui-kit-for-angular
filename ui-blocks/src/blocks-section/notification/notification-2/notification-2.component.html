@@ -1,0 +1,119 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-gray-50 dark:bg-gray-950">
+    <div class="relative h-screen mx-auto" style="max-width: 480px;">
+        <div class="w-full flex justify-end p-4 absolute right-0 top-0" style="min-height: 580px;">
+            <div class="relative w-8 h-8">
+                <button #button ejs-button class="e-outline e-round" iconCss="sf-icon-notification-bell-02" type="button" (click)="toggleDialog()" aria-label="show/hide notification" role="button"></button>
+                <span class="e-badge e-badge-danger e-badge-notification e-badge-overlap e-badge-circle mt-1 mr-2">4</span>
+            </div>
+        </div>
+    </div>
+    <ejs-dialog #dialog id="notification" class="!bg-white dark:!bg-gray-800 rounded-lg overflow-hidden !border" width="448px" (open)="setDialogPosition($event)" (created)="dialog.show()" aria-label="notification" role="dialog">
+        <ng-template #header>
+            <div class="flex justify-between items-center p-4 md:py-2.5">
+                <p class="text-base md:text-lg text-gray-900 dark:text-white font-medium">Notifications</p>
+                <button ejs-button class="e-flat e-small e-round" iconCss="e-icons e-close" type="button" (click)="toggleDialog()" aria-label="show/hide notification" role="button"></button>
+            </div>
+        </ng-template>
+        <ng-template #content>
+            <div class="flex gap-3 p-3 sm:p-3 sm:pr-6 border-b border-gray-200 dark:border-gray-600">
+                <span class="e-icons e-file-document text-2xl !text-gray-500 dark:!text-gray-300"></span>
+                <div class="flex flex-col gap-1 mt-0.5" style="width: calc(100% - 36px);">
+                    <p class="font-semibold text-gray-900 dark:text-white leading-5">Uploading 'Image 123-Finalbatch.exe'</p>
+                    <p class="text-xs text-gray-900 dark:text-white">Please wait while we are uploading your file</p>
+                    <div class="pt-2.5 w-full">
+                        <ejs-progressbar #progressbar type="Linear" width="100%" height="2px" cornerRadius='Round' value="50" progressColor="#4F46E5" [animation]="{ enable: true, duration: 2000, delay: 0 }" [margin]="{ left: 0, right: 0 , top: 0, bottom: 0 }" aria-label="uploading file" role="progressbar"></ejs-progressbar>
+                        <p class="text-xs text-gray-900 dark:text-white ml-auto mt-1 mr-3 w-max">50% uploaded..</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <button ejs-button class="e-flat" content="Cancel" type="button" aria-label="cancel" role="button"></button>
+                        <button ejs-button class="e-primary e-flat" content="Upload Another" type="button" aria-label="upload another" role="button"></button>
+                    </div>
+                </div>
+            </div>
+            <ejs-listview class="border-0" [dataSource]="notificationData" aria-label="recent notification" role="list">
+                <ng-template #template let-data>
+                    <div class="flex gap-2 p-4 sm:p-3 border-b border-gray-200 dark:border-gray-600">
+                        <div class="shrink-0">
+                            <span class="e-avatar e-avatar-circle" [ngStyle]="{ 'background-image': 'url(assets/images/common/avatar/' + data.avatar + ')' }" *ngIf="data.avatar!=''"></span>
+                        </div>
+                        <div class="flex justify-between w-full">
+                            <div class="flex flex-col gap-1 pr-3">
+                                <p class="text-gray-900 dark:text-white font-medium">{{data.sender}}</p>
+                                <p class="text-xs text-gray-500 dark:text-gray-400">{{data.content}}</p>
+                            </div>
+                            <p class="text-xs text-gray-500 dark:text-gray-400 text-end w-10 shrink-0">{{data.time}}</p>
+                        </div>
+                    </div>
+                </ng-template>
+            </ejs-listview>
+        </ng-template>
+        <ng-template #footerTemplate>
+            <div class="py-3 sm:py-2.5 flex justify-center bg-gray-200 dark:bg-gray-700">
+                <button ejs-button class="e-outline e-primary border-0 !ml-0" content="View all notification" type="button" aria-label="view all notification" role="button"></button>
+            </div>
+        </ng-template>
+    </ejs-dialog>
+</section> 
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body">
+    <div class="position-relative vh-100 mx-auto" style="max-width: 480px;">
+        <div class="w-100 d-flex justify-content-end p-3 position-absolute top-0 end-0" style="min-height: 580px;">
+            <div class="position-relative" style="width: 32px; height: 32px;">
+                <button #button ejs-button class="e-outline e-round" iconCss="sf-icon-notification-bell-02" type="button" (click)="toggleDialog()" aria-label="show/hide notification" role="button"></button>
+                <span class="e-badge e-badge-danger e-badge-notification e-badge-overlap e-badge-circle mt-1 me-2">4</span>
+            </div>
+        </div>
+    </div>
+    <ejs-dialog #dialog id="notification" class="bg-body rounded overflow-hidden border" width="448px" (open)="setDialogPosition($event)" (created)="dialog.show()" aria-label="notification" role="dialog">
+        <ng-template #header>
+            <div class="d-flex justify-content-between align-items-center px-3 py-2 my-1 border-bottom border-light-subtle">
+                <p class="text-body fs-5 lh-base fw-medium mb-0">Notifications</p>
+                <button ejs-button class="e-flat e-small e-round e-inherit" iconCss="e-icons e-close" type="button" (click)="toggleDialog()" aria-label="show/hide notification" role="button"></button>
+            </div>
+        </ng-template>
+        <ng-template #content>
+            <div class="d-flex gap-2 p-3 p-sm-3 pe-sm-4 border-bottom">
+                <span class="e-icons e-file-document fs-4 text-body-secondary"></span>
+                <div class="d-flex flex-column gap-1" style="width: calc(100% - 36px);">
+                    <p class="fw-semibold text-body m-0">Uploading 'Image 123-Finalbatch.exe'</p>
+                    <p class="small text-body-secondary m-0">Please wait while we are uploading your file</p>
+                    <div class="pt-2 w-100">
+                        <ejs-progressbar #progressbar type="Linear" width="100%" height="6px" cornerRadius='Round' trackThickness="6" progressThickness="6" value="50" progressColor="#0D6EFD" [animation]="{ enable: true, duration: 2000, delay: 0 }" [margin]="{ left: 0, right: 0 , top: 0, bottom: 0 }" aria-label="uploading file" role="progressbar"></ejs-progressbar>
+                        <p class="small ms-auto mt-1 me-3 mb-0 text-body-secondary" style="width: fit-content;">50% uploaded..</p>
+                    </div>
+                    <div class="d-flex gap-3">
+                        <button ejs-button class="e-flat" content="Cancel" type="button" aria-label="cancel" role="button"></button>
+                        <button ejs-button class="e-primary e-flat" content="Upload Another" type="button" aria-label="upload another" role="button"></button>
+                    </div>
+                </div>
+            </div>
+            <ejs-listview class="border-0 rounded-0" [dataSource]="notificationData" aria-label="recent notification" role="list">
+                <ng-template #template let-data>
+                    <div class="d-flex gap-2 p-3">
+                        <div class="flex-shrink-0">
+                            <span class="e-avatar e-avatar-circle" [ngStyle]="{ 'background-image': 'url(assets/images/common/avatar/' + data.avatar + ')' }" *ngIf="data.avatar!=''"></span>
+                        </div>
+                        <div class="d-flex justify-content-between w-100">
+                            <div class="d-flex flex-column gap-1 pe-3">
+                                <p class="fw-medium m-0">{{data.sender}}</p>
+                                <p class="small m-0">{{data.content}}</p>
+                            </div>
+                            <p class="small text-end flex-shrink-0 m-0">{{data.time}}</p>
+                        </div>
+                    </div>
+                </ng-template>
+            </ejs-listview>
+        </ng-template>
+        <ng-template #footerTemplate>
+            <div class="py-3 d-flex justify-content-center bg-body-tertiary">
+                <button ejs-button class="e-outline e-primary border-0 ms-0" content="View all notification" type="button" aria-label="view all notification" role="button"></button>
+            </div>
+        </ng-template>
+    </ejs-dialog>
+</section>
+
+}

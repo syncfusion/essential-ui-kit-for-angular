@@ -3,11 +3,11 @@ import { TabModule, BreadcrumbModule, BreadcrumbOverflowMode, TabComponent, Brea
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 
 @Component({
-  selector: 'app-header-11',
-  standalone: true,
-  imports: [TabModule, BreadcrumbModule, ButtonModule],
-  templateUrl: './header-11.component.html',
-  styleUrl: './header-11.component.css'
+    selector: 'app-header-11',
+    standalone: true,
+    imports: [TabModule, BreadcrumbModule, ButtonModule],
+    templateUrl: './header-11.component.html',
+    styleUrl: './header-11.component.css'
 })
 export class Header11Component implements OnInit, OnDestroy {
     @ViewChild('tab') tab!: TabComponent;

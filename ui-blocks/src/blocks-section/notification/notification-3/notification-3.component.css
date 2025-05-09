@@ -1,0 +1,26 @@
+#notification .e-tab .e-tab-header .e-toolbar-item {
+    width: 100% !important;
+}
+
+#notification .e-tab .e-tab-header .e-toolbar-items {
+    width: 50% !important;
+    text-align: center;
+}
+
+#notification.e-dialog {
+    max-height: fit-content !important;
+}
+
+#notification .e-dlg-header-content,
+#notification .e-dlg-content,
+#notification .e-footer-content {
+    border: 0;
+    border-radius: 0;
+    padding: 0 !important;
+    background-color: transparent !important;
+}
+
+#notification .e-list-item {
+    height: auto !important;
+    padding: 0 !important;
+}
