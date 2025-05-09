@@ -6,7 +6,7 @@
                 <span class="e-input-group-icon e-icons e-search !text-base"></span>
                 <input class="e-input !pl-0" type="text" placeholder="People, chat, keywords" aria-label="search for people, chats, or keywords" role="textbox" />
             </div>
-            <ejs-listview class="!border-0 mt-4" cssClass="e-list-template" [dataSource]="data" aria-label="list of chats" role="list">
+            <ejs-listview class="!border-0 mt-4" cssClass="e-list-template" [dataSource]="chatMessages" aria-label="list of chats" role="list">
                 <ng-template #template let-data>
                     <div class="e-list-wrapper e-list-multi-line border-b border-gray-200 dark:border-gray-600 !py-4 !px-1 sm:!px-3">
                         <div class="flex justify-between">
@@ -41,7 +41,7 @@
                 <span class="e-input-group-icon e-icons e-search border-0 !pr-3"></span>
                 <input class="e-input ps-0" type="text" placeholder="People, chat, keywords" aria-label="search for people, chats, or keywords" role="textbox" />
             </div>
-            <ejs-listview class="border-0 mt-2" cssClass="e-list-template" [dataSource]="data" aria-label="list of chats" role="list">
+            <ejs-listview class="border-0 mt-2" cssClass="e-list-template" [dataSource]="chatMessages" aria-label="list of chats" role="list">
                 <ng-template #template let-data>
                     <div class="e-list-wrapper e-list-multi-line py-3 px-1 px-sm-3">
                         <div class="d-flex justify-content-between">

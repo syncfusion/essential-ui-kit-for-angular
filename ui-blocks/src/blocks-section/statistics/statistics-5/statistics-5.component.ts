@@ -3,29 +3,15 @@ import { CommonModule } from '@angular/common';
 import { ChartAllModule } from '@syncfusion/ej2-angular-charts';
 
 @Component({
-  selector: 'app-statistics-5',
-  standalone: true,
-  imports: [CommonModule, ChartAllModule],
-  templateUrl: './statistics-5.component.html'
+    selector: 'app-statistics-5',
+    standalone: true,
+    imports: [CommonModule, ChartAllModule],
+    templateUrl: './statistics-5.component.html'
 })
 export class Statistics5Component implements OnInit, OnDestroy {
     /* SB Code - Start */
     public currentTheme: string = 'tailwind';
     /* SB Code - End */
-
-    constructor() { }
-
-    public ngOnInit(): void {
-        /* SB Code - Start */
-        window.addEventListener('message', this.handleMessageEvent);
-        /* SB Code - End */
-    }
-
-    public ngOnDestroy(): void {
-        /* SB Code - Start */
-        window.removeEventListener('message', this.handleMessageEvent);
-        /* SB Code - End */
-    }
 
     public metricsData: any[] = [
         {
@@ -106,10 +92,24 @@ export class Statistics5Component implements OnInit, OnDestroy {
         }
     ];
 
+    constructor() { }
+
+    public ngOnInit(): void {
+        /* SB Code - Start */
+        window.addEventListener('message', this.handleMessageEvent);
+        /* SB Code - End */
+    }
+
+    public ngOnDestroy(): void {
+        /* SB Code - Start */
+        window.removeEventListener('message', this.handleMessageEvent);
+        /* SB Code - End */
+    }
+
     public setYaxis(data: any[]): object {
         let minValue = Math.min(...data.map(item => item.y));
         let maxValue = Math.max(...data.map(item => item.y));
-    
+
         return {
             visible: false,
             lineStyle: { width: 0 },
@@ -120,7 +120,7 @@ export class Statistics5Component implements OnInit, OnDestroy {
             minorGridLines: { width: 0 }
         };
     }
-    
+
     public getGradientFill(trend: string): string {
         return trend === 'up' ? 'url(#gradient-up)' : 'url(#gradient-down)';
     }

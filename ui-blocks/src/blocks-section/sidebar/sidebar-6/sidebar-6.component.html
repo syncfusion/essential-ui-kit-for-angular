@@ -16,7 +16,7 @@
                         <button ejs-button cssClass="e-icons e-chevron-down-double e-flat e-large" type="button" aria-label="view additional profile settings" role="button"></button>
                     </div>
                     <div>
-                        <ejs-listview class="border-0" [dataSource]="data1" [template]="itemTemplate1" aria-label="main navigation links" role="list">
+                        <ejs-listview class="border-0" [dataSource]="navigationMenu" [template]="itemTemplate1" aria-label="main navigation links" role="list">
                             <ng-template #itemTemplate1 let-data>
                                 <div class="e-list-wrapper flex items-center px-1">
                                     <span class="e-icons {{data.fontIcon}} text-base"></span>
@@ -28,7 +28,7 @@
                     <hr class="my-4 mx-3 border-gray-200 dark:border-gray-700" />
                     <div>
                         <p class="text-base px-4 py-3 text-gray-700 dark:text-gray-300">Bergside Projects</p>
-                        <ejs-listview class="!border-0" [dataSource]="data2" [template]="itemTemplate2" aria-label="other navigation links" role="list">
+                        <ejs-listview class="!border-0" [dataSource]="libraryMenu" [template]="itemTemplate2" aria-label="other navigation links" role="list">
                             <ng-template #itemTemplate2 let-data>
                                 <div class="e-list-wrapper flex items-center px-1">
                                     <span class="e-icons e-bullet-3 !text-indigo-600 dark:!text-indigo-400"></span>
@@ -42,7 +42,7 @@
                     </div>
                 </div>
                 <div class="pb-4">
-                    <ejs-listview class="!border-0" [dataSource]="data3" [template]="itemTemplate3" aria-label="other navigation links" role="list">
+                    <ejs-listview class="!border-0" [dataSource]="supportMenu" [template]="itemTemplate3" aria-label="other navigation links" role="list">
                         <ng-template #itemTemplate3 let-data>
                             <div class="e-list-wrapper flex items-center px-1">
                                 <span class="e-icons {{data.fontIcon}}"></span>
@@ -79,7 +79,7 @@
                         <button ejs-button cssClass="e-icons e-chevron-down-double e-flat" type="button" aria-label="view additional profile settings" role="button"></button>
                     </div>
                     <div>
-                        <ejs-listview class="border-0 e-bigger" [dataSource]="data1" [template]="itemTemplate1" aria-label="main navigation links" role="list">
+                        <ejs-listview class="border-0 e-bigger" [dataSource]="navigationMenu" [template]="itemTemplate1" aria-label="main navigation links" role="list">
                             <ng-template #itemTemplate1 let-data>
                                 <div class="e-list-wrapper d-flex align-items-center px-1">
                                     <span class="e-icons {{data.fontIcon}} fs-6"></span>
@@ -90,7 +90,7 @@
                     </div>
                     <div>
                         <p class="text-body-secondary fs-6 m-3">Bergside Projects</p>
-                        <ejs-listview class="border-0 e-bigger" [dataSource]="data2" [template]="itemTemplate2" aria-label="other navigation links" role="list">
+                        <ejs-listview class="border-0 e-bigger" [dataSource]="libraryMenu" [template]="itemTemplate2" aria-label="other navigation links" role="list">
                             <ng-template #itemTemplate2 let-data>
                                 <div class="e-list-wrapper d-flex align-items-center px-1">
                                     <span class="e-icons e-bullet-3 e-medium text-primary"></span>
@@ -104,7 +104,7 @@
                     </div>
                 </div>
                 <div class="pb-3">
-                    <ejs-listview class="border-0 e-bigger" [dataSource]="data3" [template]="itemTemplate3" aria-label="other navigation links" role="list">
+                    <ejs-listview class="border-0 e-bigger" [dataSource]="supportMenu" [template]="itemTemplate3" aria-label="other navigation links" role="list">
                         <ng-template #itemTemplate3 let-data>
                             <div class="e-list-wrapper d-flex align-items-center px-1">
                                 <span class="e-icons {{data.fontIcon}}"></span>

@@ -5,7 +5,7 @@
     <div class="grid grid-cols-1 gap-6 px-4 md:px-6 lg:px-6 xl:px-11 pb-10 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2">
         <div class="order-1 lg:order-2 bg-gray-50 dark:bg-gray-950 md:border rounded-lg md:border-gray-200 md:dark:border-gray-600">
             <h6 class="px-0 md:p-6 pb-0 text-lg font-semibold text-gray-900 dark:text-white">Product summary</h6>
-            <ejs-grid class="pt-4 sm:pt-0" #grid [dataSource]="data" rowHeight="68" gridLines="None" width="100%" maxWidth="1280" role="grid" style="border: none !important;">
+            <ejs-grid class="pt-4 sm:pt-0" #grid [dataSource]="products" rowHeight="68" gridLines="None" width="100%" maxWidth="1280" role="grid" style="border: none !important;">
                 <e-columns>
                     <e-column field="Items" width="56" textAlign="center">
                         <ng-template #template let-data>
@@ -151,7 +151,7 @@
         <div class="d-lg-flex mx-0 gap-4 mb-sm-4 pe-lg-4">
             <div class="col-md-12 col-lg-6 order-lg-2 bg-body border border-light-subtle rounded px-0">
                 <h6 class="fs-5 fw-medium text-body pb-2 p-4 mb-0">Product summary</h6>
-                <ejs-grid class="border-0 pt-3" #grid [dataSource]="data" rowHeight="68" gridLines="None" width="100%" maxWidth="1280" role="grid">
+                <ejs-grid class="border-0 pt-3" #grid [dataSource]="products" rowHeight="68" gridLines="None" width="100%" maxWidth="1280" role="grid">
                     <e-columns>
                         <e-column field="Items" width="56" textAlign="center">
                             <ng-template #template let-data>

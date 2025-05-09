@@ -3,11 +3,10 @@ import { TabModule, TabComponent } from '@syncfusion/ej2-angular-navigations';
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 
 @Component({
-  selector: 'app-header-1',
-  standalone: true,
-  imports: [TabModule, ButtonModule],
-  templateUrl: './header-1.component.html',
-  styleUrl: './header-1.component.css'
+    selector: 'app-header-1',
+    standalone: true,
+    imports: [TabModule, ButtonModule],
+    templateUrl: './header-1.component.html'
 })
 export class Header1Component implements OnInit, OnDestroy {
     @ViewChild('tab') tab!: TabComponent;
@@ -29,7 +28,7 @@ export class Header1Component implements OnInit, OnDestroy {
     public ngAfterViewInit(): void {
         setTimeout(() => {
             this.tab.refresh();
-        }, 250);  
+        }, 250);
         this.tab.refreshActiveTabBorder();
         this.updateTabItems();
     }
@@ -41,7 +40,7 @@ export class Header1Component implements OnInit, OnDestroy {
         /* SB Code - End */
     }
 
-    @HostListener('window:resize', ['$event'])
+    @HostListener('window:resize')
     public onResize(): void {
         this.updateTabItems();
     }

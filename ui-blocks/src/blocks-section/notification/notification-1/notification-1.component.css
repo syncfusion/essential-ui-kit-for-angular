@@ -1,0 +1,23 @@
+::ng-deep html.light #tab .e-tab .e-tab-header .e-toolbar-item:not(.e-active) .e-tab-wrap:hover .e-tab-text,
+::ng-deep html.light #tab .e-tab .e-tab-header .e-toolbar-item:not(.e-active) .e-tab-wrap:hover .e-badge {
+    color: #4F46E5 !important;
+}
+
+::ng-deep html.dark #tab .e-tab .e-tab-header .e-toolbar-item:not(.e-active) .e-tab-wrap:hover .e-tab-text,
+::ng-deep html.dark #tab .e-tab .e-tab-header .e-toolbar-item:not(.e-active) .e-tab-wrap:hover .e-badge {
+    color: #22d3ee !important;
+}
+
+#notification .e-dlg-header-content,
+#notification .e-dlg-content,
+#notification .e-footer-content {
+    border: 0;
+    border-radius: 0;
+    padding: 0 !important;
+    background-color: transparent !important;
+}
+
+#notification .e-list-item {
+    height: auto !important;
+    padding: 0 !important;
+}

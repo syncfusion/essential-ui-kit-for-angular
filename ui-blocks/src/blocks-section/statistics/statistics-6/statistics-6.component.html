@@ -3,7 +3,7 @@
 <section class="bg-gray-50 dark:bg-gray-900">
     <div class="px-4 sm:px-6 xl:px-11 py-12">
         <div class="grid sm:grid-cols-2 gap-6 lg:gap-4 xl:grid-cols-4">
-            <div *ngFor="let data of metricsData" class="e-card rounded-lg !border-gray-300 dark:!border-gray-600">
+            <div *ngFor="let data of metricsData" class="e-card rounded-lg">
                 <div class="e-card-stacked">
                     <div class="e-card-header !justify-between items-center !py-3 !px-6 bg-gray-50 dark:bg-gray-700">
                         <div class="e-card-header-title">
@@ -14,7 +14,7 @@
                     <div class="e-card-content !py-6 !px-6">
                         <p class="text-3xl !leading-10 font-semibold mb-4 xl:mb-6 text-gray-900 dark:text-white">{{data.currentValue | number}}</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-gray-500 dark:text-gray-400 mt-1 xl:mt-0">{{data.previousValue | number}} last month</span>
+                            <span class="text-gray-500 dark:text-gray-400">{{data.previousValue | number}} last month</span>
                             <span class="e-badge flex items-center w-fit" [ngClass]="data.trend === 'up' ? 'e-badge-success' : 'e-badge-danger'">
                                 <span class="e-icons mr-1" [ngClass]="data.trend === 'up' ? 'e-arrow-up' : 'e-arrow-down'"></span>
                                 <span>{{data.currentPercentage}}&#37;</span>
@@ -44,7 +44,7 @@
                         <div class="e-card-content p-4">
                             <p class="fs-3 lh-sm fw-bold text-body">{{data.currentValue | number}}</p>
                             <div class="d-flex justify-content-between w-auto align-items-center">
-                                <span class="text-body text-opacity-50 mt-2 mt-xl-0">{{data.previousValue | number}} last month</span>
+                                <span class="text-body text-opacity-50">{{data.previousValue | number}} last month</span>
                                 <span class="e-badge d-flex flex-row align-items-center justify-content-start flex-grow-0" [ngClass]="data.trend === 'up' ? 'e-badge-success' : 'e-badge-danger'" style="width: fit-content;">
                                     <span class="e-icons me-1" [ngClass]="data.trend === 'up' ? 'e-arrow-up' : 'e-arrow-down'"></span>
                                     <span>{{data.currentPercentage}}&#37;</span>

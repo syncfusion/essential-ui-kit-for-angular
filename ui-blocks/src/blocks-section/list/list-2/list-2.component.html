@@ -3,7 +3,7 @@
 <section class="bg-white dark:bg-gray-900">
     <div id="inbox-list" class="flex items-center justify-center min-h-screen">
         <div class="lg:max-w-2xl w-full m-auto p-4 md:p-6 lg:py-8 lg:px-14">
-            <ejs-listview class="!border-0" cssClass="e-list-template" [dataSource]="data" aria-label="list of e-mail conversations" role="list">
+            <ejs-listview class="!border-0" cssClass="e-list-template" [dataSource]="notifications" aria-label="list of e-mail conversations" role="list">
                 <ng-template #template let-data>
                     <div class="e-list-wrapper flex items-start !px-1 sm:!px-3">
                         <span class="flex items-center gap-4">
@@ -35,7 +35,7 @@
 <section class="bg-body">
     <div id="inbox-list" class="d-flex align-items-center justify-content-center min-vh-100">
         <div class="container-lg w-100 m-auto p-3 p-md-4" [style]="width">
-            <ejs-listview class="border-0" cssClass="e-list-template" [dataSource]="data" aria-label="list of e-mail conversations" role="list">
+            <ejs-listview class="border-0" cssClass="e-list-template" [dataSource]="notifications" aria-label="list of e-mail conversations" role="list">
                 <ng-template #template let-data>
                     <div class="e-list-wrapper d-flex align-items-start px-1 px-sm-3 py-2 w-100">
                         <span class="d-flex align-items-center gap-3">

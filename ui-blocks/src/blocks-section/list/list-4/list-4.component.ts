@@ -31,7 +31,7 @@ export class List4Component implements OnInit, OnDestroy {
         /* SB Code - End */
     }
 
-    public data: Object[] = [
+    public shoes: Object[] = [
         {
             id: '1',
             header: 'Nike Air Max 270',

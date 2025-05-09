@@ -34,7 +34,7 @@ export class List11Component implements OnInit, OnDestroy {
         /* SB Code - End */
     }
 
-    public data: Object[] = [
+    public files: Object[] = [
         {
             id: 1,
             fileName: "Project_Presentation_2024_V1.pptx",

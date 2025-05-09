@@ -14,7 +14,7 @@ export class Grid9Component implements OnInit, OnDestroy {
     /* SB Code - Start */
     public currentTheme: string = 'tailwind';
     /* SB Code - End */
-    public data: Object[] = [
+    public gridData: Object[] = [
         { id: 1, category: "User Management", permission: "Create Users", systemAdmin: true, itManager: true, hrManager: false, financeManager: false, salesManager: false, customerServiceRep: false, generalEmployee: false },
         { id: 2, category: "User Management", permission: "Edit Users", systemAdmin: true, itManager: true, hrManager: false, financeManager: false, salesManager: false, customerServiceRep: false, generalEmployee: false },
         { id: 3, category: "User Management", permission: "Delete Users", systemAdmin: true, itManager: false, hrManager: false, financeManager: false, salesManager: false, customerServiceRep: false, generalEmployee: false },

@@ -61,7 +61,7 @@ export class FloatingMenu2Component implements OnInit, OnDestroy {
         this.toggleState = !this.toggleState;
     }
 
-    @HostListener('window:resize', ['$event'])
+    @HostListener('window:resize')
     public setDialogPosition(event: any): void {
         const position = this.fab?.element?.getBoundingClientRect();
         const dialogBounds = this.dialog?.element?.getBoundingClientRect();

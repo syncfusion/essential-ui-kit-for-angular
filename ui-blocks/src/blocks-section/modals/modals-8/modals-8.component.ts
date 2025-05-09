@@ -8,18 +8,17 @@ import { TextBoxModule, TextAreaModule, UploaderModule } from '@syncfusion/ej2-a
 import { DropDownButtonModule } from '@syncfusion/ej2-angular-splitbuttons';
 
 @Component({
-  selector: 'app-modals-8',
-  standalone: true,
-  imports: [CommonModule, DialogModule, TabModule, ButtonModule, SwitchModule, DatePickerModule, TextBoxModule, TextAreaModule, UploaderModule, DropDownButtonModule],
-  templateUrl: './modals-8.component.html',
-  styleUrl: './modals-8.component.css'
+    selector: 'app-modals-8',
+    standalone: true,
+    imports: [CommonModule, DialogModule, TabModule, ButtonModule, SwitchModule, DatePickerModule, TextBoxModule, TextAreaModule, UploaderModule, DropDownButtonModule],
+    templateUrl: './modals-8.component.html',
+    styleUrl: './modals-8.component.css'
 })
 export class Modals8Component implements OnInit, OnDestroy {
     @ViewChild('dialog') public dialog!: DialogComponent;
     /* SB Code - Start */
     public currentTheme: string = 'tailwind';
     /* SB Code - End */
-    public containerHeight: string = 'min-height: 750px;';
     public isMobile: boolean = false;
 
     constructor() { }
@@ -42,14 +41,13 @@ export class Modals8Component implements OnInit, OnDestroy {
         /* SB Code - End */
     }
 
-    @HostListener('window:resize', ['$event'])
+    @HostListener('window:resize')
     public onResize(): void {
         this.checkWindowSize();
     }
 
     public checkWindowSize(): void {
         this.isMobile = window.innerWidth < 640;
-        this.containerHeight = this.isMobile ? 'min-height: 635px;' : 'min-height: 750px;';
         this.dialog.show(this.isMobile);
     }
 

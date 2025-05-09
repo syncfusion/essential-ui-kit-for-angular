@@ -30,7 +30,7 @@ export class Checkout3Component implements OnInit, OnDestroy {
         /* SB Code - End */
     }
 
-    public data: Object[] = [
+    public products: Object[] = [
         {
             id: 1,
             image: "apple-magsafe.png",

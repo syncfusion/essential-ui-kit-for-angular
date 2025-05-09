@@ -6,11 +6,11 @@ import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { SwitchModule, ButtonModule } from '@syncfusion/ej2-angular-buttons';
 
 @Component({
-  selector: 'app-modals-3',
-  standalone: true,
-  imports: [DialogModule, StepperModule, AccordionModule, TextBoxModule, DropDownListModule, SwitchModule, ButtonModule],
-  templateUrl: './modals-3.component.html',
-  styleUrl: './modals-3.component.css'
+    selector: 'app-modals-3',
+    standalone: true,
+    imports: [DialogModule, StepperModule, AccordionModule, TextBoxModule, DropDownListModule, SwitchModule, ButtonModule],
+    templateUrl: './modals-3.component.html',
+    styleUrl: './modals-3.component.css'
 })
 export class Modals3Component implements OnInit, OnDestroy {
     @ViewChild('dialog') public dialog!: DialogComponent;
@@ -18,7 +18,7 @@ export class Modals3Component implements OnInit, OnDestroy {
     public currentTheme: string = 'tailwind';
     /* SB Code - End */
     public labelPos: string = 'Bottom';
-    public stepperOrientation: string ='horizontal';
+    public stepperOrientation: string = 'horizontal';
     public stepperStyle: string = 'min-width: 500px;';
     public isMobile: boolean = false;
 
@@ -42,7 +42,7 @@ export class Modals3Component implements OnInit, OnDestroy {
         /* SB Code - End */
     }
 
-    @HostListener('window:resize', ['$event'])
+    @HostListener('window:resize')
     public onResize(): void {
         this.checkWindowSize();
     }

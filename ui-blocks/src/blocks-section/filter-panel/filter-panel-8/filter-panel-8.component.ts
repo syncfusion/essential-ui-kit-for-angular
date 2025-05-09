@@ -6,10 +6,10 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-filter-panel-8',
-  standalone: true,
-  imports: [CommonModule, SidebarModule, AccordionModule, ButtonModule, CheckBoxModule, SwitchModule, RadioButtonModule],
-  templateUrl: './filter-panel-8.component.html'
+    selector: 'app-filter-panel-8',
+    standalone: true,
+    imports: [CommonModule, SidebarModule, AccordionModule, ButtonModule, CheckBoxModule, SwitchModule, RadioButtonModule],
+    templateUrl: './filter-panel-8.component.html'
 })
 export class FilterPanel8Component implements OnInit, OnDestroy {
     @ViewChild('sidebar') public sidebar?: SidebarComponent;
@@ -34,12 +34,8 @@ export class FilterPanel8Component implements OnInit, OnDestroy {
     }
 
     /* SB Code - Start */
-     public ngAfterViewInit(): void {
-        setTimeout(() => {
-            this.gettingStartedAccordion.refresh();
-            this.billingAccordion.refresh();
-            this.supportAccordion.refresh();
-        }, 5000);
+    public ngAfterViewInit(): void {
+        this.refreshAccordion(3000);
     }
     /* SB Code - End */
 
@@ -53,6 +49,14 @@ export class FilterPanel8Component implements OnInit, OnDestroy {
     }
 
     /* SB Code - Start */
+    private refreshAccordion(timeout: number): void {
+        setTimeout(() => {
+            this.gettingStartedAccordion.refresh();
+            this.billingAccordion.refresh();
+            this.supportAccordion.refresh();
+        }, timeout);
+    }
+
     private handleMessageEvent = (event: MessageEvent): void => {
         if (event.origin === window.location.origin) {
             try {
@@ -64,6 +68,7 @@ export class FilterPanel8Component implements OnInit, OnDestroy {
                 console.error('Error parsing message data: ', error);
             }
         }
+        this.refreshAccordion(1000);
     };
     /* SB Code - End */
 }

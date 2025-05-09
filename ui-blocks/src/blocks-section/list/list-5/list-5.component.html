@@ -7,7 +7,7 @@
                 <span class="e-input-group-icon e-icons e-search !text-base"></span>
                 <input class="e-input !pl-0 e-bigger" type="text" placeholder="Search country" aria-label="search country" role="textbox" />
             </div>
-            <ejs-listview class="!border-0 mt-2" cssClass="e-list-template" [dataSource]="data" aria-label="choose the country code" role="list">
+            <ejs-listview class="!border-0 mt-2" cssClass="e-list-template" [dataSource]="countries" aria-label="choose the country code" role="list">
                 <ng-template #template let-data>
                     <div class="e-list-wrapper flex items-center !px-1 sm:!px-3 border-b border-gray-200 dark:border-gray-600">
                         <img class="rounded-full" src="assets/images/listview/country-code/{{data.pic}}" width="36px" alt="flag image" />
@@ -34,7 +34,7 @@
                 <span class="e-input-group-icon e-icons e-search border-0 fs-6"></span>
                 <input class="e-input e-bigger" type="text" placeholder="Search country" aria-label="search country" role="textbox" />
             </div>
-            <ejs-listview class="border-0 mt-2" cssClass="e-list-template" [dataSource]="data" aria-label="choose the country code" role="list">
+            <ejs-listview class="border-0 mt-2" cssClass="e-list-template" [dataSource]="countries" aria-label="choose the country code" role="list">
                 <ng-template #template let-data>
                     <div class="e-list-wrapper d-flex align-items-center px-1 px-sm-3">
                         <img class="rounded-circle" src="assets/images/listview/country-code/{{data.pic}}" width="36px" alt="flag image" />

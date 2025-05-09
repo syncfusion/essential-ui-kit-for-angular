@@ -7,11 +7,11 @@ import { ButtonModule, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 import { DropDownButtonModule } from '@syncfusion/ej2-angular-splitbuttons';
 
 @Component({
-  selector: 'app-modals-4',
-  standalone: true,
-  imports: [CommonModule, DialogModule, ListViewModule, TextBoxModule, ButtonModule, CheckBoxModule, DropDownButtonModule],
-  templateUrl: './modals-4.component.html',
-  styleUrl: './modals-4.component.css'
+    selector: 'app-modals-4',
+    standalone: true,
+    imports: [CommonModule, DialogModule, ListViewModule, TextBoxModule, ButtonModule, CheckBoxModule, DropDownButtonModule],
+    templateUrl: './modals-4.component.html',
+    styleUrl: './modals-4.component.css'
 })
 export class Modals4Component implements OnInit, OnDestroy {
     @ViewChild('dialog') public dialog!: DialogComponent;
@@ -46,7 +46,7 @@ export class Modals4Component implements OnInit, OnDestroy {
         /* SB Code - End */
     }
 
-    @HostListener('window:resize', ['$event'])
+    @HostListener('window:resize')
     public onResize(): void {
         this.checkWindowSize();
     }

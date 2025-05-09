@@ -31,7 +31,7 @@ export class List2Component implements OnInit, OnDestroy {
         /* SB Code - End */
     }
 
-    public data: Object[] = [
+    public notifications: Object[] = [
         {
             id: '1',
             name: 'Esther Howard',

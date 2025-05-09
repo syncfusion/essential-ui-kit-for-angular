@@ -5,11 +5,11 @@ import { ButtonModule, ChipListModule } from '@syncfusion/ej2-angular-buttons';
 import { DropDownButtonModule } from '@syncfusion/ej2-angular-splitbuttons';
 
 @Component({
-  selector: 'app-header-4',
-  standalone: true,
-  imports: [CommonModule, TabModule, ButtonModule, ChipListModule, DropDownButtonModule],
-  templateUrl: './header-4.component.html',
-  styleUrl: './header-4.component.css'
+    selector: 'app-header-4',
+    standalone: true,
+    imports: [CommonModule, TabModule, ButtonModule, ChipListModule, DropDownButtonModule],
+    templateUrl: './header-4.component.html',
+    styleUrl: './header-4.component.css'
 })
 export class Header4Component implements OnInit, OnDestroy {
     @ViewChild('tab') tab!: TabComponent;
@@ -35,7 +35,7 @@ export class Header4Component implements OnInit, OnDestroy {
         this.tab.refreshActiveTabBorder();
         this.updateTabItems();
     }
-     /* SB Code - End */
+    /* SB Code - End */
 
     public ngOnDestroy(): void {
         /* SB Code - Start */
@@ -43,7 +43,7 @@ export class Header4Component implements OnInit, OnDestroy {
         /* SB Code - End */
     }
 
-    @HostListener('window:resize', ['$event'])
+    @HostListener('window:resize')
     public onResize(): void {
         this.updateTabItems();
     }
@@ -77,7 +77,7 @@ export class Header4Component implements OnInit, OnDestroy {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'header-4' && blockData.theme) {
                     this.currentTheme = blockData.theme;
-                     setTimeout(() => {
+                    setTimeout(() => {
                         this.tab.refresh();
                     }, 250);
                 }

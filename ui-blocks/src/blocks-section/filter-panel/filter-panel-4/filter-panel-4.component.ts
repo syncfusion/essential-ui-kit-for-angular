@@ -8,11 +8,11 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-filter-panel-4',
-  standalone: true,
-  imports: [CommonModule, SidebarModule, AccordionModule, TabModule, DatePickerModule, ButtonModule, DropDownListModule],
-  templateUrl: './filter-panel-4.component.html',
-  styleUrl: './filter-panel-4.component.css'
+    selector: 'app-filter-panel-4',
+    standalone: true,
+    imports: [CommonModule, SidebarModule, AccordionModule, TabModule, DatePickerModule, ButtonModule, DropDownListModule],
+    templateUrl: './filter-panel-4.component.html',
+    styleUrl: './filter-panel-4.component.css'
 })
 export class FilterPanel4Component implements OnInit, OnDestroy {
     @ViewChild('sidebar') public sidebar?: SidebarComponent;
@@ -20,12 +20,12 @@ export class FilterPanel4Component implements OnInit, OnDestroy {
     @ViewChild('requesterAccordion') public requesterAccordion!: AccordionComponent;
     @ViewChild('ticketAccordion') public ticketAccordion!: AccordionComponent;
     @ViewChild('tab') public tab!: TabComponent;
-    
+
     public currentTheme: string = 'tailwind';
     /* SB Code - End */
     public width: string = '320px';
     public assignee: Object[] = ['Jane Smith - Support Engineer', 'Mark	Johnson - Technical Lead ', 'Emily White - Support Specialist', 'Tom Harris - Product Expert'];
-    public tags: Object[] = ['Technical Issue (Type)', 'Bug (Type)', 'Feature Request (Type)', 'High Priority (Priority)','Customer Impact (Impact)','Backend (Area)','Frontend (Area)'];
+    public tags: Object[] = ['Technical Issue (Type)', 'Bug (Type)', 'Feature Request (Type)', 'High Priority (Priority)', 'Customer Impact (Impact)', 'Backend (Area)', 'Frontend (Area)'];
     public status: Object[] = ['Open', 'In Progress', 'Closed'];
     private breakpointSubscription!: Subscription;
 
@@ -42,11 +42,7 @@ export class FilterPanel4Component implements OnInit, OnDestroy {
 
     /* SB Code - Start */
     public ngAfterViewInit(): void {
-        setTimeout(() => {
-            this.requesterAccordion.refresh();
-            this.ticketAccordion.refresh();
-            this.tab.refresh();
-        }, 5000);
+        this.refreshAccordion(3000);
     }
     /* SB Code - End */
 
@@ -60,6 +56,13 @@ export class FilterPanel4Component implements OnInit, OnDestroy {
     }
 
     /* SB Code - Start */
+    private refreshAccordion(timeout: number): void {
+        setTimeout(() => {
+            this.requesterAccordion.refresh();
+            this.ticketAccordion.refresh();
+        }, timeout);
+    }
+
     private handleMessageEvent = (event: MessageEvent): void => {
         if (event.origin === window.location.origin) {
             try {
@@ -71,6 +74,7 @@ export class FilterPanel4Component implements OnInit, OnDestroy {
                 console.error('Error parsing message data: ', error);
             }
         }
+        this.refreshAccordion(800);
     };
     /* SB Code - End */
 }

@@ -30,7 +30,7 @@ export class List6Component implements OnInit, OnDestroy {
         /* SB Code - End */
     }
 
-    public data: Object[] = [
+    public fieldData: Object[] = [
         {
             id: 1,
             field: 'Full Name',

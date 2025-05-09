@@ -3,29 +3,15 @@ import { CommonModule } from '@angular/common';
 import { TooltipModule } from '@syncfusion/ej2-angular-popups';
 
 @Component({
-  selector: 'app-statistics-2',
-  standalone: true,
-  imports: [CommonModule, TooltipModule],
-  templateUrl: './statistics-2.component.html'
+    selector: 'app-statistics-2',
+    standalone: true,
+    imports: [CommonModule, TooltipModule],
+    templateUrl: './statistics-2.component.html'
 })
 export class Statistics2Component implements OnInit, OnDestroy {
     /* SB Code - Start */
     public currentTheme: string = 'tailwind';
     /* SB Code - End */
-
-    constructor() { }
-
-    public ngOnInit(): void {
-        /* SB Code - Start */
-        window.addEventListener('message', this.handleMessageEvent);
-        /* SB Code - End */
-    }
-
-    public ngOnDestroy(): void {
-        /* SB Code - Start */
-        window.removeEventListener('message', this.handleMessageEvent);
-        /* SB Code - End */
-    }
 
     public metricsData: any[] = [
         {
@@ -65,6 +51,20 @@ export class Statistics2Component implements OnInit, OnDestroy {
             total: '34,12%'
         }
     ];
+    
+    constructor() { }
+
+    public ngOnInit(): void {
+        /* SB Code - Start */
+        window.addEventListener('message', this.handleMessageEvent);
+        /* SB Code - End */
+    }
+
+    public ngOnDestroy(): void {
+        /* SB Code - Start */
+        window.removeEventListener('message', this.handleMessageEvent);
+        /* SB Code - End */
+    }
 
     public isLastRowAndColumn(index: number, totalItems: number) {
         const columnCount = window.innerWidth < 576 ? 1 : window.innerWidth < 1024 ? 3 : 5;
@@ -72,7 +72,7 @@ export class Statistics2Component implements OnInit, OnDestroy {
             isLastRow: Math.floor(index / columnCount) === Math.ceil(totalItems / columnCount) - 1,
             isLastColumn: (index + 1) % columnCount === 0
         };
-    }     
+    }
 
     /* SB Code - Start */
     private handleMessageEvent = (event: MessageEvent): void => {

@@ -6,18 +6,17 @@ import { DatePickerModule } from '@syncfusion/ej2-angular-calendars';
 import { ButtonModule, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 
 @Component({
-  selector: 'app-modals-7',
-  standalone: true,
-  imports: [DialogModule, DropDownListModule, TextBoxModule, DatePickerModule, ButtonModule, CheckBoxModule],
-  templateUrl: './modals-7.component.html',
-  styleUrl: './modals-7.component.css'
+    selector: 'app-modals-7',
+    standalone: true,
+    imports: [DialogModule, DropDownListModule, TextBoxModule, DatePickerModule, ButtonModule, CheckBoxModule],
+    templateUrl: './modals-7.component.html',
+    styleUrl: './modals-7.component.css'
 })
 export class Modals7Component implements OnInit, OnDestroy {
     @ViewChild('dialog') public dialog!: DialogComponent;
     /* SB Code - Start */
     public currentTheme: string = 'tailwind';
     /* SB Code - End */
-    public containerHeight: string = 'min-height: 724px;';
 
     constructor() { }
 
@@ -39,14 +38,13 @@ export class Modals7Component implements OnInit, OnDestroy {
         /* SB Code - End */
     }
 
-    @HostListener('window:resize', ['$event'])
+    @HostListener('window:resize')
     public onResize(): void {
         this.checkWindowSize();
     }
 
     public checkWindowSize(): void {
         const isMobile = window.innerWidth <= 640;
-        this.containerHeight = isMobile ? 'min-height: 624px;' : 'min-height: 724px;';
         this.dialog.refresh();
         this.dialog.show(isMobile);
     }
@@ -57,18 +55,6 @@ export class Modals7Component implements OnInit, OnDestroy {
         iconElement.style.cssText = 'display: flex; align-items: center; margin-left: 10px;';
         iconElement.className = `e-icons e-medium ${icon} text-gray-500 dark:text-gray-300`;
         (hiddenSelectElement as HTMLElement).parentNode?.insertBefore(iconElement, hiddenSelectElement);
-    }
-
-    public focusIn(target: EventTarget | null): void {
-        if (target instanceof HTMLElement && target.parentElement) {
-            target.parentElement.classList.add('e-input-focus');
-        }
-    }
-
-    public focusOut(target: EventTarget | null): void {
-        if (target instanceof HTMLElement && target.parentElement) {
-            target.parentElement.classList.remove('e-input-focus');
-        }
     }
 
     /* SB Code - Start */

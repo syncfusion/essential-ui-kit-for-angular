@@ -28,7 +28,7 @@ export class Grid2Component implements OnInit, OnDestroy {
         /* SB Code - End */
     }
 
-    public data: Object[] = [
+    public gridData: Object[] = [
         {
             id: 1,
             ticketId: "HD-0001",

@@ -5,11 +5,11 @@ import { QueryBuilderModule, QueryBuilderComponent } from '@syncfusion/ej2-angul
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 
 @Component({
-  selector: 'app-filter-panel-2',
-  standalone: true,
-  imports: [CommonModule, DialogModule, QueryBuilderModule, ButtonModule],
-  templateUrl: './filter-panel-2.component.html',
-  styleUrl: './filter-panel-2.component.css' 
+    selector: 'app-filter-panel-2',
+    standalone: true,
+    imports: [CommonModule, DialogModule, QueryBuilderModule, ButtonModule],
+    templateUrl: './filter-panel-2.component.html',
+    styleUrl: './filter-panel-2.component.css'
 })
 export class FilterPanel2Component implements OnInit, OnDestroy {
     @ViewChild('dialog') public dialog?: DialogComponent;
@@ -18,15 +18,15 @@ export class FilterPanel2Component implements OnInit, OnDestroy {
     /* SB Code - Start */
     public currentTheme: string = 'tailwind';
     /* SB Code - End */
-    public recordLength!:number;
-    public recordData!:number;
+    public recordLength!: number;
+    public recordData!: number;
     public filterOperators: any = [
         { value: 'in', key: 'In' },
         { value: 'notin', key: 'Not In' },
         { value: 'is', key: 'Is' },
         { value: 'isnot', key: 'Is not' }
     ];
-   
+
     public inOperators: string[] = ['in', 'notin'];
 
     constructor() { }
@@ -43,12 +43,12 @@ export class FilterPanel2Component implements OnInit, OnDestroy {
         /* SB Code - End */
     }
 
-    public onRuleUpdate(): void { 
-        this.recordLength = this.queryBuilder1.getRules()?.rules?.length ?? 1; 
+    public onRuleUpdate(): void {
+        this.recordLength = this.queryBuilder1.getRules()?.rules?.length ?? 1;
     }
 
-    public onRuleAdd(): void { 
-        this.recordData = this.queryBuilder2.getRules()?.rules?.length ?? 1; 
+    public onRuleAdd(): void {
+        this.recordData = this.queryBuilder2.getRules()?.rules?.length ?? 1;
     }
 
     /* SB Code - Start */

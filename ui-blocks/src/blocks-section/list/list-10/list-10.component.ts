@@ -6,7 +6,8 @@ import { ListViewModule } from '@syncfusion/ej2-angular-lists';
     selector: 'app-list-10',
     standalone: true,
     imports: [CommonModule, ListViewModule],
-    templateUrl: './list-10.component.html'
+    templateUrl: './list-10.component.html',
+    styleUrl: './list-10.component.css'
 })
 export class List10Component implements OnInit, OnDestroy {
     /* SB Code - Start */

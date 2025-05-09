@@ -3,11 +3,11 @@ import { BreadcrumbModule, BreadcrumbOverflowMode, BreadcrumbComponent } from '@
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 
 @Component({
-  selector: 'app-header-7',
-  standalone: true,
-  imports: [BreadcrumbModule, ButtonModule],
-  templateUrl: './header-7.component.html',
-  styleUrl: './header-7.component.css'
+    selector: 'app-header-7',
+    standalone: true,
+    imports: [BreadcrumbModule, ButtonModule],
+    templateUrl: './header-7.component.html',
+    styleUrl: './header-7.component.css'
 })
 export class Header7Component implements OnInit, OnDestroy {
     @ViewChild('breadcrumb') breadcrumb!: BreadcrumbComponent;

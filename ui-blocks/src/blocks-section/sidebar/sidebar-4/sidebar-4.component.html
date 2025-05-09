@@ -23,7 +23,7 @@
                     </div>
                 </div>
                 <div>
-                    <ejs-listview class="border-0" [dataSource]="data1" [template]="itemTemplate1" aria-label="main navigation links" role="list">
+                    <ejs-listview class="border-0" [dataSource]="navigationMenu" [template]="itemTemplate1" aria-label="main navigation links" role="list">
                         <ng-template #itemTemplate1 let-data>
                             <div class="e-list-wrapper flex items-center px-1">
                                 <span class="e-icons {{data.fontIcon}} text-base"></span>
@@ -39,7 +39,7 @@
                         <button ejs-button class="e-icons e-circle-add e-medium e-flat" aria-label="add new item" role="button"></button>
                     </div>
                     <div>
-                        <ejs-listview class="border-0" [dataSource]="data2" [template]="itemTemplate2" aria-label="other navigation links" role="list">
+                        <ejs-listview class="border-0" [dataSource]="businessCategories" [template]="itemTemplate2" aria-label="other navigation links" role="list">
                             <ng-template #itemTemplate2 let-data>
                                 <div class="e-list-wrapper flex items-center px-1">
                                     <span class="e-icons {{data.fontIcon}} text-base"></span>
@@ -87,7 +87,7 @@
                     </div>
                 </div>
                 <div class="mt-2 pt-1">
-                    <ejs-listview class="border-0 e-bigger" [dataSource]="data1" [template]="itemTemplate1" aria-label="main navigation links" role="list">
+                    <ejs-listview class="border-0 e-bigger" [dataSource]="navigationMenu" [template]="itemTemplate1" aria-label="main navigation links" role="list">
                         <ng-template #itemTemplate1 let-data>
                             <div class="e-list-wrapper d-flex align-items-center px-1">
                                 <span class="e-icons {{data.fontIcon}} fs-6"></span>
@@ -102,7 +102,7 @@
                         <button ejs-button class="e-icons e-circle-add e-medium e-flat" aria-label="add new item" role="button"></button>
                     </div>
                     <div class="mt-1">
-                        <ejs-listview class="border-0 e-bigger" [dataSource]="data2" [template]="itemTemplate2" aria-label="other navigation links" role="list">
+                        <ejs-listview class="border-0 e-bigger" [dataSource]="businessCategories" [template]="itemTemplate2" aria-label="other navigation links" role="list">
                             <ng-template #itemTemplate2 let-data>
                                 <div class="e-list-wrapper d-flex align-items-center px-1">
                                     <span class="e-icons {{data.fontIcon}} fs-6"></span>

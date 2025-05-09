@@ -1,0 +1,26 @@
+#upload-template .e-file-select-wrap {
+    display: none;
+}
+
+#upload-template .e-upload {
+    float: none;
+    border: none;
+}
+
+#upload-template .e-upload .e-upload-files .e-upload-file-list {
+    border-bottom: 0;
+}
+
+#dialog-container .e-richtexteditor .e-rte-character-count {
+    margin-right: 6px;
+}
+
+::ng-deep #dialog-container .e-richtexteditor .e-rte-content .e-content ol {
+    list-style: auto;
+    margin-left: 24px;
+}
+
+::ng-deep #dialog-container .e-richtexteditor .e-rte-content .e-content ul {
+    list-style: disc;
+    margin-left: 24px;
+}

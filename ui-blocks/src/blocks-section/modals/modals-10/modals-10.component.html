@@ -1,0 +1,159 @@
+@if (currentTheme === 'tailwind') {
+
+<section>
+    <div id="dialog-container" class="relative flex justify-center" style="min-height: 665px;">
+        <button ejs-button class="h-fit my-5" (click)="dialog?.show()" type="button" aria-label="account settings" role="button">Account Settings</button>
+        <ejs-dialog #dialog class="rounded-none sm:rounded-lg overflow-hidden sm:m-4" target="#dialog-container" [isModal]="true" [visible]="false" width="788px" height="565px" (open)="$event.preventFocus = true" aria-label="manage my account" role="dialog">
+            <ng-template #content>
+                <div class="flex h-full">
+                    <div class="shrink-0 relative">
+                        <ejs-sidebar #sidebar class="!border-r !border-gray-200 dark:!border-gray-600 bg-gray-50 dark:bg-gray-700" target="#sidebar-container" width="256px" closeOnDocumentClick="true" [enableDock]="dockMode" [showBackdrop]="backDrop" [type]="sidebarType" (close)="onSidebarClose($event)" role="complementary">
+                            <div class="flex gap-3 items-center p-4">
+                                <span class="e-avatar e-avatar-circle bg-primary-600 text-white dark:text-black dark:bg-primary-400 shrink-0">MJ</span>
+                                <div>
+                                    <p class="text-base font-semibold mb-0.5">Mark Johnson</p>
+                                    <p class="text-xs leading-normal text-gray-700 dark:text-gray-200">markjohnson&#64;example.com</p>
+                                </div>
+                            </div>
+                            <ejs-listview class="!border-0" cssClass="e-list-template" [dataSource]="navigationMenu" [fields]="{ groupBy: 'categoryName', text: 'field', iconCss:'fontIcon' }" aria-label="main navigation list" role="list">
+                                <ng-template #groupTemplate let-data>
+                                    <p class="text-base text-gray-700 dark:text-gray-200 px-1 py-1.5">{{data.items[0].categoryName}}</p>
+                                </ng-template>
+                                <ng-template #template let-data>
+                                    <div class="e-list-wrapper e-list-multi-line flex gap-3 items-center !px-4 !py-3">
+                                        <span class="e-icons {{data.fontIcon}} text-xl leading-none"></span>
+                                        <span class="text-base">{{data.field}}</span>
+                                    </div>
+                                </ng-template>
+                            </ejs-listview>
+                        </ejs-sidebar>
+                    </div>
+                    <div id="sidebar-container">
+                        <div class="h-full" [ngClass]="{ 'settings-panel': !isMobile }">
+                            <div class="flex justify-between p-4 border-b dark:border-gray-600">
+                                <div class="flex gap-3">
+                                    <button ejs-button cssClass="e-icons e-menu sm:hidden" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+                                    <h3 class="text-base font-semibold">My Account</h3>
+                                </div>
+                                <button ejs-button cssClass="e-flat e-small !leading-none" iconCss="e-icons e-close" (click)="dialog?.hide()" type="button" aria-label="close" role="button"></button>
+                            </div>
+                            <div class="p-4">
+                                <div class="flex flex-col gap-1 mb-4 sm:mb-3">
+                                    <label class="text-xs font-medium text-gray-700 dark:text-gray-200">Full Name <span class="text-red-600 font-normal dark:text-red-400">*</span></label>
+                                    <div class="flex flex-col sm:flex-row gap-3 sm:gap-2">
+                                        <ejs-textbox class="grow" type="text" placeholder="Enter your full name" aria-label="enter your full name" role="textbox"></ejs-textbox>
+                                        <button ejs-button class="w-fit" type="button" disabled="true" aria-label="change" role="button">Change</button>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col gap-1 mb-4">
+                                    <label class="text-xs font-medium text-gray-700 dark:text-gray-200">Email <span class="text-red-600 font-normal dark:text-red-400">*</span></label>
+                                    <div class="flex flex-col sm:flex-row gap-3 sm:gap-2">
+                                        <ejs-textbox class="grow" type="email" placeholder="Enter a valid email address" aria-label="enter a valid email address" role="textbox"></ejs-textbox>
+                                        <button ejs-button class="w-fit" type="button" disabled="true" aria-label="change" role="button">Change</button>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between gap-1 text-sm text-gray-700 dark:text-gray-200 border-t dark:border-gray-600 py-4">
+                                    <div>
+                                        <p class="font-semibold mb-1">Two Factor Authentication</p>
+                                        <p>Enable or disable two-factor authentication</p>
+                                    </div>
+                                    <ejs-switch cssClass="w-10 shrink-0" aria-label="enable or disable two-factor authentication" role="switch"></ejs-switch>
+                                </div>
+                                <div class="border-t py-4 dark:border-gray-600">
+                                    <p class="text-sm font-semibold text-gray-700 dark:text-gray-200 mb-1">Account Deletion</p>
+                                    <ejs-message class="border-0 bg-transparent p-0" [showIcon]="false">
+                                        <ng-template #content>
+                                            <p class="text-gray-700 dark:text-gray-200 mb-4 sm:mb-3"><span class="font-medium text-red-600 dark:text-red-400">Warning: </span> Deleting your account will permanently delete all your documents. This action can't be undone.</p>
+                                            <button ejs-button cssClass="e-danger e-outline" type="button" aria-label="delete account" role="button">Delete Account</button>
+                                        </ng-template>
+                                    </ejs-message>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+        </ejs-dialog>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section>
+    <div id="dialog-container" class="position-relative d-flex align-items-start" style="min-height: 665px;">
+        <button ejs-button class="mx-auto my-3 e-outline" (click)="dialog?.show()" type="button" aria-label="account settings" role="button">Account Settings</button>
+        <ejs-dialog #dialog class="rounded-3 m-sm-2" target="#dialog-container" [isModal]="true" [visible]="false" width="788px" height="565px" (open)="$event.preventFocus = true" aria-label="manage my account" role="dialog">
+            <ng-template #content>
+                <div class="d-flex h-100">
+                    <div class="flex-shrink-0 position-relative">
+                        <ejs-sidebar #sidebar target="#sidebar-container" width="256px" closeOnDocumentClick="true" [enableDock]="dockMode" [showBackdrop]="backDrop" [type]="sidebarType" (close)="onSidebarClose($event)" role="complementary">
+                            <div class="d-flex gap-2 align-items-center p-3 pb-0">
+                                <span class="e-avatar e-avatar-circle bg-primary text-white fs-6 fw-normal">MJ</span>
+                                <div class="ms-1">
+                                    <p class="fs-6 fw-medium mb-0 text-body">Mark Johnson</p>
+                                    <p class="text-body-secondary mb-0">markjohnson&#64;example.com</p>
+                                </div>
+                            </div>
+                            <ejs-listview class="border-0" cssClass="e-list-template" [dataSource]="navigationMenu" [fields]="{ groupBy: 'categoryName', text: 'field', iconCss: 'fontIcon' }" aria-label="main navigation list" role="list">
+                                <ng-template #groupTemplate let-data>
+                                    <p class="fw-normal text-body-secondary px-1 py-2 mb-0">{{data.items[0].categoryName}}</p>
+                                </ng-template>
+                                <ng-template #template let-data>
+                                    <div class="e-list-wrapper e-list-multi-line d-flex gap-2 align-items-center px-3 py-2">
+                                        <span class="e-icons {{data.fontIcon}} fs-6"></span>
+                                        <span class="fw-normal fs-6 ms-1">{{data.field}}</span>
+                                    </div>
+                                </ng-template>
+                            </ejs-listview>
+                        </ejs-sidebar>
+                    </div>
+                    <div id="sidebar-container" class="flex-grow-1">
+                        <div class="h-100" [ngClass]="{ 'settings-panel': !isMobile }">
+                            <div class="d-flex justify-content-between p-3 border-bottom">
+                                <div class="d-flex gap-3">
+                                    <button ejs-button cssClass="e-icons e-menu d-sm-none" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+                                    <h3 class="fs-6 fw-bold mb-0 text-body">My Account</h3>
+                                </div>
+                                <button ejs-button cssClass="e-flat e-small" iconCss="e-icons e-close" (click)="dialog?.hide()" type="button" aria-label="close" role="button"></button>
+                            </div>
+                            <div class="p-3">
+                                <div class="d-flex flex-column gap-1 mb-2">
+                                    <label class="small text-body-secondary">Full Name <span class="text-danger">*</span></label>
+                                    <div class="d-flex flex-column flex-sm-row align-items-start gap-2">
+                                        <ejs-textbox class="w-100" type="text" placeholder="Enter your full name" aria-label="enter your full name" role="textbox"></ejs-textbox>
+                                        <button ejs-button class="mt-1 mt-sm-0 ms-sm-1 ms-md-0" type="button" disabled="true" aria-label="change" role="button">Change</button>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column gap-1 mb-3 pt-2 pt-sm-1">
+                                    <label class="small text-body-secondary">Email <span class="text-danger">*</span></label>
+                                    <div class="d-flex flex-column flex-sm-row align-items-start gap-2">
+                                        <ejs-textbox class="w-100" type="email" placeholder="Enter a valid email address" aria-label="enter a valid email address" role="textbox"></ejs-textbox>
+                                        <button ejs-button class="mt-1 mt-sm-0 ms-sm-1 ms-md-0" type="button" disabled="true" aria-label="change" role="button">Change</button>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-sm-center text-body-secondary border-top py-3">
+                                    <div>
+                                        <p class="fw-bold mb-1">Two Factor Authentication</p>
+                                        <p class="mb-0">Enable or disable two-factor authentication</p>
+                                    </div>
+                                    <ejs-switch aria-label="enable or disable two-factor authentication" style="width: 36px;" role="switch"></ejs-switch>
+                                </div>
+                                <div class="border-top py-3">
+                                    <p class="fw-bold text-body-secondary mb-1">Account Deletion</p>
+                                    <ejs-message class="border-0 bg-transparent p-0" [showIcon]="false">
+                                        <ng-template #content>
+                                            <p class="text-body-secondary mb-2"><span class="fw-medium text-danger">Warning: </span> Deleting your account will permanently delete all your documents. This action can't be undone.</p>
+                                            <button ejs-button cssClass="e-danger e-outline" class="mt-2 mt-sm-1" type="button" aria-label="delete account" role="button">Delete Account</button>
+                                        </ng-template>
+                                    </ejs-message>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+        </ejs-dialog>
+    </div>
+</section>
+
+}

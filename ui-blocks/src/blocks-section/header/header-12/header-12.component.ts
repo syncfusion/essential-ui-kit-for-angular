@@ -4,10 +4,10 @@ import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 
 @Component({
-  selector: 'app-header-12',
-  standalone: true,
-  imports: [DatePickerModule, DropDownListModule, ButtonModule],
-  templateUrl: './header-12.component.html'
+    selector: 'app-header-12',
+    standalone: true,
+    imports: [DatePickerModule, DropDownListModule, ButtonModule],
+    templateUrl: './header-12.component.html'
 })
 export class Header12Component implements OnInit, OnDestroy {
     /* SB Code - Start */

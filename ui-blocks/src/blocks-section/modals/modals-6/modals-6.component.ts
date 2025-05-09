@@ -6,19 +6,18 @@ import { ButtonModule, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 import { DropDownButtonModule } from '@syncfusion/ej2-angular-splitbuttons';
 
 @Component({
-  selector: 'app-modals-6',
-  standalone: true,
-  imports: [CommonModule, DialogModule, GridModule, ButtonModule, CheckBoxModule, DropDownButtonModule],
-  providers: [FilterService, SortService],
-  templateUrl: './modals-6.component.html',
-  styleUrl: './modals-6.component.css'
+    selector: 'app-modals-6',
+    standalone: true,
+    imports: [CommonModule, DialogModule, GridModule, ButtonModule, CheckBoxModule, DropDownButtonModule],
+    providers: [FilterService, SortService],
+    templateUrl: './modals-6.component.html',
+    styleUrl: './modals-6.component.css'
 })
 export class Modals6Component implements OnInit, OnDestroy {
     @ViewChild('dialog') public dialog!: DialogComponent;
     /* SB Code - Start */
     public currentTheme: string = 'tailwind';
     /* SB Code - End */
-    public containerHeight: string = 'min-height: 764px;';
     public isMobile: boolean = false;
     public data: Object[] = [
         {
@@ -109,14 +108,13 @@ export class Modals6Component implements OnInit, OnDestroy {
         /* SB Code - End */
     }
 
-    @HostListener('window:resize', ['$event'])
+    @HostListener('window:resize')
     public onResize(): void {
         this.checkWindowSize();
     }
 
     public checkWindowSize(): void {
         this.isMobile = window.innerWidth <= 640;
-        this.containerHeight = this.isMobile ? 'min-height: 630px;' : 'min-height: 764px;';
         this.dialog.show(this.isMobile);
     }
 

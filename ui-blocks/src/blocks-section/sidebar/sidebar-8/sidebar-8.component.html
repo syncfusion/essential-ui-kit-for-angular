@@ -49,7 +49,7 @@
             </div>
             <hr class="my-4 mx-3 border-gray-200 dark:border-gray-700" />
             <p class="text-base text-gray-900 dark:text-white pb-3 px-3">Active Contacts</p>
-            <ejs-listview class="border-0" [dataSource]="data" [template]="itemTemplate" aria-label="view active contacts" role="list">
+            <ejs-listview class="border-0" [dataSource]="contactList" [template]="itemTemplate" aria-label="view active contacts" role="list">
                 <ng-template #itemTemplate let-data>
                     <div class="e-list-wrapper flex items-center">
                         <span class="flex items-center">
@@ -121,7 +121,7 @@
             </div>
             <hr class="mx-3 opacity-100 border-light-subtle" />
             <p class="fs-6 text-body-secondary m-3">Active Contacts</p>
-            <ejs-listview class="border-0 e-bigger pb-3" [dataSource]="data" [template]="itemTemplate" aria-label="view active contacts" role="list">
+            <ejs-listview class="border-0 e-bigger pb-3" [dataSource]="contactList" [template]="itemTemplate" aria-label="view active contacts" role="list">
                 <ng-template #itemTemplate let-data>
                     <div class="e-list-wrapper d-flex justify-content-between align-items-center ps-1">
                         <span class="d-flex align-items-center">

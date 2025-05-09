@@ -29,7 +29,7 @@ export class Grid6Component implements OnInit, OnDestroy {
         /* SB Code - End */
     }
 
-    public data: Object[] = [
+    public gridData: Object[] = [
         {
             id: 1,
             transactionId: "TRX202401",

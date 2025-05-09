@@ -7,18 +7,17 @@ import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { ButtonModule, CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
 
 @Component({
-  selector: 'app-modals-5',
-  standalone: true,
-  imports: [CommonModule, DialogModule, TextBoxModule, TextAreaModule, DatePickerModule, DropDownListModule, ButtonModule, CheckBoxModule],
-  templateUrl: './modals-5.component.html',
-  styleUrl: './modals-5.component.css'
+    selector: 'app-modals-5',
+    standalone: true,
+    imports: [CommonModule, DialogModule, TextBoxModule, TextAreaModule, DatePickerModule, DropDownListModule, ButtonModule, CheckBoxModule],
+    templateUrl: './modals-5.component.html',
+    styleUrl: './modals-5.component.css'
 })
 export class Modals5Component implements OnInit, OnDestroy {
     @ViewChild('dialog') public dialog!: DialogComponent;
     /* SB Code - Start */
     public currentTheme: string = 'tailwind';
     /* SB Code - End */
-    public containerHeight: string = 'min-height: 700px;';
 
     constructor() { }
 
@@ -40,14 +39,13 @@ export class Modals5Component implements OnInit, OnDestroy {
         /* SB Code - End */
     }
 
-    @HostListener('window:resize', ['$event'])
+    @HostListener('window:resize')
     public onResize(): void {
         this.checkWindowSize();
     }
 
     public checkWindowSize(): void {
         const isMobile = window.innerWidth <= 640;
-        this.containerHeight = isMobile ? 'min-height: 598px;' : 'min-height: 700px;';
         this.dialog.refresh();
         this.dialog.show(isMobile);
     }

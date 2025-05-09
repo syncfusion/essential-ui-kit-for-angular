@@ -30,7 +30,7 @@ export class List7Component implements OnInit, OnDestroy {
         /* SB Code - End */
     }
 
-    public data: Object[] = [
+    public notifications: Object[] = [
         {
             id: '1',
             name: 'Kristina',

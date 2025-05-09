@@ -29,7 +29,7 @@
                     </span>
                     <button ejs-button class="ml-3" cssClass="e-flat" iconCss="e-icons e-settings" type="button" aria-label="settings" role="button"></button>
                 </div>
-                <button ejs-dropdownbutton #additionalOptionDropdown id="additionalOptionDropdown" class="block sm:hidden" cssClass="e-flat" iconCss="e-icons e-more-vertical-1" [items]="[{text:'New Course'}, {text:'Create Course'}, {text:'Import Course'}, {text:'Course Template'}, {text:'Settings'}]" type="button" aria-label="choose the additional option" role="button"></button>
+                <button ejs-dropdownbutton #additionalOptionDropdown class="block sm:hidden" cssClass="e-flat e-caret-hide" iconCss="e-icons e-more-vertical-1" [items]="[{text:'New Course'}, {text:'Create Course'}, {text:'Import Course'}, {text:'Course Template'}, {text:'Settings'}]" type="button" aria-label="choose the additional option" role="button"></button>
             </div>
         </div>
     </div> 
@@ -41,7 +41,7 @@
     <div style="min-height: 36rem;">
         <div class="py-2 px-3 px-sm-4 d-flex justify-content-between border-bottom">
             <div class="d-flex align-items-center">
-                <div id="breadcrumb">
+                <div>
                     <ejs-breadcrumb #breadcrumb class="d-flex align-items-center" [overflowMode]="overflowMode" [maxItems]="maxItems">
                         <e-breadcrumb-items>
                             <e-breadcrumb-item text="Learning Portal"></e-breadcrumb-item>
@@ -66,7 +66,7 @@
                     </span>
                     <button ejs-button class="ms-3" cssClass="e-flat" iconCss="e-icons e-settings" type="button" aria-label="settings" role="button"></button>
                 </div>
-                <button ejs-dropdownbutton #additionalOptionDropdown id="additionalOptionDropdown" class="d-block d-sm-none" cssClass="e-flat" iconCss="e-icons e-more-vertical-1" [items]="[{text:'New Course'}, {text:'Create Course'}, {text:'Import Course'}, {text:'Course Template'}, {text:'Settings'}]" type="button" aria-label="choose the additional option" role="button"></button>
+                <button ejs-dropdownbutton #additionalOptionDropdown class="d-block d-sm-none" cssClass="e-flat e-caret-hide" iconCss="e-icons e-more-vertical-1" [items]="[{text:'New Course'}, {text:'Create Course'}, {text:'Import Course'}, {text:'Course Template'}, {text:'Settings'}]" type="button" aria-label="choose the additional option" role="button"></button>
             </div>
         </div>
     </div> 
