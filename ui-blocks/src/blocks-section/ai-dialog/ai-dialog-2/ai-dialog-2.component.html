@@ -1,0 +1,71 @@
+@if (currentTheme === 'tailwind') {
+
+<section>
+    <div id="dialog-container" class="relative" style="min-height: 580px;">
+        <ejs-dialog #dialog class="rounded-none sm:rounded-lg overflow-hidden" target="#dialog-container" isModal="true" width="400px" (beforeOpen)="$event.maxHeight = '100%'" (open)="$event.preventFocus = true" aria-label="provide feedback for improvement" role="dialog">
+            <ng-template #content>
+                <div class="flex flex-col gap-6 px-4 py-6 sm:px-6 h-full">
+                    <div class="flex justify-between items-center">
+                        <p class="font-medium text-lg">Feedback for improvement</p>
+                        <button ejs-button cssClass="e-flat e-small" iconCss="e-icons e-close" (click)="dialog?.hide()" type="button" aria-label="close" role="button"></button>
+                    </div>
+                    <div class="flex flex-col gap-3">
+                        <ejs-checkbox label="Factually incorrect" checked="true" aria-label="factually incorrect" role="checkbox"></ejs-checkbox>
+                        <ejs-checkbox label="Missing key information" aria-label="missing key information" role="checkbox"></ejs-checkbox>
+                        <ejs-checkbox label="Ignored or refused instructions" aria-label="ignored or refused instructions" role="checkbox"></ejs-checkbox>
+                    </div>
+                    <div class="flex flex-col gap-1 grow text-sm">
+                        <label class="font-medium">Others (Optional)</label>
+                        <ejs-textarea placeholder="Please share your additional feedback to improvise" resizeMode="None" rows="6" aria-label="please share your additional feedback to improvise" role="textbox" style="height: 140px;"></ejs-textarea>
+                    </div>
+                    <div class="flex gap-3">
+                        <button ejs-button cssClass="w-1/2" type="button" aria-label="cancel" role="button">Cancel</button>
+                        <button ejs-button cssClass="e-primary w-1/2" type="submit" aria-label="submit" role="button">Submit</button>
+                    </div>
+                </div>
+            </ng-template>
+        </ejs-dialog>
+    </div>
+</section>
+<!-- SB Code - Start -->
+<div class="top-0 left-0 absolute w-full flex">
+    <button ejs-button class="my-5 mx-auto" (click)="dialog?.show()" type="button" aria-label="feedback for improvement" role="button">Feedback for Improvement</button>
+</div>
+<!-- SB Code - End -->
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section>
+    <div id="dialog-container" class="position-relative" style="min-height: 580px;">
+        <ejs-dialog #dialog class="rounded-2" target="#dialog-container" isModal="true" width="400px" (beforeOpen)="$event.maxHeight = '100%'" (open)="$event.preventFocus = true" aria-label="provide feedback for improvement" role="dialog">
+            <ng-template #content>
+                <div class="d-flex flex-column px-3 py-4 px-sm-4 h-100">
+                    <div class="d-flex justify-content-between align-items-center fs-5 mb-4">
+                        <p class="fw-medium small mb-0">Feedback for improvement</p>
+                        <button ejs-button cssClass="e-flat e-small" iconCss="e-icons e-close" (click)="dialog?.hide()" type="button" aria-label="close" role="button"></button>
+                    </div>
+                    <div class="d-flex flex-column gap-3 mb-4 mb-md-3">
+                        <ejs-checkbox label="Factually incorrect" checked="true" aria-label="factually incorrect" role="checkbox"></ejs-checkbox>
+                        <ejs-checkbox label="Missing key information" aria-label="missing key information" role="checkbox"></ejs-checkbox>
+                        <ejs-checkbox label="Ignored or refused instructions" aria-label="ignored or refused instructions" role="checkbox"></ejs-checkbox>
+                    </div>
+                    <div class="d-flex flex-column gap-1 flex-grow-1 mb-4">
+                        <label class="fw-medium">Others <span class="text-body-tertiary">(Optional)</span></label>
+                        <ejs-textarea placeholder="Please share your additional feedback to improvise" resizeMode="None" rows="6" aria-label="please share your additional feedback to improvise" role="textbox" style="height: 140px;"></ejs-textarea>
+                    </div>
+                    <div class="d-flex gap-3">
+                        <button ejs-button cssClass="w-50" type="button" aria-label="cancel" role="button">Cancel</button>
+                        <button ejs-button cssClass="e-primary w-50" type="submit" aria-label="submit" role="button">Submit</button>
+                    </div>
+                </div>
+            </ng-template>
+        </ejs-dialog>
+    </div>
+</section>
+<!-- SB Code - Start -->
+<div class="position-absolute top-0 start-0 d-flex w-100">
+    <button ejs-button class="e-outline mx-auto my-3" (click)="dialog?.show()" type="button" aria-label="feedback for improvement" role="button">Feedback for Improvement</button>
+</div>
+<!-- SB Code - End -->
+
+}

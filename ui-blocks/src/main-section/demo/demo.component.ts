@@ -135,7 +135,11 @@ export class DemoComponent implements OnInit, AfterViewInit, OnDestroy {
     public toggleLightDarkModes(): void {
         this.showLoadingIndicator = true;
         this.isDarkMode = !this.isDarkMode;
+        const iframeElement = this.previewBlock.nativeElement;
         this.updateTheme();
+        if (iframeElement) {
+            iframeElement.contentWindow.postMessage('{"mode":"' + (this.isDarkMode ? 'dark' : 'light') + '"}', '*');
+        }
     }
 
     public togglePreviewCode(event: Event): void {

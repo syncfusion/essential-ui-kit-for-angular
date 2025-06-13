@@ -1,0 +1,115 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-white dark:bg-gray-800">
+    <div id="interactive-sidebar" style="height: 861px;">
+        <ejs-sidebar #sidebar class="bg-gray-50 dark:bg-gray-700" width="256px" [isOpen]="true" type="push" [closeOnDocumentClick]="false" [showBackdrop]="backDrop" role="complementary" style="display: block;">
+            <div class="flex flex-col justify-between h-full">
+                <div>
+                    <div class="flex items-center px-4 py-3">
+                        <span class="e-avatar e-avatar-circle e-avatar-small bg-primary-600 dark:bg-primary-400">
+                            <span class="e-icons e-ai-chat e-medium !text-white dark:!text-black"></span>
+                        </span>
+                        <span class="ml-3 text-sm font-semibold text-gray-900 dark:text-white">Fusion AI</span>
+                    </div>
+                    <div class="mt-1 px-3">
+                        <div class="e-input-group">
+                            <input class="e-input" type="text" placeholder="Search..." aria-label="search" role="textbox" />
+                            <span class="e-input-group-icon e-icons e-search"></span>
+                        </div>
+                    </div>
+                    <div class="px-3 mt-3">
+                        <ejs-listview cssClass="e-list-template border-0" [dataSource]="chatHistory" [fields]="{ groupBy: 'category', text: 'message' }" aria-label="chat history list" role="list">
+                            <ng-template #template let-data>
+                                <div class="group e-list-wrapper flex items-center justify-between !px-3 !h-10">
+                                    <div *ngIf="data.category === ''; else messageItem" class="flex items-center gap-3">
+                                        <span class="e-icons {{data.fontIcon}} text-base"></span>
+                                        <span class="text-base lg:text-xs">{{data.message}}</span>
+                                    </div>
+                                    <ng-template #messageItem>
+                                        <span class="flex-1 truncate text-base lg:text-xs" [attr.title]="data.message">{{data.message}}</span>
+                                        <div class="relative">
+                                            <span id="target" class="e-icons e-more-horizontal-1 e-medium hidden group-hover:block ml-3" (click)="openContextMenu($event)"></span>
+                                        </div>
+                                    </ng-template>
+                                    <ejs-contextmenu #contextMenu target="#target" [items]="menuItems" aria-label="message options menu" role="menu"></ejs-contextmenu>
+                                </div>
+                            </ng-template>
+                            <ng-template #groupTemplate let-data>
+                                <div *ngIf="data.items[0].category" class="flex items-center gap-3 font-medium text-gray-700 dark:text-gray-300">
+                                    <span class="e-icons {{data.items[0].fontIcon}} text-base"></span>
+                                    <span>{{data.items[0].category.toUpperCase()}}</span>
+                                </div>
+                            </ng-template>
+                        </ejs-listview>
+                    </div>
+                </div>
+                <div class="pb-4 px-3">
+                    <button ejs-button class="e-primary w-full" iconCss="e-icons e-plus e-medium" type="button" content="Start new chat" aria-label="start new chat" role="button"></button>
+                </div>
+            </div>
+        </ejs-sidebar>
+    </div>
+</section>
+<!-- SB Code - Start -->
+<div class="p-3 top-0 left-0 absolute">
+    <button ejs-button cssClass="e-large e-icons e-chevron-right e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+</div>
+<!-- SB Code - End -->
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body">
+    <div id="interactive-sidebar" style="height: 861px;">
+        <ejs-sidebar #sidebar class="bg-body border-light-subtle" width="256px" [isOpen]="true" type="push" [closeOnDocumentClick]="false" [showBackdrop]="backDrop" role="complementary" style="display: block;">
+            <div class="d-flex flex-column justify-content-between h-100">
+                <div>
+                    <div class="d-flex align-items-center p-3 fs-6">
+                        <span class="e-avatar e-avatar-circle e-avatar-small bg-primary">
+                            <span class="e-icons e-ai-chat e-medium text-white"></span>
+                        </span>
+                        <span class="ms-2 ps-1 small fw-bold text-body">Fusion AI</span>
+                    </div>
+                    <div class="px-3">
+                        <div class="e-input-group">
+                            <input class="e-input" type="text" placeholder="Search..." aria-label="search" role="textbox" />
+                            <span class="e-input-group-icon e-icons e-search border-0"></span>
+                        </div>
+                    </div>
+                    <div class="px-3 mt-3">
+                        <ejs-listview cssClass="e-list-template border-0" [dataSource]="chatHistory" [fields]="{ groupBy: 'category', text: 'message' }" aria-label="chat history list" role="list">
+                            <ng-template #template let-data>
+                                <div class="e-list-wrapper d-flex align-items-center justify-content-between px-3 py-2 hover-group">
+                                    <div *ngIf="data.category === ''; else messageItem" class="d-flex align-items-center gap-2 fs-6">
+                                        <span class="e-icons {{data.fontIcon}} fs-6"></span>
+                                        <span class="small ps-1">{{data.message}}</span>
+                                    </div>
+                                    <ng-template #messageItem>
+                                        <span class="text-truncate flex-grow-1 w-100" [attr.title]="data.message">{{data.message}}</span>
+                                            <span id="target" class="e-icons e-more-horizontal-1 d-none context-menu fs-6 ms-1" (click)="openContextMenu($event)"></span>
+                                    </ng-template>
+                                    <ejs-contextmenu #contextMenu target="#target" [items]="menuItems" aria-label="message options menu" role="menu"></ejs-contextmenu>
+                                </div>
+                            </ng-template>
+                            <ng-template #groupTemplate let-data>
+                                <div *ngIf="data.items[0].category" class="d-flex align-items-center gap-2 fs-6 px-1">
+                                    <span class="e-icons {{data.items[0].fontIcon}} fs-6 text-secondary"></span>
+                                    <span class="small ps-1 text-body-secondary fw-normal">{{data.items[0].category.toUpperCase()}}</span>
+                                </div>
+                            </ng-template>
+                        </ejs-listview>
+                    </div>
+                </div>
+                <div class="pb-3 px-3">
+                    <button ejs-button class="e-primary w-100" iconCss="e-icons e-plus e-medium" type="button" content="Start new chat" aria-label="start new chat" role="button"></button>
+                </div>
+            </div>
+        </ejs-sidebar>
+    </div>
+</section>
+<!-- SB Code - Start -->
+<div class="p-3 position-absolute top-0 start-0">
+    <button ejs-button cssClass="e-large e-icons e-chevron-right e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+</div>
+<!-- SB Code - End -->
+
+}

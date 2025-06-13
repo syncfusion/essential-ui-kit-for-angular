@@ -70,7 +70,7 @@ export class FloatingMenu1Component implements OnInit, OnDestroy {
             this.isMobileView = position.width === 0;
             this.dialog.position = this.isMobileView ? { X: 0, Y: 0 } : { X: position.x - (dialogBounds.width - 52), Y: position.y - (dialogBounds.height + 18) };
         }
-        event.preventFocus = true;
+        if (event) event.preventFocus = true;
     }
 
     /* SB Code - Start */

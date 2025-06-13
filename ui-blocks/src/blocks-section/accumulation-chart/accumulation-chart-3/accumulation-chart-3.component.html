@@ -1,0 +1,107 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-white dark:bg-gray-950">
+    <div class="h-screen flex justify-center p-4 sm:p-6">
+        <div class="w-full" style="max-width: 530px;">
+            <div class="flex justify-between items-center mb-2.5">
+                <h2 class="text-base font-medium text-gray-900 dark:text-white">Stock Performance Overview</h2>
+                <button ejs-button class="e-flat" iconCss="e-icons e-more-vertical-1" content=" " type="button" aria-label="more options" role="button"></button>
+            </div>
+            <div class="hidden sm:block">
+                <div class="e-btn-group">
+                    <input type="radio" id="week" name="align" value="Week" checked aria-label="week" role="button" />
+                    <label class="e-btn" for="week">Week</label>
+                    <input type="radio" id="month" name="align" value="Month" aria-label="month" role="button" />
+                    <label class="e-btn" for="month">Month</label>
+                    <input type="radio" id="year" name="align" value="Year" aria-label="year" role="button" />
+                    <label class="e-btn" for="year">Year</label>
+                    <input type="radio" id="custom" name="align" value="Custom" aria-label="custom" role="button" />
+                    <label class="e-btn" for="custom">Custom</label>
+                </div>
+            </div>
+            <button #rangeDropdown ejs-dropdownbutton class="e-outline block sm:hidden my-4" content="Week" [items]="[{text:'Week'},{text:'Month'},{text:'Year'},{text:'Custom'}]" type="button" aria-label="choose a range" role="button"></button>
+            <div class="grid grid-cols-1 sm:grid-cols-2 sm:gap-10">
+                <div class="relative">
+                    <ejs-accumulationchart #chart width="100%" height="250px" [legendSettings]="{visible: false}" [enableBorderOnMouseMove]="false" (load)="chartLoad($event,'Tailwind3','Tailwind3Dark','#000000')" aria-label="stock performance" role="region">
+                        <e-accumulation-series-collection>
+                            <e-accumulation-series [dataSource]="chartData" xName="x" yName="y" innerRadius="75%" radius="90%" [palettes]="['#5A61F6', '#DE4383', '#01A8B5', '#FFB900']" [border]="border" borderRadius="14"></e-accumulation-series>
+                        </e-accumulation-series-collection>
+                    </ejs-accumulationchart>
+                    <div class="flex flex-col text-center gap-1 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2">
+                        <p class="text-sm text-gray-700 dark:text-gray-300">Share Holder</p>
+                        <p class="text-lg text-gray-900 dark:text-white font-semibold">50%</p>
+                        <div class="flex justify-center items-center gap-1">
+                            <span class="w-2 h-2 rounded-full" style="background-color: #5a61f6;"></span>
+                            <p class="text-sm text-gray-700 dark:text-gray-300">Promoter</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-center text-sm text-gray-500 dark:text-gray-400">
+                    <div class="flex justify-between py-2 border-b border-gray-200 dark:border-gray-600"><span>Previous Close</span><span class="font-medium">$17,112.00</span></div>
+                    <div class="flex justify-between py-2 border-b border-gray-200 dark:border-gray-600"><span>%Change</span><span class="text-green-700 dark:text-green-500 font-medium">+26%</span></div>
+                    <div class="flex justify-between py-2 border-b border-gray-200 dark:border-gray-600"><span>Market Cap</span><span class="font-medium">$28 M USD</span></div>
+                    <div class="flex justify-between py-2"><span>PE Ratio</span><span class="font-medium">14.28%</span></div>
+                    <div class="flex gap-2 mt-3">
+                        <button ejs-button class="e-outline !w-full" content="Sell Stock" type="button" aria-label="sell stock" role="button"></button>
+                        <button ejs-button class="e-primary !w-full" content="Buy Stock" type="button" aria-label="buy stock" role="button"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body">
+    <div class="vh-100 d-flex justify-content-center p-3 p-sm-4">
+        <div class="w-100" style="max-width: 530px;">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <h2 class="fs-6 fw-medium text-body mb-0">Stock Performance Overview</h2>
+                <button ejs-button class="e-flat" iconCss="e-icons e-more-vertical-1" content=" " type="button" aria-label="more options" role="button"></button>
+            </div>
+            <div class="d-none d-sm-block mb-3">
+                <div class="e-btn-group">
+                    <input type="radio" id="week" name="align" value="Week" checked aria-label="week" role="button" />
+                    <label class="e-btn" for="week">Week</label>
+                    <input type="radio" id="month" name="align" value="Month" aria-label="month" role="button" />
+                    <label class="e-btn" for="month">Month</label>
+                    <input type="radio" id="year" name="align" value="Year" aria-label="year" role="button" />
+                    <label class="e-btn" for="year">Year</label>
+                    <input type="radio" id="custom" name="align" value="Custom" aria-label="custom" role="button" />
+                    <label class="e-btn" for="custom">Custom</label>
+                </div>
+            </div>
+            <button #rangeDropdown ejs-dropdownbutton class="e-outline d-block d-sm-none mb-3" content="Week" [items]="[{text:'Week'},{text:'Month'},{text:'Year'},{text:'Custom'}]" type="button" aria-label="choose a range" role="button"></button>
+            <div class="row g-sm-4">
+                <div class="col-12 col-sm-6 position-relative">
+                    <ejs-accumulationchart #chart width="100%" height="250px" [legendSettings]="{visible: false}" [enableBorderOnMouseMove]="false" (load)="chartLoad($event,'Bootstrap5','Bootstrap5Dark','#212529')" aria-label="stock performance" role="region">
+                        <e-accumulation-series-collection>
+                            <e-accumulation-series [dataSource]="chartData" xName="x" yName="y" innerRadius="75%" radius="90%" [palettes]="['#006EEF', '#EF00AC', '#00EFA7', '#FFB900']" [border]="border" borderRadius="14"></e-accumulation-series>
+                        </e-accumulation-series-collection>
+                    </ejs-accumulationchart>
+                    <div class="position-absolute top-50 start-50 translate-middle text-center">
+                        <p class="text-body-secondary small mb-1">Share Holder</p>
+                        <p class="fw-semibold text-body fs-5 mb-1">50%</p>
+                        <div class="d-flex justify-content-center align-items-center gap-1">
+                            <span class="rounded-circle d-inline-block" style="width: 8px; height: 8px; background-color: #5a61f6;"></span>
+                            <p class="text-body-secondary small mb-0">Promoter</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 d-flex flex-column justify-content-center text-body-secondary small">
+                    <div class="d-flex justify-content-between py-2 border-bottom"><span>Previous Close</span><span class="fw-medium">$17,112.00</span></div>
+                    <div class="d-flex justify-content-between py-2 border-bottom"><span>%Change</span><span class="text-success fw-medium">+26%</span></div>
+                    <div class="d-flex justify-content-between py-2 border-bottom"><span>Market Cap</span><span class="fw-medium">$28 M USD</span></div>
+                    <div class="d-flex justify-content-between py-2"><span>PE Ratio</span><span class="fw-medium">14.28%</span></div>
+                    <div class="d-flex gap-2 mt-3">
+                        <button ejs-button class="e-outline w-100" content="Sell Stock" type="button" aria-label="sell stock" role="button"></button>
+                        <button ejs-button class="e-primary w-100" content="Buy Stock" type="button" aria-label="buy stock" role="button"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+}

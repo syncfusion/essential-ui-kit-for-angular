@@ -110,7 +110,7 @@ export class Notification1Component {
             this.dialog.position = { X: position.x - (parseInt(this.dialog.width, 10) - 32), Y: position.y + 37 };
         }
         this.tab.refreshActiveTabBorder();
-        event.preventFocus = true;
+        if (event) event.preventFocus = true;
     };
 
     /* SB Code - Start */

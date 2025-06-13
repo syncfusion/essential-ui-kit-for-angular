@@ -96,7 +96,7 @@ export class Notification3Component {
         if (this.dropdown.element.classList.contains('e-active')) {
             this.dropdown.toggle();
         }
-        event.preventFocus = true;
+        if (event) event.preventFocus = true;
     };
 
     /* SB Code - Start */

@@ -240,6 +240,95 @@ import { Notification8Component } from '../blocks-section/notification/notificat
 import { Notification9Component } from '../blocks-section/notification/notification-9/notification-9.component';
 import { Notification10Component } from '../blocks-section/notification/notification-10/notification-10.component';
 
+import { AiCardDemoComponent } from '../blocks-section/ai-card/ai-card-demo/ai-card-demo.component';
+import { AiCard1Component } from '../blocks-section/ai-card/ai-card-1/ai-card-1.component';
+import { AiCard2Component } from '../blocks-section/ai-card/ai-card-2/ai-card-2.component';
+import { AiCard3Component } from '../blocks-section/ai-card/ai-card-3/ai-card-3.component';
+import { AiCard4Component } from '../blocks-section/ai-card/ai-card-4/ai-card-4.component';
+
+import { AiChatDemoComponent } from '../blocks-section/ai-chat/ai-chat-demo/ai-chat-demo.component';
+import { AiChat1Component } from '../blocks-section/ai-chat/ai-chat-1/ai-chat-1.component';
+import { AiChat2Component } from '../blocks-section/ai-chat/ai-chat-2/ai-chat-2.component';
+
+import { AiDialogDemoComponent } from '../blocks-section/ai-dialog/ai-dialog-demo/ai-dialog-demo.component';
+import { AiDialog1Component } from '../blocks-section/ai-dialog/ai-dialog-1/ai-dialog-1.component';
+import { AiDialog2Component } from '../blocks-section/ai-dialog/ai-dialog-2/ai-dialog-2.component';
+import { AiDialog3Component } from '../blocks-section/ai-dialog/ai-dialog-3/ai-dialog-3.component';
+
+import { AiFaqDemoComponent } from '../blocks-section/ai-faq/ai-faq-demo/ai-faq-demo.component';
+import { AiFaq1Component } from '../blocks-section/ai-faq/ai-faq-1/ai-faq-1.component';
+
+import { AiFloatingMenuDemoComponent } from '../blocks-section/ai-floating-menu/ai-floating-menu-demo/ai-floating-menu-demo.component';
+import { AiFloatingMenu1Component } from '../blocks-section/ai-floating-menu/ai-floating-menu-1/ai-floating-menu-1.component';
+import { AiFloatingMenu2Component } from '../blocks-section/ai-floating-menu/ai-floating-menu-2/ai-floating-menu-2.component';
+import { AiFloatingMenu3Component } from '../blocks-section/ai-floating-menu/ai-floating-menu-3/ai-floating-menu-3.component';
+
+import { AiInputDemoComponent } from '../blocks-section/ai-input/ai-input-demo/ai-input-demo.component';
+import { AiInput1Component } from '../blocks-section/ai-input/ai-input-1/ai-input-1.component';
+import { AiInput2Component } from '../blocks-section/ai-input/ai-input-2/ai-input-2.component';
+
+import { AiLoginDemoComponent } from '../blocks-section/ai-login/ai-login-demo/ai-login-demo.component';
+import { AiLogin1Component } from '../blocks-section/ai-login/ai-login-1/ai-login-1.component';
+import { AiLogin2Component } from '../blocks-section/ai-login/ai-login-2/ai-login-2.component';
+
+import { AiNotificationDemoComponent } from '../blocks-section/ai-notification/ai-notification-demo/ai-notification-demo.component';
+import { AiNotification1Component } from '../blocks-section/ai-notification/ai-notification-1/ai-notification-1.component';
+
+import { AiPricingTableDemoComponent } from '../blocks-section/ai-pricing-table/ai-pricing-table-demo/ai-pricing-table-demo.component';
+import { AiPricingTable1Component } from '../blocks-section/ai-pricing-table/ai-pricing-table-1/ai-pricing-table-1.component';
+
+import { AiPromptCardDemoComponent } from '../blocks-section/ai-prompt-card/ai-prompt-card-demo/ai-prompt-card-demo.component';
+import { AiPromptCard1Component } from '../blocks-section/ai-prompt-card/ai-prompt-card-1/ai-prompt-card-1.component';
+import { AiPromptCard2Component } from '../blocks-section/ai-prompt-card/ai-prompt-card-2/ai-prompt-card-2.component';
+import { AiPromptCard3Component } from '../blocks-section/ai-prompt-card/ai-prompt-card-3/ai-prompt-card-3.component';
+import { AiPromptCard4Component } from '../blocks-section/ai-prompt-card/ai-prompt-card-4/ai-prompt-card-4.component';
+
+import { AiSearchDemoComponent } from '../blocks-section/ai-search/ai-search-demo/ai-search-demo.component';
+import { AiSearch1Component } from '../blocks-section/ai-search/ai-search-1/ai-search-1.component';
+import { AiSearch2Component } from '../blocks-section/ai-search/ai-search-2/ai-search-2.component';
+
+import { AiSettingDemoComponent } from '../blocks-section/ai-setting/ai-setting-demo/ai-setting-demo.component';
+import { AiSetting1Component } from '../blocks-section/ai-setting/ai-setting-1/ai-setting-1.component';
+import { AiSetting2Component } from '../blocks-section/ai-setting/ai-setting-2/ai-setting-2.component';
+
+import { AiSidebarDemoComponent } from '../blocks-section/ai-sidebar/ai-sidebar-demo/ai-sidebar-demo.component';
+import { AiSidebar1Component } from '../blocks-section/ai-sidebar/ai-sidebar-1/ai-sidebar-1.component';
+import { AiSidebar2Component } from '../blocks-section/ai-sidebar/ai-sidebar-2/ai-sidebar-2.component';
+import { AiSidebar3Component } from '../blocks-section/ai-sidebar/ai-sidebar-3/ai-sidebar-3.component';
+import { AiSidebar4Component } from '../blocks-section/ai-sidebar/ai-sidebar-4/ai-sidebar-4.component';
+import { AiSidebar5Component } from '../blocks-section/ai-sidebar/ai-sidebar-5/ai-sidebar-5.component';
+
+import { AccumulationChartDemoComponent } from '../blocks-section/accumulation-chart/accumulation-chart-demo/accumulation-chart-demo.component';
+import { AccumulationChart1Component } from '../blocks-section/accumulation-chart/accumulation-chart-1/accumulation-chart-1.component';
+import { AccumulationChart2Component } from '../blocks-section/accumulation-chart/accumulation-chart-2/accumulation-chart-2.component';
+import { AccumulationChart3Component } from '../blocks-section/accumulation-chart/accumulation-chart-3/accumulation-chart-3.component';
+
+import { BarChartDemoComponent } from '../blocks-section/bar-chart/bar-chart-demo/bar-chart-demo.component';
+import { BarChart1Component } from '../blocks-section/bar-chart/bar-chart-1/bar-chart-1.component';
+import { BarChart2Component } from '../blocks-section/bar-chart/bar-chart-2/bar-chart-2.component';
+import { BarChart3Component } from '../blocks-section/bar-chart/bar-chart-3/bar-chart-3.component';
+import { BarChart4Component } from '../blocks-section/bar-chart/bar-chart-4/bar-chart-4.component';
+import { BarChart5Component } from '../blocks-section/bar-chart/bar-chart-5/bar-chart-5.component';
+import { BarChart6Component } from '../blocks-section/bar-chart/bar-chart-6/bar-chart-6.component';
+import { BarChart7Component } from '../blocks-section/bar-chart/bar-chart-7/bar-chart-7.component';
+import { BarChart8Component } from '../blocks-section/bar-chart/bar-chart-8/bar-chart-8.component';
+
+import { LineChartDemoComponent } from '../blocks-section/line-chart/line-chart-demo/line-chart-demo.component';
+import { LineChart1Component } from '../blocks-section/line-chart/line-chart-1/line-chart-1.component';
+import { LineChart2Component } from '../blocks-section/line-chart/line-chart-2/line-chart-2.component';
+import { LineChart3Component } from '../blocks-section/line-chart/line-chart-3/line-chart-3.component';
+import { LineChart4Component } from '../blocks-section/line-chart/line-chart-4/line-chart-4.component';
+
+import { RatingDemoComponent } from '../blocks-section/rating/rating-demo/rating-demo.component';
+import { Rating1Component } from '../blocks-section/rating/rating-1/rating-1.component';
+import { Rating2Component } from '../blocks-section/rating/rating-2/rating-2.component';
+import { Rating3Component } from '../blocks-section/rating/rating-3/rating-3.component';
+import { Rating4Component } from '../blocks-section/rating/rating-4/rating-4.component';
+import { Rating5Component } from '../blocks-section/rating/rating-5/rating-5.component';
+import { Rating6Component } from '../blocks-section/rating/rating-6/rating-6.component';
+import { Rating7Component } from '../blocks-section/rating/rating-7/rating-7.component';
+import { Rating8Component } from '../blocks-section/rating/rating-8/rating-8.component';
+
 import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
 
 export const routes: Routes = [
@@ -484,6 +573,95 @@ export const routes: Routes = [
   { path: 'blocks/notification-8', component: Notification8Component },
   { path: 'blocks/notification-9', component: Notification9Component },
   { path: 'blocks/notification-10', component: Notification10Component },
+
+  { path: 'blocks/ai-card', component: AiCardDemoComponent },
+  { path: 'blocks/ai-card-1', component: AiCard1Component },
+  { path: 'blocks/ai-card-2', component: AiCard2Component },
+  { path: 'blocks/ai-card-3', component: AiCard3Component },
+  { path: 'blocks/ai-card-4', component: AiCard4Component },
+
+  { path: 'blocks/ai-chat', component: AiChatDemoComponent },
+  { path: 'blocks/ai-chat-1', component: AiChat1Component },
+  { path: 'blocks/ai-chat-2', component: AiChat2Component },
+
+  { path: 'blocks/ai-dialog', component: AiDialogDemoComponent },
+  { path: 'blocks/ai-dialog-1', component: AiDialog1Component },
+  { path: 'blocks/ai-dialog-2', component: AiDialog2Component },
+  { path: 'blocks/ai-dialog-3', component: AiDialog3Component },
+
+  { path: 'blocks/ai-faq', component: AiFaqDemoComponent },
+  { path: 'blocks/ai-faq-1', component: AiFaq1Component },
+
+  { path: 'blocks/ai-floating-menu', component: AiFloatingMenuDemoComponent },
+  { path: 'blocks/ai-floating-menu-1', component: AiFloatingMenu1Component },
+  { path: 'blocks/ai-floating-menu-2', component: AiFloatingMenu2Component },
+  { path: 'blocks/ai-floating-menu-3', component: AiFloatingMenu3Component },
+
+  { path: 'blocks/ai-input', component: AiInputDemoComponent },
+  { path: 'blocks/ai-input-1', component: AiInput1Component },
+  { path: 'blocks/ai-input-2', component: AiInput2Component },
+
+  { path: 'blocks/ai-login', component: AiLoginDemoComponent },
+  { path: 'blocks/ai-login-1', component: AiLogin1Component },
+  { path: 'blocks/ai-login-2', component: AiLogin2Component },
+
+  { path: 'blocks/ai-notification', component: AiNotificationDemoComponent },
+  { path: 'blocks/ai-notification-1', component: AiNotification1Component },
+
+  { path: 'blocks/ai-pricing-table', component: AiPricingTableDemoComponent },
+  { path: 'blocks/ai-pricing-table-1', component: AiPricingTable1Component },
+
+  { path: 'blocks/ai-prompt-card', component: AiPromptCardDemoComponent },
+  { path: 'blocks/ai-prompt-card-1', component: AiPromptCard1Component },
+  { path: 'blocks/ai-prompt-card-2', component: AiPromptCard2Component },
+  { path: 'blocks/ai-prompt-card-3', component: AiPromptCard3Component },
+  { path: 'blocks/ai-prompt-card-4', component: AiPromptCard4Component },
+
+  { path: 'blocks/ai-search', component: AiSearchDemoComponent },
+  { path: 'blocks/ai-search-1', component: AiSearch1Component },
+  { path: 'blocks/ai-search-2', component: AiSearch2Component },
+
+  { path: 'blocks/ai-setting', component: AiSettingDemoComponent },
+  { path: 'blocks/ai-setting-1', component: AiSetting1Component },
+  { path: 'blocks/ai-setting-2', component: AiSetting2Component },
+
+  { path: 'blocks/ai-sidebar', component: AiSidebarDemoComponent },
+  { path: 'blocks/ai-sidebar-1', component: AiSidebar1Component },
+  { path: 'blocks/ai-sidebar-2', component: AiSidebar2Component },
+  { path: 'blocks/ai-sidebar-3', component: AiSidebar3Component },
+  { path: 'blocks/ai-sidebar-4', component: AiSidebar4Component },
+  { path: 'blocks/ai-sidebar-5', component: AiSidebar5Component },
+
+  { path: 'blocks/accumulation-chart', component: AccumulationChartDemoComponent },
+  { path: 'blocks/accumulation-chart-1', component: AccumulationChart1Component },
+  { path: 'blocks/accumulation-chart-2', component: AccumulationChart2Component },
+  { path: 'blocks/accumulation-chart-3', component: AccumulationChart3Component },
+
+  { path: 'blocks/bar-chart', component: BarChartDemoComponent },
+  { path: 'blocks/bar-chart-1', component: BarChart1Component },
+  { path: 'blocks/bar-chart-2', component: BarChart2Component },
+  { path: 'blocks/bar-chart-3', component: BarChart3Component },
+  { path: 'blocks/bar-chart-4', component: BarChart4Component },
+  { path: 'blocks/bar-chart-5', component: BarChart5Component },
+  { path: 'blocks/bar-chart-6', component: BarChart6Component },
+  { path: 'blocks/bar-chart-7', component: BarChart7Component },
+  { path: 'blocks/bar-chart-8', component: BarChart8Component },
+
+  { path: 'blocks/line-chart', component: LineChartDemoComponent },
+  { path: 'blocks/line-chart-1', component: LineChart1Component },
+  { path: 'blocks/line-chart-2', component: LineChart2Component },
+  { path: 'blocks/line-chart-3', component: LineChart3Component },
+  { path: 'blocks/line-chart-4', component: LineChart4Component },
+
+  { path: 'blocks/rating', component: RatingDemoComponent },
+  { path: 'blocks/rating-1', component: Rating1Component },
+  { path: 'blocks/rating-2', component: Rating2Component },
+  { path: 'blocks/rating-3', component: Rating3Component },
+  { path: 'blocks/rating-4', component: Rating4Component },
+  { path: 'blocks/rating-5', component: Rating5Component },
+  { path: 'blocks/rating-6', component: Rating6Component },
+  { path: 'blocks/rating-7', component: Rating7Component },
+  { path: 'blocks/rating-8', component: Rating8Component },
 
   { path: '**', component: PageNotFoundComponent }
 ];

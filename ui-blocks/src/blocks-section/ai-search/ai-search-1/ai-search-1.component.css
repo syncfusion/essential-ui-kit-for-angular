@@ -1,0 +1,5 @@
+::ng-deep .e-input-group .e-icons.e-search {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}

@@ -1,0 +1,143 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-white dark:bg-gray-900 h-100">
+    <div class="w-full pt-5 pb-4 h-screen">
+        <div class="px-4 mx-auto lg:px-0" [style]="width">
+            <ejs-autocomplete
+                #search
+                class="e-bigger" 
+                [dataSource]="filteredData" 
+                [fields]="{ value: 'name' }"
+                popupHeight="750px" 
+                placeholder="Search" 
+                (focus)="search.showPopup()" 
+                (close)="onClose($event)"
+                (created)="openPopup(search)" 
+                role="combobox">
+                <ng-template #headerTemplate>
+                    <ejs-tab #tab [overflowMode]="overflowMode" (selected)="onSelect($event)">
+                        <e-tabitems>
+                            <e-tabitem>
+                                <ng-template #headerText>
+                                    <div class="space-x-2 flex items-center">
+                                        <span class="text-gray-500 dark:text-gray-400">All results</span>
+                                        <span class="e-badge e-badge-pill !px-2">6</span>
+                                    </div>
+                                </ng-template>
+                            </e-tabitem>
+                            <e-tabitem>
+                                <ng-template #headerText>
+                                    <div class="space-x-2 flex items-center">
+                                        <span class="text-gray-500 dark:text-gray-400">Team</span>
+                                        <span class="e-badge e-badge-pill !px-2">1</span>
+                                    </div>
+                                </ng-template>
+                            </e-tabitem>
+                            <e-tabitem>
+                                <ng-template #headerText>
+                                    <div class="space-x-2 flex items-center">
+                                        <span class="text-gray-500 dark:text-gray-400">Files</span>
+                                        <span class="e-badge e-badge-pill !px-2">3</span>
+                                    </div>
+                                </ng-template>
+                            </e-tabitem>
+                            <e-tabitem>
+                                <ng-template #headerText>
+                                    <div class="space-x-2 flex items-center">
+                                        <span class="text-gray-500 dark:text-gray-400">Project</span>
+                                        <span class="e-badge e-badge-pill !px-2">2</span>
+                                    </div>
+                                </ng-template>
+                            </e-tabitem>
+                        </e-tabitems>
+                    </ejs-tab>
+                </ng-template>
+                <ng-template #itemTemplate let-data>
+                    <div class="flex gap-3 px-5 py-2" (click)="onSearchClick(search)">
+                        <span class="indent-0 e-avatar e-avatar-medium e-avatar-circle text-sm shrink-0">
+                            <img *ngIf="data.image" src="assets/images/common/avatar/{{data.image}}" class="w-100 h-100 object-fit-cover" alt="logo" />
+                            <span *ngIf="!data.image" class="e-icons e-file-document text-lg"></span>
+                        </span>
+                        <div class="w-full indent-0">
+                            <div class="text-sm !font-medium flex items-center !text-wrap text-gray-900 dark:text-white mb-0.5">{{data.name}}</div>
+                            <div class="text-gray-700 font-normal flex items-center !text-wrap dark:text-gray-300 text-sm">{{data.status}}</div>
+                        </div>
+                    </div>
+                </ng-template>
+            </ejs-autocomplete>
+        </div>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body h-100">
+    <div class="w-100 pt-3 pb-3 h-100">
+        <div class="px-3 mx-auto" [style]="width">
+            <ejs-autocomplete
+                #search
+                class="e-bigger"
+                [dataSource]="filteredData"
+                [fields]="{ value: 'name' }"
+                popupHeight="750px"
+                placeholder="Search"
+                (focus)="search.showPopup()"
+                (close)="onClose($event)"
+                (created)="openPopup(search)"
+                role="combobox">
+                <ng-template #headerTemplate>
+                    <ejs-tab #tab [overflowMode]="overflowMode" (selected)="onSelect($event)">
+                        <e-tabitems>
+                            <e-tabitem>
+                                <ng-template #headerText>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <span class="fs-6">All results</span>
+                                        <span class="e-badge e-badge-pill px-2">6</span>
+                                    </div>
+                                </ng-template>
+                            </e-tabitem>
+                            <e-tabitem>
+                                <ng-template #headerText>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <span class="fs-6">Team</span>
+                                        <span class="e-badge e-badge-pill px-2">1</span>
+                                    </div>
+                                </ng-template>
+                            </e-tabitem>
+                            <e-tabitem>
+                                <ng-template #headerText>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <span class="fs-6">Files</span>
+                                        <span class="e-badge e-badge-pill px-2">3</span>
+                                    </div>
+                                </ng-template>
+                            </e-tabitem>
+                            <e-tabitem>
+                                <ng-template #headerText>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <span class="fs-6">Project</span>
+                                        <span class="e-badge e-badge-pill px-2">2</span>
+                                    </div>
+                                </ng-template>
+                            </e-tabitem>
+                        </e-tabitems>
+                    </ejs-tab>
+                </ng-template>
+                <ng-template #itemTemplate let-data>
+                    <div class="d-flex gap-3 px-3 py-2" (click)="onSearchClick(search)" style="text-indent: 0;">
+                        <span class="e-avatar e-avatar-medium e-avatar-circle text-sm flex-shrink-0">
+                            <img *ngIf="data.image" src="assets/images/common/avatar/{{data.image}}" class="w-100 h-100 object-fit-cover" alt="logo" />
+                            <span *ngIf="!data.image" class="e-icons e-file-document fs-5"></span>
+                        </span>
+                        <div class="w-100 fs-6">
+                            <div class="small lh-base fw-medium d-flex align-items-center text-body mb-1">{{data.name}}</div>
+                            <div class="text-body-secondary lh-base fw-normal text-wrap d-flex align-items-center small">{{data.status}}</div>
+                        </div>
+                    </div>
+                </ng-template>
+            </ejs-autocomplete>
+        </div>
+    </div>
+</section>
+
+}

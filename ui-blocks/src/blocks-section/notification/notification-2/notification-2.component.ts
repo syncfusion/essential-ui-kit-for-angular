@@ -70,7 +70,7 @@ export class Notification2Component {
         setTimeout(() => {
             this.progressbar.refresh();
         }, 200);
-        event.preventFocus = true;
+        if (event) event.preventFocus = true;
     };
 
     /* SB Code - Start */

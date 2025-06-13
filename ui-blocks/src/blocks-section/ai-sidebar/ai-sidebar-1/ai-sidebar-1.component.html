@@ -1,0 +1,135 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-white dark:bg-gray-800">
+    <div id="sidebar-navigation" style="height: 766px;">
+        <ejs-sidebar #sidebar class="bg-gray-50 dark:bg-gray-700" width="256px" [isOpen]="true" type="push" [closeOnDocumentClick]="false" [showBackdrop]="backDrop" role="complementary" style="display: block;">
+            <div class="flex flex-col justify-between h-full">
+                <div>
+                    <div class="flex items-center px-3 py-2 mt-1">
+                        <span class="e-avatar e-avatar-circle e-avatar-small shrink-0">
+                            <img src="assets/images/common/avatar/avatar-2.jpg" alt="profile picture" />
+                        </span>
+                        <div class="ml-2">
+                            <div class="text-base font-medium text-gray-900 dark:text-white">Bob Johnson</div>
+                            <p class="text-sm mt-1 text-gray-700 dark:text-gray-300">bobjohnson&#64;example.com</p>
+                        </div>
+                    </div>
+                    <hr class="border-gray-200 dark:border-gray-600 m-4" />
+                    <ejs-listview cssClass="border-0 e-list-template" [dataSource]="navigationMenu" aria-label="main navigation links" role="list">
+                        <ng-template #template let-data>
+                            <div class="e-list-wrapper flex items-center justify-between !px-3">
+                                <div class="flex items-center gap-3">
+                                    <span class="e-icons {{data.fontIcon}} text-base"></span>
+                                    <span class="text-base lg:text-sm">{{data.field}}</span>
+                                </div>
+                                <span class="e-badge e-badge-pill e-badge-primary !px-2" *ngIf="data.id === 4">9</span>
+                            </div>
+                        </ng-template>
+                    </ejs-listview>
+                    <hr class="border-gray-200 dark:border-gray-600 m-4" />
+                    <ejs-listview class="border-0 e-list-template" [dataSource]="supportMenu" aria-label="other navigation links" role="list">
+                        <ng-template #template let-data>
+                            <div class="e-list-wrapper !px-3" [ngClass]="{ 'mt-3': data.id === 3 }">
+                                <div *ngIf="data.field === 'Upgrade Plan'; else defaultTemplate" class="flex items-center justify-between">
+                                    <div class="flex items-center gap-2">
+                                        <span class="e-avatar e-avatar-circle e-avatar-small bg-primary-600 dark:bg-primary-400">
+                                            <span class="e-icons e-ai-chat e-medium !text-white dark:!text-black"></span>
+                                        </span>
+                                        <span class="font-medium text-base lg:text-sm">{{data.field}}</span>
+                                    </div>
+                                    <span class="e-icons {{data.fontIcon}} e-medium"></span>
+                                </div>
+                                <ng-template #defaultTemplate>
+                                    <div class="flex items-center gap-3">
+                                        <span class="e-icons {{data.fontIcon}} text-base"></span>
+                                        <span class="text-base lg:text-sm">{{data.field}}</span>
+                                    </div>
+                                </ng-template>
+                            </div>
+                        </ng-template>
+                    </ejs-listview>
+                </div>
+                <div class="flex items-center justify-center">
+                    <div class="bg-white dark:bg-gray-800 mb-6 p-1 w-fit border border-gray-200 dark:border-gray-600 rounded-lg">
+                        <button ejs-button class="rounded-lg e-primary" iconCss="e-icons e-brightness" type="button" content="Light" aria-label="switch to light theme" role="button"></button>
+                        <button ejs-button class="rounded-lg e-flat" iconCss="e-icons e-contrast" type="button" content="Dark" aria-label="switch to dark theme" role="button"></button>
+                    </div>
+                </div>
+            </div>
+        </ejs-sidebar>
+    </div>
+</section>
+<!-- SB Code - Start -->
+<div class="p-3 top-0 left-0 absolute">
+    <button ejs-button cssClass="e-large e-icons e-chevron-right e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+</div>
+<!-- SB Code - End -->
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body">
+    <div id="sidebar-navigation" style="height: 766px;">
+        <ejs-sidebar #sidebar class="bg-body border-light-subtle" width="256px" [isOpen]="true" type="push" [closeOnDocumentClick]="false" [showBackdrop]="backDrop" role="complementary" style="display: block;">
+            <div class="d-flex flex-column justify-content-between h-100">
+                <div>
+                    <div class="d-flex align-items-center px-3 py-2 my-1">
+                        <span class="e-avatar e-avatar-circle e-avatar-small flex-shrink-0">
+                            <img src="assets/images/common/avatar/avatar-2.jpg" alt="profile picture" />
+                        </span>
+                        <div class="ms-2">
+                            <div class="fs-6 fw-medium text-body">Bob Johnson</div>
+                            <p class="mt-1 mb-0 text-body-secondary">bobjohnson&#64;example.com</p>
+                        </div>
+                    </div>
+                    <hr class="border-light-subtle opacity-100 mx-3" />
+                    <ejs-listview id="nav-list" cssClass="border-0 e-list-template rounded-0" [dataSource]="navigationMenu" aria-label="main navigation links" role="list">
+                        <ng-template #template let-data>
+                            <div class="e-list-wrapper d-flex align-items-center justify-content-between px-3 py-2">
+                                <div class="d-flex align-items-center gap-2 fs-6">
+                                    <span class="e-icons {{data.fontIcon}} small"></span>
+                                    <span class="small">{{data.field}}</span>
+                                </div>
+                                <span class="e-badge e-badge-pill e-badge-primary" *ngIf="data.id === 4">9</span>
+                            </div>
+                        </ng-template>
+                    </ejs-listview>
+                    <hr class="border-light-subtle opacity-100 mx-3" />
+                    <ejs-listview id="support-list" class="border-0 e-list-template rounded-0" [dataSource]="supportMenu" aria-label="other navigation links" role="list">
+                        <ng-template #template let-data>
+                            <div class="e-list-wrapper px-3 py-2" [ngClass]="{ 'mt-2': data.id === 3 }">
+                                <div *ngIf="data.field === 'Upgrade Plan'; else defaultTemplate" class="d-flex align-items-center justify-content-between fs-6">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <span class="e-avatar e-avatar-circle e-avatar-small bg-primary text-white">
+                                            <span class="e-icons e-ai-chat e-medium"></span>
+                                        </span>
+                                        <span class="fw-medium small">{{data.field}}</span>
+                                    </div>
+                                    <span class="e-icons {{data.fontIcon}} fs-5"></span>
+                                </div>
+                                <ng-template #defaultTemplate>
+                                    <div class="d-flex align-items-center gap-2 fs-6">
+                                        <span class="e-icons {{data.fontIcon}} small"></span>
+                                        <span class="small">{{data.field}}</span>
+                                    </div>
+                                </ng-template>
+                            </div>
+                        </ng-template>
+                    </ejs-listview>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <div class="bg-body mb-4 p-1 border border-light-subtle rounded-3">
+                        <button ejs-button class="rounded-3 e-primary" iconCss="e-icons e-brightness" type="button" content="Light" aria-label="switch to light theme" role="button"></button>
+                        <button ejs-button class="rounded-3 e-flat" iconCss="e-icons e-contrast" type="button" content="Dark" aria-label="switch to dark theme" role="button"></button>
+                    </div>
+                </div>
+            </div>
+        </ejs-sidebar>
+    </div>
+</section>
+<!-- SB Code - Start -->
+<div class="p-3 position-absolute top-0 start-0">
+    <button ejs-button cssClass="e-large e-icons e-chevron-right e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+</div>
+<!-- SB Code - End -->
+
+}
