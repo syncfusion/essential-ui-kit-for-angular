@@ -1,0 +1,71 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-white dark:bg-gray-900 h-full">
+    <div class="w-full pt-5 pb-4 h-screen">
+        <div class="px-4 mx-auto lg:px-0" [style]="width">
+            <ejs-autocomplete
+                #search
+                class="e-bigger"
+                placeholder="Search"
+                popupHeight="530px"
+                (focus)="search.showPopup()"
+                (created)="openPopup(search)"
+                (filtering)="onFiltering($event)"
+                role="combobox">
+                <ng-template #noRecordsTemplate>
+                    <div class="text-center p-6 m-auto">
+                        <div class="mb-3">
+                            <span class="border border-gray-200 p-2 rounded text-xl e-icons e-folder-open dark:border-gray-600 dark:text-gray-100"></span>
+                        </div>
+                        <div>
+                            <div class="mb-4">
+                                <div class="mb-1 text-sm font-medium text-gray-900 dark:text-white">No search results found</div>
+                                <div class="text-sm text-gray-900 dark:text-white">“{{searchKeyword}}” did not match any chat history. Please try again or <a href="javascript:void(0);" class="font-normal underline p-0" role="link">create a new chat</a>.</div>
+                            </div>
+                            <div>
+                                <button ejs-button class="e-outline px-4 !text-base" content="Clear Search" type="button" aria-label="clear search" role="button"></button>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </ejs-autocomplete>
+        </div>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body h-100">
+    <div class="w-100 pt-3 pb-3 h-100">
+        <div class="px-3 mx-auto px-lg-0" [style]="width">
+            <ejs-autocomplete
+                #search
+                class="e-bigger"
+                placeholder="Search"
+                popupHeight="530px"
+                (focus)="search.showPopup()"
+                (created)="openPopup(search)"
+                (filtering)="onFiltering($event)"
+                role="combobox">
+                <ng-template #noRecordsTemplate>
+                    <div class="text-center fs-6 py-4 px-sm-4 mx-auto">
+                        <div class="mb-3">
+                            <span class="border p-2 rounded fs-4 e-icons e-folder-open"></span>
+                        </div>
+                        <div>
+                            <div class="mb-4">
+                                <div class="mb-1 fs-6 fw-medium text-body">No search results found</div>
+                                <div class="small text-body">“{{searchKeyword}}” did not match any chat history. Please try again or <a href="javascript:void(0);" class="fw-normal text-decoration-underline p-0" role="link">create a new chat</a>.</div>
+                            </div>
+                            <div>
+                                <button ejs-button class="e-outline px-3 fs-6" content="Clear Search" type="button" aria-label="clear search" role="button"></button>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </ejs-autocomplete>
+        </div>
+    </div>
+</section>
+
+}

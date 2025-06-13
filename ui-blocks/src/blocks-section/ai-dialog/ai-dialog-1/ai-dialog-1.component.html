@@ -1,0 +1,75 @@
+@if (currentTheme === 'tailwind') {
+
+<section>
+    <div id="dialog-container" style="min-height: 580px;">
+        <ejs-dialog #dialog class="rounded-none sm:rounded-lg overflow-hidden" target="#dialog-container" isModal="true" width="357px" (beforeOpen)="$event.maxHeight = '100%'" (open)="$event.preventFocus = true" aria-label="AI design generator" role="dialog">
+            <ng-template #content>
+                <div class="flex flex-col h-full">
+                    <div class="border-b py-6 dark:border-gray-600">
+                        <ejs-stepper #stepper cssClass="e-small mx-auto" labelPosition="End" activeStep="1" style="max-width: 256px;">
+                            <e-steps>
+                                <e-step iconCss="e-icons e-check-small" label="Basic info"></e-step>
+                                <e-step text="2" label="AI prompt"></e-step>
+                            </e-steps>
+                        </ejs-stepper>
+                    </div>
+                    <div class="flex flex-col gap-6 grow px-4 py-6 sm:pt-4">
+                        <div class="flex flex-col gap-1 text-xs">
+                            <label class="font-medium">Upload image reference</label>
+                            <div id="upload-template" class="flex flex-col items-center text-gray-500 dark:text-gray-400 bg-gray-50 dark:bg-gray-700 border border-dashed border-gray-300 dark:border-gray-500 rounded-lg pt-6">
+                                <button ejs-button class="!px-1.5 mb-2 md:mb-3" iconCss="e-icons e-align-top" (click)="uploader.element.click()" type="button" aria-label="upload file" role="button"></button>
+                                <p>Drag & drop or <a href="javascript:void(0);" class="font-medium underline text-primary-600 dark:text-primary-400" (click)="uploader.element.click()">choose file</a> to upload.</p>
+                                <p class="mb-6">Image format: JPG, PNG, & SVG, Max 5.0MB</p>
+                                <ejs-uploader #uploader class="w-full" dropArea="#upload-template"></ejs-uploader>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-1 grow text-xs">
+                            <label class="font-medium">Describe to AI</label>
+                            <ejs-textarea value="I want to have modern and clean looking workspace with minimal and bright accent colors. Completed with natural wood color and beige furniture." resizeMode="None" rows="5" aria-label="describe your request to AI" role="textbox" style="height: 112px;"></ejs-textarea>
+                        </div>
+                        <button ejs-button cssClass="e-primary sm:self-center" iconCss="e-icons e-ai-chat" type="button" aria-label="generate design" role="button">Generate design</button>
+                    </div>
+                </div>
+            </ng-template>
+        </ejs-dialog>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section>
+    <div id="dialog-container" style="min-height: 580px;">
+        <ejs-dialog #dialog class="rounded-2" target="#dialog-container" isModal="true" width="357px" (beforeOpen)="$event.maxHeight = '100%'" (open)="$event.preventFocus = true" aria-label="AI design generator" role="dialog">
+            <ng-template #content>
+                <div class="d-flex flex-column h-100">
+                    <div class="border-bottom py-4 border-light-subtle">
+                        <ejs-stepper #stepper cssClass="e-small mx-auto" labelPosition="End" activeStep="1" style="max-width: 256px;">
+                            <e-steps>
+                                <e-step iconCss="e-icons e-check-small" label="Basic info"></e-step>
+                                <e-step text="2" label="AI prompt"></e-step>
+                            </e-steps>
+                        </ejs-stepper>
+                    </div>
+                    <div class="d-flex flex-column gap-4 flex-grow-1 px-3 py-4 pt-sm-3">
+                        <div class="d-flex flex-column gap-1">
+                            <label class="fw-medium small">Upload image reference</label>
+                            <div id="upload-template" class="d-flex flex-column align-items-center small text-body-tertiary bg-body-tertiary border border-dashed rounded-1 pt-4" style="border-style: dashed !important;">
+                                <button ejs-button class="e-outline px-2 mb-2 mb-md-3" iconCss="e-icons e-align-top" (click)="uploader.element.click()" type="button" aria-label="upload file" role="button"></button>
+                                <p class="mb-0">Drag & drop or <a href="javascript:void(0);" class="fw-medium text-primary" (click)="uploader.element.click()">choose file</a> to upload.</p>
+                                <p class="mb-4">Image format: JPG, PNG, & SVG, Max 5.0MB</p>
+                                <ejs-uploader #uploader class="w-100" dropArea="#upload-template"></ejs-uploader>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column gap-1 flex-grow-1">
+                            <label class="fw-medium small">Describe to AI</label>
+                            <ejs-textarea value="I want to have modern and clean looking workspace with minimal and bright accent colors. Completed with natural wood color and beige furniture." resizeMode="None" rows="5" aria-label="describe your request to AI" role="textbox" style="height: 112px;"></ejs-textarea>
+                        </div>
+                        <button ejs-button cssClass="e-primary align-self-sm-center" iconCss="e-icons e-ai-chat" type="button" aria-label="generate design" role="button">Generate design</button>
+                    </div>
+                </div>
+            </ng-template>
+        </ejs-dialog>
+    </div>
+</section>
+
+}

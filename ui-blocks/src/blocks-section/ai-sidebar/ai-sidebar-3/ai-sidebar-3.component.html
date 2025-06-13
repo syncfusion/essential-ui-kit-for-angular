@@ -1,0 +1,93 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-white dark:bg-gray-800">
+    <div id="chat-sidebar" style="height: 766px;">
+        <ejs-sidebar #sidebar class="bg-gray-50 dark:bg-gray-700" [width]="width" [isOpen]="true" type="push" [closeOnDocumentClick]="false" [showBackdrop]="backDrop" enableDock="true" role="complementary" style="display: block;">
+            <div class="flex h-full">
+                <div class="px-2 py-6 flex flex-col items-center h-full border-r border-gray-200 dark:border-gray-600" [ngStyle]="{ width: dockWidth }">
+                    <img src="assets/images/ai/sidebar/two-columns-sidebar/logo.svg" alt="logo" />
+                    <div class="flex flex-col gap-4 mt-6">
+                        <button ejs-button class="e-icons e-comment-add e-medium e-flat px-2" type="button" (click)="sidebar?.hide()" aria-label="add comment" role="button"></button>
+                        <button ejs-button class="e-icons e-user e-medium e-flat px-2" type="button" (click)="sidebar?.hide()" aria-label="user profile" role="button"></button>
+                        <button ejs-button class="e-icons e-comment-show e-medium e-flat px-2 e-active" type="button" (click)="sidebar?.show()" aria-label="message" role="button"></button>
+                        <button ejs-button class="e-icons e-search e-medium e-flat px-2" type="button" (click)="sidebar?.hide()" aria-label="search" role="button"></button>
+                        <button ejs-button class="e-icons e-settings e-medium e-flat px-2" type="button" (click)="sidebar?.hide()" aria-label="settings" role="button"></button>
+                    </div>
+                </div>
+                <div *ngIf="sidebar.isOpen" class="flex flex-col w-64 pt-8 h-full">
+                    <div class="flex items-center px-5 gap-3">
+                        <h4 class="text-base lg:text-sm font-semibold text-gray-900 dark:text-white">Chats</h4>
+                        <span class="e-badge e-badge-pill e-badge-primary !px-1">24</span>
+                    </div>
+                    <div class="px-5 pt-5 pb-4">
+                        <div class="e-input-group">
+                            <input class="e-input" type="text" placeholder="Search" aria-label="search" role="textbox" />
+                            <span class="e-input-group-icon e-icons e-search"></span>
+                        </div>
+                    </div>
+                    <ejs-listview cssClass="border-0 e-list-template" [dataSource]="chatHistory" aria-label="chat history list" role="list">
+                        <ng-template #template let-data>
+                            <div class="e-list-wrapper !px-5 !py-3">
+                                <div class="font-medium text-gray-900 dark:text-white text-sm">{{data.message}}</div>
+                                <div class="text-xs text-gray-700 dark:text-gray-300 mt-2">{{data.date}}</div>
+                            </div>
+                        </ng-template>
+                    </ejs-listview>
+                </div>
+            </div>
+        </ejs-sidebar>
+    </div>
+</section>
+<!-- SB Code - Start -->
+<div class="p-3 top-0 left-0 absolute">
+    <button ejs-button cssClass="e-large e-icons e-chevron-right e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+</div>
+<!-- SB Code - End -->
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body">
+    <div id="chat-sidebar" style="height: 766px;">
+        <ejs-sidebar #sidebar class="bg-body border-light-subtle" [width]="width" [isOpen]="true" type="push" [closeOnDocumentClick]="false" [showBackdrop]="backDrop" enableDock="true" role="complementary" style="display: block;">
+            <div class="d-flex h-100">
+                <div class="px-2 py-4 d-flex flex-column align-items-center" [ngStyle]="{ width: dockWidth }">
+                    <img src="assets/images/ai/sidebar/two-columns-sidebar/logo.svg" alt="logo" />
+                    <div class="d-flex flex-column gap-2 mt-2">
+                        <button ejs-button class="e-icons e-comment-add e-medium e-flat" type="button" (click)="sidebar?.hide()" aria-label="add comment" role="button"></button>
+                        <button ejs-button class="e-icons e-user e-medium e-flat" type="button" (click)="sidebar?.hide()" aria-label="user profile" role="button"></button>
+                        <button ejs-button class="e-icons e-comment-show e-medium e-flat e-active" type="button" (click)="sidebar?.show()" aria-label="message" role="button"></button>
+                        <button ejs-button class="e-icons e-search e-medium e-flat" type="button" (click)="sidebar?.hide()" aria-label="search" role="button"></button>
+                        <button ejs-button class="e-icons e-settings e-medium e-flat" type="button" (click)="sidebar?.hide()" aria-label="settings" role="button"></button>
+                    </div>
+                </div>
+                <div *ngIf="sidebar.isOpen" class="d-flex flex-column pt-4 border-start border-light-subtle" style="width: 256px;">
+                    <div class="d-flex align-items-center px-3 gap-2 my-1">
+                        <h4 class="fs-5 mb-0 fw-medium text-body">Chats</h4>
+                        <span class="e-badge e-badge-pill e-badge-primary px-1">24</span>
+                    </div>
+                    <div class="px-3 py-3">
+                        <div class="e-input-group">
+                            <input class="e-input" type="text" placeholder="Search" aria-label="search" role="textbox" />
+                            <span class="e-input-group-icon e-icons e-search border-0"></span>
+                        </div>
+                    </div>
+                    <ejs-listview cssClass="border-0 e-list-template rounded-0" [dataSource]="chatHistory" aria-label="chat history list" role="list">
+                        <ng-template #template let-data>
+                            <div class="e-list-wrapper">
+                                <div class="fw-medium">{{data.message}}</div>
+                                <div class="small mt-2">{{data.date}}</div>
+                            </div>
+                        </ng-template>
+                    </ejs-listview>
+                </div>
+            </div>
+        </ejs-sidebar>
+    </div>
+</section>
+<!-- SB Code - Start -->
+<div class="p-3 position-absolute top-0 start-0">
+    <button ejs-button cssClass="e-large e-icons e-chevron-right e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+</div>
+<!-- SB Code - End -->
+
+}

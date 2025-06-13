@@ -1,0 +1,35 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-gray-50 dark:bg-gray-950">
+    <div id="compact-prompt" class="py-20 px-4 sm:px-6" style="min-height: 36rem;">
+        <div class="flex flex-col-reverse px-0 lg:px-28 mx-auto" style="min-height: 16rem; max-width: 720px;">
+            <div class="bg-white dark:bg-gray-800 rounded-md py-3 px-3 flex flex-col-reverse">
+                <span class="e-input-group !border-0 !shadow-none">
+                    <ejs-textarea #textarea placeholder="Enter prompt" rows="1" cols="300" resizeMode="None" (input)="adjustHeight()" aria-label="enter the prompt" role="textbox" style="max-height: 14rem;"></ejs-textarea>
+                    <span style="bottom: 7px; position: absolute; right: 5px;">
+                        <button ejs-button class="!border-0 e-flat e-icons e-assist-send" type="submit" aria-label="send" role="button" style="pointer-events: none;"></button>
+                    </span>
+                </span>
+            </div>
+        </div>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body-tertiary">
+    <div id="compact-prompt" class="py-5 px-4 px-sm-5" style="min-height: 36rem;">
+        <div class="d-flex flex-column-reverse px-0 px-lg-5 mx-auto" style="min-height: 18rem; max-width: 720px;">
+            <div class="bg-body rounded py-3 px-3 d-flex flex-column-reverse">
+                <span class="e-input-group border-0 shadow-none">
+                    <ejs-textarea #textarea placeholder="Enter prompt" rows="1" cols="300" resizeMode="None" (input)="adjustHeight()" aria-label="enter the prompt" role="textbox" style="max-height: 15rem;"></ejs-textarea>
+                    <span style="bottom: 7px; position: absolute; right: 5px;">
+                        <button ejs-button class="border-0 e-flat e-icons e-assist-send" type="submit" aria-label="send" role="button" style="pointer-events: none;"></button>
+                    </span>
+                </span>
+            </div>
+        </div>
+    </div>
+</section>
+
+}

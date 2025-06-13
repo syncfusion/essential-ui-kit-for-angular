@@ -18,6 +18,8 @@ export class MainPageComponent implements OnInit, AfterViewInit {
     public tabs: { title: string }[] = [
         { title: 'Authentication' },
         { title: 'Layouts' },
+        { title: 'Data Visualization' },
+        { title: 'AI' },
         { title: 'E-commerce' },
         { title: 'Communication' }
     ];

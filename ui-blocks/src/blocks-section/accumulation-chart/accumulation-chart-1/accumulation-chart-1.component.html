@@ -1,0 +1,90 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-white dark:bg-gray-950">
+    <div class="h-screen flex justify-center p-4 sm:p-6">
+        <div class="w-full" style="max-width: 576px;">
+            <div class="flex justify-between items-start">
+                <div class="flex items-center gap-3">
+                    <span class="e-badge e-badge-warning flex justify-center items-center text-2xl sf-icon-money-bag w-12 h-12"></span>
+                    <div class="flex flex-col gap-1">
+                        <p class="text-base font-medium text-gray-900 dark:text-white">Daily Expense</p>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">Data for the last week</p>
+                    </div>
+                </div>
+                <button ejs-button class="hidden sm:block e-outline" content="View Report" type="button" aria-label="view report" role="button"></button>
+                <button ejs-button class="block sm:hidden e-outline" iconCss="e-icons e-description" content=" " type="button" aria-label="view report" role="button"></button>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-10 mt-2">
+                <div class="relative">
+                    <ejs-accumulationchart #chart width="100%" height="200px" [centerLabel]="centerLabel" [legendSettings]="{visible: false}" [enableBorderOnMouseMove]="false" (load)="chartLoad($event,'Tailwind3','Tailwind3Dark')" aria-label="expense analysis" role="region">
+                        <e-accumulation-series-collection>
+                            <e-accumulation-series [dataSource]="chartData" xName="x" yName="y" name="Expense" startAngle="210" innerRadius="65%" radius="100%" [palettes]="['#5A61F6', '#03B4B4', '#78B008', '#F39C12']"></e-accumulation-series>
+                        </e-accumulation-series-collection>
+                    </ejs-accumulationchart>
+                    <div class="flex items-center gap-1 absolute top-1/2 left-1/2 -translate-x-1/2 mt-2 text-green-700"><span class="e-icons e-arrow-up"></span><p class="text-sm font-medium">2.1%</p></div>
+                </div>
+                <div id="expenseList" class="flex items-center">
+                    <ejs-listview class="e-list-template border-0" [dataSource]="chartData" aria-label="legend options" role="list">
+                        <ng-template #template let-data let-i="index">
+                            <div class="flex justify-between items-center border-b border-gray-200 dark:border-gray-600 px-1 py-4">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full" [style.background-color]="['#5A61F6', '#03B4B4', '#78B008', '#F39C12'][data.id-1]"></span>
+                                    <p class="text-xs text-gray-700 dark:text-gray-300">{{data.x}}</p>
+                                </div>
+                                <p class="text-xs text-gray-500 dark:text-gray-400">{{data.y}}%</p>
+                            </div>
+                        </ng-template>
+                    </ejs-listview>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body">
+    <div class="vh-100 d-flex justify-content-center p-3 p-sm-4">
+        <div class="w-100" style="max-width: 576px;">
+            <div class="d-flex justify-content-between align-items-start">
+                <div class="d-flex align-items-center gap-3">
+                    <span class="e-badge e-badge-warning d-flex justify-content-center align-items-center fs-3 sf-icon-money-bag" style="width: 48px; height: 48px;"></span>
+                    <div class="d-flex flex-column gap-1">
+                        <p class="fs-6 fw-medium text-body m-0">Daily Expense</p>
+                        <p class="small text-body-secondary m-0">Data for the last week</p>
+                    </div>
+                </div>
+                <button ejs-button class="d-none d-sm-block e-outline" content="View Report" type="button" aria-label="view report" role="button"></button>
+                <button ejs-button class="d-block d-sm-none e-outline" iconCss="e-icons e-description" content=" " type="button" aria-label="view report" role="button"></button>
+            </div>
+            <div class="row row-cols-1 row-cols-sm-2 g-4 mt-2">
+                <div class="position-relative">
+                    <ejs-accumulationchart #chart width="100%" height="200px" [centerLabel]="centerLabel" [legendSettings]="{visible: false}" [enableBorderOnMouseMove]="false" (load)="chartLoad($event,'Bootstrap5','Bootstrap5Dark')" aria-label="expense analysis" role="region">
+                        <e-accumulation-series-collection>
+                            <e-accumulation-series [dataSource]="chartData" xName="x" yName="y" name="Expense" startAngle="210" innerRadius="65%" radius="100%" [palettes]="['#006EEF', '#00EFA7', '#0EAB44', '#FF9900']"></e-accumulation-series>
+                        </e-accumulation-series-collection>
+                    </ejs-accumulationchart>
+                    <div class="position-absolute top-50 start-50 translate-middle d-flex align-items-center gap-1 mt-3 text-success">
+                        <span class="e-icons e-arrow-up"></span>
+                        <p class="mb-0 fw-medium small">2.1%</p>
+                    </div>
+                </div>
+                <div id="expenseList" class="d-flex align-items-center">
+                    <ejs-listview class="e-list-template border-0" [dataSource]="chartData" aria-label="legend options" role="list">
+                        <ng-template #template let-data let-i="index">
+                            <div class="d-flex justify-content-between align-items-center border-bottom px-2 py-3 border-light-subtle">
+                                <div class="d-flex align-items-center gap-2">
+                                    <span class="rounded-circle" style="width: 8px; height: 8px;" [style.background-color]="['#006EEF', '#00EFA7', '#0EAB44', '#FF9900'][data.id-1]"></span>
+                                    <p class="mb-0 small text-body">{{data.x}}</p>
+                                </div>
+                                <p class="mb-0 small text-body-secondary">{{data.y}}%</p>
+                            </div>
+                        </ng-template>
+                    </ejs-listview>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+}

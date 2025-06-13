@@ -1,0 +1,67 @@
+@if (currentTheme === 'tailwind') {
+
+<section>
+    <div id="dialog-container" class="relative" style="min-height: 580px;">
+        <ejs-dialog #dialog class="rounded-none sm:rounded-lg overflow-hidden" target="#dialog-container" isModal="true" width="580px" minHeight="238px" (beforeOpen)="$event.maxHeight = '100%'" (open)="$event.preventFocus = true" aria-label="create a public page" role="dialog">
+            <ng-template #content>
+                <div class="flex flex-col gap-6 px-4 py-6 sm:px-6">
+                    <div class="flex justify-between items-center">
+                        <p class="text-lg font-medium">Create a public page to share</p>
+                        <button ejs-button cssClass="e-flat e-small" iconCss="e-icons e-close" (click)="dialog?.hide()" type="button" aria-label="close" role="button"></button>
+                    </div>
+                    <div class="flex flex-col gap-3">
+                        <ejs-radiobutton name="shareOption" label="This prompt & response" checked="true" aria-label="apply feedback to this prompt and response only" role="radio"></ejs-radiobutton>
+                        <ejs-radiobutton name="shareOption" label="Entire chat" aria-label="apply feedback to the entire chat" role="radio"></ejs-radiobutton>
+                    </div>
+                    <div class="flex flex-col gap-3">
+                        <div class="e-bigger flex justify-between items-center shadow-sm border rounded-3xl overflow-hidden bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-500">
+                            <ejs-textbox #textbox class="grow" cssClass="!border-0 !rounded-3xl !shadow-none" type="url" placeholder="https://helpbot.boldsign.com/share/********" aria-label="enter URL to generate a link" role="textbox"></ejs-textbox>
+                            <button ejs-button cssClass="e-primary !rounded-3xl m-1.5" iconCss="e-icons e-link" type="button" aria-label="create link" role="button">Create link</button>
+                        </div>
+                        <p class="flex justify-center gap-1 text-xs text-gray-500 dark:text-gray-400"><i class="e-icons e-circle-info text-base dark:text-gray-300 leading-none"></i>Anyone with the link can see or share it with others, so share responsibly.</p>
+                    </div>
+                </div>
+            </ng-template>
+        </ejs-dialog>
+    </div>
+</section>
+<!-- SB Code - Start -->
+<div class="top-0 left-0 absolute w-full flex">
+    <button ejs-button class="my-5 mx-auto" (click)="dialog?.show()" type="button" aria-label="create public page" role="button">Create Public Page</button>
+</div>
+<!-- SB Code - End -->
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section>
+    <div id="dialog-container" class="position-relative" style="min-height: 580px;">
+        <ejs-dialog #dialog class="rounded-2" target="#dialog-container" isModal="true" width="580px" minHeight="238px" (beforeOpen)="$event.maxHeight = '100%'" (open)="$event.preventFocus = true" aria-label="create a public page" role="dialog">
+            <ng-template #content>
+                <div class="d-flex flex-column gap-4 px-3 py-4 px-sm-4">
+                    <div class="d-flex justify-content-between align-items-center fs-5">
+                        <p class="fw-medium small mb-0">Create a public page to share</p>
+                        <button ejs-button cssClass="e-flat e-small" iconCss="e-icons e-close" (click)="dialog?.hide()" type="button" aria-label="close" role="button"></button>
+                    </div>
+                    <div class="d-flex flex-column gap-3">
+                        <ejs-radiobutton name="shareOption" label="This prompt & response" checked="true" aria-label="apply feedback to this prompt and response only" role="radio"></ejs-radiobutton>
+                        <ejs-radiobutton name="shareOption" label="Entire chat" aria-label="apply feedback to the entire chat" role="radio"></ejs-radiobutton>
+                    </div>
+                    <div class="d-flex flex-column gap-3">
+                        <div class="e-bigger d-flex justify-content-between align-items-center border bg-body rounded-pill overflow-hidden">
+                            <ejs-textbox #textbox class="flex-grow-1" cssClass="border-0 rounded-pill shadow-none" type="url" placeholder="https://helpbot.boldsign.com/share/********" aria-label="enter URL to generate a link" role="textbox"></ejs-textbox>
+                            <button ejs-button cssClass="e-primary rounded-pill m-1" iconCss="e-icons e-link" type="button" aria-label="create link" role="button">Create link</button>
+                        </div>
+                        <p class="d-flex justify-content-center gap-1 small text-body-secondary mb-0"><i class="e-icons e-circle-info lh-base"></i>Anyone with the link can see or share it with others, so share responsibly.</p>
+                    </div>
+                </div>
+            </ng-template>
+        </ejs-dialog>
+    </div>
+</section>
+<!-- SB Code - Start -->
+<div class="position-absolute top-0 start-0 d-flex w-100">
+    <button ejs-button class="e-outline mx-auto my-3" (click)="dialog?.show()" type="button" aria-label="create public page" role="button">Create Public Page</button>
+</div>
+<!-- SB Code - End -->
+
+}

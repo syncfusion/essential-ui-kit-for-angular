@@ -1,0 +1,5 @@
+#enhanced-prompt .textarea.e-input,
+.e-input-group textarea,
+.e-input-group textarea.e-input {
+    margin-right: 40px !important;
+}

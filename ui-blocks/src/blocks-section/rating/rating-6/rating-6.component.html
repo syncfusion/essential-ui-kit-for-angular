@@ -1,0 +1,69 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-gray-50 dark:bg-gray-800">
+    <div class="pt-4" style="min-height: 36rem">
+        <div class="mx-auto w-full sm:max-w-xs border-0 mt-3 pt-6 sm:!rounded-lg sm:!border rounded-none border-gray-300 dark:border-gray-500 bg-white dark:bg-gray-800 text-center">
+            <h3 class="font-semibold text-base text-gray-900 dark:text-white">Rate your experience</h3>
+            <p class="text-sm mt-3 px-8 sm:px-6 text-gray-700 dark:text-gray-100">We'd love to hear from you! How is your experience with our platform?</p>
+            <div class="flex mb-2 mt-1 pb-3 sm:pb-0 items-center justify-center">
+                <input ejs-rating [emptyTemplate]="template" [tooltipTemplate]="tooltipTemplate" [itemsCount]="3" [enableAnimation]='false' [enableSingleSelection]='true' aria-label="rate us out of 3" role="slider" />
+                <ng-template #template let-data>
+                    <div [ngSwitch]="data.index" class="flex mt-1 mb-2">
+                        <span class="p-2 rounded-xl" *ngSwitchCase="0" [ngClass]="{'bg-green-50 dark:bg-green-900 shadow-lg': experienceLevel === 'unhappy'}" (click)="experienceLevel = 'unhappy'">
+                            <img class="h-10 w-10" src="assets/images/rating/experience-rating/unhappy.png" alt="unhappy" />
+                        </span>
+                        <span class="p-2 rounded-xl" *ngSwitchCase="1" [ngClass]="{'!bg-cyan-50 dark:!bg-cyan-900 shadow-lg': experienceLevel === 'neutral'}" (click)="experienceLevel = 'neutral'">
+                            <img class="h-10 w-10" src="assets/images/rating/experience-rating/neutral.png" alt="neutral" />
+                        </span>
+                        <span class="p-2 rounded-xl" *ngSwitchCase="2" [ngClass]="{'bg-orange-50 dark:bg-orange-900 shadow-lg': experienceLevel === 'happy'}" (click)="experienceLevel = 'happy'">
+                            <img class="h-10 w-10" src="assets/images/rating/experience-rating/happy.png" alt="happy" />
+                        </span>
+                    </div>
+                </ng-template>
+                <ng-template #tooltipTemplate let-item>
+                    <div [ngSwitch]="item.value">
+                        <span *ngSwitchCase="1">Unhappy</span>
+                        <span *ngSwitchCase="2">Neutral</span>
+                        <span *ngSwitchCase="3">Happy</span>
+                    </div>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body-tertiary">
+    <div class="pt-4" style="min-height: 36rem;">
+        <div class="mx-auto w-100 mt-3 bg-white border rounded-3 text-center bg-body" style="max-width: 320px;">
+            <h3 class="fw-semibold fs-6 text-body mt-4">Rate your experience</h3>
+            <p class="small mt-3 text-body-secondary mb-0" style="width: 316px;">We'd love to hear from you! How is your experience with our platform?</p>
+            <div class="d-flex justify-content-center align-items-center mb-3 mt-1">
+                <input ejs-rating [emptyTemplate]="template" [tooltipTemplate]="tooltipTemplate" [itemsCount]="3" [enableAnimation]="false" [enableSingleSelection]="true" value="3.0" aria-label="rate us out of 5" role="slider" />
+                <ng-template #template let-data>
+                    <div [ngSwitch]="data.index" class="d-flex">
+                        <span class="p-2 rounded-3" *ngSwitchCase="0" [ngClass]="{'bg-success-subtle shadow': experienceLevel === 'unhappy'}" (click)="experienceLevel = 'unhappy'">
+                            <img src="assets/images/rating/experience-rating/unhappy.png" alt="unhappy" style="height: 40px; width: 40px;" />
+                        </span>
+                        <span class="p-2 rounded-3" *ngSwitchCase="1" [ngClass]="{'bg-info-subtle shadow': experienceLevel === 'neutral'}" (click)="experienceLevel = 'neutral'">
+                            <img src="assets/images/rating/experience-rating/neutral.png" alt="neutral" style="height: 40px; width: 40px;" />
+                        </span>
+                        <span class="p-2 rounded-3" *ngSwitchCase="2" [ngClass]="{'bg-warning-subtle shadow': experienceLevel === 'happy'}" (click)="experienceLevel = 'happy'">
+                            <img src="assets/images/rating/experience-rating/happy.png" alt="happy" style="height: 40px; width: 40px;" />
+                        </span>
+                    </div>
+                </ng-template>
+                <ng-template #tooltipTemplate let-item>
+                    <div [ngSwitch]="item.value">
+                        <span *ngSwitchCase="1">Unhappy</span>
+                        <span *ngSwitchCase="2">Neutral</span>
+                        <span *ngSwitchCase="3">Happy</span>
+                    </div>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</section>
+
+}

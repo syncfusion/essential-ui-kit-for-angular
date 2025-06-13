@@ -1,0 +1,105 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-white dark:bg-gray-800">
+    <div class="h-screen flex">
+        <div class="hidden sm:block h-full w-16 lg:w-60 border-r border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-700"></div>
+        <div class="flex flex-col grow">
+            <div class="flex items-center gap-4 p-4 border-b border-gray-200 dark:border-gray-600">
+                <button *ngIf="isMobileView" ejs-button class="e-flat" iconCss="e-icons e-menu" (click)="sidebar.toggle()" type="button" aria-label="expand menu" role="button"></button>
+                <h3 class="text-base font-semibold text-gray-900 dark:text-white">Settings</h3>
+            </div>
+            <div id="settings-page" class="lg:max-w-3xl flex h-full text-gray-700 dark:text-gray-300">
+                <ejs-sidebar #sidebar class="p-3 !border-r !border-gray-200 dark:!border-gray-600 bg-white dark:bg-gray-800" target="#settings-page" [showBackdrop]="isMobileView" type="Push" width="248px" isOpen="true" (close)="$event.cancel = preventSidebarClose" aria-label="main navigation menu" role="complementary">
+                    <ejs-listview class="border-0" cssClass="e-list-template" [dataSource]="navigationMenu" [template]="itemTemplate" aria-label="main navigation list" role="list">
+                        <ng-template #itemTemplate let-data>
+                            <div class="e-list-wrapper !p-3 flex items-center gap-3 rounded-lg">
+                                <span class="e-icons {{data.fontIcon}} text-base dark:!text-gray-200"></span>
+                                <span class="text-sm font-medium">{{data.field}}</span>
+                            </div>
+                        </ng-template>
+                    </ejs-listview>
+                </ejs-sidebar>
+                <div class="py-5 sm:py-6 px-4 flex flex-col gap-6 grow text-sm font-medium text-gray-900 dark:text-white">
+                    <div class="flex gap-2 items-center justify-between sm:gap-8">
+                        <label class="w-52 sm:grow">Theme</label>
+                        <button #themeDropdown ejs-dropdownbutton [items]="[{text: 'Light'}, {text: 'Dark'}]" content="Light" type="button" aria-label="select theme" role="button"></button>
+                    </div>
+                    <div class="flex gap-2 items-center justify-between sm:gap-8">
+                        <label class="w-52 sm:grow">Language</label>
+                        <button #languageDropdown ejs-dropdownbutton [items]="[{text: 'English'}, {text: 'Español'}, {text: 'Français'}, {text: 'Deutsch'}, {text: '日本語'}]" content="English" type="button" aria-label="select language" role="button"></button>
+                    </div>
+                    <div class="flex gap-2 justify-between sm:gap-8">
+                        <label class="w-52 sm:grow">Render user messages as markdown</label>
+                        <ejs-switch checked="true" aria-label="render user messages as markdown" role="switch"></ejs-switch>
+                    </div>
+                    <div class="flex gap-2 justify-between sm:gap-8">
+                        <label class="w-52 sm:grow">Auto-scroll to latest message on chat open</label>
+                        <ejs-switch aria-label="auto-scroll to latest message on chat open" role="switch"></ejs-switch>
+                    </div>
+                    <div class="flex gap-2 justify-between sm:gap-8">
+                        <label class="w-52 sm:grow">Hide right-most side panel</label>
+                        <ejs-switch aria-label="hide right-most side panel" role="switch"></ejs-switch>
+                    </div>
+                    <div class="flex gap-2 items-center justify-between sm:gap-8">
+                        <label class="w-52 sm:grow">Manage side panel settings</label>
+                        <button ejs-button type="button" aria-label="manage" role="button">Manage</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body">
+    <div class="row vh-100 d-flex g-0">
+        <div class="d-none d-sm-block h-100 border-end border-light-subtle bg-body-tertiary col-1 col-lg-3" style="min-width: 62px; max-width: 248px;"></div>
+        <div class="d-flex flex-column flex-grow-1 col">
+            <div class="d-flex align-items-center gap-3 p-3 border-bottom border-light-subtle">
+                <button *ngIf="isMobileView" ejs-button class="e-flat" iconCss="e-icons e-menu" (click)="sidebar.toggle()" type="button" aria-label="expand menu" role="button"></button>
+                <h3 class="fs-6 fw-bold text-body mb-0">Settings</h3>
+            </div>
+            <div id="settings-page" class="d-flex h-100" style="max-width: 768px;">
+                <ejs-sidebar #sidebar class="p-3 border-end bg-body border-light-subtle" target="#settings-page" [showBackdrop]="isMobileView" type="Push" width="248px" isOpen="true" (close)="$event.cancel = preventSidebarClose" aria-label="main navigation menu" role="complementary">
+                    <ejs-listview class="border-0" cssClass="e-list-template" [dataSource]="navigationMenu" [template]="itemTemplate" aria-label="main navigation list" role="list">
+                        <ng-template #itemTemplate let-data>
+                            <div class="e-list-wrapper p-2 d-flex align-items-center gap-2 rounded">
+                                <span class="e-icons {{data.fontIcon}} fs-6 ms-1 my-1"></span>
+                                <span class="fw-medium m-1">{{data.field}}</span>
+                            </div>
+                        </ng-template>
+                    </ejs-listview>
+                </ejs-sidebar>
+                <div class="p-3 d-flex flex-column gap-4 flex-grow-1 small fw-medium text-body">
+                    <div class="d-flex gap-2 align-items-center justify-content-between">
+                        <label class="flex-sm-grow-1" style="width: 13rem;">Theme</label>
+                        <button #themeDropdown ejs-dropdownbutton cssClass="e-outline" [items]="[{text: 'Light'}, {text: 'Dark'}]" content="Light" type="button" aria-label="select theme" role="button"></button>
+                    </div>
+                    <div class="d-flex gap-2 align-items-center justify-content-between">
+                        <label class="flex-sm-grow-1" style="width: 13rem;">Language</label>
+                        <button #languageDropdown ejs-dropdownbutton cssClass="e-outline" [items]="[{text: 'English'}, {text: 'Español'}, {text: 'Français'}, {text: 'Deutsch'}, {text: '日本語'}]" content="English" type="button" aria-label="select language" role="button"></button>
+                    </div>
+                    <div class="d-flex gap-2 justify-content-between">
+                        <label class="flex-sm-grow-1" style="width: 13rem;">Render user messages as markdown</label>
+                        <ejs-switch cssClass="e-small" checked="true" aria-label="render user messages as markdown" role="switch"></ejs-switch>
+                    </div>
+                    <div class="d-flex gap-2 justify-content-between">
+                        <label class="flex-sm-grow-1" style="width: 13rem;">Auto-scroll to latest message on chat open</label>
+                        <ejs-switch cssClass="e-small" aria-label="auto-scroll to latest message on chat open" role="switch"></ejs-switch>
+                    </div>
+                    <div class="d-flex gap-2 justify-content-between">
+                        <label class="flex-sm-grow-1" style="width: 13rem;">Hide right-most side panel</label>
+                        <ejs-switch cssClass="e-small" aria-label="hide right-most side panel" role="switch"></ejs-switch>
+                    </div>
+                    <div class="d-flex gap-2 align-items-center justify-content-between">
+                        <label class="flex-sm-grow-1" style="width: 13rem;">Manage side panel settings</label>
+                        <button ejs-button cssClass="e-outline" type="button" aria-label="manage" role="button">Manage</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+}

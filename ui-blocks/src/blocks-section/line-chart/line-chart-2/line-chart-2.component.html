@@ -1,0 +1,57 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-white dark:bg-gray-950">
+    <div class="h-screen flex justify-center p-4 sm:p-6">
+        <div class="w-full" style="max-width: 640px;">
+            <div class="flex justify-between items-start">
+                <div>
+                    <h1 class="text-base font-medium text-gray-900 dark:text-white mb-2">Rainfall History</h1>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">Location: <span class="font-medium">California, US</span></p>
+                </div>
+                <button ejs-button class="e-outline hidden sm:block" content="Download Report" type="button" aria-label="download report" role="button"></button>
+                <button ejs-button class="e-outline block sm:hidden" iconCss="e-icons e-download" content=" " type="button" aria-label="download report" role="button"></button>
+            </div>
+            <div class="flex items-center gap-4 mt-2">
+                <h1 class="text-sm font-medium text-gray-700 dark:text-gray-300">Measuring Units:</h1>
+                <button #metricDropdown ejs-dropdownbutton class="e-outline" content="Inch" [items]="[{text:'Millimeter'},{text:'Centimeter'},{text:'Meter'},{text:'Inch'}]" type="button" aria-label="choose a units" role="button"></button>
+            </div>
+            <div class="mt-4">
+                <ejs-chart #chart [chartArea]="{border: {width: 0}}" width="100%" height="250px" [primaryXAxis]="primaryXAxis" [primaryYAxis]="primaryYAxis" [tooltip]="tooltip" (load)="chartLoad($event,'Tailwind3','Tailwind3Dark')" aria-label="rainfall analysis" role="region">
+                    <e-series-collection>
+                        <e-series [dataSource]="chartData" type="MultiColoredLine" xName="x" yName="y" width="1" pointColorMapping="color"> </e-series>
+                    </e-series-collection>
+                </ejs-chart>
+            </div>
+        </div>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body">
+    <div class="vh-100 d-flex justify-content-center p-3 p-sm-4">
+        <div class="w-100" style="max-width: 640px;">
+            <div class="d-flex justify-content-between align-items-start">
+                <div>
+                    <h1 class="h6 fw-medium text-body mb-2">Rainfall History</h1>
+                    <p class="text-body-secondary small">Location: <span class="fw-medium">California, US</span></p>
+                </div>
+                <button ejs-button class="e-outline d-none d-sm-block" content="Download Report" type="button" aria-label="download report" role="button"></button>
+                <button ejs-button class="e-outline d-block d-sm-none" iconCss="e-icons e-download" content=" " type="button" aria-label="download report" role="button"></button>
+            </div>
+            <div class="d-flex align-items-center gap-3 mt-2">
+                <h1 class="h6 fw-medium text-body-secondary">Measuring Units:</h1>
+                <button #metricDropdown ejs-dropdownbutton class="e-outline" content="Inch" [items]="[{text:'Millimeter'},{text:'Centimeter'},{text:'Meter'},{text:'Inch'}]" type="button" aria-label="choose a units" role="button"></button>
+            </div>
+            <div class="mt-3">
+                <ejs-chart #chart [chartArea]="{border: {width: 0}}" width="100%" height="250px" [primaryXAxis]="primaryXAxis" [primaryYAxis]="primaryYAxis" [tooltip]="tooltip" (load)="chartLoad($event,'Bootstrap5','Bootstrap5Dark')" aria-label="rainfall analysis" role="region">
+                    <e-series-collection>
+                        <e-series [dataSource]="chartData" type="MultiColoredLine" xName="x" yName="y" width="1" pointColorMapping="color"> </e-series>
+                    </e-series-collection>
+                </ejs-chart>
+            </div>
+        </div>
+    </div>
+</section>
+
+}

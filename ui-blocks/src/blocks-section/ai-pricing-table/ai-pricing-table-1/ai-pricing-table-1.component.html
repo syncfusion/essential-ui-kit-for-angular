@@ -1,0 +1,222 @@
+@if (currentTheme === 'tailwind') {
+
+<section>
+    <div id="dialog-container" class="relative flex items-center justify-center" style="min-height: 580px;">
+        <ejs-dialog #pricing class="absolute sm:rounded-lg py-3" target="#dialog-container" [visible]="true" [showCloseIcon]="true" width="537px" height="460px" (open)="$event.preventFocus = true" [closeOnEscape]="true">
+            <div class="max-w-2xl px-1 sm:rounded-lg text-gray-700 dark:text-gray-300">
+                <ng-template #header>
+                    <span class="text-base">Select plan</span>
+                </ng-template>
+                <ng-template #content>
+                    <div class="sm:px-1.5">
+                        <div>
+                            <p class="mb-3">Upgrade to access</p>
+                            <div class="text-base text-gray-700 dark:text-gray-200">
+                                <ul class="grid gap-3 sm:grid-cols-2">
+                                    <div class="grow">
+                                        <li class="flex items-start mb-3">
+                                            <span class="e-icons e-circle-check mr-2 text-xl !leading-5 text-primary-600 dark:text-primary-400"></span>
+                                            <span class="text-xs !leading-5">Unlimited searches, interactions, and history</span>
+                                        </li>
+                                        <li class="flex items-start mb-3">
+                                            <span class="e-icons e-circle-check mr-2 text-xl !leading-5 text-primary-600 dark:text-primary-400"></span>
+                                            <span class="text-xs !leading-5">Access to our GPT 3.5 model</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="e-icons e-circle-check mr-2 text-xl !leading-5 text-primary-600 dark:text-primary-400"></span>
+                                            <span class="text-xs !leading-5">Access to web, ios, and Android apps</span>
+                                        </li>
+                                    </div>
+                                    <div class="grow">
+                                        <li class="flex items-start mb-3">
+                                            <span class="e-icons e-circle-check mr-2 text-xl !leading-5 text-primary-600 dark:text-primary-400"></span>
+                                            <span class="text-xs !leading-5">Mobile accessibility</span>
+                                        </li>
+                                        <li class="flex items-start mb-3">
+                                            <span class="e-icons e-circle-check mr-2 text-xl !leading-5 text-primary-600 dark:text-primary-400"></span>
+                                            <span class="text-xs !leading-5">Standard customer support</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="e-icons e-circle-check mr-2 text-xl !leading-5 text-primary-600 dark:text-primary-400"></span>
+                                            <span class="text-xs !leading-5">Basic reporting and analytics</span>
+                                        </li>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                        <hr class="my-6" />
+                        <div class="grid gap-3 lg:grid-cols-3 sm:grid-cols-2 box-border">
+                            <div class="e-card rounded-none bg-gray-50 dark:bg-gray-900 border-none shadow-none">
+                                <div class="e-card-header !pt-3 !px-3">
+                                    <div class="e-card-header-caption">
+                                        <div class="e-card-title font-medium text-xs text-gray-700 dark:text-white">Free</div>
+                                    </div>
+                                </div>
+                                <div class="e-card-content !pb-1 mt-3 !px-3">
+                                    <h2 class="text-2xl flex items-center text-gray-700 dark:text-white leading-tight font-medium">$0
+                                        <span class="font-normal text-gray-700 dark:text-gray-200 text-xs ml-2">/ month</span>
+                                    </h2>
+                                </div>
+                                <div class="e-card-actions !px-3 py-3 leading-9">
+                                    <button ejs-button class="e-primary e-outline w-full" content="Current plan" type="button" aria-label="current plan" role="button"></button>
+                                </div>
+                            </div>
+                            <div class="e-card rounded-none bg-gray-50 dark:bg-gray-900 border-none shadow-none">
+                                <div class="e-card-header !pt-3 !px-3">
+                                    <div class="e-card-header-caption">
+                                        <div class="e-card-title font-medium text-xs text-gray-700 dark:text-white">Standard</div>
+                                    </div>
+                                </div>
+                                <div class="e-card-content !pb-1 mt-3 !px-3">
+                                    <h2 class="text-2xl flex items-center text-gray-700 dark:text-white leading-tight font-medium">$28
+                                        <span class="font-normal text-gray-700 dark:text-gray-200 text-xs ml-2">/ month</span>
+                                    </h2>
+                                </div>
+                                <div class="e-card-actions !px-3 py-3 leading-9">
+                                    <button ejs-button class="e-primary w-full" content="Upgrade" type="button" aria-label="upgrade" role="button"></button>
+                                </div>
+                            </div>
+                            <div class="e-card rounded-none bg-gray-50 dark:bg-gray-900 border-none shadow-none">
+                                <div class="e-card-header !pt-3 !px-3">
+                                    <div class="e-card-header-caption">
+                                        <div class="e-card-title font-medium text-xs text-gray-700 dark:text-white">Pro</div>
+                                    </div>
+                                </div>
+                                <div class="e-card-content !pb-1 mt-3 !px-3">
+                                    <h2 class="text-2xl flex items-center text-gray-700 dark:text-white leading-tight font-medium">$48
+                                        <span class="font-normal text-gray-700 dark:text-gray-200 text-xs ml-2">/ month</span>
+                                    </h2>
+                                </div>
+                                <div class="e-card-actions !px-3 py-3 leading-9">
+                                    <button ejs-button class="e-primary w-full" content="Upgrade" type="button" aria-label="upgrade" role="button"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </div>
+        </ejs-dialog>
+    </div>
+</section>
+<!-- SB Code - Start -->
+<div class="top-0 flex w-full absolute">
+    <button ejs-button class="mx-auto my-5" (click)="pricing?.show()" type="button" aria-label="contact information" role="button">Pricing table</button>
+</div>
+<!-- SB Code - End -->
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section>
+    <div id="dialog-container" class="position-relative d-flex justify-content-center align-items-center" style="min-height: 580px;">
+        <ejs-dialog #pricing class="position-absolute rounded py-3" target="#dialog-container" [visible]="true" [showCloseIcon]="true" width="537px" height="480px" (beforeOpen)="$event.maxHeight = '100%'" (open)="$event.preventFocus = true" [closeOnEscape]="true">
+            <div class="container px-1 rounded text-body-secondary">
+                <ng-template #header>
+                    <span class="fs-6 ps-2">Select plan</span>
+                </ng-template>
+                <ng-template #content>
+                    <div class="px-sm-2">
+                        <div>
+                            <p class="mb-3">Upgrade to access</p>
+                            <div class="fs-6 text-body-secondary">
+                                <ul class="row g-3 row-cols-sm-2 list-unstyled">
+                                    <div class="flex-grow-1">
+                                        <li class="d-flex align-items-start mb-3">
+                                            <span class="e-icons e-circle-check me-2 fs-5 lh-sm text-primary"></span>
+                                            <span class="small lh-base">Unlimited searches, interactions, and history</span>
+                                        </li>
+                                        <li class="d-flex align-items-start mb-3">
+                                            <span class="e-icons e-circle-check me-2 fs-5 lh-sm text-primary"></span>
+                                            <span class="small lh-base">Access to our GPT 3.5 model</span>
+                                        </li>
+                                        <li class="d-flex align-items-start">
+                                            <span class="e-icons e-circle-check me-2 fs-5 lh-sm text-primary"></span>
+                                            <span class="small lh-base">Access to web, ios, and Android apps</span>
+                                        </li>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <li class="d-flex align-items-start mb-3">
+                                            <span class="e-icons e-circle-check me-2 fs-5 lh-sm text-primary"></span>
+                                            <span class="small lh-base">Mobile accessibility</span>
+                                        </li>
+                                        <li class="d-flex align-items-start mb-3">
+                                            <span class="e-icons e-circle-check me-2 fs-5 lh-sm text-primary"></span>
+                                            <span class="small lh-base">Standard customer support</span>
+                                        </li>
+                                        <li class="d-flex align-items-start">
+                                            <span class="e-icons e-circle-check me-2 fs-5 lh-sm text-primary"></span>
+                                            <span class="small lh-base">Basic reporting and analytics</span>
+                                        </li>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                        <hr class="my-4" />
+                        <div class="row g-3">
+                            <div class="col-md-6 col-lg-4">
+                                <div class="e-card rounded-0 bg-body-tertiary border-0 shadow-none">
+                                    <div class="e-card-header pt-3 px-3">
+                                        <div class="e-card-header-caption">
+                                        <div class="e-card-title fw-medium small text-body-secondary">Free</div>
+                                        </div>
+                                    </div>
+                                    <div class="e-card-content pb-1 pt-4 px-3">
+                                        <div class="fs-6 d-flex align-items-center text-body-secondary fw-medium mb-0">
+                                            <h2 class="fs-4 mb-0">$0</h2>
+                                            <span class="small ms-1">/ month</span>
+                                        </div>
+                                    </div>
+                                    <div class="e-card-actions px-3 pt-0 py-3 lh-lg">
+                                        <button ejs-button class="e-primary e-outline w-100" content="Current plan" type="button" aria-label="current plan" role="button"></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="e-card rounded-0 bg-body-tertiary border-0 shadow-none">
+                                    <div class="e-card-header pt-3 px-3">
+                                        <div class="e-card-header-caption">
+                                            <div class="e-card-title fw-medium small text-body-secondary">Standard</div>
+                                        </div>
+                                    </div>
+                                    <div class="e-card-content pb-1 pt-4 px-3">
+                                        <div class="fs-6 d-flex align-items-center text-body-secondary fw-medium mb-0">
+                                            <h2 class="fs-4 mb-0">$28</h2>
+                                            <span class="small ms-1">/ month</span>
+                                        </div>
+                                    </div>
+                                    <div class="e-card-actions px-3 pt-0 py-3 lh-lg">
+                                        <button ejs-button class="e-primary w-100" content="Upgrade" type="button" aria-label="upgrade" role="button"></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="e-card rounded-0 bg-body-tertiary border-0 shadow-none">
+                                    <div class="e-card-header pt-3 px-3">
+                                        <div class="e-card-header-caption">
+                                            <div class="e-card-title fw-medium small text-body-secondary">pro</div>
+                                        </div>
+                                    </div>
+                                    <div class="e-card-content pb-1 pt-4 px-3">
+                                        <div class="fs-6 d-flex align-items-center text-body-secondary fw-medium mb-0">
+                                            <h2 class="fs-4 mb-0">$48</h2>
+                                            <span class="small ms-1">/ month</span>
+                                        </div>
+                                    </div>
+                                    <div class="e-card-actions px-3 pt-0 py-3 lh-lg">
+                                        <button ejs-button class="e-primary w-100" content="Upgrade" type="button" aria-label="upgrade" role="button"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </div>
+        </ejs-dialog>
+    </div>
+</section>
+<!-- SB Code - Start -->
+<div class="position-absolute top-0 d-flex w-100">
+    <button ejs-button class="e-outline mx-auto my-3" (click)="pricing.show()" type="button" aria-label="contact information" role="button">Pricing Table</button>
+</div>
+<!-- SB Code - End -->
+
+}

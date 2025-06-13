@@ -1,0 +1,83 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-gray-50 dark:bg-gray-950">
+    <div id="target" class="w-full px-4" [ngStyle]="{ height: isMobileView ? '580px' : '690px' }">
+        <div class="flex items-center justify-center pt-4">
+            <button ejs-button class="block sm:hidden" cssClass="e-primary e-round e-bigger" iconCss="sf-icon-message-chat-circle !text-xl" type="button" (click)="toggleDialog()" aria-label="open contact us form" role="button"></button>
+        </div>
+        <ejs-dialog #dialog id="floating-contact" class="sm:rounded-lg rounded-none overflow-hidden !border-0" width="400px" [height]="isMobileView ? '580px' : '510px'" (open)="setDialogPosition($event)" (created)="dialog.show()" aria-label="contact us form" role="dialog">
+            <ng-template #header>
+                <div class="flex flex-col bg-primary-100 dark:bg-primary-800 pb-5 px-6 pt-4">
+                    <div class="flex justify-end block sm:hidden px-4 absolute right-0">
+                        <button ejs-button class="e-flat e-round" iconCss="e-icons e-close !leading-5" type="button" (click)="toggleDialog()" aria-label="close contact us form" role="button"></button>
+                    </div>
+                    <span class="e-icons e-comment-show pt-3 text-xl text-gray-500 dark:text-gray-200 flex justify-center"></span>
+                    <div class="text-center mt-3">
+                        <p class="text-sm font-medium text-gray-900 dark:text-white">Contact Us</p>
+                        <p class="text-xs text-gray-700 dark:text-gray-300 mt-1 font-normal">Reach out to us for any inquiry</p>
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template #content>
+                <div class="sm:px-6 px-4 pt-6 flex flex-col">
+                    <ejs-textbox class="w-full" type="text" placeholder="Name" floatLabelType="Never" aria-label="enter the name" role="textbox"></ejs-textbox>
+                    <ejs-textbox class="w-full mt-4" type="text" placeholder="Email" floatLabelType="Never" aria-label="enter the email address" role="textbox"></ejs-textbox>
+                    <ejs-textarea class="mt-4" placeholder="Your message" rows="5" cols="100" aria-label="enter the message" role="textbox"></ejs-textarea>
+                    <div class="w-full flex flex-col gap-1.5 mt-3">
+                        <ejs-uploader [multiple]="false" [allowedExtensions]="'pdf/*'" [maxFileSize]="2000000" [buttons]="{ browse: 'Upload' }" (selected)="$event.cancel = true"></ejs-uploader>
+                        <p class="text-xs text-gray-700 dark:text-gray-300">Supported formats: Doc/Pdf</p>
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template #footerTemplate>
+                <div class="sm:px-6 px-4 py-6">
+                    <button ejs-button class="w-full !ml-0" cssClass="e-primary" type="submit" content="Send" aria-label="send the message" role="button"></button>
+                </div>
+            </ng-template>
+        </ejs-dialog>
+        <button ejs-fab #fab class="!hidden sm:!block" cssClass="e-primary e-round e-bigger" [iconCss]="toggleState?'sf-icon-message-chat-circle !text-2xl':'e-icons e-close !text-2xl'" position="BottomRight" type="button" target="#target" (click)="toggleDialog()" aria-label="show/hide form" role="button"></button>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body">
+    <div id="target" class="w-100 px-3" [ngStyle]="{ height: isMobileView ? '580px' : '690px' }">
+        <div class="d-flex align-items-center justify-content-center pt-3">
+            <button ejs-button class="d-block d-sm-none" cssClass="e-primary e-round e-bigger" iconCss="sf-icon-message-chat-circle fs-5 lh-base" type="button" (click)="toggleDialog()" aria-label="open contact us form" role="button"></button>
+        </div>
+        <ejs-dialog #dialog id="floating-contact" class="rounded-3 overflow-hidden" width="400px" [height]="isMobileView ? '580px' : '510px'" (open)="setDialogPosition($event)" (created)="dialog.show()" aria-label="contact us form" role="dialog">
+            <ng-template #header>
+                <div class="d-flex flex-column justify-content-between align-items-center bg-primary-subtle p-4">
+                    <div class="d-flex justify-content-end d-block d-sm-none px-3 top-0 pt-3 position-absolute end-0">
+                        <button ejs-button class="e-flat e-inherit e-round e-small" iconCss="e-icons e-close lh-base" type="button" (click)="toggleDialog()" aria-label="close contact us form" role="button"></button>
+                    </div>
+                    <span class="e-icons e-comment-show fs-5 text-body-secondary"></span>
+                    <div class="text-center mt-2 pt-1">
+                        <p class="small fw-medium lh-sm text-body m-0">Contact Us</p>
+                        <p class="small fw-normal mt-1 mb-0 text-body-tertiary">Reach out to us for any inquiry</p>
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template #content>
+                <div class="py-4 px-3 px-sm-4 pb-0 d-flex flex-column gap-3">
+                    <ejs-textbox class="w-100" type="text" placeholder="Name" floatLabelType="Never" aria-label="enter the name" role="textbox"></ejs-textbox>
+                    <ejs-textbox class="w-100" type="text" placeholder="Email" floatLabelType="Never" aria-label="enter the email address" role="textbox"></ejs-textbox>
+                    <ejs-textarea class="w-100" placeholder="Your message" rows="5" cols="100" aria-label="enter the message" role="textbox"></ejs-textarea>
+                    <div>
+                        <ejs-uploader [multiple]="false" [allowedExtensions]="'pdf/*'" [maxFileSize]="2000000" [buttons]="{ browse: 'Upload' }" (selected)="$event.cancel = true"></ejs-uploader>
+                        <p class="small m-0 mt-1 text-body-secondary">Supported formats: Doc/Pdf</p>
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template #footerTemplate>
+                <div class="py-4 px-3 px-sm-4">
+                    <button ejs-button class="w-100 m-0" cssClass="e-primary" type="submit" content="Send" aria-label="send the message" role="button"></button>
+                </div>
+            </ng-template>
+        </ejs-dialog>
+        <button ejs-fab #fab class="d-none d-sm-block" cssClass="e-primary e-round e-bigger" [iconCss]="toggleState?'sf-icon-message-chat-circle fs-5 lh-base':'e-icons e-close fs-5 lh-base'" position="BottomRight" type="button" target="#target" (click)="toggleDialog()" aria-label="show/hide form" role="button"></button>
+    </div>
+</section>
+
+}

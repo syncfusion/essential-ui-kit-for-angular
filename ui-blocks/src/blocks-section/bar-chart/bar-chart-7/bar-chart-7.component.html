@@ -1,0 +1,67 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-white dark:bg-gray-950">
+    <div class="h-screen flex justify-center p-4 sm:p-6">
+        <div class="w-full" style="max-width: 930px;">
+            <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-2">
+                <div class="flex justify-between">
+                    <h1 class="font-medium text-base text-gray-900 dark:text-white">Weather Trends</h1>
+                    <button ejs-button class="e-outline block sm:hidden" iconCss="e-icons e-description" content=" " type="button" aria-label="report" role="button"></button>
+                </div>
+                <div class="flex gap-1 items-center">
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Location:</p>
+                    <button #countryDropdown ejs-dropdownbutton class="e-outline" content="USA" [items]="[{text:'Canada'}, {text:'United Kingdom'}, {text:'Germany'}, {text:'USA'}, {text:'Australia'}]" type="button" aria-label="choose a city" role="button"></button>
+                    <button ejs-button class="hidden sm:block e-outline ml-3" content="View Month" type="button" aria-label="view month" role="button"></button>
+                </div>
+            </div>
+            <div class="mt-5">
+                <ejs-chart #chart [chartArea]="{border: {width: 0}}" width="100%" [primaryXAxis]="primaryXAxis" [primaryYAxis]="primaryYAxis" [legendSettings]="{visible: true, mode: 'Range'}" (load)="chartLoad($event,'Tailwind3','Tailwind3Dark')" aria-label="season analysis" role="region">
+                    <e-series-collection>
+                        <e-series [dataSource]="chartData" type="Column" xName="x" yName="y" name="season chart" [cornerRadius]="{topLeft: 10, topRight: 10}" legendShape="Square" [marker]="marker" [columnWidth]="columnWidth"> </e-series>
+                    </e-series-collection>
+                    <e-rangecolorsettings>
+                        <e-rangecolorsetting label="1°C to 10°C" start="1" end="10" [colors]="['#F9D422']"></e-rangecolorsetting>
+                        <e-rangecolorsetting label="11°C to 20°C" start="11" end="20" [colors]="['#F28F3F']"></e-rangecolorsetting>
+                        <e-rangecolorsetting label="21°C to 25°C" start="21" end="25" [colors]="['#E94F53']"></e-rangecolorsetting>
+                        <e-rangecolorsetting label="26°C to 30°C" start="26" end="30" [colors]="['#D83B01']"></e-rangecolorsetting>
+                    </e-rangecolorsettings>
+                </ejs-chart>
+            </div>
+        </div>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body">
+    <div class="vh-100 d-flex justify-content-center p-3 p-sm-4">
+        <div class="w-100" style="max-width: 930px;">
+            <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-2">
+                <div class="d-flex justify-content-between">
+                    <h1 class="fw-medium fs-6 text-body mb-0">Weather Trends</h1>
+                    <button ejs-button class="e-outline d-block d-sm-none" iconCss="e-icons e-description" content=" " type="button" aria-label="download report" role="button"></button>
+                </div>
+                <div class="d-flex gap-2 align-items-center mt-2 mt-sm-0">
+                    <p class="text-body-secondary mb-0 fs-6">Location:</p>
+                    <button #countryDropdown ejs-dropdownbutton class="e-outline mx-1 flex-shrink-0" content="USA" [items]="[{text:'Canada'}, {text:'United Kingdom'}, {text:'Germany'}, {text:'USA'}, {text:'Australia'}]" type="button" aria-label="choose a city" role="button"></button>
+                    <button ejs-button class="e-outline d-none d-sm-inline-block" content="View Month" type="button" aria-label="view M" role="button"></button>
+                </div>
+            </div>
+            <div class="mt-4">
+                <ejs-chart #chart [chartArea]="{border: {width: 0}}" width="100%" [primaryXAxis]="primaryXAxis" [primaryYAxis]="primaryYAxis" [legendSettings]="{visible: true, mode: 'Range'}" (load)="chartLoad($event,'Bootstrap5','Bootstrap5Dark')" aria-label="season analysis" role="region">
+                    <e-series-collection>
+                        <e-series [dataSource]="chartData" type="Column" xName="x" yName="y" name="season chart" [cornerRadius]="{topLeft: 10, topRight: 10}" legendShape="Square" [marker]="marker" [columnWidth]="columnWidth"> </e-series>
+                    </e-series-collection>
+                    <e-rangecolorsettings>
+                        <e-rangecolorsetting label="1°C to 10°C" start="1" end="10" [colors]="['#F9D422']"></e-rangecolorsetting>
+                        <e-rangecolorsetting label="11°C to 20°C" start="11" end="20" [colors]="['#F28F3F']"></e-rangecolorsetting>
+                        <e-rangecolorsetting label="21°C to 25°C" start="21" end="25" [colors]="['#E94F53']"></e-rangecolorsetting>
+                        <e-rangecolorsetting label="26°C to 30°C" start="26" end="30" [colors]="['#D83B01']"></e-rangecolorsetting>
+                    </e-rangecolorsettings>
+                </ejs-chart>
+            </div>
+        </div>
+    </div>
+</section>
+
+}

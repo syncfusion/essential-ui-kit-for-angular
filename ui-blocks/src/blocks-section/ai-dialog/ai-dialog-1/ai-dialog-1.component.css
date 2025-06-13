@@ -1,0 +1,16 @@
+#dialog-container .e-dialog .e-dlg-content {
+    padding: 0;
+}
+
+#upload-template .e-file-select-wrap {
+    display: none;
+}
+
+#upload-template .e-upload {
+    float: none;
+    border: none;
+}
+
+#upload-template .e-upload .e-upload-files .e-upload-file-list {
+    border-bottom: 0;
+}
