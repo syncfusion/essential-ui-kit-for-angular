@@ -21,10 +21,10 @@
                     </div>
                 </div>
                 <div class="hidden lg:block">
-                    <button ejs-button class="e-flat py-2 mr-2" type="button" aria-label="changelog" role="button">Changelog</button>
-                    <button ejs-button class="e-flat py-2 mr-2" type="button" aria-label="support" role="button">Support</button>
-                    <button ejs-button class="e-flat py-2 mr-2" type="button" aria-label="documentation" role="button">Documentation</button>
-                    <button ejs-button class="bg-transparent py-2 mr-2" type="button" aria-label="feedback" role="button">Feedback</button>
+                    <button ejs-button class="e-flat py-2 mr-2" content="Changelog" type="button" aria-label="changelog" role="button"></button>
+                    <button ejs-button class="e-flat py-2 mr-2" content="Support" type="button" aria-label="support" role="button"></button>
+                    <button ejs-button class="e-flat py-2 mr-2" content="Documentation" type="button" aria-label="documentation" role="button"></button>
+                    <button ejs-button class="bg-transparent py-2 mr-2" content="Feedback" type="button" aria-label="feedback" role="button"></button>
                 </div>
                 <span id="menu" class="lg:hidden">
                    <ejs-menu [hamburgerMode]="true" showItemOnClick="true" title="" [items]="[{text: 'Portfolio'}, {text: 'Blog'}, {text: 'Shop'}, {text: 'Elements'}, {text: 'Forum'}, {text: 'Support'}, {text: 'Others', items: [{text: 'Changelog'}, {text: 'Support'}, {text: 'Docs'}, {text: 'Feedback'}]}]" aria-label="menu items" role="menu"></ejs-menu>
@@ -72,15 +72,15 @@
                         </span>
                     </div>
                     <div>
-                        <button #profileDropdown ejs-dropdownbutton class="e-flat pe-2 pe-md-4 d-none d-sm-block" content="Bonnie Crane" [items]="[{text:'Michael Gough', iconCss:'e-icons e-folder'}, {text:'Roberta Cases', iconCss:'e-icons e-folder'}]" type="button" aria-label="choose a profile" role="button"></button>
+                        <button #profileDropdown ejs-dropdownbutton class="d-none d-sm-block" cssClass="e-flat" content="Bonnie Crane" [items]="[{text:'Michael Gough', iconCss:'e-icons e-folder'}, {text:'Roberta Cases', iconCss:'e-icons e-folder'}]" type="button" aria-label="choose a profile" role="button"></button>
                     </div>
                 </div>
             </div>
             <div class="d-none d-lg-block">
-                <button ejs-button class="e-flat py-2 me-2" type="button" aria-label="changelog" role="button">Changelog</button>
-                <button ejs-button class="e-flat py-2 me-2" type="button" aria-label="support" role="button">Support</button>
-                <button ejs-button class="e-flat py-2 me-2" type="button" aria-label="documentation" role="button">Documentation</button>
-                <button ejs-button class="bg-secondary py-2 me-2" type="button" aria-label="feedback" role="button">Feedback</button>
+                <button ejs-button class="e-flat py-2 me-2" content="Changelog" type="button" aria-label="changelog" role="button"></button>
+                <button ejs-button class="e-flat py-2 me-2" content="Support" type="button" aria-label="support" role="button"></button>
+                <button ejs-button class="e-flat py-2 me-2" content="Documentation" type="button" aria-label="documentation" role="button"></button>
+                <button ejs-button class="bg-secondary py-2 me-2" content="Feedback" type="button" aria-label="feedback" role="button"></button>
             </div>
             <span id="menu" class="d-lg-none">
                 <ejs-menu class="bg-body-tertiary" [hamburgerMode]="true" showItemOnClick="true" title="" [items]="[{text: 'Portfolio'}, {text: 'Blog'}, {text: 'Shop'}, {text: 'Elements'}, {text: 'Forum'}, {text: 'Support'}, {text: 'Others', items: [{text: 'Changelog'}, {text: 'Support'}, {text: 'Docs'}, {text: 'Feedback'}]}]" aria-label="menu items" role="menu"></ejs-menu>

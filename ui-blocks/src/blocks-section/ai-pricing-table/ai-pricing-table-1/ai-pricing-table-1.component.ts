@@ -29,7 +29,7 @@ export class AiPricingTable1Component implements OnInit, OnDestroy {
     }
 
     @HostListener('window:resize')
-    public onResize(): void {
+    public handleResize(): void {
         const isMobile = window.innerWidth <= 640;
         this.pricing.refresh();
         this.pricing.show(isMobile);
@@ -37,7 +37,7 @@ export class AiPricingTable1Component implements OnInit, OnDestroy {
     
     /* SB Code - Start */
     private handleMessageEvent = (event: MessageEvent): void => {
-        if (event.origin === window.location.origin) {
+        if (event.origin === window.location.origin && /^{"(name":"[^"]+","theme":"[^"]+"|mode":"[^"]+")}$/.test(event.data)) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (

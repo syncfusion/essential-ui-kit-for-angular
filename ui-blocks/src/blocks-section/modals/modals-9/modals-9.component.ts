@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy, ViewChild, HostListener } from '@angular/core';
-import { DialogModule, DialogComponent } from '@syncfusion/ej2-angular-popups';
+import { DialogModule, DialogComponent, OpenEventArgs } from '@syncfusion/ej2-angular-popups';
 import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 import { RichTextEditorAllModule, RichTextEditorComponent } from '@syncfusion/ej2-angular-richtexteditor';
 import { TextBoxModule, UploaderModule } from '@syncfusion/ej2-angular-inputs';
@@ -42,7 +42,7 @@ export class Modals9Component implements OnInit, OnDestroy {
     }
 
     @HostListener('window:resize')
-    public onResize(): void {
+    public handleResize(): void {
         this.checkWindowSize();
     }
 
@@ -52,7 +52,14 @@ export class Modals9Component implements OnInit, OnDestroy {
         this.dialog.show(this.isMobile);
     }
 
-    public onCreated(): void {
+    public dialogOpen(args: OpenEventArgs): void {
+        args.preventFocus = true;
+        setTimeout(() => {
+            this.rte.refresh();
+        }, 100);
+    }
+
+    public created(): void {
         const hiddenSelectElement = document.getElementsByClassName('e-ddl-hidden')[1];
         const IconElement = document.createElement('span');
         IconElement.style.cssText = 'display: flex; align-items: center; margin-left: 10px;';
@@ -64,14 +71,11 @@ export class Modals9Component implements OnInit, OnDestroy {
     private refreshDialog(timeout: number): void {
         setTimeout(() => {
             this.dialog.show(this.isMobile);
-            setTimeout(() => {
-                this.rte.refresh();
-            }, 50);
         }, timeout);
     }
 
     private handleMessageEvent = (event: MessageEvent): void => {
-        if (event.origin === window.location.origin) {
+        if (event.origin === window.location.origin && /^{"(name":"[^"]+","theme":"[^"]+"|mode":"[^"]+")}$/.test(event.data)) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'modals-9' && blockData.theme) {

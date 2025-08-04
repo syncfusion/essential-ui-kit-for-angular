@@ -81,7 +81,7 @@ export class Notification7Component {
     ];
 
     @HostListener('window:resize')
-    public onResize(): void {
+    public handleResize(): void {
         if (this.transactionsDropdown.element.classList.contains('e-active')) {
             this.transactionsDropdown.toggle();
         }
@@ -89,7 +89,7 @@ export class Notification7Component {
 
     /* SB Code - Start */
     private handleMessageEvent = (event: MessageEvent): void => {
-        if (event.origin === window.location.origin) {
+        if (event.origin === window.location.origin && /^{"(name":"[^"]+","theme":"[^"]+"|mode":"[^"]+")}$/.test(event.data)) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'notification-7' && blockData.theme) {

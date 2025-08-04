@@ -33,18 +33,18 @@ export class BarChart7Component implements OnInit, OnDestroy {
     }
 
     public chartData: Object[] = [
-        { x: "Jan", y: 6 },
-        { x: "Feb", y: 8.9 },
-        { x: "Mar", y: 12 },
-        { x: "Apr", y: 17.5 },
-        { x: "May", y: 22.1 },
-        { x: "Jun", y: 25 },
-        { x: "Jul", y: 29.4 },
-        { x: "Aug", y: 29.6 },
-        { x: "Sep", y: 25 },
-        { x: "Oct", y: 21.1 },
-        { x: "Nov", y: 15.5 },
-        { x: "Dec", y: 9.9 }
+        { xAxis: "Jan", yAxis: 6 },
+        { xAxis: "Feb", yAxis: 8.9 },
+        { xAxis: "Mar", yAxis: 12 },
+        { xAxis: "Apr", yAxis: 17.5 },
+        { xAxis: "May", yAxis: 22.1 },
+        { xAxis: "Jun", yAxis: 25 },
+        { xAxis: "Jul", yAxis: 29.4 },
+        { xAxis: "Aug", yAxis: 29.6 },
+        { xAxis: "Sep", yAxis: 25 },
+        { xAxis: "Oct", yAxis: 21.1 },
+        { xAxis: "Nov", yAxis: 15.5 },
+        { xAxis: "Dec", yAxis: 9.9 }
     ];
 
     public primaryXAxis: Object = {
@@ -52,6 +52,7 @@ export class BarChart7Component implements OnInit, OnDestroy {
         majorGridLines: { width: 0 },
         majorTickLines: { width: 0 },
         minorTickLines: { width: 0 },
+        labelIntersectAction: 'None',
         labelStyle: { fontWeight: '500', size: '12px' },
         interval: 1
     };
@@ -74,11 +75,12 @@ export class BarChart7Component implements OnInit, OnDestroy {
 
     public chartLoad(args: any, lightTheme: string, darkTheme: string): void {
         args.chart.theme = this.isDarkMode ? darkTheme : lightTheme;
+        this.resize();
     };
 
     @HostListener('window:resize')
     public resize(): void {
-        let labelRotation = window.innerWidth < 400 ? -90 : 0;
+        let labelRotation = window.innerWidth <= 640 ? -90 : 0;
         this.primaryXAxis = { ...this.primaryXAxis, labelRotation: labelRotation }
         this.columnWidth = window.innerWidth < 400 ? '0.4' : '.6';
         if (this.countryDropdown.element.classList.contains('e-active')) {
@@ -88,7 +90,7 @@ export class BarChart7Component implements OnInit, OnDestroy {
 
     /* SB Code - Start */
     private handleMessageEvent = (event: MessageEvent): void => {
-        if (event.origin === window.location.origin) {
+        if (event.origin === window.location.origin && /^{"(name":"[^"]+","theme":"[^"]+"|mode":"[^"]+")}$/.test(event.data)) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'bar-chart-7' && blockData.theme) {

@@ -34,7 +34,7 @@ export class Navbar3Component implements OnInit, OnDestroy {
 
     /* SB Code - Start */
     private handleMessageEvent = (event: MessageEvent): void => {
-        if (event.origin === window.location.origin) {
+        if (event.origin === window.location.origin && /^{"(name":"[^"]+","theme":"[^"]+"|mode":"[^"]+")}$/.test(event.data)) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'navbar-3' && blockData.theme) {
@@ -48,7 +48,7 @@ export class Navbar3Component implements OnInit, OnDestroy {
     /* SB Code - End */
 
     @HostListener('window:resize')
-    public onResize(): void {
+    public handleResize(): void {
         this.closeDropdown(this.stateDropdown);
         this.closeDropdown(this.addressDropdown);
     }

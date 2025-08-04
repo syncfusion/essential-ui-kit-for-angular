@@ -5,9 +5,9 @@
         <div class="px-4 sm:px-6 flex flex-col-reverse" style="min-height: 20rem;">
             <div class="bg-white dark:bg-gray-800 rounded-md pt-2 pb-3 px-3 mx-auto flex flex-col-reverse" style="max-width: 705px;">
                 <span class="e-input-group mt-1 !border-0 !shadow-none">
-                    <ejs-textarea #textarea placeholder="Enter prompt" rows="1" cols="300" resizeMode="None" (input)="adjustHeight()" aria-label="enter the prompt" role="textbox" style="max-height: 10rem;"></ejs-textarea>
-                    <span style="bottom: 7px; position: absolute; right: 5px;">
-                        <button ejs-button class="e-flat e-icons e-assist-send !border-0" type="submit" aria-label="send" role="button" style="pointer-events: none;"></button>
+                    <ejs-textarea #textarea placeholder="Enter prompt" rows="1" cols="300" resizeMode="None" (input)="adjustHeight()" [(ngModel)]="promptMessage" aria-label="enter the prompt" role="textbox" style="max-height: 10rem;"></ejs-textarea>
+                    <span style="bottom: 4px; position: absolute; right: 5px;">
+                        <button ejs-button class="e-flat !border-0" iconCss="e-icons e-assist-send" [disabled]="!promptMessage" type="submit" aria-label="send" role="button" style="pointer-events: none;"></button>
                     </span>
                 </span>
                 <ejs-chiplist class="gap-1">
@@ -31,9 +31,9 @@
         <div class="d-flex flex-column-reverse px-4 px-sm-5" style="min-height: 22rem;">
             <div class="bg-body rounded py-3 px-3 mx-auto d-flex flex-column-reverse" style="max-width: 675px;">
                 <span class="e-input-group mt-1 border-0 shadow-none">
-                    <ejs-textarea #textarea placeholder="Enter prompt" rows="1" cols="300" resizeMode="None" (input)="adjustHeight()" aria-label="enter the prompt" role="textbox" style="max-height: 10rem;"></ejs-textarea>
-                    <span style="bottom: 7px; position: absolute; right: 5px;">
-                        <button ejs-button class="e-flat e-icons e-assist-send border-0" type="submit" aria-label="send" role="button" style="pointer-events: none;"></button>
+                    <ejs-textarea #textarea placeholder="Enter prompt" rows="1" cols="300" resizeMode="None" (input)="adjustHeight()" [(ngModel)]="promptMessage" aria-label="enter the prompt" role="textbox" style="max-height: 10rem;"></ejs-textarea>
+                    <span style="bottom: 2px; position: absolute; right: 5px;">
+                        <button ejs-button class="e-outline border-0" iconCss="e-icons e-assist-send" [disabled]="!promptMessage" type="submit" aria-label="send" role="button" style="pointer-events: none;"></button>
                     </span>
                 </span>
                 <ejs-chiplist class="gap-1">

@@ -1,0 +1,103 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-gray-50 dark:bg-gray-800">
+    <div class="pt-4" style="min-height: 36rem;">
+        <div class="mx-auto w-full p-6 mt-4 sm:!rounded-lg sm:!border rounded-none border-gray-300 dark:border-gray-500 bg-white dark:bg-gray-800" style="max-width: 570px;">
+            <h4 class="font-semibold text-gray-900 dark:text-white">Leave us a review</h4>
+            <p class="text-sm mt-3 text-gray-700 dark:text-gray-100">Would you mind taking a moment to rate your satisfaction with your service?</p>
+            <div class="py-5">
+                <input ejs-rating [emptyTemplate]="template" [tooltipTemplate]="tooltipTemplate" [enableAnimation]="false" [enableSingleSelection]="true" aria-label="rate us out of 5" role="slider" />
+                <ng-template #template let-data>
+                    <div [ngSwitch]="data.index" class="w-full">
+                        <div *ngSwitchCase="0" class="flex flex-col items-start gap-3 mr-1.5 sm:mr-11">
+                            <img class="h-12 w-12" src="assets/images/rating/customer-satisfaction/poor.png" alt="poor" />
+                            <p class="sm:text-sm text-xs font-medium ml-2 text-gray-500 dark:text-gray-400">Poor</p>
+                        </div>
+                        <div *ngSwitchCase="1" class="flex flex-col items-center gap-3 mr-1.5 sm:mr-11">
+                            <img class="h-12 w-12" src="assets/images/rating/customer-satisfaction/unhappy.png" alt="unhappy" />
+                            <p class="sm:text-sm text-xs font-medium text-gray-500 dark:text-gray-400">Unhappy</p>
+                        </div>
+                        <div *ngSwitchCase="2" class="flex flex-col items-center gap-3 mr-1.5 sm:mr-11">
+                            <img class="h-12 w-12" src="assets/images/rating/customer-satisfaction/average.png" alt="average" />
+                            <p class="sm:text-sm text-xs font-medium text-gray-500 dark:text-gray-400">Average</p>
+                        </div>
+                        <div *ngSwitchCase="3" class="flex flex-col items-center gap-3 mr-1.5 sm:mr-11">
+                            <img class="h-12 w-12" src="assets/images/rating/customer-satisfaction/good.png" alt="good" />
+                            <p class="sm:text-sm text-xs font-medium text-gray-500 dark:text-gray-400">Good</p>
+                        </div>
+                        <div *ngSwitchCase="4" class="flex flex-col items-center mr-1.5 gap-3">
+                            <img class="h-12 w-12" src="assets/images/rating/customer-satisfaction/excellent.png" alt="excellent" />
+                            <p class="sm:text-sm text-xs font-medium text-gray-500 dark:text-gray-400">Excellent</p>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template #tooltipTemplate let-item>
+                    <div [ngSwitch]="item.value">
+                        <span *ngSwitchCase="1">Poor</span>
+                        <span *ngSwitchCase="2">Unhappy</span>
+                        <span *ngSwitchCase="3">Average</span>
+                        <span *ngSwitchCase="4">Good</span>
+                        <span *ngSwitchCase="5">Excellent</span>
+                    </div>
+                </ng-template>
+            </div>
+            <ejs-textarea class="placeholder:text-sm" placeholder="How did you feel using our service?" floatLabelType="Never" resizeMode="None" aria-label="enter your feedback" role="textbox" style="height: 94px;"></ejs-textarea>
+            <div class="flex justify-end mt-4">
+                <button ejs-button class="e-primary" content="Share review" type="button" aria-label="share review" role="button"></button>
+            </div>
+        </div>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body-tertiary">
+    <div class="pt-4" style="min-height: 36rem;">
+        <div class="mx-auto w-100 p-4 mt-3 border rounded-3 bg-body text-body" style="max-width: 570px;">
+            <h4 class="fw-bold text-body fs-6 mb-0">Leave us a review</h4>
+            <p class="small mb-0 text-body-secondary mt-2 pt-1">Would you mind taking a moment to rate your satisfaction with your service?</p>
+            <div class="py-4">
+                <input ejs-rating [emptyTemplate]="template" [tooltipTemplate]="tooltipTemplate" [enableAnimation]="false" [enableSingleSelection]="true" aria-label="rate us out of 5" role="slider" />
+                <ng-template #template let-data>
+                    <div [ngSwitch]="data.index" class="w-100">
+                        <div *ngSwitchCase="0" class="d-flex flex-column align-items-center fs-6 gap-2 me-sm-5">
+                            <img class="img-fluid" style="height: 3rem; width: 3rem;" src="assets/images/rating/customer-satisfaction/poor.png" alt="poor" />
+                            <p class="small fw-medium text-body-secondary mb-0">Poor</p>
+                        </div>
+                        <div *ngSwitchCase="1" class="d-flex flex-column align-items-center fs-6 gap-2 me-sm-5">
+                            <img class="img-fluid" style="height: 3rem; width: 3rem;" src="assets/images/rating/customer-satisfaction/unhappy.png" alt="unhappy" />
+                            <p class="small fw-medium text-body-secondary mb-0">Unhappy</p>
+                        </div>
+                        <div *ngSwitchCase="2" class="d-flex flex-column align-items-center fs-6 gap-2 me-sm-5">
+                            <img class="img-fluid" style="height: 3rem; width: 3rem;" src="assets/images/rating/customer-satisfaction/average.png" alt="average" />
+                            <p class="small fw-medium text-body-secondary mb-0">Average</p>
+                        </div>
+                        <div *ngSwitchCase="3" class="d-flex flex-column align-items-center fs-6 gap-2 me-sm-5">
+                            <img class="img-fluid" style="height: 3rem; width: 3rem;" src="assets/images/rating/customer-satisfaction/good.png" alt="good" />
+                            <p class="small fw-medium text-body-secondary mb-0">Good</p>
+                        </div>
+                        <div *ngSwitchCase="4" class="d-flex flex-column align-items-center fs-6 gap-2">
+                            <img class="img-fluid" style="height: 3rem; width: 3rem;" src="assets/images/rating/customer-satisfaction/excellent.png" alt="excellent" />
+                            <p class="small fw-medium text-body-secondary mb-0">Excellent</p>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template #tooltipTemplate let-item>
+                    <div [ngSwitch]="item.value">
+                        <span *ngSwitchCase="1">Poor</span>
+                        <span *ngSwitchCase="2">Unhappy</span>
+                        <span *ngSwitchCase="3">Average</span>
+                        <span *ngSwitchCase="4">Good</span>
+                        <span *ngSwitchCase="5">Excellent</span>
+                    </div>
+                </ng-template>
+            </div>
+            <ejs-textarea placeholder="How did you feel using our service?" floatLabelType="Never" resizeMode="None" aria-label="enter your feedback" role="textbox" style="height: 94px;"></ejs-textarea>
+            <div class="d-flex justify-content-end mt-3">
+                <button ejs-button cssClass="e-primary" content="Share review" type="button" aria-label="share review" role="button"></button>
+            </div>
+        </div>
+    </div>
+</section>
+
+}

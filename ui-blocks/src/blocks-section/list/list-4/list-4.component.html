@@ -7,7 +7,9 @@
                 <ng-template #template let-data>
                     <div class="e-list-wrapper !px-1 sm:!px-3 border-b border-gray-200 dark:border-gray-600 !py-4 flex flex-col">
                         <span class="flex">
-                            <img class="rounded-lg" src="assets/images/listview/carts/{{data.pic}}" width="80px" alt="product image" />
+                            <div class="shrink-0 bg-gray-50 dark:bg-gray-700 rounded">
+                                <img class="rounded-lg" src="assets/images/listview/carts/{{data.pic}}" width="80px" alt="product image" />
+                            </div>
                             <span class="ml-4 flex flex-col">
                                 <span class="e-list-item-header text-sm font-medium text-gray-900 dark:text-white !text-wrap !line-clamp-1 w-full truncate">{{data.header}}</span>
                                 <p class="flex space-x-3 mt-1">
@@ -33,13 +35,13 @@
                             </div>
                             <div class="flex items-center ml-4">
                                 <span class="e-small border-r border-gray-200 dark:border-gray-600 px-2">
-                                    <button ejs-button class="e-flat" iconCss="e-icons e-trash e-medium" type="button" aria-label="delete the product" role="button"></button>
+                                    <button ejs-button cssClass="e-flat" iconCss="e-icons e-trash e-medium" type="button" aria-label="delete the product" role="button"></button>
                                 </span>
                                 <span class="e-small border-r border-gray-200 dark:border-gray-600 px-2">
-                                    <button ejs-button class="e-flat" iconCss="e-icons e-medium e-bookmark" type="button" aria-label="bookmark this product" role="button"></button>
+                                    <button ejs-button cssClass="e-flat" iconCss="e-icons e-medium e-bookmark" type="button" aria-label="bookmark this product" role="button"></button>
                                 </span>
                                 <span class="e-small px-2">
-                                    <button ejs-button class="e-flat" iconCss="e-icons text-sm sf-icon-share-arrow-02" type="button" aria-label="share this product details" role="button"></button>
+                                    <button ejs-button cssClass="e-flat" iconCss="e-icons text-sm sf-icon-share-arrow-02" type="button" aria-label="share this product details" role="button"></button>
                                 </span>
                             </div>
                         </div>
@@ -59,7 +61,9 @@
                 <ng-template #template let-data>
                     <div class="e-list-wrapper px-1 px-sm-3 py-3 d-flex flex-column">
                         <span class="d-flex">
-                            <img class="rounded" src="assets/images/listview/carts/{{data.pic}}" width="80px" alt="product image" />
+                            <div class="flex-shrink-0 bg-body-tertiary rounded-1">
+                                <img class="rounded" src="assets/images/listview/carts/{{data.pic}}" width="80px" alt="product image" />
+                            </div>
                             <span class="ms-2 ps-1 d-flex flex-column">
                                 <p class="e-list-item-header fw-medium mb-0 w-100 text-wrap overflow-hidden" style="display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical;">{{data.header}}</p>
                                 <p class="mt-1 mb-0">
@@ -85,13 +89,13 @@
                             </div>
                             <div class="d-flex align-items-center ms-4">
                                 <span class="border-end px-2">
-                                    <button ejs-button class="e-flat" iconCss="e-icons e-trash e-medium" type="button" aria-label="delete this product" role="button"></button>
+                                    <button ejs-button cssClass="e-flat" iconCss="e-icons e-trash e-medium" type="button" aria-label="delete this product" role="button"></button>
                                 </span>
                                 <span class="border-end px-2">
-                                    <button ejs-button class="e-flat" iconCss="e-icons e-medium e-bookmark" type="button" aria-label="bookmark this product" role="button"></button>
+                                    <button ejs-button cssClass="e-flat" iconCss="e-icons e-medium e-bookmark" type="button" aria-label="bookmark this product" role="button"></button>
                                 </span>
                                 <span class="px-2">
-                                    <button ejs-button class="e-flat" iconCss="e-icons small sf-icon-share-arrow-02" type="button" aria-label="share this product details" role="button"></button>
+                                    <button ejs-button cssClass="e-flat" iconCss="e-icons small sf-icon-share-arrow-02" type="button" aria-label="share this product details" role="button"></button>
                                 </span>
                             </div>
                         </div>

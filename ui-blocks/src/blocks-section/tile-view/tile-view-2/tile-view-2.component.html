@@ -39,7 +39,7 @@
                 <ejs-listview class="!border-0 mt-6" cssClass="e-list-template" [dataSource]="productDetails" aria-label="list of product with details" role="list">
                     <ng-template #template let-data>
                         <div class="e-card flex flex-row p-4 sm:py-5 sm:px-5">
-                            <div class="e-card-image !w-auto shrink-0">
+                            <div class="e-card-image flex items-center !w-auto shrink-0 bg-gray-50 dark:bg-gray-700 rounded">
                                 <img class="!w-28 h-24 sm:h-28" src="assets/images/tile-view/shopping-cart/{{data.image}}" alt="product picture" />
                             </div>
                             <div class="e-card-stacked ml-3 flex sm:!flex-row flex-col w-full sm:!justify-between">
@@ -65,7 +65,7 @@
                                     </div>
                                     <div class="mt-3 text-end flex px-1">
                                         <button ejs-button class="e-primary sm:w-44 w-full" iconCss="sf-icon-cart !text-base" type="button" content="Add to Cart" aria-label="add to cart" role="button"></button>
-                                        <button ejs-button class="sf-icon-heart text-base sm:!flex sm:!items-center ml-2 h-8 px-2 !hidden" type="button" aria-label="add to wishlist" role="button"></button>
+                                        <button ejs-button class="sm:!flex sm:!items-center ml-2 h-8 px-2 !hidden" iconCss="sf-icon-heart !text-base" type="button" aria-label="add to wishlist" role="button"></button>
                                     </div>
                                 </div>
                             </div>
@@ -120,7 +120,7 @@
                 <ejs-listview class="border-0 mt-4" cssClass="e-list-template" [dataSource]="productDetails" aria-label="list of product with details" role="list">
                     <ng-template #template let-data>
                         <div class="e-card d-flex flex-row p-2 rounded-3">
-                            <div class="e-card-image w-auto ps-2">
+                            <div class="e-card-image d-flex align-items-center w-auto bg-body-tertiary rounded-1">
                                 <img src="assets/images/tile-view/shopping-cart/{{data.image}}" alt="product picture" style="width: 112px; height: 108px;" />
                             </div>
                             <div class="e-card-stacked ms-2 ps-1 py-1 d-flex flex-column flex-sm-row w-100 justify-content-between">
@@ -146,7 +146,7 @@
                                     </div>
                                     <div class="mt-2 pt-1 d-flex justify-content-sm-end">
                                         <button ejs-button class="e-primary w-100 w-sm-25" iconCss="sf-icon-cart" type="button" content="Add to Cart" aria-label="add to cart" role="button"></button>
-                                        <button ejs-button class="e-outline sf-icon-heart fs-6 ms-2 d-none d-sm-block" type="button" aria-label="add to wishlist" role="button"></button>
+                                        <button ejs-button class="e-outline fs-6 ms-2 d-none d-sm-block" iconCss="sf-icon-heart" type="button" aria-label="add to wishlist" role="button"></button>
                                     </div>
                                 </div>
                             </div>

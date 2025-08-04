@@ -1,9 +1,8 @@
 @if (currentTheme === 'tailwind') {
 
 <section>
-    <div id="dialog-container" class="relative flex justify-center" style="min-height: 866px;">
-        <button ejs-button class="h-fit my-5" (click)="dialog?.show()" type="button" aria-label="create ticket" role="button">Create Ticket</button>
-        <ejs-dialog #dialog class="rounded-none sm:rounded-lg sm:m-4" target="#dialog-container" [isModal]="true" [showCloseIcon]="true" [visible]="false" width="492px" (open)="$event.preventFocus = true" (beforeOpen)="$event.maxHeight = '100%'" aria-label="create a new ticket" role="dialog">
+    <div id="dialog-container" class="relative" style="min-height: 866px;">
+        <ejs-dialog #dialog class="rounded-none sm:rounded-lg sm:m-4" target="#dialog-container" [isModal]="true" [showCloseIcon]="true" [visible]="false" width="492px" (open)="dialogOpen($event)" (beforeOpen)="$event.maxHeight = '100%'" aria-label="create a new ticket" role="dialog">
             <ng-template #header>
                 <p class="font-semibold leading-normal">Create Ticket</p>
             </ng-template>
@@ -15,7 +14,7 @@
                     </div>
                     <div class="flex flex-col gap-1">
                         <label>Assign to</label>
-                        <ejs-dropdownlist (created)="onCreated()" placeholder="Select a team or individual responsible for this ticket" aria-label="choose a team" role="listbox"></ejs-dropdownlist>
+                        <ejs-dropdownlist (created)="created()" placeholder="Select a team or individual responsible for this ticket" aria-label="choose a team" role="listbox"></ejs-dropdownlist>
                     </div>
                     <div class="flex flex-col gap-1">
                         <label>Subject <span class="text-red-600 font-normal dark:text-red-400">*</span></label>
@@ -49,20 +48,24 @@
             </ng-template>
             <ng-template #footerTemplate>
                 <div class="flex flex-row justify-end gap-2 sm:gap-1 mt-1 mb-2">
-                    <button ejs-button cssClass="w-1/2 sm:w-fit !ml-0" type="button" aria-label="cancel" role="button">Cancel</button>
-                    <button ejs-button cssClass="e-primary w-1/2 sm:w-fit" type="button" aria-label="create ticket" role="button">Create Ticket</button>
+                    <button ejs-button cssClass="w-1/2 sm:w-fit !ml-0" content="Cancel" type="button" aria-label="cancel" role="button"></button>
+                    <button ejs-button cssClass="e-primary w-1/2 sm:w-fit" content="Create Ticket" type="button" aria-label="create ticket" role="button"></button>
                 </div>
             </ng-template>
         </ejs-dialog>
     </div>
 </section>
+<!-- SB Code - Start -->
+<div class="top-0 left-0 absolute w-full flex">
+    <button ejs-button class="my-5 mx-auto" content="Create Ticket" type="button" (click)="dialog?.show()" aria-label="create ticket" role="button"></button>
+</div>
+<!-- SB Code - End -->
 
 } @else if (currentTheme === 'bootstrap5.3') {
 
 <section>
-    <div id="dialog-container" class="position-relative d-flex align-items-start" style="min-height: 866px;">
-        <button ejs-button class="e-outline mx-auto my-3" (click)="dialog?.show()" type="button" aria-label="create ticket" role="button">Create Ticket</button>
-        <ejs-dialog #dialog class="rounded-3 m-sm-2" target="#dialog-container" [isModal]="true" [showCloseIcon]="true" [visible]="false" width="492px" (open)="$event.preventFocus = true" (beforeOpen)="$event.maxHeight = '100%'" aria-label="create a new ticket" role="dialog">
+    <div id="dialog-container" class="position-relative" style="min-height: 866px;">
+        <ejs-dialog #dialog class="rounded-3 m-sm-2" target="#dialog-container" [isModal]="true" [showCloseIcon]="true" [visible]="false" width="492px" (open)="dialogOpen($event)" (beforeOpen)="$event.maxHeight = '100%'" aria-label="create a new ticket" role="dialog">
             <ng-template #header>
                 <p class="fw-bold mb-0 text-body">Create Ticket</p>
             </ng-template>
@@ -74,7 +77,7 @@
                     </div>
                     <div class="d-flex flex-column gap-1 small">
                         <label>Assign to</label>
-                        <ejs-dropdownlist (created)="onCreated()" placeholder="Select a team or individual responsible for this ticket" aria-label="choose a team" role="listbox"></ejs-dropdownlist>
+                        <ejs-dropdownlist (created)="created()" placeholder="Select a team or individual responsible for this ticket" aria-label="choose a team" role="listbox"></ejs-dropdownlist>
                     </div>
                     <div class="d-flex flex-column gap-1 small">
                         <label>Subject <span class="text-danger">*</span></label>
@@ -110,12 +113,17 @@
             </ng-template>
             <ng-template #footerTemplate>
                 <div class="d-flex justify-content-end gap-2 gap-sm-1 py-1">
-                    <button ejs-button cssClass="col col-sm-auto ms-0" type="button" aria-label="cancel" role="button">Cancel</button>
-                    <button ejs-button cssClass="e-primary col col-sm-auto" type="button" aria-label="create ticket" role="button">Create Ticket</button>
+                    <button ejs-button cssClass="col col-sm-auto ms-0" content="Cancel" type="button" aria-label="cancel" role="button"></button>
+                    <button ejs-button cssClass="e-primary col col-sm-auto" content="Create Ticket" type="button" aria-label="create ticket" role="button"></button>
                 </div>
             </ng-template>
         </ejs-dialog>
     </div>
 </section>
+<!-- SB Code - Start -->
+<div class="position-absolute top-0 start-0 d-flex w-100">
+    <button ejs-button class="e-outline mx-auto my-3" content="Create Ticket" type="button" (click)="dialog?.show()" aria-label="create ticket" role="button"></button>
+</div>
+<!-- SB Code - End -->
 
 }

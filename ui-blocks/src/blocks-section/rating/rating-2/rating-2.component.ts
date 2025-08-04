@@ -1,10 +1,11 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RatingModule } from '@syncfusion/ej2-angular-inputs';
 
 @Component({
     selector: 'app-rating-2',
     standalone: true,
-    imports: [RatingModule],
+    imports: [CommonModule, RatingModule],
     templateUrl: './rating-2.component.html'
 })
 export class Rating2Component implements OnInit, OnDestroy {
@@ -28,7 +29,7 @@ export class Rating2Component implements OnInit, OnDestroy {
 
     /* SB Code - Start */
     private handleMessageEvent = (event: MessageEvent): void => {
-        if (event.origin === window.location.origin) {
+        if (event.origin === window.location.origin && /^{"(name":"[^"]+","theme":"[^"]+"|mode":"[^"]+")}$/.test(event.data)) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'rating-2' && blockData.theme) {

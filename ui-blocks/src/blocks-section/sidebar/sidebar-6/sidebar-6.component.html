@@ -2,7 +2,7 @@
 
 <section class="bg-white dark:bg-gray-950">
     <div style="height: 715px;">
-        <ejs-sidebar #sidebar class="bg-gray-50 dark:bg-gray-900 !border-r !border-gray-200 dark:!border-gray-700" width="256px" [isOpen]="true" aria-label="main navigation menu" role="complementary" style="display: block;">
+        <ejs-sidebar #sidebar class="bg-gray-50 dark:bg-gray-900 !border-r !border-gray-200 dark:!border-gray-700" width="256px" [isOpen]="true" [showBackdrop]="backDrop" aria-label="main navigation menu" role="complementary" style="display: block;">
             <div class="flex flex-col justify-between h-screen">
                 <div>
                     <div class="flex items-center justify-between py-4 px-3">
@@ -10,10 +10,10 @@
                             <img src="assets/images/common/brand-logos/svg/vector.svg" alt="company logo" />
                             <div class="ml-3">
                                 <div class="text-base font-medium leading-normal text-gray-900 dark:text-white">John Wick</div>
-                                <p class="mb-0 text-gray-900 dark:text-white">johnwick&#64;123.com</p>
+                                <a class="text-gray-900 dark:text-white" href="mailto:johnwick@company.com">johnwick&#64;company.com</a>
                             </div>
                         </div>
-                        <button ejs-button cssClass="e-icons e-chevron-down-double e-flat e-large" type="button" aria-label="view additional profile settings" role="button"></button>
+                        <button ejs-button cssClass="e-icons e-chevron-down-double e-flat e-large px-1" type="button" aria-label="view additional profile settings" role="button"></button>
                     </div>
                     <div>
                         <ejs-listview class="border-0" [dataSource]="navigationMenu" [template]="itemTemplate1" aria-label="main navigation links" role="list">
@@ -57,7 +57,7 @@
 </section>
 <!-- SB Code - Start -->
 <div class="p-3 top-0 left-0 absolute">
-    <button ejs-button cssClass="e-large e-icons e-chevron-right e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+    <button ejs-button cssClass="e-round e-large e-icons e-chevron-right" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
 </div>
 <!-- SB Code - End -->
 
@@ -65,7 +65,7 @@
 
 <section class="bg-body">
     <div style="height: 715px;">
-        <ejs-sidebar #sidebar width="256px" [isOpen]="true" aria-label="main navigation menu" role="complementary" style="display: block;">
+        <ejs-sidebar #sidebar width="256px" [isOpen]="true" [showBackdrop]="backDrop" aria-label="main navigation menu" role="complementary" style="display: block;">
             <div class="d-flex flex-column justify-content-between vh-100">
                 <div>
                     <div class="d-flex align-items-center justify-content-between p-3">
@@ -73,7 +73,7 @@
                             <img src="assets/images/common/brand-logos/svg/vector.svg" alt="company logo" />
                             <div class="ms-2">
                                 <div class="fs-6 fw-medium text-body">John Wick</div>
-                                <p class="mb-0 text-body-secondary">johnwick&#64;123.com</p>
+                                <a class="text-body-secondary text-decoration-none" href="mailto:johnwick@company.com">johnwick&#64;company.com</a>
                             </div>
                         </div>
                         <button ejs-button cssClass="e-icons e-chevron-down-double e-flat" type="button" aria-label="view additional profile settings" role="button"></button>
@@ -88,6 +88,7 @@
                             </ng-template>
                         </ejs-listview>
                     </div>
+                    <hr class="mx-3 border-light-subtle opacity-100" />
                     <div>
                         <p class="text-body-secondary fs-6 m-3">Bergside Projects</p>
                         <ejs-listview class="border-0 e-bigger" [dataSource]="libraryMenu" [template]="itemTemplate2" aria-label="other navigation links" role="list">
@@ -119,7 +120,7 @@
 </section>
 <!-- SB Code - Start -->
 <div class="py-3 px-1 position-absolute top-0 start-0">
-    <button ejs-button cssClass="e-large e-icons e-chevron-right e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+    <button ejs-button cssClass="e-round e-large e-icons e-chevron-right" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
 </div>
 <!-- SB Code - End -->
 

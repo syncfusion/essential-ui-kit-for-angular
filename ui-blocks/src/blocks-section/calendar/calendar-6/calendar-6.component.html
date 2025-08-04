@@ -2,20 +2,20 @@
 
 <section class="bg-white dark:bg-gray-900">
     <div [ngStyle]="{'height': '912px', 'width': width, float:'Right'}">
-        <ejs-sidebar class="w-full bg-white dark:bg-gray-900" #sidebar position="Right" type="push" [width]="width" [isOpen]="true" showBackdrop="true" role="complementary" style="display: block;">
+        <ejs-sidebar class="w-full bg-white dark:bg-gray-900" #sidebar position="Right" type="Push" [width]="width" [isOpen]="true" showBackdrop="true" role="complementary" style="display: block;">
             <div>
                 <div class="flex justify-between items-center px-4 py-3">
                     <div class="w-32">
                         <label class="text-sm text-gray-900 dark:text-white">CALENDAR</label>
                         <ejs-datepicker [start]="start" [depth]="depth" format="yyyy" aria-label="enter a year here" role="combobox"></ejs-datepicker>
                     </div>
-                    <button ejs-button class="e-flat text-base" iconCss="e-icons e-close" (click)="sidebar.hide()" type="button" aria-label="close sidebar" role="button"></button>
+                    <button ejs-button class="e-flat text-base" iconCss="e-icons e-close" type="button" (click)="sidebar.hide()" aria-label="close sidebar" role="button"></button>
                 </div>
             </div>
             <div class="flex px-4 py-2 border-y border-gray-200 dark:border-gray-600 justify-between">
                 <button ejs-button class="e-primary e-outline" content="Request time off" iconCss="e-icons e-plus" type="button" aria-label="request time off" role="button"></button>
                 <div class="my-auto">
-                    <button ejs-dropdownbutton #leaveSelection [items]="[ { text: 'Holiday', iconCss: 'e-icons e-check' }, { text: 'My PTO' } ]" class="e-flat background-none !border-none" iconCss="e-icons e-more-vertical-2" content=" " (select)="leaveOptions(leaveSelection,$event)" cssClass="e-caret-hide" type="button" aria-label="select the leave options" role="button"></button>
+                    <button ejs-dropdownbutton #leaveSelection class="e-flat background-none !border-none" cssClass="e-caret-hide" iconCss="e-icons e-more-vertical-2" [items]="[ { text: 'Holiday', iconCss: 'e-icons e-check' }, { text: 'My PTO' } ]" (select)="leaveOptions(leaveSelection,$event)" type="button" aria-label="select the leave options" role="button"></button>
                 </div>
             </div>
             <div class="p-4">
@@ -61,9 +61,9 @@
                         <div class="e-card shadow-none pt-3 border-gray-200 dark:border-gray-600 flex-row justify-between">
                             <div class="e-card-stacked">
                                 <div class="e-card-content">
-                                    <div class="font-normal text-xs text-gray-500 mb-0.5">3 day request</div>
+                                    <div class="font-normal text-xs text-gray-500 dark:text-gray-300 mb-0.5">3 day request</div>
                                     <div class="text-xs font-semibold mb-2">24 Sep - 26 Sep</div>
-                                    <span class="e-badge e-badge-pill e-bigger e-badge-secondary border border-gray-200 dark:border-gray-600">Casual</span>
+                                    <span class="e-badge e-badge-pill e-bigger e-badge-secondary border border-gray-200 dark:border-gray-600 text-xs">Casual</span>
                                 </div>
                             </div>
                             <span class="e-badge e-badge-pill mr-3 e-bigger e-badge-danger">Declined</span>
@@ -71,7 +71,7 @@
                         <div class="e-card shadow-none pt-3 border-gray-200 dark:border-gray-600 flex-row justify-between">
                             <div class="e-card-stacked">
                                 <div class="e-card-content">
-                                    <div class="font-normal text-xs text-gray-500 mb-0.5">Half day request</div>
+                                    <div class="font-normal text-xs text-gray-500 dark:text-gray-300 mb-0.5">Half day request</div>
                                     <div class="text-xs font-semibold mb-2">04 Sep</div>
                                     <span class="e-badge e-badge-pill e-bigger e-badge-info">Sick</span>
                                 </div>
@@ -84,7 +84,7 @@
                         <div class="e-card shadow-none pt-3 border-gray-200 dark:border-gray-600 flex-row justify-between">
                             <div class="e-card-stacked">
                                 <div class="e-card-content">
-                                    <div class="font-normal text-xs text-gray-500 mb-0.5">2 day request</div>
+                                    <div class="font-normal text-xs text-gray-500 dark:text-gray-300 mb-0.5">2 day request</div>
                                     <div class="text-xs font-semibold mb-2">23 Jul - 24 Jul</div>
                                     <span class="e-badge e-badge-pill e-bigger e-badge-secondary border border-gray-200 dark:border-gray-600">Casual</span>
                                 </div>
@@ -123,7 +123,7 @@
 </section>
 <!-- SB Code - Start -->
 <div class="p-3 absolute top-0 right-0">
-    <button ejs-button cssClass="e-large e-icons e-chevron-left e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+    <button ejs-button cssClass="e-round e-large e-icons e-chevron-left" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
 </div>
 <!-- SB Code - End -->
 
@@ -131,20 +131,20 @@
 
 <section class="bg-light">
     <div [ngStyle]="{'height': '940px', 'width': width, float:'Right'}">
-        <ejs-sidebar class="bg-body" #sidebar position="Right" type="push" [width]="width" [isOpen]="true" showBackdrop="true" role="complementary" style="display: block;">
+        <ejs-sidebar class="bg-body" #sidebar position="Right" type="Push" [width]="width" [isOpen]="true" showBackdrop="true" role="complementary" style="display: block;">
             <div>
                 <div class="d-flex justify-content-between align-items-center p-3">
                     <div class="w-50">
                         <label class="fs-6 text-body-secondary">CALENDAR</label>
                         <ejs-datepicker [start]="start" [depth]="depth" format="yyyy" aria-label="enter a year here" role="combobox"></ejs-datepicker>
                     </div>
-                    <button ejs-button class="e-flat fs-6" iconCss="e-icons e-close" (click)="sidebar.hide()" type="button" aria-label="close sidebar" role="button"></button>
+                    <button ejs-button class="e-flat fs-6" iconCss="e-icons e-close" type="button" (click)="sidebar.hide()" aria-label="close sidebar" role="button"></button>
                 </div>
             </div>
             <div class="d-flex p-3 border-bottom border-top border-light-subtley justify-content-between">
-                <button ejs-button class="e-primary e-outline" content="Request time off" iconCss="e-icons e-plus" type="button" aria-label="request time off" role="button"></button>
+                <button ejs-button class="e-primary e-outline" iconCss="e-icons e-plus" content="Request time off" type="button" aria-label="request time off" role="button"></button>
                 <div class="my-auto">
-                    <button ejs-dropdownbutton #leaveselection [items]="[ { text: 'Holiday', iconCss: 'e-icons e-check' }, { text: 'My PTO' } ]" class="e-flat border-0" iconCss="e-icons e-more-vertical-2" content=" " (select)="leaveOptions(leaveselection,$event)" cssClass="e-caret-hide" type="button" aria-label="select the leave options" role="button"></button>
+                    <button ejs-dropdownbutton #leaveselection class="e-flat border-0" cssClass="e-caret-hide" iconCss="e-icons e-more-vertical-2" [items]="[ { text: 'Holiday', iconCss: 'e-icons e-check' }, { text: 'My PTO' } ]" (select)="leaveOptions(leaveselection,$event)" type="button" aria-label="select the leave options" role="button"></button>
                 </div>
             </div>
             @if (selectedItem === 'Holiday') {
@@ -245,7 +245,7 @@
 </section>
 <!-- SB Code - Start -->
 <div class="p-3 position-absolute top-0 end-0">
-    <button ejs-button cssClass="e-large e-icons e-chevron-left e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+    <button ejs-button cssClass="e-round e-large e-icons e-chevron-left" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
 </div>
 <!-- SB Code - End -->
 

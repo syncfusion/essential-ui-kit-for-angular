@@ -2,7 +2,7 @@
 
 <section class="bg-white dark:bg-gray-950">
     <div style="height: 580px;">
-        <ejs-sidebar #sidebar class="bg-gray-50 dark:bg-gray-900 !border-r !border-gray-200 dark:!border-gray-700" width="328px" [isOpen]="true" aria-label="main navigation menu" role="complementary" style="display: block;">
+        <ejs-sidebar #sidebar class="bg-gray-50 dark:bg-gray-900 !border-r !border-gray-200 dark:!border-gray-700" width="328px" [isOpen]="true" [showBackdrop]="backDrop" aria-label="main navigation menu" role="complementary" style="display: block;">
             <div class="flex h-screen">
                 <div class="py-4" style="width: 72px;">
                     <div class="flex justify-center items-center px-3 mb-2">
@@ -50,7 +50,7 @@
 </section>
 <!-- SB Code - Start -->
 <div class="p-3 top-0 left-0 absolute">
-    <button ejs-button cssClass="e-large e-icons e-chevron-right e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+    <button ejs-button cssClass="e-round e-large e-icons e-chevron-right" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
 </div>
 <!-- SB Code - End -->
 
@@ -58,7 +58,7 @@
 
 <section class="bg-body">
     <div style="height: 600px;">
-        <ejs-sidebar #sidebar width="328px" [isOpen]="true" aria-label="main navigation menu" role="complementary" style="display: block;">
+        <ejs-sidebar #sidebar width="328px" [isOpen]="true" [showBackdrop]="backDrop" aria-label="main navigation menu" role="complementary" style="display: block;">
             <div class="d-flex vh-100">
                 <div class="py-4 d-flex flex-column align-items-center" style="width: 72px;">
                     <div class="d-flex justify-content-center align-items-center px-3 mb-2">
@@ -87,7 +87,7 @@
                                 </div>
                             </ng-template>
                         </ejs-listview>
-                        <p class="m-3 fs-6 text-body-secondary">Others</p>
+                        <hr class="mx-3 border-light-subtle opacity-100" />
                         <div>
                             <ejs-listview class="border-0 e-bigger" [dataSource]="supportMenu" [template]="itemTemplate3" aria-label="other navigation links" role="list">
                                 <ng-template #itemTemplate3 let-data>
@@ -106,7 +106,7 @@
 </section>
 <!-- SB Code - Start -->
 <div class="py-3 px-1 position-absolute top-0 start-0">
-    <button ejs-button cssClass="e-large e-icons e-chevron-right e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+    <button ejs-button cssClass="e-round e-large e-icons e-chevron-right" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
 </div>
 <!-- SB Code - End -->
 

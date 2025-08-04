@@ -53,7 +53,7 @@ export class AiSidebar3Component implements OnInit, OnDestroy {
     }
 
     @HostListener('window:resize')
-    public onResize(): void {
+    public handleResize(): void {
         this.backDrop = window.innerWidth <= 660;
         this.width = window.innerWidth <= 768 ? '312px' : '304px';
         this.dockWidth = window.innerWidth <= 768 ? '56px' : '48px';
@@ -61,7 +61,7 @@ export class AiSidebar3Component implements OnInit, OnDestroy {
 
     /* SB Code - Start */
     private handleMessageEvent = (event: MessageEvent): void => {
-        if (event.origin === window.location.origin) {
+        if (event.origin === window.location.origin && /^{"(name":"[^"]+","theme":"[^"]+"|mode":"[^"]+")}$/.test(event.data)) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'ai-sidebar-3' && blockData.theme) {

@@ -6,7 +6,8 @@ import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
     selector: 'app-statistics-4',
     standalone: true,
     imports: [CommonModule, ButtonModule],
-    templateUrl: './statistics-4.component.html'
+    templateUrl: './statistics-4.component.html',
+    styleUrl: './statistics-4.component.css'
 })
 export class Statistics4Component implements OnInit, OnDestroy {
     /* SB Code - Start */
@@ -64,7 +65,7 @@ export class Statistics4Component implements OnInit, OnDestroy {
 
     /* SB Code - Start */
     private handleMessageEvent = (event: MessageEvent): void => {
-        if (event.origin === window.location.origin) {
+        if (event.origin === window.location.origin && /^{"(name":"[^"]+","theme":"[^"]+"|mode":"[^"]+")}$/.test(event.data)) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'statistics-4' && blockData.theme) {

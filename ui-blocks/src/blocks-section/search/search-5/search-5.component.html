@@ -15,7 +15,7 @@
                 role="combobox">
                 <ng-template #headerTemplate>
                     <div class="p-5 border-b border-gray-200 dark:border-gray-600 mb-2">
-                        <ejs-chiplist id="chip-filter" class="!border-gray-200 !dark:border-gray-600" aria-label="filter options" role="option">
+                        <ejs-chiplist id="chip-filter" class="!border-gray-200 !dark:border-gray-600" selection="Multiple" aria-label="filter options" role="option">
                             <e-chips>
                                 <e-chip cssClass="e-outline !text-sm !font-medium !px-3 !py-1 !rounded-2xl !h-8 !ml-0" text="Ticket ID" aria-label="filter by ticket id" role="button"></e-chip>
                                 <e-chip cssClass="e-outline !text-sm !font-medium !px-3 !py-1 !rounded-2xl !h-8 !ml-0" text="Status" aria-label="filter by status" role="button"></e-chip>
@@ -57,9 +57,9 @@
                 (focus)="search.showPopup()"
                 (created)="openPopup(search)"
                 role="combobox">
-                <ng-template #headerTemplate let-data>
+                <ng-template #headerTemplate>
                     <div class="p-3 border-bottom border-light-subtle mb-2">
-                        <ejs-chiplist id="chip-filter" cssClass="e-outline border border-light-subtle text-body-secondary p-3" aria-label="filter options" role="option">
+                        <ejs-chiplist id="chip-filter" cssClass="e-outline border border-light-subtle p-3" selection="Multiple" aria-label="filter options" role="option">
                             <e-chips>
                                 <e-chip class="fs-6 lh-base fw-medium px-3 py-1" text="Ticket ID" aria-label="filter by ticket id" role="button"></e-chip>
                                 <e-chip class="fs-6 lh-base fw-medium px-3 py-1" text="Status" aria-label="filter by status" role="button"></e-chip>

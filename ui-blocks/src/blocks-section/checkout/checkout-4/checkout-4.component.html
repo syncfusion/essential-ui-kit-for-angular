@@ -6,9 +6,7 @@
             <div class="p-4 md:p-6 bg-gray-100 dark:bg-gray-900">
                 <div class="flex justify-between items-center mb-5">
                     <h2 class="text-lg font-medium text-gray-900 dark:text-white">My shopping cart</h2>
-                    <button ejs-button class="e-icons e-flat text-xl" (click)="sidebar.toggle()" type="button" aria-label="close the sidebar" role="button">
-                        <i class="e-icons e-close"></i>
-                    </button>
+                    <button ejs-button cssClass="e-flat" iconCss="e-icons e-close text-xl" (click)="sidebar.toggle()" type="button" aria-label="close the sidebar" role="button"></button>
                 </div>
                 <div class="rounded-lg p-3 bg-gray-200 dark:bg-gray-800">
                     <div class="grid grid-cols-1 gap-3">
@@ -119,10 +117,10 @@
                 </div>
                 <div class="flex flex-col md:flex-row items-center justify-center gap-4 pt-2">
                     <div class="w-full md:w-1/2 e-bigger">
-                        <button ejs-button class="w-full e-primary text-lg" type="submit" aria-label="proceed to checkout" role="button">Proceed to checkout</button>
+                        <button ejs-button class="w-full e-primary text-lg" content="Proceed to checkout" type="submit" aria-label="proceed to checkout" role="button"></button>
                     </div>
                     <div class="w-full md:w-1/2 e-bigger">
-                        <button ejs-button class="w-full e-outline text-lg" type="submit" aria-label="continue shopping" role="button">Continue shopping</button>
+                        <button ejs-button class="w-full e-outline text-lg" content="Continue shopping" type="submit" aria-label="continue shopping" role="button"></button>
                     </div>
                 </div>
             </div>
@@ -131,7 +129,7 @@
 </section>
 <!-- SB Code - Start -->
 <div class="p-3 absolute top-0 right-0">
-    <button ejs-button cssClass="e-large e-icons e-chevron-left e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+    <button ejs-button cssClass="e-round e-large e-icons e-chevron-left" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
 </div>
 <!-- SB Code - End -->
 
@@ -143,9 +141,7 @@
             <div class="p-3 p-md-4 bg-light-subtle">
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <h2 class="h5 fs-5 fw-bold text-body mb-0">My shopping cart</h2>
-                    <button ejs-button class="e-icons e-flat" (click)="sidebar.toggle()" type="button" aria-label="close the sidebar" role="button">
-                        <i class="e-icons e-close"></i>
-                    </button>
+                    <button ejs-button cssClass="e-flat" iconCss="e-icons e-close" type="button" (click)="sidebar.toggle()" aria-label="close the sidebar" role="button"></button>
                 </div>
                 <div class="rounded p-3 px-2 bg-body-tertiary">
                     <div class="row g-3">
@@ -249,11 +245,11 @@
                     </div>
                 </div>
                 <div class="d-flex flex-column flex-md-row align-items-center justify-content-center gap-3">
-                    <div class="w-100">
-                        <button ejs-button class="e-primary e-block" type="submit" aria-label="proceed to checkout" role="button">Proceed to checkout</button>
+                    <div class="w-100 e-bigger">
+                        <button ejs-button class="e-primary e-block" content="Proceed to checkout" type="submit" aria-label="proceed to checkout" role="button"></button>
                     </div>
-                    <div class="w-100">
-                        <button ejs-button class="e-secondary e-block" type="submit" aria-label="continue shopping" role="button">Continue shopping</button>
+                    <div class="w-100 e-bigger">
+                        <button ejs-button class="e-secondary e-block" content="Continue shopping" type="submit" aria-label="continue shopping" role="button"></button>
                     </div>
                 </div>
             </div>
@@ -262,7 +258,7 @@
 </section>
 <!-- SB Code - Start -->
 <div class="p-3 position-absolute top-0 end-0">
-    <button ejs-button cssClass="e-large e-icons e-chevron-left e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+    <button ejs-button cssClass="e-round e-large e-icons e-chevron-left" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
 </div>
 <!-- SB Code - End -->
 

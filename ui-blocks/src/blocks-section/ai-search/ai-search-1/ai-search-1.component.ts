@@ -33,7 +33,7 @@ export class AiSearch1Component implements OnInit, OnDestroy {
     }
 
     @HostListener('window:resize', ['$event'])
-    public onResize(event: Event): void {
+    public handleResize(event: Event): void {
         this.width = (event.target as Window).innerWidth > 767 ? "max-width:400px" : "width:100%";
         this.search.hidePopup();
         const searchInterval = setInterval(() => {
@@ -42,7 +42,7 @@ export class AiSearch1Component implements OnInit, OnDestroy {
         setTimeout(() => clearInterval(searchInterval), 1000);
     }
 
-    public onFiltering(event:any ): void {
+    public filtering(event:any ): void {
         this.searchKeyword = event.text?.trim() ? event.text : 'Documentation';
     }
 
@@ -57,7 +57,7 @@ export class AiSearch1Component implements OnInit, OnDestroy {
 
     /* SB Code - Start */
     private handleMessageEvent = (event: MessageEvent): void => {
-        if (event.origin === window.location.origin) {
+        if (event.origin === window.location.origin && /^{"(name":"[^"]+","theme":"[^"]+"|mode":"[^"]+")}$/.test(event.data)) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'ai-search-1' && blockData.theme) {

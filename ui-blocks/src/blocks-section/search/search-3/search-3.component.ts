@@ -7,7 +7,8 @@ import { AutoCompleteModule, AutoCompleteComponent } from '@syncfusion/ej2-angul
     selector: 'app-search-3',
     standalone: true,
     imports: [ListViewModule, CommonModule, AutoCompleteModule],
-    templateUrl: './search-3.component.html'
+    templateUrl: './search-3.component.html',
+    styleUrl: './search-3.component.css'
 })
 export class Search3Component implements OnInit, OnDestroy {
     @ViewChild('search') public search!: AutoCompleteComponent;
@@ -65,7 +66,7 @@ export class Search3Component implements OnInit, OnDestroy {
     ];
 
     @HostListener('window:resize', ['$event'])
-    public onResize(event: Event): void {
+    public handleResize(event: Event): void {
         this.width = (event.target as Window).innerWidth > 767 ? "max-width:480px" : "width:100%";
         this.search.hidePopup();
         const searchInterval = setInterval(() => {
@@ -76,7 +77,6 @@ export class Search3Component implements OnInit, OnDestroy {
 
     public openPopup(args: any): void {
         var searchIcon = document.createElement('span');
-        searchIcon.style.cssText = 'display: flex; align-items: center; margin-left: 10px;';
         searchIcon.setAttribute('class', 'e-icons e-search');
         args.inputWrapper.container.insertAdjacentElement('afterbegin', searchIcon);
         setTimeout(() => {
@@ -86,7 +86,7 @@ export class Search3Component implements OnInit, OnDestroy {
 
     /* SB Code - Start */
     private handleMessageEvent = (event: MessageEvent): void => {
-        if (event.origin === window.location.origin) {
+        if (event.origin === window.location.origin && /^{"(name":"[^"]+","theme":"[^"]+"|mode":"[^"]+")}$/.test(event.data)) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'search-3' && blockData.theme) {

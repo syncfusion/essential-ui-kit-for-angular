@@ -2,7 +2,7 @@
 
 <section class="bg-white dark:bg-gray-950">
     <div class="flex relative" style="height: 600px;">
-        <ejs-sidebar #sidebar class="bg-gray-50 dark:bg-gray-900 !border-r !border-gray-200 dark:!border-gray-700" width="72px" [isOpen]="true" aria-label="main navigation menu" role="complementary" style="display: block;">
+        <ejs-sidebar #sidebar class="bg-gray-50 dark:bg-gray-900 !border-r !border-gray-200 dark:!border-gray-700" width="72px" [isOpen]="true" [showBackdrop]="backDrop" aria-label="main navigation menu" role="complementary" style="display: block;">
             <div class="pt-6">
                 <div class="flex justify-center items-center mb-3 px-3">
                     <img src="assets/images/common/brand-logos/svg/vector.svg" alt="company logo" />
@@ -16,14 +16,14 @@
                 </ejs-listview>
             </div>
         </ejs-sidebar>
-        <div class="p-3 bottom-0 left-0 absolute !right-full">
-            <button ejs-button cssClass="e-large e-icons e-chevron-right e-round" type="button" aria-label="expand/collapse menu" role="button"></button>
+        <div class="p-3 bottom-0 left-0 absolute !right-full" style="z-index: 1000;">
+            <button ejs-button cssClass="e-bigger e-round" iconCss="e-icons e-chevron-left !text-xl" type="button" aria-label="expand/collapse menu" role="button"></button>
         </div>
     </div>
 </section>
 <!-- SB Code - Start -->
 <div class="p-3 top-0 left-0 absolute">
-    <button ejs-button cssClass="e-large e-icons e-chevron-right e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+    <button ejs-button cssClass="e-round e-large e-icons e-chevron-right" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
 </div>
 <!-- SB Code - End -->
 
@@ -31,7 +31,7 @@
 
 <section class="bg-body">
     <div class="d-flex position-relative" style="height: 600px;">
-        <ejs-sidebar #sidebar class="border-end border-light-subtle" width="72px" [isOpen]="true" aria-label="main navigation menu" role="complementary" style="display: block;">
+        <ejs-sidebar #sidebar class="border-end border-light-subtle" width="72px" [isOpen]="true" [showBackdrop]="backDrop" aria-label="main navigation menu" role="complementary" style="display: block;">
             <div class="pt-4 d-flex flex-column align-items-center">
                 <div class="d-flex justify-content-center align-items-center px-3 mb-2">
                     <img src="assets/images/common/brand-logos/svg/vector.svg" alt="company logo" />
@@ -45,14 +45,14 @@
                 </ejs-listview>
             </div>
         </ejs-sidebar>
-        <div class="py-3 px-1 position-absolute bottom-0 start-0">
-            <button ejs-button cssClass="e-large e-icons e-chevron-right e-round" type="button" aria-label="expand/collapse menu" role="button"></button>
+        <div class="py-3 px-1 position-absolute bottom-0 start-0" style="z-index: 1000;">
+            <button ejs-button cssClass="e-round e-outline e-bigger" iconCss="e-icons e-chevron-left" type="button" aria-label="expand/collapse menu" role="button"></button>
         </div>
     </div>
 </section>
 <!-- SB Code - Start -->
 <div class="py-3 px-1 position-absolute top-0 start-0">
-    <button ejs-button cssClass="e-large e-icons e-chevron-right e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+    <button ejs-button cssClass="e-round e-large e-icons e-chevron-right" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
 </div>
 <!-- SB Code - End -->
 

@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AccordionModule, SidebarModule } from '@syncfusion/ej2-angular-navigations';
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
@@ -8,7 +8,7 @@ import { ListViewModule } from '@syncfusion/ej2-angular-lists';
 @Component({
     selector: 'app-sidebar-5',
     standalone: true,
-    imports: [CommonModule, SidebarModule, ButtonModule, ToastModule, AccordionModule, ListViewModule],
+    imports: [CommonModule, AccordionModule, SidebarModule, ButtonModule, ToastModule, ListViewModule],
     templateUrl: './sidebar-5.component.html',
     styleUrl: './sidebar-5.component.css'
 })
@@ -16,6 +16,7 @@ export class Sidebar5Component implements OnInit, OnDestroy {
     /* SB Code - Start */
     public currentTheme: string = 'tailwind';
     /* SB Code - End */
+    public backDrop: boolean = window.innerWidth <= 640;
 
     constructor() { }
 
@@ -49,9 +50,14 @@ export class Sidebar5Component implements OnInit, OnDestroy {
         }
     ];
 
+    @HostListener('window:resize')
+    public handleResize(): void {
+        this.backDrop = window.innerWidth <= 640;
+    }
+
     /* SB Code - Start */
     private handleMessageEvent = (event: MessageEvent): void => {
-        if (event.origin === window.location.origin) {
+        if (event.origin === window.location.origin && /^{"(name":"[^"]+","theme":"[^"]+"|mode":"[^"]+")}$/.test(event.data)) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'sidebar-5' && blockData.theme) {

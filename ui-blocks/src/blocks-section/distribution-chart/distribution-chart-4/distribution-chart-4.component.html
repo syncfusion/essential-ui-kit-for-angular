@@ -1,0 +1,93 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-white dark:bg-gray-950">
+    <div class="h-screen flex justify-center p-4 sm:p-6">
+        <div class="w-full" style="max-width: 530px;">
+            <div class="flex flex-col sm:flex-row justify-between items-start gap-4">
+                <p class="text-base font-semibold text-gray-900 dark:text-white">Browser Market Share Overview</p>
+                <div class="flex gap-3">
+                    <button ejs-button class="e-outline" iconCss="e-icons e-refresh" type="button" aria-label="refresh" role="button"></button>
+                    <button #rangeDropdown ejs-dropdownbutton class="e-outline" content="2024" [items]="[{text:'2024'},{text:'2023'},{text:'2022'},{text:'2021'},{text:'2020'}]" type="button" aria-label="choose a year" role="button"></button>
+                    <button ejs-button class="e-outline" iconCss="e-icons e-more-vertical-1" type="button" aria-label="more options" role="button"></button>
+                </div>
+            </div>
+            <div class="mt-2 mx-auto">
+                <ejs-accumulationchart #chart width="100%" height="360px" [enableBorderOnMouseMove]="false" [enableSmartLabels]="true" [tooltip]="tooltip" [legendSettings]="{visible: false}" (load)="chartLoad($event,'Tailwind3','Tailwind3Dark','#000000')" aria-label="market share performance" role="region">
+                    <e-accumulation-series-collection>
+                        <e-accumulation-series [dataSource]="chartData" xName="xAxis" yName="yAxis" radius="85%" [dataLabel]="dataLabel" [border]="border" pointColorMapping="fill"></e-accumulation-series>
+                    </e-accumulation-series-collection>
+                </ejs-accumulationchart>
+            </div>
+        </div>
+        <svg width="0" height="0">
+            <defs>
+                <pattern id="DiagonalLine" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">
+                    <rect width="1" height="4" fill="#01A8B5" />
+                </pattern>
+                <pattern id="Grid" patternUnits="userSpaceOnUse" width="5" height="5">
+                    <path d="M0 0 L0 5 M0 0 L5 0" stroke="#5A61F6" stroke-width="1" />
+                </pattern>
+                <pattern id="VerticalStripe" patternUnits="userSpaceOnUse" width="4" height="4">
+                    <path d="M2,0 L2,4" stroke="#9CA3AF" stroke-width="1" />
+                </pattern>
+                <pattern id="VerticalDash" patternUnits="userSpaceOnUse" width="6" height="6">
+                    <path d="M3,0 L3,6" stroke="#D83B01" stroke-width="1" stroke-dasharray="4,1" />
+                </pattern>
+                <pattern id="HorizontalStripe" patternUnits="userSpaceOnUse" width="4" height="4">
+                    <path d="M0,2 L4,2" stroke="#DE4383" stroke-width="1" />
+                </pattern>
+                <pattern id="Dots" patternUnits="userSpaceOnUse" width="6" height="6">
+                    <circle cx="3" cy="3" r="1.5" fill="#FFB900" />
+                </pattern>
+            </defs>
+        </svg>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body">
+    <div class="vh-100 d-flex justify-content-center p-3 p-sm-4">
+        <div class="w-100" style="max-width: 530px;">
+            <div class="d-flex flex-column flex-sm-row justify-content-between align-items-start gap-3 mb-4">
+                <p class="h6 fw-semibold text-body mb-0">Browser Market Share Overview</p>
+                <div class="d-flex gap-3">
+                    <button ejs-button class="e-outline" iconCss="e-icons e-refresh" type="button" aria-label="refresh" role="button"></button>
+                    <button #rangeDropdown ejs-dropdownbutton class="e-outline" content="2024" [items]="[{text:'2024'},{text:'2023'},{text:'2022'},{text:'2021'},{text:'2020'}]" type="button" aria-label="choose a year" role="button"></button>
+                    <button ejs-button class="e-outline" iconCss="e-icons e-more-vertical-1" type="button" aria-label="more options" role="button"></button>
+                </div>
+            </div>
+            <div class="mt-2 mx-auto">
+                <ejs-accumulationchart #chart width="100%" height="360px" [enableBorderOnMouseMove]="false" [enableSmartLabels]="true" [tooltip]="tooltip" [legendSettings]="{visible: false}" (load)="chartLoad($event,'Bootstrap5','Bootstrap5Dark','#212529')" aria-label="market share performance" role="region">
+                    <e-accumulation-series-collection>
+                        <e-accumulation-series [dataSource]="chartData" xName="xAxis" yName="yAxis" radius="85%" [dataLabel]="dataLabel" [border]="border" pointColorMapping="fill"></e-accumulation-series>
+                    </e-accumulation-series-collection>
+                </ejs-accumulationchart>
+            </div>
+        </div>
+        <svg width="0" height="0">
+            <defs>
+                <pattern id="DiagonalLine" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">
+                    <rect width="1" height="4" fill="#00EFA7" />
+                </pattern>
+                <pattern id="Grid" patternUnits="userSpaceOnUse" width="5" height="5">
+                    <path d="M0 0 L0 5 M0 0 L5 0" stroke="#006EEF" stroke-width="1" />
+                </pattern>
+                <pattern id="VerticalStripe" patternUnits="userSpaceOnUse" width="4" height="4">
+                    <path d="M2,0 L2,4" stroke="#9CA3AF" stroke-width="1" />
+                </pattern>
+                <pattern id="VerticalDash" patternUnits="userSpaceOnUse" width="6" height="6">
+                    <path d="M3,0 L3,6" stroke="#F42929" stroke-width="1" stroke-dasharray="4,1" />
+                </pattern>
+                <pattern id="HorizontalStripe" patternUnits="userSpaceOnUse" width="4" height="4">
+                    <path d="M0,2 L4,2" stroke="#EF00AC" stroke-width="1" />
+                </pattern>
+                <pattern id="Dots" patternUnits="userSpaceOnUse" width="6" height="6">
+                    <circle cx="3" cy="3" r="1.5" fill="#FFB900" />
+                </pattern>
+            </defs>
+        </svg>
+    </div>
+</section>
+
+}

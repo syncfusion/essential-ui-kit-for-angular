@@ -88,7 +88,7 @@ export class AiSearch2Component implements OnInit, OnDestroy {
         }
     }
 
-    public onSelect(event: any): void {
+    public searchSelect(event: any): void {
         this.isTabSwitch = true;
         let selectedItem = event.selectedItem?.querySelector('.e-tab-text')?.firstElementChild?.children[0]?.textContent;
         this.filteredData = selectedItem === 'All results' ? [...this.data] : this.data.filter(item => item.category === selectedItem);
@@ -99,19 +99,19 @@ export class AiSearch2Component implements OnInit, OnDestroy {
         }  
     };
 
-    public onClose(args: any): void {
+    public closePopup(args: any): void {
         if (this.isTabSwitch) {
             args.cancel = true;
         }
     }
 
-    public onSearchClick(search: any): void {
+    public searchClick(search: any): void {
         search.beforePopupOpen = true;
         this.isTabSwitch = false;
     }
 
     @HostListener('window:resize', ['$event'])
-    public onResize(event: Event): void {
+    public handleResize(event: Event): void {
         this.width = (event.target as Window).innerWidth > 767 ? "max-width:534px" : "width:100%";
         this.isTabSwitch = false;
         this.updateTabItems();
@@ -134,7 +134,7 @@ export class AiSearch2Component implements OnInit, OnDestroy {
 
     /* SB Code - Start */
     private handleMessageEvent = (event: MessageEvent): void => {
-        if (event.origin === window.location.origin) {
+        if (event.origin === window.location.origin && /^{"(name":"[^"]+","theme":"[^"]+"|mode":"[^"]+")}$/.test(event.data)) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'ai-search-2' && blockData.theme) {

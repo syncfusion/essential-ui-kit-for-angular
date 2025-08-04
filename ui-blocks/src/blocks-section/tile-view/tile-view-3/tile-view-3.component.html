@@ -37,14 +37,14 @@
                             <span>Show pending only</span>
                         </div>
                         <button ejs-dropdownbutton class="w-fit" content="This week" type="button" (beforeOpen)="$event.cancel = true;" aria-label="choose the week" role="button"></button>
-                        <button ejs-button class="e-primary hidden sm:inline-block" type="button" aria-label="add new transaction" role="button">Add New Transaction</button>
+                        <button ejs-button class="e-primary hidden sm:inline-block" content="Add New Transaction" type="button" aria-label="add new transaction" role="button"></button>
                     </div>
                 </div>
                 <ejs-listview class="!border-0" cssClass="e-list-template" [dataSource]="transactionDetails" aria-label="list of transaction with details" role="list">
                     <ng-template #template let-data>
                         <div class="e-card flex-row gap-1 rounded-lg sm:gap-0 p-4">
                             <span class="e-avatar e-avatar-large e-avatar-circle shrink-0 mr-2 sm:mr-4" [ngClass]="{'bg-green-100 text-green-700 dark:text-green-500': data.paymentType === 'Credit Card', 'bg-indigo-100 text-indigo-600': data.paymentType === 'Wire Transfer', 'bg-orange-100 text-orange-500 dark:text-orange-700': data.paymentType === 'Deposit', 'bg-cyan-100 dark:bg-sky-100 text-cyan-700 dark:text-cyan-600': data.paymentType === 'ACH Transfer'}">
-                                <i class="sf-icon-dollar text-2xl"></i>
+                                <span class="sf-icon-dollar text-2xl"></span>
                             </span>
                             <div class="e-card-stacked grow sm:space-y-3">
                                 <div class="e-card-header !flex-col gap-2 sm:!flex-row items-start !p-0">
@@ -118,14 +118,14 @@
                             <span>Show pending only</span>
                         </div>
                         <button ejs-dropdownbutton class="e-outline" content="This week" type="button" (beforeOpen)="$event.cancel = true;" aria-label="choose the week" role="button"></button>
-                        <button ejs-button class="e-primary d-none d-sm-inline-block" type="button" aria-label="add new transaction" role="button">Add New Transaction</button>
+                        <button ejs-button class="e-primary d-none d-sm-inline-block" content="Add New Transaction" type="button" aria-label="add new transaction" role="button"></button>
                     </div>
                 </div>
                 <ejs-listview class="border-0 mt-4" cssClass="e-list-template" [dataSource]="transactionDetails" aria-label="list of transaction with details" role="list">
                     <ng-template #template let-data>
                         <div class="e-card d-flex flex-row gap-2 gap-sm-0 lh-base px-2 py-3 rounded-3 px-sm-3">
                             <span class="e-avatar e-avatar-large e-avatar-circle flex-shrink-0 me-2 me-sm-3" [ngClass]="{'bg-warning-subtle text-warning-emphasis': data.paymentType === 'Deposit', 'bg-success-subtle text-success-emphasis': data.paymentType === 'Wire Transfer', 'bg-info-subtle text-info-emphasis': data.paymentType === 'Credit Card', 'bg-primary-subtle text-primary': data.paymentType === 'ACH Transfer'}">
-                                <i class="sf-icon-dollar fs-3"></i>
+                                <span class="sf-icon-dollar fs-3"></span>
                             </span>
                             <div class="e-card-stacked flex-grow-1">
                                 <div class="e-card-header flex-column gap-2 flex-sm-row align-items-start p-0 mb-sm-2">

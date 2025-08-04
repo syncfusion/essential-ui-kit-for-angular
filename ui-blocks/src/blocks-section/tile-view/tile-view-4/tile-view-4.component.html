@@ -52,7 +52,7 @@
                             </div>
                             <div class="e-card-content !p-0 flex items-center flex-wrap gap-4 text-gray-500 dark:text-gray-400">
                                 <div class="flex items-center gap-2">
-                                    <input ejs-rating cssClass="e-small" value="{{data.rating}}" precision="Exact" readonly="true" aria-label="rate us out of 5" role="slider" />
+                                    <input ejs-rating cssClass="e-small" value="{{data.rating}}" precision="Exact" readOnly="true" aria-label="rate us out of 5" role="slider" />
                                     <span>{{data.reviews}} reviews</span>
                                 </div>
                                 <span class="e-bigger e-badge e-badge-pill e-badge-success">Free date change</span>
@@ -65,8 +65,8 @@
                                 <div class="border-s border-gray-500 dark:border-gray-400"></div>
                                 <p>{{data.seats}} seats</p>
                             </div>
-                            <p class="text-base mb-4 sm:mb-3">Starting at <span class="text-2xl font-semibold text-gray-900 dark:text-gray-50">{{data.price | currency}}</span></p>
-                            <button ejs-button class="e-primary e-block" type="button" aria-label="show seats" role="button">Show seats</button>
+                            <p class="text-base mb-4 sm:mb-3">Starting at <span class="text-2xl font-semibold text-gray-900 dark:text-gray-50 ms-2">{{data.price | currency}}</span></p>
+                            <button ejs-button class="e-primary e-block" content="Show seats" type="button" aria-label="show seats" role="button"></button>
                         </div>
                     </div>
                 </ng-template>
@@ -129,7 +129,7 @@
                             </div>
                             <div class="e-card-content p-0 d-flex align-items-center flex-wrap gap-3">
                                 <div class="d-flex align-items-center gap-2">
-                                    <input ejs-rating cssClass="e-small" value="{{data.rating}}" precision="Exact" readonly="true" aria-label="rate us out of 5" role="slider" />
+                                    <input ejs-rating cssClass="e-small" value="{{data.rating}}" precision="Exact" readOnly="true" aria-label="rate us out of 5" role="slider" />
                                     <span class="text-body-secondary">{{data.reviews}} reviews</span>
                                 </div>
                                 <span class="e-bigger e-badge e-badge-pill e-badge-success">Free date change</span>
@@ -142,8 +142,8 @@
                                 <div class="border-start border-light-subtle"></div>
                                 <p class="mb-0">{{data.seats}} seats</p>
                             </div>
-                            <p class="mb-2 pb-1 fs-6 fw-medium text-body-secondary">Starting at <span class="fs-5 fw-bold lh-sm text-body">{{data.price | currency}}</span></p>
-                            <button ejs-button class="e-primary e-block" type="button" aria-label="show seats" role="button">Show seats</button>
+                            <p class="mb-2 pb-1 fs-6 fw-medium text-body-secondary">Starting at <span class="fs-5 fw-bold lh-sm text-body ms-1">{{data.price | currency}}</span></p>
+                            <button ejs-button class="e-primary e-block" content="Show seats" type="button" aria-label="show seats" role="button"></button>
                         </div>
                     </div>
                 </ng-template>

@@ -4,11 +4,12 @@ import { ButtonModule, ButtonComponent } from '@syncfusion/ej2-angular-buttons';
 import { DialogModule, DialogComponent } from '@syncfusion/ej2-angular-popups';
 import { TabModule, TabComponent, SelectEventArgs } from '@syncfusion/ej2-angular-navigations';
 import { ListViewModule, ListViewComponent } from '@syncfusion/ej2-angular-lists';
+import { DropDownButtonAllModule, DropDownButtonComponent } from '@syncfusion/ej2-angular-splitbuttons';
 
 @Component({
     selector: 'app-notification-1',
     standalone: true,
-    imports: [CommonModule, ButtonModule, DialogModule, TabModule, ListViewModule],
+    imports: [CommonModule, ButtonModule, DialogModule, TabModule, ListViewModule, DropDownButtonAllModule],
     templateUrl: './notification-1.component.html',
     styleUrl: './notification-1.component.css'
 })
@@ -17,10 +18,11 @@ export class Notification1Component {
     @ViewChild('button') public button!: ButtonComponent;
     @ViewChild('tab') tab!: TabComponent;
     @ViewChild('listview') listview!: ListViewComponent;
+    @ViewChild('dropdown') public dropdown!: DropDownButtonComponent;
     /* SB Code - Start */
     public currentTheme: string = 'tailwind';
     /* SB Code - End */
-    public toggleState: boolean = false;
+    public isToggleState: boolean = false;
     public isMobileView: boolean = window.innerWidth < 640;
 
     constructor() { }
@@ -79,8 +81,8 @@ export class Notification1Component {
     ];
 
     public toggleDialog(): void {
-        this.toggleState ? this.dialog.show() : this.dialog.hide();
-        this.toggleState = !this.toggleState;
+        this.isToggleState ? this.dialog.show() : this.dialog.hide();
+        this.isToggleState = !this.isToggleState;
     };
 
     public onTabCreated(): void {
@@ -109,13 +111,16 @@ export class Notification1Component {
             this.dialog.width = this.isMobileView ? '328px' : '448px';
             this.dialog.position = { X: position.x - (parseInt(this.dialog.width, 10) - 32), Y: position.y + 37 };
         }
+        if (this.dropdown.element.classList.contains('e-active')) {
+            this.dropdown.toggle();
+        }
         this.tab.refreshActiveTabBorder();
         if (event) event.preventFocus = true;
     };
 
     /* SB Code - Start */
     private handleMessageEvent = (event: MessageEvent): void => {
-        if (event.origin === window.location.origin) {
+        if (event.origin === window.location.origin && /^{"(name":"[^"]+","theme":"[^"]+"|mode":"[^"]+")}$/.test(event.data)) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'notification-1' && blockData.theme) {

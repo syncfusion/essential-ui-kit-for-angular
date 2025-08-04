@@ -1,8 +1,7 @@
 @if (currentTheme === 'tailwind') {
 
 <section>
-    <div id="dialog-container" class="relative flex justify-center" style="min-height: 580px;">
-        <button ejs-button class="h-fit my-5" (click)="dialog?.show()" type="button" aria-label="personal information" role="button">Personal Information</button>
+    <div id="dialog-container" class="relative" style="min-height: 580px;">
         <ejs-dialog #dialog class="rounded-none sm:rounded-lg sm:m-4" target="#dialog-container" [isModal]="true" [showCloseIcon]="true" [visible]="false" width="400px" (open)="$event.preventFocus = true" aria-label="update personal information" role="dialog">
             <ng-template #header>
                 <p class="font-semibold leading-normal">Personal Information</p>
@@ -33,19 +32,23 @@
             </ng-template>
             <ng-template #footerTemplate>
                 <div class="flex flex-row justify-end gap-2 sm:gap-1 mt-1 mb-2">
-                    <button ejs-button cssClass="w-1/2 sm:w-fit !ml-0" type="button" aria-label="cancel" role="button">Cancel</button>
-                    <button ejs-button cssClass="e-primary w-1/2 sm:w-fit" type="submit" aria-label="submit" role="button">Submit</button>
+                    <button ejs-button cssClass="w-1/2 sm:w-fit !ml-0" content="Cancel" type="button" aria-label="cancel" role="button"></button>
+                    <button ejs-button cssClass="e-primary w-1/2 sm:w-fit" content="Submit" type="submit" aria-label="submit" role="button"></button>
                 </div>
             </ng-template>
         </ejs-dialog>
     </div>
 </section>
+<!-- SB Code - Start -->
+<div class="top-0 left-0 absolute w-full flex">
+    <button ejs-button class="my-5 mx-auto" content="Personal Information" type="button" (click)="dialog?.show()" aria-label="personal information" role="button"></button>
+</div>
+<!-- SB Code - End -->
 
 } @else if (currentTheme === 'bootstrap5.3') {
 
 <section>
-    <div id="dialog-container" class="position-relative d-flex align-items-start" style="min-height: 580px;">
-        <button ejs-button class="e-outline mx-auto my-3" (click)="dialog?.show()" type="button" aria-label="personal information" role="button">Personal Information</button>
+    <div id="dialog-container" class="position-relative" style="min-height: 580px;">
         <ejs-dialog #dialog class="rounded-3 m-sm-2" target="#dialog-container" [isModal]="true" [showCloseIcon]="true" [visible]="false" width="400px" (open)="$event.preventFocus = true" aria-label="update personal information" role="dialog">
             <ng-template #header>
                 <p class="fw-bold mb-0 text-body">Personal Information</p>
@@ -76,12 +79,17 @@
             </ng-template>
             <ng-template #footerTemplate>
                 <div class="d-flex justify-content-end gap-2 gap-sm-1 py-1">
-                    <button ejs-button cssClass="col col-sm-auto ms-0" type="button" aria-label="cancel" role="button">Cancel</button>
-                    <button ejs-button cssClass="e-primary col col-sm-auto" type="submit" aria-label="submit" role="button">Submit</button>
+                    <button ejs-button cssClass="col col-sm-auto ms-0" content="Cancel" type="button" aria-label="cancel" role="button"></button>
+                    <button ejs-button cssClass="e-primary col col-sm-auto" content="Submit" type="submit" aria-label="submit" role="button"></button>
                 </div>
             </ng-template>
         </ejs-dialog>
     </div>
 </section>
+<!-- SB Code - Start -->
+<div class="position-absolute top-0 start-0 d-flex w-100">
+    <button ejs-button class="e-outline mx-auto my-3" content="Personal Information" type="button" (click)="dialog?.show()" aria-label="personal information" role="button"></button>
+</div>
+<!-- SB Code - End -->
 
 }

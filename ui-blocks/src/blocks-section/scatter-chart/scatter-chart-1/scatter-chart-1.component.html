@@ -1,0 +1,53 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-white dark:bg-gray-950">
+    <div class="h-screen flex justify-center p-4 sm:p-6">
+        <div class="w-full" style="max-width: 690px;">
+            <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-3 mb-1">
+                <div class="flex justify-between items-center">
+                    <h2 class="text-base font-semibold text-gray-900 dark:text-white">Sales Overview</h2>
+                    <button ejs-button class="e-outline block sm:hidden" iconCss="e-icons e-description" type="button" aria-label="view report" role="button"></button>
+                </div>
+                <div class="flex gap-2">
+                    <button #rangeDropdown ejs-dropdownbutton class="e-outline" content="Select Year" [items]="[{text:'2024'},{text:'2023'},{text:'2022'},{text:'2021'},{text:'2020'}]" type="button" aria-label="choose a year" role="button"></button>
+                    <button ejs-button class="e-outline hidden sm:block" content="View Report" type="button" aria-label="view report" role="button"></button>
+                </div>
+            </div>
+            <ejs-chart #chart width="100%" height="400px" [chartArea]="{ border: { width: 0 } }" [primaryXAxis]="primaryXAxis" [primaryYAxis]="primaryYAxis" [legendSettings]="legendSettings" (load)="chartLoad($event,'Tailwind3','Tailwind3Dark')" aria-label="sales overview analysis" role="region">
+                <e-series-collection>
+                    <e-series [dataSource]="chartData1" type="Scatter" xName="xAxis" yName="yAxis" name="Slack" fill="#5A61F6" [marker]="markerSquare"></e-series>
+                    <e-series [dataSource]="chartData2" type="Scatter" xName="xAxis" yName="yAxis" name="Zoom" fill="#FFB900" [marker]="markerCircle"></e-series>
+                    <e-series [dataSource]="chartData3" type="Scatter" xName="xAxis" yName="yAxis" name="Microsoft Teams" fill="#01A8B5" [marker]="markerTriangle"></e-series>
+                </e-series-collection>
+            </ejs-chart>
+        </div>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body">
+    <div class="vh-100 d-flex justify-content-center p-3 p-sm-4">
+        <div class="w-100" style="max-width: 690px;">
+            <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-3 mb-2">
+                <div class="d-flex justify-content-between align-items-center w-100">
+                    <h2 class="h6 fw-semibold text-body mb-0">Sales Overview</h2>
+                    <button ejs-button class="e-outline d-block d-sm-none" iconCss="e-icons e-description" type="button" aria-label="view report" role="button"></button>
+                </div>
+                <div class="d-flex justify-content-sm-end gap-3 w-100">
+                    <button #rangeDropdown ejs-dropdownbutton class="e-outline flex-shrink-0" content="Select Year" [items]="[{text:'2024'},{text:'2023'},{text:'2022'},{text:'2021'},{text:'2020'}]" type="button" aria-label="choose a year" role="button"></button>
+                    <button ejs-button class="e-outline d-none d-sm-block" content="View Report" type="button" aria-label="view report" role="button"></button>
+                </div>
+            </div>
+            <ejs-chart #chart width="100%" height="400px" [chartArea]="{ border: { width: 0 } }" [primaryXAxis]="primaryXAxis" [primaryYAxis]="primaryYAxis" [legendSettings]="legendSettings" (load)="chartLoad($event,'Bootstrap5','Bootstrap5Dark')" aria-label="sales overview analysis" role="region">
+                <e-series-collection>
+                    <e-series [dataSource]="chartData1" type="Scatter" xName="xAxis" yName="yAxis" name="Slack" fill="#006EEF" [marker]="markerSquare"></e-series>
+                    <e-series [dataSource]="chartData2" type="Scatter" xName="xAxis" yName="yAxis" name="Zoom" fill="#FF9900" [marker]="markerCircle"></e-series>
+                    <e-series [dataSource]="chartData3" type="Scatter" xName="xAxis" yName="yAxis" name="Microsoft Teams" fill="#00EFA7" [marker]="markerTriangle"></e-series>
+                </e-series-collection>
+            </ejs-chart>
+        </div>
+    </div>
+</section>
+
+}

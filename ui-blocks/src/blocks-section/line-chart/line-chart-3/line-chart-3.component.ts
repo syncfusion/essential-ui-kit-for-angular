@@ -204,6 +204,7 @@ export class LineChart3Component implements OnInit, OnDestroy {
         majorGridLines: { width: 0 },
         minorTickLines: { width: 0 },
         majorTickLines: { width: 0 },
+        labelIntersectAction: 'None',
         minimum: new Date(2023, 0, 18),
         maximum: new Date(2023, 5, 18),
         interval: 1
@@ -250,11 +251,12 @@ export class LineChart3Component implements OnInit, OnDestroy {
 
     public chartLoad(args: any, lightTheme: string, darkTheme: string): void {
         args.chart.theme = this.isDarkMode ? darkTheme : lightTheme;
+        this.resize();
     };
 
     @HostListener('window:resize')
     public resize(): void {
-        let labelRotation = window.innerWidth < 400 ? -90 : 0;
+        let labelRotation = window.innerWidth <= 640 ? -90 : 0;
         this.primaryXAxis = { ...this.primaryXAxis, labelRotation: labelRotation }
         if (this.rangeDropdown.element.classList.contains('e-active')) {
             this.rangeDropdown.toggle();
@@ -263,7 +265,7 @@ export class LineChart3Component implements OnInit, OnDestroy {
 
     /* SB Code - Start */
     private handleMessageEvent = (event: MessageEvent): void => {
-        if (event.origin === window.location.origin) {
+        if (event.origin === window.location.origin && /^{"(name":"[^"]+","theme":"[^"]+"|mode":"[^"]+")}$/.test(event.data)) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'line-chart-3' && blockData.theme) {

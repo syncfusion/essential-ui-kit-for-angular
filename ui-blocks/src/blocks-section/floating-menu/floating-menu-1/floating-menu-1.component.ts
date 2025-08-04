@@ -17,7 +17,7 @@ export class FloatingMenu1Component implements OnInit, OnDestroy {
     /* SB Code - Start */
     public currentTheme: string = 'tailwind';
     /* SB Code - End */
-    public toggleState: boolean = false;
+    public isToggleState: boolean = false;
     public isMobileView: boolean = window.innerWidth < 640;
 
     constructor() { }
@@ -58,8 +58,8 @@ export class FloatingMenu1Component implements OnInit, OnDestroy {
     ];
 
     public toggleDialog(): void {
-        this.toggleState ? this.dialog.show() : this.dialog.hide();
-        this.toggleState = !this.toggleState;
+        this.isToggleState ? this.dialog.show() : this.dialog.hide();
+        this.isToggleState = !this.isToggleState;
     }
 
     @HostListener('window:resize')
@@ -75,7 +75,7 @@ export class FloatingMenu1Component implements OnInit, OnDestroy {
 
     /* SB Code - Start */
     private handleMessageEvent = (event: MessageEvent): void => {
-        if (event.origin === window.location.origin) {
+        if (event.origin === window.location.origin && /^{"(name":"[^"]+","theme":"[^"]+"|mode":"[^"]+")}$/.test(event.data)) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'floating-menu-1' && blockData.theme) {

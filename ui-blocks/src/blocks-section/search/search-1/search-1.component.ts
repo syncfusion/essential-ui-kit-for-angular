@@ -6,7 +6,8 @@ import { AutoCompleteModule, AutoCompleteComponent } from '@syncfusion/ej2-angul
     selector: 'app-search-1',
     standalone: true,
     imports: [CommonModule, AutoCompleteModule],
-    templateUrl: './search-1.component.html'
+    templateUrl: './search-1.component.html',
+    styleUrl: './search-1.component.css'
 })
 export class Search1Component implements OnInit, OnDestroy {
     @ViewChild('search') public search!: AutoCompleteComponent;
@@ -37,7 +38,7 @@ export class Search1Component implements OnInit, OnDestroy {
             title: 'Linear',
             text: 'Fix login bug',
             avatar: ['avatar-1.jpg', 'avatar-2.jpg', 'avatar-3.jpg', 'avatar-4.jpg'],
-            image: 'linear.svg',
+            image: 'linear.svg'
         },
         {
             id: 2,
@@ -45,7 +46,7 @@ export class Search1Component implements OnInit, OnDestroy {
             title: 'Zoom',
             text: 'Team meeting on project planning',
             avatar: ['avatar-1.jpg', 'avatar-2.jpg', 'avatar-3.jpg'],
-            image: 'zoom.svg',
+            image: 'zoom.svg'
         },
         {
             id: 3,
@@ -53,7 +54,7 @@ export class Search1Component implements OnInit, OnDestroy {
             title: 'GitHub',
             text: 'Code review for development',
             avatar: ['avatar-1.jpg', 'avatar-2.jpg'],
-            image: 'github.svg',
+            image: 'github.svg'
         },
         {
             id: 4,
@@ -79,7 +80,7 @@ export class Search1Component implements OnInit, OnDestroy {
     ];
 
     @HostListener('window:resize', ['$event'])
-    public onResize(event: Event): void {
+    public handleResize(event: Event): void {
         this.width = (event.target as Window).innerWidth > 767 ? "max-width:520px" : "width:100%";
         this.search.hidePopup();
         const searchInterval = setInterval(() => {
@@ -90,7 +91,6 @@ export class Search1Component implements OnInit, OnDestroy {
 
     public openPopup(args: any): void {
         var searchIcon = document.createElement('span');
-        searchIcon.style.cssText = 'display: flex; align-items: center; margin-right: 10px;';
         searchIcon.setAttribute('class', 'e-icons e-search');
         args.inputWrapper.container.insertAdjacentElement('beforeend', searchIcon);
         setTimeout(() => {
@@ -100,7 +100,7 @@ export class Search1Component implements OnInit, OnDestroy {
 
     /* SB Code - Start */
     private handleMessageEvent = (event: MessageEvent): void => {
-        if (event.origin === window.location.origin) {
+        if (event.origin === window.location.origin && /^{"(name":"[^"]+","theme":"[^"]+"|mode":"[^"]+")}$/.test(event.data)) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'search-1' && blockData.theme) {

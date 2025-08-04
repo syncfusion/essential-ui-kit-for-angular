@@ -15,7 +15,7 @@
                         <span class="text-gray-900 dark:text-white font-medium">All</span> of these conditions
                     </p>
                     <div [ngClass]="{'pt-1': recordLength !== 0, 'border border-gray-200 dark:border-gray-600 rounded-lg': true}">
-                        <ejs-querybuilder #queryBuilder1 (change)="onRuleUpdate()" [fieldModel] = "{width: '200px'}" [operatorModel] = "{width: '200px'}">
+                        <ejs-querybuilder #queryBuilder1 (change)="ruleUpdate()" [fieldModel] = "{width: '200px'}" [operatorModel] = "{width: '200px'}">
                             <e-columns>
                                 <e-column field="Tickets" label="Tickets" type="string"></e-column>
                                 <e-column field="Agent Reply Count" label="Agent Reply Count" type="string" [operators]="filterOperators"></e-column>
@@ -38,7 +38,7 @@
                             <span class="text-gray-900 dark:text-white font-medium">Any</span> of these conditions
                         </p>
                         <div [ngClass]="{'pt-1': recordData !== 0, 'border border-gray-200 dark:border-gray-600 rounded-lg': true}">
-                            <ejs-querybuilder #queryBuilder2 (change)="onRuleAdd()" [fieldModel] = "{width: '200px'}" [operatorModel] = "{width: '200px'}">
+                            <ejs-querybuilder #queryBuilder2 (change)="ruleAdd()" [fieldModel] = "{width: '200px'}" [operatorModel] = "{width: '200px'}">
                                 <e-columns>
                                     <e-column field="Ticket" label="Tickets" type="string"></e-column>
                                     <e-column field="Agent" label="Agent" type="string"></e-column>
@@ -57,7 +57,7 @@
             <hr class="border-gray-200 dark:border-gray-700" />
             <ng-template #footerTemplate>
                 <div class="flex flex-col-reverse sm:flex-row justify-between items-center w-full sm:py-2">
-                    <a href="javascript:void(0);" class="text-primary-600 dark:text-primary-400 pt-4 sm:pt-0 text-sm hover:underline">Learn more</a>
+                    <a href="javascript:void(0);" class="text-primary-600 dark:text-primary-400 pt-4 mb-3 sm:mb-0 sm:pt-0 text-sm hover:underline">Learn more</a>
                     <div class="flex flex-col sm:flex-row w-full sm:w-auto !ml-0 sm:ml-auto gap-3 mt-2 sm:mt-0">
                         <button ejs-button cssClass="e-outline e-primary" class="border-0 w-full !ml-0 sm:!ml-auto sm:w-auto" type="button" content="Save filter" aria-label="save filter" role="button"></button>
                         <button ejs-button cssClass="e-primary" class="w-full sm:w-auto !ml-0 sm:!ml-auto" type="button" content="Apply" aria-label="apply" role="button"></button>
@@ -69,7 +69,7 @@
 </section>
 <!-- SB Code - Start -->
 <div class="p-3 absolute top-0 right-0">
-    <button ejs-button cssClass="e-large e-icons e-chevron-left e-round" type="button" (click)="dialog?.show()" aria-label="expand menu" role="button"></button>
+    <button ejs-button cssClass="e-round e-large e-icons e-chevron-left" type="button" (click)="dialog?.show()" aria-label="expand menu" role="button"></button>
 </div>
 <!-- SB Code - End -->
 
@@ -79,18 +79,18 @@
     <div id="dialog" class="position-relative" style="min-height:800px">
         <ejs-dialog #dialog class="border-0" target="#dialog" [position]="{ X: 'right' }" [showCloseIcon]="true" [isModal]="true" width="810px" (open)="$event.preventFocus = true" minHeight="800px" aria-label="advanced filter" role="dialog">
             <ng-template #header>
-                <div>
+                <div class="px-1">
                     <p class="mb-2 fw-bold fs-6 tet-body lh-sm">Advanced Filters</p>
                     <a href="javascript:void(0);" class="text-primary fw-bold small text-decoration-none lh-sm">Switch to basic filter</a>
                 </div>
             </ng-template>
             <ng-template #content>
-                <div class="dialog-content">
+                <div class="dialog-content px-1">
                     <p class="text-body-secondary fs-6">Apply this rule to the tickets that meet
                         <span class="fw-medium">All</span> of these conditions
                     </p>
                     <div [ngClass]="{'pt-1': recordLength !== 0, 'border rounded-3': true}">
-                        <ejs-querybuilder #queryBuilder1 (change)="onRuleUpdate()" [fieldModel] = "{width: '200px'}" [operatorModel] = "{width: '200px'}">
+                        <ejs-querybuilder #queryBuilder1 (change)="ruleUpdate()" [fieldModel] = "{width: '200px'}" [operatorModel] = "{width: '200px'}">
                             <e-columns>
                                 <e-column field="Tickets" label="Tickets" type="string"></e-column>
                                 <e-column field="Agent Reply Count" label="Agent Reply Count" type="string" [operators]="filterOperators"></e-column>
@@ -113,7 +113,7 @@
                             <span class="fw-medium text-body-secondary">Any</span> of these conditions
                         </p>
                         <div [ngClass]="{'pt-1': recordData !== 0, 'border rounded-3': true}">
-                            <ejs-querybuilder #queryBuilder2 (change)="onRuleAdd()" [fieldModel] = "{width: '200px'}" [operatorModel] = "{width: '200px'}">
+                            <ejs-querybuilder #queryBuilder2 (change)="ruleAdd()" [fieldModel] = "{width: '200px'}" [operatorModel] = "{width: '200px'}">
                                 <e-columns>
                                     <e-column field="Ticket" label="Tickets" type="string"></e-column>
                                     <e-column field="Agent" label="Agent" type="string"></e-column>
@@ -143,7 +143,7 @@
 </section>
 <!-- SB Code - Start -->
 <div class="p-3 position-absolute top-0 end-0">
-    <button ejs-button cssClass="e-large e-icons e-chevron-left e-round" type="button" (click)="dialog?.show()" aria-label="expand menu" role="button"></button>
+    <button ejs-button cssClass="e-round e-large e-icons e-chevron-left" type="button" (click)="dialog?.show()" aria-label="expand menu" role="button"></button>
 </div>
 <!-- SB Code - End -->
 

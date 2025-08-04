@@ -2,13 +2,19 @@
 
 <section class="bg-gray-50 dark:bg-gray-950">
     <div id="target" class="w-full" [ngStyle]="{ height: isMobileView ? '625px' : '740px' }">
+        <div class="flex items-center justify-center pt-4 block sm:hidden">
+            <button ejs-button cssClass="e-primary e-round e-bigger" iconCss="sf-icon-message-chat-circle !text-xl" type="button" (click)="toggleDialog()" aria-label="open contact us form" role="button"></button>
+        </div>
         <ejs-dialog #dialog id="floating-contact" class="sm:!rounded-t !rounded-none overflow-hidden !border-0" width="400px" minHeight="625px" height="625px" (open)="setDialogPosition($event)" (created)="dialog.show()" aria-label="contact form for assistance" role="dialog">
             <ng-template #header>
-                <div class="flex flex-col justify-between items-center bg-primary-100 dark:bg-primary-800 py-12 px-6">
+                <div class="flex flex-col justify-between items-center bg-primary-100 dark:bg-primary-800 py-12 px-6 relative">
                     <span class="sf-icon-message-chat-circle text-3xl text-gray-500 dark:text-white"></span>
                     <div class="text-center mt-3">
                         <p class="text-xl font-semibold dark:text-gray-50">Contact Us</p>
                         <p class="text-sm text-gray-500 dark:text-gray-200 mt-2">Reach out to us for any inquiry</p>
+                    </div>
+                    <div class="flex justify-end block sm:hidden p-4 absolute right-0 top-0">
+                        <button ejs-button cssClass="e-flat e-round" iconCss="e-icons e-close !text-base" type="button" (click)="toggleDialog()" aria-label="close contact us form" role="button"></button>
                     </div>
                 </div>
             </ng-template>
@@ -18,18 +24,18 @@
                     <ejs-textbox class="e-bigger w-full" type="text" placeholder="Email" floatLabelType="Never" aria-label="enter the email address" role="textbox"></ejs-textbox>
                     <ejs-textarea class="e-bigger" placeholder="Your message" rows="5" cols="100" resizeMode="None" aria-label="enter the message" role="textbox"></ejs-textarea>
                     <div class="w-full flex flex-col gap-1.5">
-                        <ejs-uploader></ejs-uploader>
+                        <ejs-uploader [allowedExtensions]="'.pdf,.doc,.docx'"></ejs-uploader>
                         <p class="text-xs text-gray-900 dark:text-gray-50">Supported formats: Docs / PDF</p>
                     </div>
                 </div>
             </ng-template>
             <ng-template #footerTemplate>
                 <div class="e-bigger sm:px-6 px-4 py-6">
-                    <button ejs-button class="e-primary w-full !ml-0" type="submit" content="Send" aria-label="send the message" role="button"></button>
+                    <button ejs-button class="e-primary w-full !ml-0" content="Send" type="submit" aria-label="send the message" role="button"></button>
                 </div>
             </ng-template>
         </ejs-dialog>
-        <button #fab ejs-fab class="e-primary e-bigger e-round !hidden sm:!block" [iconCss]="toggleState?'sf-icon-message-chat-circle !text-2xl':'e-icons e-close !text-2xl'" position="BottomRight" type="button" target="#target" (click)="toggleDialog()" aria-label="show/hide form" role="button"></button>
+        <button #fab ejs-fab class="e-primary e-bigger e-round !hidden sm:!block" [iconCss]="isToggleState?'sf-icon-message-chat-circle !text-2xl':'e-icons e-close !text-2xl'" target="#target" position="BottomRight" type="button" (click)="toggleDialog()" aria-label="show/hide form" role="button"></button>
     </div>
 </section>
 
@@ -37,13 +43,19 @@
 
 <section class="bg-body">
     <div id="target" class="w-100" [ngStyle]="{ height: isMobileView ? '625px' : '740px' }">
+        <div class="d-flex align-items-center justify-content-center pt-4 d-block d-sm-none">
+            <button ejs-button cssClass="e-primary e-round e-bigger" iconCss="sf-icon-message-chat-circle fs-5 lh-base" type="button" (click)="toggleDialog()" aria-label="open contact us form" role="button"></button>
+        </div>
         <ejs-dialog #dialog id="floating-contact" class="rounded-1 border-0 overflow-hidden" width="400px" minHeight="625px" height="625px" (open)="setDialogPosition($event)" (created)="dialog.show()" aria-label="contact form for assistance" role="dialog">
             <ng-template #header>
-                <div class="d-flex flex-column justify-content-between align-items-center bg-primary-subtle py-5 px-4">
+                <div class="d-flex flex-column justify-content-between align-items-center bg-primary-subtle py-5 px-4 position-relative">
                     <span class="sf-icon-message-chat-circle fs-4 text-secondary"></span>
                     <div class="text-center mt-3">
                         <p class="fs-5 fw-semibold lh-sm text-body m-0">Contact Us</p>
                         <p class="mt-2 mb-0 text-body">Reach out to us for any inquiry</p>
+                    </div>
+                    <div class="d-flex justify-content-end d-block d-sm-none p-3 position-absolute top-0 end-0">
+                        <button ejs-button class="e-flat e-round e-inherit" iconCss="e-icons e-close" type="button" (click)="toggleDialog()" aria-label="close contact us form" role="button"></button>
                     </div>
                 </div>
             </ng-template>
@@ -53,7 +65,7 @@
                     <ejs-textbox class="e-bigger w-100" type="text" placeholder="Email" floatLabelType="Never" aria-label="enter the email address" role="textbox"></ejs-textbox>
                     <ejs-textarea class="e-bigger w-100" placeholder="Your message" rows="5" cols="48" resizeMode="None" aria-label="enter the message" role="textbox"></ejs-textarea>
                     <div>
-                        <ejs-uploader></ejs-uploader>
+                        <ejs-uploader [allowedExtensions]="'.pdf,.doc,.docx'"></ejs-uploader>
                         <p class="small m-0 mt-1 text-body-secondary">Supported formats: Docs / PDF</p>
                     </div>
                 </div>
@@ -64,7 +76,7 @@
                 </div>
             </ng-template>
         </ejs-dialog>
-        <button #fab ejs-fab class="e-primary e-bigger e-round d-none d-sm-block" [iconCss]="toggleState?'sf-icon-message-chat-circle fs-4':'e-icons e-close fs-5'" position="BottomRight" type="button" (click)="toggleDialog()" aria-label="show/hide form" role="button"></button>
+        <button #fab ejs-fab class="e-primary e-bigger e-round d-none d-sm-block" [iconCss]="isToggleState?'sf-icon-message-chat-circle fs-4':'e-icons e-close fs-5'" position="BottomRight" type="button" (click)="toggleDialog()" aria-label="show/hide form" role="button"></button>
     </div>
 </section>
 

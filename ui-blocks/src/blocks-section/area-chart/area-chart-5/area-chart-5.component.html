@@ -1,0 +1,63 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-white dark:bg-gray-900">
+    <div class="h-screen flex justify-center p-4 sm:p-6">
+        <div class="w-full" style="max-width: 897px;">
+            <div class="flex justify-between flex-col sm:flex-row items-start">
+                <div>
+                    <h1 class="text-base font-medium text-gray-900 dark:text-white">Product Sales Overview</h1>
+                    <p class="text-sm font-normal text-gray-500 dark:text-gray-400 mt-2">Yearly sales data</p>
+                </div>
+                <div class="flex justify-between sm:justify-end w-full sm:w-auto sm:gap-3 mt-4 sm:mt-0">
+                    <button #yearDropDown ejs-dropdownbutton content="2024" [items]="[{text:'2024'},{text:'2023'},{text:'2022'},{text:'2021'},{text:'2020'}]" type="button" aria-label="choose a year" role="button"></button>
+                    <div>
+                        <button ejs-button cssClass="mr-2" iconCss="e-icons e-refresh" type="button" aria-label="refresh" role="button"></button>
+                        <button ejs-button iconCss="e-icons e-more-vertical-1" type="button" aria-label="more options" role="button"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-5">
+                <ejs-chart #chart height="300px" [chartArea]="{border: {width: 0}}" [primaryXAxis]="primaryXAxis" [primaryYAxis]="primaryYAxis" [legendSettings]="{visible: true, enableHighlight: true, padding: 14}" [tooltip]="{enable: true, showNearestTooltip: true}" (load)="chartLoad($event,'Tailwind3','Tailwind3Dark')" aria-label="sales analysis" role="region">
+                    <e-series-collection>
+                        <e-series [dataSource]="chartData" type="StackingArea" xName="month" yName="nike" name="Nike Air Max 270" legendShape="Square" fill="#267DDA" opacity="1" width="2"></e-series>
+                        <e-series [dataSource]="chartData" type="StackingArea" xName="month" yName="iPhone" name="Apple iPhone 15" legendShape="Square" fill="#FFB900" opacity="1" width="2"></e-series>
+                        <e-series [dataSource]="chartData" type="StackingArea" xName="month" yName="ps5" name="Sony PlayStation 5" legendShape="Square" fill="#01A8B5" opacity="1" width="2"></e-series>
+                    </e-series-collection>
+                </ejs-chart>
+            </div>
+        </div>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body">
+    <div class="vh-100 d-flex justify-content-center p-3 p-sm-4">
+        <div class="w-100" style="max-width: 897px;">
+            <div class="d-flex justify-content-between flex-column flex-sm-row align-items-start">
+                <div>
+                    <h1 class="fs-6 fw-medium text-body text-nowrap mb-1">Product Sales Overview</h1>
+                    <p class="small fw-normal text-body-secondary mb-1 mb-sm-0">Yearly sales data</p>
+                </div>
+                <div class="d-flex justify-content-between justify-content-sm-end w-100 gap-sm-1 mt-3 mt-sm-0">
+                    <button #yearDropDown ejs-dropdownbutton cssClass="e-outline" content="2024" [items]="[{text:'2024'},{text:'2023'},{text:'2022'},{text:'2021'},{text:'2020'}]" type="button" aria-label="choose a year" role="button"></button>
+                    <div>
+                        <button ejs-button cssClass="mx-2 e-outline" iconCss="e-icons e-refresh" type="button" aria-label="refresh" role="button"></button>
+                        <button ejs-button cssClass="e-outline" iconCss="e-icons e-more-vertical-1" type="button" aria-label="more options" role="button"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-3 mt-sm-5">
+                <ejs-chart #chart height="300px" [chartArea]="{border: {width: 0}}" [primaryXAxis]="primaryXAxis" [primaryYAxis]="primaryYAxis" [legendSettings]="{visible: true, enableHighlight: true, padding: 14}" [tooltip]="{enable: true, showNearestTooltip: true}" (load)="chartLoad($event,'Bootstrap5','Bootstrap5Dark')" aria-label="sales analysis" role="region">
+                    <e-series-collection>
+                        <e-series [dataSource]="chartData" type="StackingArea" xName="month" yName="nike" name="Nike Air Max 270" legendShape="Square" fill="#006EEF" opacity="1" width="2"></e-series>
+                        <e-series [dataSource]="chartData" type="StackingArea" xName="month" yName="iPhone" name="Apple iPhone 15" legendShape="Square" fill="#FF9900" opacity="1" width="2"></e-series>
+                        <e-series [dataSource]="chartData" type="StackingArea" xName="month" yName="ps5" name="Sony PlayStation 5" legendShape="Square" fill="#00EFA7" opacity="1" width="2"></e-series>
+                    </e-series-collection>
+                </ejs-chart>
+            </div>
+        </div>
+    </div>
+</section>
+
+}

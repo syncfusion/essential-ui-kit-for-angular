@@ -2,14 +2,14 @@
 
 <section class="bg-white dark:bg-gray-900"> 
     <div [ngStyle]="{'height': '962px', 'width': width, float:'Right'}">
-        <ejs-sidebar #sidebar class="flex flex-col bg-white dark:bg-gray-800" position="Right" type="push" [width]="width" [isOpen]="true" [closeOnDocumentClick]="false" showBackdrop="true" role="complementary" style="display: block;">
+        <ejs-sidebar #sidebar class="flex flex-col bg-white dark:bg-gray-800" position="Right" type="Push" [width]="width" [isOpen]="true" [closeOnDocumentClick]="false" showBackdrop="true" role="complementary" style="display: block;">
             <div>
                 <div class="flex justify-between items-center p-4 border-b border-gray-200 dark:border-gray-600">
                     <div>
                         <h2 class="text-base font-semibold text-gray-900 dark:text-white">Job Filters</h2>
                         <p class="text-xs mt-0.5 text-gray-500 dark:text-gray-300">Refine job listings</p>
                     </div>
-                    <button ejs-button class="e-flat text-base" iconCss="e-icons e-close" (click)="sidebar.toggle()" content=" " type="button" aria-label="close sidebar" role="button"></button>
+                    <button ejs-button class="e-flat text-base" iconCss="e-icons e-close" type="button" (click)="sidebar.toggle()" aria-label="close sidebar" role="button"></button>
                 </div>
                 <div class="p-4 border-b border-gray-200 dark:border-gray-600">
                     <ejs-chiplist id="chip-filter" #chipFilter selection="Multiple" (click)="updateSelectedChips($event)">
@@ -56,14 +56,14 @@
                     <hr class="border-gray-200 dark:border-gray-600 my-4" />
                     <p class="font-medium text-sm text-gray-900 dark:text-white mb-5">Company Rating</p>
                     <div class="space-x-3 flex items-center mb-2">
-                        <input ejs-rating cssClass="e-small" value="4" precision="Exact" readonly="true" aria-label="rate us out of 5" role="slider" />
+                        <input ejs-rating cssClass="e-small" value="4" precision="Exact" aria-label="rate us out of 5" role="slider" />
                         <span class="text-gray-900 dark:text-white text-sm">4+ stars</span>
                     </div>
                 </div>
                 <hr class="border-gray-200 dark:border-gray-600" />
                 <div class="p-4 flex justify-end gap-3">
-                    <button ejs-button cssClass="e-outline text-sm" type="button" content="Clear" aria-label="clear" role="button"></button>
-                    <button ejs-button cssClass="e-primary text-sm" type="button" content="Show jobs" aria-label="show jobs" role="button"></button>
+                    <button ejs-button cssClass="e-outline text-sm" content="Clear" type="button" aria-label="clear" role="button"></button>
+                    <button ejs-button cssClass="e-primary text-sm" content="Show jobs" type="button" aria-label="show jobs" role="button"></button>
                 </div>
             </div>
         </ejs-sidebar>
@@ -71,7 +71,7 @@
 </section>
 <!-- SB Code - Start -->
 <div class="p-3 absolute top-0 right-0">
-    <button ejs-button cssClass="e-large e-icons e-chevron-left e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+    <button ejs-button cssClass="e-round e-large e-icons e-chevron-left" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
 </div>
 <!-- SB Code - End -->
  
@@ -79,14 +79,14 @@
 
 <section class="bg-body"> 
     <div [ngStyle]="{'height': '962px', 'width': width, float:'Right'}">
-        <ejs-sidebar #sidebar class="d-flex flex-column bg-body" position="Right" type="push" [width]="width" [isOpen]="true" [closeOnDocumentClick]="false" showBackdrop="true" role="complementary" style="display: block;">
+        <ejs-sidebar #sidebar class="d-flex flex-column bg-body" position="Right" type="Push" [width]="width" [isOpen]="true" [closeOnDocumentClick]="false" showBackdrop="true" role="complementary" style="display: block;">
             <div>
                 <div class="d-flex justify-content-between align-items-center p-3 border-bottom">
                     <div>
                         <h2 class="fs-6 fw-bold text-body lh-sm mb-0">Job Filters</h2>
                         <p class="mt-1 text-body-secondary mb-0">Refine job listings</p>
                     </div>
-                    <button ejs-button class="e-flat fs-6" iconCss="e-icons e-close" (click)="sidebar.toggle()" content=" " type="button" aria-label="close sidebar" role="button"></button>
+                    <button ejs-button class="e-flat fs-6" iconCss="e-icons e-close" type="button" (click)="sidebar.toggle()" aria-label="close sidebar" role="button"></button>
                 </div>
                 <div class="p-3 border-bottom">
                     <ejs-chiplist id="chip-filter" #chipFilter selection="Multiple" (click)="updateSelectedChips($event)">
@@ -133,7 +133,7 @@
                     <hr class="border-top opacity-100" />
                     <p class="fw-medium text-body fs-6">Company Rating</p>
                     <div class="d-flex align-items-center gap-2 mb-2">
-                        <input ejs-rating cssClass="e-small" value="4" precision="Exact" readonly="true" aria-label="rate us out of 5" role="slider" />
+                        <input ejs-rating cssClass="e-small" value="4" precision="Exact" aria-label="rate us out of 5" role="slider" />
                         <span class="text-body fs-6">4+ stars</span>
                     </div>
                 </div>
@@ -148,7 +148,7 @@
 </section>
 <!-- SB Code - Start -->
 <div class="p-3 position-absolute top-0 end-0">
-    <button ejs-button cssClass="e-large e-icons e-chevron-left e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+    <button ejs-button cssClass="e-round e-large e-icons e-chevron-left" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
 </div>
 <!-- SB Code - End -->
 

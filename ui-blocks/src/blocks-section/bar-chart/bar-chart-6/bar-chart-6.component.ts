@@ -1,16 +1,18 @@
 import { Component, OnInit, OnDestroy, HostListener, ViewChild } from '@angular/core';
 import { DropDownButtonModule, DropDownButtonComponent } from '@syncfusion/ej2-angular-splitbuttons';
+import { DateRangePickerModule, DateRangePickerComponent } from '@syncfusion/ej2-angular-calendars';
 import { ChartAllModule, ChartComponent } from '@syncfusion/ej2-angular-charts';
 
 @Component({
     selector: 'app-bar-chart-6',
     standalone: true,
-    imports: [DropDownButtonModule, ChartAllModule],
+    imports: [DropDownButtonModule, DateRangePickerModule, ChartAllModule],
     templateUrl: './bar-chart-6.component.html'
 })
 export class BarChart6Component implements OnInit, OnDestroy {
     @ViewChild('chart') public chart!: ChartComponent;
     @ViewChild('ticketDropdown') public ticketDropdown!: DropDownButtonComponent;
+    @ViewChild('daterangepicker') public daterangepicker!: DateRangePickerComponent;
     /* SB Code - Start */
     public currentTheme: string = 'tailwind';
     /* SB Code - End */
@@ -31,13 +33,13 @@ export class BarChart6Component implements OnInit, OnDestroy {
     }
 
     public chartData: Object[] = [
-        { date: "Dec 1", x: 27, y: 15 },
-        { date: "Dec 2", x: 20, y: 9 },
-        { date: "Dec 3", x: 31, y: 17 },
-        { date: "Dec 4", x: 13, y: 8 },
-        { date: "Dec 5", x: 18, y: 12 },
-        { date: "Dec 6", x: 8, y: 5 },
-        { date: "Dec 7", x: 19, y: 19 }
+        { date: "Dec 1", xAxis: 27, yAxis: 15 },
+        { date: "Dec 2", xAxis: 20, yAxis: 9 },
+        { date: "Dec 3", xAxis: 31, yAxis: 17 },
+        { date: "Dec 4", xAxis: 13, yAxis: 8 },
+        { date: "Dec 5", xAxis: 18, yAxis: 12 },
+        { date: "Dec 6", xAxis: 8, yAxis: 5 },
+        { date: "Dec 7", xAxis: 19, yAxis: 19 }
     ];
 
     public primaryXAxis: Object = {
@@ -69,11 +71,12 @@ export class BarChart6Component implements OnInit, OnDestroy {
         if (this.ticketDropdown.element.classList.contains('e-active')) {
             this.ticketDropdown.toggle();
         }
+        this.daterangepicker.refresh();
     };
 
     /* SB Code - Start */
     private handleMessageEvent = (event: MessageEvent): void => {
-        if (event.origin === window.location.origin) {
+        if (event.origin === window.location.origin && /^{"(name":"[^"]+","theme":"[^"]+"|mode":"[^"]+")}$/.test(event.data)) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'bar-chart-6' && blockData.theme) {

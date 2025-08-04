@@ -18,7 +18,7 @@
                         <input type="radio" id="custom" name="align" value="Custom" checked aria-label="custom" role="button" />
                         <label class="e-btn" for="custom">Custom</label>
                     </div>
-                    <button ejs-button class="e-outline" iconCss="e-icons e-refresh" content=" " type="button" aria-label="refresh" role="button"></button>
+                    <button ejs-button class="e-outline" iconCss="e-icons e-refresh" type="button" aria-label="refresh" role="button"></button>
                 </div>
             </div>
             <button #rangeDropdown ejs-dropdownbutton class="e-outline block sm:hidden mb-6" content="Custom" [items]="[{text:'Day'},{text:'Week'},{text:'Month'},{text:'Year'},{text:'Custom'}]" type="button" aria-label="choose a range" role="button"></button>
@@ -27,7 +27,7 @@
                     <p class="text-sm text-gray-700 dark:text-gray-300 font-medium mb-3">USD to EURO</p>
                     <ejs-chart #chart1 [chartArea]="{border: {width: 0}}" width="100%" height="250px" [primaryXAxis]="primaryXAxis" [primaryYAxis]="primaryYAxis1" (load)="chartLoad($event,'Tailwind3','Tailwind3Dark')" aria-label="currency exchange analysis" role="region">
                         <e-series-collection>
-                            <e-series [dataSource]="chartData" type="Line" xName="Date" yName="EUR" fill="#267DDA"> </e-series>
+                            <e-series [dataSource]="chartData" type="Line" xName="Date" yName="EUR" fill="#267DDA"></e-series>
                         </e-series-collection>
                     </ejs-chart>
                 </div>
@@ -35,7 +35,7 @@
                     <p class="text-sm text-gray-700 dark:text-gray-300 font-medium mb-3">USD to INR</p>
                     <ejs-chart #chart2 [chartArea]="{border: {width: 0}}" width="100%" height="250px" [primaryXAxis]="primaryXAxis" [primaryYAxis]="primaryYAxis2" (load)="chartLoad($event,'Tailwind3','Tailwind3Dark')" aria-label="currency exchange analysis" role="region">
                         <e-series-collection>
-                            <e-series [dataSource]="chartData" type="Line" xName="Date" yName="INR" fill="#D83B01"> </e-series>
+                            <e-series [dataSource]="chartData" type="Line" xName="Date" yName="INR" fill="#D83B01"></e-series>
                         </e-series-collection>
                     </ejs-chart>
                 </div>
@@ -43,7 +43,7 @@
                     <p class="text-sm text-gray-700 dark:text-gray-300 font-medium mb-3">USD to JPY</p>
                     <ejs-chart #chart3 [chartArea]="{border: {width: 0}}" width="100%" height="250px" [primaryXAxis]="primaryXAxis" [primaryYAxis]="primaryYAxis3" (load)="chartLoad($event,'Tailwind3','Tailwind3Dark')" aria-label="currency exchange analysis" role="region">
                         <e-series-collection>
-                            <e-series [dataSource]="chartData" type="Line" xName="Date" yName="JPY" fill="#DE4383"> </e-series>
+                            <e-series [dataSource]="chartData" type="Line" xName="Date" yName="JPY" fill="#DE4383"></e-series>
                         </e-series-collection>
                     </ejs-chart>
                 </div>
@@ -51,7 +51,7 @@
                     <p class="text-sm text-gray-700 dark:text-gray-300 font-medium mb-3">USD to SGD</p>
                     <ejs-chart #chart4 [chartArea]="{border: {width: 0}}" width="100%" height="250px" [primaryXAxis]="primaryXAxis" [primaryYAxis]="primaryYAxis4" (load)="chartLoad($event,'Tailwind3','Tailwind3Dark')" aria-label="currency exchange analysis" role="region">
                         <e-series-collection>
-                            <e-series [dataSource]="chartData" type="Line" xName="Date" yName="SGD" fill="#01A8B5"> </e-series>
+                            <e-series [dataSource]="chartData" type="Line" xName="Date" yName="SGD" fill="#01A8B5"></e-series>
                         </e-series-collection>
                     </ejs-chart>
                 </div>
@@ -80,7 +80,7 @@
                         <input type="radio" id="custom" name="align" value="Custom" checked aria-label="custom" role="button" />
                         <label class="e-btn" for="custom">Custom</label>
                     </div>
-                    <button ejs-button class="e-outline" iconCss="e-icons e-refresh" content=" " type="button" aria-label="refresh" role="button"></button>
+                    <button ejs-button class="e-outline" iconCss="e-icons e-refresh" type="button" aria-label="refresh" role="button"></button>
                 </div>
             </div>
             <button #rangeDropdown ejs-dropdownbutton class="e-outline d-block d-sm-none mb-4" content="Custom" [items]="[{text:'Day'},{text:'Week'},{text:'Month'},{text:'Year'},{text:'Custom'}]" type="button" aria-label="choose a range" role="button"></button>
@@ -89,7 +89,7 @@
                     <p class="small text-body-secondary fw-medium mb-2">USD to EURO</p>
                     <ejs-chart #chart1 [chartArea]="{border: {width: 0}}" width="100%" height="250px" [primaryXAxis]="primaryXAxis" [primaryYAxis]="primaryYAxis1" (load)="chartLoad($event,'Bootstrap5','Bootstrap5Dark')" aria-label="currency exchange analysis" role="region">
                         <e-series-collection>
-                            <e-series [dataSource]="chartData" type="Line" xName="Date" yName="EUR" fill="#006EEF"> </e-series>
+                            <e-series [dataSource]="chartData" type="Line" xName="Date" yName="EUR" fill="#006EEF"></e-series>
                         </e-series-collection>
                     </ejs-chart>
                 </div>
@@ -97,7 +97,7 @@
                     <p class="small text-body-secondary fw-medium mb-2">USD to INR</p>
                     <ejs-chart #chart2 [chartArea]="{border: {width: 0}}" width="100%" height="250px" [primaryXAxis]="primaryXAxis" [primaryYAxis]="primaryYAxis2" (load)="chartLoad($event,'Bootstrap5','Bootstrap5Dark')" aria-label="currency exchange analysis" role="region">
                         <e-series-collection>
-                            <e-series [dataSource]="chartData" type="Line" xName="Date" yName="INR" fill="#EF6400"> </e-series>
+                            <e-series [dataSource]="chartData" type="Line" xName="Date" yName="INR" fill="#EF6400"></e-series>
                         </e-series-collection>
                     </ejs-chart>
                 </div>
@@ -105,7 +105,7 @@
                     <p class="small text-body-secondary fw-medium mb-2">USD to JPY</p>
                     <ejs-chart #chart3 [chartArea]="{border: {width: 0}}" width="100%" height="250px" [primaryXAxis]="primaryXAxis" [primaryYAxis]="primaryYAxis3" (load)="chartLoad($event,'Bootstrap5','Bootstrap5Dark')" aria-label="currency exchange analysis" role="region">
                         <e-series-collection>
-                            <e-series [dataSource]="chartData" type="Line" xName="Date" yName="JPY" fill="#B100EF"> </e-series>
+                            <e-series [dataSource]="chartData" type="Line" xName="Date" yName="JPY" fill="#B100EF"></e-series>
                         </e-series-collection>
                     </ejs-chart>
                 </div>
@@ -113,7 +113,7 @@
                     <p class="small text-body-secondary fw-medium mb-2">USD to SGD</p>
                     <ejs-chart #chart4 [chartArea]="{border: {width: 0}}" width="100%" height="250px" [primaryXAxis]="primaryXAxis" [primaryYAxis]="primaryYAxis4" (load)="chartLoad($event,'Bootstrap5','Bootstrap5Dark')" aria-label="currency exchange analysis" role="region">
                         <e-series-collection>
-                            <e-series [dataSource]="chartData" type="Line" xName="Date" yName="SGD" fill="#00EFA7"> </e-series>
+                            <e-series [dataSource]="chartData" type="Line" xName="Date" yName="SGD" fill="#00EFA7"></e-series>
                         </e-series-collection>
                     </ejs-chart>
                 </div>

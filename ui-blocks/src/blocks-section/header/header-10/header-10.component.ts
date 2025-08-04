@@ -36,7 +36,7 @@ export class Header10Component implements OnInit, OnDestroy {
     }
 
     @HostListener('window:resize', ['$event'])
-    public onResize(event: UIEvent): void {
+    public handleResize(event: UIEvent): void {
         const width = (event.target as Window).innerWidth;
         this.updateBreadcrumbItems(width);
         this.closeDropdown(this.dropdown);
@@ -60,7 +60,7 @@ export class Header10Component implements OnInit, OnDestroy {
 
     /* SB Code - Start */
     private handleMessageEvent = (event: MessageEvent): void => {
-        if (event.origin === window.location.origin) {
+        if (event.origin === window.location.origin && /^{"(name":"[^"]+","theme":"[^"]+"|mode":"[^"]+")}$/.test(event.data)) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'header-10' && blockData.theme) {

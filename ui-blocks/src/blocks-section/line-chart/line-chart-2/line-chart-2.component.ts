@@ -65,6 +65,7 @@ export class LineChart2Component implements OnInit, OnDestroy {
         labelFormat: 'y',
         intervalType: 'Years',
         edgeLabelPlacement: 'Shift',
+        labelIntersectAction: 'None',
         majorGridLines: { width: 0 },
         labelStyle: { fontWeight: '500' },
         interval: 1
@@ -89,13 +90,14 @@ export class LineChart2Component implements OnInit, OnDestroy {
 
     public chartLoad(args: any, lightTheme: string, darkTheme: string): void {
         args.chart.theme = this.isDarkMode ? darkTheme : lightTheme;
+        this.resize();
     };
 
     public setChartData(): void {
         this.chartData = this.rainFallData.map((value: number, index: number) => {
             return {
-                x: new Date(2024, -index, 1),
-                y: (value * 3).toFixed(1),
+                xAxis: new Date(2024, -index, 1),
+                yAxis: (value * 3).toFixed(1),
                 color: this.palettes[Math.floor(index / 11)]
             };
         });
@@ -103,7 +105,7 @@ export class LineChart2Component implements OnInit, OnDestroy {
 
     @HostListener('window:resize')
     public resize(): void {
-        let labelRotation = window.innerWidth < 400 ? -90 : 0;
+        let labelRotation = window.innerWidth <= 640 ? -90 : 0;
         this.primaryXAxis = { ...this.primaryXAxis, labelRotation: labelRotation }
         if (this.metricDropdown.element.classList.contains('e-active')) {
             this.metricDropdown.toggle();
@@ -112,7 +114,7 @@ export class LineChart2Component implements OnInit, OnDestroy {
 
     /* SB Code - Start */
     private handleMessageEvent = (event: MessageEvent): void => {
-        if (event.origin === window.location.origin) {
+        if (event.origin === window.location.origin && /^{"(name":"[^"]+","theme":"[^"]+"|mode":"[^"]+")}$/.test(event.data)) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'line-chart-2' && blockData.theme) {

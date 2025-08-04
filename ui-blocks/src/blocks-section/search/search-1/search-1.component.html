@@ -30,7 +30,7 @@
                         <div [ngClass]="{'w-2/5': data.avatar?.length > 0}">
                             <div *ngIf="data.avatar" class="flex h-full items-center relative">
                                 <span *ngFor="let img of data.avatar; let i = index" class="absolute e-avatar e-avatar-circle overflow-hidden" style="width: 32px; height: 32px;" [ngStyle]="{'right': i * 22 + 'px'}">
-                                    <img [src]="'assets/images/common/avatar/' + img" class="w-100 h-100 object-cover" alt="logo" />
+                                    <img class="w-100 h-100 object-cover" [src]="'assets/images/common/avatar/' + img" alt="logo" />
                                 </span>
                             </div>
                         </div>
@@ -73,7 +73,7 @@
                         <div [ngStyle]="{'width': data.avatar?.length > 0 ? '40%' : 'auto'}">
                             <div *ngIf="data.avatar" class="d-flex position-relative align-items-center h-100">
                                 <span *ngFor="let img of data.avatar; let i = index" class="position-absolute e-avatar e-avatar-circle overflow-hidden" style="width: 32px; height: 32px;" [ngStyle]="{'right': i * 22 + 'px'}">
-                                    <img [src]="'assets/images/common/avatar/' + img" class="w-100 h-100 object-cover" alt="logo" />
+                                    <img class="w-100 h-100 object-cover" [src]="'assets/images/common/avatar/' + img" alt="logo" />
                                 </span>
                             </div>
                         </div>

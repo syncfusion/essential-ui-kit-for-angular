@@ -14,8 +14,8 @@
             <div class="flex justify-between items-center p-4 md:px-3 md:py-2">
                 <h1 class="text-base md:text-lg text-gray-900 dark:text-white font-medium">Notifications</h1>
                 <div class="flex items-center gap-3">
-                    <button ejs-button class="e-flat e-small block sm:hidden" iconCss="e-icons e-more-vertical-1" type="button" aria-label="more menu" role="button"></button>
-                    <button ejs-button class="e-flat e-small e-round" iconCss="e-icons e-close" type="button" (click)="toggleDialog()" aria-label="show/hide notification" role="button"></button>
+                    <button #dropdown ejs-dropdownbutton class="e-flat e-small block sm:hidden" cssClass="e-caret-hide" [items]="[ { text: 'Mark all as read' } ]" iconCss="e-icons e-more-vertical-1" type="button" aria-label="mark all as read" role="button"></button>
+                    <button ejs-button class="e-flat e-small" iconCss="e-icons e-close" type="button" (click)="toggleDialog()" aria-label="show/hide notification" role="button"></button>
                 </div>
             </div>
         </ng-template>
@@ -49,7 +49,7 @@
                         <div class="flex gap-2 p-4 sm:p-3 sm:!pr-5 border-b border-gray-200 dark:border-gray-600">
                             <div class="shrink-0">
                                 <span class="e-avatar e-avatar-circle" [ngStyle]="{ 'background-image': 'url(assets/images/common/avatar/' + data.avatar + ')' }" *ngIf="data.avatar!=''"></span>
-                                <span [ngClass]="{'e-avatar e-avatar-circle': true, '!bg-green-100 !text-green-700 dark:!text-green-500': data.colorTheme === 'Green', '!bg-orange-100 !text-orange-700 dark:!text-orange-500': data.colorTheme === 'Orange'}" *ngIf="data.initial!=''">{{data.initial}}</span>
+                                <span [ngClass]="{'e-avatar e-avatar-circle': true, '!bg-green-100 dark:!bg-green-800 !text-green-700 dark:!text-green-500': data.colorTheme === 'Green', '!bg-orange-100 dark:!bg-orange-800 !text-orange-700 dark:!text-orange-500': data.colorTheme === 'Orange'}" *ngIf="data.initial!=''">{{data.initial}}</span>
                             </div>
                             <div class="flex flex-col gap-1">
                                 <p class="text-gray-900 dark:text-white"><span class="font-medium">{{data.name}}</span> {{data.content.length > 36 ? (data.content | slice:0:36) + '...' : data.content}}</p>
@@ -87,9 +87,9 @@
         <ng-template #header>
             <div class="d-flex justify-content-between align-items-center p-3">
                 <h1 class="fs-5 text-body fw-medium m-0">Notifications</h1>
-                <div class="d-flex align-items-center gap-3">
-                    <button ejs-button class="e-flat e-small d-block d-sm-none e-inherit" iconCss="e-icons e-more-vertical-1" type="button" aria-label="more menu" role="button"></button>
-                    <button ejs-button class="e-flat e-small e-round e-inherit" iconCss="e-icons e-close" type="button" (click)="toggleDialog()" aria-label="show/hide notification" role="button"></button>
+                <div class="d-flex align-items-center gap-2">
+                    <button #dropdown ejs-dropdownbutton class="e-flat e-small e-inherit d-block d-sm-none" cssClass="e-caret-hide" [items]="[ { text: 'Mark all as read' } ]" iconCss="e-icons e-more-vertical-1" type="button" aria-label="mark all as read" role="button"></button>
+                    <button ejs-button class="e-flat e-small e-inherit" iconCss="e-icons e-close" type="button" (click)="toggleDialog()" aria-label="show/hide notification" role="button"></button>
                 </div>
             </div>
         </ng-template>
@@ -123,7 +123,7 @@
                         <div class="d-flex gap-2 p-3 pe-sm-4">
                             <div class="flex-shrink-0">
                                 <span class="e-avatar e-avatar-circle" [ngStyle]="{ 'background-image': 'url(assets/images/common/avatar/' + data.avatar + ')' }" *ngIf="data.avatar!=''"></span>
-                                <span [ngClass]="{'e-avatar e-avatar-circle': true, 'bg-success-subtle text-success': data.colorTheme === 'Green', 'bg-warning-subtle text-warning': data.colorTheme === 'Orange'}" *ngIf="data.initial!=''">{{data.initial}}</span>
+                                <span [ngClass]="{'e-avatar e-avatar-circle': true, 'bg-success-subtle text-success': data.colorTheme === 'Green', 'bg-warning-subtle text-warning-emphasis': data.colorTheme === 'Orange'}" *ngIf="data.initial!=''">{{data.initial}}</span>
                             </div>
                             <div class="d-flex flex-column gap-1">
                                 <p class="m-0"><span class="fw-medium">{{data.name}}</span> {{data.content.length > 36 ? (data.content | slice:0:36) + '...' : data.content}}</p>

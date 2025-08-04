@@ -13,7 +13,7 @@
                 (focus)="search.showPopup()"
                 (created)="openPopup(search)"
                 role="combobox">
-                <ng-template #headerTemplate let-data>
+                <ng-template #headerTemplate>
                     <p class="mt-4 mx-5 mb-3 text-sm font-medium text-gray-600 dark:text-gray-300">Recent</p>
                 </ng-template>
                 <ng-template #itemTemplate let-data>
@@ -47,7 +47,7 @@
                     (focus)="search.showPopup()"
                     (created)="openPopup(search)"
                     role="combobox">
-                    <ng-template #headerTemplate let-data>
+                    <ng-template #headerTemplate>
                         <p class="mt-2 mx-3 mb-2 fw-medium fs-6 lh-1 text-body-secondary">Recent</p>
                     </ng-template>
                     <ng-template #itemTemplate let-data>

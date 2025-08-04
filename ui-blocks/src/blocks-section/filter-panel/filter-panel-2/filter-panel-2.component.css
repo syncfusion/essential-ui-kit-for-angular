@@ -2,7 +2,7 @@
 .e-query-builder .e-rule-list> ::after,
 .e-query-builder .e-rule-list> ::before,
 .e-query-builder .e-rule-container {
-    border: none;
+    border: 0px !important;
 }
 
 .e-query-builder .e-group-header {

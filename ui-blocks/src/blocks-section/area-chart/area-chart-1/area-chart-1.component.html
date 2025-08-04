@@ -1,0 +1,89 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-white dark:bg-gray-950">
+    <div class="h-screen flex justify-center p-4 sm:p-6">
+        <div class="w-full">
+            <div class="flex justify-between">
+                <h1 class="font-medium dark:text-white">Expenditure Analysis</h1>
+                <button ejs-button class="e-outline sm:hidden" iconCss="e-icons e-description" type="button" aria-label="view report" role="button"></button>
+                <button ejs-button class="e-outline hidden sm:block" type="button" aria-label="view report" role="button">View Report</button>
+            </div>
+            <div class="flex flex-col sm:flex-row sm:!justify-between mt-3 gap-2 items-start">
+                <button #rangeDropdown ejs-dropdownbutton class="e-outline inline-block sm:hidden" content="Year" [items]="[{text:'Day'},{text:'Week'},{text:'Month'},{text:'Year'},{text:'Custom'}]" type="button" aria-label="choose a range" role="button"></button>
+                <div class="flex flex-wrap sm:justify-between items-center mt-3">
+                    <span class="text-xl font-semibold text-gray-900 dark:text-white">$53.9K</span>
+                    <span class="text-xs justify-end e-icons e-arrow-up text-green-700 ml-2"></span>
+                    <span class="text-xs text-green-700 dark:text-green-500">2.2% of Last Month</span>
+                </div>
+                <div class="e-btn-group hidden sm:block">
+                    <input type="radio" id="day" name="align" value="D" aria-label="day" role="button"/>
+                    <label class="e-btn" for="day">D</label>
+                    <input type="radio" id="week" name="align" value="W" aria-label="week" role="button"/>
+                    <label class="e-btn" for="week">W</label>
+                    <input type="radio" id="month" name="align" value="M" aria-label="month" role="button"/>
+                    <label class="e-btn" for="month">M</label>
+                    <input type="radio" id="year" name="align" value="Y" checked aria-label="year" role="button"/>
+                    <label class="e-btn" for="year">Y</label>
+                    <input type="radio" id="custom" name="align" value="Custom" aria-label="custom" role="button"/>
+                    <label class="e-btn" for="custom">Custom</label>
+                </div>
+            </div>
+            <div class="flex flex-col sm:flex-row items-start gap-2 mt-3 mb-4">
+                <span class="e-badge e-badge-success e-bigger">Income: $88,840</span>
+                <span class="e-badge e-badge-danger e-bigger">Expenses: $34,112</span>
+            </div>
+            <ejs-chart #chart [chartArea]="{border: {width: 0}}" [primaryXAxis]="primaryXAxis" [primaryYAxis]="primaryYAxis" [width]="'100%'" [tooltip]="{enable: true}" (load)="chartLoad($event,'Tailwind3','Tailwind3Dark')" aria-label="expenditure analysis" role="region">
+                <e-series-collection>
+                    <e-series [dataSource]="chartData" type="StackingArea" xName="Day" yName="Revenue" fill="#D83B01" width="2" opacity="0.2" [marker]="marker" [border]="{ color: '#D83B01', width: 2 }"></e-series>
+                    <e-series [dataSource]="chartData" type="StackingArea" xName="Day" yName="Expense" fill="#91BD34" width="2" opacity="0.2" [marker]="marker" [border]="{ color: '#91BD34', width: 2 }"></e-series>
+                </e-series-collection>
+            </ejs-chart>
+        </div>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body">
+    <div class="vh-100 d-flex justify-content-center p-3 p-sm-4">
+        <div class="w-100">
+            <div class="d-flex justify-content-between">
+                <h5 class="text-body">Expenditure Analysis</h5>
+                <button ejs-button class="e-outline d-sm-none" iconCss="e-icons e-description" type="button" aria-label="view report" role="button"></button>
+                <button ejs-button class="e-outline d-none d-sm-block" type="button" aria-label="view report" role="button">View Report</button>
+            </div>
+            <div class="d-flex flex-column flex-sm-row justify-content-sm-between mt-3 gap-2 align-items-start">
+                <button #rangeDropdown ejs-dropdownbutton class="e-outline d-block d-sm-none" content="Year" [items]="[{text:'Day'},{text:'Week'},{text:'Month'},{text:'Year'},{text:'Custom'}]" type="button" aria-label="choose a range" role="button"></button>
+                <div class="d-flex flex-wrap justify-content-sm-between align-items-center">
+                    <span class="fs-5 fw-semibold text-body">$53.9K</span>
+                    <span class="text-success e-icons e-arrow-up ms-1 small"></span>
+                    <span class="text-success small">2.2% of Last Month</span>
+                </div>
+                <div class="e-btn-group d-none d-sm-block" role="group">
+                    <input type="radio" id="day" name="align" value="D" aria-label="day" role="button"/>
+                    <label class="e-btn" for="day">D</label>
+                    <input type="radio" id="week" name="align" value="W" aria-label="week" role="button"/>
+                    <label class="e-btn" for="week">W</label>
+                    <input type="radio" id="month" name="align" value="M" aria-label="month" role="button"/>
+                    <label class="e-btn" for="month">M</label>
+                    <input type="radio" id="year" name="align" value="Y" checked aria-label="year" role="button"/>
+                    <label class="e-btn" for="year">Y</label>
+                    <input type="radio" id="custom" name="align" value="Custom" aria-label="custom" role="button"/>
+                    <label class="e-btn" for="custom">Custom</label>
+                </div>
+            </div>
+            <div class="d-flex flex-column flex-sm-row align-items-start gap-2 mt-2 mb-4">
+                <span class="e-badge e-badge-success">Income: $88,840</span>
+                <span class="e-badge e-badge-warning">Expenses: $34,112</span>
+            </div>
+            <ejs-chart #chart [chartArea]="{border: {width: 0}}" [primaryXAxis]="primaryXAxis" [primaryYAxis]="primaryYAxis" [width]="'100%'" [tooltip]="{enable: true}" (load)="chartLoad($event,'Bootstrap5','Bootstrap5Dark')" aria-label="expenditure analysis" role="region">
+                <e-series-collection>
+                    <e-series [dataSource]="chartData" type="StackingArea" xName="Day" yName="Revenue" fill="#D83B01" width="2" opacity="0.2" [marker]="marker" [border]="{ color: '#D83B01', width: 2 }"></e-series>
+                    <e-series [dataSource]="chartData" type="StackingArea" xName="Day" yName="Expense" fill="#91BD34" width="2" opacity="0.2" [marker]="marker" [border]="{ color: '#91BD34', width: 2 }"></e-series>
+                </e-series-collection>
+            </ejs-chart>
+        </div>
+    </div>
+</section>
+
+}

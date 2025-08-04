@@ -7,13 +7,15 @@ import { ListViewModule } from '@syncfusion/ej2-angular-lists';
     selector: 'app-search-2',
     standalone: true,
     imports: [ButtonModule, AutoCompleteModule, ListViewModule],
-    templateUrl: './search-2.component.html'
+    templateUrl: './search-2.component.html',
+    styleUrl: './search-2.component.css'
 })
 export class Search2Component implements OnInit, OnDestroy {
     @ViewChild('search') public search!: AutoCompleteComponent;
     /* SB Code - Start */
     public currentTheme: string = 'tailwind';
     /* SB Code - End */
+    public searchKeyword: string = 'Documentation';
     public width!: string;
 
     constructor() { }
@@ -59,8 +61,12 @@ export class Search2Component implements OnInit, OnDestroy {
         }
     ];
 
+    public filtering(event:any ): void {
+        this.searchKeyword = event.text?.trim() ? event.text : 'Documentation';
+    }
+
     @HostListener('window:resize', ['$event'])
-    public onResize(event: Event): void {
+    public handleResize(event: Event): void {
         this.width = (event.target as Window).innerWidth > 767 ? "max-width:400px" : "width:100%";
         this.search.hidePopup();
         const searchInterval = setInterval(() => {
@@ -71,7 +77,6 @@ export class Search2Component implements OnInit, OnDestroy {
 
     public openPopup(args: any): void {
         var searchIcon = document.createElement('span');
-        searchIcon.style.cssText = 'display: flex; align-items: center; margin-left: 10px;';
         searchIcon.setAttribute('class', 'e-icons e-search');
         args.inputWrapper.container.insertAdjacentElement('afterbegin', searchIcon);
         setTimeout(() => {
@@ -81,7 +86,7 @@ export class Search2Component implements OnInit, OnDestroy {
 
     /* SB Code - Start */
     private handleMessageEvent = (event: MessageEvent): void => {
-        if (event.origin === window.location.origin) {
+        if (event.origin === window.location.origin && /^{"(name":"[^"]+","theme":"[^"]+"|mode":"[^"]+")}$/.test(event.data)) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'search-2' && blockData.theme) {

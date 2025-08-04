@@ -1,0 +1,45 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-white dark:bg-gray-950">
+    <div class="h-screen flex justify-center p-4 sm:p-6">
+        <div class="w-full" style="max-width: 666px;">
+            <h2 class="text-base font-medium text-gray-900 dark:text-white mb-2">Revenue Analysis</h2>
+            <div class="flex justify-between sm:items-center flex-col sm:flex-row gap-4 sm:gap-0 pb-5">
+                <p class="text-gray-500 dark:text-gray-400 text-sm">Analyze your revenue performance over the week</p>
+                <button #rangeDropdown ejs-dropdownbutton class="e-outline w-fit" iconCss="e-icons e-day"content="Current Week" [items]="[{text:'Today'},{text:'Yesterday'},{text:'Current Week'},{text:'Last Week'},{text:'Current Month'},{text:'Last Month'}]" type="button" aria-label="choose a date range" role="button"></button>
+            </div>
+            <div>
+                <ejs-chart #chart [chartArea]="{ border: { width: 0 } }" width="100%" height="250px" [primaryXAxis]="primaryXAxis" [primaryYAxis]="primaryYAxis" [tooltip]="tooltip" [legendSettings]="{ visible: false }" (load)="chartLoad($event, 'Tailwind3', 'Tailwind3Dark')" (axisLabelRender)="axisLabelRender($event)" (tooltipRender)='tooltipRender($event)' aria-label="revenue analysis" role="region">
+                    <e-series-collection>
+                        <e-series [dataSource]="chartData" type="Spline" xName="date" yName="currentWeek" name="Current week" width="2" fill="#5A61F6"></e-series>
+                        <e-series [dataSource]="chartData" type="Spline" xName="date" yName="lastWeek" name="Last week" width="2" fill ="#D83B01"></e-series>
+                    </e-series-collection>
+                </ejs-chart>
+            </div>
+        </div>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body">
+    <div class="vh-100 d-flex justify-content-center p-3 p-sm-4">
+        <div class="w-100" style="max-width: 666px;">
+            <h2 class="fw-medium fs-6 text-body mb-3 mb-sm-1">Revenue Analysis</h2>
+            <div class="d-flex justify-content-between align-items-start flex-column flex-sm-row gap-3 gap-sm-0 pb-4">
+                <p class="text-secondary small mb-0">Analyze your revenue performance over the week</p>
+                <button #rangeDropdown ejs-dropdownbutton class="e-outline w-auto" iconCss="e-icons e-day" content="Current Week" [items]="[{text:'Today'},{text:'Yesterday'},{text:'Current Week'},{text:'Last Week'},{text:'Current Month'},{text:'Last Month'}]" type="button" aria-label="choose a date range" role="button"></button>
+            </div>
+            <div>
+                <ejs-chart #chart [chartArea]="{ border: { width: 0 } }" width="100%" height="250px" [primaryXAxis]="primaryXAxis" [primaryYAxis]="primaryYAxis" [tooltip]="tooltip" [legendSettings]="{ visible: false }" (load)="chartLoad($event,'Bootstrap5','Bootstrap5Dark')" (axisLabelRender)="axisLabelRender($event)" (tooltipRender)='tooltipRender($event)' aria-label="revenue analysis" role="region">
+                    <e-series-collection>
+                        <e-series [dataSource]="chartData" type="Spline" xName="date" yName="currentWeek" name="Current week" width="2" [fill]="isDarkMode ? '#3A95FF' : '#006EEF'"></e-series>
+                        <e-series [dataSource]="chartData" type="Spline" xName="date" yName="lastWeek" name="Last week" width="2" fill ="#EF6400"></e-series>
+                    </e-series-collection>
+                </ejs-chart>
+            </div>
+        </div>
+    </div>
+</section>
+
+}

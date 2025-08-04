@@ -5,7 +5,8 @@ import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
     selector: 'app-cards-6',
     standalone: true,
     imports: [ButtonModule],
-    templateUrl: './cards-6.component.html'
+    templateUrl: './cards-6.component.html',
+    styleUrl: './cards-6.component.css'
 })
 export class Cards6Component implements OnInit, OnDestroy {
     /* SB Code - Start */
@@ -28,7 +29,7 @@ export class Cards6Component implements OnInit, OnDestroy {
 
     /* SB Code - Start */
     private handleMessageEvent = (event: MessageEvent): void => {
-        if (event.origin === window.location.origin) {
+        if (event.origin === window.location.origin && /^{"(name":"[^"]+","theme":"[^"]+"|mode":"[^"]+")}$/.test(event.data)) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'cards-6' && blockData.theme) {

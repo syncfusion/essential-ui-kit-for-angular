@@ -8,14 +8,14 @@
                 <div class="flex justify-between sm:justify-start gap-3">
                     <button #rangeDropdown ejs-dropdownbutton class="e-outline" content="2024" [items]="[{text:'2024'},{text:'2023'},{text:'2022'},{text:'2021'},{text:'2020'}]" type="button" aria-label="choose a year" role="button"></button>
                     <button ejs-button class="e-outline hidden lg:block" content="Download Report" type="button" aria-label="download report" role="button"></button>
-                    <button ejs-button class="e-outline block lg:hidden" iconCss="e-icons e-download" content=" " type="button" aria-label="download report" role="button"></button>
+                    <button ejs-button class="e-outline block lg:hidden" iconCss="e-icons e-download" type="button" aria-label="download report" role="button"></button>
                 </div>
             </div>
             <div>
-                <ejs-chart #chart [chartArea]="{border: {width: 0}}" width="100%" height="350px" [primaryXAxis]="primaryXAxis" [primaryYAxis]="primaryYAxis" [axes]="[secondaryYAxis]" [legendSettings]="{visible: true, position: 'Top', alignment: 'Near', padding: 15}" (load)="chartLoad($event,'Tailwind3','Tailwind3Dark')" aria-label="sales variance" role="region">
+                <ejs-chart #chart [chartArea]="{border: {width: 0}}" width="100%" height="350px" [primaryXAxis]="primaryXAxis" [primaryYAxis]="primaryYAxis" [axes]="[secondaryYAxis]" [legendSettings]="{visible: true, position: 'Top', alignment: 'Near', height: '43' }" (load)="chartLoad($event,'Tailwind3','Tailwind3Dark')" aria-label="sales variance" role="region">
                     <e-series-collection>
-                        <e-series [dataSource]="chartData" type="StackingColumn" xName="month" yName="x" legendShape="Circle" name="This Year Sales" fill="#01A8B5" columnWidth="0.6"> </e-series>
-                        <e-series [dataSource]="chartData" type="Line" xName="month" yName="y" yAxisName="secondaryAxis" legendShape="Circle" name="Total Sales Var%" width="2" [fill]="isDarkMode?'#9CA3AF':'#1F2937'"> </e-series>
+                        <e-series [dataSource]="chartData" type="StackingColumn" xName="month" yName="xAxis" legendShape="Circle" name="This Year Sales" fill="#01A8B5" columnWidth="0.6"></e-series>
+                        <e-series [dataSource]="chartData" type="Line" xName="month" yName="yAxis" yAxisName="secondaryAxis" legendShape="Circle" name="Total Sales Var%" width="2" [fill]="isDarkMode?'#9CA3AF':'#1F2937'"></e-series>
                     </e-series-collection>
                 </ejs-chart>
             </div>
@@ -28,19 +28,19 @@
 <section class="bg-body">
     <div class="vh-100 d-flex justify-content-center p-3 p-sm-4">
         <div class="w-100" style="max-width: 1110px;">
-            <div class="d-flex flex-column flex-sm-row justify-content-between gap-3 pb-sm-1">
-                <h1 class="h6 text-body fw-medium mb-1 mb-sm-0">Total Sales Variance by FiscalMonth and District Manager</h1>
+            <div class="d-flex flex-column flex-sm-row justify-content-between gap-3">
+                <h1 class="h6 text-body fw-medium mb-sm-0">Total Sales Variance by FiscalMonth and District Manager</h1>
                 <div class="d-flex justify-content-between justify-content-sm-start gap-2">
                     <button #rangeDropdown ejs-dropdownbutton class="e-outline mr-1" content="2024" [items]="[{text:'2024'},{text:'2023'},{text:'2022'},{text:'2021'},{text:'2020'}]" type="button" aria-label="choose a year" role="button"></button>
                     <button ejs-button class="e-outline d-none d-lg-block" content="Download Report" type="button" aria-label="download report" role="button"></button>
-                    <button ejs-button class="e-outline d-block d-lg-none" iconCss="e-icons e-download" content=" " type="button" aria-label="download report" role="button"></button>
+                    <button ejs-button class="e-outline d-block d-lg-none" iconCss="e-icons e-download" type="button" aria-label="download report" role="button"></button>
                 </div>
             </div>
-            <div class="mt-3 mt-sm-2">
-                <ejs-chart #chart [chartArea]="{border: {width: 0}}" width="100%" height="350px" [primaryXAxis]="primaryXAxis" [primaryYAxis]="primaryYAxis" [axes]="[secondaryYAxis]" [legendSettings]="{visible: true, position: 'Top', alignment: 'Near', padding: 15}" (load)="chartLoad($event,'Bootstrap5','Bootstrap5Dark')" aria-label="sales variance" role="region">
+            <div class="mt-3 mt-sm-0">
+                <ejs-chart #chart [chartArea]="{border: {width: 0}}" width="100%" height="350px" [primaryXAxis]="primaryXAxis" [primaryYAxis]="primaryYAxis" [axes]="[secondaryYAxis]" [legendSettings]="{visible: true, position: 'Top', alignment: 'Near', height: '43' }" (load)="chartLoad($event,'Bootstrap5','Bootstrap5Dark')" aria-label="sales variance" role="region">
                     <e-series-collection>
-                        <e-series [dataSource]="chartData" type="StackingColumn" xName="month" yName="x" legendShape="Circle" name="This Year Sales" fill="#006EEF" columnWidth="0.6"> </e-series>
-                        <e-series [dataSource]="chartData" type="Line" xName="month" yName="y" yAxisName="secondaryAxis" legendShape="Circle" name="Total Sales Var%" width="2" [fill]="isDarkMode?'#ADB5BD':'#343A40'"> </e-series>
+                        <e-series [dataSource]="chartData" type="StackingColumn" xName="month" yName="xAxis" legendShape="Circle" name="This Year Sales" fill="#006EEF" columnWidth="0.6"></e-series>
+                        <e-series [dataSource]="chartData" type="Line" xName="month" yName="yAxis" yAxisName="secondaryAxis" legendShape="Circle" name="Total Sales Var%" width="2" [fill]="isDarkMode?'#ADB5BD':'#343A40'"></e-series>
                     </e-series-collection>
                 </ejs-chart>
             </div>

@@ -13,7 +13,7 @@
                         <div class="text-xs text-gray-700 dark:text-gray-100">Joined on October 2001</div>
                     </div>
                 </div>
-                <ejs-chiplist cssClass="e-info !rounded-xl !text-[10px]" text="Best for small teams"></ejs-chiplist>
+                <ejs-chiplist cssClass="e-info !rounded-xl !text-xs" text="Best for small teams"></ejs-chiplist>
             </div>
             <div class="flex flex-col items-start sm:flex-row sm:items-center gap-0 sm:gap-2 mt-1 sm:mt-2">
                 <input ejs-rating value="4" [emptyTemplate]="emptyTemplate" [fullTemplate]="fullTemplate" aria-label="rate us out of 5" role="slider" />
@@ -32,8 +32,8 @@
                 <a href="javascript:void(0);" class="text-primary-600 dark:text-primary-400 font-medium text-sm">Read more</a>
                 <p class="text-xs font-medium text-gray-500 dark:text-gray-400 mt-4">19 people found this helpful</p>
                 <div class="flex gap-4 items-center mt-4">
-                    <button ejs-button cssClass="e-outline" type="button" aria-label="mark as helpful" role="button">Helpful</button>
-                    <button ejs-button cssClass="e-primary e-flat" type="button" aria-label="report" role="button">Report</button>
+                    <button ejs-button cssClass="e-outline" content="Helpful" type="button" aria-label="mark as helpful" role="button"></button>
+                    <button ejs-button cssClass="e-primary e-flat" content="Report" type="button" aria-label="report" role="button"></button>
                 </div>
             </div>
         </div>
@@ -43,19 +43,19 @@
 } @else if (currentTheme === 'bootstrap5.3') {
 
 <section class="bg-body-tertiary">
-    <div class="pt-3" style="min-height: 36rem;">
+    <div class="pt-3" style="min-height: 36.7rem;">
         <div class="mx-auto w-100 p-4 border text-center rounded-3 bg-body" style="max-width: 576px;">
             <div class="d-flex justify-content-between align-items-center">
                 <div class="d-flex align-items-center gap-2">
                     <span class="e-avatar e-avatar-circle flex-shrink-0">
                         <img src="assets/images/common/avatar/avatar-2.jpg" alt="profile picture" />
                     </span>
-                    <div class="text-start">
+                    <div class="text-start fs-6">
                         <div class="fw-medium fs-6 text-body">Frank Moore</div>
                         <div class="text-body-secondary small">Joined on October 2001</div>
                     </div>
                 </div>
-                <ejs-chiplist cssClass="e-info rounded-pill" text="Best for small teams"></ejs-chiplist>
+                <ejs-chiplist cssClass="e-primary rounded-pill" text="Best for small teams"></ejs-chiplist>
             </div>
             <div class="d-flex flex-column flex-sm-row align-items-start align-items-sm-center gap-0 gap-sm-2 mt-1 mt-sm-2">
                 <input ejs-rating [value]="4" [emptyTemplate]="emptyTemplate" [fullTemplate]="fullTemplate" aria-label="rate us out of 5" role="slider" />
@@ -74,8 +74,8 @@
                 <a href="javascript:void(0);" class="text-primary fw-medium small text-decoration-none">Read more</a>
                 <p class="text-body-secondary small mt-3">19 people found this helpful</p>
                 <div class="d-flex align-items-center gap-3 mt-3">
-                    <button ejs-button cssClass="e-outline" type="button" aria-label="mark as helpful" role="button">Helpful</button>
-                    <button ejs-button cssClass="e-primary e-flat" type="button" aria-label="report" role="button">Report</button>
+                    <button ejs-button cssClass="e-outline" content="Helpful" type="button" aria-label="mark as helpful" role="button"></button>
+                    <button ejs-button cssClass="e-primary e-flat" content="Report" type="button" aria-label="report" role="button"></button>
                 </div>
             </div>
         </div>

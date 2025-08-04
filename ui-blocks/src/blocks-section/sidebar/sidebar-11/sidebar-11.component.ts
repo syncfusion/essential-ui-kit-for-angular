@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
 import { SidebarModule } from '@syncfusion/ej2-angular-navigations';
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { ListViewModule } from '@syncfusion/ej2-angular-lists';
@@ -14,6 +14,7 @@ export class Sidebar11Component implements OnInit, OnDestroy {
     /* SB Code - Start */
     public currentTheme: string = 'tailwind';
     /* SB Code - End */
+    public backDrop: boolean = window.innerWidth <= 640;
 
     constructor() { }
 
@@ -67,9 +68,14 @@ export class Sidebar11Component implements OnInit, OnDestroy {
         }
     ];
 
+    @HostListener('window:resize')
+    public handleResize(): void {
+        this.backDrop = window.innerWidth <= 640;
+    }
+
     /* SB Code - Start */
     private handleMessageEvent = (event: MessageEvent): void => {
-        if (event.origin === window.location.origin) {
+        if (event.origin === window.location.origin && /^{"(name":"[^"]+","theme":"[^"]+"|mode":"[^"]+")}$/.test(event.data)) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'sidebar-11' && blockData.theme) {

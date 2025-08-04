@@ -1,11 +1,11 @@
 @if (currentTheme === 'tailwind') {
 
 <section class="bg-gray-50 dark:bg-gray-800">
-    <div class="pt-4" style="min-height:36rem">
+    <div class="pt-4" style="min-height: 36rem;">
         <div class="mt-4 p-4 mx-auto max-w-sm border-0 sm:!rounded-lg sm:!border rounded-none border-gray-300 dark:border-gray-500 bg-white dark:bg-gray-800 flex flex-col justify-center items-center">
             <img class="h-10 w-9" src="assets/images/common/brand-logos/svg/vector.svg" alt="logo" />
             <div class="flex justify-center items-center">
-                <input ejs-rating [value]="4.0" [showLabel]="true" enableAnimation="false" [emptyTemplate]="emptyTemplate" [fullTemplate]="fullTemplate" [labelTemplate]="labelTemplate" aria-label="rate us out of 5" role="slider" style="min-height: 53px;"/>
+                <input ejs-rating [value]="4.0" [showLabel]="true" precision="Exact" enableAnimation="false" [emptyTemplate]="emptyTemplate" [fullTemplate]="fullTemplate" [labelTemplate]="labelTemplate" aria-label="rate us out of 5" role="slider" style="min-height: 53px;"/>
                 <ng-template #emptyTemplate>
                     <span class="sf-icon-star-filled-01 text-2xl text-gray-300 dark:text-gray-500"></span>
                 </ng-template>
@@ -13,7 +13,7 @@
                     <span class="sf-icon-star-filled-01 text-2xl text-amber-300"></span>
                 </ng-template>
                 <ng-template #labelTemplate let-data>
-                    <p class="!text-gray-900 dark:!text-white text-sm font-medium">{{ data?.value }} / 5</p>
+                    <p class="!text-gray-900 dark:!text-white text-sm font-medium">{{ data?.value | number:'1.1' }} / 5.0</p>
                 </ng-template>
             </div>
             <p class="text-sm text-gray-500 dark:text-gray-400">based on 135 ratings</p>
@@ -27,8 +27,8 @@
     <div class="pt-4" style="min-height: 36rem;">
         <div class="mt-4 p-3 mx-auto rounded-3 border d-flex flex-column justify-content-center align-items-center bg-body" style="max-width: 384px;">
             <img src="assets/images/common/brand-logos/svg/vector.svg" alt="logo" style="height: 40px; width: 36px;" />
-            <div class="mt-1">
-                <input ejs-rating [value]="4.0" [showLabel]="true" [emptyTemplate]="emptyTemplate" [fullTemplate]="fullTemplate" [labelTemplate]="labelTemplate" aria-label="rate us out of 5" role="slider" />
+            <div class="flex mt-1">
+                <input ejs-rating [value]="4.0" [showLabel]="true" precision="Exact" [emptyTemplate]="emptyTemplate" [fullTemplate]="fullTemplate" [labelTemplate]="labelTemplate" aria-label="rate us out of 5" role="slider" style="min-height: 53px;" />
                 <ng-template #emptyTemplate>
                     <span class="sf-icon-star-02 fs-4 d-flex align-items-center text-body-secondary"></span>
                 </ng-template>
@@ -36,7 +36,9 @@
                     <span class="sf-icon-star-filled-01 fs-4 d-flex align-items-center text-warning"></span>
                 </ng-template>
                 <ng-template #labelTemplate let-data>
-                    <p class="text-body mb-1 fw-medium">{{ data?.value }} / 5</p>
+                   <span class="fs-6">
+                        <p class="text-body mb-0">{{ data?.value | number:'1.1' }} / 5.0</p>
+                    </span>
                 </ng-template>
             </div>
             <p class="small text-body-secondary mb-0 mt-2">based on 135 ratings</p>

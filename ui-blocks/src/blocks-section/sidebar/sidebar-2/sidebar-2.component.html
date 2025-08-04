@@ -2,7 +2,7 @@
 
 <section class="bg-white dark:bg-gray-950">
     <div id="alert-sidebar" style="height: 710px;">
-        <ejs-sidebar #sidebar class="bg-gray-50 dark:bg-gray-900 !border-r !border-gray-200 dark:!border-gray-700" width="256px" [isOpen]="true" aria-label="main navigation menu" role="complementary" style="display: block;">
+        <ejs-sidebar #sidebar class="bg-gray-50 dark:bg-gray-900 !border-r !border-gray-200 dark:!border-gray-700" width="256px" [isOpen]="true" [showBackdrop]="backDrop" aria-label="main navigation menu" role="complementary" style="display: block;">
             <div class="h-screen">
                 <div class="flex items-center py-4 px-3">
                     <img src="assets/images/common/brand-logos/svg/vector.svg" alt="company logo" />
@@ -89,7 +89,7 @@
 </section>
 <!-- SB Code - Start -->
 <div class="p-3 top-0 left-0 absolute">
-    <button ejs-button cssClass="e-large e-icons e-chevron-right e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+    <button ejs-button cssClass="e-round e-large e-icons e-chevron-right" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
 </div>
 <!-- SB Code - End -->
 
@@ -97,7 +97,7 @@
 
 <section class="bg-body">
     <div id="alert-sidebar" style="height: 710px;">
-        <ejs-sidebar #sidebar width="256px" [isOpen]="true" aria-label="main navigation menu" role="complementary" style="display: block;">
+        <ejs-sidebar #sidebar width="256px" [isOpen]="true" [showBackdrop]="backDrop" aria-label="main navigation menu" role="complementary" style="display: block;">
             <div class="min-vh-100">
                 <div class="d-flex align-items-center p-3">
                     <img src="assets/images/common/brand-logos/svg/vector.svg" alt="company logo" />
@@ -116,7 +116,7 @@
                         </ng-template>
                     </ejs-listview>
                 </div>
-                <p class="m-3 fs-6 text-body-secondary">Others</p>
+                <hr class="mx-3 border-light-subtle opacity-100" />
                 <ejs-accordion #accordion class="bg-transparent border-0" expandMode="Single" role="button">
                     <e-accordionitems>
                         <e-accordionitem iconCss="e-icons e-notes e-medium" cssClass="border-0">
@@ -184,7 +184,7 @@
 </section>
 <!-- SB Code - Start -->
 <div class="py-3 px-1 position-absolute top-0 start-0">
-    <button ejs-button cssClass="e-large e-icons e-chevron-right e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+    <button ejs-button cssClass="e-round e-large e-icons e-chevron-right" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
 </div>
 <!-- SB Code - End -->
 

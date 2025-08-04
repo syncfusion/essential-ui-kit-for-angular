@@ -13,7 +13,7 @@
                                         <span class="e-list-item-header !text-sm !font-medium flex items-center !ml-4 !truncate w-72">{{data.fileName}}</span>
                                     </div>
                                     <div class="!text-gray-700 dark:!text-gray-200 !ml-4 w-60 sm:w-full">
-                                        <ejs-breadcrumb class="w-100" [enableNavigation]="false" [overflowMode]="overflowMode" [maxItems]="maxItems">
+                                        <ejs-breadcrumb #breadcrumb class="w-100" [enableNavigation]="false" [overflowMode]="overflowMode" [maxItems]="maxItems">
                                             <e-breadcrumb-items>
                                                 <e-breadcrumb-item text="{{data.data1}}"></e-breadcrumb-item>
                                                 <e-breadcrumb-item text="{{data.data2}}"></e-breadcrumb-item>
@@ -21,7 +21,7 @@
                                                 <e-breadcrumb-item text="{{data.data4}}"></e-breadcrumb-item>
                                             </e-breadcrumb-items>
                                             <ng-template #separatorTemplate>
-                                                <span class="e-icons e-chevron-right"></span>
+                                                <span class="e-icons e-chevron-right !text-base"></span>
                                             </ng-template>
                                         </ejs-breadcrumb>
                                     </div>
@@ -49,7 +49,7 @@
                                         <span class="e-list-item-header small fw-medium d-flex align-items-center ms-3">{{data.fileName}}</span>
                                     </div>
                                     <div class="ms-3 mt-1 col-6 col-sm-12" style="min-width: 250px; max-width: 500px;">
-                                        <ejs-breadcrumb class="w-100" [enableNavigation]="false" [overflowMode]="overflowMode" [maxItems]="maxItems">
+                                        <ejs-breadcrumb #breadcrumb class="w-100" [enableNavigation]="false" [overflowMode]="overflowMode" [maxItems]="maxItems">
                                             <e-breadcrumb-items>
                                                 <e-breadcrumb-item text="{{data.data1}}"></e-breadcrumb-item>
                                                 <e-breadcrumb-item text="{{data.data2}}"></e-breadcrumb-item>
@@ -57,10 +57,10 @@
                                                 <e-breadcrumb-item text="{{data.data4}}"></e-breadcrumb-item>
                                             </e-breadcrumb-items>
                                             <ng-template #itemTemplate let-data>
-                                                <a class="text-body">{{data.text}}</a>
+                                                <span class="fs-6"><a href="javascript:void(0);" class="text-body small px-2 px-sm-0 text-decoration-none">{{data.text}}</a></span>
                                             </ng-template>
                                             <ng-template #separatorTemplate>
-                                                <span class="e-icons e-chevron-right"></span>
+                                                <span class="e-icons e-chevron-right fs-6 pt-1"></span>
                                             </ng-template>
                                         </ejs-breadcrumb>
                                     </div>

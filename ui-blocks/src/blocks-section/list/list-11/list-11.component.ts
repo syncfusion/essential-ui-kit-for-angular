@@ -1,7 +1,7 @@
-import { Component, HostListener, OnInit, OnDestroy, ViewChild } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ListViewModule, ListViewComponent } from '@syncfusion/ej2-angular-lists';
-import { BreadcrumbModule, BreadcrumbOverflowMode } from '@syncfusion/ej2-angular-navigations';
+import { BreadcrumbModule, BreadcrumbOverflowMode, BreadcrumbComponent } from '@syncfusion/ej2-angular-navigations';
 
 @Component({
     selector: 'app-list-11',
@@ -12,6 +12,7 @@ import { BreadcrumbModule, BreadcrumbOverflowMode } from '@syncfusion/ej2-angula
 })
 export class List11Component implements OnInit, OnDestroy {
     @ViewChild('listview') public listview!: ListViewComponent;
+    @ViewChild('breadcrumb') breadcrumb!: BreadcrumbComponent;
     /* SB Code - Start */
     public currentTheme: string = 'tailwind';
     /* SB Code - End */
@@ -83,10 +84,11 @@ export class List11Component implements OnInit, OnDestroy {
     ]
 
     @HostListener('window:resize', ['$event'])
-    public onResize(event: UIEvent): void {
+    public handleResize(event: UIEvent): void {
         const width = (event.target as Window).innerWidth;
         this.checkWindowSize(width);
         this.updateBreadcrumbItems();
+        this.breadcrumb.refresh();
     }
 
     public checkWindowSize(width: number): void {
@@ -115,7 +117,7 @@ export class List11Component implements OnInit, OnDestroy {
 
     /* SB Code - Start */
     private handleMessageEvent = (event: MessageEvent): void => {
-        if (event.origin === window.location.origin) {
+        if (event.origin === window.location.origin && /^{"(name":"[^"]+","theme":"[^"]+"|mode":"[^"]+")}$/.test(event.data)) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'list-11' && blockData.theme) {

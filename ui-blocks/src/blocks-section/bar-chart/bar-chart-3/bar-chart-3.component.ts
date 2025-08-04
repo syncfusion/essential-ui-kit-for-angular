@@ -51,6 +51,7 @@ export class BarChart3Component implements OnInit, OnDestroy {
         valueType: 'Category',
         majorGridLines: { width: 0 },
         minorTickLines: { width: 0 },
+        labelIntersectAction: 'None',
         labelStyle: { fontWeight: '500' },
         interval: 1
     };
@@ -75,6 +76,7 @@ export class BarChart3Component implements OnInit, OnDestroy {
 
     public chartLoad(args: any, lightTheme: string, darkTheme: string): void {
         args.chart.theme = this.isDarkMode ? darkTheme : lightTheme;
+        this.resize();
     };
 
     @HostListener('window:resize')
@@ -91,7 +93,7 @@ export class BarChart3Component implements OnInit, OnDestroy {
 
     /* SB Code - Start */
     private handleMessageEvent = (event: MessageEvent): void => {
-        if (event.origin === window.location.origin) {
+        if (event.origin === window.location.origin && /^{"(name":"[^"]+","theme":"[^"]+"|mode":"[^"]+")}$/.test(event.data)) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'bar-chart-3' && blockData.theme) {

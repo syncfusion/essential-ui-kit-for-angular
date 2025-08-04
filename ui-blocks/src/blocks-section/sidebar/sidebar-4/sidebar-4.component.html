@@ -2,16 +2,16 @@
 
 <section class="bg-white dark:bg-gray-950">
     <div style="height: 730px;">
-        <ejs-sidebar #sidebar class="bg-gray-50 dark:bg-gray-900 !border-r !border-gray-200 dark:!border-gray-700" width="256px" [isOpen]="true" aria-label="main navigation menu" role="complementary" style="display: block;">
+        <ejs-sidebar #sidebar class="bg-gray-50 dark:bg-gray-900 !border-r !border-gray-200 dark:!border-gray-700" width="256px" [isOpen]="true" [showBackdrop]="backDrop" aria-label="main navigation menu" role="complementary" style="display: block;">
             <div class="h-screen">
                 <div class="flex justify-between items-center p-4">
                     <div class="flex items-center">
                         <span class="e-avatar e-avatar-circle e-avatar-small">
                             <img src="assets/images/common/avatar/avatar-2.jpg" alt="profile picture" />
                         </span>
-                        <div class="ml-3">
+                        <div class="ml-2">
                             <div class="text-base font-medium leading-normal text-gray-900 dark:text-white">John Wick</div>
-                            <p class="mb-0 text-gray-900 dark:text-white">johnwick&#64;123.com</p>
+                            <a class="text-gray-900 dark:text-white" href="mailto:johnwick@company.com">johnwick&#64;company.com</a>
                         </div>
                     </div>
                     <button ejs-button cssClass="e-icons e-chevron-down-double e-large e-flat px-1" type="button" aria-label="view additional profile settings" role="button"></button>
@@ -49,7 +49,7 @@
                         </ejs-listview>
                     </div>
                     <div class="p-4">
-                        <button ejs-button iconCss="e-icons e-plus e-medium" class="e-outline w-full" content="Add Collection" type="button" aria-label="add collection" role="button"></button>
+                        <button ejs-button class="e-outline w-full" iconCss="e-icons e-plus e-medium" content="Add Collection" type="button" aria-label="add collection" role="button"></button>
                     </div>
                 </div>
             </div>
@@ -58,15 +58,15 @@
 </section>
 <!-- SB Code - Start -->
 <div class="p-3 top-0 left-0 absolute">
-    <button ejs-button cssClass="e-large e-icons e-chevron-right e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+    <button ejs-button cssClass="e-round e-large e-icons e-chevron-right" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
 </div>
 <!-- SB Code - End -->
 
 } @else if (currentTheme === 'bootstrap5.3') {
 
 <section class="bg-body">
-    <div style="height: 730px;">
-        <ejs-sidebar #sidebar width="256px" [isOpen]="true" aria-label="main navigation menu" role="complementary" style="display: block;">
+    <div style="height: 740px;">
+        <ejs-sidebar #sidebar width="256px" [isOpen]="true" [showBackdrop]="backDrop" aria-label="main navigation menu" role="complementary" style="display: block;">
             <div class="vh-100">
                 <div class="d-flex justify-content-between align-items-center p-3">
                     <div class="d-flex align-items-center">
@@ -75,7 +75,7 @@
                         </span>
                         <div class="ms-3">
                             <div class="fs-6 fw-medium text-body">John Wick</div>
-                            <p class="mb-0 text-body-secondary">johnwick&#64;123.com</p>
+                            <a class="text-body-secondary text-decoration-none" href="mailto:johnwick@company.com">johnwick&#64;company.com</a>
                         </div>
                     </div>
                     <button ejs-button cssClass="e-icons e-chevron-down-double e-flat" type="button" aria-label="view additional profile settings" role="button"></button>
@@ -96,8 +96,9 @@
                         </ng-template>
                     </ejs-listview>
                 </div>
+                <hr class="mx-3 border-light-subtle opacity-100" />
                 <div>
-                    <div class="d-flex justify-content-between align-items-center p-3">
+                    <div class="d-flex justify-content-between align-items-center px-3 pb-2">
                         <span class="mb-0 text-body-secondary fs-6">Collection</span>
                         <button ejs-button class="e-icons e-circle-add e-medium e-flat" aria-label="add new item" role="button"></button>
                     </div>
@@ -121,7 +122,7 @@
 </section>
 <!-- SB Code - Start -->
 <div class="py-3 px-1 position-absolute top-0 start-0">
-    <button ejs-button cssClass="e-large e-icons e-chevron-right e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+    <button ejs-button cssClass="e-round e-large e-icons e-chevron-right" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
 </div>
 <!-- SB Code - End -->
 

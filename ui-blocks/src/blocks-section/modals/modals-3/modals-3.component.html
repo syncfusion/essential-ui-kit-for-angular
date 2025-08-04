@@ -1,9 +1,8 @@
 @if (currentTheme === 'tailwind') {
 
 <section>
-    <div id="dialog-container" class="relative flex justify-center" style="min-height: 600px;">
-        <button ejs-button class="h-fit my-5" (click)="dialog?.show()" type="button" aria-label="add team member" role="button">Add Team Member</button>
-        <ejs-dialog #dialog class="rounded-none sm:rounded-lg sm:m-4" target="#dialog-container" [isModal]="true" [showCloseIcon]="true" [visible]="false" width="545px" (open)="$event.preventFocus = true" aria-label="add a new team member" role="dialog">
+    <div id="dialog-container" class="relative" style="min-height: 600px;">
+        <ejs-dialog #dialog class="rounded-none sm:rounded-lg sm:m-4 overflow-hidden" target="#dialog-container" [isModal]="true" [showCloseIcon]="true" [visible]="false" width="545px" (open)="$event.preventFocus = true" aria-label="add a new team member" role="dialog">
             <ng-template #header>
                 <p class="mb-0.5 font-semibold leading-normal">Add Team Member</p>
                 <p class="text-xs leading-normal text-gray-500 dark:text-gray-400 text-wrap">Complete all sections to add a new team member.</p>
@@ -26,7 +25,7 @@
                                 <e-accordionitem cssClass="mb-3 !border !rounded-lg" [expanded]="stepper.activeStep === 0">
                                     <ng-template #header>
                                         <div class="flex gap-2.5 items-center mr-4">
-                                            <span class="e-avatar rounded-lg border bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300"><i class="e-icons sf-icon-users text-xl"></i></span>
+                                            <span class="e-avatar rounded-lg border bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300"><span class="e-icons sf-icon-users text-xl"></span></span>
                                             <div class="flex flex-col gap-0.5">
                                                 <p class="text-base">User Information</p>
                                                 <p class="text-gray-500 font-normal dark:text-gray-400 text-wrap line-clamp-1">Basic details about the team member</p>
@@ -55,7 +54,7 @@
                                 <e-accordionitem cssClass="mb-3 !border !rounded-lg" [expanded]="stepper.activeStep === 1">
                                     <ng-template #header>
                                         <div class="flex gap-2.5 items-center mr-4">
-                                            <span class="e-avatar rounded-lg border bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300"><i class="e-icons sf-icon-building-03 text-xl"></i></span>
+                                            <span class="e-avatar rounded-lg border bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300"><span class="e-icons sf-icon-building-03 text-xl"></span></span>
                                             <div class="flex flex-col gap-0.5">
                                                 <p class="text-base">Workspace Access</p>
                                                 <p class="text-gray-500 font-normal dark:text-gray-400 text-wrap line-clamp-1">Workspace and role assignment</p>
@@ -78,7 +77,7 @@
                                 <e-accordionitem cssClass="mb-3 !border !rounded-lg" [expanded]="stepper.activeStep === 2">
                                     <ng-template #header>
                                         <div class="flex gap-2.5 items-center mr-4">
-                                            <span class="e-avatar rounded-lg border bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300"><i class="e-icons sf-icon-shield text-xl"></i></span>
+                                            <span class="e-avatar rounded-lg border bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300"><span class="e-icons sf-icon-shield text-xl"></span></span>
                                             <div class="flex flex-col gap-0.5">
                                                 <p class="text-base">Security Settings</p>
                                                 <p class="text-gray-500 font-normal dark:text-gray-400 text-wrap line-clamp-1">Configure security and authentication</p>
@@ -107,7 +106,7 @@
                                 <e-accordionitem cssClass="!border !rounded-lg" [expanded]="stepper.activeStep === 3">
                                     <ng-template #header>
                                         <div class="flex gap-2.5 items-center mr-4">
-                                            <span class="e-avatar rounded-lg border bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300"><i class="e-icons sf-icon-laptop-01 text-xl"></i></span>
+                                            <span class="e-avatar rounded-lg border bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-300"><span class="e-icons sf-icon-laptop-01 text-xl"></span></span>
                                             <div class="flex flex-col gap-0.5">
                                                 <p class="text-base">Resource Access</p>
                                                 <p class="text-gray-500 font-normal dark:text-gray-400 text-wrap line-clamp-1">Configure access to various tools</p>
@@ -175,19 +174,23 @@
             </ng-template>
             <ng-template #footerTemplate>
                 <div class="flex justify-end gap-2 sm:gap-1 py-2">
-                    <button ejs-button cssClass="w-1/2 sm:w-fit !ml-0" type="button" aria-label="cancel" role="button">Cancel</button>
-                    <button ejs-button cssClass="e-primary w-1/2 sm:w-fit" type="button" aria-label="add member" role="button">Add Member</button>
+                    <button ejs-button cssClass="w-1/2 sm:w-fit !ml-0" content="Cancel" type="button" aria-label="cancel" role="button"></button>
+                    <button ejs-button cssClass="e-primary w-1/2 sm:w-fit" content="Add Member" type="button" aria-label="add member" role="button"></button>
                 </div>
             </ng-template>
         </ejs-dialog>
     </div>
 </section>
+<!-- SB Code - Start -->
+<div class="top-0 left-0 absolute w-full flex">
+    <button ejs-button class="my-5 mx-auto" content="Add Team Member" type="button" (click)="dialog?.show()" aria-label="add team member" role="button"></button>
+</div>
+<!-- SB Code - End -->
 
 } @else if (currentTheme === 'bootstrap5.3') {
 
 <section>
-    <div id="dialog-container" class="position-relative d-flex align-items-start" style="min-height: 600px;">
-        <button ejs-button class="e-outline mx-auto my-3" (click)="dialog?.show()" type="button" aria-label="add team member" role="button">Add Team Member</button>
+    <div id="dialog-container" class="position-relative" style="min-height: 600px;">
         <ejs-dialog #dialog class="rounded-3 m-sm-2" target="#dialog-container" [isModal]="true" [showCloseIcon]="true" [visible]="false" width="545px" (open)="$event.preventFocus = true" aria-label="add a new team member" role="dialog">
             <ng-template #header>
                 <p class="fw-bold text-body mb-0">Add Team Member</p>
@@ -211,7 +214,7 @@
                                 <e-accordionitem cssClass="mb-3 border rounded-3 overflow-hidden" [expanded]="stepper.activeStep === 0">
                                     <ng-template #header>
                                         <div class="d-flex gap-2 align-items-center me-3">
-                                            <span class="e-avatar rounded-3 border bg-body-secondary"><i class="e-icons sf-icon-users fs-4"></i></span>
+                                            <span class="e-avatar rounded-3 border bg-body-secondary"><span class="e-icons sf-icon-users fs-4"></span></span>
                                             <div class="d-flex flex-column ms-1">
                                                 <p class="fs-6 fw-medium mb-0">User Information</p>
                                                 <p class="text-body text-wrap text-opacity-50 text-truncate mb-0" style="display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden;">Basic details about the team member</p>
@@ -240,7 +243,7 @@
                                 <e-accordionitem cssClass="mb-3 border rounded-3 overflow-hidden" [expanded]="stepper.activeStep === 1">
                                     <ng-template #header>
                                         <div class="d-flex gap-2 align-items-center me-3">
-                                            <span class="e-avatar rounded-3 border bg-body-secondary"><i class="e-icons sf-icon-building-03 fs-4"></i></span>
+                                            <span class="e-avatar rounded-3 border bg-body-secondary"><span class="e-icons sf-icon-building-03 fs-4"></span></span>
                                             <div class="d-flex flex-column ms-1">
                                                 <p class="fs-6 fw-medium mb-0">Workspace Access</p>
                                                 <p class="text-body text-wrap text-opacity-50 text-truncate mb-0" style="display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden;">Workspace and role assignment</p>
@@ -263,7 +266,7 @@
                                 <e-accordionitem cssClass="mb-3 border rounded-3 overflow-hidden" [expanded]="stepper.activeStep === 2">
                                     <ng-template #header>
                                         <div class="d-flex gap-2 align-items-center me-3">
-                                            <span class="e-avatar rounded-3 border bg-body-secondary"><i class="e-icons sf-icon-shield fs-4"></i></span>
+                                            <span class="e-avatar rounded-3 border bg-body-secondary"><span class="e-icons sf-icon-shield fs-4"></span></span>
                                             <div class="d-flex flex-column ms-1">
                                                 <p class="fs-6 fw-medium mb-0">Security Settings</p>
                                                 <p class="text-body text-wrap text-opacity-50 text-truncate mb-0" style="display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden;">Configure security and authentication</p>
@@ -292,7 +295,7 @@
                                 <e-accordionitem cssClass="border rounded-3 overflow-hidden" [expanded]="stepper.activeStep === 3">
                                     <ng-template #header>
                                         <div class="d-flex gap-2 align-items-center me-3">
-                                            <span class="e-avatar rounded-3 border bg-body-secondary"><i class="e-icons sf-icon-laptop-01 fs-4"></i></span>
+                                            <span class="e-avatar rounded-3 border bg-body-secondary"><span class="e-icons sf-icon-laptop-01 fs-4"></span></span>
                                             <div class="d-flex flex-column ms-1">
                                                 <p class="fs-6 fw-medium mb-0">Resource Access</p>
                                                 <p class="text-body text-wrap text-opacity-50 text-truncate mb-0" style="display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden;">Configure access to various tools</p>
@@ -360,12 +363,17 @@
             </ng-template>
             <ng-template #footerTemplate>
                 <div class="d-flex justify-content-end gap-2 py-1">
-                    <button ejs-button cssClass="col col-sm-auto ms-0" type="button" aria-label="cancel" role="button">Cancel</button>
-                    <button ejs-button cssClass="e-primary col col-sm-auto" type="button" aria-label="add member" role="button">Add Member</button>
+                    <button ejs-button cssClass="col col-sm-auto ms-0" content="Cancel" type="button" aria-label="cancel" role="button"></button>
+                    <button ejs-button cssClass="e-primary col col-sm-auto" content="Add Member" type="button" aria-label="add member" role="button"></button>
                 </div>
             </ng-template>
         </ejs-dialog>
     </div>
 </section>
+<!-- SB Code - Start -->
+<div class="position-absolute top-0 start-0 d-flex w-100">
+    <button ejs-button class="e-outline mx-auto my-3" content="Add Team Member" type="button" (click)="dialog?.show()" aria-label="add team member" role="button"></button>
+</div>
+<!-- SB Code - End -->
 
 }

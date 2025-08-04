@@ -2,12 +2,12 @@
 
 <section class="bg-white dark:bg-gray-900">
     <div [ngStyle]="{'height': '685px', 'width': width, float:'Right'}">
-        <ejs-sidebar class="w-full bg-white dark:bg-gray-900" #sidebar position="Right" type="push" [width]="width" [isOpen]="true" [closeOnDocumentClick]="false" showBackdrop="true" role="complementary" style="display: block;">
+        <ejs-sidebar class="w-full bg-white dark:bg-gray-900" #sidebar position="Right" type="Push" [width]="width" [isOpen]="true" [closeOnDocumentClick]="false" showBackdrop="true" role="complementary" style="display: block;">
             <div class="bg-white dark:bg-gray-900 min-h-screen">
                 <div class="border-b border-gray-200 dark:border-gray-600">
                     <div class="flex justify-between items-center px-4 py-3 border-b border-gray-200 dark:border-gray-600">
                         <h2 class="text-base font-semibold text-gray-900 dark:text-white">Meetings</h2>
-                        <button ejs-button class="e-flat text-base" iconCss="e-icons e-close" (click)="sidebar.toggle()" content=" " type="button" aria-label="close sidebar" role="button"></button>
+                        <button ejs-button class="e-flat text-base" iconCss="e-icons e-close" type="button" (click)="sidebar.toggle()" aria-label="close sidebar" role="button"></button>
                     </div>
                     <div class="p-4 flex justify-center items-center">
                         <ejs-calendar class="e-bigger shadow-none border-none"></ejs-calendar>
@@ -23,7 +23,7 @@
                                 </div>
                                 <div class="w-1 h-100 rounded-lg bg-cyan-500 ml-2 mr-4"></div>
                                 <div class="py-1">
-                                    <h5 class="font-medium text-gray-700 dark:text-gray-300">Project Kickoff</h5>
+                                    <h5 class="font-medium text-sm text-gray-700 dark:text-gray-300">Project Kickoff</h5>
                                     <p class="text-xs text-gray-700 dark:text-gray-300">Online</p>
                                 </div>
                             </div>
@@ -36,7 +36,7 @@
                                 </div>
                                 <div class="w-1 h-100 rounded-lg bg-red-500 ml-2 mr-4"></div>
                                 <div class="py-1">
-                                    <h5 class="font-medium text-gray-700 dark:text-gray-300">Marketing Strategy</h5>
+                                    <h5 class="font-medium text-sm text-gray-700 dark:text-gray-300">Marketing Strategy</h5>
                                     <p class="text-xs text-gray-700 dark:text-gray-300">Online</p>
                                 </div>
                             </div>
@@ -49,7 +49,7 @@
                                 </div>
                                 <div class="w-1 h-100 rounded-lg bg-orange-500 ml-2 mr-4"></div>
                                 <div class="py-1">
-                                    <h5 class="font-medium text-gray-700 dark:text-gray-300">Product Design Review</h5>
+                                    <h5 class="font-medium text-sm text-gray-700 dark:text-gray-300">Product Design Review</h5>
                                     <p class="text-xs text-gray-700 dark:text-gray-300">Online</p>
                                 </div>
                             </div>
@@ -62,7 +62,7 @@
 </section>
 <!-- SB Code - Start -->
 <div class="p-3 absolute top-0 right-0">
-    <button ejs-button cssClass="e-large e-icons e-chevron-left e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+    <button ejs-button cssClass="e-round e-large e-icons e-chevron-left" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
 </div>
 <!-- SB Code - End -->
 
@@ -70,12 +70,12 @@
 
 <section class="bg-body">
     <div [ngStyle]="{'height': '720px', 'width': width, float:'Right'}">
-        <ejs-sidebar class="bg-body" #sidebar position="Right" type="push" [width]="width" [isOpen]="true" [closeOnDocumentClick]="false" showBackdrop="true" role="complementary" style="display: block;">
+        <ejs-sidebar class="bg-body" #sidebar position="Right" type="Push" [width]="width" [isOpen]="true" [closeOnDocumentClick]="false" showBackdrop="true" role="complementary" style="display: block;">
             <div class="bg-body">
                 <div class="border-bottom border-light-subtle">
                     <div class="d-flex justify-content-between align-items-center p-3 border-bottom border-light-subtle">
                         <div class="text-body fw-bold fs-6 mb-0">Meetings</div>
-                        <button ejs-button class="e-flat fs-6" iconCss="e-icons e-close" (click)="sidebar.toggle()" content=" " type="button" aria-label="close sidebar" role="button"></button>
+                        <button ejs-button class="e-flat fs-6" iconCss="e-icons e-close" type="button" (click)="sidebar.toggle()" aria-label="close sidebar" role="button"></button>
                     </div>
                     <div class="p-3 d-flex justify-content-center align-items-center">
                         <ejs-calendar class="e-bigger shadow-none border-0"></ejs-calendar>
@@ -89,9 +89,9 @@
                                     <p class="fw-normal text-body-emphasis mb-1">10:00</p>
                                     <span class="text-body-secondary">1 hour</span>
                                 </div>
-                                <div class="ms-3">
-                                    <p class="fw-medium text-body-emphasis mb-1">Project Kickoff</p>
-                                    <p class="text-body-secondary mb-0">Online</p>
+                                <div class="ms-3 fs-6">
+                                    <p class="fw-medium text-body-emphasis mb-1 small">Project Kickoff</p>
+                                    <p class="text-body-secondary mb-0 small">Online</p>
                                 </div>
                             </div>
                         </div>
@@ -101,9 +101,9 @@
                                     <p class="fw-normal text-body-emphasis mb-1">11:00</p>
                                     <span class="text-body-secondary">1 hour</span>
                                 </div>
-                                <div class="ms-3">
-                                    <p class="fw-medium text-body-emphasis mb-1">Marketing Strategy</p>
-                                    <p class="text-body-secondary mb-0">Online</p>
+                                <div class="ms-3 fs-6">
+                                    <p class="fw-medium text-body-emphasis mb-1 small">Marketing Strategy</p>
+                                    <p class="text-body-secondary mb-0 small">Online</p>
                                 </div>
                             </div>
                         </div>
@@ -113,9 +113,9 @@
                                     <p class="fw-normal text-body-emphasisk mb-1">12:00</p>
                                     <span class="text-body-secondary">1 hour</span>
                                 </div>
-                                <div class="ms-3">
-                                    <p class="fw-medium text-body-emphasis mb-1">Product Design Review</p>
-                                    <p class="text-body-secondary mb-0">Online</p>
+                                <div class="ms-3 fs-6">
+                                    <p class="fw-medium text-body-emphasis mb-1 small">Product Design Review</p>
+                                    <p class="text-body-secondary mb-0 small">Online</p>
                                 </div>
                             </div>
                         </div>
@@ -127,7 +127,7 @@
 </section>
 <!-- SB Code - Start -->
 <div class="p-3 position-absolute top-0 end-0">
-    <button ejs-button cssClass="e-large e-icons e-chevron-left e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+    <button ejs-button cssClass="e-round e-large e-icons e-chevron-left" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
 </div>
 <!-- SB Code - End -->
 

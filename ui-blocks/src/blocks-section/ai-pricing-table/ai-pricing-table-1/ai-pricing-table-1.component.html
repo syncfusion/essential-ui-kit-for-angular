@@ -2,7 +2,7 @@
 
 <section>
     <div id="dialog-container" class="relative flex items-center justify-center" style="min-height: 580px;">
-        <ejs-dialog #pricing class="absolute sm:rounded-lg py-3" target="#dialog-container" [visible]="true" [showCloseIcon]="true" width="537px" height="460px" (open)="$event.preventFocus = true" [closeOnEscape]="true">
+        <ejs-dialog #pricing class="absolute sm:rounded-lg py-3" target="#dialog-container" [visible]="true" [isModal]="true" [showCloseIcon]="true" width="537px" height="460px" (open)="$event.preventFocus = true" [closeOnEscape]="true">
             <div class="max-w-2xl px-1 sm:rounded-lg text-gray-700 dark:text-gray-300">
                 <ng-template #header>
                     <span class="text-base">Select plan</span>
@@ -44,8 +44,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <hr class="my-6" />
-                        <div class="grid gap-3 lg:grid-cols-3 sm:grid-cols-2 box-border">
+                        <div class="grid gap-3 lg:grid-cols-3 sm:grid-cols-2 box-border border-0 border-t mt-6 pt-6 border-gray-200 dark:border-gray-600">
                             <div class="e-card rounded-none bg-gray-50 dark:bg-gray-900 border-none shadow-none">
                                 <div class="e-card-header !pt-3 !px-3">
                                     <div class="e-card-header-caption">
@@ -100,7 +99,7 @@
 </section>
 <!-- SB Code - Start -->
 <div class="top-0 flex w-full absolute">
-    <button ejs-button class="mx-auto my-5" (click)="pricing?.show()" type="button" aria-label="contact information" role="button">Pricing table</button>
+    <button ejs-button class="mx-auto my-5" content="Pricing Table" type="button" (click)="pricing?.show()" aria-label="pricing table" role="button"></button>
 </div>
 <!-- SB Code - End -->
 
@@ -108,7 +107,7 @@
 
 <section>
     <div id="dialog-container" class="position-relative d-flex justify-content-center align-items-center" style="min-height: 580px;">
-        <ejs-dialog #pricing class="position-absolute rounded py-3" target="#dialog-container" [visible]="true" [showCloseIcon]="true" width="537px" height="480px" (beforeOpen)="$event.maxHeight = '100%'" (open)="$event.preventFocus = true" [closeOnEscape]="true">
+        <ejs-dialog #pricing class="rounded py-2" target="#dialog-container" [isModal]="true" [visible]="true" [showCloseIcon]="true" width="537px" height="480px" (beforeOpen)="$event.maxHeight = '100%'" (open)="$event.preventFocus = true" [closeOnEscape]="true">
             <div class="container px-1 rounded text-body-secondary">
                 <ng-template #header>
                     <span class="fs-6 ps-2">Select plan</span>
@@ -150,8 +149,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <hr class="my-4" />
-                        <div class="row g-3">
+                        <div class="row g-3 border-top border-light-subtle mt-4 pt-2">
                             <div class="col-md-6 col-lg-4">
                                 <div class="e-card rounded-0 bg-body-tertiary border-0 shadow-none">
                                     <div class="e-card-header pt-3 px-3">
@@ -215,7 +213,7 @@
 </section>
 <!-- SB Code - Start -->
 <div class="position-absolute top-0 d-flex w-100">
-    <button ejs-button class="e-outline mx-auto my-3" (click)="pricing.show()" type="button" aria-label="contact information" role="button">Pricing Table</button>
+    <button ejs-button class="e-outline mx-auto my-3" content="Pricing Table" type="button" (click)="pricing.show()" aria-label="pricing table" role="button"></button>
 </div>
 <!-- SB Code - End -->
 

@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy, ViewChild, HostListener } from '@angular/core';
-import { DialogModule, DialogComponent } from '@syncfusion/ej2-angular-popups';
+import { DialogModule, DialogComponent, OpenEventArgs } from '@syncfusion/ej2-angular-popups';
 import { RichTextEditorAllModule, RichTextEditorComponent } from '@syncfusion/ej2-angular-richtexteditor';
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 
@@ -7,8 +7,7 @@ import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
     selector: 'app-modals-11',
     standalone: true,
     imports: [DialogModule, RichTextEditorAllModule, ButtonModule],
-    templateUrl: './modals-11.component.html',
-    styleUrl: './modals-11.component.css'
+    templateUrl: './modals-11.component.html'
 })
 export class Modals11Component implements OnInit, OnDestroy {
     @ViewChild('dialog') public dialog!: DialogComponent;
@@ -40,7 +39,7 @@ export class Modals11Component implements OnInit, OnDestroy {
     }
 
     @HostListener('window:resize')
-    public onResize(): void {
+    public handleResize(): void {
         this.checkWindowSize();
     }
 
@@ -51,18 +50,22 @@ export class Modals11Component implements OnInit, OnDestroy {
         this.dialog.show(this.isMobile);
     }
 
+    public dialogOpen(args: OpenEventArgs): void {
+        args.preventFocus = true;
+        setTimeout(() => {
+            this.rte.refresh();
+        }, 100);
+    }
+
     /* SB Code - Start */
     private refreshDialog(timeout: number): void {
         setTimeout(() => {
             this.dialog.show(this.isMobile);
-            setTimeout(() => {
-                this.rte.refresh();
-            }, 50);
         }, timeout);
     }
 
     private handleMessageEvent = (event: MessageEvent): void => {
-        if (event.origin === window.location.origin) {
+        if (event.origin === window.location.origin && /^{"(name":"[^"]+","theme":"[^"]+"|mode":"[^"]+")}$/.test(event.data)) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'modals-11' && blockData.theme) {

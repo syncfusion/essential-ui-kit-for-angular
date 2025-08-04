@@ -1,0 +1,111 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-white dark:bg-gray-950">
+    <div class="h-screen flex justify-center p-4 sm:p-6">
+        <div class="w-full" style="max-width: 930px;">
+            <h3 class="text-base font-medium text-gray-900 dark:text-white">Weather Analysis</h3>
+            <div class="flex sm:items-center justify-between flex-col sm:flex-row flex-col-reverse gap-4 mt-4 md:mt-3">
+                <div class="e-btn-group self-start">
+                    <input type="radio" id="temperature" name="weatherMetric" checked value="temperature" checked aria-label="temperature" role="button" />
+                    <label class="e-btn" for="temperature">
+                        <span [ngClass]="{'e-icon-left': !isMobileView}" class="e-btn-icon sf-icon-thermometer !text-sm"></span>
+                        <span class="hidden sm:inline-block">Temperature</span>
+                    </label>
+                    <input type="radio" id="precipitation" name="weatherMetric" value="precipitation" aria-label="precipitation" role="button" />
+                    <label class="e-btn" for="precipitation">
+                        <span [ngClass]="{'e-icon-left': !isMobileView}" class="e-btn-icon sf-icon-precipitation !text-sm"></span>
+                        <span class="hidden sm:inline-block">Precipitation</span>
+                    </label>
+                    <input type="radio" id="humidity" name="weatherMetric" value="humidity" aria-label="humidity" role="button" />
+                    <label class="e-btn" for="humidity">
+                        <span [ngClass]="{'e-icon-left': !isMobileView }" class="e-btn-icon sf-icon-humidity !text-sm"></span>
+                        <span class="hidden sm:inline-block">Humidity</span>
+                    </label>
+                    <input type="radio" id="wind" name="weatherMetric" value="wind" aria-label="wind" role="button" />
+                    <label class="e-btn" for="wind">
+                        <span [ngClass]="{'e-icon-left': !isMobileView }" class="e-btn-icon sf-icon-wind !text-sm"></span>
+                        <span class="hidden sm:inline-block">Wind</span>
+                    </label>
+                </div>
+                <button #rangeDropdown ejs-dropdownbutton class="e-outline w-fit" content="Jan, 2024" [items]="[{text:'May, 2024'},{text:'Apr, 2024'},{text:'Mar, 2024'},{text:'Feb, 2024'},{text:'Jan, 2024'}]" type="button" aria-label="choose a month" role="button"></button>
+            </div>
+            <div class="mt-5">
+                <ejs-chart #chart [chartArea]="{ border: { width: 0 } }" width="100%" height="300px" [primaryXAxis]="primaryXAxis" [primaryYAxis]="primaryYAxis" [tooltip]="tooltip" [crosshair]="crosshair" [legendSettings]="{ visible: false }" (load)="chartLoad($event, 'Tailwind3', 'Tailwind3Dark')" aria-label="weather analysis" role="region">
+                    <e-series-collection>
+                        <e-series [dataSource]="chartData" type="SplineArea" xName="date" yName="high" name="High" width="2" [border]="{ color: '#D83B01', width: 2 }" fill="url(#gradient-high)"></e-series>
+                        <e-series [dataSource]="chartData" type="SplineArea" xName="date" yName="low" name="Low" width="2" [border]="{ color: '#5A61F6', width: 2 }" fill="url(#gradient-low)"></e-series>
+                    </e-series-collection>
+                </ejs-chart>
+                <svg width="0" height="0">
+                    <defs>
+                        <linearGradient id="gradient-high" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#D83B01" stop-opacity="0.2" />
+                            <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.0001" />
+                        </linearGradient>
+                        <linearGradient id="gradient-low" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#5A61F6" stop-opacity="0.2" />
+                            <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.0001" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body">
+    <div class="vh-100 d-flex justify-content-center p-3 p-sm-4">
+        <div class="w-100" style="max-width: 930px;">
+            <h3 class="fs-6 fw-medium text-body mb-3">Weather Analysis</h3>
+            <div class="d-flex justify-content-between flex-column flex-sm-row flex-column-reverse gap-3 mt-3 mt-md-2 align-items-sm-center">
+                <div class="e-btn-group align-self-start">
+                    <input type="radio" id="temperature" name="weatherMetric" checked value="temperature" aria-label="temperature" role="button" />
+                    <label class="e-btn" for="temperature">
+                        <span [ngClass]="{'e-icon-left': !isMobileView }" class="e-btn-icon sf-icon-thermometer small"></span>
+                        <span class="d-none d-sm-inline-block">Temperature</span>
+                    </label>
+                    <input type="radio" id="precipitation" name="weatherMetric" value="precipitation" aria-label="precipitation" role="button" />
+                    <label class="e-btn" for="precipitation">
+                        <span [ngClass]="{'e-icon-left': !isMobileView }" class="e-btn-icon sf-icon-precipitation small"></span>
+                        <span class="d-none d-sm-inline-block">Precipitation</span>
+                    </label>
+                    <input type="radio" id="humidity" name="weatherMetric" value="humidity" aria-label="humidity" role="button" />
+                    <label class="e-btn" for="humidity">
+                        <span [ngClass]="{'e-icon-left': !isMobileView }" class="e-btn-icon sf-icon-humidity small"></span>
+                        <span class="d-none d-sm-inline-block">Humidity</span>
+                    </label>
+                    <input type="radio" id="wind" name="weatherMetric" value="wind" aria-label="wind" role="button" />
+                    <label class="e-btn" for="wind">
+                        <span [ngClass]="{'e-icon-left': !isMobileView }" class="e-btn-icon sf-icon-wind small"></span>
+                        <span class="d-none d-sm-inline-block">Wind</span>
+                    </label>
+                </div>
+                <button #rangeDropdown ejs-dropdownbutton class="e-outline w-auto align-self-start" content="Jan, 2024" [items]="[{text:'May, 2024'},{text:'Apr, 2024'},{text:'Mar, 2024'},{text:'Feb, 2024'},{text:'Jan, 2024'}]" type="button" aria-label="choose a month" role="button"></button>
+            </div>
+            <div class="mt-4">
+                <ejs-chart #chart [chartArea]="{ border: { width: 0 } }" width="100%" height="300px" [primaryXAxis]="primaryXAxis" [primaryYAxis]="primaryYAxis" [tooltip]="tooltip" [crosshair]="crosshair" [legendSettings]="{ visible: false }" (load)="chartLoad($event,'Bootstrap5','Bootstrap5Dark')" aria-label="weather analysis" role="region">
+                    <e-series-collection>
+                        <e-series [dataSource]="chartData" type="SplineArea" xName="date" yName="high" name="High" width="2" [border]="{ color: isDarkMode ? '#FF4B4B' : '#F42929', width: 2 }" fill="url(#gradient-high)"></e-series>
+                        <e-series [dataSource]="chartData" type="SplineArea" xName="date" yName="low" name="Low" width="2" [border]="{ color: isDarkMode ? '#3A95FF' : '#006EEF', width: 2 }" fill="url(#gradient-low)"></e-series>
+                    </e-series-collection>
+                </ejs-chart>
+                <svg width="0" height="0">
+                    <defs>
+                        <linearGradient id="gradient-high" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#F42929" stop-opacity="0.2" />
+                            <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.0001" />
+                        </linearGradient>
+                        <linearGradient id="gradient-low" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0%" stop-color="#006EEF" stop-opacity="0.2" />
+                            <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.0001" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+}

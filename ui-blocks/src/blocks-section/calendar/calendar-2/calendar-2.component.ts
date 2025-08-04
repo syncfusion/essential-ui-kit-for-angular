@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnInit, OnDestroy } from '@angular/core';
+import { Component, ViewChild, OnInit, OnDestroy, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SidebarModule, AccordionModule, AccordionComponent } from '@syncfusion/ej2-angular-navigations';
 import { CalendarModule } from '@syncfusion/ej2-angular-calendars';
@@ -21,6 +21,7 @@ export class Calendar2Component implements OnInit, OnDestroy {
     public currentTheme: string = 'tailwind';
     /* SB Code - End */
     public width: string = '310px';
+    public sliderWidth: string = '230px';
     public tooltipInfo: { isVisible: boolean; placement: string; showOn: string; format: string } = { isVisible: true, placement: 'Before', showOn: 'Hover', format: 'c0' };
     private breakpointSubscription!: Subscription;
 
@@ -29,6 +30,10 @@ export class Calendar2Component implements OnInit, OnDestroy {
     public ngOnInit(): void {
         this.breakpointSubscription = this.breakpointObserver.observe([Breakpoints.XSmall]).subscribe(result => {
             this.width = result.matches ? '100%' : '310px';
+            this.sliderWidth = result.matches ? '100%' : '260px';
+             setTimeout(() => {
+                this.hotelPriceSlider.refresh();
+            }, 1000);
         });
         /* SB Code - Start */
         window.addEventListener('message', this.handleMessageEvent);
@@ -60,22 +65,22 @@ export class Calendar2Component implements OnInit, OnDestroy {
     private refreshAccordion(timeout: number): void {
         setTimeout(() => {
             this.expandAccordion1.refresh();
-            this.expandAccordion2.refresh();
+            this.expandAccordion2.refresh();    
         }, timeout);
     } 
-
+ 
     private handleMessageEvent = (event: MessageEvent): void => {
-        if (event.origin === window.location.origin) {
+        if (event.origin === window.location.origin && /^{"(name":"[^"]+","theme":"[^"]+"|mode":"[^"]+")}$/.test(event.data)) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'calendar-2' && blockData.theme) {
                     this.currentTheme = blockData.theme;
+                    this.refreshAccordion(100);
                 }
             } catch (error) {
                 console.error('Error parsing message data: ', error);
             }
-        }
-        this.refreshAccordion(1000);
+        }  
     };
     /* SB Code - End */
 }

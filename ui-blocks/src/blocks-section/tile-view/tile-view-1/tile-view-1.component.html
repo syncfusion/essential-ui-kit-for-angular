@@ -1,8 +1,8 @@
 @if (currentTheme === 'tailwind') {
 
 <section class="bg-white dark:bg-gray-900">
-    <div id="ticket-details">
-        <ejs-appbar class="shadow-none px-0">
+    <div id="ticket-details" class="h-screen sm:h-full">
+        <ejs-appbar class="shadow-none px-0" style="height: 54px;">
             <div class="w-full px-4 md:px-6 xl:px-10">
                 <span class="text-xl font-semibold text-gray-900 dark:text-gray-50">All Tickets</span>
                 <div class="e-appbar-spacer"></div>
@@ -19,7 +19,7 @@
                     </div>
                     <div class="flex items-center justify-between">
                         <span class="flex items-center">
-                            <ejs-switch [checked]="true" cssClass="w-9" aria-label="show closed tickets" role="switch"></ejs-switch>
+                            <ejs-switch cssClass="w-9" [checked]="true" aria-label="show closed tickets" role="switch"></ejs-switch>
                             <span class="text-base md:text-sm text-gray-900 dark:text-gray-50 ml-2 md:mr-4">Show Closed Tickets</span>
                         </span>
                         <button ejs-button class="!hidden md:!block" iconCss="e-icons e-filter e-medium" type="button" content="Filter" aria-label="filter options" role="button"></button>
@@ -33,7 +33,9 @@
                             <div class="e-card-stacked">
                                 <div class="e-card-header items-start md:items-center">
                                     <div class="flex e-card-header-title mr-1">
-                                        <span class="pt-0.5"><ejs-checkbox aria-label="select ticket" role="checkbox"></ejs-checkbox></span>
+                                        <span class="pt-0.5">
+                                            <ejs-checkbox aria-label="select ticket" role="checkbox"></ejs-checkbox>
+                                        </span>
                                         <span class="text-base font-medium text-gray-900 dark:text-gray-50 ml-3">{{data.title}}</span>
                                     </div>
                                     <div class="e-card-sub-title flex items-center space-x-3 ml-auto">
@@ -84,7 +86,7 @@
 
 <section class="bg-body-tertiary">
     <div id="ticket-details">
-        <ejs-appbar class="shadow-none px-0">
+        <ejs-appbar class="shadow-none px-0" style="height: 56px;">
             <div class="px-3 px-md-4 px-xl-5">
                 <span class="h5 mb-0 fw-bold text-body">All Tickets</span>
                 <div class="e-appbar-spacer"></div>
@@ -117,7 +119,9 @@
                             <div class="e-card-stacked">
                                 <div class="e-card-header d-flex flex-row pt-3 px-3 align-items-start align-items-sm-center">
                                     <div class="d-flex e-card-header-title me-1">
-                                        <span><ejs-checkbox aria-label="select ticket" role="checkbox"></ejs-checkbox></span>
+                                        <span>
+                                            <ejs-checkbox aria-label="select ticket" role="checkbox"></ejs-checkbox>
+                                        </span>
                                         <span class="fs-6 fw-medium text-body ms-2 ps-1 e-card-header-title">{{data.title}}</span>
                                     </div>
                                     <div class="e-card-sub-title d-flex align-items-center gap-3 ms-auto justify-content-end">

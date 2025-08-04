@@ -1,0 +1,8 @@
+#expenseList .e-listview .e-list-item {
+    border: none !important;
+}
+
+#expenseList .e-listview .e-list-item.e-active,
+#expenseList .e-listview .e-list-item:hover {
+    background-color: transparent !important;
+}

@@ -1,9 +1,8 @@
 @if (currentTheme === 'tailwind') {
 
 <section>
-    <div id="dialog-container" class="relative flex justify-center" style="min-height: 580px;">
-        <button ejs-button class="h-fit my-5" (click)="dialog?.show()" type="button" aria-label="submit feedback" role="button">Submit Feedback</button>
-        <ejs-dialog #dialog class="rounded-none sm:rounded-lg sm:m-4" target="#dialog-container" [isModal]="true" [showCloseIcon]="true" [visible]="false" width="660px" (open)="$event.preventFocus = true" aria-label="submit feedback" role="dialog">
+    <div id="dialog-container" class="relative" style="min-height: 580px;">
+        <ejs-dialog #dialog class="rounded-none sm:rounded-lg sm:m-4" target="#dialog-container" [isModal]="true" [showCloseIcon]="true" [visible]="false" width="660px" (open)="dialogOpen($event)" aria-label="submit feedback" role="dialog">
             <ng-template #header>
                 <p class="font-semibold leading-normal">Submit Feedback</p>
             </ng-template>
@@ -15,20 +14,24 @@
             </ng-template>
             <ng-template #footerTemplate>
                 <div class="flex flex-col-reverse sm:flex-row justify-end gap-4 sm:gap-3 mb-2">
-                    <button ejs-button cssClass="grow sm:grow-0 !ml-0" type="button" aria-label="cancel" role="button">Cancel</button>
-                    <button ejs-button cssClass="e-primary grow sm:grow-0 !ml-0" type="submit" aria-label="submit feedback" role="button">Submit Feedback</button>
+                    <button ejs-button cssClass="grow sm:grow-0 !ml-0" content="Cancel" type="button" aria-label="cancel" role="button"></button>
+                    <button ejs-button cssClass="e-primary grow sm:grow-0 !ml-0" content="Submit Feedback" type="submit" aria-label="submit feedback" role="button"></button>
                 </div>
             </ng-template>
         </ejs-dialog>
     </div>
 </section>
+<!-- SB Code - Start -->
+<div class="top-0 left-0 absolute w-full flex">
+    <button ejs-button class="my-5 mx-auto" content="Submit Feedback" type="button" (click)="dialog?.show()" aria-label="submit feedback" role="button"></button>
+</div>
+<!-- SB Code - End -->
 
 } @else if (currentTheme === 'bootstrap5.3') {
 
 <section>
-    <div id="dialog-container" class="position-relative d-flex align-items-start" style="min-height: 580px;">
-        <button ejs-button class="e-outline mx-auto my-3" (click)="dialog?.show()" type="button" aria-label="submit feedback" role="button">Submit Feedback</button>
-        <ejs-dialog #dialog class="rounded-3 m-sm-2" target="#dialog-container" [isModal]="true" [showCloseIcon]="true" [visible]="false" width="660px" (open)="$event.preventFocus = true" aria-label="submit feedback" role="dialog">
+    <div id="dialog-container" class="position-relative" style="min-height: 580px;">
+        <ejs-dialog #dialog class="rounded-3 m-sm-2" target="#dialog-container" [isModal]="true" [showCloseIcon]="true" [visible]="false" width="660px" (open)="dialogOpen($event)" aria-label="submit feedback" role="dialog">
             <ng-template #header>
                 <p class="fw-bold mb-0 text-body">Submit Feedback</p>
             </ng-template>
@@ -40,12 +43,17 @@
             </ng-template>
             <ng-template #footerTemplate>
                 <div class="d-flex flex-column-reverse flex-sm-row justify-content-end gap-3 gap-sm-1 py-1">
-                    <button ejs-button cssClass="flex-grow-1 flex-sm-grow-0 ms-0" type="button" aria-label="cancel" role="button">Cancel</button>
-                    <button ejs-button cssClass="e-primary flex-grow-1 flex-sm-grow-0 ms-0 ms-sm-2" type="submit" aria-label="submit feedback" role="button">Submit Feedback</button>
+                    <button ejs-button cssClass="flex-grow-1 flex-sm-grow-0 ms-0" content="Cancel" type="button" aria-label="cancel" role="button"></button>
+                    <button ejs-button cssClass="e-primary flex-grow-1 flex-sm-grow-0 ms-0 ms-sm-2" content="Submit Feedback" type="submit" aria-label="submit feedback" role="button"></button>
                 </div>
             </ng-template>
         </ejs-dialog>
     </div>
 </section>
+<!-- SB Code - Start -->
+<div class="position-absolute top-0 start-0 d-flex w-100">
+    <button ejs-button class="e-outline mx-auto my-3" content="Submit Feedback" type="button" (click)="dialog?.show()" aria-label="submit feedback" role="button"></button>
+</div>
+<!-- SB Code - End -->
 
 }

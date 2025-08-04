@@ -1,12 +1,14 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RatingModule } from '@syncfusion/ej2-angular-inputs';
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 
 @Component({
     selector: 'app-rating-8',
     standalone: true,
-    imports: [RatingModule, ButtonModule],
-    templateUrl: './rating-8.component.html'
+    imports: [CommonModule, RatingModule, ButtonModule],
+    templateUrl: './rating-8.component.html',
+    styleUrl: './rating-8.component.css'
 })
 export class Rating8Component implements OnInit, OnDestroy {
     /* SB Code - Start */
@@ -29,7 +31,7 @@ export class Rating8Component implements OnInit, OnDestroy {
 
     /* SB Code - Start */
     private handleMessageEvent = (event: MessageEvent): void => {
-        if (event.origin === window.location.origin) {
+        if (event.origin === window.location.origin && /^{"(name":"[^"]+","theme":"[^"]+"|mode":"[^"]+")}$/.test(event.data)) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'rating-8' && blockData.theme) {

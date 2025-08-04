@@ -2,7 +2,7 @@
 
 <section class="bg-white dark:bg-gray-900">
     <div id="job-details">
-        <ejs-appbar class="shadow-none px-0 h-auto">
+        <ejs-appbar class="shadow-none px-0 py-3 h-auto" style="min-height: 78px;">
             <div class="flex flex-wrap gap-x-4 gap-y-3 px-6 xl:px-10">
                 <button ejs-dropdownbutton class="e-primary" content="All jobs" type="button" (beforeOpen)="$event.cancel = true;" aria-label="choose job options" role="button"></button>
                 <button ejs-dropdownbutton content="Any time" type="button" (beforeOpen)="$event.cancel = true;" aria-label="choose time" role="button"></button>
@@ -27,7 +27,7 @@
                 <ejs-listview class="!border-0 mb-2" cssClass="e-list-template" [dataSource]="jobDetails" aria-label="list of job with details" role="list">
                     <ng-template #template let-data>
                         <div class="e-card flex-col gap-4 p-4 rounded-2xl sm:pr-5 sm:p-6 sm:flex-row">
-                            <span class="e-avatar e-avatar-xlarge e-avatar-circle shrink-0">
+                            <span class="e-avatar e-avatar-xlarge e-avatar-circle shrink-0 bg-transparent">
                                 <img src="assets/images/tile-view/job-site/{{data.logo}}" alt="company logo" />
                             </span>
                             <div class="e-card-stacked grow space-y-3 px-1">
@@ -44,11 +44,11 @@
                                     </div>
                                 </div>
                                 <div class="e-card-content flex flex-wrap gap-3 !px-0 !pb-1 text-gray-700 dark:text-gray-200">
-                                    <span class="flex items-center gap-1"><i class="sf-icon-laptop text-sm mx-2 text-gray-500 dark:text-gray-300"></i>{{data.experience}}</span>
+                                    <span class="flex items-center gap-1"><span class="sf-icon-laptop text-sm mx-2 text-gray-500 dark:text-gray-300"></span> {{data.experience}}</span>
                                     <div class="border-e dark:border-gray-600 my-1"></div>
-                                    <span class="flex items-center gap-1"><i class="sf-icon-dollar text-base mx-2 text-gray-500 dark:text-gray-300"></i>{{data.salary}}</span>
+                                    <span class="flex items-center gap-1"><span class="sf-icon-dollar text-base mx-2 text-gray-500 dark:text-gray-300"></span> {{data.salary}}</span>
                                     <div class="border-e dark:border-gray-600 my-1"></div>
-                                    <span class="flex items-center gap-1"><i class="e-icons e-location mx-2 text-gray-500 dark:text-gray-300"></i>{{data.location}}</span>
+                                    <span class="flex items-center gap-1"><span class="e-icons e-location mx-2 text-gray-500 dark:text-gray-300"></span> {{data.location}}</span>
                                 </div>
                                 <div class="e-card-actions !px-0 !pb-1 !flex flex-col gap-6 sm:flex-row">
                                     <div class="flex items-center flex-wrap gap-x-3 gap-y-2 text-sm text-gray-500 dark:text-gray-400">
@@ -56,14 +56,14 @@
                                         <p class="border-e pr-2 dark:border-gray-600">Openings: 1</p>
                                         <p>Applicants: {{data.applicants}}</p>
                                     </div>
-                                    <button ejs-button class="e-primary ml-auto w-full sm:w-fit" type="button" aria-label="apply" role="button">Apply</button>
+                                    <button ejs-button class="e-primary ml-auto w-full sm:w-fit" content="Apply" type="button" aria-label="apply" role="button"></button>
                                 </div>
                             </div>
                             <button ejs-button class="e-flat e-round e-icons e-bookmark absolute top-6 right-4 sm:right-6" type="button" aria-label="bookmark" role="button"></button>
                         </div>
                     </ng-template>
                 </ejs-listview>
-                <button ejs-button class="mx-auto !px-11" type="button" aria-label="load more jobs" role="button">Load More Jobs</button>
+                <button ejs-button class="mx-auto !px-11" content="Load More Jobs" type="button" aria-label="load more jobs" role="button"></button>
             </div>
         </div>
     </div>
@@ -73,7 +73,7 @@
 
 <section class="bg-body-tertiary">
     <div id="job-details">
-        <ejs-appbar class="px-0 h-auto">
+        <ejs-appbar class="px-0 py-3 h-auto" style="min-height: 78px;">
             <div class="d-flex flex-wrap gap-3 px-3 px-sm-4 px-xl-5">
                 <button ejs-dropdownbutton class="e-primary" content="All jobs" type="button" (beforeOpen)="$event.cancel = true;" aria-label="choose job options" role="button"></button>
                 <button ejs-dropdownbutton class="e-outline" content="Any time" type="button" (beforeOpen)="$event.cancel = true;" aria-label="choose time" role="button"></button>
@@ -98,7 +98,7 @@
                 <ejs-listview class="border-0 mb-1" cssClass="e-list-template" [dataSource]="jobDetails" aria-label="list of job with details" role="list">
                     <ng-template #template let-data>
                         <div class="e-card d-flex flex-column gap-3 flex-md-row rounded-4 p-3 ps-4">
-                            <span class="e-avatar e-avatar-xlarge e-avatar-circle flex-shrink-0">
+                            <span class="e-avatar e-avatar-xlarge e-avatar-circle flex-shrink-0 bg-transparent">
                                 <img src="assets/images/tile-view/job-site/{{data.logo}}" alt="company logo" />
                             </span>
                             <div class="e-card-stacked flex-grow-1 pe-1 py-1">
@@ -115,11 +115,11 @@
                                     </div>
                                 </div>
                                 <div class="e-card-content p-0 d-flex flex-wrap gap-2 mb-3 text-body-secondary">
-                                    <span class="d-flex align-items-center gap-1"><i class="sf-icon-laptop fs-6 mx-1"></i>{{data.experience}}</span>
+                                    <span class="d-flex align-items-center gap-1"><span class="sf-icon-laptop fs-6 mx-1"></span> {{data.experience}}</span>
                                     <div class="border-end border-light-subtle m-1"></div>
-                                    <span class="d-flex align-items-center gap-1"><i class="sf-icon-dollar fs-6 mx-1"></i>{{data.salary}}</span>
+                                    <span class="d-flex align-items-center gap-1"><span class="sf-icon-dollar fs-6 mx-1"></span> {{data.salary}}</span>
                                     <div class="border-end border-light-subtle m-1"></div>
-                                    <span class="d-flex align-items-center gap-1"><i class="e-icons e-location mx-1"></i>{{data.location}}</span>
+                                    <span class="d-flex align-items-center gap-1"><span class="e-icons e-location mx-1"></span> {{data.location}}</span>
                                 </div>
                                 <div class="e-card-actions d-flex flex-column gap-3 justify-content-between flex-sm-row lh-sm p-1 ps-0 text-body-secondary">
                                     <div class="d-flex align-items-center flex-wrap gap-2 lh-base">
@@ -127,14 +127,14 @@
                                         <p class="border-end pe-2 mb-0">Openings: {{data.openings}}</p>
                                         <p class="mb-0">Applicants: {{data.applicants}}</p>
                                     </div>
-                                    <button ejs-button class="e-primary col-12 col-sm-auto" type="button" aria-label="apply" role="button">Apply</button>
+                                    <button ejs-button class="e-primary col-12 col-sm-auto" content="Apply" type="button" aria-label="apply" role="button"></button>
                                 </div>
                             </div>
                             <button ejs-button class="e-flat e-round e-icons e-bookmark position-absolute" type="button" aria-label="bookmark" role="button" style="right: 24px; top: 24px;"></button>
                         </div>
                     </ng-template>
                 </ejs-listview>
-                <button ejs-button class="e-outline mx-auto px-5" type="button" aria-label="load more jobs" role="button">Load More Jobs</button>
+                <button ejs-button class="e-outline mx-auto px-5" content="Load More Jobs" type="button" aria-label="load more jobs" role="button"></button>
             </div>
         </div>
     </div>
