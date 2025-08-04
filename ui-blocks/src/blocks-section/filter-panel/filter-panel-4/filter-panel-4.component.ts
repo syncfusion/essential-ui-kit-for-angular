@@ -64,17 +64,17 @@ export class FilterPanel4Component implements OnInit, OnDestroy {
     }
 
     private handleMessageEvent = (event: MessageEvent): void => {
-        if (event.origin === window.location.origin) {
+        if (event.origin === window.location.origin && /^{"(name":"[^"]+","theme":"[^"]+"|mode":"[^"]+")}$/.test(event.data)) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'filter-panel-4' && blockData.theme) {
                     this.currentTheme = blockData.theme;
+                    this.refreshAccordion(800);
                 }
             } catch (error) {
                 console.error('Error parsing message data: ', error);
             }
         }
-        this.refreshAccordion(800);
     };
     /* SB Code - End */
 }

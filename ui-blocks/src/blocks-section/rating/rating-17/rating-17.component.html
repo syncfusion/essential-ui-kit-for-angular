@@ -1,0 +1,123 @@
+@if (currentTheme === 'tailwind') {
+
+<section>
+    <div id="dialog-container" class="relative flex justify-center" style="min-height: 580px;">
+        <ejs-dialog #dialog id="dialog" class="rounded-none sm:rounded-lg shadow-sm sm:m-4 py-3.5" [isModal]="true" [showCloseIcon]="true" [visible]="true" width="400px" target="#dialog-container" (open)="$event.preventFocus = true" aria-label="update personal information" role="dialog">
+            <ng-template #header>
+                <div class="flex flex-col pb-1.5">
+                    <div class="flex items-center gap-3">
+                        <div class="rounded-full flex items-center justify-center shrink-0 bg-primary-100 dark:bg-cyan-800" style="height: 38px; width: 38px;">
+                            <span class="e-icons e-star-filled text-primary-600 dark:text-primary-400"></span>
+                        </div>
+                        <div class="flex flex-col">
+                            <h4 class="text-base font-semibold text-gray-900 dark:text-white">Rate our platform</h4>
+                            <p class="text-xs font-medium text-gray-500 dark:text-gray-400 pt-1">Provide us with feedback for the platform.</p>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template #content>
+                <p class="text-sm font-medium text-gray-900 dark:text-white pt-1">Your rating</p>
+                <div class="mt-2 flex gap-2">
+                    <input ejs-rating [emptyTemplate]="emptyTemplate" [fullTemplate]="fullTemplate" value="4" aria-label="rate us out of 5" role="slider" />
+                    <ng-template #emptyTemplate>
+                        <div class="border border-gray-300 dark:border-gray-500 rounded-md px-3 mx-1">
+                            <span class="sf-icon-star-filled-01 !text-2xl text-gray-300 dark:text-gray-500"></span>
+                        </div>
+                    </ng-template>
+                    <ng-template #fullTemplate>
+                        <div class="border border-gray-300 dark:border-gray-500 rounded-md px-3 mx-1">
+                            <span class="sf-icon-star-filled-01 !text-2xl text-amber-300"></span>
+                        </div>
+                    </ng-template>
+                </div>
+                <div class="mt-4 flex flex-col gap-1">
+                    <label class="text-xs font-medium text-gray-700 dark:text-gray-100">Feature/service name<span class="text-red-500"> *</span></label>
+                    <ejs-dropdownlist placeholder='Analytics dashboard' aria-label="choose a analytics dashboard" role="listbox"></ejs-dropdownlist>
+                </div>
+                <div class="mt-4 flex flex-col gap-1 grow text-sm">
+                    <label class="font-medium text-xs text-gray-700 dark:text-gray-100">Product overview <span class="text-gray-500">(Optional)</span></label>
+                    <ejs-textarea placeholder="Write your thoughts..." resizeMode="None" rows="6" aria-label="enter your thoughts" role="textbox" style="height: 95px;"></ejs-textarea>
+                </div>
+                 <div class="mt-4">
+                    <ejs-checkbox label="Remain anonymous" aria-label="remain anonymous" role="checkbox"></ejs-checkbox>
+                </div>
+            </ng-template>
+            <ng-template #footerTemplate>
+                <div class="flex flex-row justify-end pt-4 pb-0.5 gap-4">
+                    <button ejs-button class="!ml-0" cssClass="e-outline e-block" content="Cancel" type="button" aria-label="cancel" role="button"></button>
+                    <button ejs-button class="!ml-0" cssClass="e-primary e-block" content="Submit" type="button" aria-label="submit" role="button"></button>
+                </div>
+            </ng-template>
+        </ejs-dialog>
+    </div>
+</section>
+<!-- SB Code - Start -->
+<div class="top-0 flex w-full absolute">
+    <button ejs-button class="mx-auto my-5" content="Feedback Form" (click)="dialog.show()" type="button" aria-label="open feedback form" role="button"></button>
+</div>
+<!-- SB Code - End -->
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section>
+    <div id="dialog-container" class="position-relative d-flex justify-content-center" style="min-height: 580px;">
+        <ejs-dialog #dialog class="rounded-0 rounded-3 shadow-sm m-sm-4 py-2 border-0" [isModal]="true" [showCloseIcon]="true" [visible]="true" width="400px" target="#dialog-container" (open)="$event.preventFocus = true" aria-label="update personal information" role="dialog">
+            <ng-template #header>
+                <div class="d-flex flex-column py-1 ps-2 ms-1">
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0 bg-primary bg-opacity-25" style="height: 38px; width: 38px;">
+                            <span class="e-icons e-star-filled text-primary"></span>
+                        </div>
+                        <div class="d-flex flex-column small">
+                            <h4 class="fs-6 fw-bold text-body mb-0">Rate our platform</h4>
+                            <p class="fw-medium small text-body-secondary pt-1 mb-0">Provide us with feedback for the platform.</p>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template #content>
+                <div class="px-2 mx-1">
+                    <p class="fw-medium text-body pt-1 mb-0">Your rating</p>
+                    <div class="mt-2 d-flex gap-2">
+                        <input ejs-rating [emptyTemplate]="emptyTemplate" [fullTemplate]="fullTemplate" value="4" aria-label="rate us out of 5" role="slider" />
+                        <ng-template #emptyTemplate>
+                            <div class="border border-light-subtle rounded px-3 me-1 ms-sm-1">
+                                <span class="sf-icon-star-02 fs-5 text-body-secondary"></span>
+                            </div>
+                        </ng-template>
+                        <ng-template #fullTemplate>
+                            <div class="border border-light-subtle rounded px-3 me-1 ms-sm-1">
+                                <span class="sf-icon-star-filled-01 fs-5 text-warning"></span>
+                            </div>
+                        </ng-template>
+                    </div>
+                    <div class="mt-2 d-flex flex-column gap-1">
+                        <label class="small text-body-secondary">Feature/service name<span class="text-danger"> *</span></label>
+                        <ejs-dropdownlist placeholder='Analytics dashboard' aria-label="choose a analytics dashboard" role="listbox"></ejs-dropdownlist>
+                    </div>
+                    <div class="mt-3 d-flex flex-column gap-1 flex-grow-1">
+                        <label class="small text-body-secondary">Product overview <span class="text-body-secondary">(Optional)</span></label>
+                        <ejs-textarea placeholder="Write your thoughts..." resizeMode="None" rows="6" aria-label="enter your thoughts" role="textbox" style="height: 95px;"></ejs-textarea>
+                    </div>
+                    <div class="mt-3 mb-1">
+                        <ejs-checkbox label="Remain anonymous" aria-label="remain anonymous" role="checkbox"></ejs-checkbox>
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template #footerTemplate>
+                <div class="d-flex flex-row justify-content-end gap-3 pt-2 my-1 px-2 mx-1">
+                    <button ejs-button class="ms-0" cssClass="e-outline e-block" content="Cancel" type="button" aria-label="cancel" role="button"></button>
+                    <button ejs-button class="ms-0" cssClass="e-primary e-block" content="Submit" type="button" aria-label="submit" role="button"></button>
+                </div>
+            </ng-template>
+        </ejs-dialog>
+    </div>
+</section>
+<!-- SB Code - Start -->
+<div class="position-absolute top-0 w-100 d-flex">
+    <button ejs-button class="mx-auto my-5" cssClass="e-outline" content="Feedback Form" (click)="dialog.show()" type="button" aria-label="open feedback form" role="button"></button>
+</div>
+<!-- SB Code - End -->
+
+}

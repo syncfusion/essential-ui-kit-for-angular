@@ -2,12 +2,12 @@
 
 <section class="bg-white dark:bg-gray-900">
     <div [ngStyle]="{'height': '945px', 'width': width, float:'Right'}">
-        <ejs-sidebar class="w-full bg-white dark:bg-gray-900" #sidebar position="Right" type="push" [width]="width" [isOpen]="true" showBackdrop="true" (created)="refreshPriceSlider()" role="complementary" style="display: block;">
+        <ejs-sidebar class="w-full bg-white dark:bg-gray-900" #sidebar position="Right" type="Push" [width]="width" [isOpen]="true" showBackdrop="true" (created)="refreshPriceSlider()" role="complementary" style="display: block;">
             <div class="bg-white dark:bg-gray-900">
                 <div class="border-b border-gray-200 dark:border-gray-600">
                     <div class="flex justify-between items-center px-4 py-3 border-b border-gray-200 dark:border-gray-600">
                         <h2 class="text-base font-semibold text-gray-900 dark:text-white">Room Filters</h2>
-                        <button ejs-button class="e-flat text-base" iconCss="e-icons e-close" (click)="sidebar.toggle()" content=" " type="button" aria-label="close sidebar" role="button"></button>
+                        <button ejs-button class="e-flat text-base" iconCss="e-icons e-close" (click)="sidebar.toggle()" type="button" aria-label="close sidebar" role="button"></button>
                     </div>
                     <div class="p-4 flex justify-center">
                         <ejs-calendar class="e-bigger shadow-none border-none"></ejs-calendar>
@@ -18,7 +18,7 @@
                         <e-accordionitems>
                             <e-accordionitem expanded="true">
                                 <ng-template #header>
-                                    <div class="font-normal text-gray-500 dark:text-gray-400">Floors</div>
+                                    <div class="font-medium text-gray-500 dark:text-gray-400">Floors</div>
                                 </ng-template>
                                 <ng-template #content>
                                     <div class="grid gap-3 p-1">
@@ -40,19 +40,19 @@
                         </e-accordionitems>
                     </ejs-accordion>
                     <div class="sliderwrap px-3 my-6">
-                        <label class="text-sm text-gray-500 dark:text-gray-400">
+                        <label class="text-sm font-medium text-gray-500 dark:text-gray-400">
                             Price Range
                             <span class="e-icons e-circle-info ml-2"></span>
                         </label>
-                        <div class="px-2">
-                            <ejs-slider #slider type="Range" [value]="[2500, 4000]" [tooltip]="tooltipInfo" min="1000" max="5000" [step]="1" [ticks]="{ placement: 'After', largeStep: 4000, showlargeTicks: true, format: 'c0' }" style="width: 225px; left: 15px;"></ejs-slider>
+                        <div class="px-2 flex justify-center w-full">
+                            <ejs-slider #slider type="Range" [value]="[2500, 4000]" [tooltip]="tooltipInfo" min="1000" max="5000" [step]="1" [ticks]="{ placement: 'After', largeStep: 4000, showlargeTicks: true, format: 'c0' }" [ngStyle]="{ width: sliderWidth }"></ejs-slider>
                         </div>
                     </div>
                     <ejs-accordion #accordion2 class="border-0 bg-transparent" expandMode="Multiple" role="accordion">
                         <e-accordionitems>
                             <e-accordionitem expanded="true">
                                 <ng-template #header>
-                                    <div class="font-normal text-gray-500 dark:text-gray-400">Facility</div>
+                                    <div class="font-medium text-gray-500 dark:text-gray-400">Facility</div>
                                 </ng-template>
                                 <ng-template #content>
                                     <div class="grid gap-3 text-gray-500 p-1">
@@ -66,7 +66,7 @@
                                             <ejs-checkbox label="Television" aria-label="television" role="checkbox"></ejs-checkbox>
                                         </div>
                                         <div>
-                                            <button ejs-button class="e-primary e-flat" content="Show more" iconCss="e-icons e-plus" type="button" aria-label="show more" role="button"></button>
+                                            <button ejs-button class="e-primary e-flat" iconCss="e-icons e-plus" content="Show more" type="button" aria-label="show more" role="button"></button>
                                         </div>
                                     </div>
                                 </ng-template>
@@ -80,7 +80,7 @@
 </section>
 <!-- SB Code - Start -->
 <div class="p-3 absolute top-0 right-0">
-    <button ejs-button cssClass="e-large e-icons e-chevron-left e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+    <button ejs-button cssClass="e-round e-large e-icons e-chevron-left" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
 </div>
 <!-- SB Code - End -->
 
@@ -88,12 +88,12 @@
 
 <section class="bg-body">
     <div [ngStyle]="{'height': '1010px', 'width': width, float:'Right'}">
-        <ejs-sidebar class="bg-body" #sidebar position="Right" type="push" [width]="width" [isOpen]="true" showBackdrop="true" (created)="refreshPriceSlider()" role="complementary" style="display: block;">
+        <ejs-sidebar class="bg-body" #sidebar position="Right" type="Push" [width]="width" [isOpen]="true" showBackdrop="true" (created)="refreshPriceSlider()" role="complementary" style="display: block;">
             <div class="bg-body">
                 <div class="border-bottom border-light-subtle">
                     <div class="d-flex justify-content-between align-items-center px-4 py-3 border-bottom border-light-subtle">
                         <h2 class="h6 fw-semibold text-body mb-0">Room Filters</h2>
-                        <button ejs-button class="e-flat fs-6" iconCss="e-icons e-close" (click)="sidebar.toggle()" type="button" content=" " aria-label="close sidebar" role="button"></button>
+                        <button ejs-button class="e-flat fs-6" iconCss="e-icons e-close" (click)="sidebar.toggle()" type="button" aria-label="close sidebar" role="button"></button>
                     </div>
                     <div class="p-4 pb-0 d-flex justify-content-center align-items-center">
                         <ejs-calendar class="e-bigger shadow-none border-0"></ejs-calendar>
@@ -131,7 +131,7 @@
                             <span class="e-icons e-circle-info ms-2"></span>
                         </label>
                         <div class="px-2 w-4/5">
-                            <ejs-slider #slider type="Range" [value]="[2500, 4000]" [tooltip]="tooltipInfo" min="1000" max="5000" [step]="1" [ticks]="{ placement: 'After', largeStep: 4000, showlargeTicks: true, format: 'c0' }"></ejs-slider>
+                            <ejs-slider #slider type="Range" [value]="[2500, 4000]" [tooltip]="tooltipInfo" min="1000" max="5000" [step]="1" [ticks]="{ placement: 'After', largeStep: 4000, showlargeTicks: true, format: 'c0' }" [ngStyle]="{ width: sliderWidth }"></ejs-slider>
                         </div>
                     </div>
                     <ejs-accordion #accordion2 class="border-0 bg-transparent" expandMode="Multiple" role="accordion">
@@ -152,7 +152,7 @@
                                             <ejs-checkbox label="Television" aria-label="television" role="checkbox"></ejs-checkbox>
                                         </div>
                                         <div>
-                                            <button ejs-button class="e-primary e-flat" content="Show more" iconCss="e-icons e-plus" type="button" aria-label="show more" role="button"></button>
+                                            <button ejs-button class="e-primary e-flat" iconCss="e-icons e-plus" content="Show more" type="button" aria-label="show more" role="button"></button>
                                         </div>
                                     </div>
                                 </ng-template>
@@ -166,7 +166,7 @@
 </section>
 <!-- SB Code - Start -->
 <div class="p-3 position-absolute top-0 end-0">
-    <button ejs-button cssClass="e-large e-icons e-chevron-left e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+    <button ejs-button cssClass="e-round e-large e-icons e-chevron-left" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
 </div>
 <!-- SB Code - End -->
 

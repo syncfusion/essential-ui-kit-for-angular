@@ -48,7 +48,7 @@ export class Statistics2Component implements OnInit, OnDestroy {
             currentValue: '36.7%',
             contextInfo: 'Average revenue generated per visit.',
             currentPercentage: '3.31',
-            total: '34,12%'
+            total: '34.12%'
         }
     ];
     
@@ -76,7 +76,7 @@ export class Statistics2Component implements OnInit, OnDestroy {
 
     /* SB Code - Start */
     private handleMessageEvent = (event: MessageEvent): void => {
-        if (event.origin === window.location.origin) {
+        if (event.origin === window.location.origin && /^{"(name":"[^"]+","theme":"[^"]+"|mode":"[^"]+")}$/.test(event.data)) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'statistics-2' && blockData.theme) {

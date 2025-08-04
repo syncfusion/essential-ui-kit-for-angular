@@ -7,18 +7,22 @@
                     <div class="border border-gray-200 dark:border-gray-600 !py-4 px-4 my-4" style= "border-radius: 8px;">
                         <div class="flex justify-between">
                             <div class="flex w-full">
-                                <span class="shrink-0"><img class="rounded-md" src="assets/images/listview/task-management/{{data.logo}}" width="48px" height="48px" alt="brand logo" /></span>
+                                <span class="shrink-0">
+                                    <img class="rounded-md" src="assets/images/listview/task-management/{{data.logo}}" width="48px" height="48px" alt="brand logo" />
+                                </span>
                                 <span class="ml-4 w-11/12">
                                     <div class="flex justify-between">
                                         <div>
                                             <span class="e-list-item-header flex items-center !text-sm !font-medium !text-wrap !line-clamp-2 sm:!line-clamp-3 w-full truncate !text-gray-900 dark:!text-gray-200">{{data.content}}</span>
-                                            <span class="flex items-center space-x-2 text-gray-700 dark:text-gray-200 w-44 mt-3 sm:mt-2 text-nowrap">
+                                            <span class="flex items-center space-x-3 text-gray-700 dark:text-gray-200 w-44 mt-3 sm:mt-2 text-nowrap">
                                                 <span class="text-sm font-normal">Due Date</span>
                                                 <span class="text-sm font-normal e-icons e-day text-xl text-gray-700 dark:text-gray-200"></span>
                                                 <span class="text-sm font-normal pt-0.5 sm:pt-0">{{data.date | date: 'd MMMM y'}}</span>
                                             </span>
                                         </div>
-                                        <span class="e-avatar e-avatar-circle shrink-0 ml-4"><img src="assets/images/common/avatar/{{data.image}}" alt="brand logo" /></span>
+                                        <span class="e-avatar e-avatar-circle shrink-0 ml-4">
+                                            <img src="assets/images/common/avatar/{{data.image}}" alt="brand logo" />
+                                        </span>
                                     </div>
                                 </span>
                             </div>
@@ -37,7 +41,9 @@
                 <ng-template #template let-data>
                     <div class="e-list-wrapper e-list-multi-line border px-2 px-sm-3 py-3 mt-3" style= "border-radius: 8px;">
                         <div class="d-flex justify-content-between">
-                            <span class="flex-shrink-0"><img class="rounded-2" src="assets/images/listview/task-management/{{data.logo}}" width="48px" height="48px" alt="brand logo" /></span>
+                            <span class="flex-shrink-0">
+                                <img class="rounded-2" src="assets/images/listview/task-management/{{data.logo}}" width="48px" height="48px" alt="brand logo" />
+                            </span>
                             <div class="flex-grow-1">
                                 <div class="d-flex justify-content-between">
                                     <div>
@@ -48,7 +54,9 @@
                                             <span>{{data.date | date: 'd MMMM y'}}</span>
                                         </span>
                                     </div>
-                                    <span class="e-avatar e-avatar-circle flex-shrink-0"><img src="assets/images/common/avatar/{{data.image}}" alt="brand logo" /></span>
+                                    <span class="e-avatar e-avatar-circle flex-shrink-0">
+                                        <img src="assets/images/common/avatar/{{data.image}}" alt="brand logo" />
+                                    </span>
                                 </div>
                             </div>
                         </div>

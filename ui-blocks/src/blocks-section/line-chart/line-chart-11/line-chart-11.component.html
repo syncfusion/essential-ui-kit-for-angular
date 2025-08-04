@@ -1,0 +1,69 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-white dark:bg-gray-950">
+    <div class="h-screen flex justify-center p-4 sm:p-6">
+        <div class="w-full" style="max-width: 700px;">
+            <div class="flex flex-col sm:flex-row gap-6 justify-between items-start sm:items-center mb-6">
+                <h2 class="text-gray-900 dark:text-white font-medium">NC Weather Report - 2024</h2>
+                <div class="e-btn-group hidden sm:block">
+                    <input type="radio" id="day" name="align" value="D" aria-label="day" role="button" />
+                    <label class="e-btn" for="day">D</label>
+                    <input type="radio" id="week" name="align" value="W" checked aria-label="week" role="button" />
+                    <label class="e-btn" for="week">W</label>
+                    <input type="radio" id="month" name="align" value="M" aria-label="month" role="button" />
+                    <label class="e-btn" for="month">M</label>
+                    <input type="radio" id="year" name="align" value="Y" aria-label="year" role="button" />
+                    <label class="e-btn" for="year">Y</label>
+                    <input type="radio" id="custom" name="align" value="Custom" aria-label="custom" role="button" />
+                    <label class="e-btn" for="custom">Custom</label>
+                </div>
+                <button #rangeDropdown ejs-dropdownbutton class="e-outline block sm:hidden" content="Week" [items]="[{text:'Day'},{text:'Week'},{text:'Month'},{text:'Year'},{text:'Custom'}]" type="button" aria-label="choose a range" role="button"></button>
+            </div>
+            <div>
+                <ejs-chart #chart width="100%" height="380px" [chartArea]="{border: {width: 0}}" [primaryXAxis]="primaryXAxis" [primaryYAxis]="primaryYAxis" [tooltip]="tooltip" [legendSettings]="{visible: true,padding: 15}" (load)="chartLoad($event,'Tailwind3','Tailwind3Dark')" aria-label="weather analysis" role="region">
+                    <e-series-collection>
+                        <e-series [dataSource]="chartData" type="Spline" xName="day" yName="maxTemp" name="Max Temp" width="3" [fill]="isDarkMode?'#9CA3AF':'#1F2937'"></e-series>
+                        <e-series [dataSource]="chartData" type="Spline" xName="day" yName="avgTemp" name="Avg Temp" width="3" fill="#01A8B5"></e-series>
+                        <e-series [dataSource]="chartData" type="Spline" xName="day" yName="minTemp" name="Min Temp" width="3" fill="#267DDA"></e-series>
+                    </e-series-collection>
+                </ejs-chart>
+            </div>
+        </div>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body">
+    <div class="vh-100 d-flex justify-content-center align-items-start p-3 p-sm-4">
+        <div class="w-100" style="max-width: 700px;">
+            <div class="d-flex flex-column flex-sm-row gap-3 justify-content-between align-items-start align-items-sm-center mb-4">
+                <h2 class="fs-6 fw-medium text-body mb-0">NC Weather Report - 2024</h2>
+                <div class="e-btn-group d-none d-sm-block">
+                    <input type="radio" id="day" name="align" value="D" aria-label="day" role="button" />
+                    <label class="e-btn" for="day">D</label>
+                    <input type="radio" id="week" name="align" value="W" checked aria-label="week" role="button" />
+                    <label class="e-btn" for="week">W</label>
+                    <input type="radio" id="month" name="align" value="M" aria-label="month" role="button" />
+                    <label class="e-btn" for="month">M</label>
+                    <input type="radio" id="year" name="align" value="Y" aria-label="year" role="button" />
+                    <label class="e-btn" for="year">Y</label>
+                    <input type="radio" id="custom" name="align" value="Custom" aria-label="custom" role="button" />
+                    <label class="e-btn" for="custom">Custom</label>
+                </div>
+                <button #rangeDropdown ejs-dropdownbutton class="e-outline d-block d-sm-none" content="Week" [items]="[{text:'Day'},{text:'Week'},{text:'Month'},{text:'Year'},{text:'Custom'}]" type="button" aria-label="choose a range" role="button"></button>
+            </div>
+            <div>
+                <ejs-chart #chart width="100%" height="380px" [chartArea]="{border: {width: 0}}" [primaryXAxis]="primaryXAxis" [primaryYAxis]="primaryYAxis" [tooltip]="tooltip" [legendSettings]="{visible: true,padding: 15}" (load)="chartLoad($event,'Bootstrap5','Bootstrap5Dark')" aria-label="weather analysis" role="region">
+                    <e-series-collection>
+                        <e-series [dataSource]="chartData" type="Spline" xName="day" yName="maxTemp" name="Max Temp" width="3" [fill]="isDarkMode?'#ADB5BD':'#343A40'"></e-series>
+                        <e-series [dataSource]="chartData" type="Spline" xName="day" yName="avgTemp" name="Avg Temp" width="3" fill="#00EFA7"></e-series>
+                        <e-series [dataSource]="chartData" type="Spline" xName="day" yName="minTemp" name="Min Temp" width="3" fill="#3A95FF"></e-series>
+                    </e-series-collection>
+                </ejs-chart>
+            </div>
+        </div>
+    </div>
+</section>
+
+}

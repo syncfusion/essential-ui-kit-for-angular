@@ -1,11 +1,12 @@
 import { Component, OnInit, OnDestroy, HostListener, ViewChild } from '@angular/core';
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { DatePickerModule } from '@syncfusion/ej2-angular-calendars';
 import { ChartAllModule, ChartComponent } from '@syncfusion/ej2-angular-charts';
 
 @Component({
     selector: 'app-line-chart-4',
     standalone: true,
-    imports: [ButtonModule, ChartAllModule],
+    imports: [ButtonModule, ChartAllModule, DatePickerModule],
     templateUrl: './line-chart-4.component.html'
 })
 export class LineChart4Component implements OnInit, OnDestroy {
@@ -30,18 +31,18 @@ export class LineChart4Component implements OnInit, OnDestroy {
     }
 
     public chartData: Object[] = [
-        { month: 'Jan', x: 600, y: 550 },
-        { month: 'Feb', x: 720, y: 690 },
-        { month: 'Mar', x: 670, y: 710 },
-        { month: 'Apr', x: 780, y: 740 },
-        { month: 'May', x: 610, y: 700 },
-        { month: 'Jun', x: 800, y: 770 },
-        { month: 'Jul', x: 850, y: 800 },
-        { month: 'Aug', x: 770, y: 740 },
-        { month: 'Sep', x: 680, y: 690 },
-        { month: 'Oct', x: 740, y: 720 },
-        { month: 'Nov', x: 810, y: 780 },
-        { month: 'Dec', x: 790, y: 760 }
+        { month: 'Jan', xAxis: 600, yAxis: 550 },
+        { month: 'Feb', xAxis: 720, yAxis: 690 },
+        { month: 'Mar', xAxis: 670, yAxis: 710 },
+        { month: 'Apr', xAxis: 780, yAxis: 740 },
+        { month: 'May', xAxis: 610, yAxis: 700 },
+        { month: 'Jun', xAxis: 800, yAxis: 770 },
+        { month: 'Jul', xAxis: 850, yAxis: 800 },
+        { month: 'Aug', xAxis: 770, yAxis: 740 },
+        { month: 'Sep', xAxis: 680, yAxis: 690 },
+        { month: 'Oct', xAxis: 740, yAxis: 720 },
+        { month: 'Nov', xAxis: 810, yAxis: 780 },
+        { month: 'Dec', xAxis: 790, yAxis: 760 }
     ];
 
     public primaryXAxis: Object = {
@@ -49,6 +50,7 @@ export class LineChart4Component implements OnInit, OnDestroy {
         majorGridLines: { width: 0 },
         majorTickLines: { width: 0 },
         labelStyle: { fontWeight: '500' },
+        labelIntersectAction: 'None',
         interval: 1
     };
 
@@ -84,22 +86,23 @@ export class LineChart4Component implements OnInit, OnDestroy {
         alignment: 'Near',
         shapeHeight: 10,
         shapeWidth: 10,
-        padding: 15
+        height: '40px'
     };
 
     public chartLoad(args: any, lightTheme: string, darkTheme: string): void {
         args.chart.theme = this.isDarkMode ? darkTheme : lightTheme;
+        this.resize();
     };
 
     @HostListener('window:resize')
     public resize(): void {
-        let labelRotation = window.innerWidth < 400 ? -90 : 0;
+        let labelRotation = window.innerWidth <= 640 ? -90 : 0;
         this.primaryXAxis = { ...this.primaryXAxis, labelRotation: labelRotation }
     }
 
     /* SB Code - Start */
     private handleMessageEvent = (event: MessageEvent): void => {
-        if (event.origin === window.location.origin) {
+        if (event.origin === window.location.origin && /^{"(name":"[^"]+","theme":"[^"]+"|mode":"[^"]+")}$/.test(event.data)) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'line-chart-4' && blockData.theme) {

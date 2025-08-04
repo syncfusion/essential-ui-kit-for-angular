@@ -95,7 +95,7 @@
                         <div class="d-flex align-items-center gap-3 py-1">
                             <div class="rounded-circle overflow-hidden" style="width: 32px; height: 32px;">
                                 <span class="e-avatar e-avatar-circle e-avatar-small" [ngStyle]="{ 'background-image': 'url(assets/images/common/avatar/' + data.assignee.avatar + ')' }" *ngIf="data.assignee.avatar!=''"></span>
-                                <span [ngClass]="{'e-avatar e-avatar-circle e-avatar-small': true, 'bg-danger-subtle text-danger': data.assignee.colorTheme === 'Red', 'bg-success-subtle text-success': data.assignee.colorTheme === 'Green', 'bg-info-subtle text-info': data.assignee.colorTheme === 'Blue', 'bg-warning-subtle text-warning': data.assignee.colorTheme === 'Orange'}" *ngIf="data.assignee.initial!=''">{{data.assignee.initial}}</span>
+                                <span [ngClass]="{'e-avatar e-avatar-circle e-avatar-small': true, 'bg-danger-subtle text-danger-emphasis': data.assignee.colorTheme === 'Red', 'bg-success-subtle text-success-emphasis': data.assignee.colorTheme === 'Green', 'bg-info-subtle text-info-emphasis': data.assignee.colorTheme === 'Blue', 'bg-warning-subtle text-warning-emphasis': data.assignee.colorTheme === 'Orange'}" *ngIf="data.assignee.initial!=''">{{data.assignee.initial}}</span>
                             </div>
                             <div class="d-flex flex-column">
                                 <p class="text-body mb-0">{{data.assignee.name}}</p>
@@ -109,7 +109,7 @@
                         <div class="d-flex align-items-center gap-3">
                             <div class="rounded-circle overflow-hidden" style="width: 32px; height: 32px;">
                                 <span class="e-avatar e-avatar-circle e-avatar-small" [ngStyle]="{ 'background-image': 'url(assets/images/common/avatar/' + data.createdBy.avatar + ')' }" *ngIf="data.createdBy.avatar!=''"></span>
-                                <span [ngClass]="{'e-avatar e-avatar-circle e-avatar-small': true, 'bg-danger-subtle text-danger': data.createdBy.colorTheme === 'Red', 'bg-success-subtle text-success': data.createdBy.colorTheme === 'Green', 'bg-info-subtle text-info': data.createdBy.colorTheme === 'Blue', 'bg-warning-subtle text-warning': data.createdBy.colorTheme === 'Orange'}" *ngIf="data.createdBy.initial!=''">{{data.createdBy.initial}}</span>
+                                <span [ngClass]="{'e-avatar e-avatar-circle e-avatar-small': true, 'bg-danger-subtle text-danger-emphasis': data.createdBy.colorTheme === 'Red', 'bg-success-subtle text-success-emphasis': data.createdBy.colorTheme === 'Green', 'bg-info-subtle text-info-emphasis': data.createdBy.colorTheme === 'Blue', 'bg-warning-subtle text-warning-emphasis': data.createdBy.colorTheme === 'Orange'}" *ngIf="data.createdBy.initial!=''">{{data.createdBy.initial}}</span>
                             </div>
                             <div class="text-body">{{data.createdBy.name}}</div>
                         </div>

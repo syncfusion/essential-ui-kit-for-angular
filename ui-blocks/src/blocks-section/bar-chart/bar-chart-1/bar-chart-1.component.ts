@@ -1,11 +1,12 @@
 import { Component, OnInit, OnDestroy, HostListener, ViewChild } from '@angular/core';
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { DatePickerModule, CalendarView } from '@syncfusion/ej2-angular-calendars';
 import { ChartAllModule, ChartComponent } from '@syncfusion/ej2-angular-charts';
 
 @Component({
     selector: 'app-bar-chart-1',
     standalone: true,
-    imports: [ButtonModule, ChartAllModule],
+    imports: [ButtonModule, ChartAllModule, DatePickerModule],
     templateUrl: './bar-chart-1.component.html'
 })
 export class BarChart1Component implements OnInit, OnDestroy {
@@ -14,6 +15,8 @@ export class BarChart1Component implements OnInit, OnDestroy {
     public currentTheme: string = 'tailwind';
     /* SB Code - End */
     public isDarkMode: boolean = false;
+    public start: CalendarView = 'Year';
+    public depth: CalendarView = 'Year';
 
     constructor() { }
 
@@ -30,25 +33,25 @@ export class BarChart1Component implements OnInit, OnDestroy {
     }
 
     public chartData: Object[] = [
-        { x: 'Accounting', y: 620 },
-        { x: 'Implementation', y: 550 },
-        { x: 'Deployment', y: 400 },
-        { x: 'Marketing', y: 415 },
-        { x: 'Customer Support', y: 310 },
-        { x: 'Project operations', y: 270 },
-        { x: 'Logistics', y: 170 },
-        { x: 'Finance', y: 150 },
-        { x: 'Development', y: 80 }
+        { xAxis: 'Accounting', yAxis: 620 },
+        { xAxis: 'Implementation', yAxis: 550 },
+        { xAxis: 'Deployment', yAxis: 400 },
+        { xAxis: 'Marketing', yAxis: 415 },
+        { xAxis: 'Customer Support', yAxis: 310 },
+        { xAxis: 'Project operations', yAxis: 270 },
+        { xAxis: 'Logistics', yAxis: 170 },
+        { xAxis: 'Finance', yAxis: 150 },
+        { xAxis: 'Development', yAxis: 80 }
     ];
 
     public primaryXAxis: Object = {
         valueType: 'Category',
         majorGridLines: { width: 0 },
         majorTickLines: { width: 0 },
-        labelRotation: -54,
         labelAlignment: 'Center',
         interval: 1,
         maximumLabelWidth: 100,
+        labelIntersectAction: 'None',
         enableWrap: true,
         labelStyle: { fontWeight: '500' }
     };
@@ -71,6 +74,7 @@ export class BarChart1Component implements OnInit, OnDestroy {
 
     public chartLoad(args: any, lightTheme: string, darkTheme: string): void {
         args.chart.theme = this.isDarkMode ? darkTheme : lightTheme;
+        this.resize();
     };
 
     @HostListener('window:resize')
@@ -81,7 +85,7 @@ export class BarChart1Component implements OnInit, OnDestroy {
 
     /* SB Code - Start */
     private handleMessageEvent = (event: MessageEvent): void => {
-        if (event.origin === window.location.origin) {
+        if (event.origin === window.location.origin && /^{"(name":"[^"]+","theme":"[^"]+"|mode":"[^"]+")}$/.test(event.data)) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'bar-chart-1' && blockData.theme) {

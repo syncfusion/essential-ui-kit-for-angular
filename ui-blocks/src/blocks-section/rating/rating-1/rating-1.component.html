@@ -4,18 +4,18 @@
     <div class="pt-4" style="min-height:36rem">
         <div class="mx-auto max-w-sm p-4 sm:!rounded-lg sm:!border rounded-none border-0 border-gray-300 dark:border-gray-500 bg-white dark:bg-gray-800 text-center">
             <h3 class="text-base font-semibold text-gray-900 dark:text-white">Customer reviews</h3>
-            <div class="group hover:shadow-md">
-                <input ejs-rating showLabel="true" value="4.0" [emptyTemplate]="emptyTemplate" [fullTemplate]="fullTemplate" [labelTemplate]="labelTemplate" aria-label="rate us out of 5" role="slider" />
-                <ng-template #emptyTemplate>
-                    <span class="sf-icon-star-filled-01 text-2xl text-gray-300 dark:text-gray-500"></span>
-                </ng-template>
-                <ng-template #fullTemplate>
-                    <span class="sf-icon-star-filled-01 text-2xl text-amber-300"></span>
-                </ng-template>
-                <ng-template #labelTemplate let-data>
-                    <p class="!text-gray-900 dark:!text-white text-sm font-medium">{{ data?.value }} / 5</p>
-                </ng-template>
-            </div>
+                <div class="flex justify-center">
+                    <input ejs-rating showLabel="true" value="4" precision="Exact" [emptyTemplate]="emptyTemplate" [fullTemplate]="fullTemplate" [labelTemplate]="labelTemplate" aria-label="rate us out of 5" role="slider" style="min-height: 53px;" />
+                    <ng-template #emptyTemplate>
+                        <span class="sf-icon-star-filled-01 text-2xl text-gray-300 dark:text-gray-500"></span>
+                    </ng-template>
+                    <ng-template #fullTemplate>
+                        <span class="sf-icon-star-filled-01 text-2xl text-amber-300"></span>
+                    </ng-template>
+                    <ng-template #labelTemplate let-data>
+                        <p class="!text-gray-900 dark:!text-white text-sm font-medium">{{ data?.value | number:'1.1' }} / 5.0</p>
+                    </ng-template>
+                </div>
             <p class="text-sm text-gray-500 dark:text-gray-400">based on 135 ratings</p>
         </div>
     </div>
@@ -25,23 +25,21 @@
 
 <section class="bg-body-tertiary">
     <div class="pt-3" style="min-height: 36rem;">
-        <div class="container">
-            <div class="mx-auto p-3 rounded text-center border bg-body" style="max-width: 384px;">
-                <h3 class="fs-6 fw-semibold text-body">Customer reviews</h3>
-                <div class="w-100">
-                    <input ejs-rating showLabel="true" value="4.0" [emptyTemplate]="emptyTemplate" [fullTemplate]="fullTemplate" [labelTemplate]="labelTemplate" aria-label="rate us out of 5" role="slider" />
-                    <ng-template #emptyTemplate>
-                        <span class="sf-icon-star-02 fs-4 text-body-secondary p-0"></span>
-                    </ng-template>
-                    <ng-template #fullTemplate>
-                        <span class="sf-icon-star-filled-01 fs-4 text-warning p-0"></span>
-                    </ng-template>
-                    <ng-template #labelTemplate let-data>
-                        <p class="text-body mb-1 fw-medium">{{ data?.value }} / 5</p>
-                    </ng-template>
-                </div>
-                <p class="text-body-secondary small mb-0">based on 135 ratings</p>
-            </div>
+        <div class="mx-auto p-3 rounded text-center border bg-body" style="max-width: 384px;">
+            <h3 class="fs-6 fw-semibold text-body">Customer reviews</h3>
+                <input ejs-rating showLabel="true" value="4" precision="Exact" [emptyTemplate]="emptyTemplate" [fullTemplate]="fullTemplate" [labelTemplate]="labelTemplate" aria-label="rate us out of 5" role="slider" style="min-height: 53px;" />
+                <ng-template #emptyTemplate>
+                    <span class="sf-icon-star-02 fs-4 text-body-secondary p-0"></span>
+                </ng-template>
+                <ng-template #fullTemplate>
+                    <span class="sf-icon-star-filled-01 fs-4 text-warning p-0"></span>
+                </ng-template>
+                <ng-template #labelTemplate let-data>
+                    <span class="fs-6">
+                        <p class="text-body mb-0">{{ data?.value | number:'1.1' }} / 5.0</p>
+                    </span>
+                </ng-template>
+            <p class="text-body-secondary small mb-0">based on 135 ratings</p>
         </div>
     </div>
 </section>

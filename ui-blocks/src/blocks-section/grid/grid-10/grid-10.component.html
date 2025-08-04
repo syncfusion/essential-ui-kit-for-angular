@@ -7,7 +7,7 @@
                 <e-column field="product" headerText="Product" width="206">
                     <ng-template #template let-data>
                         <div class="flex items-center gap-3">
-                            <div class="w-8">
+                            <div class="w-8 shrink-0 bg-gray-50 dark:bg-gray-700 rounded">
                                 <img class="rounded h-8" src="assets/images/advance-grid/product-sales-table/{{data.productImage}}" width="32px" alt="product image" />
                             </div>
                             <div class="text-sm">{{data.product}}</div>
@@ -45,7 +45,7 @@
                 <e-column field="product" headerText="Product" width="212">
                     <ng-template #template let-data>
                         <div class="d-flex align-items-center gap-2">
-                            <div class="w-8">
+                            <div class="w-8 flex-shrink-0 bg-body-tertiary rounded-1">
                                 <img class="rounded h-8" src="assets/images/advance-grid/product-sales-table/{{data.productImage}}" width="32" alt="product image" />
                             </div>
                             <div>{{data.product}}</div>

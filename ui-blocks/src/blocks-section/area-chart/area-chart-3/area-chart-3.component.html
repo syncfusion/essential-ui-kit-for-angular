@@ -1,0 +1,76 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-white dark:bg-gray-950">
+    <div class="h-screen flex justify-center p-4 sm:p-6 w-full">
+        <div class="w-full max-w-2xl">
+            <div class="flex flex-col gap-2 mb-4 w-full">
+                <div class="flex justify-between gap-4">
+                    <div class="flex flex-col">
+                        <h2 class="text-base text-gray-900 font-medium dark:text-white">Saving Growth Statistics</h2>
+                        <p class="mb-0 text-sm text-gray-500">Revealing risk and growth in investments.</p>
+                    </div>
+                    <button ejs-button class="e-outline block sm:hidden h-8" iconCss="e-icons e-more-vertical-1" type="button" aria-label="choose a year" role="button"></button>
+                    <div class="hidden sm:block">
+                        <div class="e-btn-group">
+                            <input type="radio" id="all" name="align" value="All" checked aria-label="all" role="button"/>
+                            <label class="e-btn" for="all">All</label>
+                            <input type="radio" id="money" name="align" value="Money Market" aria-label="money" role="button"/>
+                            <label class="e-btn" for="money">Money Market</label>
+                            <input type="radio" id="stock" name="align" value="Stocks" aria-label="stock" role="button"/>
+                            <label class="e-btn" for="stock">Stocks</label>
+                            <input type="radio" id="bonds" name="align" value="Bonds" aria-label="bonds" role="button"/>
+                            <label class="e-btn" for="bonds">Bonds</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ejs-chart #chart [primaryXAxis]="primaryXAxis" [primaryYAxis]="primaryYAxis" [tooltip]="tooltip" [crosshair]="crosshair" [width]="'100%'" [height]="'350px'" [legendSettings]="{visible: false}" (load)="chartLoad($event,'Tailwind3','Tailwind3Dark')" aria-label="growth statistics" role="region">
+                <e-series-collection>
+                    <e-series [dataSource]="chartData" type="Line" xName="xAxis" yName="yAxis1" name="MoneyMarketData" width="2" fill="#91BD34"></e-series>
+                    <e-series [dataSource]="chartData" type="Line" xName="xAxis" yName="yAxis2" name="StocksData" width="2" fill="#D83B01"></e-series>
+                    <e-series [dataSource]="chartData" type="Line" xName="xAxis" yName="yAxis3" name="BondsData" width="2" fill="#267DDA"></e-series>
+                </e-series-collection>
+            </ejs-chart>
+        </div>
+    </div>
+</section>
+
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body">
+    <div class="vh-100 d-flex justify-content-center p-4 p-sm-5 w-100">
+        <div class="w-100" style="max-width: 680px;">
+            <div class="d-flex flex-column gap-2 mb-4">
+                <div class="d-flex justify-content-between align-items-start gap-3">
+                    <div class="d-flex flex-column">
+                        <h5 class="text-body">Saving Growth Statistics</h5>
+                        <p class="mb-0 small text-body-secondary">Revealing risk and growth in investments.</p>
+                    </div>
+                    <button ejs-button class="e-btn e-outline d-block d-sm-none h-auto" iconCss="e-icons e-more-vertical-1" type="button" aria-label="choose a year" role="button"></button>
+                    <div class="d-none d-sm-block">
+                        <div class="e-btn-group">
+                            <input type="radio" id="all" name="align" value="All" checked aria-label="all" role="button"/>
+                            <label class="e-btn" for="all">All</label>
+                            <input type="radio" id="money" name="align" value="Money Market" aria-label="money" role="button"/>
+                            <label class="e-btn" for="money">Money Market</label>
+                            <input type="radio" id="stock" name="align" value="Stocks" aria-label="stock" role="button"/>
+                            <label class="e-btn" for="stock">Stocks</label>
+                            <input type="radio" id="bonds" name="align" value="Bonds" aria-label="bonds" role="button"/>
+                            <label class="e-btn" for="bonds">Bonds</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ejs-chart #chart [primaryXAxis]="primaryXAxis" [primaryYAxis]="primaryYAxis" [tooltip]="tooltip" [crosshair]="crosshair" [width]="'100%'" [height]="'350px'" [legendSettings]="{visible: false}" (load)="chartLoad($event,'Bootstrap5','Bootstrap5Dark')" aria-label="growth statistics" role="region">
+                <e-series-collection>
+                    <e-series [dataSource]="chartData" type="Line" xName="xAxis" yName="yAxis1" name="MoneyMarketData" width="2" fill="#91BD34"></e-series>
+                    <e-series [dataSource]="chartData" type="Line" xName="xAxis" yName="yAxis2" name="StocksData" width="2" fill="#D83B01"></e-series>
+                    <e-series [dataSource]="chartData" type="Line" xName="xAxis" yName="yAxis3" name="BondsData" width="2" fill="#267DDA"></e-series>
+                </e-series-collection>
+            </ejs-chart>
+        </div>
+    </div>
+</section>
+
+}

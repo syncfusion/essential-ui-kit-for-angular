@@ -1,10 +1,10 @@
 @if (currentTheme === 'tailwind') {
 
-<section class="bg-white dark:bg-gray-900">
+<section class="bg-gray-50 dark:bg-gray-900">
     <div class="flex">
         <div class="w-full m-auto text-gray-700 dark:text-gray-300">
             <div class="lg:flex container-lg">
-                <div class="lg:w-8/12 px-4 pt-8 pb-6 md:px-6 lg:pb-8 xl:pl-11 xl:pt-8 bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800">
+                <div class="lg:w-8/12 px-4 pt-8 pb-6 md:px-6 lg:pb-8 xl:pl-11 xl:pt-8 bg-gray-50 dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800">
                     <div>
                         <div class="stepperOptional">
                             <ejs-stepper #stepper activeStep="1">
@@ -74,7 +74,7 @@
                     <div>
                         <h2 class="mb-4 font-semibold text-lg text-gray-900 dark:text-white">Payments</h2>
                         <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 xl:gap-4">
-                            <div class="e-card pt-4 shadow-none border-transparent hover:border-primary-600 dark:hover:border-primary-400">
+                            <div class="e-card pt-4 shadow-none border-transparent hover:border-primary-600 dark:hover:border-primary-400 bg-gray-100 dark:bg-gray-800">
                                 <div class="e-card-content">
                                     <div class="e-bigger">
                                         <ejs-radiobutton label="Credit card" name="payment" aria-label="credit card" role="radio"></ejs-radiobutton>
@@ -86,7 +86,7 @@
                                     <button ejs-button class="e-flat" type="button" iconCss="e-icons e-edit e-medium" content="Edit" aria-label="edit" role="button"></button>
                                 </div>
                             </div>
-                            <div class="e-card pt-4 shadow-none border-transparent hover:border-primary-600 dark:hover:border-primary-400">
+                            <div class="e-card pt-4 shadow-none border-transparent hover:border-primary-600 dark:hover:border-primary-400 bg-gray-100 dark:bg-gray-800">
                                 <div class="e-card-content">
                                     <div class="e-bigger">
                                         <ejs-radiobutton label="Payment on delivery" name="payment" checked="true" aria-label="payment on delivery" role="radio"></ejs-radiobutton>
@@ -98,7 +98,7 @@
                                     <button ejs-button class="e-flat" type="button" iconCss="e-icons e-edit e-medium" content="Edit" aria-label="edit" role="button"></button>
                                 </div>
                             </div>
-                            <div class="e-card pt-4 shadow-none border-transparent hover:border-primary-600 dark:hover:border-primary-400">
+                            <div class="e-card pt-4 shadow-none border-transparent hover:border-primary-600 dark:hover:border-primary-400 bg-gray-100 dark:bg-gray-800">
                                 <div class="e-card-content">
                                     <div class="e-bigger">
                                         <ejs-radiobutton label="PayPal account" name="payment" aria-label="paypal account" role="radio"></ejs-radiobutton>
@@ -115,7 +115,7 @@
                     <div class="mt-6 mb-5 xl:mb-8">
                         <h2 class="mb-4 font-semibold text-lg text-gray-900 dark:text-white">Delivery methods</h2>
                         <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 xl:gap-4">
-                            <div class="e-card pt-4 pb-1 shadow-none border-transparent hover:border-primary-600 dark:hover:border-primary-400">
+                            <div class="e-card pt-4 pb-1 shadow-none border-transparent hover:border-primary-600 dark:hover:border-primary-400 bg-gray-100 dark:bg-gray-800">
                                 <div class="e-card-content">
                                     <div class="e-bigger">
                                         <ejs-radiobutton label="$15 - DHL fast delivery" name="delivery" aria-label="$15 - DHL fast delivery" role="radio"></ejs-radiobutton>
@@ -123,7 +123,7 @@
                                     <div class="mt-1 ml-7 text-gray-500 dark:text-gray-400">Get it by tomorrow</div>
                                 </div>
                             </div>
-                            <div class="e-card pt-4 pb-1 shadow-none border-transparent hover:border-primary-600 dark:hover:border-primary-400">
+                            <div class="e-card pt-4 pb-1 shadow-none border-transparent hover:border-primary-600 dark:hover:border-primary-400 bg-gray-100 dark:bg-gray-800">
                                 <div class="e-card-content">
                                     <div class="e-bigger">
                                         <ejs-radiobutton label="Free delivery - FedEx" name="delivery" checked="true" aria-label="FedEx free delivery" role="radio"></ejs-radiobutton>
@@ -131,7 +131,7 @@
                                     <div class="mt-1 ml-7 text-gray-500 dark:text-gray-400">Get it by Friday, 13 Dec 2023</div>
                                 </div>
                             </div>
-                            <div class="e-card pt-4 pb-1 shadow-none border-transparent hover:border-primary-600 dark:hover:border-primary-400">
+                            <div class="e-card pt-4 pb-1 shadow-none border-transparent hover:border-primary-600 dark:hover:border-primary-400 bg-gray-100 dark:bg-gray-800">
                                 <div class="e-card-content">
                                     <div class="e-bigger">
                                         <ejs-radiobutton label="$49 - Express delivery" name="delivery" aria-label="$49 - express delivery" role="radio"></ejs-radiobutton>
@@ -186,7 +186,7 @@
                             <button ejs-button class="w-full e-primary" type="submit" aria-label="proceed to payment" role="button">Proceed to payment</button>
                         </div>
                         <p class="text-center text-sm mt-3 text-gray-500 dark:text-gray-400">
-                            One or more items in your cart require an account <a href="javascript:void(0);" class="text-primary-600 dark:text-primary-400 font-medium text-base p-0 underline">Sign in or Create an account now</a>
+                            One or more items in your cart require an account <a href="javascript:void(0);" class="text-primary-600 dark:text-primary-400 font-normal text-sm p-0 underline">Sign in or Create an account now</a>
                         </p>
                     </div>
                 </div>
@@ -270,7 +270,7 @@
                         <h2 class="fw-medium fs-5 text-body mb-3">Payments</h2>
                         <div class="row g-3">
                             <div class="col-md-6 col-xl-4">
-                                <div class="e-card h-100">
+                                <div class="e-card h-100 bg-body-tertiary">
                                     <div class="e-card-content pb-2">
                                         <div class="e-bigger">
                                             <ejs-radiobutton label="Credit card" name="payment" aria-label="credit card" role="radio"></ejs-radiobutton>
@@ -284,7 +284,7 @@
                                 </div>
                             </div>
                             <div class="col-md-6 col-xl-4">
-                                <div class="e-card h-100">
+                                <div class="e-card h-100 bg-body-tertiary">
                                     <div class="e-card-content pb-2">
                                         <div class="e-bigger">
                                             <ejs-radiobutton label="Payment on delivery" name="payment" checked="true" aria-label="payment on delivery" role="radio"></ejs-radiobutton>
@@ -298,7 +298,7 @@
                                 </div>
                             </div>
                             <div class="col-md-6 col-xl-4">
-                                <div class="e-card h-100">
+                                <div class="e-card h-100 bg-body-tertiary">
                                     <div class="e-card-content pb-2">
                                         <div class="e-bigger">
                                             <ejs-radiobutton label="PayPal account" name="payment" aria-label="paypal account" role="radio"></ejs-radiobutton>
@@ -317,7 +317,7 @@
                         <h2 class="fw-medium fs-5 text-body mb-3">Delivery methods</h2>
                         <div class="row g-3">
                             <div class="col-md-6 col-xl-4">
-                                <div class="e-card e-bigger h-100">
+                                <div class="e-card e-bigger h-100 bg-body-tertiary">
                                     <div class="e-card-content">
                                         <div class="e-bigger">
                                             <ejs-radiobutton label="$15 - DHL fast delivery" name="delivery" aria-label="$15 - DHL fast delivery" role="radio"></ejs-radiobutton>
@@ -327,7 +327,7 @@
                                 </div>
                             </div>
                             <div class="col-md-6 col-xl-4">
-                                <div class="e-card e-bigger h-100">
+                                <div class="e-card e-bigger h-100 bg-body-tertiary">
                                     <div class="e-card-content">
                                         <div class="e-bigger">
                                             <ejs-radiobutton label="Free delivery - FedEx" name="delivery" checked="true" aria-label="FedEx free delivery" role="radio"></ejs-radiobutton>
@@ -337,7 +337,7 @@
                                 </div>
                             </div>
                             <div class="col-md-6 col-xl-4">
-                                <div class="e-card e-bigger h-100">
+                                <div class="e-card e-bigger h-100 bg-body-tertiary">
                                     <div class="e-card-content">
                                         <div class="e-bigger">
                                             <ejs-radiobutton label="$49 - Express delivery" name="delivery" aria-label="$49 - express delivery" role="radio"></ejs-radiobutton>

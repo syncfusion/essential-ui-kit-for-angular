@@ -1,0 +1,63 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-white dark:bg-gray-950">
+    <div class="h-screen flex justify-center p-4 sm:p-6">
+        <div class="w-full" style="max-width: 580px;">
+            <div class="flex flex-col gap-3">
+                <div class="flex justify-between items-center">
+                    <h1 class="text-base font-semibold text-gray-900 dark:text-white">Sales Overview</h1>
+                    <button ejs-button class="e-outline hidden sm:block" content="View Report" type="button" aria-label="view report" role="button"></button>
+                    <button ejs-button class="e-outline sm:hidden" iconCss="e-icons e-description" type="button" aria-label="view report" role="button"></button>
+                </div>
+                <div class="flex flex-col-reverse sm:flex-row justify-between items-start sm:items-center gap-6">
+                    <p class="text-sm text-gray-700 dark:text-gray-300">Comparison</p>
+                    <button #rangeDropdown ejs-dropdownbutton class="e-outline" iconCss="e-icons e-day" content="Jan" [items]="[{text:'Jan'},{text:'Feb'},{text:'Mar'},{text:'Apr'},{text:'May'}]" type="button" aria-label="choose a month" role="button"></button>
+                </div>
+            </div>
+            <div>
+                <ejs-chart #chart width="100%" height="250px" [chartArea]="{border: { width : 0 }}" [primaryXAxis]="primaryXAxis" [primaryYAxis]="primaryYAxis" [legendSettings]="{visible: true,position: 'Top',alignment: 'Near',height: '40px'}" (load)="chartLoad($event,'Tailwind3','Tailwind3Dark')" aria-label="sales overview analysis" role="region">
+                    <e-series-collection>
+                        <e-series [dataSource]="chartData" type="Line" xName="xAxis" yName="yAxis" name="Actual Progress" fill="#267DDA">
+                            <e-trendlines>
+                                <e-trendline type="Linear" width="1" name="Ideal Progress" legendShape="HorizontalLine" dashArray="4,4" fill="#9CA3AF"></e-trendline>
+                            </e-trendlines>
+                        </e-series>
+                    </e-series-collection>
+                </ejs-chart>
+            </div>
+        </div>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body">
+    <div class="vh-100 d-flex justify-content-center align-items-start p-3 p-sm-4">
+        <div class="w-100" style="max-width: 580px;">
+            <div class="d-flex flex-column gap-3">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h1 class="h6 fw-semibold text-body mb-0">Sales Overview</h1>
+                    <button ejs-button class="e-outline d-none d-sm-block" content="View Report" type="button" aria-label="view report" role="button"></button>
+                    <button ejs-button class="e-outline d-sm-none" iconCss="e-icons e-description" type="button" aria-label="view report" role="button"></button>
+                </div>
+                <div class="d-flex flex-column-reverse flex-sm-row justify-content-between align-items-start align-items-sm-center gap-3">
+                    <p class="small text-body-secondary mb-0">Comparison</p>
+                    <button #rangeDropdown ejs-dropdownbutton class="e-outline" iconCss="e-icons e-day" content="Jan" [items]="[{text:'Jan'},{text:'Feb'},{text:'Mar'},{text:'Apr'},{text:'May'}]" type="button" aria-label="choose a month" role="button"></button>
+                </div>
+            </div>
+            <div class="mt-2">
+                <ejs-chart #chart width="100%" height="250px" [chartArea]="{border: { width : 0 }}" [primaryXAxis]="primaryXAxis" [primaryYAxis]="primaryYAxis" [legendSettings]="{visible: true,position: 'Top',alignment: 'Near',height: '40px'}" (load)="chartLoad($event,'Bootstrap5','Bootstrap5Dark')" aria-label="sales overview analysis" role="region">
+                    <e-series-collection>
+                        <e-series [dataSource]="chartData" type="Line" xName="xAxis" yName="yAxis" name="Actual Progress" fill="#006EEF">
+                            <e-trendlines>
+                                <e-trendline type="Linear" width="1" name="Ideal Progress" legendShape="HorizontalLine" dashArray="4,4" fill="#CED4DA"></e-trendline>
+                            </e-trendlines>
+                        </e-series>
+                    </e-series-collection>
+                </ejs-chart>
+            </div>
+        </div>
+    </div>
+</section>
+
+}

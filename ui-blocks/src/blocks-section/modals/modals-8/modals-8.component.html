@@ -1,8 +1,7 @@
 @if (currentTheme === 'tailwind') {
 
 <section>
-    <div id="dialog-container" class="relative flex justify-center" style="min-height: 750px;">
-        <button ejs-button class="h-fit my-5" (click)="dialog?.show()" type="button" aria-label="my settings" role="button">My Settings</button>
+    <div id="dialog-container" class="relative" style="min-height: 750px;">
         <ejs-dialog #dialog class="rounded-none sm:rounded-lg sm:m-4" target="#dialog-container" [isModal]="true" [showCloseIcon]="true" [visible]="false" width="644px" height="645px" (open)="$event.preventFocus = true" (beforeOpen)="$event.maxHeight = '100%'" aria-label="manage my settings" role="dialog">
             <ng-template #header>
                 <p class="font-semibold leading-normal">My Settings</p>
@@ -16,7 +15,7 @@
                                     <h3 class="text-sm font-medium mb-1">Your photo</h3>
                                     <div class="flex items-center gap-4 mb-6 sm:mb-5">
                                         <span class="e-avatar e-avatar-large e-avatar-circle shrink-0 border border-gray-200 bg-gray-100 dark:border-gray-600 dark:bg-gray-700">
-                                            <i class="e-icons e-user text-3xl dark:text-gray-300"></i>
+                                            <span class="e-icons e-user text-3xl dark:text-gray-300"></span>
                                         </span>
                                         <div id="upload-template" class="grow">
                                             <a href="javascript:void(0)" class="font-medium text-primary-600 dark:text-primary-400" (click)="uploader.element.click()">Choose a profile image</a>
@@ -28,25 +27,25 @@
                                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                             <div class="flex flex-col gap-1">
                                                 <label>First Name</label>
-                                                <ejs-textbox placeholder="Enter your first name" type="text" aria-label="enter your first name" role="textbox"></ejs-textbox>
+                                                <ejs-textbox placeholder="Enter your first name" type="text" aria-label="enter your first name" role="textbox"></ejs-textbox>
                                             </div>
                                             <div class="flex flex-col gap-1">
                                                 <label>Last Name</label>
-                                                <ejs-textbox placeholder="Enter your last name" type="text" aria-label="enter your last name" role="textbox"></ejs-textbox>
+                                                <ejs-textbox placeholder="Enter your last name" type="text" aria-label="enter your last name" role="textbox"></ejs-textbox>
                                             </div>
                                         </div>
                                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-y-3">
                                             <div class="flex flex-col gap-1">
                                                 <label>Job Title</label>
-                                                <ejs-textbox placeholder="Enter your designation" type="text" aria-label="enter your designation" role="textbox"></ejs-textbox>
+                                                <ejs-textbox placeholder="Enter your designation" type="text" aria-label="enter your designation" role="textbox"></ejs-textbox>
                                             </div>
                                             <div class="flex flex-col gap-1">
                                                 <label>Team Name</label>
-                                                <ejs-textbox placeholder="Enter your team name" type="text" aria-label="enter your team name" role="textbox"></ejs-textbox>
+                                                <ejs-textbox placeholder="Enter your team name" type="text" aria-label="enter your team name" role="textbox"></ejs-textbox>
                                             </div>
                                             <div class="flex flex-col gap-1">
                                                 <label>Email Address</label>
-                                                <ejs-textbox placeholder="Enter your email address" type="email" aria-label="enter your email address" role="textbox"></ejs-textbox>
+                                                <ejs-textbox placeholder="Enter your email address" type="email" aria-label="enter your email address" role="textbox"></ejs-textbox>
                                             </div>
                                         </div>
                                         <div class="flex flex-col gap-1 col-span-2">
@@ -134,7 +133,7 @@
                                     </div>
                                     <div class="e-card-content !px-1 !pb-1 !pt-0">
                                         <p class="text-xs text-gray-700 dark:text-gray-300 mb-3">Your main email address for receiving forwarded message</p>
-                                        <ejs-textbox value="james@company.com" type="email" aria-label="enter your email address" role="textbox"></ejs-textbox>
+                                        <ejs-textbox value="james@company.com" type="email" aria-label="enter your email address" role="textbox"></ejs-textbox>
                                     </div>
                                 </div>
                                 <div class="e-card p-3 shadow-none">
@@ -145,8 +144,8 @@
                                     <div class="e-card-content !px-1 !pb-1 !pt-0">
                                         <p class="text-xs text-gray-700 dark:text-gray-300 mb-4">Add upto 5 email address to forwarding</p>
                                         <div class="flex flex-col sm:flex-row gap-4 sm:gap-3">
-                                            <ejs-textbox class="grow" placeholder="Add forwarding emails" type="email" aria-label="enter forwarding email addresses" role="textbox"></ejs-textbox>
-                                            <button ejs-button cssClass="w-fit" iconCss="e-icons e-plus" type="button" aria-label="add" role="button">Add</button>
+                                            <ejs-textbox class="grow" placeholder="Add forwarding emails" type="email" aria-label="enter forwarding email addresses" role="textbox"></ejs-textbox>
+                                            <button ejs-button cssClass="w-fit" iconCss="e-icons e-plus" content="Add" type="button" aria-label="add" role="button"></button>
                                         </div>
                                         <div class="border-t border-gray-200 dark:border-gray-600 mt-4 md:mt-3 pt-4 md:pt-3">
                                             <div class="flex gap-3 items-center py-1.5">
@@ -174,7 +173,7 @@
                                                 <p class="text-xs text-wrap text-gray-700 dark:text-gray-300">Update your password regularly to maintain account security</p>
                                             </div>
                                         </div>
-                                        <button ejs-button class="w-fit ml-7 sm:ml-0 mr-1" type="button" aria-label="update" role="button">Update</button>
+                                        <button ejs-button class="w-fit ml-7 sm:ml-0 mr-1" content="Update" type="button" aria-label="update" role="button"></button>
                                     </div>
                                 </div>
                                 <div class="e-card shadow-none px-4 py-2 mb-6">
@@ -186,7 +185,7 @@
                                                 <p class="text-xs text-wrap text-gray-700 dark:text-gray-300">Add an extra layer of security to your account</p>
                                             </div>
                                         </div>
-                                        <button ejs-button class="w-fit ml-7 sm:ml-0 mr-1" type="button" aria-label="enable" role="button">Enable</button>
+                                        <button ejs-button class="w-fit ml-7 sm:ml-0 mr-1" content="Enable" type="button" aria-label="enable" role="button"></button>
                                     </div>
                                 </div>
                                 <h2 class="font-medium text-base mb-3">Accounts</h2>
@@ -198,7 +197,7 @@
                                                 <p class="text-sm font-medium text-gray-900 dark:text-white mb-0.5">Microsoft</p>
                                                 <p class="text-xs text-wrap text-gray-700 dark:text-gray-300">Access Microsoft services and single sign-on</p>
                                             </div>
-                                            <button ejs-button class="w-fit mr-1" type="button" aria-label="disconnect" role="button">Disconnect</button>
+                                            <button ejs-button class="w-fit mr-1" content="Disconnect" type="button" aria-label="disconnect" role="button"></button>
                                         </div>
                                     </div>
                                 </div>
@@ -210,11 +209,11 @@
                                                 <div class="text-sm font-medium text-gray-900 dark:text-white mb-0.5">Twitter</div>
                                                 <div class="text-xs text-wrap text-gray-700 dark:text-gray-300">Connect to share updates and manage social features</div>
                                             </div>
-                                            <button ejs-button class="w-fit mr-1" type="button" aria-label="connect" role="button">Connect</button>
+                                            <button ejs-button class="w-fit mr-1" content="Connect" type="button" aria-label="connect" role="button"></button>
                                         </div>
                                     </div>
                                 </div>
-                                <button ejs-button cssClass="e-danger e-outline" type="button" aria-label="delete account" role="button">Delete Account</button>
+                                <button ejs-button cssClass="e-danger e-outline" content="Delete Account" type="button" aria-label="delete account" role="button"></button>
                             </ng-template>
                         </e-tabitem>
                         <e-tabitem [header]="{text: 'Display'}">
@@ -242,19 +241,23 @@
             </ng-template>
             <ng-template #footerTemplate>
                 <div class="flex justify-end gap-2 sm:gap-1 py-2">
-                    <button ejs-button cssClass="w-1/2 sm:w-fit !ml-0" type="button" aria-label="discard" role="button">Discard</button>
-                    <button ejs-button cssClass="e-primary w-1/2 sm:w-fit" type="button" aria-label="save changes" role="button">Save Changes</button>
+                    <button ejs-button cssClass="w-1/2 sm:w-fit !ml-0" content="Discard" type="button" aria-label="discard" role="button"></button>
+                    <button ejs-button cssClass="e-primary w-1/2 sm:w-fit" content="Save Changes" type="button" aria-label="save changes" role="button"></button>
                 </div>
             </ng-template>
         </ejs-dialog>
     </div>        
 </section>
+<!-- SB Code - Start -->
+<div class="top-0 left-0 absolute w-full flex">
+    <button ejs-button class="my-5 mx-auto" content="My Settings" type="button" (click)="dialog?.show()" aria-label="my settings" role="button"></button>
+</div>
+<!-- SB Code - End -->
     
 } @else if (currentTheme === 'bootstrap5.3') {
     
 <section>
-    <div id="dialog-container" class="position-relative d-flex align-items-start" style="min-height: 750px;">
-        <button ejs-button class="e-outline mx-auto my-3" (click)="dialog?.show()" type="button" aria-label="my settings" role="button">My Settings</button>
+    <div id="dialog-container" class="position-relative" style="min-height: 750px;">
         <ejs-dialog #dialog class="rounded-3 m-sm-2" target="#dialog-container" [isModal]="true" [showCloseIcon]="true" [visible]="false" width="644px" height="650px" (open)="$event.preventFocus = true" (beforeOpen)="$event.maxHeight = '100%'" aria-label="manage my settings" role="dialog">
             <ng-template #header>
                 <p class="fw-bold text-body mb-0 lh-sm">My Settings</p>
@@ -268,7 +271,7 @@
                                     <h3 class="fs-6 fw-medium mb-1 text-body lh-base">Your photo</h3>
                                     <div class="d-flex align-items-center gap-3 mb-4">
                                         <span class="e-avatar e-avatar-large e-avatar-circle flex-shrink-0 bg-body-secondary">
-                                            <i class="e-icons e-user fs-3"></i>
+                                            <span class="e-icons e-user fs-3"></span>
                                         </span>
                                         <div id="upload-template" class="flex-grow-1">
                                             <a href="javascript:void(0)" class="text-decoration-none fw-medium text-primary" (click)="uploader.element.click()">Choose a profile image</a>
@@ -398,7 +401,7 @@
                                         <p class="text-muted small pt-1">Add up to 5 email addresses to forwarding</p>
                                         <div class="d-flex flex-column flex-sm-row gap-3">
                                             <ejs-textbox class="flex-grow-1 mx-1" placeholder="Add forwarding emails" type="email" aria-label="enter forwarding email addresses" role="textbox"></ejs-textbox>
-                                            <button ejs-button iconCss="e-icons e-plus" type="button" aria-label="add" role="button" style="width: fit-content;">Add</button>
+                                            <button ejs-button iconCss="e-icons e-plus" content="Add" type="button" aria-label="add" role="button" style="width: fit-content;"></button>
                                         </div>
                                         <div class="border-top mt-3 pt-3">
                                             <div class="d-flex gap-3 align-items-center py-1">
@@ -426,7 +429,7 @@
                                                 <div class="small text-body-secondary">Update your password regularly to maintain account security</div>
                                             </div>
                                         </div>
-                                        <button ejs-button class="ms-4 sm:ms-0" type="button" aria-label="update" role="button">Update</button>
+                                        <button ejs-button class="ms-4 sm:ms-0" content="Update" type="button" aria-label="update" role="button"></button>
                                     </div>
                                 </div>
                                 <div class="e-card px-3 py-2 mb-4">
@@ -438,7 +441,7 @@
                                                 <div class="small text-body-secondary">Add an extra layer of security to your account</div>
                                             </div>
                                         </div>
-                                        <button ejs-button class="ms-4 sm:ms-0" type="button" aria-label="enable" role="button">Enable</button>
+                                        <button ejs-button class="ms-4 sm:ms-0" content="Enable" type="button" aria-label="enable" role="button"></button>
                                     </div>
                                 </div>
                                 <h2 class="fw-medium fs-6 mb-2">Accounts</h2>
@@ -450,7 +453,7 @@
                                                 <div class="d-flex align-items-center fs-6 text-body">Microsoft</div>
                                                 <div class="d-flex align-items-center text-wrap small text-body-secondary">Access Microsoft services and single sign-on</div>
                                             </div>
-                                            <button ejs-button type="button" aria-label="disconnect" role="button">Disconnect</button>
+                                            <button ejs-button content="Disconnect" type="button" aria-label="disconnect" role="button"></button>
                                         </div>
                                     </div>
                                 </div>
@@ -462,11 +465,11 @@
                                                 <div class="d-flex align-items-center fs-6 text-body">Twitter</div>
                                                 <div class="d-flex align-items-center text-wrap small text-body-secondary">Connect to share updates and manage social features</div>
                                             </div>
-                                            <button ejs-button type="button" aria-label="connect" role="button">Connect</button>
+                                            <button ejs-button content="Connect" type="button" aria-label="connect" role="button"></button>
                                         </div>
                                     </div>
                                 </div>
-                                <button ejs-button cssClass="e-danger e-outline" type="button" aria-label="delete account" role="button">Delete Account</button>
+                                <button ejs-button cssClass="e-danger e-outline" content="Delete Account" type="button" aria-label="delete account" role="button"></button>
                             </ng-template>
                         </e-tabitem>
                         <e-tabitem [header]="{text: 'Display'}">
@@ -494,12 +497,17 @@
             </ng-template>
             <ng-template #footerTemplate>
                 <div class="d-flex justify-content-end gap-2 gap-sm-1 py-1">
-                    <button ejs-button cssClass="col col-sm-auto ms-0" type="button" aria-label="discard" role="button">Discard</button>
-                    <button ejs-button cssClass="e-primary col col-sm-auto" type="button" aria-label="save changes" role="button">Save Changes</button>
+                    <button ejs-button cssClass="col col-sm-auto ms-0" content="Discard" type="button" aria-label="discard" role="button"></button>
+                    <button ejs-button cssClass="e-primary col col-sm-auto" content="Save Changes" type="button" aria-label="save changes" role="button"></button>
                 </div>
             </ng-template>
         </ejs-dialog>
     </div>       
 </section>
+<!-- SB Code - Start -->
+<div class="position-absolute top-0 start-0 d-flex w-100">
+    <button ejs-button class="e-outline mx-auto my-3" content="My Settings" type="button" (click)="dialog?.show()" aria-label="my settings" role="button"></button>
+</div>
+<!-- SB Code - End -->
     
 }

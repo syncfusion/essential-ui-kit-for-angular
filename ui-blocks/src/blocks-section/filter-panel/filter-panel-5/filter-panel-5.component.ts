@@ -20,6 +20,7 @@ export class FilterPanel5Component implements OnInit, OnDestroy {
     public currentTheme: string = 'tailwind';
     /* SB Code - End */
     public width: string = '320px';
+    public sliderWidth: string = '270px';
     public tooltipInfo: { isVisible: boolean; placement: string; showOn: string; } = { isVisible: true, placement: 'Before', showOn: 'Hover' };
     private breakpointSubscription!: Subscription;
 
@@ -28,6 +29,10 @@ export class FilterPanel5Component implements OnInit, OnDestroy {
     public ngOnInit(): void {
         this.breakpointSubscription = this.breakpointObserver.observe([Breakpoints.XSmall]).subscribe(result => {
             this.width = result.matches ? '100%' : '320px';
+            this.sliderWidth = result.matches ? '100%' : '270px';
+            setTimeout(() => {
+                this.hotelPriceSlider.refresh();
+            }, 10);
         });
         /* SB Code - Start */
         window.addEventListener('message', this.handleMessageEvent);
@@ -51,7 +56,7 @@ export class FilterPanel5Component implements OnInit, OnDestroy {
 
     /* SB Code - Start */
     private handleMessageEvent = (event: MessageEvent): void => {
-        if (event.origin === window.location.origin) {
+        if (event.origin === window.location.origin && /^{"(name":"[^"]+","theme":"[^"]+"|mode":"[^"]+")}$/.test(event.data)) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'filter-panel-5' && blockData.theme) {

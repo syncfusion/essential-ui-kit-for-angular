@@ -11,11 +11,11 @@
                 popupHeight="750px" 
                 placeholder="Search" 
                 (focus)="search.showPopup()" 
-                (close)="onClose($event)"
+                (close)="closePopup($event)"
                 (created)="openPopup(search)" 
                 role="combobox">
                 <ng-template #headerTemplate>
-                    <ejs-tab #tab [overflowMode]="overflowMode" (selected)="onSelect($event)">
+                    <ejs-tab #tab [overflowMode]="overflowMode" (selected)="searchSelect($event)">
                         <e-tabitems>
                             <e-tabitem>
                                 <ng-template #headerText>
@@ -53,7 +53,7 @@
                     </ejs-tab>
                 </ng-template>
                 <ng-template #itemTemplate let-data>
-                    <div class="flex gap-3 px-5 py-2" (click)="onSearchClick(search)">
+                    <div class="flex gap-3 px-5 py-2" (click)="searchClick(search)">
                         <span class="indent-0 e-avatar e-avatar-medium e-avatar-circle text-sm shrink-0">
                             <img *ngIf="data.image" src="assets/images/common/avatar/{{data.image}}" class="w-100 h-100 object-fit-cover" alt="logo" />
                             <span *ngIf="!data.image" class="e-icons e-file-document text-lg"></span>
@@ -76,17 +76,17 @@
         <div class="px-3 mx-auto" [style]="width">
             <ejs-autocomplete
                 #search
-                class="e-bigger"
+                cssClass="e-bigger mt-2"
                 [dataSource]="filteredData"
                 [fields]="{ value: 'name' }"
                 popupHeight="750px"
                 placeholder="Search"
                 (focus)="search.showPopup()"
-                (close)="onClose($event)"
+                (close)="closePopup($event)"
                 (created)="openPopup(search)"
                 role="combobox">
                 <ng-template #headerTemplate>
-                    <ejs-tab #tab [overflowMode]="overflowMode" (selected)="onSelect($event)">
+                    <ejs-tab #tab cssClass="mt-2" [overflowMode]="overflowMode" (selected)="searchSelect($event)">
                         <e-tabitems>
                             <e-tabitem>
                                 <ng-template #headerText>
@@ -124,7 +124,7 @@
                     </ejs-tab>
                 </ng-template>
                 <ng-template #itemTemplate let-data>
-                    <div class="d-flex gap-3 px-3 py-2" (click)="onSearchClick(search)" style="text-indent: 0;">
+                    <div class="d-flex gap-3 px-3 py-2" (click)="searchClick(search)" style="text-indent: 0;">
                         <span class="e-avatar e-avatar-medium e-avatar-circle text-sm flex-shrink-0">
                             <img *ngIf="data.image" src="assets/images/common/avatar/{{data.image}}" class="w-100 h-100 object-fit-cover" alt="logo" />
                             <span *ngIf="!data.image" class="e-icons e-file-document fs-5"></span>

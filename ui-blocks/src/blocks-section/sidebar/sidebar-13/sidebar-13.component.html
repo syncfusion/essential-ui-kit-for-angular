@@ -2,7 +2,7 @@
 
 <section class="bg-white dark:bg-gray-950">
     <div style="height: 600px;">
-        <ejs-sidebar #sidebar class="bg-gray-50 dark:bg-gray-900 !border-l !border-gray-200 dark:!border-gray-700" width="328px" [isOpen]="true" position="Right" showBackdrop="true" aria-label="main navigation menu" role="complementary" style="display: block;">
+        <ejs-sidebar #sidebar class="bg-gray-50 dark:bg-gray-900 !border-l !border-gray-200 dark:!border-gray-700" width="328px" [isOpen]="true" [showBackdrop]="backDrop" position="Right" showBackdrop="true" aria-label="main navigation menu" role="complementary" style="display: block;">
             <div class="flex h-screen">
                 <div class="py-6" style="width: 72px;">
                     <div class="flex justify-center items-center px-3 mb-2">
@@ -22,12 +22,12 @@
                             <span class="e-avatar e-avatar-circle e-avatar-small">
                                 <img src="assets/images/common/avatar/avatar-2.jpg" alt="profile picture" />
                             </span>
-                            <div class="ml-3">
+                            <div class="ml-2">
                                 <div class="text-base font-medium leading-normal text-gray-900 dark:text-white">John Wick</div>
-                                <p class="mb-0 text-gray-900 dark:text-white">johnwick&#64;123.com</p>
+                                <a class="text-gray-900 dark:text-white" href="mailto:johnwick@company.com">johnwick&#64;company.com</a>
                             </div>
                         </div>
-                        <button ejs-button cssClass="e-icons e-chevron-down-double e-flat e-large" type="button" aria-label="view additional profile settings" role="button"></button>
+                        <button ejs-button cssClass="e-icons e-chevron-down-double e-flat e-large !px-1" type="button" aria-label="view additional profile settings" role="button"></button>
                     </div>
                     <div class="mt-4">
                         <div class="flex justify-between">
@@ -72,7 +72,7 @@
 </section>
 <!-- SB Code - Start -->
 <div class="p-3 top-0 right-0 absolute">
-    <button ejs-button cssClass="e-large e-icons e-chevron-left e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+    <button ejs-button cssClass="e-round e-large e-icons e-chevron-left" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
 </div>
 <!-- SB Code - End -->
 
@@ -80,7 +80,7 @@
 
 <section class="bg-body">
     <div style="height: 600px;">
-        <ejs-sidebar #sidebar width="328px" [isOpen]="true" position="Right" showBackdrop="true" aria-label="main navigation menu" role="complementary" style="display: block;">
+        <ejs-sidebar #sidebar width="328px" [isOpen]="true" [showBackdrop]="backDrop" position="Right" showBackdrop="true" aria-label="main navigation menu" role="complementary" style="display: block;">
             <div class="d-flex vh-100">
                 <div class="py-4 d-flex flex-column align-items-center" style="width: 72px;">
                     <div class="d-flex justify-content-center align-items-center px-3 mb-2">
@@ -102,7 +102,7 @@
                             </span>
                             <div class="ms-3">
                                 <div class="text-body fs-6 fw-medium">John Wick</div>
-                                <p class="mb-0 text-body-secondary">johnwick&#64;123.com</p>
+                                <a class="text-body-secondary text-decoration-none" href="mailto:johnwick@company.com">johnwick&#64;company.com</a>
                             </div>
                         </div>
                         <button ejs-button cssClass="e-icons e-chevron-down-double e-flat" type="button" aria-label="view additional profile settings" role="button"></button>
@@ -151,7 +151,7 @@
 </section>
 <!-- SB Code - Start -->
 <div class="py-3 px-1 position-absolute top-0 end-0">
-    <button ejs-button cssClass="e-large e-icons e-chevron-left e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+    <button ejs-button cssClass="e-round e-large e-icons e-chevron-left" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
 </div>
 <!-- SB Code - End -->
 

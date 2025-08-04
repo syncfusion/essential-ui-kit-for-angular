@@ -1,0 +1,69 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-white dark:bg-gray-950">
+    <div class="h-screen flex justify-center p-4 sm:p-6">
+        <div class="w-full" style="max-width: 1120px;">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-md font-semibold text-gray-900 dark:text-white">Consolidated Budget</h2>
+                <div class="flex gap-2">
+                    <button ejs-button class="e-icons e-refresh e-outline" type="button" aria-label="refresh" role="button"></button>
+                    <div class="e-btn-group hidden sm:block">
+                        <input type="radio" id="day" name="align" value="D" aria-label="day" role="button" />
+                        <label class="e-btn" for="day">D</label>
+                        <input type="radio" id="week" name="align" value="W" aria-label="week" role="button" />
+                        <label class="e-btn" for="week">W</label>
+                        <input type="radio" id="month" name="align" value="M" aria-label="month" role="button" />
+                        <label class="e-btn" for="month">M</label>
+                        <input type="radio" id="year" name="align" value="Y" checked aria-label="year" role="button" />
+                        <label class="e-btn" for="year">Y</label>
+                        <input type="radio" id="custom" name="align" value="Custom" aria-label="custom" role="button" />
+                        <label class="e-btn" for="custom">Custom</label>
+                    </div>
+                </div>
+            </div>
+            <button #rangeDropdown ejs-dropdownbutton class="e-outline block sm:hidden" content="Year" [items]="[{text:'Day'},{text:'Week'},{text:'Month'},{text:'Year'},{text:'Custom'}]" type="button" aria-label="choose a range" role="button"></button>
+            <ejs-chart #chart width="100%" height="400px" [primaryXAxis]="primaryXAxis" [primaryYAxis]="primaryYAxis" [tooltip]="tooltip" [legendSettings]="legendSettings" [crosshair]="crosshair" useGroupingSeparator="true" [margin]="{ left: 0, right: 0 , top: 0, bottom: 24 }" [annotations]='annotations()' (load)="chartLoad($event,'Tailwind3','Tailwind3Dark')" aria-label="consolidated budget analysis" role="region">
+                <e-series-collection>
+                    <e-series [dataSource]="chartData" type="Spline" xName="date" yName="xAxis" name="Revenues" width="2" fill="#267DDA"></e-series>
+                    <e-series [dataSource]="chartData" type="Spline" xName="date" yName="yAxis" name="Expenditures" width="2" fill="#DE4383"></e-series>
+                </e-series-collection>
+            </ejs-chart>
+        </div>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body">
+    <div class="vh-100 d-flex justify-content-center align-items-start p-3 p-sm-4">
+        <div class="w-100" style="max-width: 1120px;">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h2 class="h6 fw-medium text-body mb-0">Consolidated Budget</h2>
+                <div class="d-flex gap-3">
+                    <button ejs-button class="e-icons e-refresh e-outline" type="button" aria-label="refresh" role="button"></button>
+                    <div class="e-btn-group d-none d-sm-block">
+                        <input type="radio" id="day" name="align" value="D" aria-label="day" role="button" />
+                        <label class="e-btn" for="day">D</label>
+                        <input type="radio" id="week" name="align" value="W" aria-label="week" role="button" />
+                        <label class="e-btn" for="week">W</label>
+                        <input type="radio" id="month" name="align" value="M" aria-label="month" role="button" />
+                        <label class="e-btn" for="month">M</label>
+                        <input type="radio" id="year" name="align" value="Y" checked aria-label="year" role="button" />
+                        <label class="e-btn" for="year">Y</label>
+                        <input type="radio" id="custom" name="align" value="Custom" aria-label="custom" role="button" />
+                        <label class="e-btn" for="custom">Custom</label>
+                    </div>
+                </div>
+            </div>
+            <button #rangeDropdown ejs-dropdownbutton class="e-outline d-inline-block d-sm-none" content="Year" [items]="[{text:'Day'},{text:'Week'},{text:'Month'},{text:'Year'},{text:'Custom'}]" type="button" aria-label="choose a range" role="button"></button>
+            <ejs-chart #chart width="100%" height="400px" [primaryXAxis]="primaryXAxis" [primaryYAxis]="primaryYAxis" [tooltip]="tooltip" [legendSettings]="legendSettings" [crosshair]="crosshair" useGroupingSeparator="true" [margin]="{ left: 0, right: 0 , top: 0, bottom: 24 }" [annotations]='annotations()' (load)="chartLoad($event,'Bootstrap5','Bootstrap5Dark')" aria-label="consolidated budget analysis" role="region">
+                <e-series-collection>
+                    <e-series [dataSource]="chartData" type="Spline" xName="date" yName="xAxis" name="Revenues" width="2" fill="#267DDA"></e-series>
+                    <e-series [dataSource]="chartData" type="Spline" xName="date" yName="yAxis" name="Expenditures" width="2" fill="#DE4383"></e-series>
+                </e-series-collection>
+            </ejs-chart>
+        </div>
+    </div>
+</section>
+
+}

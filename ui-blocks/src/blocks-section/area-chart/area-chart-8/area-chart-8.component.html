@@ -1,0 +1,69 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-white dark:bg-gray-950">
+    <div class="h-screen flex justify-center p-4 sm:p-6">
+        <div class="w-full" style="max-width: 1020px;">
+            <div class="flex flex-col gap-3 sm:gap-4">
+                <div class="flex grow justify-between items-start gap-2">
+                    <div>
+                        <h1 class="text-base font-medium text-gray-900 dark:text-white">Temperature Analysis</h1>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mt-1 sm:mt-2">Temperature variations by month in &deg;C</p>
+                    </div>
+                    <button ejs-button class="e-outline hidden sm:block" content="View Report" type="button" aria-label="view report" role="button"></button>
+                    <button ejs-button class="e-outline block sm:hidden" iconCss="e-icons e-description" type="button" aria-label="view report" role="button"></button>
+                </div>
+                <div class="flex justify-between gap-3">
+                    <button #countryDropdown ejs-dropdownbutton class="e-outline" iconCss="e-icons e-location" [content]="isMobileView ? '' : 'Texas, USA'" [items]="[{text:'Los Angeles, California'}, {text:'Phoenix, Arizona'}, {text:'San Jose, California'}, {text:'Santa Fe, New Mexico'}, {text:'Texas, USA'}]" type="button" aria-label="choose a city" role="button"></button>
+                    <div class="flex gap-3">
+                        <button ejs-button class="e-outline" iconCss="e-icons e-refresh" type="button" aria-label="refresh" role="button"></button>
+                        <button #rangeDropdown ejs-dropdownbutton class="e-outline" content="2024" [items]="[{text:'2024'}, {text:'2023'}, {text:'2022'}, {text:'2021'}, {text:'2020'}]" type="button" aria-label="choose a year" role="button"></button>
+                        <button ejs-button class="e-outline" iconCss="e-icons e-more-vertical-1" type="button" aria-label="view options" role="button"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-6 sm:mt-5">
+                <ejs-chart #chart height="335px" [chartArea]="{border: {width: 0}}" [primaryXAxis]="primaryXAxis" [primaryYAxis]="primaryYAxis" (load)="chartLoad($event,'Tailwind3','Tailwind3Dark')" aria-label="temperature analysis" role="region">
+                    <e-series-collection>
+                        <e-series [dataSource]="chartData" [border]="{width: 2, color: isDarkMode ? '#9CA3AF' : '#1F2937'}" [fill]="isDarkMode ? '#4B5563' : '#D1D5DB'" type="RangeArea" xName="date" high="high" low="low"></e-series>
+                    </e-series-collection>
+                </ejs-chart>
+            </div>
+        </div>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body">
+    <div class="vh-100 d-flex justify-content-center p-3 p-sm-4">
+        <div class="w-100" style="max-width: 1020px;">
+            <div class="d-flex flex-column gap-2 gap-sm-3">
+                <div class="d-flex flex-grow-1 justify-content-between align-items-start gap-2">
+                    <div>
+                        <h1 class="fs-6 fw-medium text-body">Temperature Analysis</h1>
+                        <p class="small text-body-secondary mt-2 mb-0">Temperature variations by month in &deg;C</p>
+                    </div>
+                    <button ejs-button class="e-outline d-none d-sm-block" content="View Report" type="button" aria-label="view report" role="button"></button>
+                    <button ejs-button class="e-outline d-block d-sm-none" iconCss="e-icons e-description" type="button" aria-label="view report" role="button"></button>
+                </div>
+                <div class="d-flex justify-content-between gap-3 mt-1 mt-sm-0">
+                    <button #countryDropdown ejs-dropdownbutton class="e-outline" iconCss="e-icons e-location fs-6" [content]="isMobileView ? '' : 'Texas, USA'" [items]="[{text:'Los Angeles, California'}, {text:'Phoenix, Arizona'}, {text:'San Jose, California'}, {text:'Santa Fe, New Mexico'}, {text:'Texas, USA'}]" type="button" aria-label="choose a city" role="button"></button>
+                    <div class="d-flex gap-2">
+                        <button ejs-button class="e-outline" iconCss="e-icons e-refresh" type="button" aria-label="refresh" role="button"></button>
+                        <button #rangeDropdown ejs-dropdownbutton class="e-outline mx-1" content="2024" [items]="[{text:'2024'}, {text:'2023'}, {text:'2022'}, {text:'2021'}, {text:'2020'}]" type="button" aria-label="choose a year" role="button"></button>
+                        <button ejs-button class="e-outline" iconCss="e-icons e-more-vertical-1" type="button" aria-label="view options" role="button"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-4">
+                <ejs-chart #chart height="335px" [chartArea]="{border: {width: 0}}" [primaryXAxis]="primaryXAxis" [primaryYAxis]="primaryYAxis" (load)="chartLoad($event,'Bootstrap5','Bootstrap5Dark')" aria-label="temperature analysis" role="region">
+                    <e-series-collection>
+                        <e-series [dataSource]="chartData" [border]="{width: 2, color: isDarkMode ? '#ADB5BD' : '#343A40'}" [fill]="isDarkMode ? '#495057' : '#DEE2E6'" type="RangeArea" xName="date" high="high" low="low"></e-series>
+                    </e-series-collection>
+                </ejs-chart>
+            </div>
+        </div>
+    </div>
+</section>
+
+}

@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy, ViewChild, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DialogModule, DialogComponent } from '@syncfusion/ej2-angular-popups';
+import { DialogModule, DialogComponent, OpenEventArgs } from '@syncfusion/ej2-angular-popups';
 import { SidebarModule, SidebarComponent, EventArgs } from '@syncfusion/ej2-angular-navigations';
 import { TextBoxModule } from '@syncfusion/ej2-angular-inputs';
 import { ListViewModule } from '@syncfusion/ej2-angular-lists';
@@ -22,8 +22,8 @@ export class Modals10Component implements OnInit, OnDestroy {
     /* SB Code - End */
     public isMobile: boolean = false;
     public isModal: boolean = true;
-    public dockMode: boolean = true;
-    public backDrop: boolean = false;
+    public isDockMode: boolean = true;
+    public isBackDrop: boolean = false;
     public sidebarType: string = 'Auto';
 
     public navigationMenu: Object[] = [
@@ -55,41 +55,47 @@ export class Modals10Component implements OnInit, OnDestroy {
     }
 
     @HostListener('window:resize')
-    public onResize(): void {
+    public handleResize(): void {
         this.checkWindowSize();
     }
 
     public checkWindowSize(): void {
         this.isMobile = window.innerWidth <= 660;
-        this.dockMode = !this.isMobile;
-        this.backDrop = this.isMobile;
+        this.isDockMode = !this.isMobile;
+        this.isBackDrop = this.isMobile;
         this.sidebarType = this.isMobile ? 'Over' : 'Auto';
         this.dialog.refresh();
         this.dialog.show(this.isMobile);
     }
 
-    public onSidebarClose(args: EventArgs): void {
+    public sidebarClose(args: EventArgs): void {
         if (!this.isMobile) {
             args.cancel = true;
         }
     }
 
+    public dialogOpen(args: OpenEventArgs): void {
+        args.preventFocus = true;
+        setTimeout(() => {
+            this.sidebar.refresh();
+        }, 5);
+    }
+
     /* SB Code - Start */
     private refreshDialog(timeout: number): void {
         setTimeout(() => {
-            this.sidebar.refresh();
-            this.dialog.refresh();
             this.dialog.show(this.isMobile);
+            this.sidebar.refresh();
         }, timeout);
     }
 
     private handleMessageEvent = (event: MessageEvent): void => {
-        if (event.origin === window.location.origin) {
+        if (event.origin === window.location.origin && /^{"(name":"[^"]+","theme":"[^"]+"|mode":"[^"]+")}$/.test(event.data)) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'modals-10' && blockData.theme) {
                     this.currentTheme = blockData.theme;
-                    this.refreshDialog(1000);
+                    this.refreshDialog(500);
                 }
             } catch (error) {
                 console.error('Error parsing message data: ', error);

@@ -45,17 +45,17 @@ export class Checkout2Component implements OnInit, OnDestroy {
     }
 
     private handleMessageEvent = (event: MessageEvent): void => {
-        if (event.origin === window.location.origin) {
+        if (event.origin === window.location.origin && /^{"(name":"[^"]+","theme":"[^"]+"|mode":"[^"]+")}$/.test(event.data)) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'checkout-2' && blockData.theme) {
                     this.currentTheme = blockData.theme;
+                    this.refreshAccordion(1000);
                 }
             } catch (error) {
                 console.error('Error parsing message data: ', error);
             }
         }
-        this.refreshAccordion(1000);
     };
     /* SB Code - End */
 }

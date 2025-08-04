@@ -77,7 +77,7 @@
                     <ng-template #template let-data>
                         <div class="d-flex gap-3 align-items-center py-1">
                             <div class="rounded-circle overflow-hidden" style="width: 32px; height: 32px;">
-                                <span [ngClass]="{'e-avatar e-avatar-circle e-avatar-small': true, 'bg-danger-subtle text-danger': data.details.colorTheme === 'Red', 'bg-success-subtle text-success': data.details.colorTheme === 'Green', 'bg-info-subtle text-info': data.details.colorTheme === 'Blue', 'bg-warning-subtle text-warning': data.details.colorTheme === 'Orange', 'bg-primary-subtle text-primary': data.details.colorTheme === 'Purple'}">{{data.details.initial}}</span>
+                                <span [ngClass]="{'e-avatar e-avatar-circle e-avatar-small': true, 'bg-danger-subtle text-danger-emphasis': data.details.colorTheme === 'Red', 'bg-success-subtle text-success-emphasis': data.details.colorTheme === 'Green', 'bg-info-subtle text-info-emphasis': data.details.colorTheme === 'Blue', 'bg-warning-subtle text-warning-emphasis': data.details.colorTheme === 'Orange', 'bg-primary-subtle text-primary-emphasis': data.details.colorTheme === 'Purple'}">{{data.details.initial}}</span>
                             </div>
                             <div class="d-flex flex-column">
                                 <p class="text-body mb-0">{{data.details.name}}</p>

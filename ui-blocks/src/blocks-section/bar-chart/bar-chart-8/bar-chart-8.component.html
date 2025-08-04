@@ -6,7 +6,7 @@
             <div class="flex justify-between items-center mb-1 px-4 sm:px-6">
                 <h1 class="text-base font-medium text-gray-900 dark:text-white mb-2">Stock Report</h1>
                 <button ejs-button class="e-outline hidden sm:block" content="View Report" type="button" aria-label="view report" role="button"></button>
-                <button ejs-button class="e-outline block sm:hidden" iconCss="e-icons e-description" content=" " type="button" aria-label="view report" role="button"></button>
+                <button ejs-button class="e-outline block sm:hidden" iconCss="e-icons e-description" type="button" aria-label="view report" role="button"></button>
             </div>
             <p class="text-sm text-gray-500 dark:text-gray-400 px-4 sm:px-6">Assets you have in your account</p>
             <div class="flex items-center justify-between mt-4 px-4 sm:px-6">
@@ -19,9 +19,9 @@
             <div class="pr-2">
                 <ejs-chart #chart [chartArea]="{border: {width: 0}}" width="100%" height="100" [primaryXAxis]="primaryXAxis" [primaryYAxis]="primaryYAxis" (load)="chartLoad($event,'Tailwind3','Tailwind3Dark','#000000')" aria-label="asset analysis" role="region">
                     <e-series-collection>
-                        <e-series [dataSource]="chartData" type="StackingBar100" xName="Month" yName="AppleSales" fill="#267DDA" width="2" columnWidth="1" [border]="border"> </e-series>
-                        <e-series [dataSource]="chartData" type="StackingBar100" xName="Month" yName="OrangeSales" fill="#01A8B5" width="2" columnWidth="1" [border]="border"> </e-series>
-                        <e-series [dataSource]="chartData" type="StackingBar100" xName="Month" yName="Wastage" fill="#FFB900" width="2" columnWidth="1" [border]="border"> </e-series>
+                        <e-series [dataSource]="chartData" type="StackingBar100" xName="Month" yName="AppleSales" fill="#267DDA" width="2" columnWidth="1" [border]="border"></e-series>
+                        <e-series [dataSource]="chartData" type="StackingBar100" xName="Month" yName="OrangeSales" fill="#01A8B5" width="2" columnWidth="1" [border]="border"></e-series>
+                        <e-series [dataSource]="chartData" type="StackingBar100" xName="Month" yName="Wastage" fill="#FFB900" width="2" columnWidth="1" [border]="border"></e-series>
                     </e-series-collection>
                 </ejs-chart>
             </div>
@@ -43,7 +43,7 @@
                     </div>
                     <div class="flex items-center gap-7">
                         <p class="text-sm font-medium">$50,113</p>
-                        <span class="e-badge e-badge-info">40%</span>
+                        <span class="e-badge e-badge-info">28%</span>
                     </div>
                 </div>
                 <div class="flex justify-between items-center text-gray-500 dark:text-gray-400">
@@ -53,7 +53,7 @@
                     </div>
                     <div class="flex items-center gap-7">
                         <p class="text-sm font-medium">$57,272</p>
-                        <span class="e-badge e-badge-warning">40%</span>
+                        <span class="e-badge e-badge-warning">32%</span>
                     </div>
                 </div>
             </div>
@@ -69,7 +69,7 @@
             <div class="d-flex justify-content-between align-items-center mb-1 px-4 px-sm-6">
                 <h1 class="fw-medium fs-6 text-body mb-0">Stock Report</h1>
                 <button ejs-button class="e-outline d-none d-sm-block" content="View Report" type="button" aria-label="view report" role="button"></button>
-                <button ejs-button class="e-outline d-block d-sm-none" iconCss="e-icons e-description" content=" " type="button" aria-label="view report" role="button"></button>
+                <button ejs-button class="e-outline d-block d-sm-none" iconCss="e-icons e-description" type="button" aria-label="view report" role="button"></button>
             </div>
             <p class="small text-body-secondary mb-0 px-4 px-sm-6">Assets you have in your account</p>
             <div class="d-flex justify-content-between align-items-center mt-3 px-4 px-sm-6">
@@ -82,9 +82,9 @@
             <div class="pe-2">
                 <ejs-chart #chart [chartArea]="{border: {width: 0}}" width="100%" height="100" [primaryXAxis]="primaryXAxis" [primaryYAxis]="primaryYAxis" (load)="chartLoad($event,'Bootstrap5','Bootstrap5Dark','#212529')" aria-label="asset analysis" role="region">
                     <e-series-collection>
-                        <e-series [dataSource]="chartData" type="StackingBar100" xName="Month" yName="AppleSales" fill="#006EEF" width="2" columnWidth="1" [border]="border"> </e-series>
-                        <e-series [dataSource]="chartData" type="StackingBar100" xName="Month" yName="OrangeSales" fill="#0EAB44" width="2" columnWidth="1" [border]="border"> </e-series>
-                        <e-series [dataSource]="chartData" type="StackingBar100" xName="Month" yName="Wastage" fill="#FDDA02" width="2" columnWidth="1" [border]="border"> </e-series>
+                        <e-series [dataSource]="chartData" type="StackingBar100" xName="Month" yName="AppleSales" fill="#006EEF" width="2" columnWidth="1" [border]="border"></e-series>
+                        <e-series [dataSource]="chartData" type="StackingBar100" xName="Month" yName="OrangeSales" fill="#0EAB44" width="2" columnWidth="1" [border]="border"></e-series>
+                        <e-series [dataSource]="chartData" type="StackingBar100" xName="Month" yName="Wastage" fill="#FDDA02" width="2" columnWidth="1" [border]="border"></e-series>
                     </e-series-collection>
                 </ejs-chart>
             </div>
@@ -106,7 +106,7 @@
                     </div>
                     <div class="d-flex align-items-center gap-4">
                         <p class="small mb-0 fw-medium">$50,113</p>
-                        <span class="e-badge e-badge-success">40%</span>
+                        <span class="e-badge e-badge-success">28%</span>
                     </div>
                 </div>
                 <div class="d-flex justify-content-between align-items-center text-body-secondary">
@@ -116,7 +116,7 @@
                     </div>
                     <div class="d-flex align-items-center gap-4">
                         <p class="small mb-0 fw-medium">$57,272</p>
-                        <span class="e-badge e-badge-warning">40%</span>
+                        <span class="e-badge e-badge-warning">32%</span>
                     </div>
                 </div>
             </div>

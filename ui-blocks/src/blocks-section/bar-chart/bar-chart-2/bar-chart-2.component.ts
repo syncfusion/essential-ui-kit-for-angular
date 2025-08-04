@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, HostListener, ViewChild } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { AccumulationChartAllModule, ChartAllModule, ChartComponent } from '@syncfusion/ej2-angular-charts';
 
@@ -31,20 +31,20 @@ export class BarChart2Component implements OnInit, OnDestroy {
     }
 
     public barchartData: Object[] = [
-        { date: "21", Food: 20, Grocery: 15, Shopping: 10, Transport: 40 },
-        { date: "22", Food: 15, Grocery: 10, Shopping: 10, Transport: 20 },
-        { date: "23", Food: 35, Grocery: 20, Shopping: 10, Transport: 20 },
-        { date: "24", Food: 23, Grocery: 10, Shopping: 10, Transport: 30 },
-        { date: "25", Food: 25, Grocery: 15, Shopping: 10, Transport: 25 },
-        { date: "26", Food: 23, Grocery: 20, Shopping: 10, Transport: 20 },
-        { date: "27", Food: 20, Grocery: 16, Shopping: 10, Transport: 10 }
+        { Date: "21", Food: 20, Grocery: 15, Shopping: 10, Transport: 40 },
+        { Date: "22", Food: 15, Grocery: 10, Shopping: 10, Transport: 20 },
+        { Date: "23", Food: 35, Grocery: 20, Shopping: 10, Transport: 20 },
+        { Date: "24", Food: 23, Grocery: 10, Shopping: 10, Transport: 30 },
+        { Date: "25", Food: 25, Grocery: 15, Shopping: 10, Transport: 25 },
+        { Date: "26", Food: 23, Grocery: 20, Shopping: 10, Transport: 20 },
+        { Date: "27", Food: 20, Grocery: 16, Shopping: 10, Transport: 10 }
     ];
 
     public piechartData: Object[] = [
-        { x: 'Food', y: 30 },
-        { x: 'Grocery', y: 15 },
-        { x: 'Shopping', y: 35 },
-        { x: 'Transport', y: 20 }
+        { xAxis: 'Food', yAxis: 30 },
+        { xAxis: 'Grocery', yAxis: 15 },
+        { xAxis: 'Shopping', yAxis: 35 },
+        { xAxis: 'Transport', yAxis: 20 }
     ];
 
     public primaryXAxis: Object = {
@@ -107,7 +107,7 @@ export class BarChart2Component implements OnInit, OnDestroy {
 
     /* SB Code - Start */
     private handleMessageEvent = (event: MessageEvent): void => {
-        if (event.origin === window.location.origin) {
+        if (event.origin === window.location.origin && /^{"(name":"[^"]+","theme":"[^"]+"|mode":"[^"]+")}$/.test(event.data)) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'bar-chart-2' && blockData.theme) {

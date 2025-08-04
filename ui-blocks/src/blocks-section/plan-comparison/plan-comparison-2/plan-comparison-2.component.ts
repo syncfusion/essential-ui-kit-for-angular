@@ -5,7 +5,8 @@ import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
     selector: 'app-plan-comparison-2',
     standalone: true,
     imports: [ButtonModule],
-    templateUrl: './plan-comparison-2.component.html'
+    templateUrl: './plan-comparison-2.component.html',
+    styleUrl: './plan-comparison-2.component.css'
 })
 export class PlanComparison2Component implements OnInit, OnDestroy {
     /* SB Code - Start */
@@ -28,7 +29,7 @@ export class PlanComparison2Component implements OnInit, OnDestroy {
 
     /* SB Code - Start */
     private handleMessageEvent = (event: MessageEvent): void => {
-        if (event.origin === window.location.origin) {
+        if (event.origin === window.location.origin && /^{"(name":"[^"]+","theme":"[^"]+"|mode":"[^"]+")}$/.test(event.data)) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'plan-comparison-2' && blockData.theme) {

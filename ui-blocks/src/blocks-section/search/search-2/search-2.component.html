@@ -10,6 +10,7 @@
                 placeholder="Search"
                 popupHeight="530px"
                 (focus)="search.showPopup()"
+                (filtering)="filtering($event)"
                 (created)="openPopup(search)"
                 role="combobox">
                 <ng-template #itemTemplate let-data>
@@ -26,10 +27,10 @@
                         <div>
                             <div class="mb-4">
                                 <div class="mb-1 text-lg text-gray-900 font-medium dark:text-white">No results found</div>
-                                <div class="text-sm text-gray-600 font-medium dark:text-gray-300">"Webflow" did not match any projects or commands. Please try again.</div>
+                                <div class="text-sm text-gray-600 font-medium dark:text-gray-300">“{{searchKeyword}}” did not match any projects or commands. Please try again.</div>
                             </div>
                             <div>
-                                <button ejs-button class="e-btn e-outline px-4 text-gray-700 !text-base !dark:text-white" content="Clear Search" type="button" aria-label="clear search" role="button"></button>
+                                <button ejs-button class="e-outline px-4 text-gray-700 !text-base !dark:text-white" content="Clear Search" type="button" aria-label="clear search" role="button"></button>
                             </div>
                         </div>
                     </div>
@@ -52,6 +53,7 @@
                     popupHeight="530px"
                     placeholder="Search"
                     (focus)="search.showPopup()"
+                    (filtering)="filtering($event)"
                     (created)="openPopup(search)"
                     role="combobox">
                     <ng-template #itemTemplate let-data>
@@ -68,7 +70,7 @@
                             <div>
                                 <div class="mb-3">
                                     <div class="mb-1 fw-medium lh-lg h6 text-body">No results found</div>
-                                    <div class="fw-medium text-body-tertiary">"Webflow" did not match any projects or commands. Please try again.</div>
+                                    <div class="fw-medium text-body-tertiary">“{{searchKeyword}}” did not match any projects or commands. Please try again.</div>
                                 </div>
                                 <div>
                                     <button ejs-button class="e-outline px-4 fw-medium" content="Clear Search" type="button" aria-label="clear search" role="button"></button>

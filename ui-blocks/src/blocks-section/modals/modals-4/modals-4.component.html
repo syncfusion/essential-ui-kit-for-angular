@@ -1,9 +1,8 @@
 @if (currentTheme === 'tailwind') {
 
 <section>
-    <div id="dialog-container" class="relative flex justify-center" style="min-height: 660px;">
-        <button ejs-button class="h-fit my-5" (click)="dialog?.show()" type="button" aria-label="manage access" role="button">Manage Access</button>
-        <ejs-dialog #dialog class="rounded-none sm:rounded-lg sm:m-4" target="#dialog-container" [isModal]="true" [showCloseIcon]="true" width="540px" (beforeOpen)="$event.maxHeight = '660px'" (open)="$event.preventFocus = true" aria-label="manage team member access" role="dialog">
+    <div id="dialog-container" class="relative" style="min-height: 660px;">
+        <ejs-dialog #dialog class="rounded-none sm:rounded-lg sm:m-4 overflow-hidden" target="#dialog-container" [isModal]="true" [showCloseIcon]="true" width="540px" (beforeOpen)="$event.maxHeight = '660px'" (open)="$event.preventFocus = true" aria-label="manage team member access" role="dialog">
             <ng-template #header>
                 <h3 class="font-semibold leading-normal mb-0.5">Manage Access</h3>
                 <p class="text-xs leading-normal text-gray-500 dark:text-gray-400">Update team member permissions.</p>
@@ -35,20 +34,24 @@
                 <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-4 sm:gap-1 py-2">
                     <p class="text-left text-sm text-gray-500 dark:text-gray-400">Changes will be logged for audit purposes</p>
                     <div class="flex gap-2 sm:gap-1">
-                        <button ejs-button cssClass="w-1/2 sm:w-fit !ml-0" type="button" aria-label="cancel" role="button">Cancel</button>
-                        <button ejs-button cssClass="e-primary w-1/2 sm:w-fit" type="button" aria-label="apply changes" role="button">Apply Changes</button>
+                        <button ejs-button cssClass="w-1/2 sm:w-fit !ml-0" content="Cancel" type="button" aria-label="cancel" role="button"></button>
+                        <button ejs-button cssClass="e-primary w-1/2 sm:w-fit" content="Apply Changes" type="button" aria-label="apply changes" role="button"></button>
                     </div>
                 </div>
             </ng-template>
         </ejs-dialog>
     </div>
 </section>
+<!-- SB Code - Start -->
+<div class="top-0 left-0 absolute w-full flex">
+    <button ejs-button class="my-5 mx-auto" content="Manage Access" type="button" (click)="dialog?.show()" aria-label="manage access" role="button"></button>
+</div>
+<!-- SB Code - End -->
 
 } @else if (currentTheme === 'bootstrap5.3') {
 
 <section>
-    <div id="dialog-container" class="position-relative d-flex align-items-start" style="min-height: 660px;">
-        <button ejs-button class="e-outline mx-auto my-3" (click)="dialog?.show()" type="button" aria-label="manage access" role="button">Manage Access</button>
+    <div id="dialog-container" class="position-relative" style="min-height: 660px;">
         <ejs-dialog #dialog class="rounded-3 m-sm-2" target="#dialog-container" [isModal]="true" [showCloseIcon]="true" width="540px" (beforeOpen)="$event.maxHeight = '660px'" (open)="$event.preventFocus = true" aria-label="manage team member access" role="dialog">
             <ng-template #header>
                 <h3 class="fw-bold mb-0 text-body">Manage Access</h3>
@@ -78,16 +81,21 @@
                 </ejs-listview>
             </ng-template>
             <ng-template #footerTemplate>
-                <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-3 py-1">
-                    <p class="text-body text-opacity-50 text-start mb-0">Changes will be logged for audit purposes</p>
+                <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-3 py-1 fs-6">
+                    <p class="text-body text-opacity-50 text-start mb-0 small">Changes will be logged for audit purposes</p>
                     <div class="d-flex justify-content-end gap-2 gap-sm-1">
-                        <button ejs-button cssClass="col col-sm-auto ms-0" type="button" aria-label="cancel" role="button">Cancel</button>
-                        <button ejs-button cssClass="e-primary col col-sm-auto" type="button" aria-label="apply changes" role="button">Apply Changes</button>
+                        <button ejs-button cssClass="col col-sm-auto ms-0" content="Cancel" type="button" aria-label="cancel" role="button"></button>
+                        <button ejs-button cssClass="e-primary col col-sm-auto" content="Apply Changes" type="button" aria-label="apply changes" role="button"></button>
                     </div>
                 </div>
             </ng-template>
         </ejs-dialog>
     </div>
 </section>
+<!-- SB Code - Start -->
+<div class="position-absolute top-0 start-0 d-flex w-100">
+    <button ejs-button class="e-outline mx-auto my-3" content="Manage Access" type="button" (click)="dialog?.show()" aria-label="manage access" role="button"></button>
+</div>
+<!-- SB Code - End -->
 
 }

@@ -1,7 +1,16 @@
-#dialog-container .e-dialog .e-dlg-header-content+.e-dlg-content {
+#dialog-container .e-dialog .e-dlg-header-content,
+#dialog-container .e-dialog .e-footer-content {
     border: inherit;
     border-inline: none;
     border-radius: 0;
+}
+
+#dialog-container .e-dialog .e-dlg-header-content {
+    border-top: 0;
+}
+
+#dialog-container .e-dialog .e-footer-content {
+    border-bottom: 0;
 }
 
 #dialog-container .e-listview .e-list-item.e-focused,

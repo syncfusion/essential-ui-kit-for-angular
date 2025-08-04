@@ -1,0 +1,95 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-white dark:bg-gray-950">
+    <div class="h-screen flex justify-center py-4 sm:py-6">
+        <div class="w-full" style="max-width: 560px;">
+            <div class="flex flex-col gap-2.5 px-4 sm:px-6">
+                <div class="flex justify-between">
+                    <h2 class="text-base font-medium text-gray-900 dark:text-white">AAPL - Apple Inc.</h2>
+                    <button ejs-button class="e-outline hidden sm:block" content="View Report" type="button" aria-label="view report" role="button"></button>
+                    <button ejs-button class="e-outline sm:hidden" iconCss="e-icons e-description" type="button" aria-label="view report" role="button"></button>
+                </div>
+                <div>
+                    <p class="text-lg font-semibold text-gray-900 dark:text-white">$248.13</p>
+                    <p class="text-sm text-green-700 dark:text-green-500 font-medium mt-1 flex items-center gap-1"><span class="e-icons e-arrow-up"></span> 0.17 (+0.07%) Today</p>
+                </div>
+            </div>
+            <div class="flex justify-between gap-2 my-5 px-4 sm:px-6">
+                <div class="e-btn-group hidden sm:block">
+                    <input type="radio" id="day" name="align" value="Day" aria-label="day" role="button" />
+                    <label class="e-btn" for="day">Day</label>
+                    <input type="radio" id="week" name="align" value="Week" checked aria-label="week" role="button" />
+                    <label class="e-btn" for="week">Week</label>
+                    <input type="radio" id="month" name="align" value="Month" aria-label="month" role="button" />
+                    <label class="e-btn" for="month">Month</label>
+                    <input type="radio" id="year" name="align" value="Year" aria-label="year" role="button" />
+                    <label class="e-btn" for="year">Year</label>
+                    <input type="radio" id="custom" name="align" value="Custom" aria-label="custom" role="button" />
+                    <label class="e-btn" for="custom">Custom</label>
+                </div>
+                <button #rangeDropdown ejs-dropdownbutton class="e-outline block sm:hidden" content="Week" [items]="[{text:'Day'},{text:'Week'},{text:'Month'},{text:'Year'},{text:'Custom'}]" type="button" aria-label="choose a range" role="button"></button>
+                <button #chartDropdown ejs-dropdownbutton class="e-outline" content="Line chart" [items]="[{text:'Line chart'},{text:'Bar chart'},{text:'Area chart'},{text:'Scatter chart'},{text:'Pie chart'}]" type="button" aria-label="choose a type" role="button"></button>
+            </div>
+            <div class="pe-4">
+                <ejs-chart #chart width="100%" height="300px" [chartArea]="{ border: { width: 0 } }" [primaryXAxis]="primaryXAxis" [primaryYAxis]="primaryYAxis" [tooltip]="tooltip" (tooltipRender)="tooltipRender($event)" (load)="chartLoad($event,'Tailwind3','Tailwind3Dark')" aria-label="stock performance analysis" role="region">
+                    <e-series-collection>
+                        <e-series [dataSource]="chartData" type="Line" xName="date" yName="close" width="2" fill="#91BD34"></e-series>
+                    </e-series-collection>
+                </ejs-chart>
+            </div>
+            <div class="flex flex-col sm:flex-row justify-between gap-3 sm:gap-2 px-4 sm:px-6">
+                <button ejs-button class="e-outline !w-full" content="Sell" type="button" aria-label="sell" role="button"></button>
+                <button ejs-button class="e-primary !w-full" content="Buy" type="button" aria-label="buy" role="button"></button>
+            </div>
+        </div>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body">
+    <div class="vh-100 d-flex justify-content-center py-3 py-sm-4">
+        <div class="w-100" style="max-width: 560px;">
+            <div class="d-flex flex-column gap-2 px-3 px-sm-4">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h2 class="h6 fw-medium text-body">AAPL - Apple Inc.</h2>
+                    <button ejs-button class="e-outline d-none d-sm-block" content="View Report" type="button" aria-label="view report" role="button"></button>
+                    <button ejs-button class="e-outline d-sm-none" iconCss="e-icons e-description" type="button" aria-label="view report" role="button"></button>
+                </div>
+                <div>
+                    <p class="h5 fw-semibold text-body mb-1">$248.13</p>
+                    <p class="small text-success fw-medium d-flex align-items-center gap-1 mb-0"><span class="e-icons e-arrow-up"></span> 0.17 (+0.07%) Today</p>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between gap-2 my-4 px-3 px-sm-4">
+                <div class="e-btn-group d-none d-sm-block">
+                    <input type="radio" id="day" name="align" value="Day" aria-label="day" role="button" />
+                    <label class="e-btn" for="day">Day</label>
+                    <input type="radio" id="week" name="align" value="Week" checked aria-label="week" role="button" />
+                    <label class="e-btn" for="week">Week</label>
+                    <input type="radio" id="month" name="align" value="Month" aria-label="month" role="button" />
+                    <label class="e-btn" for="month">Month</label>
+                    <input type="radio" id="year" name="align" value="Year" aria-label="year" role="button" />
+                    <label class="e-btn" for="year">Year</label>
+                    <input type="radio" id="custom" name="align" value="Custom" aria-label="custom" role="button" />
+                    <label class="e-btn" for="custom">Custom</label>
+                </div>
+                <button #rangeDropdown ejs-dropdownbutton class="e-outline d-inline-block d-sm-none" content="Week" [items]="[{text:'Day'},{text:'Week'},{text:'Month'},{text:'Year'},{text:'Custom'}]" type="button" aria-label="choose a range" role="button"></button>
+                <button #chartDropdown ejs-dropdownbutton class="e-outline" content="Line chart" [items]="[{text:'Line chart'},{text:'Bar chart'},{text:'Area chart'},{text:'Scatter chart'},{text:'Pie chart'}]" type="button" aria-label="choose a type" role="button"></button>
+            </div>
+            <div class="pe-3">
+                <ejs-chart #chart width="100%" height="300px" [chartArea]="{ border: { width: 0 } }" [primaryXAxis]="primaryXAxis" [primaryYAxis]="primaryYAxis" [tooltip]="tooltip" (tooltipRender)="tooltipRender($event)" (load)="chartLoad($event,'Bootstrap5','Bootstrap5Dark')" aria-label="stock performance analysis" role="region">
+                    <e-series-collection>
+                        <e-series [dataSource]="chartData" type="Line" xName="date" yName="close" width="2" fill="#0EAB44"></e-series>
+                    </e-series-collection>
+                </ejs-chart>
+            </div>
+            <div class="d-flex flex-column flex-sm-row justify-content-between gap-3 gap-sm-2 px-3 px-sm-4">
+                <button ejs-button class="e-outline w-100" content="Sell" type="button" aria-label="sell" role="button"></button>
+                <button ejs-button class="e-primary w-100" content="Buy" type="button" aria-label="buy" role="button"></button>
+            </div>
+        </div>
+    </div>
+</section>
+
+}

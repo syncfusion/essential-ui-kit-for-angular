@@ -1,8 +1,7 @@
 @if (currentTheme === 'tailwind') {
 
 <section>
-    <div id="dialog-container" class="relative flex justify-center" style="min-height: 826px;">
-        <button ejs-button class="h-fit my-5" (click)="dialog?.show()" type="button" aria-label="contact information" role="button">Contact Information</button>
+    <div id="dialog-container" class="relative" style="min-height: 826px;">
         <ejs-dialog #dialog class="rounded-none sm:rounded-lg sm:m-4" target="#dialog-container" [isModal]="true" [showCloseIcon]="true" width="548px" (beforeOpen)="$event.maxHeight = '100%'" (open)="$event.preventFocus = true" aria-label="add or update contact information" role="dialog">
             <ng-template #header>
                 <div class="font-semibold leading-normal mb-0.5">Contact Information</div>
@@ -13,7 +12,7 @@
                     <p class="text-sm font-medium mb-3">Profile Photo</p>
                     <div class="flex items-center gap-4">
                         <span class="e-avatar e-avatar-circle size-20 shrink-0">
-                            <i class="e-icons e-user text-4xl text-gray-500 dark:text-gray-300"></i>
+                            <span class="e-icons e-user text-4xl text-gray-500 dark:text-gray-300"></span>
                         </span>
                         <div id="upload-template">
                             <ejs-uploader [multiple]="false" [allowedExtensions]="'image/*'" [maxFileSize]="2000000" [buttons]="{ browse: 'Upload Photo' }" (selected)="$event.cancel = true"></ejs-uploader>
@@ -77,19 +76,23 @@
             </ng-template>
             <ng-template #footerTemplate>
                 <div class="flex justify-end gap-2 sm:gap-1 mt-1 mb-2">
-                    <button ejs-button class="w-1/2 sm:w-fit !ml-0" type="button" aria-label="cancel" role="button">Cancel</button>
-                    <button ejs-button class="e-primary w-1/2 sm:w-fit" type="button" aria-label="save contact" role="button">Save Contact</button>
+                    <button ejs-button class="w-1/2 sm:w-fit !ml-0" content="Cancel" type="button" aria-label="cancel" role="button"></button>
+                    <button ejs-button class="e-primary w-1/2 sm:w-fit" content="Save Contact" type="button" aria-label="save contact" role="button"></button>
                 </div>
             </ng-template>
         </ejs-dialog>
     </div>
 </section>
+<!-- SB Code - Start -->
+<div class="top-0 left-0 absolute w-full flex">
+    <button ejs-button class="my-5 mx-auto" content="Contact Information" type="button" (click)="dialog?.show()" aria-label="contact information" role="button"></button>
+</div>
+<!-- SB Code - End -->
 
 } @else if (currentTheme === 'bootstrap5.3') {
 
 <section>
-    <div id="dialog-container" class="position-relative d-flex align-items-start" style="min-height: 826px;">
-        <button ejs-button class="e-outline mx-auto my-3" (click)="dialog?.show()" type="button" aria-label="contact information" role="button">Contact Information</button>
+    <div id="dialog-container" class="position-relative" style="min-height: 826px;">
         <ejs-dialog #dialog class="rounded-3 m-sm-2" target="#dialog-container" [isModal]="true" [showCloseIcon]="true" width="548px" (beforeOpen)="$event.maxHeight = '100%'" (open)="$event.preventFocus = true" aria-label="add or update contact information" role="dialog">
             <ng-template #header>
                 <div class="fw-bold text-body">Contact Information</div>
@@ -100,7 +103,7 @@
                     <p class="fw-medium mb-2 text-body">Profile Photo</p>
                     <div class="d-flex align-items-center gap-3 pt-1">
                         <span class="e-avatar e-avatar-circle" style="width: 80px; height: 80px;">
-                            <i class="e-icons e-user fs-2"></i>
+                            <span class="e-icons e-user fs-2"></span>
                         </span>
                         <div id="upload-template">
                             <ejs-uploader [multiple]="false" [allowedExtensions]="'image/*'" [maxFileSize]="2000000" [buttons]="{ browse: 'Upload Photo' }" (selected)="$event.cancel = true"></ejs-uploader>
@@ -164,12 +167,17 @@
             </ng-template>
             <ng-template #footerTemplate>
                 <div class="d-flex justify-content-end gap-2 gap-sm-1 py-1">
-                    <button ejs-button class="col col-sm-auto ms-0" type="button" aria-label="cancel" role="button">Cancel</button>
-                    <button ejs-button class="e-primary col col-sm-auto" type="button" aria-label="save contact" role="button">Save Contact</button>
+                    <button ejs-button class="col col-sm-auto ms-0" content="Cancel" type="button" aria-label="cancel" role="button"></button>
+                    <button ejs-button class="e-primary col col-sm-auto" content="Save Contact" type="button" aria-label="save contact" role="button"></button>
                 </div>
             </ng-template>
         </ejs-dialog>
     </div>
 </section>
+<!-- SB Code - Start -->
+<div class="position-absolute top-0 start-0 d-flex w-100">
+    <button ejs-button class="e-outline mx-auto my-3" content="Contact Information" type="button" (click)="dialog?.show()" aria-label="contact information" role="button"></button>
+</div>
+<!-- SB Code - End -->
 
 }

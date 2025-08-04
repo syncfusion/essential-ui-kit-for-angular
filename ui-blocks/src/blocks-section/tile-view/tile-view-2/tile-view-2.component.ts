@@ -9,7 +9,7 @@ import { ListViewModule } from '@syncfusion/ej2-angular-lists';
 @Component({
     selector: 'app-tile-view-2',
     standalone: true,
-    imports: [CommonModule, AppBarModule, ButtonModule, SwitchModule, BreadcrumbModule, DropDownButtonModule, NumericTextBoxModule, ListViewModule],
+    imports: [CommonModule, AppBarModule, BreadcrumbModule, ButtonModule, SwitchModule, DropDownButtonModule, NumericTextBoxModule, ListViewModule],
     templateUrl: './tile-view-2.component.html',
     styleUrl: './tile-view-2.component.css'
 })
@@ -70,7 +70,7 @@ export class TileView2Component implements OnInit, OnDestroy {
 
     /* SB Code - Start */
     private handleMessageEvent = (event: MessageEvent): void => {
-        if (event.origin === window.location.origin) {
+        if (event.origin === window.location.origin && /^{"(name":"[^"]+","theme":"[^"]+"|mode":"[^"]+")}$/.test(event.data)) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'tile-view-2' && blockData.theme) {

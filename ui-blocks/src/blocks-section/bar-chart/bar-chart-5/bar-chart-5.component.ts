@@ -32,18 +32,18 @@ export class BarChart5Component implements OnInit, OnDestroy {
     }
 
     public chartData: Object[] = [
-        { month: 'Jan', x: 1.5, y: -5 },
-        { month: 'Feb', x: 2.5, y: 25 },
-        { month: 'Mar', x: 3.5, y: 60 },
-        { month: 'Apr', x: 2.3, y: 0 },
-        { month: 'May', x: 2.5, y: 22 },
-        { month: 'Jun', x: 2.9, y: 40 },
-        { month: 'Jul', x: 2.4, y: 3 },
-        { month: 'Aug', x: 3.2, y: 36 },
-        { month: 'Sep', x: 2, y: 20 },
-        { month: 'Oct', x: 3.7, y: 40 },
-        { month: 'Nov', x: 2.85, y: 0 },
-        { month: 'Dec', x: 1.3, y: 6 }
+        { month: 'Jan', xAxis: 1.5, yAxis: -5 },
+        { month: 'Feb', xAxis: 2.5, yAxis: 25 },
+        { month: 'Mar', xAxis: 3.5, yAxis: 60 },
+        { month: 'Apr', xAxis: 2.3, yAxis: 0 },
+        { month: 'May', xAxis: 2.5, yAxis: 22 },
+        { month: 'Jun', xAxis: 2.9, yAxis: 40 },
+        { month: 'Jul', xAxis: 2.4, yAxis: 3 },
+        { month: 'Aug', xAxis: 3.2, yAxis: 36 },
+        { month: 'Sep', xAxis: 2, yAxis: 20 },
+        { month: 'Oct', xAxis: 3.7, yAxis: 40 },
+        { month: 'Nov', xAxis: 2.85, yAxis: 0 },
+        { month: 'Dec', xAxis: 1.3, yAxis: 6 }
     ];
 
     public primaryXAxis: Object = {
@@ -51,6 +51,7 @@ export class BarChart5Component implements OnInit, OnDestroy {
         majorGridLines: { width: 0 },
         majorTickLines: { width: 0 },
         minorTickLines: { width: 0 },
+        labelIntersectAction: 'None',
         labelStyle: { fontWeight: '500' },
         interval: 1
     };
@@ -81,11 +82,12 @@ export class BarChart5Component implements OnInit, OnDestroy {
 
     public chartLoad(args: any, lightTheme: string, darkTheme: string): void {
         args.chart.theme = this.isDarkMode ? darkTheme : lightTheme;
+        this.resize();
     };
 
     @HostListener('window:resize')
     public resize(): void {
-        let labelRotation = window.innerWidth < 400 ? -90 : 0;
+        let labelRotation = window.innerWidth <= 640 ? -90 : 0;
         this.primaryXAxis = { ...this.primaryXAxis, labelRotation: labelRotation }
         if (this.rangeDropdown.element.classList.contains('e-active')) {
             this.rangeDropdown.toggle();
@@ -94,7 +96,7 @@ export class BarChart5Component implements OnInit, OnDestroy {
 
     /* SB Code - Start */
     private handleMessageEvent = (event: MessageEvent): void => {
-        if (event.origin === window.location.origin) {
+        if (event.origin === window.location.origin && /^{"(name":"[^"]+","theme":"[^"]+"|mode":"[^"]+")}$/.test(event.data)) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'bar-chart-5' && blockData.theme) {

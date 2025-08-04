@@ -4,7 +4,7 @@ import { ButtonModule, ChipListModule } from '@syncfusion/ej2-angular-buttons';
 import { TimelineModule } from '@syncfusion/ej2-angular-layouts';
 import { SidebarModule } from '@syncfusion/ej2-angular-navigations';
 import { DropDownButtonAllModule, DropDownButton } from '@syncfusion/ej2-angular-splitbuttons';
-import { CalendarView, DatePickerModule } from '@syncfusion/ej2-angular-calendars';
+import { DatePickerModule, CalendarView } from '@syncfusion/ej2-angular-calendars';
 import { MenuEventArgs } from '@syncfusion/ej2-angular-splitbuttons';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Subscription } from 'rxjs';
@@ -83,7 +83,7 @@ export class Calendar6Component implements OnInit, OnDestroy {
 
     /* SB Code - Start */
     private handleMessageEvent = (event: MessageEvent): void => {
-        if (event.origin === window.location.origin) {
+        if (event.origin === window.location.origin && /^{"(name":"[^"]+","theme":"[^"]+"|mode":"[^"]+")}$/.test(event.data)) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'calendar-6' && blockData.theme) {

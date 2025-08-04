@@ -2,18 +2,18 @@
 
 <section class="bg-white dark:bg-gray-900">
     <div id="notification" [ngStyle]="{'height': '793px', 'width': width, float:'Right'}">
-        <ejs-sidebar #sidebar class="flex flex-col bg-white dark:bg-gray-900" position="Right" type="push" [width]="width" [isOpen]="true" showBackdrop="true" role="complementary" style="display: block;">
+        <ejs-sidebar #sidebar class="flex flex-col bg-white dark:bg-gray-900" position="Right" type="Push" [width]="width" [isOpen]="true" showBackdrop="true" role="complementary" style="display: block;">
             <div class="flex-none bg-white dark:bg-gray-900">
                 <div class="flex justify-between items-center px-3 py-2">
                     <div class="flex items-center gap-1">
                         <p class="text-base font-medium text-gray-900 dark:text-white">Notifications</p>
                         <span class="e-bigger e-badge e-badge-warning ml-1">Beta</span>
-                        <button ejs-button class="e-round e-flat hidden sm:block ml-1" iconCss="e-icons e-refresh text-base" content=" " type="button" aria-label="refresh" role="button"></button>
+                        <button ejs-button class="e-round e-flat hidden sm:block ml-1" iconCss="e-icons e-refresh text-base" type="button" aria-label="refresh" role="button"></button>
                     </div>
                     <div class="flex gap-1.5">
-                        <button ejs-button class="e-round e-flat font-semibold block sm:hidden" iconCss="e-icons e-more-vertical-1" content=" " type="button" aria-label="more options" role="button"></button>
-                        <button ejs-button class="e-round e-flat font-semibold hidden sm:block" iconCss="e-icons e-settings" content=" " type="button" aria-label="settings" role="button"></button>
-                        <button ejs-button class="e-round e-flat" iconCss="e-icons e-close" content=" " (click)="sidebar.toggle()" type="button" aria-label="close sidebar" role="button"></button>
+                        <button ejs-button class="e-round e-flat font-semibold block sm:hidden" iconCss="e-icons e-more-vertical-1" type="button" aria-label="more options" role="button"></button>
+                        <button ejs-button class="e-round e-flat font-semibold hidden sm:block" iconCss="e-icons e-settings" type="button" aria-label="settings" role="button"></button>
+                        <button ejs-button class="e-round e-flat" iconCss="e-icons e-close" (click)="sidebar.toggle()" type="button" aria-label="close sidebar" role="button"></button>
                     </div>
                 </div>
                 <div id="tab-container" class="mt-3">
@@ -58,7 +58,7 @@
                                 <div class="border-e border-s hidden sm:block px-2 border-gray-200 dark:border-gray-600 leading-6">
                                     <button ejs-button class="e-primary e-flat" content="Mark all as read" type="button" aria-label="mark all as read" role="button"></button>
                                 </div>
-                                <button ejs-button class="e-flat" iconCss="e-icons e-more-vertical-1" content=" " type="button" aria-label="more options" role="button"></button>
+                                <button ejs-button class="e-flat" iconCss="e-icons e-more-vertical-1" type="button" aria-label="more options" role="button"></button>
                             </div>
                         </div>
                         <div class="flex-grow overflow-y-auto bg-white dark:bg-gray-900">
@@ -87,7 +87,7 @@
 </section>
 <!-- SB Code - Start -->
 <div class="p-3 absolute top-0 right-0">
-    <button ejs-button cssClass="e-large e-icons e-chevron-left e-round" type="button" (click)="sidebar?.show()" aria-label="show sidebar" role="button"></button>
+    <button ejs-button cssClass="e-round e-large e-icons e-chevron-left" type="button" (click)="sidebar?.show()" aria-label="show sidebar" role="button"></button>
 </div>
 <!-- SB Code - End --> 
 
@@ -95,18 +95,18 @@
 
 <section class="bg-body">
     <div id="notification" [ngStyle]="{'height': '765px', 'width': width, float:'Right'}">
-        <ejs-sidebar #sidebar class="bg-body d-flex flex-column border-0" position="Right" type="push" [width]="width" [isOpen]="true" showBackdrop="true" role="complementary" style="display: block;">
+        <ejs-sidebar #sidebar class="bg-body d-flex flex-column border-0" position="Right" type="Push" [width]="width" [isOpen]="true" showBackdrop="true" role="complementary" style="display: block;">
             <div class="flex-shrink-0">
                 <div class="d-flex justify-content-between align-items-center px-3 py-2">
                     <div class="d-flex align-items-center gap-1">
                         <p class="fs-6 fw-medium text-body m-0">Notifications</p>
                         <span class="e-bigger e-badge e-badge-warning ms-1">Beta</span>
-                        <button ejs-button class="e-round e-flat d-none d-sm-inline-block ms-1" iconCss="e-icons e-refresh fs-6" content=" " type="button" aria-label="refresh" role="button"></button>
+                        <button ejs-button class="e-round e-flat d-none d-sm-inline-block ms-1" iconCss="e-icons e-refresh fs-6" type="button" aria-label="refresh" role="button"></button>
                     </div>
                     <div class="d-flex gap-2">
-                        <button ejs-button class="e-round e-flat fw-semibold d-block d-sm-none" iconCss="e-icons e-more-vertical-1" content=" " type="button" aria-label="more options" role="button"></button>
-                        <button ejs-button class="e-round e-flat fw-semibold d-none d-sm-block" iconCss="e-icons e-settings" content=" " type="button" aria-label="settings" role="button"></button>
-                        <button ejs-button class="e-round e-flat" iconCss="e-icons e-close" content=" " (click)="sidebar.toggle()" type="button" aria-label="close sidebar" role="button"></button>
+                        <button ejs-button class="e-round e-flat fw-semibold d-block d-sm-none" iconCss="e-icons e-more-vertical-1" type="button" aria-label="more options" role="button"></button>
+                        <button ejs-button class="e-round e-flat fw-semibold d-none d-sm-block" iconCss="e-icons e-settings" type="button" aria-label="settings" role="button"></button>
+                        <button ejs-button class="e-round e-flat" iconCss="e-icons e-close" (click)="sidebar.toggle()" type="button" aria-label="close sidebar" role="button"></button>
                     </div>
                 </div>
                 <div id="tab-container" class="mt-2">
@@ -149,7 +149,7 @@
                                 <div class="border-start border-end d-none d-sm-block px-2">
                                     <button ejs-button class="e-primary e-flat" content="Mark all as read" type="button" aria-label="mark all as read" role="button"></button>
                                 </div>
-                                <button ejs-button class="e-flat" iconCss="e-icons e-more-vertical-1" content=" " type="button" aria-label="more options" role="button"></button>
+                                <button ejs-button class="e-flat" iconCss="e-icons e-more-vertical-1" type="button" aria-label="more options" role="button"></button>
                             </div>
                         </div>
                         <div class="flex-grow-1 overflow-auto">
@@ -178,7 +178,7 @@
 </section>
 <!-- SB Code - Start -->
 <div class="p-3 position-absolute top-0 end-0">
-    <button ejs-button class="e-large e-icons e-chevron-left e-round" type="button" (click)="sidebar?.show()" aria-label="show sidebar" role="button"></button>
+    <button ejs-button cssClass="e-round e-large e-icons e-chevron-left" type="button" (click)="sidebar?.show()" aria-label="show sidebar" role="button"></button>
 </div>
 <!-- SB Code - End -->
 

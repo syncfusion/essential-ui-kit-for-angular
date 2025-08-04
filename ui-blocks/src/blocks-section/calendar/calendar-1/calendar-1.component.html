@@ -2,13 +2,13 @@
 
 <section class="bg-white dark:bg-gray-800">
     <div [ngStyle]="{'height': '850px', 'width': width, float:'Right'}">
-        <ejs-sidebar class="w-full bg-white dark:bg-gray-800" #sidebar position="Right" type="push" [width]="width" [isOpen]="true" [closeOnDocumentClick]="false" showBackdrop="true" role="complementary" style="display: block;">
+        <ejs-sidebar class="w-full bg-white dark:bg-gray-800" #sidebar position="Right" type="Push" [width]="width" [isOpen]="true" [closeOnDocumentClick]="false" showBackdrop="true" role="complementary" style="display: block;">
             <div class="border-b border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800">
                 <div class="flex justify-between items-center px-4 py-3 border-b border-gray-200 dark:border-gray-600">
                     <h2 class="text-base font-semibold text-gray-900 dark:text-white">Quick view</h2>
-                    <button ejs-button class="e-flat text-base" iconCss="e-icons e-close" (click)="sidebar.toggle()" content=" " type="button" aria-label="close sidebar" role="button"></button>
+                    <button ejs-button class="e-flat text-base" iconCss="e-icons e-close" (click)="sidebar.toggle()" type="button" aria-label="close sidebar" role="button"></button>
                 </div>
-                <div class="p-4 flex justify-center items-center">
+                <div class="flex justify-center items-center">
                     <ejs-calendar class="e-bigger shadow-none border-none"></ejs-calendar>
                 </div>
             </div>
@@ -24,7 +24,7 @@
                                     <p class="text-xs text-gray-700 dark:text-gray-300">10:00 AM - 11:00 AM</p>
                                     <div class="flex items-center space-x-2 mt-1">
                                         <span class="e-avatar e-avatar-xsmall e-avatar-circle bg-green-700 dark:bg-green-500 text-xs text-white dark:text-black flex items-center justify-center rounded-full">JB</span>
-                                        <span class="text-sm text-gray-700 dark:text-gray-300">Jerome Bell</span>
+                                        <span class="text-xs text-gray-700 dark:text-gray-300">Jerome Bell</span>
                                     </div>
                                 </div>
                             </div>
@@ -39,7 +39,7 @@
                                     <p class="text-xs text-gray-700 dark:text-gray-300">02:00 PM - 04:00 PM</p>
                                     <div class="flex items-center space-x-2 mt-1">
                                         <span class="e-avatar e-avatar-xsmall e-avatar-circle bg-primary-600 dark:bg-primary-400 text-xs text-white dark:text-black flex items-center justify-center rounded-full">JP</span>
-                                        <span class="text-sm text-gray-700 dark:text-gray-300">John Peterson</span>
+                                        <span class="text-xs text-gray-700 dark:text-gray-300">John Peterson</span>
                                     </div>
                                 </div>
                             </div>
@@ -54,7 +54,7 @@
                                     <p class="text-xs text-gray-700 dark:text-gray-300">05:00 PM - 06:30 PM</p>
                                     <div class="flex items-center space-x-2 mt-1">
                                         <span class="e-avatar e-avatar-xsmall e-avatar-circle bg-orange-700 dark:bg-orange-500 text-xs text-white dark:text-black flex items-center justify-center rounded-full">KW</span>
-                                        <span class="text-sm text-gray-700 dark:text-gray-300">Kristin Watson</span>
+                                        <span class="text-xs text-gray-700 dark:text-gray-300">Kristin Watson</span>
                                     </div>
                                 </div>
                             </div>
@@ -67,7 +67,7 @@
 </section>
 <!-- SB Code - Start  -->
 <div class="p-3 absolute top-0 right-0">
-    <button ejs-button cssClass="e-large e-icons e-chevron-left e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+    <button ejs-button cssClass="e-round e-large e-icons e-chevron-left" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
 </div>
 <!-- SB Code - End -->
 
@@ -75,12 +75,12 @@
 
 <section class="bg-body">
     <div [ngStyle]="{'height': '975px', 'width': width, float:'Right'}">
-        <ejs-sidebar class="d-flex flex-column h-100 bg-body" #sidebar position="Right" type="push" [width]="width" [isOpen]="true" [closeOnDocumentClick]="false" showBackdrop="true" role="complementary" style="display: block;">
+        <ejs-sidebar class="d-flex flex-column h-100 bg-body" #sidebar position="Right" type="Push" [width]="width" [isOpen]="true" [closeOnDocumentClick]="false" showBackdrop="true" role="complementary" style="display: block;">
             <div class="bg-body">
                 <div class="border-bottom">
                     <div class="d-flex justify-content-between align-items-center px-3 py-2 pt-3 border-bottom">
                         <h2 class="h6 text-body fw-bold mb-0">Quick view</h2>
-                        <button ejs-button class="e-flat fs-6" iconCss="e-icons e-close" (click)="sidebar.toggle()" content=" " type="button" aria-label="close sidebar" role="button"></button>
+                        <button ejs-button class="e-flat fs-6" iconCss="e-icons e-close" (click)="sidebar.toggle()" type="button" aria-label="close sidebar" role="button"></button>
                     </div>
                     <div class="p-3 d-flex justify-content-center align-items-center">
                         <ejs-calendar class="e-bigger shadow-none border-0"></ejs-calendar>
@@ -92,7 +92,7 @@
                         <div class="e-card w-100 mt-2">
                             <div class="e-card-content px-1">
                                 <div class="d-flex">
-                                    <div class="bg-info rounded me-2" style="width: 4px; height: 98px;"></div>
+                                    <div class="bg-info rounded" style="width: 4px; height: 98px; margin-right: 12px;"></div>
                                     <div class="e-card-stacked">
                                         <h5 class="fs-6 fw-medium text-body mb-1">Project Kickoff</h5>
                                         <p class="fs-sm text-body-secondary mb-1">10:00 AM - 11:00 AM</p>
@@ -107,7 +107,7 @@
                         <div class="e-card w-100 mt-3">
                             <div class="e-card-content px-1">
                                 <div class="d-flex">
-                                    <div class="bg-danger rounded me-2" style="width: 4px; height: 98px;"></div>
+                                    <div class="bg-danger rounded" style="width: 4px; height: 98px; margin-right: 12px;"></div>
                                     <div class="e-card-stacked">
                                         <h5 class="fs-6 fw-medium text-body mb-1">Marketing Strategy</h5>
                                         <p class="fs-sm text-body-secondary mb-1">02:00 PM - 04:00 PM</p>
@@ -122,7 +122,7 @@
                         <div class="e-card w-100 mt-3">
                             <div class="e-card-content px-1">
                                 <div class="d-flex">
-                                    <div class="bg-success rounded me-2" style="width: 4px; height: 98px;"></div>
+                                    <div class="bg-success rounded" style="width: 4px; height: 98px; margin-right: 12px;"></div>
                                     <div class="e-card-stacked">
                                         <h5 class="fs-6 fw-medium text-body mb-1">Product Design Review</h5>
                                         <p class="fs-sm text-body-secondary mb-1">05:00 PM - 06:30 PM</p>
@@ -142,7 +142,7 @@
 </section>
 <!-- SB Code - Start  -->
 <div class="p-3 position-absolute top-0 end-0">
-    <button ejs-button cssClass="e-large e-icons e-chevron-left e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+    <button ejs-button cssClass="e-round e-large e-icons e-chevron-left" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
 </div>
 <!-- SB Code - End -->
 

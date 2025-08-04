@@ -39,7 +39,7 @@ export class Modals7Component implements OnInit, OnDestroy {
     }
 
     @HostListener('window:resize')
-    public onResize(): void {
+    public handleResize(): void {
         this.checkWindowSize();
     }
 
@@ -49,7 +49,7 @@ export class Modals7Component implements OnInit, OnDestroy {
         this.dialog.show(isMobile);
     }
 
-    public onCreated(args: number, icon: string): void {
+    public created(args: number, icon: string): void {
         const hiddenSelectElement = document.getElementsByClassName('e-ddl-hidden')[args];
         const iconElement = document.createElement('span');
         iconElement.style.cssText = 'display: flex; align-items: center; margin-left: 10px;';
@@ -59,7 +59,7 @@ export class Modals7Component implements OnInit, OnDestroy {
 
     /* SB Code - Start */
     private handleMessageEvent = (event: MessageEvent): void => {
-        if (event.origin === window.location.origin) {
+        if (event.origin === window.location.origin && /^{"(name":"[^"]+","theme":"[^"]+"|mode":"[^"]+")}$/.test(event.data)) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'modals-7' && blockData.theme) {

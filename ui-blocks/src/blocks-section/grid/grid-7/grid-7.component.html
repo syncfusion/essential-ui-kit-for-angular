@@ -6,7 +6,7 @@
             <div class="w-full sm:w-56">
                 <div class="e-input-group">
                     <span class="e-input-group-icon e-icons e-search"></span>
-                    <input class="e-input" type="text" placeholder="Search transactions" aria-label="enter transaction details" role="textbox" />
+                    <input class="e-input !pl-0" type="text" placeholder="Search transactions" aria-label="enter transaction details" role="textbox" />
                 </div>
             </div>
             <button ejs-button class="e-primary self-end" content="Export to CSV" iconCss="e-icons e-export" iconPosition="Left" type="button" aria-label="export to CSV file format" role="button"></button>
@@ -35,7 +35,7 @@
                 <e-column field="product" headerText="Product" width="208">
                     <ng-template #template let-data>
                         <div class="flex items-center gap-3">
-                            <div class="w-10 h-10">
+                            <div class="w-10 h-10 shrink-0 bg-gray-50 dark:bg-gray-700 rounded">
                                 <img class="rounded" src="assets/images/advance-grid/sales-transactions-table/{{data.product.image}}" width="40px" alt="product image" />
                             </div>
                             <p>{{data.product.name}}</p>
@@ -102,7 +102,7 @@
                     <ng-template #template let-data>
                         <div class="d-flex gap-3 align-items-center py-1">
                             <div style="width: 32px; height: 32px;">
-                                <span [ngClass]="{'e-avatar e-avatar-circle e-avatar-small': true, 'bg-danger-subtle text-danger': data.customerDetails.colorTheme === 'Red', 'bg-success-subtle text-success': data.customerDetails.colorTheme === 'Green', 'bg-info-subtle text-info': data.customerDetails.colorTheme === 'Blue', 'bg-warning-subtle text-warning': data.customerDetails.colorTheme === 'Orange', 'bg-primary-subtle text-primary': data.customerDetails.colorTheme === 'Purple'}">{{data.customerDetails.initial}}</span>
+                                <span [ngClass]="{'e-avatar e-avatar-circle e-avatar-small': true, 'bg-danger-subtle text-danger-emphasis': data.customerDetails.colorTheme === 'Red', 'bg-success-subtle text-success-emphasis': data.customerDetails.colorTheme === 'Green', 'bg-info-subtle text-info-emphasis': data.customerDetails.colorTheme === 'Blue', 'bg-warning-subtle text-warning-emphasis': data.customerDetails.colorTheme === 'Orange', 'bg-primary-subtle text-primary-emphasis': data.customerDetails.colorTheme === 'Purple'}">{{data.customerDetails.initial}}</span>
                             </div>
                             <div class="d-flex flex-column">
                                 <p class="text-body mb-0">{{data.customerDetails.name}}</p>
@@ -115,7 +115,7 @@
                 <e-column field="product" headerText="Product" width="219">
                     <ng-template #template let-data>
                         <div class="d-flex align-items-center gap-3">
-                            <div style="width: 40px; height: 40px;">
+                            <div class="flex-shrink-0 bg-body-tertiary rounded-1" style="width: 40px; height: 40px;">
                                 <img class="rounded" src="assets/images/advance-grid/sales-transactions-table/{{data.product.image}}" width="40px" alt="product image" />
                             </div>
                             <p class="mb-0">{{data.product.name}}</p>

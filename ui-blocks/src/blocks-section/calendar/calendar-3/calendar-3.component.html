@@ -1,7 +1,7 @@
 @if (currentTheme === 'tailwind') {
 
 <section class="bg-white dark:bg-gray-900">
-    <div [ngStyle]="{'height': '752px', 'width': width, float:'Right'}">
+    <div [ngStyle]="{'height': '753px', 'width': width, float:'Right'}">
         <ejs-sidebar class="w-full h-full flex flex-col bg-white dark:bg-gray-900" #sidebar position="Right" type="push" [width]="width" [isOpen]="true" [closeOnDocumentClick]="false" showBackdrop="true" role="complementary" style="display: block;">
             <div class="flex-none bg-white dark:bg-gray-900">
                 <div class="flex justify-between items-center px-4 border-gray-200 dark:border-gray-600">
@@ -9,7 +9,7 @@
                         <h2 class="text-xs mb-1 text-gray-700 dark:text-gray-300">CALENDAR</h2>
                         <ejs-datepicker class="shadow-none border-none" placeholder="Enter date" aria-label="enter a date here" role="combobox"></ejs-datepicker>
                     </div>
-                    <button ejs-button class="e-flat text-base" iconCss="e-icons e-close" (click)="sidebar.toggle()" content=" " type="button" aria-label="close sidebar" role="button"></button>
+                    <button ejs-button class="e-flat text-base" iconCss="e-icons e-close" type="button" (click)="sidebar.toggle()" aria-label="close sidebar" role="button"></button>
                 </div>
             </div>
             <div class="flex-grow overflow-y-auto bg-white dark:bg-gray-900">
@@ -54,15 +54,15 @@
                     </div>
                 </div>
             </div>
-            <div class="flex-none py-2 px-4 w-full border-t border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-800">
-                <button ejs-button class="e-flat e-primary" type="button" content="Create an event" iconCss="e-icons e-plus" aria-label="create an event" role="button"></button>
+            <div class="flex justify-center sm:justify-start py-2 px-4 w-full border-t border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-800">
+                <button ejs-button class="e-flat e-primary" iconCss="e-icons e-plus" content="Create an event" type="button" aria-label="create an event" role="button"></button>
             </div>
         </ejs-sidebar>
     </div>
 </section>
 <!-- SB Code - Start -->
 <div class="p-3 absolute top-0 right-0">
-    <button ejs-button cssClass="e-large e-icons e-chevron-left e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+    <button ejs-button cssClass="e-round e-large e-icons e-chevron-left" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
 </div>
 <!-- SB Code - End -->
 
@@ -75,10 +75,10 @@
                 <div class="flex-shrink-0">
                     <div class="d-flex justify-content-between align-items-center px-3 border-bottom border-light-subtle">
                         <div class="py-2 pe-5 pt-2">
-                            <h2 class="small text-muted mb-1">CALENDAR</h2>
+                            <h2 class="small text-body-secondary mb-1">CALENDAR</h2>
                             <ejs-datepicker class="shadow-none border-0" placeholder="Enter date" aria-label="enter a date here" role="combobox"></ejs-datepicker>
                         </div>
-                        <button ejs-button class="e-flat fs-6" iconCss="e-icons e-close" (click)="sidebar.toggle()" content=" " type="button" aria-label="close sidebar" role="button"></button>
+                        <button ejs-button class="e-flat fs-6" iconCss="e-icons e-close" (click)="sidebar.toggle()" type="button" aria-label="close sidebar" role="button"></button>
                     </div>
                 </div>
                 <div class="flex-grow-1 overflow-auto bg-body">
@@ -87,7 +87,7 @@
                         <button ejs-button class="e-flat e-icons e-more-vertical-1" type="button" aria-label="more actions" role="button"></button>
                     </div>
                     <div class="px-3 py-3">
-                        <h6 class="small text-muted">SEPTEMBER</h6>
+                        <h6 class="small text-body-secondary">SEPTEMBER</h6>
                         <div>
                             <h5 class="fs-6 text-body-secondary">Mon, Sep 2</h5>
                             <p class="w-100 text-info bg-info-subtle rounded ps-3 p-1">Labor Day</p>
@@ -104,7 +104,7 @@
                             <h5 class="fs-6 text-body-secondary">Fri, Sep 20</h5>
                             <p class="w-100 text-info bg-info-subtle rounded ps-3 p-1">POW/MIA Recognition Day</p>
                         </div>
-                        <h6 class="small text-muted pt-2">OCTOBER</h6>
+                        <h6 class="small text-body-secondary pt-1">OCTOBER</h6>
                         <div>
                             <h5 class="fs-6 text-body-secondary">Tue, Oct 8</h5>
                             <p class="w-100 text-info bg-info-subtle rounded ps-3 p-1">Yom Kippur (Jewish Holiday)</p>
@@ -123,7 +123,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="flex-shrink-0 py-2 px-4 w-100 border-top border-light-subtle bg-body-tertiary">
+                <div class="d-flex justify-content-sm-start justify-content-center flex-shrink-0 py-2 px-4 w-100 border-top border-light-subtle bg-body-tertiary">
                     <button ejs-button class="e-flat e-primary" content="Create an event" iconCss="e-icons e-plus" type="button" aria-label="create an event" role="button"></button>
                 </div>
             </div>
@@ -132,7 +132,7 @@
 </section>
 <!-- SB Code - Start -->
 <div class="p-3 position-absolute top-0 end-0">
-    <button ejs-button cssClass="e-large e-icons e-chevron-left e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+    <button ejs-button cssClass="e-round e-large e-icons e-chevron-left" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
 </div>
 <!-- SB Code - End -->
 

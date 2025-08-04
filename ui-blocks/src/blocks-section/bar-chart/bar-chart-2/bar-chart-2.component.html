@@ -9,23 +9,23 @@
                     <p class="text-sm text-gray-500 dark:text-gray-400">Data from 21-27 Dec, 2024</p>
                 </div>
                 <button ejs-button class="e-outline hidden sm:block" content="View Report" type="button" aria-label="view report" role="button"></button>
-                <button ejs-button class="e-outline sm:hidden" iconCss="e-icons e-description" content=" " type="button" aria-label="view report" role="button"></button>
+                <button ejs-button class="e-outline sm:hidden" iconCss="e-icons e-description" type="button" aria-label="view report" role="button"></button>
             </div>
             <div class="flex flex-wrap items-center">
                 <div class="w-full sm:w-7/12">
                     <ejs-chart #barchart width="100%" height="220px" [chartArea]="{border: {width: 0}}" [primaryXAxis]="primaryXAxis" [primaryYAxis]="primaryYAxis" [legendSettings]="{visible: false}" (load)="chartLoad($event,'Tailwind3','Tailwind3Dark')" aria-label="expense tracking" role="region">
                         <e-series-collection>
-                            <e-series [dataSource]="barchartData" type="StackingColumn" xName="date" yName="Food" name="Food & Drink" width="2" columnWidth="0.6" legendShape="Square" fill="#0D72DE"> </e-series>
-                            <e-series [dataSource]="barchartData" type="StackingColumn" xName="date" yName="Grocery" name="Grocery" width="2" columnWidth="0.6" legendShape="Square" fill="#03B4B4"> </e-series>
-                            <e-series [dataSource]="barchartData" type="StackingColumn" xName="date" yName="Shopping" name="Shopping" width="2" columnWidth="0.6" legendShape="Square" fill="#78B008"> </e-series>
-                            <e-series [dataSource]="barchartData" type="StackingColumn" xName="date" yName="Transport" name="Transport" width="2" columnWidth="0.6" legendShape="Square" fill="#F39C12"> </e-series>
+                            <e-series [dataSource]="barchartData" type="StackingColumn" xName="Date" yName="Food" name="Food & Drink" width="2" columnWidth="0.6" legendShape="Square" fill="#0D72DE"></e-series>
+                            <e-series [dataSource]="barchartData" type="StackingColumn" xName="Date" yName="Grocery" name="Grocery" width="2" columnWidth="0.6" legendShape="Square" fill="#03B4B4"></e-series>
+                            <e-series [dataSource]="barchartData" type="StackingColumn" xName="Date" yName="Shopping" name="Shopping" width="2" columnWidth="0.6" legendShape="Square" fill="#78B008"></e-series>
+                            <e-series [dataSource]="barchartData" type="StackingColumn" xName="Date" yName="Transport" name="Transport" width="2" columnWidth="0.6" legendShape="Square" fill="#F39C12"></e-series>
                         </e-series-collection>
                     </ejs-chart>
                 </div>
                 <div class="w-full sm:w-5/12">
                     <ejs-accumulationchart #piechart width="100%" height="300px" [centerLabel]="centerLabel" [legendSettings]="pieLegend" [enableBorderOnMouseMove]="false" (load)="chartLoad($event,'Tailwind3','Tailwind3Dark')" aria-label="expense tracking" role="region">
                         <e-accumulation-series-collection>
-                            <e-accumulation-series name="Expense data" [dataSource]="piechartData" xName="x" yName="y" [border]="{width: 1}" startAngle="0" innerRadius="65%" radius="70%" [dataLabel]="dataLabel" [palettes]="['#03B4B4', '#78B008', '#F39C12', '#0D72DE']" legendShape="Square"></e-accumulation-series>
+                            <e-accumulation-series name="Expense data" [dataSource]="piechartData" xName="xAxis" yName="yAxis" [border]="{width: 1}" startAngle="0" innerRadius="65%" radius="70%" [dataLabel]="dataLabel" [palettes]="['#03B4B4', '#78B008', '#F39C12', '#0D72DE']" legendShape="Square"></e-accumulation-series>
                         </e-accumulation-series-collection>
                     </ejs-accumulationchart>
                 </div>
@@ -45,23 +45,23 @@
                     <p class="text-body-secondary small m-0">Data from 21-27 Dec, 2024</p>
                 </div>
                 <button ejs-button class="e-outline d-none d-sm-block" content="View Report" type="button" aria-label="view report" role="button"></button>
-                <button ejs-button class="e-outline d-sm-none" iconCss="e-icons e-description" content=" " type="button" aria-label="view report" role="button"></button>
+                <button ejs-button class="e-outline d-sm-none" iconCss="e-icons e-description" type="button" aria-label="view report" role="button"></button>
             </div>
             <div class="d-flex flex-wrap align-items-center">
                 <div class="col-12 col-sm-7">
                     <ejs-chart #barchart width="100%" height="220px" [chartArea]="{border: {width: 0}}" [primaryXAxis]="primaryXAxis" [primaryYAxis]="primaryYAxis" [legendSettings]="{visible: false}" (load)="chartLoad($event,'Bootstrap5','Bootstrap5Dark')" aria-label="expense tracking" role="region">
                         <e-series-collection>
-                            <e-series [dataSource]="barchartData" type="StackingColumn" xName="date" yName="Food" name="Food & Drink" width="2" columnWidth="0.6" legendShape="Square" fill="#006EEF"> </e-series>
-                            <e-series [dataSource]="barchartData" type="StackingColumn" xName="date" yName="Grocery" name="Grocery" width="2" columnWidth="0.6" legendShape="Square" fill="#EF6400"> </e-series>
-                            <e-series [dataSource]="barchartData" type="StackingColumn" xName="date" yName="Shopping" name="Shopping" width="2" columnWidth="0.6" legendShape="Square" fill="#0EAB44"> </e-series>
-                            <e-series [dataSource]="barchartData" type="StackingColumn" xName="date" yName="Transport" name="Transport" width="2" columnWidth="0.6" legendShape="Square" fill="#FDDA02"> </e-series>
+                            <e-series [dataSource]="barchartData" type="StackingColumn" xName="Date" yName="Food" name="Food & Drink" width="2" columnWidth="0.6" legendShape="Square" fill="#006EEF"></e-series>
+                            <e-series [dataSource]="barchartData" type="StackingColumn" xName="Date" yName="Grocery" name="Grocery" width="2" columnWidth="0.6" legendShape="Square" fill="#EF6400"></e-series>
+                            <e-series [dataSource]="barchartData" type="StackingColumn" xName="Date" yName="Shopping" name="Shopping" width="2" columnWidth="0.6" legendShape="Square" fill="#0EAB44"></e-series>
+                            <e-series [dataSource]="barchartData" type="StackingColumn" xName="Date" yName="Transport" name="Transport" width="2" columnWidth="0.6" legendShape="Square" fill="#FDDA02"></e-series>
                         </e-series-collection>
                     </ejs-chart>
                 </div>
                 <div class="col-12 col-sm-5">
                     <ejs-accumulationchart #piechart width="100%" height="300px" [centerLabel]="centerLabel" [legendSettings]="pieLegend" [enableBorderOnMouseMove]="false" (load)="chartLoad($event,'Bootstrap5','Bootstrap5Dark')" aria-label="expense tracking" role="region">
                         <e-accumulation-series-collection>
-                            <e-accumulation-series name="Expense data" [dataSource]="piechartData" xName="x" yName="y" [border]="{width: 1}" startAngle="0" innerRadius="65%" radius="70%" [dataLabel]="dataLabel" [palettes]="['#EF6400', '#0EAB44', '#FDDA02', '#006EEF']" legendShape="Square"></e-accumulation-series>
+                            <e-accumulation-series name="Expense data" [dataSource]="piechartData" xName="xAxis" yName="yAxis" [border]="{width: 1}" startAngle="0" innerRadius="65%" radius="70%" [dataLabel]="dataLabel" [palettes]="['#EF6400', '#0EAB44', '#FDDA02', '#006EEF']" legendShape="Square"></e-accumulation-series>
                         </e-accumulation-series-collection>
                     </ejs-accumulationchart>
                 </div>

@@ -258,10 +258,10 @@ import { AiDialog3Component } from '../blocks-section/ai-dialog/ai-dialog-3/ai-d
 import { AiFaqDemoComponent } from '../blocks-section/ai-faq/ai-faq-demo/ai-faq-demo.component';
 import { AiFaq1Component } from '../blocks-section/ai-faq/ai-faq-1/ai-faq-1.component';
 
-import { AiFloatingMenuDemoComponent } from '../blocks-section/ai-floating-menu/ai-floating-menu-demo/ai-floating-menu-demo.component';
-import { AiFloatingMenu1Component } from '../blocks-section/ai-floating-menu/ai-floating-menu-1/ai-floating-menu-1.component';
-import { AiFloatingMenu2Component } from '../blocks-section/ai-floating-menu/ai-floating-menu-2/ai-floating-menu-2.component';
-import { AiFloatingMenu3Component } from '../blocks-section/ai-floating-menu/ai-floating-menu-3/ai-floating-menu-3.component';
+import { AiFloatingWidgetDemoComponent } from '../blocks-section/ai-floating-widget/ai-floating-widget-demo/ai-floating-widget-demo.component';
+import { AiFloatingWidget1Component } from '../blocks-section/ai-floating-widget/ai-floating-widget-1/ai-floating-widget-1.component';
+import { AiFloatingWidget2Component } from '../blocks-section/ai-floating-widget/ai-floating-widget-2/ai-floating-widget-2.component';
+import { AiFloatingWidget3Component } from '../blocks-section/ai-floating-widget/ai-floating-widget-3/ai-floating-widget-3.component';
 
 import { AiInputDemoComponent } from '../blocks-section/ai-input/ai-input-demo/ai-input-demo.component';
 import { AiInput1Component } from '../blocks-section/ai-input/ai-input-1/ai-input-1.component';
@@ -298,10 +298,11 @@ import { AiSidebar3Component } from '../blocks-section/ai-sidebar/ai-sidebar-3/a
 import { AiSidebar4Component } from '../blocks-section/ai-sidebar/ai-sidebar-4/ai-sidebar-4.component';
 import { AiSidebar5Component } from '../blocks-section/ai-sidebar/ai-sidebar-5/ai-sidebar-5.component';
 
-import { AccumulationChartDemoComponent } from '../blocks-section/accumulation-chart/accumulation-chart-demo/accumulation-chart-demo.component';
-import { AccumulationChart1Component } from '../blocks-section/accumulation-chart/accumulation-chart-1/accumulation-chart-1.component';
-import { AccumulationChart2Component } from '../blocks-section/accumulation-chart/accumulation-chart-2/accumulation-chart-2.component';
-import { AccumulationChart3Component } from '../blocks-section/accumulation-chart/accumulation-chart-3/accumulation-chart-3.component';
+import { DistributionChartDemoComponent } from '../blocks-section/distribution-chart/distribution-chart-demo/distribution-chart-demo.component';
+import { DistributionChart1Component } from '../blocks-section/distribution-chart/distribution-chart-1/distribution-chart-1.component';
+import { DistributionChart2Component } from '../blocks-section/distribution-chart/distribution-chart-2/distribution-chart-2.component';
+import { DistributionChart3Component } from '../blocks-section/distribution-chart/distribution-chart-3/distribution-chart-3.component';
+import { DistributionChart4Component } from '../blocks-section/distribution-chart/distribution-chart-4/distribution-chart-4.component';
 
 import { BarChartDemoComponent } from '../blocks-section/bar-chart/bar-chart-demo/bar-chart-demo.component';
 import { BarChart1Component } from '../blocks-section/bar-chart/bar-chart-1/bar-chart-1.component';
@@ -312,12 +313,37 @@ import { BarChart5Component } from '../blocks-section/bar-chart/bar-chart-5/bar-
 import { BarChart6Component } from '../blocks-section/bar-chart/bar-chart-6/bar-chart-6.component';
 import { BarChart7Component } from '../blocks-section/bar-chart/bar-chart-7/bar-chart-7.component';
 import { BarChart8Component } from '../blocks-section/bar-chart/bar-chart-8/bar-chart-8.component';
+import { BarChart9Component } from '../blocks-section/bar-chart/bar-chart-9/bar-chart-9.component';
 
 import { LineChartDemoComponent } from '../blocks-section/line-chart/line-chart-demo/line-chart-demo.component';
 import { LineChart1Component } from '../blocks-section/line-chart/line-chart-1/line-chart-1.component';
 import { LineChart2Component } from '../blocks-section/line-chart/line-chart-2/line-chart-2.component';
 import { LineChart3Component } from '../blocks-section/line-chart/line-chart-3/line-chart-3.component';
 import { LineChart4Component } from '../blocks-section/line-chart/line-chart-4/line-chart-4.component';
+import { LineChart5Component } from '../blocks-section/line-chart/line-chart-5/line-chart-5.component';
+import { LineChart6Component } from '../blocks-section/line-chart/line-chart-6/line-chart-6.component';
+import { LineChart7Component } from '../blocks-section/line-chart/line-chart-7/line-chart-7.component';
+import { LineChart8Component } from '../blocks-section/line-chart/line-chart-8/line-chart-8.component';
+import { LineChart9Component } from '../blocks-section/line-chart/line-chart-9/line-chart-9.component';
+import { LineChart10Component } from '../blocks-section/line-chart/line-chart-10/line-chart-10.component';
+import { LineChart11Component } from '../blocks-section/line-chart/line-chart-11/line-chart-11.component';
+
+import { AreaChartDemoComponent } from '../blocks-section/area-chart/area-chart-demo/area-chart-demo.component';
+import { AreaChart1Component } from '../blocks-section/area-chart/area-chart-1/area-chart-1.component';
+import { AreaChart2Component } from '../blocks-section/area-chart/area-chart-2/area-chart-2.component';
+import { AreaChart3Component } from '../blocks-section/area-chart/area-chart-3/area-chart-3.component';
+import { AreaChart4Component } from '../blocks-section/area-chart/area-chart-4/area-chart-4.component';
+import { AreaChart5Component } from '../blocks-section/area-chart/area-chart-5/area-chart-5.component';
+import { AreaChart6Component } from '../blocks-section/area-chart/area-chart-6/area-chart-6.component';
+import { AreaChart7Component } from '../blocks-section/area-chart/area-chart-7/area-chart-7.component';
+import { AreaChart8Component } from '../blocks-section/area-chart/area-chart-8/area-chart-8.component';
+import { AreaChart9Component } from '../blocks-section/area-chart/area-chart-9/area-chart-9.component';
+
+import { BubbleChartDemoComponent } from '../blocks-section/bubble-chart/bubble-chart-demo/bubble-chart-demo.component';
+import { BubbleChart1Component } from '../blocks-section/bubble-chart/bubble-chart-1/bubble-chart-1.component';
+
+import { ScatterChartDemoComponent } from '../blocks-section/scatter-chart/scatter-chart-demo/scatter-chart-demo.component';
+import { ScatterChart1Component } from '../blocks-section/scatter-chart/scatter-chart-1/scatter-chart-1.component';
 
 import { RatingDemoComponent } from '../blocks-section/rating/rating-demo/rating-demo.component';
 import { Rating1Component } from '../blocks-section/rating/rating-1/rating-1.component';
@@ -328,6 +354,15 @@ import { Rating5Component } from '../blocks-section/rating/rating-5/rating-5.com
 import { Rating6Component } from '../blocks-section/rating/rating-6/rating-6.component';
 import { Rating7Component } from '../blocks-section/rating/rating-7/rating-7.component';
 import { Rating8Component } from '../blocks-section/rating/rating-8/rating-8.component';
+import { Rating9Component } from '../blocks-section/rating/rating-9/rating-9.component';
+import { Rating10Component } from '../blocks-section/rating/rating-10/rating-10.component';
+import { Rating11Component } from '../blocks-section/rating/rating-11/rating-11.component';
+import { Rating12Component } from '../blocks-section/rating/rating-12/rating-12.component';
+import { Rating13Component } from '../blocks-section/rating/rating-13/rating-13.component';
+import { Rating14Component } from '../blocks-section/rating/rating-14/rating-14.component';
+import { Rating15Component } from '../blocks-section/rating/rating-15/rating-15.component';
+import { Rating16Component } from '../blocks-section/rating/rating-16/rating-16.component';
+import { Rating17Component } from '../blocks-section/rating/rating-17/rating-17.component';
 
 import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
 
@@ -592,10 +627,10 @@ export const routes: Routes = [
   { path: 'blocks/ai-faq', component: AiFaqDemoComponent },
   { path: 'blocks/ai-faq-1', component: AiFaq1Component },
 
-  { path: 'blocks/ai-floating-menu', component: AiFloatingMenuDemoComponent },
-  { path: 'blocks/ai-floating-menu-1', component: AiFloatingMenu1Component },
-  { path: 'blocks/ai-floating-menu-2', component: AiFloatingMenu2Component },
-  { path: 'blocks/ai-floating-menu-3', component: AiFloatingMenu3Component },
+  { path: 'blocks/ai-floating-widget', component: AiFloatingWidgetDemoComponent },
+  { path: 'blocks/ai-floating-widget-1', component: AiFloatingWidget1Component },
+  { path: 'blocks/ai-floating-widget-2', component: AiFloatingWidget2Component },
+  { path: 'blocks/ai-floating-widget-3', component: AiFloatingWidget3Component },
 
   { path: 'blocks/ai-input', component: AiInputDemoComponent },
   { path: 'blocks/ai-input-1', component: AiInput1Component },
@@ -632,10 +667,11 @@ export const routes: Routes = [
   { path: 'blocks/ai-sidebar-4', component: AiSidebar4Component },
   { path: 'blocks/ai-sidebar-5', component: AiSidebar5Component },
 
-  { path: 'blocks/accumulation-chart', component: AccumulationChartDemoComponent },
-  { path: 'blocks/accumulation-chart-1', component: AccumulationChart1Component },
-  { path: 'blocks/accumulation-chart-2', component: AccumulationChart2Component },
-  { path: 'blocks/accumulation-chart-3', component: AccumulationChart3Component },
+  { path: 'blocks/distribution-chart', component: DistributionChartDemoComponent },
+  { path: 'blocks/distribution-chart-1', component: DistributionChart1Component },
+  { path: 'blocks/distribution-chart-2', component: DistributionChart2Component },
+  { path: 'blocks/distribution-chart-3', component: DistributionChart3Component },
+  { path: 'blocks/distribution-chart-4', component: DistributionChart4Component },
 
   { path: 'blocks/bar-chart', component: BarChartDemoComponent },
   { path: 'blocks/bar-chart-1', component: BarChart1Component },
@@ -646,12 +682,37 @@ export const routes: Routes = [
   { path: 'blocks/bar-chart-6', component: BarChart6Component },
   { path: 'blocks/bar-chart-7', component: BarChart7Component },
   { path: 'blocks/bar-chart-8', component: BarChart8Component },
+  { path: 'blocks/bar-chart-9', component: BarChart9Component },
 
   { path: 'blocks/line-chart', component: LineChartDemoComponent },
   { path: 'blocks/line-chart-1', component: LineChart1Component },
   { path: 'blocks/line-chart-2', component: LineChart2Component },
   { path: 'blocks/line-chart-3', component: LineChart3Component },
   { path: 'blocks/line-chart-4', component: LineChart4Component },
+  { path: 'blocks/line-chart-5', component: LineChart5Component },
+  { path: 'blocks/line-chart-6', component: LineChart6Component },
+  { path: 'blocks/line-chart-7', component: LineChart7Component },
+  { path: 'blocks/line-chart-8', component: LineChart8Component },
+  { path: 'blocks/line-chart-9', component: LineChart9Component },
+  { path: 'blocks/line-chart-10', component: LineChart10Component },
+  { path: 'blocks/line-chart-11', component: LineChart11Component },
+
+  { path: 'blocks/area-chart', component: AreaChartDemoComponent },
+  { path: 'blocks/area-chart-1', component: AreaChart1Component },
+  { path: 'blocks/area-chart-2', component: AreaChart2Component },
+  { path: 'blocks/area-chart-3', component: AreaChart3Component },
+  { path: 'blocks/area-chart-4', component: AreaChart4Component },
+  { path: 'blocks/area-chart-5', component: AreaChart5Component },
+  { path: 'blocks/area-chart-6', component: AreaChart6Component },
+  { path: 'blocks/area-chart-7', component: AreaChart7Component },
+  { path: 'blocks/area-chart-8', component: AreaChart8Component },
+  { path: 'blocks/area-chart-9', component: AreaChart9Component },
+
+  { path: 'blocks/bubble-chart', component: BubbleChartDemoComponent },
+  { path: 'blocks/bubble-chart-1', component: BubbleChart1Component },
+
+  { path: 'blocks/scatter-chart', component: ScatterChartDemoComponent },
+  { path: 'blocks/scatter-chart-1', component: ScatterChart1Component },
 
   { path: 'blocks/rating', component: RatingDemoComponent },
   { path: 'blocks/rating-1', component: Rating1Component },
@@ -662,6 +723,15 @@ export const routes: Routes = [
   { path: 'blocks/rating-6', component: Rating6Component },
   { path: 'blocks/rating-7', component: Rating7Component },
   { path: 'blocks/rating-8', component: Rating8Component },
+  { path: 'blocks/rating-9', component: Rating9Component },
+  { path: 'blocks/rating-10', component: Rating10Component },
+  { path: 'blocks/rating-11', component: Rating11Component },
+  { path: 'blocks/rating-12', component: Rating12Component },
+  { path: 'blocks/rating-13', component: Rating13Component },
+  { path: 'blocks/rating-14', component: Rating14Component },
+  { path: 'blocks/rating-15', component: Rating15Component },
+  { path: 'blocks/rating-16', component: Rating16Component },
+  { path: 'blocks/rating-17', component: Rating17Component },
 
   { path: '**', component: PageNotFoundComponent }
 ];

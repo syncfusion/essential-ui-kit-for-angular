@@ -2,11 +2,17 @@
 
 <section class="bg-gray-50 dark:bg-gray-950">
     <div id="target" class="w-full" [ngStyle]="{ height: isMobileView ? '591px' : '720px' }">
+        <div class="flex items-center justify-center pt-4 block sm:hidden">
+            <button ejs-button cssClass="e-primary e-round e-bigger" iconCss="sf-icon-help-circle !text-xl" type="button" (click)="toggleDialog()" aria-label="open contact us form" role="button"></button>
+        </div>
         <ejs-dialog #dialog id="floating-article" class="sm:!rounded-t !rounded-none overflow-hidden !border-0" width="400px" minHeight="591px" (open)="setDialogPosition($event)" (created)="dialog.show()" aria-label="get help from helpdesk" role="dialog">
             <ng-template #header>
                 <div class="flex flex-col justify-between items-center bg-primary-600 dark:bg-primary-400 p-3">
                     <div class="w-full text-center">
                         <p class="text-lg font-semibold text-white dark:text-gray-900">Help</p>
+                    </div>
+                    <div class="flex justify-end block sm:hidden px-4 absolute right-0">
+                        <button ejs-button cssClass="e-primary e-round" iconCss="e-icons e-close text-white dark:text-black !text-base" type="button" (click)="toggleDialog()" aria-label="close contact us form" role="button"></button>
                     </div>
                     <div class="e-input-group e-bigger mt-3">
                         <input class="e-input" type="text" placeholder="Search for help" aria-label="search for help" role="textbox" />
@@ -30,19 +36,25 @@
                 </ejs-listview>
             </ng-template>
         </ejs-dialog>
-        <button #fab ejs-fab class="e-primary e-round e-bigger !hidden sm:!block" [iconCss]="toggleState?'sf-icon-help-circle !text-2xl':'e-icons e-close !text-2xl'" position="BottomRight" type="button" target="#target" (click)="toggleDialog()" aria-label="show/hide helpdesk" role="button"></button>
+        <button #fab ejs-fab class="e-primary e-round e-bigger !hidden sm:!block" [iconCss]="isToggleState?'sf-icon-help-circle !text-2xl':'e-icons e-close !text-2xl'" target="#target" position="BottomRight" type="button" (click)="toggleDialog()" aria-label="show/hide helpdesk" role="button"></button>
     </div>
 </section>
 
 } @else if (currentTheme === 'bootstrap5.3') {
 
 <section class="bg-body">
-    <div id="target" class="w-100" [ngStyle]="{ height: isMobileView ? '591px' : '720px' }">
-        <ejs-dialog #dialog id="floating-article" class="rounded-1 overflow-hidden border-0" width="400px" minHeight="591px" (open)="setDialogPosition($event)" (created)="dialog.show()" aria-label="get help from helpdesk" role="dialog">
+    <div id="target" class="w-100" [ngStyle]="{ height: isMobileView ? '594px' : '720px' }">
+        <div class="d-flex align-items-center justify-content-center pt-4 d-block d-sm-none">
+            <button ejs-button cssClass="e-primary e-round e-bigger" iconCss="sf-icon-help-circle fs-5 lh-base" type="button" (click)="toggleDialog()" aria-label="open contact us form" role="button"></button>
+        </div>
+        <ejs-dialog #dialog id="floating-article" class="rounded-1 overflow-hidden border-0" width="400px" minHeight="594px" (open)="setDialogPosition($event)" (created)="dialog.show()" aria-label="get help from helpdesk" role="dialog">
             <ng-template #header>
                 <div class="d-flex flex-column justify-content-between align-items-center bg-primary text-white p-3">
                     <div class="w-100 text-center">
                         <p class="fs-6 fw-semibold m-0 lh-sm text-white">Help</p>
+                    </div>
+                    <div class="d-flex justify-content-end d-block d-sm-none px-3 top-0 pt-2 position-absolute end-0">
+                        <button ejs-button class="e-primary e-round" iconCss="e-icons e-close text-white" type="button" (click)="toggleDialog()" aria-label="close contact us form" role="button"></button>
                     </div>
                     <div class="e-input-group e-bigger mt-3">
                         <input class="e-input form-control" type="text" placeholder="Search for help" aria-label="search for help" role="textbox" />
@@ -51,7 +63,7 @@
                 </div>
             </ng-template>
             <ng-template #content>
-                <ejs-listview class="border-0 rounded-0" [dataSource]="data" width="100%" height="486px" aria-label="help articles" role="list">
+                <ejs-listview class="border-0 rounded-0" [dataSource]="data" width="100%" height="488px" aria-label="help articles" role="list">
                     <ng-template #template let-data>
                         <div class="e-list-wrapper px-3 pt-3">
                             <div class="e-list-content d-flex justify-content-between align-items-center pb-3" style="line-height: 20px;">
@@ -66,7 +78,7 @@
                 </ejs-listview>
             </ng-template>
         </ejs-dialog>
-        <button #fab ejs-fab class="e-primary e-round e-bigger d-none d-sm-block" [iconCss]="toggleState?'sf-icon-help-circle fs-4':'e-icons e-close fs-5'" position="BottomRight" type="button" target="#target" (click)="toggleDialog()" aria-label="show/hide helpdesk" role="button"></button>
+        <button #fab ejs-fab class="e-primary e-round e-bigger d-none d-sm-block" [iconCss]="isToggleState?'sf-icon-help-circle fs-4':'e-icons e-close fs-5'" target="#target" position="BottomRight" type="button" (click)="toggleDialog()" aria-label="show/hide helpdesk" role="button"></button>
     </div>
 </section>
 

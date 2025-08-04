@@ -9,7 +9,7 @@
                 <h3 class="text-base font-semibold text-gray-900 dark:text-white">Settings</h3>
             </div>
             <div id="settings-page" class="lg:max-w-3xl flex h-full text-gray-700 dark:text-gray-300">
-                <ejs-sidebar #sidebar class="p-3 !border-r !border-gray-200 dark:!border-gray-600 bg-white dark:bg-gray-800" target="#settings-page" [showBackdrop]="isMobileView" type="Push" width="248px" isOpen="true" (close)="$event.cancel = preventSidebarClose" aria-label="main navigation menu" role="complementary">
+                <ejs-sidebar #sidebar class="p-3 !border-r !border-gray-200 dark:!border-gray-600 bg-white dark:bg-gray-800" target="#settings-page" [showBackdrop]="isMobileView" type="Push" width="248px" isOpen="true" (close)="$event.cancel = isPreventSidebarClose" aria-label="main navigation menu" role="complementary">
                     <ejs-listview class="border-0" cssClass="e-list-template" [dataSource]="navigationMenu" [template]="itemTemplate" aria-label="main navigation list" role="list">
                         <ng-template #itemTemplate let-data>
                             <div class="e-list-wrapper !p-3 flex items-center gap-3 rounded-lg">
@@ -42,7 +42,7 @@
                     </div>
                     <div class="flex gap-2 items-center justify-between sm:gap-8">
                         <label class="w-52 sm:grow">Manage side panel settings</label>
-                        <button ejs-button type="button" aria-label="manage" role="button">Manage</button>
+                        <button ejs-button content="Manage" type="button" aria-label="manage" role="button"></button>
                     </div>
                 </div>
             </div>
@@ -61,7 +61,7 @@
                 <h3 class="fs-6 fw-bold text-body mb-0">Settings</h3>
             </div>
             <div id="settings-page" class="d-flex h-100" style="max-width: 768px;">
-                <ejs-sidebar #sidebar class="p-3 border-end bg-body border-light-subtle" target="#settings-page" [showBackdrop]="isMobileView" type="Push" width="248px" isOpen="true" (close)="$event.cancel = preventSidebarClose" aria-label="main navigation menu" role="complementary">
+                <ejs-sidebar #sidebar class="p-3 border-end bg-body border-light-subtle" target="#settings-page" [showBackdrop]="isMobileView" type="Push" width="248px" isOpen="true" (close)="$event.cancel = isPreventSidebarClose" aria-label="main navigation menu" role="complementary">
                     <ejs-listview class="border-0" cssClass="e-list-template" [dataSource]="navigationMenu" [template]="itemTemplate" aria-label="main navigation list" role="list">
                         <ng-template #itemTemplate let-data>
                             <div class="e-list-wrapper p-2 d-flex align-items-center gap-2 rounded">
@@ -94,7 +94,7 @@
                     </div>
                     <div class="d-flex gap-2 align-items-center justify-content-between">
                         <label class="flex-sm-grow-1" style="width: 13rem;">Manage side panel settings</label>
-                        <button ejs-button cssClass="e-outline" type="button" aria-label="manage" role="button">Manage</button>
+                        <button ejs-button cssClass="e-outline" content="Manage" type="button" aria-label="manage" role="button"></button>
                     </div>
                 </div>
             </div>

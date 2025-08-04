@@ -1,11 +1,12 @@
 import { Component, OnInit, OnDestroy, ViewChild, HostListener } from '@angular/core';
 import { TextAreaModule, TextAreaComponent } from '@syncfusion/ej2-angular-inputs';
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'app-ai-input-1',
     standalone: true,
-    imports: [TextAreaModule, ButtonModule],
+    imports: [TextAreaModule, ButtonModule, FormsModule],
     templateUrl: './ai-input-1.component.html',
     styleUrl: './ai-input-1.component.css'
 })
@@ -14,6 +15,7 @@ export class AiInput1Component implements OnInit, OnDestroy {
     /* SB Code - Start */
     public currentTheme: string = 'tailwind';
     /* SB Code - End */
+    public promptMessage : string = '';
 
     constructor() { }
 
@@ -30,7 +32,7 @@ export class AiInput1Component implements OnInit, OnDestroy {
     }
 
     @HostListener('window:resize')
-    public onResize(): void {
+    public handleResize(): void {
         this.adjustHeight();
     }
 
@@ -44,7 +46,7 @@ export class AiInput1Component implements OnInit, OnDestroy {
 
     /* SB Code - Start */
     private handleMessageEvent = (event: MessageEvent): void => {
-        if (event.origin === window.location.origin) {
+        if (event.origin === window.location.origin && /^{"(name":"[^"]+","theme":"[^"]+"|mode":"[^"]+")}$/.test(event.data)) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'ai-input-1' && blockData.theme) {

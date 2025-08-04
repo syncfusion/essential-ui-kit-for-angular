@@ -6,15 +6,17 @@
             <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-3">
                 <h1 class="text-base font-medium text-gray-900 dark:text-white">Ticket Activity Overview</h1>
                 <div class="flex flex-col sm:flex-row gap-4 items-start">
-                    <button ejs-dropdownbutton class="e-outline" iconCss="e-icons e-day" content="01/12/2024 - 07/12/2024" (beforeOpen)="$event.cancel = true;" type="button" aria-label="choose a date" role="button"></button>
+                    <div class="w-64">
+                        <ejs-daterangepicker #daterangepicker cssClass="shadow-none border-none" placeholder="01/12/2024 - 07/12/2024" aria-label="enter a start and end date here" role="combobox"></ejs-daterangepicker>
+                    </div>
                     <button #ticketDropdown ejs-dropdownbutton class="e-outline" content="All Tickets" [items]="[{text:'All tickets'}, {text:'Draft'}, {text:'Processed'}]" type="button" aria-label="choose a ticket type" role="button"></button>
                 </div>
             </div>
             <div class="mt-5">
                 <ejs-chart #chart [chartArea]="{border: {width: 0}}" width="100%" height="300px" [primaryXAxis]="primaryXAxis" [primaryYAxis]="primaryYAxis" [legendSettings]="{visible: true}" (load)="chartLoad($event,'Tailwind3','Tailwind3Dark')" aria-label="ticket activity" role="region">
                     <e-series-collection>
-                        <e-series [dataSource]="chartData" type="Column" xName="date" yName="x" fill="#9CA3AF" name="Draft Tickets" width="2" legendShape="Square" columnSpacing="0.2"> </e-series>
-                        <e-series [dataSource]="chartData" type="Column" xName="date" yName="y" fill="#267DDA" name="Tickets Processed" width="2" legendShape="Square" columnSpacing="0.2"> </e-series>
+                        <e-series [dataSource]="chartData" type="Column" xName="date" yName="xAxis" fill="#9CA3AF" name="Draft Tickets" width="2" legendShape="Square" columnSpacing="0.2"></e-series>
+                        <e-series [dataSource]="chartData" type="Column" xName="date" yName="yAxis" fill="#267DDA" name="Tickets Processed" width="2" legendShape="Square" columnSpacing="0.2"></e-series>
                     </e-series-collection>
                 </ejs-chart>
             </div>
@@ -30,15 +32,17 @@
             <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-3">
                 <h1 class="fs-6 fw-medium text-body mb-0">Ticket Activity Overview</h1>
                 <div class="d-flex flex-column flex-sm-row gap-3 align-items-start">
-                    <button ejs-dropdownbutton class="e-outline" iconCss="e-icons e-day" content="01/12/2024 - 07/12/2024" (beforeOpen)="$event.cancel = true;" type="button" aria-label="choose a date" role="button"></button>
+                    <div style="width: 256px;">
+                        <ejs-daterangepicker #daterangepicker cssClass="shadow-none border-none" placeholder="01/12/2024 - 07/12/2024" aria-label="enter a start and end date here" role="combobox"></ejs-daterangepicker>
+                    </div>
                     <button #ticketDropdown ejs-dropdownbutton class="e-outline" content="All Tickets" [items]="[{text:'All tickets'}, {text:'Draft'}, {text:'Processed'}]" type="button" aria-label="choose a ticket type" role="button"></button>
                 </div>
             </div>
             <div class="mt-4">
                 <ejs-chart #chart [chartArea]="{border: {width: 0}}" width="100%" height="300px" [primaryXAxis]="primaryXAxis" [primaryYAxis]="primaryYAxis" [legendSettings]="{visible: true}" (load)="chartLoad($event,'Bootstrap5','Bootstrap5Dark')" aria-label="ticket activity" role="region">
                     <e-series-collection>
-                        <e-series [dataSource]="chartData" type="Column" xName="date" yName="x" fill="#9CA3AF" name="Draft Tickets" width="2" legendShape="Square" columnSpacing="0.2"> </e-series>
-                        <e-series [dataSource]="chartData" type="Column" xName="date" yName="y" fill="#006EEF" name="Tickets Processed" width="2" legendShape="Square" columnSpacing="0.2"> </e-series>
+                        <e-series [dataSource]="chartData" type="Column" xName="date" yName="xAxis" fill="#9CA3AF" name="Draft Tickets" width="2" legendShape="Square" columnSpacing="0.2"></e-series>
+                        <e-series [dataSource]="chartData" type="Column" xName="date" yName="yAxis" fill="#006EEF" name="Tickets Processed" width="2" legendShape="Square" columnSpacing="0.2"></e-series>
                     </e-series-collection>
                 </ejs-chart>
             </div>

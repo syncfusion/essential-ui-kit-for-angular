@@ -15,9 +15,9 @@
                             <span class="e-input-group-icon e-icons e-search"></span>
                         </div>
                     </div>
-                    <button ejs-button class="sf-icon-notification-bell-02 leading-3 text-base e-flat mr-1 sm:mr-2" type="button" aria-label="notification" role="button"></button>
+                    <button ejs-button class="leading-3 e-flat mr-1 sm:mr-2" iconCss="sf-icon-notification-bell-02" type="button" aria-label="notification" role="button"></button>
                     <div class="border border-r border-gray-200 dark:border-gray-600 hidden sm:block mr-2 h-7"></div>
-                    <button ejs-button class="e-icons e-grid-view e-flat hidden sm:block mr-2" type="button" aria-label="grid view" role="button"></button>
+                    <button ejs-button class="e-flat hidden sm:block mr-2" iconCss="e-icons e-grid-view" type="button" aria-label="grid view" role="button"></button>
                     <div class="border border-r border-gray-200 dark:border-gray-600 hidden sm:block mr-1 h-7"></div>
                     <span class="e-avatar e-avatar-small e-avatar-circle hidden sm:block ml-2 mr-2 lg:mr-0">
                         <img src="assets/images/common/avatar/avatar-3.jpg" alt="profile picture" />
@@ -55,7 +55,7 @@
                 </div>
                 <div class="flex items-center gap-2 w-full sm:w-max px-6 sm:px-0">
                     <div class="w-1/2 mt-3 sm:mt-0">
-                        <button ejs-button class="e-primary w-full" type="button" aria-label="open app" role="button">Open App</button>
+                        <button ejs-button class="e-primary w-full" content="Open App" type="button" aria-label="open app" role="button"></button>
                     </div>
                     <div class="w-1/2 md:w-full mt-3 sm:mt-0 p-0">
                        <button #moreOptionsDropdown ejs-dropdownbutton class="e-outline e-primary w-full" content="More" [items]="[{text:'Create new app', iconCss:'e-icons e-folder'}, {text:'Inbox', iconCss:'e-icons e-folder'}, {text:'App info', iconCss:'e-icons e-folder'}, {text:'Edit app', iconCss:'e-icons e-folder'}]" type="button" aria-label="choose from more options" role="button"></button>
@@ -85,9 +85,9 @@
                         <span class="e-input-group-icon e-icons e-search border-start-0"></span>
                     </div>
                 </div>
-                <button ejs-button class="sf-icon-notification-bell-01 fs-6 e-flat me-0 me-sm-3" type="button" aria-label="notification" role="button"></button>
+                <button ejs-button class="fs-6 e-flat me-0 me-sm-3" iconCss="sf-icon-notification-bell-01" type="button" aria-label="notification" role="button"></button>
                 <div class="border-end border-secondary-subtle d-none d-sm-block me-3" style="height: 24px;"></div>
-                <button ejs-button class="e-icons e-grid-view e-flat d-none d-sm-block me-3 e-medium" type="button" aria-label="grid view" role="button"></button>
+                <button ejs-button class="e-flat d-none d-sm-block me-3 e-medium" iconCss="e-icons e-grid-view" type="button" aria-label="grid view" role="button"></button>
                 <div class="border-end border-secondary-subtle d-none d-sm-block" style="height: 24px;"></div>
                 <span class="e-avatar e-avatar-small e-avatar-circle d-none d-sm-block ms-3">
                     <img src="assets/images/common/avatar/avatar-3.jpg" alt="profile picture" />
@@ -125,7 +125,7 @@
             </div>
             <div class="d-flex p-0 pe-2 pe-md-2 gap-2 col-sm-4 col-md-4 col-lg-2 col-xl-2 m-0">
                 <div class="col-6 mt-3 mt-sm-0">
-                    <button ejs-button class="e-primary p-lg-1 px-2 w-100" type="button" aria-label="open app" role="button">Open App</button>
+                    <button ejs-button class="e-primary p-lg-1 px-2 w-100" content="Open App" type="button" aria-label="open app" role="button"></button>
                 </div>
                 <div class="p-0 col-6 mt-3 mt-sm-0">
                     <button #moreOptionsDropdown ejs-dropdownbutton class="e-outline e-primary w-100" content="More" [items]="[{text:'Create new app', iconCss:'e-icons e-folder'}, {text:'Inbox', iconCss:'e-icons e-folder'}, {text:'App info', iconCss:'e-icons e-folder'}, {text:'Edit app', iconCss:'e-icons e-folder'}]" type="button" aria-label="choose from more options" role="button"></button>

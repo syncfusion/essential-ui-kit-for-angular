@@ -30,13 +30,13 @@ export class BarChart4Component implements OnInit, OnDestroy {
     }
 
     public chartData: any[] = [
-        { day: "01", x: 270, y: 150 },
-        { day: "02", x: 200, y: 90 },
-        { day: "03", x: 310, y: 170 },
-        { day: "04", x: 130, y: 80 },
-        { day: "05", x: 180, y: 120 },
-        { day: "06", x: 80, y: 50 },
-        { day: "07", x: 190, y: 190 }
+        { day: "01", xAxis: 270, yAxis: 150 },
+        { day: "02", xAxis: 200, yAxis: 90 },
+        { day: "03", xAxis: 310, yAxis: 170 },
+        { day: "04", xAxis: 130, yAxis: 80 },
+        { day: "05", xAxis: 180, yAxis: 120 },
+        { day: "06", xAxis: 80, yAxis: 50 },
+        { day: "07", xAxis: 190, yAxis: 190 }
     ];
 
     public primaryXAxis: Object = {
@@ -74,7 +74,7 @@ export class BarChart4Component implements OnInit, OnDestroy {
     };
 
     public tooltipRender(args: any): void {
-        args.text = `Income : $${this.chartData[args.data.pointIndex].x}<br>Expense : $${this.chartData[args.data.pointIndex].y}`
+        args.text = `Income : $${this.chartData[args.data.pointIndex].xAxis}<br>Expense : $${this.chartData[args.data.pointIndex].yAxis}`
     };
 
     public chartLoad(args: any, lightTheme: string, darkTheme: string): void {
@@ -92,7 +92,7 @@ export class BarChart4Component implements OnInit, OnDestroy {
 
     /* SB Code - Start */
     private handleMessageEvent = (event: MessageEvent): void => {
-        if (event.origin === window.location.origin) {
+        if (event.origin === window.location.origin && /^{"(name":"[^"]+","theme":"[^"]+"|mode":"[^"]+")}$/.test(event.data)) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'bar-chart-4' && blockData.theme) {

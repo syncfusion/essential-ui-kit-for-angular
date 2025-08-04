@@ -1,8 +1,8 @@
 @if (currentTheme === 'tailwind') {
 
 <section class="bg-white dark:bg-gray-950">
-    <div class="float-right" style="height: 600px;">
-        <ejs-sidebar #sidebar class="bg-gray-50 dark:bg-gray-900 !border-l !border-gray-200 dark:!border-gray-700" width="256px" [isOpen]="true" position="Right" showBackdrop="true" aria-label="main navigation menu" role="complementary" style="display: block;">
+    <div style="height: 600px;">
+        <ejs-sidebar #sidebar class="bg-gray-50 dark:bg-gray-900 !border-l !border-gray-200 dark:!border-gray-700" width="256px" [isOpen]="true" [showBackdrop]="backDrop" position="Right" showBackdrop="true" aria-label="main navigation menu" role="complementary" style="display: block;">
             <div class="py-6 h-screen">
                 <div class="flex justify-between items-center px-3 mb-2">
                     <span class="text-base text-gray-600 dark:text-gray-400">Market Cap</span>
@@ -34,15 +34,15 @@
 </section>
 <!-- SB Code - Start -->
 <div class="p-3 top-0 right-0 absolute">
-    <button ejs-button cssClass="e-large e-icons e-chevron-left e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+    <button ejs-button cssClass="e-round e-large e-icons e-chevron-left" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
 </div>
 <!-- SB Code - End -->
 
 } @else if (currentTheme === 'bootstrap5.3') {
 
 <section class="bg-body">
-    <div class="float-right" style="height: 600px;">
-        <ejs-sidebar #sidebar width="256px" [isOpen]="true" position="Right" aria-label="main navigation menu" showBackdrop="true" role="complementary" style="display: block;">
+    <div style="height: 600px;">
+        <ejs-sidebar #sidebar width="256px" [isOpen]="true" [showBackdrop]="backDrop" position="Right" aria-label="main navigation menu" showBackdrop="true" role="complementary" style="display: block;">
             <div class="py-4 vh-100">
                 <div class="d-flex justify-content-between align-items-center mb-2 px-2 ms-1">
                     <span class="fs-6 text-body-secondary">Market Cap</span>
@@ -74,7 +74,7 @@
 </section>
 <!-- SB Code - Start -->
 <div class="py-3 px-1 position-absolute top-0 end-0">
-    <button ejs-button cssClass="e-large e-icons e-chevron-left e-round" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+    <button ejs-button cssClass="e-round e-large e-icons e-chevron-left" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
 </div>
 <!-- SB Code - End -->
 

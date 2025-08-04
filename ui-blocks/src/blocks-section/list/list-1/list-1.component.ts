@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ListViewModule } from '@syncfusion/ej2-angular-lists';
 import { CheckBoxModule } from '@syncfusion/ej2-angular-buttons';
@@ -74,7 +74,7 @@ export class List1Component implements OnInit, OnDestroy {
     ];
 
     @HostListener('window:resize', ['$event'])
-    public onResize(event: UIEvent): void {
+    public handleResize(event: UIEvent): void {
         const width = (event.target as Window).innerWidth;
         this.checkWindowSize(width);
     }
@@ -85,7 +85,7 @@ export class List1Component implements OnInit, OnDestroy {
 
     /* SB Code - Start */
     private handleMessageEvent = (event: MessageEvent): void => {
-        if (event.origin === window.location.origin) {
+        if (event.origin === window.location.origin && /^{"(name":"[^"]+","theme":"[^"]+"|mode":"[^"]+")}$/.test(event.data)) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'list-1' && blockData.theme) {

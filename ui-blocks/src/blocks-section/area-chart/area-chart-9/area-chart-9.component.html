@@ -1,0 +1,65 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-white dark:bg-gray-950">
+    <div class="h-screen flex justify-center p-4 sm:p-6">
+        <div class="w-full" style="max-width: 1116px;">
+            <div class="flex justify-between flex-col sm:flex-row sm:items-start gap-4">
+                <div class="flex justify-between gap-2">
+                    <div>
+                        <h1 class="text-base font-medium text-gray-900 dark:text-white">Expense Analysis</h1>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mt-1 sm:mt-2">Family Expense for the year 2024</p>
+                    </div>
+                    <button ejs-button class="e-outline block sm:hidden self-start" iconCss="e-icons e-description" type="button" aria-label="view report" role="button"></button>
+                </div>
+                <div class="flex gap-3">
+                    <button #rangeDropdown ejs-dropdownbutton class="e-outline" content="2024" [items]="[{text:'2024'}, {text:'2023'}, {text:'2022'}, {text:'2021'}, {text:'2020'}]" type="button" aria-label="choose a year" role="button"></button>
+                    <button ejs-button class="e-outline hidden sm:block" content="View Report" type="button" aria-label="view report" role="button"></button>
+                </div>
+            </div>
+            <div class="mt-5">
+                <ejs-chart #chart height="270px" [chartArea]="{border: {width: 0}}" [primaryXAxis]="primaryXAxis" [primaryYAxis]="primaryYAxis" [legendSettings]="{visible: true, enableHighlight: true, padding: 15}" [tooltip]="{enable: true, showNearestTooltip: true}" (load)="chartLoad($event,'Tailwind3','Tailwind3Dark')" aria-label="expense analysis" role="region">
+                    <e-series-collection>
+                        <e-series [dataSource]="chartData" xName="month" yName="johnExpense" name="John" type="Line" [fill]="isDarkMode ? '#9CA3AF' : '#1F2937'" width=2 [marker]="{visible: true, shape: 'Circle', isFilled: true}" legendShape="HorizontalLine"></e-series>
+                        <e-series [dataSource]="chartData" xName="month" yName="peterExpense" name="Peter" type="Line" fill="#01A8B5" width=2 [marker]="{visible: true, shape: 'Pentagon', isFilled: true}" legendShape="HorizontalLine"></e-series>
+                        <e-series [dataSource]="chartData" xName="month" yName="steveExpense" name="Steve" type="Line" fill="#267DDA" width=2 [marker]="{visible: true, shape: 'Rectangle', isFilled: true}" legendShape="HorizontalLine"></e-series>
+                        <e-series [dataSource]="chartData" xName="month" yName="charleExpense" name="Charle" type="Line" fill="#FFB900" width=2 [marker]="{visible: true, shape: 'Triangle', isFilled: true}" legendShape="HorizontalLine"></e-series>
+                    </e-series-collection>
+                </ejs-chart>
+            </div>
+        </div>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body">
+    <div class="vh-100 d-flex justify-content-center p-3 p-sm-4">
+        <div class="w-100" style="max-width: 1116px;">
+            <div class="d-flex justify-content-between flex-column flex-sm-row align-items-sm-start gap-3">
+                <div class="d-flex justify-content-between gap-2">
+                    <div>
+                        <h1 class="fs-6 fw-medium text-body">Expense Analysis</h1>
+                        <p class="small text-body-secondary mt-2 mb-0">Family Expense for the year 2024</p>
+                    </div>
+                    <button ejs-button class="e-outline d-block d-sm-none align-self-start" iconCss="e-icons e-description" type="button" aria-label="view report" role="button"></button>
+                </div>
+                <div class="d-flex gap-2">
+                    <button #rangeDropdown ejs-dropdownbutton class="e-outline" content="2024" [items]="[{text:'2024'}, {text:'2023'}, {text:'2022'}, {text:'2021'}, {text:'2020'}]" type="button" aria-label="choose a year" role="button"></button>
+                    <button ejs-button class="e-outline d-none d-sm-block ms-1" content="View Report" type="button" aria-label="view report" role="button"></button>
+                </div>
+            </div>
+            <div class="mt-4">
+                <ejs-chart #chart height="270px" [chartArea]="{border: {width: 0}}" [primaryXAxis]="primaryXAxis" [primaryYAxis]="primaryYAxis" [legendSettings]="{visible: true, enableHighlight: true, padding: 15}" [tooltip]="{enable: true, showNearestTooltip: true}" (load)="chartLoad($event,'Bootstrap5','Bootstrap5Dark')" aria-label="expense analysis" role="region">
+                    <e-series-collection>
+                        <e-series [dataSource]="chartData" xName="month" yName="johnExpense" name="John" type="Line" fill="#9747FF" width=2 [marker]="{visible: true, shape: 'Circle', isFilled: true}" legendShape="HorizontalLine"></e-series>
+                        <e-series [dataSource]="chartData" xName="month" yName="peterExpense" name="Peter" type="Line" fill="#00EFA7" width=2 [marker]="{visible: true, shape: 'Pentagon', isFilled: true}" legendShape="HorizontalLine"></e-series>
+                        <e-series [dataSource]="chartData" xName="month" yName="steveExpense" name="Steve" type="Line" [fill]="isDarkMode ? '#3A95FF' : '#006EEF'" width=2 [marker]="{visible: true, shape: 'Rectangle', isFilled: true}" legendShape="HorizontalLine"></e-series>
+                        <e-series [dataSource]="chartData" xName="month" yName="charleExpense" name="Charle" type="Line" fill="#EF6400" width=2 [marker]="{visible: true, shape: 'Triangle', isFilled: true}" legendShape="HorizontalLine"></e-series>
+                    </e-series-collection>
+                </ejs-chart>
+            </div>
+        </div>
+    </div>
+</section>
+
+}

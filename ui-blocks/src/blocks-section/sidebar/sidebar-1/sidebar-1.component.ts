@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnInit, OnDestroy } from '@angular/core';
+import { Component, ViewChild, OnInit, OnDestroy, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AccordionModule, SidebarModule, AccordionComponent } from '@syncfusion/ej2-angular-navigations';
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
@@ -16,6 +16,7 @@ export class Sidebar1Component implements OnInit, OnDestroy {
     @ViewChild('accordion') public expandAccordion!: AccordionComponent;
     public currentTheme: string = 'tailwind';
     /* SB Code - End */
+    public backDrop: boolean = window.innerWidth <= 640;
 
     constructor() { }
 
@@ -55,6 +56,11 @@ export class Sidebar1Component implements OnInit, OnDestroy {
         }
     ];
 
+    @HostListener('window:resize')
+    public handleResize(): void {
+        this.backDrop = window.innerWidth <= 640;
+    }
+
     /* SB Code - Start */
     private refreshAccordion(timeout: number): void {
         setTimeout(() => {
@@ -63,7 +69,7 @@ export class Sidebar1Component implements OnInit, OnDestroy {
     }
 
     private handleMessageEvent = (event: MessageEvent): void => {
-        if (event.origin === window.location.origin) {
+        if (event.origin === window.location.origin && /^{"(name":"[^"]+","theme":"[^"]+"|mode":"[^"]+")}$/.test(event.data)) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'sidebar-1' && blockData.theme) {

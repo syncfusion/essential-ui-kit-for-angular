@@ -44,7 +44,7 @@ export class Header4Component implements OnInit, OnDestroy {
     }
 
     @HostListener('window:resize')
-    public onResize(): void {
+    public handleResize(): void {
         this.updateTabItems();
     }
 
@@ -56,7 +56,7 @@ export class Header4Component implements OnInit, OnDestroy {
         }
     }
 
-    public onTabCreated(): void {
+    public tabCreated(): void {
         setTimeout(() => {
             const badge = this.tab?.element.querySelector('.e-toolbar-item.e-active')?.querySelector('.e-badge');
             if (badge) {
@@ -65,14 +65,14 @@ export class Header4Component implements OnInit, OnDestroy {
         }, 250);
     }
 
-    public onTabSelected(args: any): void {
+    public tabSelected(args: any): void {
         args.previousItem.querySelector('.e-badge').classList.remove('e-badge-primary');
         args.selectedItem.querySelector('.e-badge').classList.add('e-badge-primary');
     }
 
     /* SB Code - Start */
     private handleMessageEvent = (event: MessageEvent): void => {
-        if (event.origin === window.location.origin) {
+        if (event.origin === window.location.origin && /^{"(name":"[^"]+","theme":"[^"]+"|mode":"[^"]+")}$/.test(event.data)) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'header-4' && blockData.theme) {

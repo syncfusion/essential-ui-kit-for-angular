@@ -9,7 +9,7 @@ import { TextBoxModule } from '@syncfusion/ej2-angular-inputs';
     selector: 'app-modals-2',
     standalone: true,
     imports: [CommonModule, DialogModule, ButtonModule, DropDownListModule, TextBoxModule],
-    templateUrl: './modals-2.component.html',
+    templateUrl: './modals-2.component.html'
 })
 export class Modals2Component implements OnInit, OnDestroy {
     @ViewChild('dialog') public dialog!: DialogComponent;
@@ -39,7 +39,7 @@ export class Modals2Component implements OnInit, OnDestroy {
     }
 
     @HostListener('window:resize')
-    public onResize(): void {
+    public handleResize(): void {
         this.checkWindowSize();
     }
 
@@ -56,7 +56,7 @@ export class Modals2Component implements OnInit, OnDestroy {
     }
 
     private handleMessageEvent = (event: MessageEvent): void => {
-        if (event.origin === window.location.origin) {
+        if (event.origin === window.location.origin && /^{"(name":"[^"]+","theme":"[^"]+"|mode":"[^"]+")}$/.test(event.data)) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'modals-2' && blockData.theme) {

@@ -43,17 +43,17 @@ export class FilterPanel2Component implements OnInit, OnDestroy {
         /* SB Code - End */
     }
 
-    public onRuleUpdate(): void {
+    public ruleUpdate(): void {
         this.recordLength = this.queryBuilder1.getRules()?.rules?.length ?? 1;
     }
 
-    public onRuleAdd(): void {
+    public ruleAdd(): void {
         this.recordData = this.queryBuilder2.getRules()?.rules?.length ?? 1;
     }
 
     /* SB Code - Start */
     private handleMessageEvent = (event: MessageEvent): void => {
-        if (event.origin === window.location.origin) {
+        if (event.origin === window.location.origin && /^{"(name":"[^"]+","theme":"[^"]+"|mode":"[^"]+")}$/.test(event.data)) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'filter-panel-2' && blockData.theme) {

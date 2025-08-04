@@ -1,9 +1,8 @@
 @if (currentTheme === 'tailwind') {
 
 <section>
-    <div id="dialog-container" class="relative flex justify-center" style="min-height: 724px;">
-        <button ejs-button class="h-fit my-5" (click)="dialog?.show()" type="button" aria-label="track new feature" role="button">Track New Feature</button>
-        <ejs-dialog #dialog class="rounded-none sm:rounded-lg sm:m-4" target="#dialog-container" [isModal]="true" [showCloseIcon]="true" width="515px" (open)="$event.preventFocus = true" (beforeOpen)="$event.maxHeight = '100%'" aria-label="track new feature" role="dialog">
+    <div id="dialog-container" class="relative" style="min-height: 724px;">
+        <ejs-dialog #dialog class="rounded-none sm:rounded-lg sm:m-4 overflow-hidden" target="#dialog-container" [isModal]="true" [showCloseIcon]="true" width="515px" (open)="$event.preventFocus = true" (beforeOpen)="$event.maxHeight = '100%'" aria-label="track new feature" role="dialog">
             <ng-template #header>
                 <p class="font-semibold leading-normal">Track New Feature</p>
             </ng-template>
@@ -16,7 +15,7 @@
                         </div>
                         <div class="flex flex-col sm:flex-row sm:items-center gap-1">
                             <label class="flex items-center gap-1 w-44 text-sm font-medium shrink-0">No Views<span class="e-icons e-circle-info text-gray-500 dark:text-gray-300"></span></label>
-                            <ejs-dropdownlist class="w-full grow" (created)="onCreated(0, 'e-grid-view')" placeholder="Select the number of views" aria-label="choose a number of views" role="listbox"></ejs-dropdownlist>
+                            <ejs-dropdownlist class="w-full grow" (created)="created(0, 'e-grid-view')" placeholder="Select the number of views" aria-label="choose a number of views" role="listbox"></ejs-dropdownlist>
                         </div>
                     </div>
                     <p class="text-sm font-semibold px-2 py-1.5 bg-gray-100 rounded-md dark:bg-gray-700">Tracking Criteria</p>
@@ -40,14 +39,14 @@
                         </div>
                         <div class="flex flex-row items-center justify-between sm:justify-normal gap-1">
                             <label class="w-44 text-sm font-medium shrink-0">Event Attributes</label>
-                            <button ejs-button class="e-primary e-outline" type="button" aria-label="add filter" role="button">Add filter</button>
+                            <button ejs-button class="e-primary e-outline" content="Add filter" type="button" aria-label="add filter" role="button"></button>
                         </div>
                     </div>
                     <p class="text-sm font-semibold px-2 py-1.5 bg-gray-100 rounded-md dark:bg-gray-700">Workflow</p>
                     <div class="flex flex-col gap-4 sm:gap-3">
                         <div class="flex flex-col sm:flex-row sm:items-center gap-1">
                             <label class="flex items-center gap-1 w-44 text-sm font-medium shrink-0">Status<span class="e-icons e-circle-info text-gray-500 dark:text-gray-300"></span></label>
-                            <ejs-dropdownlist class="w-full grow" placeholder="Evaluating" (created)="onCreated(2, 'e-contrast')" aria-label="choose an evaluating option" role="listbox"></ejs-dropdownlist>
+                            <ejs-dropdownlist class="w-full grow" placeholder="Evaluating" (created)="created(2, 'e-contrast')" aria-label="choose an evaluating option" role="listbox"></ejs-dropdownlist>
                         </div>
                         <div class="flex flex-col sm:flex-row sm:items-center gap-1">
                             <label class="w-44 text-sm font-medium shrink-0">Evaluation Period</label>
@@ -62,19 +61,23 @@
             </ng-template>
             <ng-template #footerTemplate>
                 <div class="flex justify-end gap-2 sm:gap-1 mt-1 sm:mt-0 mb-2">
-                    <button ejs-button cssClass="w-1/2 sm:w-fit !ml-0" type="button" aria-label="cancel" role="button">Cancel</button>
-                    <button ejs-button cssClass="e-primary w-1/2 sm:w-fit" type="button" aria-label="save feature" role="button">Save Feature</button>
+                    <button ejs-button cssClass="w-1/2 sm:w-fit !ml-0" content="Cancel" type="button" aria-label="cancel" role="button"></button>
+                    <button ejs-button cssClass="e-primary w-1/2 sm:w-fit" content="Save Feature" type="button" aria-label="save feature" role="button"></button>
                 </div>
             </ng-template>
         </ejs-dialog>
     </div>
 </section>
+<!-- SB Code - Start -->
+<div class="top-0 left-0 absolute w-full flex">
+    <button ejs-button class="my-5 mx-auto" content="Track New Feature" type="button" (click)="dialog?.show()" aria-label="track new feature" role="button"></button>
+</div>
+<!-- SB Code - End -->
 
 } @else if (currentTheme === 'bootstrap5.3') {
 
 <section>
-    <div id="dialog-container" class="position-relative d-flex align-items-start" style="min-height: 724px;">
-        <button ejs-button class="e-outline mx-auto my-3" (click)="dialog?.show()" type="button" aria-label="track new feature" role="button">Track New Feature</button>
+    <div id="dialog-container" class="position-relative" style="min-height: 724px;">
         <ejs-dialog #dialog class="rounded-3 m-sm-2" target="#dialog-container" [isModal]="true" [showCloseIcon]="true" width="515px" (open)="$event.preventFocus = true" (beforeOpen)="$event.maxHeight = '100%'" aria-label="track new feature" role="dialog">
             <ng-template #header>
                 <p class="fw-bold mb-0 text-body">Track New Feature</p>
@@ -88,7 +91,7 @@
                         </div>
                         <div class="d-flex flex-column flex-sm-row align-items-sm-center gap-1">
                             <label class="d-flex align-items-center gap-1 fw-medium flex-shrink-0" style="width: 175px;">No Views<span class="e-icons e-circle-info text-body-secondary"></span></label>
-                            <ejs-dropdownlist class="w-100 flex-grow-1" (created)="onCreated(0, 'e-grid-view')" placeholder="Select the number of views" aria-label="choose a number of views" role="listbox"></ejs-dropdownlist>
+                            <ejs-dropdownlist class="w-100 flex-grow-1" (created)="created(0, 'e-grid-view')" placeholder="Select the number of views" aria-label="choose a number of views" role="listbox"></ejs-dropdownlist>
                         </div>
                     </div>
                     <p class="fw-bold px-2 py-1 bg-body-secondary rounded mb-0">Tracking Criteria</p>
@@ -112,14 +115,14 @@
                         </div>
                         <div class="d-flex flex-row align-items-center justify-content-between justify-content-sm-start gap-1">
                             <label class="fw-medium flex-shrink-0" style="width: 175px;">Event Attributes</label>
-                            <button ejs-button class="e-primary e-outline" type="button" aria-label="add filter" role="button">Add filter</button>
+                            <button ejs-button class="e-primary e-outline" content="Add filter" type="button" aria-label="add filter" role="button"></button>
                         </div>
                     </div>
                     <p class="fw-bold px-2 py-1 bg-body-secondary rounded mb-0">Workflow</p>
                     <div class="row gap-3 gap-sm-2 gy-sm-1 mt-0">
                         <div class="d-flex flex-column flex-sm-row align-items-sm-center gap-1">
                             <label class="d-flex align-items-center gap-1 fw-medium flex-shrink-0" style="width: 175px;">Status<span class="e-icons e-circle-info text-body-secondary"></span></label>
-                            <ejs-dropdownlist class="w-100 flex-grow-1" placeholder="Evaluating" (created)="onCreated(2, 'e-contrast')" aria-label="choose an evaluating option" role="listbox"></ejs-dropdownlist>
+                            <ejs-dropdownlist class="w-100 flex-grow-1" placeholder="Evaluating" (created)="created(2, 'e-contrast')" aria-label="choose an evaluating option" role="listbox"></ejs-dropdownlist>
                         </div>
                         <div class="d-flex flex-column flex-sm-row align-items-sm-center gap-1">
                             <label class="fw-medium flex-shrink-0" style="width: 175px;">Evaluation Period</label>
@@ -134,12 +137,17 @@
             </ng-template>
             <ng-template #footerTemplate>
                 <div class="d-flex justify-content-end gap-2 gap-sm-1 py-1">
-                    <button ejs-button cssClass="col col-sm-auto ms-0" type="button" aria-label="cancel" role="button">Cancel</button>
-                    <button ejs-button cssClass="e-primary col col-sm-auto" type="button" aria-label="save feature" role="button">Save Feature</button>
+                    <button ejs-button cssClass="col col-sm-auto ms-0" content="Cancel" type="button" aria-label="cancel" role="button"></button>
+                    <button ejs-button cssClass="e-primary col col-sm-auto" content="Save Feature" type="button" aria-label="save feature" role="button"></button>
                 </div>
             </ng-template>
         </ejs-dialog>
     </div>
 </section>
+<!-- SB Code - Start -->
+<div class="position-absolute top-0 start-0 d-flex w-100">
+    <button ejs-button class="e-outline mx-auto my-3" content="Track New Feature" type="button" (click)="dialog?.show()" aria-label="track new feature" role="button"></button>
+</div>
+<!-- SB Code - End -->
 
 }

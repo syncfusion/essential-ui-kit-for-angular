@@ -1,13 +1,12 @@
 @if (currentTheme === 'tailwind') {
 
 <section>
-    <div id="dialog-container" class="relative flex justify-center" style="min-height: 665px;">
-        <button ejs-button class="h-fit my-5" (click)="dialog?.show()" type="button" aria-label="account settings" role="button">Account Settings</button>
-        <ejs-dialog #dialog class="rounded-none sm:rounded-lg overflow-hidden sm:m-4" target="#dialog-container" [isModal]="true" [visible]="false" width="788px" height="565px" (open)="$event.preventFocus = true" aria-label="manage my account" role="dialog">
+    <div id="settings-container" class="relative" style="min-height: 665px;">
+        <ejs-dialog #dialog class="rounded-none sm:rounded-lg overflow-hidden sm:m-4" target="#settings-container" [isModal]="true" [visible]="false" width="788px" height="565px" (open)="dialogOpen($event)" aria-label="manage my account" role="dialog">
             <ng-template #content>
                 <div class="flex h-full">
                     <div class="shrink-0 relative">
-                        <ejs-sidebar #sidebar class="!border-r !border-gray-200 dark:!border-gray-600 bg-gray-50 dark:bg-gray-700" target="#sidebar-container" width="256px" closeOnDocumentClick="true" [enableDock]="dockMode" [showBackdrop]="backDrop" [type]="sidebarType" (close)="onSidebarClose($event)" role="complementary">
+                        <ejs-sidebar #sidebar class="!border-r !border-gray-200 dark:!border-gray-600 bg-gray-50 dark:bg-gray-700" target="#sidebar-container" width="256px" closeOnDocumentClick="true" [enableDock]="isDockMode" [showBackdrop]="isBackDrop" [type]="sidebarType" (close)="sidebarClose($event)" role="complementary">
                             <div class="flex gap-3 items-center p-4">
                                 <span class="e-avatar e-avatar-circle bg-primary-600 text-white dark:text-black dark:bg-primary-400 shrink-0">MJ</span>
                                 <div>
@@ -29,10 +28,10 @@
                         </ejs-sidebar>
                     </div>
                     <div id="sidebar-container">
-                        <div class="h-full" [ngClass]="{ 'settings-panel': !isMobile }">
+                        <div class="h-full">
                             <div class="flex justify-between p-4 border-b dark:border-gray-600">
                                 <div class="flex gap-3">
-                                    <button ejs-button cssClass="e-icons e-menu sm:hidden" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+                                    <button *ngIf="isMobile" ejs-button cssClass="e-icons e-menu e-flat" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
                                     <h3 class="text-base font-semibold">My Account</h3>
                                 </div>
                                 <button ejs-button cssClass="e-flat e-small !leading-none" iconCss="e-icons e-close" (click)="dialog?.hide()" type="button" aria-label="close" role="button"></button>
@@ -42,14 +41,14 @@
                                     <label class="text-xs font-medium text-gray-700 dark:text-gray-200">Full Name <span class="text-red-600 font-normal dark:text-red-400">*</span></label>
                                     <div class="flex flex-col sm:flex-row gap-3 sm:gap-2">
                                         <ejs-textbox class="grow" type="text" placeholder="Enter your full name" aria-label="enter your full name" role="textbox"></ejs-textbox>
-                                        <button ejs-button class="w-fit" type="button" disabled="true" aria-label="change" role="button">Change</button>
+                                        <button ejs-button class="w-fit" content="Change" type="button" disabled="true" aria-label="change" role="button"></button>
                                     </div>
                                 </div>
                                 <div class="flex flex-col gap-1 mb-4">
                                     <label class="text-xs font-medium text-gray-700 dark:text-gray-200">Email <span class="text-red-600 font-normal dark:text-red-400">*</span></label>
                                     <div class="flex flex-col sm:flex-row gap-3 sm:gap-2">
                                         <ejs-textbox class="grow" type="email" placeholder="Enter a valid email address" aria-label="enter a valid email address" role="textbox"></ejs-textbox>
-                                        <button ejs-button class="w-fit" type="button" disabled="true" aria-label="change" role="button">Change</button>
+                                        <button ejs-button class="w-fit" content="Change" type="button" disabled="true" aria-label="change" role="button"></button>
                                     </div>
                                 </div>
                                 <div class="flex justify-between gap-1 text-sm text-gray-700 dark:text-gray-200 border-t dark:border-gray-600 py-4">
@@ -64,7 +63,7 @@
                                     <ejs-message class="border-0 bg-transparent p-0" [showIcon]="false">
                                         <ng-template #content>
                                             <p class="text-gray-700 dark:text-gray-200 mb-4 sm:mb-3"><span class="font-medium text-red-600 dark:text-red-400">Warning: </span> Deleting your account will permanently delete all your documents. This action can't be undone.</p>
-                                            <button ejs-button cssClass="e-danger e-outline" type="button" aria-label="delete account" role="button">Delete Account</button>
+                                            <button ejs-button cssClass="e-danger e-outline" content="Delete Account" type="button" aria-label="delete account" role="button"></button>
                                         </ng-template>
                                     </ejs-message>
                                 </div>
@@ -76,17 +75,21 @@
         </ejs-dialog>
     </div>
 </section>
+<!-- SB Code - Start -->
+<div class="top-0 left-0 absolute w-full flex">
+    <button ejs-button class="my-5 mx-auto" content="Account Settings" type="button" (click)="dialog?.show()" aria-label="account settings" role="button"></button>
+</div>
+<!-- SB Code - End -->
 
 } @else if (currentTheme === 'bootstrap5.3') {
 
 <section>
-    <div id="dialog-container" class="position-relative d-flex align-items-start" style="min-height: 665px;">
-        <button ejs-button class="mx-auto my-3 e-outline" (click)="dialog?.show()" type="button" aria-label="account settings" role="button">Account Settings</button>
-        <ejs-dialog #dialog class="rounded-3 m-sm-2" target="#dialog-container" [isModal]="true" [visible]="false" width="788px" height="565px" (open)="$event.preventFocus = true" aria-label="manage my account" role="dialog">
+    <div id="settings-container" class="position-relative" style="min-height: 665px;">
+        <ejs-dialog #dialog class="rounded-3 m-sm-2" target="#settings-container" [isModal]="true" [visible]="false" width="788px" height="565px" (open)="dialogOpen($event)" aria-label="manage my account" role="dialog">
             <ng-template #content>
                 <div class="d-flex h-100">
                     <div class="flex-shrink-0 position-relative">
-                        <ejs-sidebar #sidebar target="#sidebar-container" width="256px" closeOnDocumentClick="true" [enableDock]="dockMode" [showBackdrop]="backDrop" [type]="sidebarType" (close)="onSidebarClose($event)" role="complementary">
+                        <ejs-sidebar #sidebar target="#sidebar-container" width="256px" closeOnDocumentClick="true" [enableDock]="isDockMode" [showBackdrop]="isBackDrop" [type]="sidebarType" (close)="sidebarClose($event)" role="complementary">
                             <div class="d-flex gap-2 align-items-center p-3 pb-0">
                                 <span class="e-avatar e-avatar-circle bg-primary text-white fs-6 fw-normal">MJ</span>
                                 <div class="ms-1">
@@ -108,10 +111,10 @@
                         </ejs-sidebar>
                     </div>
                     <div id="sidebar-container" class="flex-grow-1">
-                        <div class="h-100" [ngClass]="{ 'settings-panel': !isMobile }">
+                        <div class="h-100">
                             <div class="d-flex justify-content-between p-3 border-bottom">
                                 <div class="d-flex gap-3">
-                                    <button ejs-button cssClass="e-icons e-menu d-sm-none" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
+                                    <button *ngIf="isMobile" ejs-button cssClass="e-icons e-menu e-flat" type="button" (click)="sidebar?.show()" aria-label="expand menu" role="button"></button>
                                     <h3 class="fs-6 fw-bold mb-0 text-body">My Account</h3>
                                 </div>
                                 <button ejs-button cssClass="e-flat e-small" iconCss="e-icons e-close" (click)="dialog?.hide()" type="button" aria-label="close" role="button"></button>
@@ -121,14 +124,14 @@
                                     <label class="small text-body-secondary">Full Name <span class="text-danger">*</span></label>
                                     <div class="d-flex flex-column flex-sm-row align-items-start gap-2">
                                         <ejs-textbox class="w-100" type="text" placeholder="Enter your full name" aria-label="enter your full name" role="textbox"></ejs-textbox>
-                                        <button ejs-button class="mt-1 mt-sm-0 ms-sm-1 ms-md-0" type="button" disabled="true" aria-label="change" role="button">Change</button>
+                                        <button ejs-button class="mt-1 mt-sm-0 ms-sm-1 ms-md-0" content="Change" type="button" disabled="true" aria-label="change" role="button"></button>
                                     </div>
                                 </div>
                                 <div class="d-flex flex-column gap-1 mb-3 pt-2 pt-sm-1">
                                     <label class="small text-body-secondary">Email <span class="text-danger">*</span></label>
                                     <div class="d-flex flex-column flex-sm-row align-items-start gap-2">
                                         <ejs-textbox class="w-100" type="email" placeholder="Enter a valid email address" aria-label="enter a valid email address" role="textbox"></ejs-textbox>
-                                        <button ejs-button class="mt-1 mt-sm-0 ms-sm-1 ms-md-0" type="button" disabled="true" aria-label="change" role="button">Change</button>
+                                        <button ejs-button class="mt-1 mt-sm-0 ms-sm-1 ms-md-0" content="Change" type="button" disabled="true" aria-label="change" role="button"></button>
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-between align-items-sm-center text-body-secondary border-top py-3">
@@ -143,7 +146,7 @@
                                     <ejs-message class="border-0 bg-transparent p-0" [showIcon]="false">
                                         <ng-template #content>
                                             <p class="text-body-secondary mb-2"><span class="fw-medium text-danger">Warning: </span> Deleting your account will permanently delete all your documents. This action can't be undone.</p>
-                                            <button ejs-button cssClass="e-danger e-outline" class="mt-2 mt-sm-1" type="button" aria-label="delete account" role="button">Delete Account</button>
+                                            <button ejs-button cssClass="e-danger e-outline" class="mt-2 mt-sm-1" content="Delete Account" type="button" aria-label="delete account" role="button"></button>
                                         </ng-template>
                                     </ejs-message>
                                 </div>
@@ -155,5 +158,10 @@
         </ejs-dialog>
     </div>
 </section>
+<!-- SB Code - Start -->
+<div class="position-absolute top-0 start-0 d-flex w-100">
+    <button ejs-button class="mx-auto my-3 e-outline" content="Account Settings" type="button" (click)="dialog?.show()" aria-label="account settings" role="button"></button>
+</div>
+<!-- SB Code - End -->
 
 }

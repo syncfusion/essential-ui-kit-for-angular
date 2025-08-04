@@ -1,0 +1,65 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-gray-50 dark:bg-gray-800">
+    <div class="pt-4" style="min-height: 36rem;">
+        <div class="py-6 mx-auto flex flex-col justify-center items-center bg-white dark:bg-gray-800 border-0 sm:!rounded-lg sm:!border border-gray-300 dark:border-gray-500 text-gray-900 dark:text-white" style="max-width: 360px;">
+            <h2 class="text-base font-semibold">Customer reviews</h2>
+            <div class="flex justify-center items-center py-1">
+                <input ejs-rating [value]="4.0" [showLabel]="true" [emptyTemplate]="emptyTemplate" [fullTemplate]="fullTemplate" [labelTemplate]="labelTemplate" precision="Exact" aria-label="rate us out of 5" role="slider" style="min-height: 53px;" />
+                <ng-template #emptyTemplate>
+                    <span class="sf-icon-star-filled-01 text-2xl text-gray-300 dark:text-gray-500"></span>
+                </ng-template>
+                <ng-template #fullTemplate>
+                    <span class="sf-icon-star-filled-01 text-2xl text-amber-300"></span>
+                </ng-template>
+                <ng-template #labelTemplate let-data>
+                    <p class="!text-gray-900 dark:!text-white text-sm font-medium">{{ data?.value | number:'1.1' }} / 5</p>
+                </ng-template>
+            </div>
+            <p class="text-sm text-gray-500 dark:text-gray-400">based on 135 ratings</p>
+            <div class="pt-6 flex flex-col gap-1 px-4 sm:px-6 w-full">
+                <div class="flex items-center" *ngFor="let rating of customerRating">
+                    <span class="text-gray-700 dark:text-gray-100 text-sm shrink-0" style="min-width: 38px;">{{ rating.label }} star</span>
+                    <div class="grow sm:grow-0 shrink-1 mx-2">
+                        <ejs-progressbar #progressbar [id]="rating.id" [margin]="{ left: 1, right: 1 }" [width]="progressWidth" [value]="rating.value" progressThickness="12" trackThickness="12" progressColor="#FFB900" cornerRadius="Round" aria-label="target percentage" role="progressbar"></ejs-progressbar>
+                    </div>
+                    <span class="text-gray-900 dark:text-white text-xs font-medium" style="min-width: 18px;">{{ rating.value }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body-tertiary">
+    <div class="pt-4" style="min-height: 36rem;">
+        <div class="py-4 mx-auto d-flex flex-column justify-content-center align-items-center bg-body border text-body" style="max-width: 360px; border-radius: 0.5rem;">
+            <h2 class="fs-6 fw-bold text-body">Customer reviews</h2>
+            <div class="d-flex justify-content-center align-items-center py-1">
+                <input ejs-rating [value]="4.0" [showLabel]="true" [emptyTemplate]="emptyTemplate" [fullTemplate]="fullTemplate" [labelTemplate]="labelTemplate" precision="Exact" aria-label="rate us out of 5" role="slider" style="min-height: 53px;" />
+                <ng-template #emptyTemplate>
+                    <span class="sf-icon-star-02 fs-4 text-body-secondary"></span>
+                </ng-template>
+                <ng-template #fullTemplate>
+                    <span class="sf-icon-star-filled-01 fs-4 text-warning"></span>
+                </ng-template>
+                <ng-template #labelTemplate let-data>
+                    <span class="fs-6"><p class="text-body small mb-0">{{ data?.value | number:'1.1' }} / 5</p></span>
+                </ng-template>
+            </div>
+            <p class="small text-body-secondary mb-0">based on 135 ratings</p>
+            <div class="pt-4 d-flex flex-column gap-2 px-3 px-sm-4 w-100">
+                <div class="d-flex justify-content-center align-items-center" *ngFor="let rating of customerRating">
+                    <span class="text-body-secondary small me-2 flex-shrink-0" style="min-width: 35px;">{{ rating.label }} star</span>
+                    <div class="flex-grow-1 flex-shrink-1 flex-sm-shrink-0">
+                        <ejs-progressbar #progressbar [id]="rating.id" [margin]="{ left: 1, right: 1 }" [width]="progressWidth" [value]="rating.value" progressThickness="12" trackThickness="12" progressColor="#FFB900" cornerRadius="Round" aria-label="target percentage" role="progressbar"></ejs-progressbar>
+                    </div>
+                    <span class="small"><p class="text-body small fw-medium ms-2 mb-0" style="min-width: 18px;">{{ rating.value }}</p></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+}

@@ -20,7 +20,7 @@ export class AiSetting1Component implements OnInit, OnDestroy {
     public currentTheme: string = 'tailwind';
     /* SB Code - End */
     public isMobileView: boolean = false;
-    public preventSidebarClose: boolean = true;
+    public isPreventSidebarClose: boolean = true;
 
     public navigationMenu: Object[] = [
         { id: 1, field: 'General', fontIcon: 'e-settings' },
@@ -50,7 +50,7 @@ export class AiSetting1Component implements OnInit, OnDestroy {
     }
 
     @HostListener('window:resize')
-    public onResize(): void {
+    public handleResize(): void {
         this.checkWindowSize();
         /* SB Code - Start */
         this.closeDropdown(this.themeDropdown);
@@ -63,7 +63,7 @@ export class AiSetting1Component implements OnInit, OnDestroy {
         this.sidebar.hide();
         setTimeout(() => {
             this.sidebar.type = this.isMobileView ? "Over" : "Push";
-            this.preventSidebarClose = !this.isMobileView;
+            this.isPreventSidebarClose = !this.isMobileView;
             this.sidebar.show();
             this.sidebar.refresh();
         }, 5);
@@ -77,7 +77,7 @@ export class AiSetting1Component implements OnInit, OnDestroy {
     }
 
     private handleMessageEvent = (event: MessageEvent): void => {
-        if (event.origin === window.location.origin) {
+        if (event.origin === window.location.origin && /^{"(name":"[^"]+","theme":"[^"]+"|mode":"[^"]+")}$/.test(event.data)) {
             try {
                 const blockData = JSON.parse(event.data);
                 if (blockData.name === 'ai-setting-1' && blockData.theme) {

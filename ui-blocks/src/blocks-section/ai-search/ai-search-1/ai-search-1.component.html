@@ -10,7 +10,7 @@
                 popupHeight="530px"
                 (focus)="search.showPopup()"
                 (created)="openPopup(search)"
-                (filtering)="onFiltering($event)"
+                (filtering)="filtering($event)"
                 role="combobox">
                 <ng-template #noRecordsTemplate>
                     <div class="text-center p-6 m-auto">
@@ -23,7 +23,7 @@
                                 <div class="text-sm text-gray-900 dark:text-white">“{{searchKeyword}}” did not match any chat history. Please try again or <a href="javascript:void(0);" class="font-normal underline p-0" role="link">create a new chat</a>.</div>
                             </div>
                             <div>
-                                <button ejs-button class="e-outline px-4 !text-base" content="Clear Search" type="button" aria-label="clear search" role="button"></button>
+                                <button ejs-button class="e-outline px-4 !text-base" content="Clear search" type="button" aria-label="clear search" role="button"></button>
                             </div>
                         </div>
                     </div>
@@ -45,7 +45,7 @@
                 popupHeight="530px"
                 (focus)="search.showPopup()"
                 (created)="openPopup(search)"
-                (filtering)="onFiltering($event)"
+                (filtering)="filtering($event)"
                 role="combobox">
                 <ng-template #noRecordsTemplate>
                     <div class="text-center fs-6 py-4 px-sm-4 mx-auto">
@@ -58,7 +58,7 @@
                                 <div class="small text-body">“{{searchKeyword}}” did not match any chat history. Please try again or <a href="javascript:void(0);" class="fw-normal text-decoration-underline p-0" role="link">create a new chat</a>.</div>
                             </div>
                             <div>
-                                <button ejs-button class="e-outline px-3 fs-6" content="Clear Search" type="button" aria-label="clear search" role="button"></button>
+                                <button ejs-button class="e-outline px-3 fs-6" content="Clear search" type="button" aria-label="clear search" role="button"></button>
                             </div>
                         </div>
                     </div>

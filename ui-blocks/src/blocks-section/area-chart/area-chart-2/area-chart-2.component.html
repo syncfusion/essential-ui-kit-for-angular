@@ -1,0 +1,71 @@
+@if (currentTheme === 'tailwind') {
+
+<section class="bg-white dark:bg-gray-950">
+    <div class="h-screen flex justify-center p-4 sm:p-6">
+        <div class="w-full max-w-2xl">
+            <div class="flex gap-4 justify-between items-start">
+                <div class="flex justify-between mb-2">
+                    <div class="flex flex-row">
+                        <span class="sf-icon-column-chart !text-2xl mr-2 dark:text-white"></span>
+                        <h1 class="text-base font-medium mt-1 dark:text-white text-gray-900">KPI Performance</h1>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <button #desktopDropdown ejs-dropdownbutton class="e-outline hidden sm:block" content="Last 6 months" [items]="[{text:'This month'},{text:'Last month'},{text:'Last 3 months'},{text:'Last 6 months'},{text:'Last 9 months'}]" type="button" aria-label="choose a year" role="button"></button>
+                    <button #mobileDropdown ejs-dropdownbutton class="e-outline block sm:hidden" iconCss="e-icons e-day" [items]="[{text:'This month'},{text:'Last month'},{text:'Last 3 months'},{text:'Last 6 months'},{text:'Last 9 months'}]" type="button" aria-label="choose a year" role="button"></button>
+                </div>
+            </div>
+            <div class="flex flex-col font-medium text-xl dark:text-white">
+                90.75%
+                <div class="flex flex-row text-sm font-normal mt-1">
+                    <span class="text-green-700 dark:text-green-500 mr-1 flex items-center"><span class="e-icons e-arrow-up"></span>20%</span>
+                    <span class="text-gray-500 dark:text-gray-400">vs last month</span>
+                </div>
+            </div>
+            <div class="mt-6">
+                <ejs-chart #chart [chartArea]="{border: {width: 0}}" [primaryXAxis]="primaryXAxis" [primaryYAxis]="primaryYAxis" [tooltip]="tooltip" [width]="'100%'" [height]="'300px'" [margin]="{ left: 0, right: 0 , top: 0, bottom: 0 }" (load)="chartLoad($event,'Tailwind3','Tailwind3Dark')" aria-label="performance analysis" role="region">
+                    <e-series-collection>
+                        <e-series [dataSource]="chartData" type="StepArea" xName="month" yName="value" fill="#5A61F6" [border]="{ width: 2.5 }" noRisers="true" step="Center" [opacity]="isDarkMode?'0.3':'0.1'"></e-series>
+                    </e-series-collection>
+                </ejs-chart>
+            </div>
+        </div>
+    </div>
+</section>
+
+} @else if (currentTheme === 'bootstrap5.3') {
+
+<section class="bg-body">
+    <div class="vh-100 d-flex justify-content-center p-4 p-sm-5">
+        <div class="w-100" style="max-width: 680px;">
+            <div class="d-flex justify-content-between align-items-start gap-3">
+                <div class="mb-2 d-flex justify-content-between">
+                    <div class="d-flex flex-row align-items-start">
+                        <span class="sf-icon-column-chart fs-5 me-2"></span>
+                        <h5 class="text-body fs-5">KPI Performance</h5>
+                    </div>
+                </div>
+                <div class="d-flex gap-3">
+                    <button ejs-dropdownbutton #desktopDropdown class="e-outline e-btn d-none d-sm-block" content="Last 6 months" [items]="[{text:'This month'},{text:'Last month'},{text:'Last 3 months'},{text:'Last 6 months'},{text:'Last 9 months'}]" type="button" aria-label="choose a year" role="button"></button>
+                    <button ejs-dropdownbutton #mobileDropdown class="e-outline e-btn d-block d-sm-none" iconCss="e-icons e-day" [items]="[{text:'This month'},{text:'Last month'},{text:'Last 3 months'},{text:'Last 6 months'},{text:'Last 9 months'}]" type="button" aria-label="choose a year" role="button"></button>
+                </div>
+            </div>
+            <div class="d-flex flex-column fw-semibold fs-5">
+                90.75%
+                <div class="d-flex flex-row fs-6 fw-normal mt-1 align-items-center">
+                    <span class="text-success me-1 small d-flex align-items-center"><span class="e-icons e-arrow-up"></span>20%</span>
+                    <span class="small">vs last month</span>
+                </div>
+            </div>
+            <div class="mt-4">
+                <ejs-chart #chart [chartArea]="{border: {width: 0}}" [primaryXAxis]="primaryXAxis" [primaryYAxis]="primaryYAxis" [tooltip]="tooltip" [width]="'100%'" [height]="'300px'" [margin]="{ left: 0, right: 0 , top: 0, bottom: 0 }" (load)="chartLoad($event,'Bootstrap5','Bootstrap5Dark')" aria-label="performance analysis" role="region">
+                    <e-series-collection>
+                        <e-series [dataSource]="chartData" type="StepArea" xName="month" yName="value" fill="#006EEF" [border]="{ width: 2.5 }" noRisers="true" step="Center" [opacity]="isDarkMode?'0.3':'0.1'"></e-series>
+                    </e-series-collection>
+                </ejs-chart>
+            </div>
+        </div>
+    </div>
+</section>
+
+}

@@ -1,7 +1,7 @@
 @if (currentTheme === 'tailwind') {
 
 <section class="bg-gray-50 dark:bg-gray-900">
-    <div class="px-4 sm:px-6 xl:px-11 py-12">
+    <div id="wellness-metrics" class="px-4 sm:px-6 xl:px-11 py-12">
         <div class="grid sm:grid-cols-2 gap-6 lg:gap-4 lg:grid-cols-4">
             <div *ngFor="let data of metricsData" class="e-card pt-6 rounded-lg shadow-none">
                 <div class="e-card-stacked">
@@ -33,7 +33,7 @@
 } @else if (currentTheme === 'bootstrap5.3') {
 
 <section class="bg-body-tertiary">
-    <div class="px-3 px-sm-4 px-xl-5 py-5">
+    <div id="wellness-metrics" class="px-3 px-sm-4 px-xl-5 py-5">
         <div class="row g-4 g-lg-3">
             <div *ngFor="let data of metricsData" class="col-12 col-sm-6 col-lg-3">
                 <div class="e-card pt-4 rounded-3">
